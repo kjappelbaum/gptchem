@@ -1,0 +1,19 @@
+{
+  "template": "https://github.com/kjappelbaum/cookiecutter-snekpack",
+  "commit": "85ea5807535cea6790f2406af63e0c1a5d71a736",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "package_name": "gptchem",
+      "package_name_stylized": "gptchem",
+      "short_description": "Use GPT-3 to solve chemistry problems",
+      "author_name": "Kevin M. Jablonka",
+      "author_email": "mail@kjablonka.com",
+      "github_organization_name": "kjappelbaum",
+      "github_repository_name": "gptchem",
+      "command_line_interface": "True",
+      "_template": "https://github.com/kjappelbaum/cookiecutter-snekpack"
+    }
+  },
+  "directory": null
+}

@@ -1,0 +1,78 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ "3.8", "3.9", "3.10", "3.11" ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          sudo apt-get install graphviz
+          pip install tox
+      - name: Check manifest
+        run: tox run -e manifest
+      - name: Check code quality with flake8
+        run: tox run -e flake8
+      - name: Check package metadata with Pyroma
+        run: tox run -e pyroma
+      - name: Check static typing with MyPy
+        run: tox run -e mypy
+  docs:
+    name: Documentation
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ "3.8", "3.9", "3.10", "3.11" ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          pip install tox
+          sudo apt-get install graphviz
+      - name: Check RST conformity with doc8
+        run: tox run -e doc8
+      - name: Check docstring coverage
+        run: tox run -e docstr-coverage
+      - name: Check documentation build with Sphinx
+        run: tox run -e docs-test
+  tests:
+    name: Tests
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        python-version: [ "3.8", "3.9", "3.10", "3.11" ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: pip install tox
+      - name: Test with pytest and generate coverage file
+        run:
+          tox run -e py
+      - name: Upload coverage report to codecov
+        uses: codecov/codecov-action@v1
+        if: success()
+        with:
+          file: coverage.xml
