@@ -68,6 +68,8 @@ class ForwardFormatter(BaseFormatter):
                 label=label,
                 stop_sequence=self._stop_sequence,
             ),
+            "label": label,
+            "representation": representation,
         }
 
 

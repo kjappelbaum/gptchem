@@ -93,10 +93,9 @@ class Querier:
                             stop=self._stop,
                         )
                         completions.append(completions_)
-                        time.sleep(self.sleep)
                     break
                 except openai.error.RateLimitError:
-                    time.sleep(self.sleep)
+                    time.sleep(self._sleep)
                     continue
 
         completions = {

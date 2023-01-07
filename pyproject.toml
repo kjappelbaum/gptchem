@@ -13,3 +13,9 @@ multi_line_output = 3
 line_length = 100
 include_trailing_comma = true
 reverse_relative = true
+
+
+[tool.pytest.ini_options]
+markers = [
+    "requires_api_key: marks tests that require an OpenAI API key (deselect with '-m \"not requires_api_key\"')",
+]
