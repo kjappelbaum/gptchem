@@ -23,8 +23,8 @@ class BaseExtractor:
         except IndexError:
             return None
 
-    def extract_entry(self, data, **kwargs) -> Union[str, float, int]:
+    def extract(self, data, **kwargs) -> Union[str, float, int]:
         raise NotImplementedError
 
-    def extract_entries(self, data, **kwargs):
-        return [self.extract_entry(entry, **kwargs) for entry in data]
+    def extract_many(self, data, **kwargs):
+        return [self.extract(entry, **kwargs) for entry in data]
