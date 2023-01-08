@@ -17,3 +17,18 @@ def test_querier(temperature):
     assert isinstance(completions["choices"], list)
     assert isinstance(completions["logprobs"], list)
     assert isinstance(completions["choices"][0], str)
+
+    df_many = pd.DataFrame(
+        {
+            "prompt": [
+                "What is the HOMO-LUMO gap of CCCC?###",
+                "What is the HOMO-LUMO gap of [O]?###",
+            ],
+            "completion": [" 0.0@@@", " 0.0@@@"],
+        }
+    )
+
+    completions = querier.query(df_many)
+    assert isinstance(completions, dict)
+    assert isinstance(completions["choices"], list)
+    assert len(completions["choices"]) == 2

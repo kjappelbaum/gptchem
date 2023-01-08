@@ -58,6 +58,7 @@ modindex_common_prefix = ["gptchem."]
 extensions = [
     "sphinx.ext.autosummary",
     "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
     "sphinx.ext.coverage",
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
@@ -66,6 +67,7 @@ extensions = [
     "sphinx_autodoc_typehints",
     "sphinx_automodapi.automodapi",
     "sphinx_automodapi.smart_resolver",
+    "sphinx_copybutton"
     # 'texext',
 ]
 
@@ -74,6 +76,7 @@ intersphinx_mapping = {
     "sklearn": ("https://scikit-learn.org/stable/", None),
     "numpy": ("https://numpy.org/doc/stable/", None),
     "scipy": ("https://docs.scipy.org/doc/scipy/", None),
+    "python": ("https://docs.python.org/3/", None),
 }
 
 # generate autosummary pages
@@ -235,10 +238,6 @@ texinfo_documents = [
 
 # -- Options for intersphinx extension ---------------------------------------
 
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {
-    "https://docs.python.org/3/": None,
-}
 
 autoclass_content = "both"
 

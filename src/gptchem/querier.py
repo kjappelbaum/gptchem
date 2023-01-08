@@ -1,14 +1,15 @@
+import os
 import time
-from typing import List
+from typing import List, Optional
 
 import openai
 import pandas as pd
-from fastcore.basics import chunked
+from fastcore.basics import basic_repr, chunked
 from pyrate_limiter import Duration, Limiter, RequestRate
 
 _PRESETS = {
     "classification": {
-        "max_tokens": 1,
+        "max_tokens": 2, # first token is whitespace
     },
     "inverse": {
         "max_tokens": 800,
@@ -39,7 +40,7 @@ class Querier:
 
     _parallel_max = 20
     _sleep = 5
-    _stop = "@@@"
+    _stop = "@@"
 
     def __init__(self, modelname, max_tokens: int = 10):
         self.modelname = modelname
@@ -58,13 +59,17 @@ class Querier:
             )
         return cls(modelname, **_PRESETS[preset])
 
-    def query(self, df: pd.DataFrame, temperature: float = 0) -> List[str]:
+    def query(
+        self, df: pd.DataFrame, temperature: float = 0, logprobs: Optional[int] = None
+    ) -> dict:
         """Query the model for completions.
 
         Args:
             df (pd.DataFrame): DataFrame containing a column named "prompt"
-            temperature (float, optional): Temperature of the softmax.
-                Defaults to 0.
+            temperature (float): Temperature of the softmax. Defaults to 0.
+            logprobs (Optional[int]): The number of logprobs to return.
+                For classification, set it to the number of classes.
+                Defaults to None.
 
         Raises:
             ValueError: If df is not a pandas DataFrame
@@ -72,7 +77,7 @@ class Querier:
             AssertionError: If temperature is < 0
 
         Returns:
-            List[str]: List of completions
+            dict: Dictionary containing the completions and logprobs
         """
         if not isinstance(df, pd.DataFrame):
             raise ValueError("df must be a pandas DataFrame")
@@ -81,6 +86,11 @@ class Querier:
         assert temperature >= 0, "temperature must be >= 0"
 
         completions = []
+
+        settings = {}
+        if logprobs is not None and isinstance(logprobs, int):
+            settings["logprobs"] = logprobs
+
         for chunk in chunked(df["prompt"], self._parallel_max):
             while True:
                 try:
@@ -91,6 +101,7 @@ class Querier:
                             temperature=temperature,
                             max_tokens=self.max_tokens,
                             stop=self._stop,
+                            **settings,
                         )
                         completions.append(completions_)
                     break
@@ -105,3 +116,10 @@ class Querier:
         }
 
         return completions
+
+    def __call__(
+        self, df: pd.DataFrame, temperature: float = 0, logprobs: Optional[int] = None
+    ) -> dict:
+        return self.query(df, temperature, logprobs)
+
+    __repr__ = basic_repr("modelname,max_tokens")

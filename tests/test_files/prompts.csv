@@ -1,0 +1,11 @@
+prompt,completion,label,representation
+What is the E isomer pi-pi* wavelength in nm of C[N]1C=CC(=N1)N=NC2=CC=CC=C2?###, 0@@@,0,C[N]1C=CC(=N1)N=NC2=CC=CC=C2
+What is the E isomer pi-pi* wavelength in nm of C[N]1C=NC(=N1)N=NC2=CC=CC=C2?###, 0@@@,0,C[N]1C=NC(=N1)N=NC2=CC=CC=C2
+What is the E isomer pi-pi* wavelength in nm of C[N]1C=CC(=N1)N=NC2=CC=CC=C2?###, 0@@@,0,C[N]1C=CC(=N1)N=NC2=CC=CC=C2
+What is the E isomer pi-pi* wavelength in nm of C[N]1C=C(C)C(=N1)N=NC2=CC=CC=C2?###, 0@@@,0,C[N]1C=C(C)C(=N1)N=NC2=CC=CC=C2
+What is the E isomer pi-pi* wavelength in nm of C[N]1C=C(C=N1)N=NC2=CC=CC=C2?###, 0@@@,0,C[N]1C=C(C=N1)N=NC2=CC=CC=C2
+What is the E isomer pi-pi* wavelength in nm of C[N]1N=C(C)C(=C1C)N=NC2=CC=CC=C2?###, 0@@@,0,C[N]1N=C(C)C(=C1C)N=NC2=CC=CC=C2
+What is the E isomer pi-pi* wavelength in nm of C[N]1N=CC=C1N=NC2=CC=CC=C2?###, 0@@@,0,C[N]1N=CC=C1N=NC2=CC=CC=C2
+What is the E isomer pi-pi* wavelength in nm of C[N]1N=CC(=C1N=NC2=CC=CC=C2)C?###, 0@@@,0,C[N]1N=CC(=C1N=NC2=CC=CC=C2)C
+What is the E isomer pi-pi* wavelength in nm of CC(N(C)C(C)=C1)=C1/N=N/C2=CC=CC=C2?###, 0@@@,0,CC(N(C)C(C)=C1)=C1/N=N/C2=CC=CC=C2
+What is the E isomer pi-pi* wavelength in nm of CC(N(C)C(C)=C1C)=C1/N=N/C2=CC=CC=C2?###, 0@@@,0,CC(N(C)C(C)=C1C)=C1/N=N/C2=CC=CC=C2

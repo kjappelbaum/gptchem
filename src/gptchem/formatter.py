@@ -1,16 +1,19 @@
-"""From the OpenAI Docs:
+"""
+.. admonition:: From the OpenAI Docs:
+    :class: note
 
-To fine-tune a model, you'll need a set of training examples that each consist of a single input ("prompt") and its associated output ("completion"). This is notably different from using our base models, where you might input detailed instructions or multiple examples in a single prompt.
+    To fine-tune a model, you'll need a set of training examples that each consist of a single input ("prompt") and its associated output ("completion"). This is notably different from using our base models, where you might input detailed instructions or multiple examples in a single prompt.
 
-Each prompt should end with a fixed separator to inform the model when the prompt ends and the completion begins. A simple separator which generally works well is \n\n###\n\n. The separator should not appear elsewhere in any prompt.
-Each completion should start with a whitespace due to our tokenization, which tokenizes most words with a preceding whitespace.
-Each completion should end with a fixed stop sequence to inform the model when the completion ends. A stop sequence could be \n, ###, or any other token that does not appear in any completion.
-For inference, you should format your prompts in the same way as you did when creating the training dataset, including the same separator. Also specify the same stop sequence to properly truncate the completion.
+    Each prompt should end with a fixed separator to inform the model when the prompt ends and the completion begins. A simple separator which generally works well is ``\\n\\n###\\n\\n``. The separator should not appear elsewhere in any prompt.
+    Each completion should start with a whitespace due to our tokenization, which tokenizes most words with a preceding whitespace.
+    Each completion should end with a fixed stop sequence to inform the model when the completion ends. A stop sequence could be ``\\n``, ``###``, or any other token that does not appear in any completion.
+    For inference, you should format your prompts in the same way as you did when creating the training dataset, including the same separator. Also specify the same stop sequence to properly truncate the completion.
 """
 
 from typing import List, Optional
 
 import pandas as pd
+from fastcore.basics import basic_repr
 
 from .types import StringOrNumber
 
@@ -29,6 +32,8 @@ class BaseFormatter:
 
     def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
         raise NotImplementedError
+
+    __repr__ = basic_repr()
 
 
 class ForwardFormatter(BaseFormatter):
@@ -72,6 +77,9 @@ class ForwardFormatter(BaseFormatter):
             "representation": representation,
         }
 
+    def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
+        return self.format_many(df)
+
 
 class ClassificationFormatter(ForwardFormatter):
     """Convert a dataframe to a dataframe of prompts and completions for classification.
@@ -88,6 +96,16 @@ class ClassificationFormatter(ForwardFormatter):
         - end_prompt -> "###"
         - start_completion -> " "
         - stop_sequence -> "@@@"
+
+    We map classes to integers, following the advice from
+    OpenAI's documentation:
+
+    .. admonition:: From the OpenAI Docs:
+        :class: note
+
+        Choose classes that map to a single token.
+        At inference time, specify max_tokens=1
+        since you only need the first token for classification."
     """
 
     _PROMPT_TEMPLATE = "{prefix}What is the {propertyname} of {representation}{suffix}{end_prompt}"
@@ -104,18 +122,19 @@ class ClassificationFormatter(ForwardFormatter):
         """Initialize a ClassificationFormatter.
 
         Args:
-            representation_column: The column name of the representation.
-            label_column: The column name of the label.
-            property_name: The name of the property.
-            num_classes: The number of classes.
-            qcut: Whether to use qcut to split the label into classes.
-                Otherwise, cut is used.
+            representation_column (str): The column name of the representation.
+            label_column (str): The column name of the label.
+            property_name (str): The name of the property.
+            num_classes (int, optional): The number of classes.
+            qcut (bool): Whether to use qcut to split the label into classes. Otherwise, cut is used.
         """
         self.representation_column = representation_column
         self.label_column = label_column
         self.num_classes = num_classes
         self.property_name = property_name
         self.qcut = qcut
+
+    __repr__ = basic_repr("representation_column,label_column,property_name,num_classes,qcut")
 
     @property
     def class_names(self) -> List[int]:
@@ -176,15 +195,17 @@ class RegressionFormatter(ForwardFormatter):
         """Initialize a ClassificationFormatter.
 
         Args:
-            representation_column: The column name of the representation.
-            label_column: The column name of the label.
-            property_name: The name of the property.
-            num_digits: The number of digits to round the label to.
+            representation_column (str): The column name of the representation.
+            label_column (str): The column name of the label.
+            property_name (str): The name of the property.
+            num_digits (int): The number of digits to round the label to.
         """
         self.representation_column = representation_column
         self.label_column = label_column
         self.property_name = property_name
         self.num_digits = num_digits
+
+    __repr__ = basic_repr("representation_column,label_column,property_name,num_digits")
 
     def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
         """Format a dataframe of representations and labels into a dataframe of prompts and completions.
@@ -204,3 +225,12 @@ class RegressionFormatter(ForwardFormatter):
         label = label.round(self.num_digits)
 
         return pd.DataFrame([self._format(r, l) for r, l in zip(representation, label)])
+
+
+class InverseFormatter(BaseFormatter):
+    """
+    .. admonition:: From the OpenAI Docs:
+        :class: note
+
+        Using Lower learning rate and only 1-2 epochs tends to work better for these use cases
+    """

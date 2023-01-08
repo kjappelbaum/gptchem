@@ -20,7 +20,25 @@ def test_classification_extractor():
 
     assert extractor.extract_many(["1.0", "2.0@@@", "3.0@@@", "aaa"]) == [1, 2, 3, None]
 
-    assert extractor.extract_many_from_dict([{"choices": ["1.0@@@"]}, {"choices": ["2.0@@@"]}, {"choices": ["3.0@@@"]}, {"choices": ["aaa"]}], key="choices") == [1, 2, 3, None]
+    assert extractor.extract_many_from_dict(
+        [
+            {"choices": ["1.0@@@"]},
+            {"choices": ["2.0@@@"]},
+            {"choices": ["3.0@@@"]},
+            {"choices": ["aaa"]},
+        ],
+        key="choices",
+    ) == [1, 2, 3, None]
+
+    assert extractor(
+        [
+            {"choices": ["1.0@@@"]},
+            {"choices": ["2.0@@@"]},
+            {"choices": ["3.0@@@"]},
+            {"choices": ["aaa"]},
+        ]
+    ) == [1, 2, 3, None]
+
 
 def test_regression_extractor():
     extractor = RegressionExtractor()
@@ -30,4 +48,21 @@ def test_regression_extractor():
 
     assert extractor.extract_many(["1.0", "2.0@@@", "3.0@@@", "aaa"]) == [1.0, 2.0, 3.0, None]
 
-    assert extractor.extract_many_from_dict([{"choices": ["1.0@@@"]}, {"choices": ["2.0@@@"]}, {"choices": ["3.0@@@"]}, {"choices": ["aaa"]}], key="choices") == [1.0, 2.0, 3.0, None]
+    assert extractor.extract_many_from_dict(
+        [
+            {"choices": ["1.0@@@"]},
+            {"choices": ["2.0@@@"]},
+            {"choices": ["3.0@@@"]},
+            {"choices": ["aaa"]},
+        ],
+        key="choices",
+    ) == [1.0, 2.0, 3.0, None]
+
+    assert extractor(
+        [
+            {"choices": ["1.0@@@"]},
+            {"choices": ["2.0@@@"]},
+            {"choices": ["3.0@@@"]},
+            {"choices": ["aaa"]},
+        ]
+    ) == [1.0, 2.0, 3.0, None]

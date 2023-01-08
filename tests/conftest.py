@@ -24,3 +24,8 @@ def get_float_completion():
 @pytest.fixture(scope="session")
 def get_str_completion():
     return {"choices": [" CC#C@C"], "logprobs": [None], "model": "ada"}
+
+
+@pytest.fixture(scope="session")
+def get_prompts():
+    return pd.read_csv(os.path.join(_THIS_DIR, "test_files", "prompts.csv"))
