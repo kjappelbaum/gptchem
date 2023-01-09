@@ -15,6 +15,12 @@ We basically see that without fine-tuning ``GPT`` cannot answer our questions---
 
 The ``01_tuning_parameter_influence`` folder contains the code for the experiments we conducted to investigate the influence of a couple of tuning parameters on the performance of the classification performance. 
 For computational reasons, we limited these experiments to a binary classification on the photoswitch dataset.
+For this experiments we split the dataset into two balanced classes. Therefore, a dummy classifier would have an accuracy of 50%.
+
+.. note:: 
+
+    We recommend to always also train dummy models, e.g. :py:class:`sklearn.dummy.DummyClassifier` or :py:class:`sklearn.dummy.DummyRegressor` to get a sense of the performance of a random model.
+    Only consider GPT-3's predictions if they are better than the dummy model.
 
 We investigated the following parameters:
 
@@ -28,6 +34,11 @@ We investigated the following parameters:
         - ``text-curie-002``
     At the beginning of Jan 2023, Codex models could not yet be fine-tuned.
 
+To run the baselines, the following additional dependencies are needed:
+
+- ``tabpfn``. Follow the installation instructions of the `tabpfn repository <https://github.com/automl/TabPFN>`_.
+- ``gpflow``. Follow the installation instructions of the `photoswitch dataset repository <https://github.com/Ryan-Rhys/The-Photoswitch-Dataset>`_
+
 2. Henry coefficients
 -----------------------
 
@@ -40,6 +51,20 @@ To run the baselines, the following additional dependencies are needed:
 3. Classification experiments
 -------------------------------
 
+You will find subfolders for the following experiments: 
+
+Photoswitches
+...............
+
+
+
+High entropy alloys
+......................
+
+- ``hea_phase``: Classification of high-entropy alloys (HEA) into "single phase" and "multi phase" based on the dataset reported by [Pei]_. They reported an accuracy of 97% based on 10-fold cross-validation with the 1252 datapoints. They didn't report learnding curves.
+- ``hea_single_vs_multiphase``: Classification of high-entropy alloys (HEA) in "fcc", "bcc", "hcp" and "multi phase" based on the dataset reported by [Pei]_. 
+
+
 To run the baselines, the following additional dependencies are needed: 
 
 - ``tabpfn``. Follow the installation instructions of the `tabpfn repository <https://github.com/automl/TabPFN>`_.
@@ -48,3 +73,15 @@ To run the baselines, the following additional dependencies are needed:
 
 4. Regression experiments
 ----------------------------
+
+
+5. Inverse design 
+---------------------
+
+
+High-entropy alloys 
+......................
+
+To compute the diversity metrics, the following additional dependencies are needed: 
+
+- ``alloy2vec``. Follow the installation instructions of the `alloy2vec repository <https://github.com/peizong/alloy2vec>`_

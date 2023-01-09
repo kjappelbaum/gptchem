@@ -13,6 +13,7 @@
 from typing import List, Optional
 
 import pandas as pd
+from numpy.typing import ArrayLike
 from fastcore.basics import basic_repr
 
 from .types import StringOrNumber
@@ -133,6 +134,7 @@ class ClassificationFormatter(ForwardFormatter):
         self.num_classes = num_classes
         self.property_name = property_name
         self.qcut = qcut
+        self.bins = None
 
     __repr__ = basic_repr("representation_column,label_column,property_name,num_classes,qcut")
 
@@ -140,6 +142,13 @@ class ClassificationFormatter(ForwardFormatter):
     def class_names(self) -> List[int]:
         """Names of the classes."""
         return list(range(self.num_classes))
+
+    def bin(self, y: ArrayLike):
+        """Bin the inputs based on the bins used for the dataset."""
+        if self.bins is None:
+            raise ValueError("You must fit the formatter first.")
+    
+        return pd.cut(y, self.bins, labels=self.class_names, include_lowest=True)
 
     def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
         """Format a dataframe of representations and labels into a dataframe of prompts and completions.
@@ -158,9 +167,15 @@ class ClassificationFormatter(ForwardFormatter):
 
         if self.num_classes is not None:
             if self.qcut:
-                label = pd.qcut(label, self.num_classes, labels=self.class_names)
+                #label = pd.qcut(label, self.num_classes, labels=self.class_names)
+
+                _, bins = pd.qcut(label, self.num_classes, retbins=True)
+                label = pd.cut(label, bins=bins, labels=self.class_names, include_lowest=True)
+                self.bins = bins
             else:
-                label = pd.cut(label, self.num_classes, labels=self.class_names)
+                _, bins = pd.cut(label, self.num_classes, retbins=True)
+                label = pd.cut(label, bins=bins, labels=self.class_names, include_lowest=True)
+                self.bins = bins
 
         return pd.DataFrame([self._format(r, l) for r, l in zip(representation, label)])
 

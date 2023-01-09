@@ -14,7 +14,7 @@ def get_photoswitch_data() -> pd.DataFrame:
             "photoswitches",
             url="https://www.dropbox.com/s/z5z9z944cc060x9/photoswitches.csv?dl=1",
             read_csv_kwargs=dict(sep=","),
-        )
+        ).drop_duplicates(subset=['SMILES'])
         .reset_index(drop=True)
     )
 
@@ -25,3 +25,30 @@ def get_moosavi_mof_data() ->  pd.DataFrame:
 
     We additionally computed the MOFid [BuciorMOFid]_ for each MOF.
     """
+    ...
+
+
+def get_moosavi_cp_data() -> pd.DataFrame:
+    """Return the data and features used in [MoosaviDiversity]_.
+
+    You can find the original datasets on `MaterialsCloud archive <https://archive.materialscloud.org/record/2020.67>`_.
+    """
+    ...
+
+
+def get_qmug_data() -> pd.DataFrame:
+    """Return the data and features used in [QMUG]_.
+    """
+    ...
+
+
+def get_hea_phase_data() -> pd.DataFrame:
+    """Return the dataset reported in [Pei]_."""
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "photoswitches",
+            url="https://www.dropbox.com/s/4edwffuajclxa5h/hea_phase.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        ).reset_index(drop=True)
+    ) 

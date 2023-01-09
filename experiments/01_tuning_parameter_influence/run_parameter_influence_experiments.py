@@ -13,7 +13,7 @@ from gptchem.formatter import ClassificationFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
-base_models = ["ada", "babbage", "curie", "davinci"]
+base_models = ["ada", "babbage", "curie", "davinci"][::-3]
 train_sizes = [10, 50, 100, 200]
 num_epochs = [1, 2, 4, 8]
 learning_rate_multipliers = [0.02, 0.05, 0.1, 0.2]
@@ -28,11 +28,15 @@ def train_test_evaluate(
     test_size: int = 10,
     basemodel: str = "ada",
     n_epochs: int = 4,
-    learning_rate_multiplier: Optional[int] = None, 
+    learning_rate_multiplier: Optional[int] = None,
     seed: int = 42,
 ) -> dict:
     train, test = train_test_split(
-        formatted, train_size=train_size, test_size=test_size, stratify=formatted["label"], random_state=seed
+        formatted,
+        train_size=train_size,
+        test_size=test_size,
+        stratify=formatted["label"],
+        random_state=seed,
     )
 
     tuner = Tuner(
@@ -72,12 +76,12 @@ def train_test_evaluate(
 def main():
     data = get_photoswitch_data()
     formatter = ClassificationFormatter(
-    representation_column="SMILES",
-    label_column="E isomer pi-pi* wavelength in nm",
-    property_name="transition wavelength",
-    num_classes=2,
-    qcut=True,
-)
+        representation_column="SMILES",
+        label_column="E isomer pi-pi* wavelength in nm",
+        property_name="transition wavelength",
+        num_classes=2,
+        qcut=True,
+    )
 
     formatted = formatter(data)
 
@@ -87,19 +91,29 @@ def main():
             for basemodel in base_models:
                 for n_epochs in num_epochs:
                     for learning_rate_multiplier in learning_rate_multipliers:
-                        res = train_test_evaluate(
-                            formatted,
-                            train_size=train_size,
-                            test_size=TEST_SIZE,
-                            basemodel=basemodel,
-                            n_epochs=n_epochs,
-                            learning_rate_multiplier=learning_rate_multiplier,
-                            seed=i,
-                        )
-                        all_res.append(res)
+                        try:
+                            res = train_test_evaluate(
+                                formatted,
+                                train_size=train_size,
+                                test_size=TEST_SIZE,
+                                basemodel=basemodel,
+                                n_epochs=n_epochs,
+                                learning_rate_multiplier=learning_rate_multiplier,
+                                seed=i + 10,
+                            )
+                            print(
+                                f"Finished trial {i} with train_size {train_size} and basemodel {basemodel} and n_epochs {n_epochs} and learning_rate_multiplier {learning_rate_multiplier}. Accuracy: {res['accuracy']}"
+                            )
+                            all_res.append(res)
+                        except Exception as e:
+                            print(
+                                f"Failed trial {i} with train_size {train_size} and basemodel {basemodel} and n_epochs {n_epochs} and learning_rate_multiplier {learning_rate_multiplier}."
+                            )
+                            print(e)
 
     time_str = time.strftime("%Y%m%d-%H%M%S")
     save_pickle(f"{time_str}_all_res.pkl", all_res)
+
 
 if __name__ == "__main__":
     main()
