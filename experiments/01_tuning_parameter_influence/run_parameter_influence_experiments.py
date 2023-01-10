@@ -13,7 +13,7 @@ from gptchem.formatter import ClassificationFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
-base_models = ["ada", "babbage", "curie", "davinci"][::-3]
+base_models = ["ada", "babbage", "curie", "davinci"]
 train_sizes = [10, 50, 100, 200]
 num_epochs = [1, 2, 4, 8]
 learning_rate_multipliers = [0.02, 0.05, 0.1, 0.2]
@@ -99,7 +99,7 @@ def main():
                                 basemodel=basemodel,
                                 n_epochs=n_epochs,
                                 learning_rate_multiplier=learning_rate_multiplier,
-                                seed=i + 10,
+                                seed=i + 30,
                             )
                             print(
                                 f"Finished trial {i} with train_size {train_size} and basemodel {basemodel} and n_epochs {n_epochs} and learning_rate_multiplier {learning_rate_multiplier}. Accuracy: {res['accuracy']}"

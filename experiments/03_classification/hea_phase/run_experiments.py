@@ -13,7 +13,7 @@ from pathlib import Path
 from fastcore.xtras import save_pickle
 
 NUM_REPEATS = 10
-LEARNING_CURVE_POINTS = [10, 20, 50, 100, 200]
+LEARNING_CURVE_POINTS = [500]
 TEST_SIZE = 250
 
 

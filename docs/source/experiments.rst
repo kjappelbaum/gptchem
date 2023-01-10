@@ -53,9 +53,34 @@ To run the baselines, the following additional dependencies are needed:
 
 You will find subfolders for the following experiments: 
 
+Polymers 
+...............
+
+
+To run the baselines, the following additional dependencies are needed: 
+ 
+- ``xgboost``
+- ``optuna`` 
+
+
+MOFs
+...........
+
+
+
+Heat capacity 
+,,,,,,,,,,,,,,,,,
+
+To run the baseline, follow the `instructed provided by Moosavi et al. <https://github.com/SeyedMohamadMoosavi/tools-cp-porousmat>`_.
+
+
 Photoswitches
 ...............
 
+To run the baselines, the following additional dependencies are needed: 
+
+- ``tabpfn``. Follow the installation instructions of the `tabpfn repository <https://github.com/automl/TabPFN>`_.
+- ``molclr``. Follow the installation instructions of `our fork of the MolCLR repository <https://github.com/kjappelbaum/MolCLR>`_.
 
 
 High entropy alloys
@@ -63,12 +88,6 @@ High entropy alloys
 
 - ``hea_phase``: Classification of high-entropy alloys (HEA) into "single phase" and "multi phase" based on the dataset reported by [Pei]_. They reported an accuracy of 97% based on 10-fold cross-validation with the 1252 datapoints. They didn't report learnding curves.
 - ``hea_single_vs_multiphase``: Classification of high-entropy alloys (HEA) in "fcc", "bcc", "hcp" and "multi phase" based on the dataset reported by [Pei]_. 
-
-
-To run the baselines, the following additional dependencies are needed: 
-
-- ``tabpfn``. Follow the installation instructions of the `tabpfn repository <https://github.com/automl/TabPFN>`_.
-- ``molclr``. Follow the installation instructions of `our fork of the MolCLR repository <https://github.com/kjappelbaum/MolCLR>`_.
 
 
 4. Regression experiments
