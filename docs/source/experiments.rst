@@ -68,6 +68,11 @@ MOFs
 
 
 
+HOMO/LUMO gaps
+..................
+
+See the folder `bandgap`
+
 Heat capacity 
 ,,,,,,,,,,,,,,,,,
 
@@ -81,7 +86,17 @@ To run the baselines, the following additional dependencies are needed:
 
 - ``tabpfn``. Follow the installation instructions of the `tabpfn repository <https://github.com/automl/TabPFN>`_.
 - ``molclr``. Follow the installation instructions of `our fork of the MolCLR repository <https://github.com/kjappelbaum/MolCLR>`_.
+- ``gpflow``. Follow the installation instructions of the `photoswitch dataset repository <https://github.com/Ryan-Rhys/The-Photoswitch-Dataset>`_
 
+OPV
+.......
+
+To run the baselines, the following additional dependencies are needed: 
+
+- ``tabpfn``. Follow the installation instructions of the `tabpfn repository <https://github.com/automl/TabPFN>`_.
+- ``xgboost``
+- ``gpflow``. Follow the installation instructions of the `photoswitch dataset repository <https://github.com/Ryan-Rhys/The-Photoswitch-Dataset>`_
+- ``optuna`` 
 
 High entropy alloys
 ......................

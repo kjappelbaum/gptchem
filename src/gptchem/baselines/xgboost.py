@@ -9,7 +9,7 @@ from sklearn.metrics import (accuracy_score, f1_score, mean_absolute_error,
                              mean_squared_error, r2_score)
 from sklearn.model_selection import KFold, train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
-
+import pandas as pd
 class XGBClassificationBaseline(BaseLineModel):
     def __init__(self, seed, num_trials=100, timeout=None, njobs: int =-1) -> None:
         self.seed = seed
@@ -49,7 +49,10 @@ class XGBClassificationBaseline(BaseLineModel):
             model = XGBClassifier(**params)
             # pruning_callback = XGBoostPruningCallback(trial, "validation_0-mlogloss")
             kf = KFold(n_splits=n_splits)
-            X_values = X.values
+            if isinstance(X, pd.DataFrame):
+                X_values = X.values
+            else:
+                X_values = X
             y_values = y
 
             scores = []
@@ -85,15 +88,23 @@ class XGBClassificationBaseline(BaseLineModel):
             timeout=self.timeout,
         )
 
-        self.model = XGBClassifier(**study.best_params, njobs=self.njobs)
+        self.model = XGBClassifier(**study.best_params, n_jobs=self.njobs)
 
     def fit(self, X_train, y_train):
         y_train = self.label_encoder.fit_transform(y_train)
-        self.model.fit(X_train.values, y_train)
+        if isinstance(X_train, pd.DataFrame):
+            X_values = X_train.values
+        else:
+            X_values = X_train
+        self.model.fit(X_values, y_train)
         return self.model
 
     def predict(self, X):
-        return self.label_encoder.inverse_transform(self.model.predict(X.values))
+        if isinstance(X, pd.DataFrame):
+            X_values = X.values
+        else:
+            X_values = X 
+        return self.label_encoder.inverse_transform(self.model.predict(X_values))
 
 class XGBRegressionBaseline(BaseLineModel):
     def __init__(self, seed, num_trials=100, njobs: int =-1) -> None:
@@ -174,7 +185,7 @@ class XGBRegressionBaseline(BaseLineModel):
             n_jobs=1,
         )
 
-        self.model = XGBRegressor(**study.best_params, njobs=self.njobs)
+        self.model = XGBRegressor(**study.best_params, n_jobs=self.njobs)
 
     def fit(self, X_train, y_train):
         self.model.fit(X_train.values, y_train)

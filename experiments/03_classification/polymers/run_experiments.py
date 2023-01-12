@@ -81,6 +81,6 @@ if __name__ == "__main__":
         for num_classes in num_classes:
             for num_train_points in num_training_points:
                 try:
-                    train_test_model(num_classes, num_train_points, i)
+                    train_test_model(num_classes, num_train_points, i+10)
                 except Exception as e:
                     print(e)

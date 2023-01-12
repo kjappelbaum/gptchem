@@ -88,9 +88,9 @@ def main():
     all_res = []
     for i in range(num_trials):
         for train_size in train_sizes:
-            for basemodel in base_models:
-                for n_epochs in num_epochs:
-                    for learning_rate_multiplier in learning_rate_multipliers:
+            for n_epochs in num_epochs:
+                for learning_rate_multiplier in learning_rate_multipliers:
+                    for basemodel in base_models:
                         try:
                             res = train_test_evaluate(
                                 formatted,
@@ -99,7 +99,7 @@ def main():
                                 basemodel=basemodel,
                                 n_epochs=n_epochs,
                                 learning_rate_multiplier=learning_rate_multiplier,
-                                seed=i + 30,
+                                seed=i + 50,
                             )
                             print(
                                 f"Finished trial {i} with train_size {train_size} and basemodel {basemodel} and n_epochs {n_epochs} and learning_rate_multiplier {learning_rate_multiplier}. Accuracy: {res['accuracy']}"

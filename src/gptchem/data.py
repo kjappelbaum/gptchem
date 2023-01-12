@@ -41,15 +41,42 @@ def get_moosavi_mof_data() ->  pd.DataFrame:
     ...
 
 
-def get_moosavi_cp_data() -> pd.DataFrame:
-    """Return the data and features used in [MoosaviCp]_.
+def get_moosavi_cv_data() -> pd.DataFrame:
+    """Return the gravimetric heat capacity used in [MoosaviCp]_.
 
     You can find the original datasets on `MaterialsCloud archive <https://doi.org/10.24435/materialscloud:p1-2y>`_.
 
     We additionally computed the MOFid [BuciorMOFid]_ for each MOF 
     and dropped entries for which we could not compute the MOFid.
     """
-    ...
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "cv",
+            url="https://www.dropbox.com/s/lncrftmdcgn1zdh/cv.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        ).drop_duplicates(subset='mofid').reset_index(drop=True)
+    )
+
+
+
+def get_moosavi_pcv_data() -> pd.DataFrame:
+    """Return the site-projected heat capacity and features used in [MoosaviCp]_.
+
+    You can find the original datasets on `MaterialsCloud archive <https://doi.org/10.24435/materialscloud:p1-2y>`_.
+
+    We additionally computed the MOFid [BuciorMOFid]_ for each MOF 
+    and dropped entries for which we could not compute the MOFid.
+    """
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "pcv",
+            url="https://www.dropbox.com/s/r4fub4i9nadt1kc/pcv.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        ).reset_index(drop=True)
+    )
+
 
 
 def get_qmug_data() -> pd.DataFrame:
@@ -77,4 +104,61 @@ def get_hea_phase_data() -> pd.DataFrame:
             url="https://www.dropbox.com/s/4edwffuajclxa5h/hea_phase.csv?dl=1",
             read_csv_kwargs=dict(sep=","),
         ).reset_index(drop=True)
-    ) 
+    )
+
+def get_opv_data() -> pd.DataFrame:
+    """Return the dataset reported in [NagasawaOPV]_""" 
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "opv",
+            url="https://www.dropbox.com/s/a45eu1xw0zkyrmc/opv.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        ).reset_index(drop=True)
+    )
+
+def get_esol_data() -> pd.DataFrame:
+    """Return the dataset reported in [ESOL]_""" 
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "esol",
+            url="https://www.dropbox.com/s/3cchwv5hvxm9mdw/esol.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        ).reset_index(drop=True)
+    )
+
+
+def get_solubility_test_data() -> pd.DataFrame:
+    """Return the dataset reported in [soltest]_""" 
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "solubility",
+            url="https://www.dropbox.com/s/44rstzg32oqhrlm/solubility_test_set.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        ).reset_index(drop=True)
+    )
+
+
+def get_doyle_rxn_data() -> pd.DataFrame:
+    """Return the reaction dataset reported in [Doyle]_"""
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "doyle_rxn",
+            url="https://www.dropbox.com/s/gjxatqagwh3cwb6/dreher_doyle.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        ).reset_index(drop=True)
+    )
+
+def get_suzuki_rxn_data() -> pd.DataFrame:
+    """Return the reaction dataset reported in [Doyle]_"""
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "suzuki_rxn",
+            url="https://www.dropbox.com/s/0uv38jgrj2k33u7/suzuki_dreher.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        ).reset_index(drop=True)
+    )

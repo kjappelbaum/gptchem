@@ -14,5 +14,5 @@ def test_train_test_bandgap_classification_baseline(tabpfn):
         num_classes=2,
     )
     res = train_test_bandgap_classification_baseline(
-        data, train_size=100, test_size=10, formatter=formatter, num_trials=10, tabpfn=tabpfn)
+        data, train_size=100, test_size=10, formatter=formatter, tabpfn=tabpfn)
     assert res["accuracy"] > 0.2

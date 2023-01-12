@@ -7,7 +7,7 @@ from .mol_fingerprints import compute_fragprints, compute_morgan_fingerprints
 from gptchem.evaluator import evaluate_classification
 from .gpr import GPRBaseline
 
-def train_test_photoswitch_baseline(
+def train_test_photoswitch_classification_baseline(
     df: pd.DataFrame,
     train_size: int,
     test_size: int,
