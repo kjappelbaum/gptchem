@@ -93,11 +93,10 @@ def train_xgb_ensemble(data, feat, target, best_params=xgb_hyperparams, num_roun
     return models
 
 
-def predict_xgb_ensemble(models, data, feat, structure_col):
-
+def predict_xgb_ensemble(models, data, feat, identifier_col, identifiers):
     structure_pred = []
-    for structure in data[structure_col].unique():
-        structure_data = data[data[structure_col] == structure]
+    for structure in identifiers:
+        structure_data = data[data[identifier_col] == structure]
         pred = (
             np.array([m.predict(structure_data[feat]) for m in models]).sum(axis=1)
             / structure_data["site AtomicWeight"].sum()
@@ -116,10 +115,9 @@ def train_test_cv_classification_baseline(cv_data, train_mofid, test_mofid, form
 
     assert len(test_cv_data) == len(test_data['mofid'].unique()), f"test data ({len(test_data['mofid'].unique())}) and test cv data ({len(test_cv_data)}) must have the same length"
     models = train_xgb_ensemble(train_data, FEATURES, TARGET_p, num_rounds=num_rounds)
-    pred = predict_xgb_ensemble(models, test_data, FEATURES, "mofid")
+    pred = predict_xgb_ensemble(models, test_data, FEATURES, "mofid", test_cv_data["mofid"])
     assert len(pred) == len(test_cv_data)
 
-    print(test_cv_data[TARGET], pred, formatter.bins)
     binned = formatter.bin(pred).astype(int)
     return {
         "pred": pred,

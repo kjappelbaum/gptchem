@@ -1,0 +1,434 @@
+2023-01-13 00:03:12.023160: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │      -0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/4.13k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.13k/4.13k [00:00<00:00, 1.21Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_000316/train.jsonl: file-gu0Iu2FxX87tGvesByj02szm
+Ran train size 10 and got accuracy 0.504, XGB baseline 0.5, and TabPFN baseline 0.584
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │      -0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/11.9k [00:00<?, ?it/s]Upload progress: 100%|██████████| 11.9k/11.9k [00:00<00:00, 31.4Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_001152/train.jsonl: file-do9cTaCrWTjUmyfmX42UWJYg
+The server is overloaded or not ready yet.
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │      -0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/4.07k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.07k/4.07k [00:00<00:00, 9.30Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_001230/train.jsonl: file-ivjTXkyBTU6UZDMvP2oVBXYF
+Ran train size 10 and got accuracy 0.56, XGB baseline 0.5, and TabPFN baseline 0.584
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/22.4k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.4k/22.4k [00:00<00:00, 53.6Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_001857/train.jsonl: file-Ui659lxfP2S2G5U3TZzOWjzx
+Ran train size 50 and got accuracy 0.612, XGB baseline 0.5, and TabPFN baseline 0.584
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/65.6k [00:00<?, ?it/s]Upload progress: 100%|██████████| 65.6k/65.6k [00:00<00:00, 151Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_002526/train.jsonl: file-3V8GzAbuAlnDyaXazAdQXXR8
+Ran train size 50 and got accuracy 0.568, XGB baseline 0.5, and TabPFN baseline 0.584
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/21.5k [00:00<?, ?it/s]Upload progress: 100%|██████████| 21.5k/21.5k [00:00<00:00, 49.6Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_003000/train.jsonl: file-9ccah42zKVm2m1icksSKUntO
+Ran train size 50 and got accuracy 0.636, XGB baseline 0.5, and TabPFN baseline 0.584
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  2.0331  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 35.5794  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.30849 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/46.3k [00:00<?, ?it/s]Upload progress: 100%|██████████| 46.3k/46.3k [00:00<00:00, 113Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_003628/train.jsonl: file-dTqXJU1tGgbexZbRwso7jY0D
+Ran train size 100 and got accuracy 0.708, XGB baseline 0.724, and TabPFN baseline 0.568
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  2.0331  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 35.5794  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.30849 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/136k [00:00<?, ?it/s]Upload progress: 100%|██████████| 136k/136k [00:00<00:00, 312Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_004258/train.jsonl: file-A5uKQG8XRDwd65JyUaJvb2JO
+Ran train size 100 and got accuracy 0.66, XGB baseline 0.724, and TabPFN baseline 0.568
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  2.0331  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 35.5794  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.30849 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/44.9k [00:00<?, ?it/s]Upload progress: 100%|██████████| 44.9k/44.9k [00:00<00:00, 41.0Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_005128/train.jsonl: file-829LUhHG3oC8XfmFSxvJueDP
+internal error {
+    "error": {
+        "message": "internal error",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": null
+    }
+}
+ 500 {'error': {'message': 'internal error', 'type': 'invalid_request_error', 'param': None, 'code': None}} {'Date': 'Fri, 13 Jan 2023 00:09:56 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '147', 'Connection': 'keep-alive', 'Vary': 'Origin', 'X-Request-Id': 'acd196121e31b4d7a7b9b4ead6d87eb6', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains'}
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.96732 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 43.9341  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.2021  │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/89.3k [00:00<?, ?it/s]Upload progress: 100%|██████████| 89.3k/89.3k [00:00<00:00, 204Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_011017/train.jsonl: file-7hcJPj8XB96z4YAPbygaFP9f
+Ran train size 200 and got accuracy 0.664, XGB baseline 0.724, and TabPFN baseline 0.604
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.96732 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 43.9341  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.2021  │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/259k [00:00<?, ?it/s]Upload progress: 100%|██████████| 259k/259k [00:00<00:00, 345Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_013355/train.jsonl: file-1cc2roHOOtuL0esR74avURq9
+Ran train size 200 and got accuracy 0.66, XGB baseline 0.724, and TabPFN baseline 0.604
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.96732 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 43.9341  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.2021  │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/87.0k [00:00<?, ?it/s]Upload progress: 100%|██████████| 87.0k/87.0k [00:00<00:00, 225Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_014226/train.jsonl: file-cA8p5csBJRcAmmjaU9YoVqWF
+Ran train size 200 and got accuracy 0.688, XGB baseline 0.724, and TabPFN baseline 0.604
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  4.69137 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 42.5455  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.19584 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/223k [00:00<?, ?it/s]Upload progress: 100%|██████████| 223k/223k [00:00<00:00, 108Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_020904/train.jsonl: file-UTPpquMMrmWwYKzUd8b1hbGX
+Ran train size 500 and got accuracy 0.732, XGB baseline 0.78, and TabPFN baseline 0.604
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  4.69137 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 42.5455  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.19584 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/646k [00:00<?, ?it/s]Upload progress: 100%|██████████| 646k/646k [00:00<00:00, 1.70Git/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_022340/train.jsonl: file-iJPvQUcZoJTUJn9sLKKd4BU0
+Ran train size 500 and got accuracy 0.732, XGB baseline 0.78, and TabPFN baseline 0.604
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  4.69137 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 42.5455  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.19584 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/216k [00:00<?, ?it/s]Upload progress: 100%|██████████| 216k/216k [00:00<00:00, 97.4Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_023817/train.jsonl: file-znnI6c8f2couvYf6RismA4Wg
+Ran train size 500 and got accuracy 0.688, XGB baseline 0.78, and TabPFN baseline 0.604
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/4.19k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.19k/4.19k [00:00<00:00, 9.46Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_025450/train.jsonl: file-DNUkPWV3mm5m5ZG52PceKene
+Ran train size 10 and got accuracy 0.208, XGB baseline 0.2, and TabPFN baseline 0.228
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/11.9k [00:00<?, ?it/s]Upload progress: 100%|██████████| 11.9k/11.9k [00:00<00:00, 29.0Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_025916/train.jsonl: file-gAkMcDQVGN7ZLXEcY4Ki26pI
+Ran train size 10 and got accuracy 0.188, XGB baseline 0.2, and TabPFN baseline 0.228
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/3.81k [00:00<?, ?it/s]Upload progress: 100%|██████████| 3.81k/3.81k [00:00<00:00, 3.36Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_032358/train.jsonl: file-Y85tCAQQr2FtnQ7kzP0GW0Jb
+Ran train size 10 and got accuracy 0.2979591836734694, XGB baseline 0.2, and TabPFN baseline 0.228
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │      -0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/21.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 21.8k/21.8k [00:00<00:00, 15.2Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_034428/train.jsonl: file-2xMc1Na4XD69vAAH51rv2cd9
+Ran train size 50 and got accuracy 0.212, XGB baseline 0.2, and TabPFN baseline 0.2
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │      -0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/62.9k [00:00<?, ?it/s]Upload progress: 100%|██████████| 62.9k/62.9k [00:00<00:00, 158Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_040336/train.jsonl: file-CRhIXd3dleLsCphHU4A0yMnx
+Ran train size 50 and got accuracy 0.2, XGB baseline 0.2, and TabPFN baseline 0.2
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │      -0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/21.0k [00:00<?, ?it/s]Upload progress: 100%|██████████| 21.0k/21.0k [00:00<00:00, 46.1Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_041007/train.jsonl: file-RulHjrIKYnRhxqMNhbeEL91u
+Ran train size 50 and got accuracy 0.284, XGB baseline 0.2, and TabPFN baseline 0.2
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1e-05   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.99998 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/42.6k [00:00<?, ?it/s]Upload progress: 100%|██████████| 42.6k/42.6k [00:00<00:00, 89.0Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_041445/train.jsonl: file-5JG4x81nA6dsnIcxkN0WQsJn
+Ran train size 100 and got accuracy 0.28, XGB baseline 0.2, and TabPFN baseline 0.26
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1e-05   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.99998 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/123k [00:00<?, ?it/s]Upload progress: 100%|██████████| 123k/123k [00:00<00:00, 279Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_042721/train.jsonl: file-9Y2SmOtrYlWqNXiyNJtm238Y
+Ran train size 100 and got accuracy 0.232, XGB baseline 0.2, and TabPFN baseline 0.26
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1e-05   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.99998 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/42.0k [00:00<?, ?it/s]Upload progress: 100%|██████████| 42.0k/42.0k [00:00<00:00, 108Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_043350/train.jsonl: file-kVrK5R1IdALg78oE3pUU5rOR
+Ran train size 100 and got accuracy 0.24, XGB baseline 0.2, and TabPFN baseline 0.26
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.32282 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 60.9847  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/86.2k [00:00<?, ?it/s]Upload progress: 100%|██████████| 86.2k/86.2k [00:00<00:00, 194Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_043818/train.jsonl: file-wAPbJRis0MygQDK5uC6DzM9a
+Ran train size 200 and got accuracy 0.38, XGB baseline 0.384, and TabPFN baseline 0.332
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.32282 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 60.9847  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/249k [00:00<?, ?it/s]Upload progress: 100%|██████████| 249k/249k [00:00<00:00, 534Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_044448/train.jsonl: file-lG9vc1TqoVK5vDYygQQhIwgo
+Ran train size 200 and got accuracy 0.276, XGB baseline 0.384, and TabPFN baseline 0.332
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.32282 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 60.9847  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/84.7k [00:00<?, ?it/s]Upload progress: 100%|██████████| 84.7k/84.7k [00:00<00:00, 210Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_045326/train.jsonl: file-0DHzgmnjjXPXDB04dbx3gvbY
+Ran train size 200 and got accuracy 0.224, XGB baseline 0.384, and TabPFN baseline 0.332
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  2.32187 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 41.3404  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.1386  │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/216k [00:00<?, ?it/s]Upload progress: 100%|██████████| 216k/216k [00:00<00:00, 547Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_050202/train.jsonl: file-MhzMFkVeNjwOE85wHtHVPUsi
+Ran train size 500 and got accuracy 0.428, XGB baseline 0.428, and TabPFN baseline 0.316
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  2.32187 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 41.3404  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.1386  │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/626k [00:00<?, ?it/s]Upload progress: 100%|██████████| 626k/626k [00:00<00:00, 457Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_051638/train.jsonl: file-B3JWXTXm6uid2DZqatqlcjYH
+Ran train size 500 and got accuracy 0.412, XGB baseline 0.428, and TabPFN baseline 0.316
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  2.32187 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 41.3404  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.1386  │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/213k [00:00<?, ?it/s]Upload progress: 100%|██████████| 213k/213k [00:00<00:00, 481Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/out/20230113_053516/train.jsonl: file-uIgQSUTUsVdvsfPdUB1rtsG3
+Ran train size 500 and got accuracy 0.388, XGB baseline 0.428, and TabPFN baseline 0.316
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/bandgap/run_experiments.py", line 82, in <module>
+    for num_classes in num_classes:
+TypeError: 'int' object is not iterable
+sys:1: ResourceWarning: unclosed <ssl.SSLSocket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('128.179.156.25', 62739), raddr=('52.152.96.252', 443)>

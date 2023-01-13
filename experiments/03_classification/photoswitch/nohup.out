@@ -1,0 +1,1175 @@
+2023-01-13 00:03:06.627544: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.14077 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 6.16067 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.48328 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/1.74k [00:00<?, ?it/s]Upload progress: 100%|██████████| 1.74k/1.74k [00:00<00:00, 647kit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_000307/train.jsonl: file-uK4NYfIctoe3RXGvmAD2zYOF
+Ran train size 10 and got accuracy 0.8461538461538461, XGB baseline 0.6282051282051282, and TabPFN baseline 0.717948717948718
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.08075 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  2.18879 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.63867 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/2.03k [00:00<?, ?it/s]Upload progress: 100%|██████████| 2.03k/2.03k [00:00<00:00, 5.15Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_000923/train.jsonl: file-v2njhrg2rNepB2W6BD9K5heW
+Ran train size 10 and got accuracy 0.57, XGB baseline 0.85, and TabPFN baseline 0.73
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.08075 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  2.18879 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.63867 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/3.25k [00:00<?, ?it/s]Upload progress: 100%|██████████| 3.25k/3.25k [00:00<00:00, 7.57Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_001330/train.jsonl: file-wRElQKoMsf2YnUuFxJUomXDZ
+Ran train size 10 and got accuracy 0.5, XGB baseline 0.85, and TabPFN baseline 0.73
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.08075 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  2.18879 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.63867 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/4.29k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.29k/4.29k [00:00<00:00, 10.3Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_001952/train.jsonl: file-qqn9vGAfMImnqvEIhug0cBgb
+Ran train size 10 and got accuracy 0.63, XGB baseline 0.85, and TabPFN baseline 0.73
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.25319 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 44.2884  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00759 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/3.55k [00:00<?, ?it/s]Upload progress: 100%|██████████| 3.55k/3.55k [00:00<00:00, 3.34Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_002558/train.jsonl: file-xcF7Zd7tPVRdvfNOdMsDjA9j
+Ran train size 20 and got accuracy 0.7941176470588235, XGB baseline 0.7794117647058824, and TabPFN baseline 0.8235294117647058
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.1618  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 3.93184 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.44552 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/4.05k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.05k/4.05k [00:00<00:00, 9.79Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_003405/train.jsonl: file-0NDDwEj0sdzOOm4HXGQUhD3M
+Ran train size 20 and got accuracy 0.7, XGB baseline 0.85, and TabPFN baseline 0.81
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.1618  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 3.93184 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.44552 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/6.41k [00:00<?, ?it/s]Upload progress: 100%|██████████| 6.41k/6.41k [00:00<00:00, 15.2Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_003811/train.jsonl: file-LMSG7VvOo1apjulMGAW6M7Zi
+Ran train size 20 and got accuracy 0.76, XGB baseline 0.85, and TabPFN baseline 0.81
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.1618  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 3.93184 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.44552 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/8.63k [00:00<?, ?it/s]Upload progress: 100%|██████████| 8.63k/8.63k [00:00<00:00, 18.0Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_004418/train.jsonl: file-qw8YB7dwtfMZeGd4coYS88AZ
+Ran train size 20 and got accuracy 0.72, XGB baseline 0.85, and TabPFN baseline 0.81
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.50261 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 32.8906  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/8.96k [00:00<?, ?it/s]Upload progress: 100%|██████████| 8.96k/8.96k [00:00<00:00, 8.36Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_005427/train.jsonl: file-PlThlq71gKAsSplTOoSXE8CG
+Ran train size 50 and got accuracy 0.9210526315789473, XGB baseline 0.7368421052631579, and TabPFN baseline 0.7368421052631579
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -2.16223 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 29.0931  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.10714 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/9.99k [00:00<?, ?it/s]Upload progress: 100%|██████████| 9.99k/9.99k [00:00<00:00, 22.2Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_012939/train.jsonl: file-YMucK0DkKBha2z4w7Y0pYrir
+Ran train size 50 and got accuracy 0.79, XGB baseline 0.83, and TabPFN baseline 0.87
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -2.16223 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 29.0931  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.10714 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/15.9k [00:00<?, ?it/s]Upload progress: 100%|██████████| 15.9k/15.9k [00:00<00:00, 33.4Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_013746/train.jsonl: file-CXaxEAh1a68i7DtYcOu2z5I1
+Ran train size 50 and got accuracy 0.85, XGB baseline 0.83, and TabPFN baseline 0.87
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -2.16223 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 29.0931  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.10714 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/21.5k [00:00<?, ?it/s]Upload progress: 100%|██████████| 21.5k/21.5k [00:00<00:00, 57.6Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_015556/train.jsonl: file-QnK8s1ZRZWiZrID8x1dllRhd
+Ran train size 50 and got accuracy 0.78, XGB baseline 0.83, and TabPFN baseline 0.87
+test_size=-12 should be either positive and smaller than the number of samples 88 or a float in the (0, 1) range
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -3.18965 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 38.8619  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.0235  │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/19.7k [00:00<?, ?it/s]Upload progress: 100%|██████████| 19.7k/19.7k [00:00<00:00, 17.8Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_021006/train.jsonl: file-uLLwPoqIDvrVPw308ppp9tFP
+Ran train size 100 and got accuracy 0.83, XGB baseline 0.91, and TabPFN baseline 0.89
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -3.18965 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 38.8619  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.0235  │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/31.5k [00:00<?, ?it/s]Upload progress: 100%|██████████| 31.5k/31.5k [00:00<00:00, 76.8Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_022617/train.jsonl: file-XnrRHPhGtApZQBSLbe8Fpz1Q
+Ran train size 100 and got accuracy 0.9, XGB baseline 0.91, and TabPFN baseline 0.89
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -3.18965 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 38.8619  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.0235  │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/41.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 41.8k/41.8k [00:00<00:00, 45.8Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_024228/train.jsonl: file-Fw5kaIdeq2lIPw6VAieWCJz9
+Ran train size 100 and got accuracy 0.84, XGB baseline 0.91, and TabPFN baseline 0.89
+test_size=-112 should be either positive and smaller than the number of samples 88 or a float in the (0, 1) range
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -3.07323 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 44.0279  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.02336 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/39.6k [00:00<?, ?it/s]Upload progress: 100%|██████████| 39.6k/39.6k [00:00<00:00, 93.9Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_025839/train.jsonl: file-I0fuOe7HKguMElPDbKUsia4s
+Ran train size 200 and got accuracy 0.93, XGB baseline 0.91, and TabPFN baseline 0.89
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -3.07323 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 44.0279  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.02336 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/63.1k [00:00<?, ?it/s]Upload progress: 100%|██████████| 63.1k/63.1k [00:00<00:00, 140Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_030448/train.jsonl: file-WuIfVs9pj3VHZDVMvJGPDpmi
+Ran train size 200 and got accuracy 0.9, XGB baseline 0.91, and TabPFN baseline 0.89
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -3.07323 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 44.0279  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.02336 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/83.4k [00:00<?, ?it/s]Upload progress: 100%|██████████| 83.4k/83.4k [00:00<00:00, 72.9Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_034307/train.jsonl: file-bJ17019AkHqrddasS42727cT
+Ran train size 200 and got accuracy 0.94, XGB baseline 0.91, and TabPFN baseline 0.89
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  2.14832 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 17.0307  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.13465 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/1.83k [00:00<?, ?it/s]Upload progress: 100%|██████████| 1.83k/1.83k [00:00<00:00, 4.24Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_035114/train.jsonl: file-KXGT7WUz6YT2m5wMlYUBoYto
+Ran train size 10 and got accuracy 0.3974358974358974, XGB baseline 0.358974358974359, and TabPFN baseline 0.358974358974359
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.08103 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 2.66829 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.51112 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/2.13k [00:00<?, ?it/s]Upload progress: 100%|██████████| 2.13k/2.13k [00:00<00:00, 4.89Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_035522/train.jsonl: file-P7Hk2RdRoRek9k36h2jlGFAd
+Ran train size 10 and got accuracy 0.2, XGB baseline 0.51, and TabPFN baseline 0.36
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.08103 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 2.66829 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.51112 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/3.21k [00:00<?, ?it/s]Upload progress: 100%|██████████| 3.21k/3.21k [00:00<00:00, 7.72Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_035738/train.jsonl: file-650FY3aJZNhul9VfhMPAtLSN
+Ran train size 10 and got accuracy 0.32, XGB baseline 0.51, and TabPFN baseline 0.36
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.08103 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 2.66829 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.51112 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/4.48k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.48k/4.48k [00:00<00:00, 11.5Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_040146/train.jsonl: file-wFgippqv0iuC9Vxzd34gC4at
+Ran train size 10 and got accuracy 0.24, XGB baseline 0.51, and TabPFN baseline 0.36
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.2745 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 33.0874 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0      │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/3.66k [00:00<?, ?it/s]Upload progress: 100%|██████████| 3.66k/3.66k [00:00<00:00, 8.93Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_040755/train.jsonl: file-4ZlsLe56fny2jLYeKQ6biKTY
+Ran train size 20 and got accuracy 0.45588235294117646, XGB baseline 0.4264705882352941, and TabPFN baseline 0.38235294117647056
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.01088 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  2.63005 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.56978 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/4.20k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.20k/4.20k [00:00<00:00, 9.09Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_042058/train.jsonl: file-yn2ZjG1IPqN4PIgZkPEkKhDr
+Ran train size 20 and got accuracy 0.38, XGB baseline 0.41, and TabPFN baseline 0.44
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.01088 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  2.63005 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.56978 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/6.54k [00:00<?, ?it/s]Upload progress: 100%|██████████| 6.54k/6.54k [00:00<00:00, 11.7Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_042906/train.jsonl: file-UrzohHCniJR35352y8X0yqi3
+Ran train size 20 and got accuracy 0.45, XGB baseline 0.41, and TabPFN baseline 0.44
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.01088 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  2.63005 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.56978 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/9.13k [00:00<?, ?it/s]Upload progress: 100%|██████████| 9.13k/9.13k [00:00<00:00, 21.5Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_043514/train.jsonl: file-70gEZTxUv7YeokqftTtc6HpM
+Ran train size 20 and got accuracy 0.46, XGB baseline 0.41, and TabPFN baseline 0.44
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.8404  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 29.7892  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.04063 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/8.98k [00:00<?, ?it/s]Upload progress: 100%|██████████| 8.98k/8.98k [00:00<00:00, 20.2Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_043923/train.jsonl: file-UPwl1CmNjHSG8HDRybLVEi1D
+Ran train size 50 and got accuracy 0.47368421052631576, XGB baseline 0.2894736842105263, and TabPFN baseline 0.42105263157894735
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.27131 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 20.7956  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.15448 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/10.2k [00:00<?, ?it/s]Upload progress: 100%|██████████| 10.2k/10.2k [00:00<00:00, 24.5Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_044729/train.jsonl: file-N5ahbYNTlikKMXf5A5OrOke1
+Ran train size 50 and got accuracy 0.54, XGB baseline 0.54, and TabPFN baseline 0.59
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.27131 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 20.7956  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.15448 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/16.0k [00:00<?, ?it/s]Upload progress: 100%|██████████| 16.0k/16.0k [00:00<00:00, 42.2Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_045335/train.jsonl: file-TiJnLbONfwbwWz7atwM26SOn
+Ran train size 50 and got accuracy 0.58, XGB baseline 0.54, and TabPFN baseline 0.59
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.27131 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 20.7956  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.15448 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/22.0k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.0k/22.0k [00:00<00:00, 49.2Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_050142/train.jsonl: file-XiwLyEnaOuxeingz3I8wbino
+Ran train size 50 and got accuracy 0.47, XGB baseline 0.54, and TabPFN baseline 0.59
+test_size=-12 should be either positive and smaller than the number of samples 88 or a float in the (0, 1) range
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -2.05785 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 39.6672  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00411 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/19.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 19.8k/19.8k [00:00<00:00, 50.9Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_050549/train.jsonl: file-1k6DtlBej5ib6IxZJswZEFx8
+Ran train size 100 and got accuracy 0.59, XGB baseline 0.59, and TabPFN baseline 0.63
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -2.05785 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 39.6672  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00411 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/31.4k [00:00<?, ?it/s]Upload progress: 100%|██████████| 31.4k/31.4k [00:00<00:00, 24.7Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_051959/train.jsonl: file-1W0GTNT8ZBlgCL9nn2YLY7mj
+Ran train size 100 and got accuracy 0.54, XGB baseline 0.59, and TabPFN baseline 0.63
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -2.05785 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 39.6672  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00411 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/42.2k [00:00<?, ?it/s]Upload progress: 100%|██████████| 42.2k/42.2k [00:00<00:00, 98.5Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_053809/train.jsonl: file-sXU828mmX0elOPSNGLSk0laT
+local variable 'modelname' referenced before assignment
+test_size=-112 should be either positive and smaller than the number of samples 88 or a float in the (0, 1) range
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1.35297 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 36.7353  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.01834 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_055330%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16df67430>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1.35297 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 36.7353  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.01834 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_060833%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x294df0af0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1.35297 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 36.7353  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.01834 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_060836%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2965e8d60>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_060837%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16da55be0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.9542 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 20.9609 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0      │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_062412%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a91775e0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.9542 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 20.9609 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0      │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_062414%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x294b824c0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.9542 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 20.9609 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0      │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_062415%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16e0c4b50>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  3.42318 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 36.6507  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_062417%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x294c54e80>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  2.30523 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 24.5714  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00915 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_063506%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1600d1d60>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  2.30523 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 24.5714  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00915 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_063507%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16df72400>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  2.30523 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 24.5714  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00915 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_063509%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16daab850>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.06276 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 32.2703  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.12833 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_063510%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1600d1640>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.61575 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 31.7775  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_065213%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x296785fa0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.61575 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 31.7775  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_065215%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x294eb4370>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.61575 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 31.7775  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_065217%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x29676b940>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+test_size=-12 should be either positive and smaller than the number of samples 88 or a float in the (0, 1) range
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -3.27316 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 44.9534  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.01126 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_070831%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16df06d60>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -3.27316 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 44.9534  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.01126 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_070833%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x294edf370>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -3.27316 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 44.9534  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.01126 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_070836%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16e1d6970>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+test_size=-112 should be either positive and smaller than the number of samples 88 or a float in the (0, 1) range
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -4.1612  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 46.2579  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.01309 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_072431%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x160072fd0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -4.1612  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 46.2579  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.01309 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_072434%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x160156eb0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -4.1612  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 46.2579  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.01309 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_074219%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16e231a90>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.92296 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 18.3332  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.09512 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_074220%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16da22f40>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.10198 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 3.13078 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.34138 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_074222%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16dfdbcd0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.10198 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 3.13078 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.34138 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_074223%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2951468b0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.10198 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 3.13078 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.34138 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_075837%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2964b56a0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  1.57437 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 13.0588  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.14502 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_075838%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16e15bee0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.93259 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 20.4418  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_075840%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16dfee220>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.93259 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 20.4418  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_075842%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16dfee790>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.93259 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 20.4418  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_081602%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16df4a5b0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.4451  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 52.755   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.04461 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_081603%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x296471ca0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.50292 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 25.196   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00978 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_081605%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16e16e430>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.50292 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 25.196   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00978 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_081607%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16e0c4490>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.50292 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 25.196   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00978 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_082235%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x294d983d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+test_size=-12 should be either positive and smaller than the number of samples 88 or a float in the (0, 1) range
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.864  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 36.0705 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0      │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_082238%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x296f25880>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.864  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 36.0705 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0      │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_082240%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a90df6d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.864  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 36.0705 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0      │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_082243%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1670d7250>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+test_size=-112 should be either positive and smaller than the number of samples 88 or a float in the (0, 1) range
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.09904 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 40.7735  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00748 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_082612%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1670b3670>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.09904 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 40.7735  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00748 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_082616%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a94c48e0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.09904 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 40.7735  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00748 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_082620%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16dfc8190>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │      -0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Fphotoswitch%2Fout%2F20230113_082621%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16e1da370>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.04609 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  1.03143 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.67374 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/2.01k [00:00<?, ?it/s]Upload progress: 100%|██████████| 2.01k/2.01k [00:00<00:00, 3.63Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_082622/train.jsonl: file-nUunBzx1caEsWiJ6tG10ZJev
+Ran train size 10 and got accuracy 0.68, XGB baseline 0.79, and TabPFN baseline 0.71
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.04609 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  1.03143 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.67374 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/3.19k [00:00<?, ?it/s]Upload progress: 100%|██████████| 3.19k/3.19k [00:00<00:00, 5.66Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_083029/train.jsonl: file-Ml9LTXYRBmPBM64joh6ejzF3
+Ran train size 10 and got accuracy 0.62, XGB baseline 0.79, and TabPFN baseline 0.71
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.04609 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  1.03143 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.67374 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/4.22k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.22k/4.22k [00:00<00:00, 7.62Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_083436/train.jsonl: file-MgxJFDukwXlBM6ZUAS83wEBs
+Ran train size 10 and got accuracy 0.59, XGB baseline 0.79, and TabPFN baseline 0.71
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  -1e-05 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │   0     │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │   1     │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/3.46k [00:00<?, ?it/s]Upload progress: 100%|██████████| 3.46k/3.46k [00:00<00:00, 6.52Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_083842/train.jsonl: file-uo41Lt4xqfDr0TWe12rEM7v2
+Ran train size 20 and got accuracy 0.8235294117647058, XGB baseline 0.5, and TabPFN baseline 0.6470588235294118
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.10433 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  1.76534 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.54608 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/3.99k [00:00<?, ?it/s]Upload progress: 100%|██████████| 3.99k/3.99k [00:00<00:00, 7.03Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_085051/train.jsonl: file-zBLUGNX4Vrr5SoA6HFzeRaXQ
+Ran train size 20 and got accuracy 0.82, XGB baseline 0.86, and TabPFN baseline 0.78
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.10433 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  1.76534 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.54608 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/6.41k [00:00<?, ?it/s]Upload progress: 100%|██████████| 6.41k/6.41k [00:00<00:00, 3.85Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_092715/train.jsonl: file-6u0s5djGhRtwYbYroEriEhHK
+Ran train size 20 and got accuracy 0.76, XGB baseline 0.86, and TabPFN baseline 0.78
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.10433 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  1.76534 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.54608 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/8.41k [00:00<?, ?it/s]Upload progress: 100%|██████████| 8.41k/8.41k [00:00<00:00, 3.20Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_103806/train.jsonl: file-2H1ZCRstVyGizM0Wxuvg2MG6
+Ran train size 20 and got accuracy 0.78, XGB baseline 0.86, and TabPFN baseline 0.78
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.15484 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 42.7403  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.15041 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/8.76k [00:00<?, ?it/s]Upload progress: 100%|██████████| 8.76k/8.76k [00:00<00:00, 13.9Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_121838/train.jsonl: file-MU9E9PJvuQPdbjYh5NBnNhEB
+Ran train size 50 and got accuracy 0.868421052631579, XGB baseline 0.8421052631578947, and TabPFN baseline 0.868421052631579
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.28095 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 4.51837 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.27224 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/9.89k [00:00<?, ?it/s]Upload progress: 100%|██████████| 9.89k/9.89k [00:00<00:00, 20.0Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_125253/train.jsonl: file-6YrilRPp7uedXbNOb7vkUzB6
+Ran train size 50 and got accuracy 0.78, XGB baseline 0.83, and TabPFN baseline 0.83
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.28095 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 4.51837 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.27224 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/15.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 15.8k/15.8k [00:00<00:00, 32.1Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_132508/train.jsonl: file-6o9jPeQhHgV2TNtvpmxssD6M
+Ran train size 50 and got accuracy 0.8, XGB baseline 0.83, and TabPFN baseline 0.83
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.28095 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 4.51837 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.27224 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/20.5k [00:00<?, ?it/s]Upload progress: 100%|██████████| 20.5k/20.5k [00:00<00:00, 47.5Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_134735/train.jsonl: file-jkh4oeWpqu9uiQx3pRgJt0lf
+Ran train size 50 and got accuracy 0.77, XGB baseline 0.83, and TabPFN baseline 0.83
+test_size=-12 should be either positive and smaller than the number of samples 88 or a float in the (0, 1) range
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.47434 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 42.773   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00668 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/19.7k [00:00<?, ?it/s]Upload progress: 100%|██████████| 19.7k/19.7k [00:00<00:00, 38.7Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_140531/train.jsonl: file-HBcNG4QmIrHPtt8qQRvEoQKw
+Ran train size 100 and got accuracy 0.86, XGB baseline 0.9, and TabPFN baseline 0.85
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.47434 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 42.773   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00668 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/31.4k [00:00<?, ?it/s]Upload progress: 100%|██████████| 31.4k/31.4k [00:00<00:00, 50.7Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_141951/train.jsonl: file-tlbhp9nrm5kc9cJQ3TkiqpYi
+Ran train size 100 and got accuracy 0.79, XGB baseline 0.9, and TabPFN baseline 0.85
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.47434 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 42.773   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.00668 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/41.2k [00:00<?, ?it/s]Upload progress: 100%|██████████| 41.2k/41.2k [00:00<00:00, 79.2Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_144004/train.jsonl: file-hqIVqpoQxAapYoVBTVOOIda6
+Ran train size 100 and got accuracy 0.87, XGB baseline 0.9, and TabPFN baseline 0.85
+test_size=-112 should be either positive and smaller than the number of samples 88 or a float in the (0, 1) range
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.2879  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 40.6035  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.01595 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/39.7k [00:00<?, ?it/s]Upload progress: 100%|██████████| 39.7k/39.7k [00:00<00:00, 81.7Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/photoswitch/out/20230113_145833/train.jsonl: file-saal7gNPKBRDtgAGEK2PAkuo
+Ran train size 200 and got accuracy 0.86, XGB baseline 0.92, and TabPFN baseline 0.9
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.2879  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 40.6035  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.01595 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/63.1k [00:00<?, ?it/s]Upload progress: 100%|██████████| 63.1k/63.1k [00:00<00:00, 143Mit/s]

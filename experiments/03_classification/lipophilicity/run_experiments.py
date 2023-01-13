@@ -1,31 +1,32 @@
 from gptchem.evaluator import evaluate_classification
 from gptchem.querier import Querier
-from gptchem.tuner import Tuner 
+from gptchem.tuner import Tuner
 from gptchem.extractor import ClassificationExtractor
-from gptchem.data import get_qmug_data
+from gptchem.data import get_lipophilicity_data
 from gptchem.formatter import ClassificationFormatter
 from sklearn.model_selection import train_test_split
 
 from fastcore.xtras import save_pickle
 
-from pathlib import Path 
-from gptchem.baselines.bandgap import train_test_bandgap_classification_baseline
+from pathlib import Path
+from gptchem.baselines.lipophilicity import train_test_lipophilicity_classification_baseline
 
 num_classes = [2, 5]
-num_training_points = [10, 50, 100, 200, 500] # 1000
-representations = ['SMILES', 'SELFIES', 'InChI']
+num_training_points = [10, 50, 100, 200, 500]  # 1000
+representations = ["smiles", "inchi", "selfies", "iupac_name"]
 num_test_points = 250
 num_repeats = 10
 
-def train_test_model(num_classes, representation, num_train_points, seed):
-    data = get_qmug_data()
+
+def train_test_model(num_class, representation, num_train_points, seed):
+    data = get_lipophilicity_data()
     formatter = ClassificationFormatter(
         representation_column=representation,
-        property_name="HOMO-LUMO gap",
-        label_column="DFT_HOMO_LUMO_GAP_mean_ev",
-        num_classes=num_classes,
+        property_name="lipophilicity",
+        label_column="exp",
+        num_classes=num_class,
     )
-    xgboost_baseline = train_test_bandgap_classification_baseline(
+    xgboost_baseline = train_test_lipophilicity_classification_baseline(
         data,
         train_size=num_train_points,
         test_size=num_test_points,
@@ -33,7 +34,7 @@ def train_test_model(num_classes, representation, num_train_points, seed):
         tabpfn=False,
         seed=seed,
     )
-    tabpfn_baseline = train_test_bandgap_classification_baseline(
+    tabpfn_baseline = train_test_lipophilicity_classification_baseline(
         data,
         train_size=num_train_points,
         test_size=num_test_points,
@@ -54,7 +55,7 @@ def train_test_model(num_classes, representation, num_train_points, seed):
     tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
     tune_res = tuner(train)
     querier = Querier.from_preset(tune_res["model_name"])
-    completions = querier(test, logprobs=num_classes)
+    completions = querier(test, logprobs=num_class)
     extractor = ClassificationExtractor()
     extracted = extractor(completions)
 
@@ -69,7 +70,7 @@ def train_test_model(num_classes, representation, num_train_points, seed):
         "xgboost_baseline": xgboost_baseline,
         "tabpfn_baseline": tabpfn_baseline,
         "train_size": num_train_points,
-        "num_classes": num_classes,
+        "num_classes": num_class,
         "completions": completions,
         "representation": representation,
     }
@@ -79,10 +80,10 @@ def train_test_model(num_classes, representation, num_train_points, seed):
 
 if __name__ == "__main__":
     for i in range(num_repeats):
-        for num_classes in num_classes:
+        for num_class in num_classes:
             for num_train_point in num_training_points:
                 for representation in representations:
                     try:
-                        train_test_model(num_classes, representation, num_train_point, i+116)
+                        train_test_model(num_class, representation, num_train_point, i + 116)
                     except Exception as e:
                         print(e)

@@ -405,13 +405,14 @@ class ReactionClassificationFormatter(BaseFormatter):
         Returns:
             pd.DataFrame: A dataframe with a prompt column and a completion column.
         """
-        df = df.dropna(subset=[self.label_column] + self.reactant_column_names)
+        df = df.dropna(subset=[self.label_column])
+        df = df.fillna(value="None")
         
         if self.one_hot:
-            representation = df[self.reactant_column_names]
-            representation = self.le.fit_transform(representation)
+            representation = df[self.reactant_columns]
+            representation = self.le.fit_transform(representation).values.tolist()
         else:
-            representation = df[self.reactant_column_names].values
+            representation = df[self.reactant_columns].values
         representation = list(representation)
         label = df[self.label_column]
     

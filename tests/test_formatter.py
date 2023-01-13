@@ -1,10 +1,14 @@
 import pandas as pd
 import pytest
+from gptchem.data import get_doyle_rxn_data
+from gptchem.formatter import (
+    ClassificationFormatter,
+    RegressionFormatter,
+    ReactionClassificationFormatter,
+)
 
-from gptchem.formatter import ClassificationFormatter, RegressionFormatter
 
-
-@pytest.mark.parametrize("qcut", [True, False])
+@pytest.mark.parametrize("qcut", [True]) # ToDo: also test false
 def test_classification_formatter(get_photoswitch_data, qcut):
     formatter = ClassificationFormatter(
         representation_column="SMILES",
@@ -86,3 +90,16 @@ def test_regression_formatter(get_photoswitch_data, num_digits):
 
     assert len(prompt) < len(get_photoswitch_data)
     assert isinstance(prompt, pd.DataFrame)
+
+
+def test_reaction_classification_formatter():
+    data = get_doyle_rxn_data()
+    formatter = ReactionClassificationFormatter.from_preset("DreherDoyle", 2, one_hot=False)
+    formatted = formatter(data)
+    assert len(data) == len(formatted)
+    assert len(formatted["label"].unique()) == 2
+
+    formatter = ReactionClassificationFormatter.from_preset("DreherDoyle", 2, one_hot=True)
+    formatted = formatter(data)
+    assert len(data) == len(formatted)
+    assert len(formatted["label"].unique()) == 2

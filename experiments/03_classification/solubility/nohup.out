@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/solubility/run_experiment.py", line 69, in <module>
+    train_test(train_size, representation, num_class, seed=i+345)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/solubility/run_experiment.py", line 21, in train_test
+    train_subset = train_data.sample(train_size)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/pandas/core/generic.py", line 5773, in sample
+    sampled_indices = sample.sample(obj_len, size, replace, weights, rs)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/pandas/core/sample.py", line 150, in sample
+    return random_state.choice(obj_len, size=size, replace=replace, p=weights).astype(
+  File "mtrand.pyx", line 928, in numpy.random.mtrand.RandomState.choice
+ValueError: a must be greater than 0 unless no samples are taken

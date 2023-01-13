@@ -105,6 +105,14 @@ High entropy alloys
 - ``hea_single_vs_multiphase``: Classification of high-entropy alloys (HEA) in "fcc", "bcc", "hcp" and "multi phase" based on the dataset reported by [Pei]_. 
 
 
+Reactions
+............
+
+To run the baselines, the following additional dependencies are needed: 
+
+- ``gauche``. Follow the installation instructions of the `gauche repository <https://github.com/leojklarner/gauche/>`_.`
+
+
 4. Regression experiments
 ----------------------------
 

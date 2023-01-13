@@ -123,7 +123,7 @@ def get_esol_data() -> pd.DataFrame:
         pystow.module("gptchem")
         .ensure_csv(
             "esol",
-            url="https://www.dropbox.com/s/3cchwv5hvxm9mdw/esol.csv?dl=1",
+            url="https://www.dropbox.com/s/teqmkvl7v22bfox/esol.csv?dl=1",
             read_csv_kwargs=dict(sep=","),
         ).reset_index(drop=True)
     )
@@ -135,7 +135,7 @@ def get_solubility_test_data() -> pd.DataFrame:
         pystow.module("gptchem")
         .ensure_csv(
             "solubility",
-            url="https://www.dropbox.com/s/44rstzg32oqhrlm/solubility_test_set.csv?dl=1",
+            url="https://www.dropbox.com/s/xeg02ulael9akhf/solubility_test_set.csv?dl=1",
             read_csv_kwargs=dict(sep=","),
         ).reset_index(drop=True)
     )
@@ -153,12 +153,35 @@ def get_doyle_rxn_data() -> pd.DataFrame:
     )
 
 def get_suzuki_rxn_data() -> pd.DataFrame:
-    """Return the reaction dataset reported in [Doyle]_"""
+    """Return the reaction dataset reported in [Suzuki]_"""
     return (
         pystow.module("gptchem")
         .ensure_csv(
             "suzuki_rxn",
             url="https://www.dropbox.com/s/0uv38jgrj2k33u7/suzuki_dreher.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        ).reset_index(drop=True)
+    )
+
+
+def get_freesolv_data() -> pd.DataFrame:
+    """Return the FreeSolv data []"""
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "freesolv",
+            url="https://www.dropbox.com/s/rnin1zyuat3miyp/free_solv.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        ).reset_index(drop=True)
+    )
+
+def get_lipophilicity_data() -> pd.DataFrame:
+    """Return the Lipophilicity data []"""
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "lipophilicity",
+            url="https://www.dropbox.com/s/secesuqvqrdexz4/lipophilicity.csv?dl=1",
             read_csv_kwargs=dict(sep=","),
         ).reset_index(drop=True)
     )

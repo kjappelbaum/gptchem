@@ -58,12 +58,19 @@ class Tanimoto(gpflow.kernels.Kernel):
         return tf.fill(tf.shape(X)[:-1], tf.squeeze(self.variance))
 
 
+KERNELS = {
+    'tanimoto': Tanimoto,
+    'rbf': gpflow.kernels.RBF,
+    'linear': gpflow.kernels.Linear
+}
+
 class GPRBaseline(BaseLineModel):
     """GPR w/ Tanimoto kernel baseline."""
 
-    def __init__(self) -> None:
+    def __init__(self, kernel='tanimoto') -> None:
         self.model = None
         self.y_scaler = StandardScaler()
+        self.kernel = kernel
 
     def tune(self, X_train: np.ndarray, y_train: np.ndarray):  # N x D features  # N x 1 target
         pass
@@ -79,7 +86,7 @@ class GPRBaseline(BaseLineModel):
         m = gpflow.models.GPR(
             data=(X_train, y_train),
             mean_function=Constant(np.mean(y_train)),
-            kernel=Tanimoto(),
+            kernel=KERNELS[self.kernel](),
             noise_variance=1,
         )
 

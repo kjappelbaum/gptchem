@@ -1,31 +1,32 @@
 from gptchem.evaluator import evaluate_classification
 from gptchem.querier import Querier
-from gptchem.tuner import Tuner 
+from gptchem.tuner import Tuner
 from gptchem.extractor import ClassificationExtractor
-from gptchem.data import get_qmug_data
+from gptchem.data import get_freesolv_data
 from gptchem.formatter import ClassificationFormatter
 from sklearn.model_selection import train_test_split
 
 from fastcore.xtras import save_pickle
 
-from pathlib import Path 
-from gptchem.baselines.bandgap import train_test_bandgap_classification_baseline
+from pathlib import Path
+from gptchem.baselines.freesolv import train_test_freesolv_classification_baseline
 
 num_classes = [2, 5]
-num_training_points = [10, 50, 100, 200, 500] # 1000
-representations = ['SMILES', 'SELFIES', 'InChI']
+num_training_points = [10, 50, 100, 200, 500]  # 1000
+representations = ["smiles", "inchi", "selfies", "iupac_name"]
 num_test_points = 250
 num_repeats = 10
 
+
 def train_test_model(num_classes, representation, num_train_points, seed):
-    data = get_qmug_data()
+    data = get_freesolv_data()
     formatter = ClassificationFormatter(
         representation_column=representation,
-        property_name="HOMO-LUMO gap",
-        label_column="DFT_HOMO_LUMO_GAP_mean_ev",
+        property_name="solvation free energy",
+        label_column="expt",
         num_classes=num_classes,
     )
-    xgboost_baseline = train_test_bandgap_classification_baseline(
+    xgboost_baseline = train_test_freesolv_classification_baseline(
         data,
         train_size=num_train_points,
         test_size=num_test_points,
@@ -33,7 +34,7 @@ def train_test_model(num_classes, representation, num_train_points, seed):
         tabpfn=False,
         seed=seed,
     )
-    tabpfn_baseline = train_test_bandgap_classification_baseline(
+    tabpfn_baseline = train_test_freesolv_classification_baseline(
         data,
         train_size=num_train_points,
         test_size=num_test_points,
@@ -83,6 +84,6 @@ if __name__ == "__main__":
             for num_train_point in num_training_points:
                 for representation in representations:
                     try:
-                        train_test_model(num_classes, representation, num_train_point, i+116)
+                        train_test_model(num_classes, representation, num_train_point, i + 116)
                     except Exception as e:
                         print(e)

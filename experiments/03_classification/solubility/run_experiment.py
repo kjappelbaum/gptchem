@@ -11,16 +11,17 @@ from pathlib import Path
 
 num_train_points = [10, 20, 50, 100, 200, 500]
 num_classes = [2, 5]
+representations = ['SMILES', 'SELFIES', 'InChI']
 
 
-def train_test(train_size, num_class, seed):
+def train_test(train_size, representation, num_class, seed):
     test_data = get_solubility_test_data()
     train_data = get_esol_data()
-
+  
     train_subset = train_data.sample(train_size)
     train_subset = train_subset.reset_index(drop=True)
     formatter = ClassificationFormatter(
-        representation_column="SMILES",
+        representation_column=representation,
         property_name="solubility",
         label_column="measured log(solubility:mol/L)",
         num_classes=num_class,
@@ -52,6 +53,7 @@ def train_test(train_size, num_class, seed):
         **baseline,
         "train_size": train_size,
         "num_class": num_class,
+        "representation": representation
     }
 
     save_pickle(Path(tune_res["outdir"]) / "results.pkl", res)
@@ -63,4 +65,5 @@ if __name__ == "__main__":
     for i in range(10):
         for train_size in num_train_points:
             for num_class in num_classes:
-                train_test(train_size, num_class, seed=i)
+                for representation in representations:
+                    train_test(train_size, representation, num_class, seed=i)

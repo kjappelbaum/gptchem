@@ -14,7 +14,7 @@ num_classes = [2, 5]
 test_size = 100
 
 
-def train_test(train_size, num_class,  seed=42):
+def train_test(train_size, num_class, seed=42):
     data = get_moosavi_cv_data()
     formatter = ClassificationFormatter(
         representation_column="mofid",
@@ -39,8 +39,6 @@ def train_test(train_size, num_class,  seed=42):
         test_mofid=test["representation"],
         formatter=formatter,
     )
-
-    
 
     tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
     tune_res = tuner(train)
@@ -69,4 +67,4 @@ if __name__ == "__main__":
     for i in range(10):
         for train_size in train_sizes:
             for num_class in num_classes:
-                train_test(train_size, num_class, i)
+                train_test(train_size, num_class, i + 10)
