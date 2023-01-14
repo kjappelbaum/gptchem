@@ -38,7 +38,16 @@ def get_moosavi_mof_data() ->  pd.DataFrame:
 
     We additionally computed the MOFid [BuciorMOFid]_ for each MOF.
     """
-    ...
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "moosavi_core",
+            url="https://www.dropbox.com/s/obfnx9fu73dqr3a/moosavi_core.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        ).drop_duplicates(subset='mofid').reset_index(drop=True)
+    )
+
+     
 
 
 def get_moosavi_cv_data() -> pd.DataFrame:

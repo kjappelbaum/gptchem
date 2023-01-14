@@ -72,4 +72,4 @@ if __name__ == "__main__":
         for oh in use_one_hot:
             for train_size in train_sizes:
                 for num_class in num_classes:
-                    train_test(train_size, num_class, i, one_hot=oh)
+                    train_test(train_size, num_class, i+456, one_hot=oh)

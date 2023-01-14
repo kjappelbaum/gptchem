@@ -67,4 +67,4 @@ if __name__ == "__main__":
     for i in range(10):
         for train_size in train_sizes:
             for num_class in num_classes:
-                train_test(train_size, num_class, i + 10)
+                train_test(train_size, num_class, i + 104567)
