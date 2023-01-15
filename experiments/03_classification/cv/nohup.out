@@ -125,3 +125,74 @@ Ran train size 10 and got accuracy 0.51, XGB baseline 0.85
 Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_110441/train.jsonl: file-tvHGaYXoeA4JfdBdCplwIh9u
 Ran train size 10 and got accuracy 0.29, XGB baseline 0.65
 Upload progress:   0%|          | 0.00/4.20k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.20k/4.20k [00:00<00:00, 9.39Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_111724/train.jsonl: file-tJsyBW0twzvzKQlawSmUGEuL
+Ran train size 20 and got accuracy 0.49, XGB baseline 0.83
+Upload progress:   0%|          | 0.00/4.35k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.35k/4.35k [00:00<00:00, 9.03Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_113455/train.jsonl: file-Vy170cs1YL59v49I0ZzWt5lw
+Ran train size 20 and got accuracy 0.29, XGB baseline 0.73
+Upload progress:   0%|          | 0.00/10.1k [00:00<?, ?it/s]Upload progress: 100%|██████████| 10.1k/10.1k [00:00<00:00, 20.4Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_114029/train.jsonl: file-ZtyO5HT92Twc6C44w0yZm2Sv
+Ran train size 50 and got accuracy 0.5591397849462365, XGB baseline 0.9247311827956989
+Upload progress:   0%|          | 0.00/10.7k [00:00<?, ?it/s]Upload progress: 100%|██████████| 10.7k/10.7k [00:00<00:00, 25.8Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_114729/train.jsonl: file-7ZCpNdHKBrujJRZsMElfJAay
+Ran train size 50 and got accuracy 0.25806451612903225, XGB baseline 0.7741935483870968
+Upload progress:   0%|          | 0.00/20.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 20.8k/20.8k [00:00<00:00, 50.4Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_120126/train.jsonl: file-G1vIn9FK2D7Y0tmGwSoiowbn
+Ran train size 100 and got accuracy 0.627906976744186, XGB baseline 0.9302325581395349
+Upload progress:   0%|          | 0.00/21.0k [00:00<?, ?it/s]Upload progress: 100%|██████████| 21.0k/21.0k [00:00<00:00, 49.8Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_121128/train.jsonl: file-rzPdmRAXEsfjkNYmH61NnRf9
+Ran train size 100 and got accuracy 0.3488372093023256, XGB baseline 0.8604651162790697
+Upload progress:   0%|          | 0.00/1.93k [00:00<?, ?it/s]Upload progress: 100%|██████████| 1.93k/1.93k [00:00<00:00, 3.64Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_121831/train.jsonl: file-IooCafFcuPbGl2cnl6MvT6kt
+Ran train size 10 and got accuracy 0.66, XGB baseline 0.85
+Upload progress:   0%|          | 0.00/1.95k [00:00<?, ?it/s]Upload progress: 100%|██████████| 1.95k/1.95k [00:00<00:00, 4.59Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_123311/train.jsonl: file-qvVhcaAuZejxFj4Gxt5oIpaD
+Ran train size 10 and got accuracy 0.25, XGB baseline 0.67
+Upload progress:   0%|          | 0.00/3.88k [00:00<?, ?it/s]Upload progress: 100%|██████████| 3.88k/3.88k [00:00<00:00, 9.34Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_124015/train.jsonl: file-2OZJggwNChWLabLI45ujiRZU
+Ran train size 20 and got accuracy 0.52, XGB baseline 0.83
+Upload progress:   0%|          | 0.00/4.17k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.17k/4.17k [00:00<00:00, 8.22Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_124730/train.jsonl: file-oSWqPodSX02lTXFFzzGNjzqS
+Ran train size 20 and got accuracy 0.3, XGB baseline 0.66
+Upload progress:   0%|          | 0.00/10.2k [00:00<?, ?it/s]Upload progress: 100%|██████████| 10.2k/10.2k [00:00<00:00, 24.2Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_125937/train.jsonl: file-aTA2YYM4dUA1VPCDsTCKXlQy
+Ran train size 50 and got accuracy 0.5268817204301075, XGB baseline 0.9032258064516129
+Upload progress:   0%|          | 0.00/10.4k [00:00<?, ?it/s]Upload progress: 100%|██████████| 10.4k/10.4k [00:00<00:00, 23.4Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_131144/train.jsonl: file-59in7hNetBsJgw9IIAqdErPx
+Ran train size 50 and got accuracy 0.2903225806451613, XGB baseline 0.7741935483870968
+Upload progress:   0%|          | 0.00/21.4k [00:00<?, ?it/s]Upload progress: 100%|██████████| 21.4k/21.4k [00:00<00:00, 50.3Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_132116/train.jsonl: file-O78DaESqEgW6509LFkeUFV4j
+Ran train size 100 and got accuracy 0.6046511627906976, XGB baseline 0.9069767441860465
+Upload progress:   0%|          | 0.00/21.2k [00:00<?, ?it/s]Upload progress: 100%|██████████| 21.2k/21.2k [00:00<00:00, 53.6Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_133321/train.jsonl: file-ot5lqcZwF7zgX0SYup8sLiEi
+Ran train size 100 and got accuracy 0.23255813953488372, XGB baseline 0.7674418604651163
+Upload progress:   0%|          | 0.00/2.15k [00:00<?, ?it/s]Upload progress: 100%|██████████| 2.15k/2.15k [00:00<00:00, 6.10Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_134550/train.jsonl: file-HElPZxs5ivDGy5jmwBM6bwcp
+Ran train size 10 and got accuracy 0.55, XGB baseline 0.88
+Upload progress:   0%|          | 0.00/2.05k [00:00<?, ?it/s]Upload progress: 100%|██████████| 2.05k/2.05k [00:00<00:00, 6.04Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_135809/train.jsonl: file-nG4xrgRVfLbFD9bYkSIBV5G5
+Ran train size 10 and got accuracy 0.25, XGB baseline 0.65
+Upload progress:   0%|          | 0.00/4.21k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.21k/4.21k [00:00<00:00, 10.3Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_141051/train.jsonl: file-wpMbRN7AeCbOGbWMFnuvCSTT
+Ran train size 20 and got accuracy 0.59, XGB baseline 0.92
+Upload progress:   0%|          | 0.00/4.06k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.06k/4.06k [00:00<00:00, 10.4Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_141529/train.jsonl: file-qU16ExuuGb6Bmy8S3LA57GTQ
+Ran train size 20 and got accuracy 0.2, XGB baseline 0.7
+Upload progress:   0%|          | 0.00/10.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 10.8k/10.8k [00:00<00:00, 26.9Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_142046/train.jsonl: file-qIcGcV7jhOiCvZVfzevxA108
+Ran train size 50 and got accuracy 0.6344086021505376, XGB baseline 0.8709677419354839
+Upload progress:   0%|          | 0.00/10.3k [00:00<?, ?it/s]Upload progress: 100%|██████████| 10.3k/10.3k [00:00<00:00, 27.7Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_142756/train.jsonl: file-J0qGDshjOSR60lEkY8lLPvqt
+Ran train size 50 and got accuracy 0.3010752688172043, XGB baseline 0.7096774193548387
+Upload progress:   0%|          | 0.00/21.5k [00:00<?, ?it/s]Upload progress: 100%|██████████| 21.5k/21.5k [00:00<00:00, 42.8Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/out/20230114_143606/train.jsonl: file-ZBx9utw4HzzNU16h46HnIiVr
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/run_experiments.py", line 70, in <module>
+    train_test(train_size, num_class, i + 104567)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/cv/run_experiments.py", line 44, in train_test
+    tune_res = tuner(train)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 206, in __call__
+    return self.tune(train_df, validation_df)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 194, in tune
+    self._modelname = modelname
+UnboundLocalError: local variable 'modelname' referenced before assignment

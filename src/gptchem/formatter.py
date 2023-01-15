@@ -442,3 +442,81 @@ class ReactionClassificationFormatter(BaseFormatter):
 
     def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
         return self.format_many(df)
+
+
+class MOFSolventRecommenderFormatter(BaseFormatter):
+    _PROMPT_TEMPLATE = "{prefix}In what solvent can one make a MOF out of {linker} and {node}{ion}{suffix}{end_prompt}"
+    _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"  
+
+    def __init__(
+        self,
+        linker_columns: List[str],
+        node_columns: List[str],
+        counter_ion_columns: List[str],
+        solvent_columns: List[str],
+        solvent_mol_ratio_columns: List[str],
+    ):
+        self.linker_columns = linker_columns
+        self.node_columns = node_columns
+        self.solvent_columns = solvent_columns
+        self.solvent_mol_ratio_columns = solvent_mol_ratio_columns
+        self.counter_ion_columns = counter_ion_columns
+
+    def _linker_string(self, linker):
+        return ", ".join([l for l in linker if not pd.isna(l)])
+
+    def _solvent_string(self, solvent, solvent_mol_ratio):
+        return " and ".join([f"{np.round(m,2)} {s}" for s, m in zip(solvent, solvent_mol_ratio) if not np.isnan(m)])
+
+    def _format(self, linker, node, ion, solvent, solvent_mol_ratio) -> dict:
+        return {
+            "prompt": self._PROMPT_TEMPLATE.format(
+                prefix=self._prefix,
+                linker=self._linker_string(linker),                
+                node=str(node[0]).replace("[", "").replace("]", ""),
+                ion=str(ion[0]).replace("[", "").replace("]", ""),
+                suffix=self._suffix,
+                end_prompt=self._end_prompt,
+            ),
+            "completion": self._COMPLETION_TEMPLATE.format(
+                start_completion=self._start_completion,
+                label=self._solvent_string(solvent, solvent_mol_ratio),
+                stop_sequence=self._stop_sequence,
+            ),
+            "label": self._solvent_string(solvent, solvent_mol_ratio),
+            "representation": [linker, node, ion, solvent, solvent_mol_ratio],
+            "solvents": solvent,
+            "solvent_mol_ratios": solvent_mol_ratio,
+        }
+
+    def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Format a dataframe of representations and labels into a dataframe of prompts and completions.
+
+        This function will drop rows with missing values in the representation or label columns.
+
+        Args:
+            df (pd.DataFrame): A dataframe with a representation column and a label column.
+
+        Returns:
+            pd.DataFrame: A dataframe with a prompt column and a completion column.
+        """
+        # drop entries that have "unknown" in one of the fields
+        filtered_rows = []
+        df.dropna(subset=[self.linker_columns[0]] + [self.node_columns[0]] , inplace=True)
+        for _, row in df.iterrows():
+            if "unknown" in row[self.counter_ion_columns].values:
+                continue
+            filtered_rows.append(row)
+        df = pd.DataFrame(filtered_rows)
+
+        linker = df[self.linker_columns].values
+        node = df[self.node_columns].values
+        ion = df[self.counter_ion_columns].values
+        solvent = df[self.solvent_columns].values
+        solvent_mol_ratio = df[self.solvent_mol_ratio_columns].values
+        return pd.DataFrame([self._format(l, n, i, s, smr) for l, n, i, s, smr in zip(linker, node, ion, solvent, solvent_mol_ratio)])
+
+    __repr__ = basic_repr("linker_columns, node_columns, counter_ion_columns, solvent_columns, solvent_mol_ratio_columns")
+
+    def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
+        return self.format_many(df)

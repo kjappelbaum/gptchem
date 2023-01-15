@@ -194,3 +194,16 @@ def get_lipophilicity_data() -> pd.DataFrame:
             read_csv_kwargs=dict(sep=","),
         ).reset_index(drop=True)
     )
+
+
+
+def get_mof_solvent_data() -> pd.DataFrame:
+    """Return the MOF reaction data []"""
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "mof_rxn",
+            url="https://www.dropbox.com/s/jon75f9duukqm36/mof_yield_gpt3.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        ).reset_index(drop=True)
+    )

@@ -3,7 +3,8 @@ from sklearn.pipeline import Pipeline
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
 
 from gptchem.evaluator import evaluate_classification
-
+from sklearn.feature_selection import SelectFromModel
+from sklearn.linear_model import LogisticRegression
 from .xgboost import XGBClassificationBaseline
 
 geometric_descriptors = [
@@ -361,29 +362,24 @@ def train_test_henry_classification_baseline(
     train_set, test_set, formatter, target_col, num_trials, seed
 ):
 
-    X_train, y_train = train_set[FEATURES], test_set[target_col]
-    X_test, y_test = train_set[FEATURES], test_set[target_col]
-
+    X_train, y_train = train_set[FEATURES], train_set[target_col]
+    X_test, y_test = test_set[FEATURES], test_set[target_col]
+   
     y_train_binned = formatter.bin(y_train)
     y_test_binned = formatter.bin(y_test)
 
     baseline = XGBClassificationBaseline(num_trials=num_trials, seed=seed)
-    baseline.tune(X_train, y_train_binned)
-    baseline.fit(X_train, y_train_binned)
+    baseline.tune(X_train.values, y_train_binned.values)
+    baseline.fit(X_train.values, y_train_binned.values)
 
-    predictions = baseline.predict(X_test)
+    predictions = baseline.predict(X_test.values)
 
-    tabpfn = Pipeline(
-        [
-            (
-                "pca",
-                PCA(100),
-                ("tabpfn", TabPFNClassifier(device="cpu", N_ensemble_configurations=32)),
-            )
-        ]
-    )
+    selector = SelectFromModel(estimator=LogisticRegression(), max_features=100)
+    X_train = selector.fit_transform(X_train, y_train_binned)
+    X_test = selector.transform(X_test)
+    tabpfn = TabPFNClassifier(device="cpu", N_ensemble_configurations=32)
 
-    tabpfn.fit(X_train, y_train)
+    tabpfn.fit(X_train, y_train_binned)
 
     tabpfn_predictions, _ = tabpfn.predict(X_test, return_winning_probability=True)
 

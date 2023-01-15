@@ -12,7 +12,7 @@ from pathlib import Path
 from gptchem.baselines.bandgap import train_test_bandgap_classification_baseline
 
 num_classes = [2, 5]
-num_training_points = [10, 50, 100, 200, 500] # 1000
+num_training_points = [10, 50, 100, 200, 500, 1000] # 1000
 representations = ['SMILES', 'SELFIES', 'InChI']
 num_test_points = 250
 num_repeats = 10
@@ -83,6 +83,6 @@ if __name__ == "__main__":
             for num_train_point in num_training_points:
                 for representation in representations:
                     try:
-                        train_test_model(num_classes, representation, num_train_point, i+4566)
+                        train_test_model(num_classes, representation, num_train_point, i+6676)
                     except Exception as e:
                         print(e)
