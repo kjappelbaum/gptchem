@@ -4,9 +4,10 @@ from gptchem.formatter import ClassificationFormatter
 import pytest
 
 @pytest.mark.slow
-def test_train_test_cv_classification_baseline():
+@pytest.mark.parametrize("representation", ["mofid", "grouped_mof"])
+def test_train_test_cv_classification_baseline(representation):
     data = get_moosavi_cv_data()
-    mofids= data["mofid"].unique()
+    mofids= data[representation].unique()
     train_mofid = mofids[:10]
     test_mofid = mofids[10:20]
 
@@ -15,6 +16,7 @@ def test_train_test_cv_classification_baseline():
         property_name='cv',
         label_column='Cv_gravimetric_300.00',
         num_classes=2,
+     
     )
     formatted = formatter(data)
 
@@ -22,6 +24,6 @@ def test_train_test_cv_classification_baseline():
         data,
         train_mofid=train_mofid,
         test_mofid=test_mofid,
-        formatter=formatter)
+        formatter=formatter,    repr_col=representation)
 
     assert res['accuracy'] > 0.5

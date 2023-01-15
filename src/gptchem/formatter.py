@@ -520,3 +520,20 @@ class MOFSolventRecommenderFormatter(BaseFormatter):
 
     def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
         return self.format_many(df)
+
+
+class InverseDesignFormatter(BaseFormatter):
+    def __init__(
+        self, 
+        representation_column: str,
+        property_columns: List[str],
+        property_names: List[str],
+        num_classes: int = None,
+    ):
+        self.representation_column = representation_column
+        self.property_columns = property_columns
+        self.property_names = property_names
+        self.num_classes = num_classes
+
+
+    

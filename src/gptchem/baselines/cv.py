@@ -106,16 +106,16 @@ def predict_xgb_ensemble(models, data, feat, identifier_col, identifiers):
     return np.array(structure_pred)
 
 
-def train_test_cv_classification_baseline(cv_data, train_mofid, test_mofid, formatter, num_rounds=10):
+def train_test_cv_classification_baseline(cv_data, train_mofid, test_mofid, formatter, num_rounds=10, repr_col="mofid"):
     data = get_moosavi_pcv_data()
-    train_data = data[data["mofid"].isin(train_mofid)]
-    test_data = data[data["mofid"].isin(test_mofid)]
-    assert len(test_data["mofid"].unique()) == len(test_mofid), f"test data ({len(test_data['mofid'].unique())}) and test mofid ({len(test_mofid)}) must have the same length"
-    test_cv_data = cv_data[cv_data["mofid"].isin(test_mofid)]
+    train_data = data[data[repr_col].isin(train_mofid)]
+    test_data = data[data[repr_col].isin(test_mofid)]
+    assert len(test_data[repr_col].unique()) == len(test_mofid), f"test data ({len(test_data[repr_col].unique())}) and test mofid ({len(test_mofid)}) must have the same length"
+    test_cv_data = cv_data[cv_data[repr_col].isin(test_mofid)]
 
-    assert len(test_cv_data) == len(test_data['mofid'].unique()), f"test data ({len(test_data['mofid'].unique())}) and test cv data ({len(test_cv_data)}) must have the same length"
+    assert len(test_cv_data) == len(test_data[repr_col].unique()), f"test data ({len(test_data[repr_col].unique())}) and test cv data ({len(test_cv_data)}) must have the same length"
     models = train_xgb_ensemble(train_data, FEATURES, TARGET_p, num_rounds=num_rounds)
-    pred = predict_xgb_ensemble(models, test_data, FEATURES, "mofid", test_cv_data["mofid"])
+    pred = predict_xgb_ensemble(models, test_data, FEATURES, repr_col, test_cv_data[repr_col])
     assert len(pred) == len(test_cv_data)
 
     binned = formatter.bin(pred).astype(int)

@@ -12,12 +12,12 @@ from pathlib import Path
 train_sizes = [10, 20, 50, 100]
 num_classes = [2, 5]
 test_size = 100
+representation = ['grouped_mof', 'mofid']
 
-
-def train_test(train_size, num_class, seed=42):
+def train_test(train_size, representation, num_class, seed=42):
     data = get_moosavi_cv_data()
     formatter = ClassificationFormatter(
-        representation_column="mofid",
+        representation_column=representation,
         label_column="Cv_gravimetric_300.00",
         property_name="heat capacity",
         num_classes=num_class,
@@ -38,6 +38,7 @@ def train_test(train_size, num_class, seed=42):
         train_mofid=train["representation"],
         test_mofid=test["representation"],
         formatter=formatter,
+        repr_col=representation,
     )
 
     tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
@@ -58,13 +59,15 @@ def train_test(train_size, num_class, seed=42):
         "num_train_points": train_size,
         **gpt_metrics,
         "baseline": baseline_res,
+        "representation": representation,
     }
 
     save_pickle(Path(tune_res["outdir"]) / "summary.pkl", summary)
 
 
 if __name__ == "__main__":
-    for i in range(10):
-        for train_size in train_sizes:
-            for num_class in num_classes:
-                train_test(train_size, num_class, i + 104567)
+    for rep in representation:
+        for i in range(10):
+            for train_size in train_sizes:
+                for num_class in num_classes:
+                    train_test(train_size, rep, num_class, i + 104567)
