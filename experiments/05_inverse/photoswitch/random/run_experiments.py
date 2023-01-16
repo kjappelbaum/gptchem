@@ -54,25 +54,32 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
     for temp in temperatures:
         completions = querier(formatted_test, temperature=temp)
         generated_smiles = extractor(completions)
-        smiles_metrics = evaluate_generated_smiles(formatted_train["label"], generated_smiles)
+        smiles_metrics = evaluate_generated_smiles(generated_smiles, formatted_train["label"])
+        assert len(smiles_metrics["valid_indices"]) <= len(generated_smiles)
         expected_e = []
         expected_z = []
         for i, row in formatted_test.iterrows():
             expected_e.append(row["representation"][0])
             expected_z.append(row["representation"][1])
+        assert len(expected_e) == len(expected_z) == len(formatted_test)
 
-        if smiles_metrics["valid_indices"]:
-            expected_e = L(expected_e)[smiles_metrics["valid_indices"]]
-            expected_z = L(expected_z)[smiles_metrics["valid_indices"]]
 
-            constrain_satisfaction = evaluate_photoswitch_smiles_pred(
-                smiles_metrics["valid_smiles"],
-                expected_z_pi_pi_star=expected_z,
-                expected_e_pi_pi_star=expected_e,
-            )
+        try:
+            if len(smiles_metrics["valid_indices"])>0:
+                expected_e = L(expected_e)[smiles_metrics["valid_indices"]]
+                expected_z = L(expected_z)[smiles_metrics["valid_indices"]]
 
-        else:
-            constrain_satisfaction = evaluate_photoswitch_smiles_pred(None, expected_z, expected_e)
+                constrain_satisfaction = evaluate_photoswitch_smiles_pred(
+                    smiles_metrics["valid_smiles"],
+                    expected_z_pi_pi_star=expected_z,
+                    expected_e_pi_pi_star=expected_e,
+                )
+
+            else:
+                constrain_satisfaction = evaluate_photoswitch_smiles_pred(None, expected_z, expected_e)
+        except Exception as e: 
+            print(e)
+            constrain_satisfaction = {}
 
         res = {
             "completions": completions,

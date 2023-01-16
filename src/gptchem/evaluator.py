@@ -288,6 +288,8 @@ def evaluate_generated_smiles(
             valid_smiles.append(s)
             valid_indices.append(i)
 
+    assert len(valid_smiles) == len(valid_indices) <= len(smiles)
+
     frac_valid = len(valid_smiles) / len(smiles)
     try:
         kld_bench = KLDivBenchmark(train_smiles, min(len(train_smiles), len(valid_smiles)))
