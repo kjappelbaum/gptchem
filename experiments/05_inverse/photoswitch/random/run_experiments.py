@@ -61,14 +61,18 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
             expected_e.append(row["representation"][0])
             expected_z.append(row["representation"][1])
 
-        expected_e = L(expected_e)[smiles_metrics["valid_indices"]]
-        expected_z = L(expected_z)[smiles_metrics["valid_indices"]]
+        if smiles_metrics["valid_indices"]:
+            expected_e = L(expected_e)[smiles_metrics["valid_indices"]]
+            expected_z = L(expected_z)[smiles_metrics["valid_indices"]]
 
-        constrain_satisfaction = evaluate_photoswitch_smiles_pred(
-            smiles_metrics["valid_smiles"],
-            expected_z_pi_pi_star=expected_z,
-            expected_e_pi_pi_star=expected_e,
-        )
+            constrain_satisfaction = evaluate_photoswitch_smiles_pred(
+                smiles_metrics["valid_smiles"],
+                expected_z_pi_pi_star=expected_z,
+                expected_e_pi_pi_star=expected_e,
+            )
+
+        else:
+            constrain_satisfaction = evaluate_photoswitch_smiles_pred(None, expected_z, expected_e)
 
         res = {
             "completions": completions,

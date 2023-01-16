@@ -2950,3 +2950,38 @@ DEBUG:openai:api_version=None data=None message='Post details'
 DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
 DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn HTTP/1.1" 200 1008
 INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn processing_ms=39 request_id=f1c3a01d6d70334a040510c6b9936812 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn HTTP/1.1" 200 1008
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn processing_ms=30 request_id=1d969b0c47171cf003650837027292e0 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn HTTP/1.1" 200 1008
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn processing_ms=40 request_id=5897d5c658739427e0dd8c2ffdd2c156 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn HTTP/1.1" 200 1008
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn processing_ms=36 request_id=94075c3059ef2bba86a2297a5070e547 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn HTTP/1.1" 200 1008
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn processing_ms=39 request_id=9909ea6922d5b78ce538627fc3306b54 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn HTTP/1.1" 200 1008
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn processing_ms=32 request_id=7e7ea15f4ddd105a5783a940061b7afd response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn HTTP/1.1" 200 1008
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn processing_ms=32 request_id=5b68b79a1519cf911f00c23450bad926 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn HTTP/1.1" 200 1008
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn processing_ms=30 request_id=5400b87529436ba232389aa54dfb4c33 response_code=200

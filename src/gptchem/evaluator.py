@@ -351,11 +351,27 @@ def evaluate_photoswitch_smiles_pred(
     smiles, expected_z_pi_pi_star, expected_e_pi_pi_star
 ) -> Dict[str, Dict[str, float]]:
     """Evaluate the predicted photoswitch properties."""
-    pred_e_pi_pi_star, pred_z_pi_pi_star = predict_photoswitch(smiles)
-    pred_e_pi_pi_star = np.array(pred_e_pi_pi_star).flatten()
-    pred_z_pi_pi_star = np.array(pred_z_pi_pi_star).flatten()
-    e_pi_pi_star_metrics = get_regression_metrics(expected_e_pi_pi_star, pred_e_pi_pi_star)
-    z_pi_pi_star_metrics = get_regression_metrics(expected_z_pi_pi_star, pred_z_pi_pi_star)
+    if smiles:
+        pred_e_pi_pi_star, pred_z_pi_pi_star = predict_photoswitch(smiles)
+        pred_e_pi_pi_star = np.array(pred_e_pi_pi_star).flatten()
+        pred_z_pi_pi_star = np.array(pred_z_pi_pi_star).flatten()
+        e_pi_pi_star_metrics = get_regression_metrics(expected_e_pi_pi_star, pred_e_pi_pi_star)
+        z_pi_pi_star_metrics = get_regression_metrics(expected_z_pi_pi_star, pred_z_pi_pi_star)
+    else: 
+        e_pi_pi_star_metrics = {
+            "r2": np.nan,
+            "max_error": np.nan,
+            "mean_absolute_error": np.nan,
+            "mean_squared_error": np.nan,
+            "rmse": np.nan,
+        }
+        z_pi_pi_star_metrics = {
+            "r2": np.nan,
+            "max_error": np.nan,
+            "mean_absolute_error": np.nan,
+            "mean_squared_error": np.nan,
+            "rmse": np.nan,
+        }
     return {
         "e_pi_pi_star_metrics": e_pi_pi_star_metrics,
         "z_pi_pi_star_metrics": z_pi_pi_star_metrics,
