@@ -1,25 +1,32 @@
 # https://github.com/PatWalters/solubility/blob/master/solubility_comparison.py
+import itertools
+
 import deepchem
 from deepchem.models import GraphConvModel, WeaveModel
-from deepchem.models.sklearn_models import  SklearnModel
-from sklearn.ensemble import RandomForestRegressor
-from .esol import ESOLCalculator
+from deepchem.models.sklearn_models import SklearnModel
 from rdkit import Chem
-import itertools
-from .gpr import GPRBaseline
-from .mol_fingerprints import compute_fragprints, compute_morgan_fingerprints
+from sklearn.ensemble import RandomForestRegressor
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
+
 from gptchem.evaluator import evaluate_classification
-from .xgboost import XGBClassificationBaseline
+
+from .esol import ESOLCalculator
+from ..fingerprints.mol_fingerprints import compute_fragprints, compute_morgan_fingerprints
+from ..models.gpr import GPRBaseline
+from ..models.xgboost import XGBClassificationBaseline
+
 
 def featurize_data(tasks, featurizer, normalize, df, smiles_col="SMILES"):
-    loader = deepchem.data.InMemoryLoader(tasks=tasks,  featurizer=featurizer)
+    loader = deepchem.data.InMemoryLoader(tasks=tasks, featurizer=featurizer)
     smiles = df[smiles_col]
     dataset = loader.create_dataset(smiles, shard_size=8192)
     move_mean = True
     if normalize:
-        transformers = [deepchem.trans.NormalizationTransformer(
-            transform_y=True, dataset=dataset, move_mean=move_mean)]
+        transformers = [
+            deepchem.trans.NormalizationTransformer(
+                transform_y=True, dataset=dataset, move_mean=move_mean
+            )
+        ]
     else:
         transformers = []
     for transformer in transformers:
@@ -40,22 +47,26 @@ def generate_prediction(df, model, featurizer, transformers, smiles_col="SMILES"
         df["pred_vals"] = res
 
     return df["pred_vals"]
-        
+
+
 def generate_graph_conv_model():
     batch_size = 128
-    model = GraphConvModel(1, batch_size=batch_size, mode='regression')
+    model = GraphConvModel(1, batch_size=batch_size, mode="regression")
     return model
 
 
 def generate_weave_model():
     batch_size = 64
-    model = WeaveModel(1, batch_size=batch_size, learning_rate=1e-3, use_queue=False, mode='regression')
+    model = WeaveModel(
+        1, batch_size=batch_size, learning_rate=1e-3, use_queue=False, mode="regression"
+    )
     return model
 
 
 def generate_rf_model():
     sklearn_model = RandomForestRegressor(n_estimators=500)
     return SklearnModel(sklearn_model)
+
 
 def calc_esol(df, smiles_col="SMILES"):
     esol_calculator = ESOLCalculator()
@@ -65,8 +76,13 @@ def calc_esol(df, smiles_col="SMILES"):
         res.append(esol_calculator.calc_esol(mol))
     return res
 
-def run_model(model_func, task_list, featurizer, normalize, train_df, test_df, nb_epoch, smiles_col="SMILES"):
-    dataset, featurizer, transformers = featurize_data(task_list, featurizer, normalize, train_df, smiles_col=smiles_col)
+
+def run_model(
+    model_func, task_list, featurizer, normalize, train_df, test_df, nb_epoch, smiles_col="SMILES"
+):
+    dataset, featurizer, transformers = featurize_data(
+        task_list, featurizer, normalize, train_df, smiles_col=smiles_col
+    )
     model = model_func()
     if nb_epoch > 0:
         model.fit(dataset, nb_epoch)
@@ -76,7 +92,9 @@ def run_model(model_func, task_list, featurizer, normalize, train_df, test_df, n
     return pred_df
 
 
-def solubility_baseline(df_train, df_test, smiles_col='SMILES', task_name='measured log(solubility:mol/L)'):
+def solubility_baseline(
+    df_train, df_test, smiles_col="SMILES", task_name="measured log(solubility:mol/L)"
+):
     task_list = [task_name]
 
     featurizer = deepchem.feat.WeaveFeaturizer()
@@ -92,31 +110,39 @@ def solubility_baseline(df_train, df_test, smiles_col='SMILES', task_name='measu
     X_test = compute_fragprints(df_test["SMILES"].values)
     y_train = df_train[task_name].values
     y_test = df_test[task_name].values
-    
+
     esol = calc_esol(df_test)
 
     gpr.fit(X_train, y_train)
     gpr_res = gpr.predict(X_test)
 
     res = {
-        'true': df_test[task_name],
-        'esol': esol, 
-        'weave': weave_res.values,
-        'graph_conv': gc_res.values,
-        'gpr': gpr_res.flatten(),
+        "true": df_test[task_name],
+        "esol": esol,
+        "weave": weave_res.values,
+        "graph_conv": gc_res.values,
+        "gpr": gpr_res.flatten(),
     }
 
-    return res 
+    return res
 
 
-def train_test_solubility_classification_baseline(df_train, df_test, formatter, smiles_col='SMILES', task_name='measured log(solubility:mol/L)', seed=42, num_trials=100): 
+def train_test_solubility_classification_baseline(
+    df_train,
+    df_test,
+    formatter,
+    smiles_col="SMILES",
+    task_name="measured log(solubility:mol/L)",
+    seed=42,
+    num_trials=100,
+):
     baselines = solubility_baseline(df_train, df_test, smiles_col=smiles_col, task_name=task_name)
 
-    binned_weave_res = formatter.bin(baselines['weave'])
-    binned_graph_conv_res = formatter.bin(baselines['graph_conv'])
-    binned_gpr_res = formatter.bin(baselines['gpr'])
-    binned_esol = formatter.bin(baselines['esol'])
-    binned_true = formatter.bin(baselines['true'])
+    binned_weave_res = formatter.bin(baselines["weave"])
+    binned_graph_conv_res = formatter.bin(baselines["graph_conv"])
+    binned_gpr_res = formatter.bin(baselines["gpr"])
+    binned_esol = formatter.bin(baselines["esol"])
+    binned_true = formatter.bin(baselines["true"])
 
     y_train = formatter.bin(df_train[task_name].values)
     tabpfnclassifier = TabPFNClassifier()
@@ -127,8 +153,6 @@ def train_test_solubility_classification_baseline(df_train, df_test, formatter, 
     tabpfn_res = formatter.bin(tabpfn_res)
     binned_tabpfn_res = formatter.bin(tabpfn_res)
 
-
-
     X_train = compute_fragprints(df_train["SMILES"].values)
     X_test = compute_fragprints(df_test["SMILES"].values)
     xgbclassifier = XGBClassificationBaseline(seed=42, num_trials=num_trials)
@@ -137,13 +161,13 @@ def train_test_solubility_classification_baseline(df_train, df_test, formatter, 
     predictions = xgbclassifier.predict(X_test)
 
     res = {
-        'true': binned_true,
-        'weave': evaluate_classification(binned_true, binned_weave_res),
-        'graph_conv': evaluate_classification(binned_true, binned_graph_conv_res),
-        'gpr': evaluate_classification(binned_true, binned_gpr_res),
-        'tabpfn': evaluate_classification(binned_true, binned_tabpfn_res),
-        'xgb': evaluate_classification(binned_true, predictions), 
-        'esol': evaluate_classification(binned_true, binned_esol),
+        "true": binned_true,
+        "weave": evaluate_classification(binned_true, binned_weave_res),
+        "graph_conv": evaluate_classification(binned_true, binned_graph_conv_res),
+        "gpr": evaluate_classification(binned_true, binned_gpr_res),
+        "tabpfn": evaluate_classification(binned_true, binned_tabpfn_res),
+        "xgb": evaluate_classification(binned_true, predictions),
+        "esol": evaluate_classification(binned_true, binned_esol),
     }
 
     return res

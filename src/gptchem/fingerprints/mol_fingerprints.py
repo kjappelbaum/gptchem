@@ -1,6 +1,7 @@
-from typing import Iterable 
-from rdkit.Chem import AllChem, MolFromSmiles, MolToSmiles, Descriptors
+from typing import Iterable
+
 import numpy as np
+from rdkit.Chem import AllChem, Descriptors, MolFromSmiles, MolToSmiles
 
 
 def compute_morgan_fingerprints(
@@ -10,10 +11,7 @@ def compute_morgan_fingerprints(
     rdkit_mols = [MolFromSmiles(smiles) for smiles in smiles_list]
     rdkit_smiles = [MolToSmiles(mol, isomericSmiles=False) for mol in rdkit_mols]
     rdkit_mols = [MolFromSmiles(smiles) for smiles in rdkit_smiles]
-    X = [
-        AllChem.GetMorganFingerprintAsBitVect(mol, 3, nBits=n_bits)
-        for mol in rdkit_mols
-    ]
+    X = [AllChem.GetMorganFingerprintAsBitVect(mol, 3, nBits=n_bits) for mol in rdkit_mols]
     X = np.asarray(X)
     return X
 

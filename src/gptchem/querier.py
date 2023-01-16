@@ -9,7 +9,7 @@ from pyrate_limiter import Duration, Limiter, RequestRate
 
 _PRESETS = {
     "classification": {
-        "max_tokens": 2, # first token is whitespace
+        "max_tokens": 2,  # first token is whitespace
     },
     "inverse": {
         "max_tokens": 800,

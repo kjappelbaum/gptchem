@@ -1,17 +1,17 @@
-from gptchem.evaluator import evaluate_classification
-from gptchem.querier import Querier
-from gptchem.tuner import Tuner
-from gptchem.extractor import ClassificationExtractor
-from gptchem.data import get_freesolv_data
-from gptchem.formatter import ClassificationFormatter
-from sklearn.model_selection import train_test_split
+from pathlib import Path
 
 from fastcore.xtras import save_pickle
+from sklearn.model_selection import train_test_split
 
-from pathlib import Path
 from gptchem.baselines.freesolv import train_test_freesolv_classification_baseline
+from gptchem.data import get_freesolv_data
+from gptchem.evaluator import evaluate_classification
+from gptchem.extractor import ClassificationExtractor
+from gptchem.formatter import ClassificationFormatter
+from gptchem.querier import Querier
+from gptchem.tuner import Tuner
 
-num_classes = [2, 5]
+num_classes = [5, 2]
 num_training_points = [10, 50, 100, 200, 500]  # 1000
 representations = ["smiles", "inchi", "selfies", "iupac_name"]
 num_test_points = 250
@@ -84,6 +84,6 @@ if __name__ == "__main__":
             for num_train_point in num_training_points:
                 for representation in representations:
                     try:
-                        train_test_model(num_classes, representation, num_train_point, i + 564516)
+                        train_test_model(num_classes, representation, num_train_point, i + 5456716)
                     except Exception as e:
                         print(e)

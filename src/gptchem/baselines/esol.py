@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
 import sys
-from rdkit import Chem
-from rdkit.Chem import Descriptors, Crippen, Lipinski
-from rdkit.Chem import PandasTools
-import pandas as pd
-from sklearn.linear_model import LinearRegression
 from collections import namedtuple
+
+import pandas as pd
+from rdkit import Chem
+from rdkit.Chem import Crippen, Descriptors, Lipinski, PandasTools
+from sklearn.linear_model import LinearRegression
 
 
 class ESOLCalculator:
@@ -45,8 +45,13 @@ class ESOLCalculator:
         intercept = 0.16
         coef = {"logp": -0.63, "mw": -0.0062, "rotors": 0.066, "ap": -0.74}
         desc = self.calc_esol_descriptors(mol)
-        esol = intercept + coef["logp"] * desc.logp + coef["mw"] * desc.mw + coef["rotors"] * desc.rotors \
-               + coef["ap"] * desc.ap
+        esol = (
+            intercept
+            + coef["logp"] * desc.logp
+            + coef["mw"] * desc.mw
+            + coef["rotors"] * desc.rotors
+            + coef["ap"] * desc.ap
+        )
         return esol
 
     def calc_esol(self, mol):
@@ -57,8 +62,18 @@ class ESOLCalculator:
         :return: predicted solubility
         """
         intercept = 0.26121066137801696
-        coef = {'mw': -0.0066138847738667125, 'logp': -0.7416739523408995, 'rotors': 0.003451545565957996, 'ap': -0.42624840441316975}
+        coef = {
+            "mw": -0.0066138847738667125,
+            "logp": -0.7416739523408995,
+            "rotors": 0.003451545565957996,
+            "ap": -0.42624840441316975,
+        }
         desc = self.calc_esol_descriptors(mol)
-        esol = intercept + coef["logp"] * desc.logp + coef["mw"] * desc.mw + coef["rotors"] * desc.rotors \
-               + coef["ap"] * desc.ap
+        esol = (
+            intercept
+            + coef["logp"] * desc.logp
+            + coef["mw"] * desc.mw
+            + coef["rotors"] * desc.rotors
+            + coef["ap"] * desc.ap
+        )
         return esol

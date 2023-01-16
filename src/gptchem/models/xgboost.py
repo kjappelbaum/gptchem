@@ -1,17 +1,24 @@
-from .base import BaseLineModel
-from xgboost import XGBRegressor, XGBClassifier
-from sklearn.model_selection import KFold 
-import numpy as np 
+import numpy as np
+import pandas as pd
 from optuna import create_study
 from optuna.integration import XGBoostPruningCallback
 from optuna.samplers import TPESampler
-from sklearn.metrics import (accuracy_score, f1_score, mean_absolute_error,
-                             mean_squared_error, r2_score)
+from sklearn.metrics import (
+    accuracy_score,
+    f1_score,
+    mean_absolute_error,
+    mean_squared_error,
+    r2_score,
+)
 from sklearn.model_selection import KFold, train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
-import pandas as pd
+from xgboost import XGBClassifier, XGBRegressor
+
+from .base import BaseLineModel
+
+
 class XGBClassificationBaseline(BaseLineModel):
-    def __init__(self, seed, num_trials=100, timeout=None, njobs: int =-1) -> None:
+    def __init__(self, seed, num_trials=100, timeout=None, njobs: int = -1) -> None:
         self.seed = seed
         self.num_trials = num_trials
         self.model = XGBClassifier()
@@ -36,9 +43,7 @@ class XGBClassificationBaseline(BaseLineModel):
                 "n_estimators": trial.suggest_int("n_estimators", 4, 10_000),
                 "max_depth": trial.suggest_int("max_depth", 4, 50),
                 "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
-                "colsample_bytree": trial.suggest_loguniform(
-                    "colsample_bytree", 0.2, 1
-                ),
+                "colsample_bytree": trial.suggest_loguniform("colsample_bytree", 0.2, 1),
                 "subsample": trial.suggest_loguniform("subsample", 0.00001, 1),
                 "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
                 "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
@@ -103,11 +108,12 @@ class XGBClassificationBaseline(BaseLineModel):
         if isinstance(X, pd.DataFrame):
             X_values = X.values
         else:
-            X_values = X 
+            X_values = X
         return self.label_encoder.inverse_transform(self.model.predict(X_values))
 
+
 class XGBRegressionBaseline(BaseLineModel):
-    def __init__(self, seed, num_trials=100, njobs: int =-1) -> None:
+    def __init__(self, seed, num_trials=100, njobs: int = -1) -> None:
         self.seed = seed
         self.num_trials = num_trials
         self.model = XGBRegressor()
@@ -141,9 +147,7 @@ class XGBRegressionBaseline(BaseLineModel):
                 "gamma": trial.suggest_loguniform(
                     "gamma", 1e-8, 10.0
                 ),  # note: this was wrong before (lambda was used as name)
-                "min_child_weight": trial.suggest_loguniform(
-                    "min_child_weight", 10, 1000
-                ),
+                "min_child_weight": trial.suggest_loguniform("min_child_weight", 10, 1000),
                 "seed": random_state,
                 "n_jobs": n_jobs,
             }

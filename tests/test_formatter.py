@@ -1,15 +1,16 @@
 import pandas as pd
 import pytest
+
 from gptchem.data import get_doyle_rxn_data, get_photoswitch_data
 from gptchem.formatter import (
     ClassificationFormatter,
-    RegressionFormatter,
+    InverseDesignFormatter,
     ReactionClassificationFormatter,
-    InverseDesignFormatter
+    RegressionFormatter,
 )
 
 
-@pytest.mark.parametrize("qcut", [True]) # ToDo: also test false
+@pytest.mark.parametrize("qcut", [True])  # ToDo: also test false
 def test_classification_formatter(get_photoswitch_data, qcut):
     formatter = ClassificationFormatter(
         representation_column="SMILES",
@@ -115,6 +116,3 @@ def test_inverse_design_formatter():
     )
     formatted = formatter(data)
     assert len(data) == len(formatted)
-    
-
-    

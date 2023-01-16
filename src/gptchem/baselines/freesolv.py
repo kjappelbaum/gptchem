@@ -5,8 +5,8 @@ from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
 
 from gptchem.evaluator import evaluate_classification
 
-from .gpr import GPRBaseline
-from .mol_fingerprints import compute_fragprints, compute_morgan_fingerprints
+from ..fingerprints.mol_fingerprints import compute_fragprints, compute_morgan_fingerprints
+from ..models.gpr import GPRBaseline
 
 
 def train_test_freesolv_classification_baseline(

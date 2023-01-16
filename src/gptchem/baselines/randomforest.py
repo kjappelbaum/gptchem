@@ -1,17 +1,22 @@
-from .base import BaseLineModel
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import KFold 
-import numpy as np 
+import numpy as np
 from optuna import create_study
-
 from optuna.samplers import TPESampler
-from sklearn.metrics import (accuracy_score, f1_score, mean_absolute_error,
-                             mean_squared_error, r2_score)
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import (
+    accuracy_score,
+    f1_score,
+    mean_absolute_error,
+    mean_squared_error,
+    r2_score,
+)
 from sklearn.model_selection import KFold, train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 
+from ..models.base import BaseLineModel
+
+
 class RFClassificationBaseline(BaseLineModel):
-    def __init__(self, seed, num_trials=100, timeout=None, njobs: int =-1) -> None:
+    def __init__(self, seed, num_trials=100, timeout=None, njobs: int = -1) -> None:
         self.seed = seed
         self.num_trials = num_trials
         self.model = RandomForestClassifier()
@@ -36,7 +41,7 @@ class RFClassificationBaseline(BaseLineModel):
                 "max_depth": trial.suggest_int("max_depth", 4, 128),
                 "min_samples_split": trial.suggest_int("min_samples_split", 2, 128),
                 "min_samples_leaf": trial.suggest_int("min_samples_leaf", 1, 128),
-                "criterion": trial.suggest_categorical("criterion", ["gini", "entropy"]),       
+                "criterion": trial.suggest_categorical("criterion", ["gini", "entropy"]),
                 "random_state": random_state,
                 "n_jobs": n_jobs,
             }

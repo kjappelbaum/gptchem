@@ -3,7 +3,14 @@ import pytest
 from fastcore.foundation import L
 from pycm import ConfusionMatrix
 
-from gptchem.evaluator import evaluate_classification
+from gptchem.evaluator import (
+    FrechetBenchmark,
+    KLDivBenchmark,
+    evaluate_classification,
+    evaluate_generated_smiles,
+    evaluate_photoswitch_smiles_pred,
+    predict_photoswitch,
+)
 
 
 @pytest.mark.parametrize("container", [np.array, L])
@@ -35,3 +42,43 @@ def test_evaluate_classification(container):
     assert result["might_have_rounded_floats"] == True
 
     assert isinstance(result["confusion_matrix"], ConfusionMatrix)
+
+
+@pytest.mark.parametrize("input_output", [("C[N]1C=CC(=N1)N=NC2=CC=CC=C2", 310.0, 290.0)])
+def test_predict_photoswitch(input_output):
+    inp, e, z = input_output
+    result = predict_photoswitch(inp)
+    assert result[0] == pytest.approx(e, 10)
+    assert result[1] == pytest.approx(z, 10)
+
+
+def test_frechet_benchmark():
+    fb = FrechetBenchmark(["CCC", "C[O]"], sample_size=2)
+    res = fb.score(["CCC", "CCCCC"])
+    assert len(res) == 2
+    assert res[0] == pytest.approx(8.6, 0.3)
+    assert res[1] == pytest.approx(0.2, 0.3)
+
+
+def test_kl_div_benchmark():
+    kld = KLDivBenchmark(["CCCC", "CCCCCC[O]", "CCCO"], 3)
+    score = kld.score(["CCCCCCCCCCCCC", "CCC[O]", "CCCCC"])
+    assert score == pytest.approx(0.55, 0.3)
+
+
+def test_evaluate_generated_smiles():
+    res = evaluate_generated_smiles(["CCC", "CCCCC"], ["CCC", "CCCCC"])
+    assert res["frac_valid"] == 1.0
+    assert res["frac_unique"] == 1.0
+    assert res["frac_smiles_in_train"] == 1.0
+    assert res["frac_smiles_in_pubchem"] == 1.0
+    assert np.isnan(res["kld"])
+
+
+def test_evaluate_photoswitch_smiles_pred():
+    res = evaluate_photoswitch_smiles_pred(
+        ["C[N]1C=CC(=N1)N=NC2=CC=CC=C2", "C[N]1C=CCCCC(=N1)N=NC2=CC=CC=C2"], [310, 290], [290, 310]
+    )
+    assert "e_pi_pi_star_metrics" in res
+    assert "z_pi_pi_star_metrics" in res
+    assert res["e_pi_pi_star_metrics"]["mean_absolute_error"] == pytest.approx(40, 1)

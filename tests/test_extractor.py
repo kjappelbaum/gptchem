@@ -1,4 +1,10 @@
-from gptchem.extractor import BaseExtractor, ClassificationExtractor, RegressionExtractor
+from gptchem.extractor import (
+    BaseExtractor,
+    ClassificationExtractor,
+    InverseExtractor,
+    RegressionExtractor,
+    SolventExtractor,
+)
 
 
 def test_base_extractor():
@@ -66,3 +72,20 @@ def test_regression_extractor():
             {"choices": ["aaa"]},
         ]
     ) == [1.0, 2.0, 3.0, None]
+
+
+def test_inverse_extractor():
+    extractor = InverseExtractor()
+    assert extractor.extract("1.0@@@") == "1.0"
+    assert extractor.extract("CCCCC@@@") == "CCCCC"
+
+
+def test_solvent_extractor():
+    extractor = SolventExtractor()
+    assert extractor.extract("1.0@@@") == None
+    assert extractor.extract("CCCCC@@@") == None
+    assert extractor.extract("0.53 CN(C)C=O and 0.18 C(CO)O and 0.28 O@@@") == {
+        "CN(C)C=O": 0.53,
+        "C(CO)O": 0.18,
+        "O": 0.28,
+    }

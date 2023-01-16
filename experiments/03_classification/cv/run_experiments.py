@@ -1,18 +1,21 @@
+from pathlib import Path
+
+from fastcore.xtras import save_pickle
+from sklearn.model_selection import train_test_split
+
+from gptchem.baselines.cv import train_test_cv_classification_baseline
 from gptchem.data import get_moosavi_cv_data
+from gptchem.evaluator import evaluate_classification
+from gptchem.extractor import ClassificationExtractor
 from gptchem.formatter import ClassificationFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
-from sklearn.model_selection import train_test_split
-from gptchem.baselines.cv import train_test_cv_classification_baseline
-from gptchem.extractor import ClassificationExtractor
-from gptchem.evaluator import evaluate_classification
-from fastcore.xtras import save_pickle
-from pathlib import Path
 
 train_sizes = [10, 20, 50, 100]
 num_classes = [2, 5]
 test_size = 100
-representation = ['grouped_mof', 'mofid']
+representation = ["grouped_mof", "mofid"]
+
 
 def train_test(train_size, representation, num_class, seed=42):
     data = get_moosavi_cv_data()

@@ -10,13 +10,14 @@
     For inference, you should format your prompts in the same way as you did when creating the training dataset, including the same separator. Also specify the same stop sequence to properly truncate the completion.
 """
 
-from typing import List, Optional, Collection
+from typing import Collection, List, Optional
 
 import numpy as np
 import pandas as pd
-from numpy.typing import ArrayLike
 from fastcore.basics import basic_repr
+from numpy.typing import ArrayLike
 from sklearn.preprocessing import LabelEncoder
+
 from .types import StringOrNumber
 
 
@@ -580,7 +581,7 @@ class InverseDesignFormatter(BaseFormatter):
         strings = []
         for p, v in zip(self.property_names, prop):
             if not np.isnan(v):
-                if self.num_digits is not None: 
+                if self.num_digits is not None:
                     v = np.around(v, self.num_digits)
                     # convert to string with self.num_digits decimal places
                     v = f"{v:.{self.num_digits}f}"

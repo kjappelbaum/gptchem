@@ -1,19 +1,19 @@
-from gptchem.evaluator import evaluate_classification
-from gptchem.querier import Querier
-from gptchem.tuner import Tuner 
-from gptchem.extractor import ClassificationExtractor
-from gptchem.data import get_opv_data
-from gptchem.formatter import ClassificationFormatter
-from sklearn.model_selection import train_test_split
+from pathlib import Path
 
 from fastcore.xtras import save_pickle
+from sklearn.model_selection import train_test_split
 
-from pathlib import Path 
 from gptchem.baselines.opv import train_test_opv_classification_baseline
+from gptchem.data import get_opv_data
+from gptchem.evaluator import evaluate_classification
+from gptchem.extractor import ClassificationExtractor
+from gptchem.formatter import ClassificationFormatter
+from gptchem.querier import Querier
+from gptchem.tuner import Tuner
 
 num_classes = [5, 2]
-num_training_points = [10, 50, 100, 200, 500] 
-representations = ['SMILES', 'SELFIES', 'InChI']
+num_training_points = [10, 50, 100, 200, 500]
+representations = ["SMILES", "SELFIES", "InChI"]
 num_test_points = 250
 num_repeats = 10
 
@@ -21,19 +21,19 @@ num_repeats = 10
 def train_test_model(num_classes, representation, num_train_points, seed):
     data = get_opv_data()
     formatter = ClassificationFormatter(
-    representation_column=representation,
-    property_name="PCE",
-    label_column="PCE_ave(%)",
-    num_classes=num_classes
-)
+        representation_column=representation,
+        property_name="PCE",
+        label_column="PCE_ave(%)",
+        num_classes=num_classes,
+    )
     formatted = formatter(data)
 
-    opv_baseline= train_test_opv_classification_baseline(
+    opv_baseline = train_test_opv_classification_baseline(
         data,
         train_size=num_train_points,
         test_size=num_test_points,
         formatter=formatter,
-        seed = seed,
+        seed=seed,
     )
 
     train, test = train_test_split(
@@ -42,8 +42,7 @@ def train_test_model(num_classes, representation, num_train_points, seed):
         test_size=num_test_points,
         stratify=formatted["label"],
         random_state=seed,
-    )   
-
+    )
 
     tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
     tune_res = tuner(train)
@@ -75,6 +74,6 @@ if __name__ == "__main__":
             for num_train_point in num_training_points:
                 for representation in representations:
                     try:
-                        train_test_model(num_classes, representation, num_train_point, i +4456656)
+                        train_test_model(num_classes, representation, num_train_point, i + 4456656)
                     except Exception as e:
                         print(e)

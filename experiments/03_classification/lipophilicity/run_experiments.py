@@ -1,15 +1,15 @@
-from gptchem.evaluator import evaluate_classification
-from gptchem.querier import Querier
-from gptchem.tuner import Tuner
-from gptchem.extractor import ClassificationExtractor
-from gptchem.data import get_lipophilicity_data
-from gptchem.formatter import ClassificationFormatter
-from sklearn.model_selection import train_test_split
+from pathlib import Path
 
 from fastcore.xtras import save_pickle
+from sklearn.model_selection import train_test_split
 
-from pathlib import Path
 from gptchem.baselines.lipophilicity import train_test_lipophilicity_classification_baseline
+from gptchem.data import get_lipophilicity_data
+from gptchem.evaluator import evaluate_classification
+from gptchem.extractor import ClassificationExtractor
+from gptchem.formatter import ClassificationFormatter
+from gptchem.querier import Querier
+from gptchem.tuner import Tuner
 
 num_classes = [2, 5]
 num_training_points = [10, 50, 100, 200, 500]  # 1000

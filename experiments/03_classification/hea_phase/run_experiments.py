@@ -1,16 +1,16 @@
+from pathlib import Path
 from typing import Optional
-import pandas as pd
 
+import pandas as pd
+from fastcore.xtras import save_pickle
 from sklearn.model_selection import train_test_split
 
+from gptchem.data import get_hea_phase_data
+from gptchem.evaluator import evaluate_classification
+from gptchem.extractor import ClassificationExtractor
 from gptchem.formatter import ClassificationFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
-from gptchem.evaluator import evaluate_classification
-from gptchem.extractor import ClassificationExtractor
-from gptchem.data import get_hea_phase_data
-from pathlib import Path
-from fastcore.xtras import save_pickle
 
 NUM_REPEATS = 10
 LEARNING_CURVE_POINTS = [500]

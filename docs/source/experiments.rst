@@ -120,6 +120,11 @@ To run the baselines, the following additional dependencies are needed:
 5. Inverse design 
 ---------------------
 
+For the evaluation of the inverse design on molecules, you need the following dependencies: 
+
+- ``guacamol``. Follow the installation instructions of the `guacamol repository <>`_
+- ``fcd``. Follow the installation instructions of the `fcd repository <>`_
+
 
 High-entropy alloys 
 ......................

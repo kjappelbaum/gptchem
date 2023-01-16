@@ -1,3 +1,4 @@
+import re
 from typing import Union
 
 from fastcore.basics import basic_repr
@@ -57,3 +58,29 @@ class RegressionExtractor(BaseExtractor):
 
     def extract(self, data, **kwargs) -> float:
         return self.floatify(self.split(data).strip())
+
+
+class InverseExtractor(BaseExtractor):
+    """Extract strings from completions of inverse tasks."""
+
+    def extract(self, data, **kwargs) -> float:
+        return self.split(data).strip()
+
+
+class SolventExtractor(BaseExtractor):
+    """Extract solvent name and composition from completions of solvent tasks."""
+
+    _SOLVENT_REGEX = re.compile(r"(\d+\.\d+)(\s[\w\(\)=\@]+)")
+
+    def _find_solvent(self, data):
+        parts = self._SOLVENT_REGEX.findall(data)
+
+        solvents = {}
+        if parts:
+            for am, s in parts:
+                solvents[s.strip()] = float(am)
+            return solvents
+        return None
+
+    def extract(self, data, **kwargs) -> dict:
+        return self._find_solvent(self.split(data))

@@ -1,9 +1,10 @@
+import pytest
+from sklearn.model_selection import train_test_split
+
 from gptchem.baselines.henry import train_test_henry_classification_baseline
 from gptchem.data import get_moosavi_mof_data
 from gptchem.formatter import ClassificationFormatter
 
-from sklearn.model_selection import train_test_split
-import pytest 
 
 @pytest.mark.slow
 def test_train_test_henry_classification_baseline():
@@ -23,7 +24,7 @@ def test_train_test_henry_classification_baseline():
         formatter=formatter,
         target_col="logKH_CH4",
         num_trials=10,
-        seed=42
+        seed=42,
     )
 
     assert res["xgb_metrics"]["accuracy"] > 0.5

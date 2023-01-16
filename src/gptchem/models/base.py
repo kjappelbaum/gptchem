@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class BaseLineModel(ABC):
     @abstractmethod
     def tune(self, X_train, y_train):

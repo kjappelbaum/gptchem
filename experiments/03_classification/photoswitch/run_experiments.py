@@ -1,25 +1,26 @@
-from gptchem.evaluator import evaluate_classification
-from gptchem.querier import Querier
-from gptchem.tuner import Tuner 
-from gptchem.extractor import ClassificationExtractor
-from gptchem.data import get_photoswitch_data
-from gptchem.formatter import ClassificationFormatter
-from sklearn.model_selection import train_test_split
+from pathlib import Path
 
 from fastcore.xtras import save_pickle
+from sklearn.model_selection import train_test_split
 
-from pathlib import Path 
 from gptchem.baselines.photoswitch import train_test_photoswitch_classification_baseline
+from gptchem.data import get_photoswitch_data
+from gptchem.evaluator import evaluate_classification
+from gptchem.extractor import ClassificationExtractor
+from gptchem.formatter import ClassificationFormatter
+from gptchem.querier import Querier
+from gptchem.tuner import Tuner
 
 num_classes = [2, 5]
-num_training_points = [10, 20, 50, 100, 200] # 1000
-representations = ['name', 'SMILES', 'inchi', 'selfies']
+num_training_points = [10, 20, 50, 100, 200]  # 1000
+representations = ["name", "SMILES", "inchi", "selfies"]
 max_num_test_points = 100
 num_repeats = 10
 
+
 def train_test_model(num_classes, representation, num_train_points, seed):
     data = get_photoswitch_data()
-    
+
     formatter = ClassificationFormatter(
         representation_column=representation,
         label_column="E isomer pi-pi* wavelength in nm",
@@ -27,7 +28,7 @@ def train_test_model(num_classes, representation, num_train_points, seed):
         num_classes=num_classes,
     )
     formatted = formatter(data)
-    num_test_points = min((max_num_test_points, len(formatted)-num_train_points)) 
+    num_test_points = min((max_num_test_points, len(formatted) - num_train_points))
     xgboost_baseline = train_test_photoswitch_classification_baseline(
         data,
         train_size=num_train_points,
@@ -45,7 +46,6 @@ def train_test_model(num_classes, representation, num_train_points, seed):
         seed=seed,
     )
 
- 
     train, test = train_test_split(
         formatted,
         train_size=num_train_points,
@@ -87,6 +87,6 @@ if __name__ == "__main__":
             for num_train_points in num_training_points:
                 for representation in representations:
                     try:
-                        train_test_model(num_class, representation, num_train_points, i+3436545)
+                        train_test_model(num_class, representation, num_train_points, i + 3436545)
                     except Exception as e:
                         print(e)

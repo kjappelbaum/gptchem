@@ -1,8 +1,8 @@
 import pytest
 
+from gptchem.baselines.opv import train_test_opv_classification_baseline
 from gptchem.data import get_opv_data
 from gptchem.formatter import ClassificationFormatter
-from gptchem.baselines.opv import train_test_opv_classification_baseline
 
 
 @pytest.mark.slow
@@ -15,7 +15,11 @@ def test_train_test_opv_classification_baseline():
         num_classes=2,
     )
     res = train_test_opv_classification_baseline(
-        data, train_size=10, test_size=10, formatter=formatter, num_trials=5,
+        data,
+        train_size=10,
+        test_size=10,
+        formatter=formatter,
+        num_trials=5,
     )
 
     assert "tabpfn" in res

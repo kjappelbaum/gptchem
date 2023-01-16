@@ -5,10 +5,10 @@ from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
 
 from gptchem.evaluator import evaluate_classification
 
-from .gpr import GPRBaseline
-from .mol_fingerprints import compute_fragprints, compute_morgan_fingerprints
 from .randomforest import RFClassificationBaseline
-from .xgboost import XGBClassificationBaseline
+from ..fingerprints.mol_fingerprints import compute_fragprints, compute_morgan_fingerprints
+from ..models.gpr import GPRBaseline
+from ..models.xgboost import XGBClassificationBaseline
 
 OPV_FEATURES = [f"ecpf_{i}" for i in range(1064)]
 
@@ -19,7 +19,7 @@ def train_test_opv_classification_baseline(
     test_size: int,
     formatter,
     seed: int = 42,
-    num_trials: int =100,
+    num_trials: int = 100,
 ):
     label_column = formatter.label_column
     df = df.dropna(subset=[formatter.label_column, formatter.representation_column])
@@ -78,7 +78,6 @@ def train_test_opv_classification_baseline(
         **evaluate_classification(test["bin"].astype(int).values, predictions.astype(int)),
     }
 
-    
     X_train, y_train = train[OPV_FEATURES], train["bin"]
     X_test, y_test = test[OPV_FEATURES], test["bin"]
 
@@ -92,6 +91,5 @@ def train_test_opv_classification_baseline(
         "predicted_bins": predictions,
         **evaluate_classification(test["bin"].astype(int).values, predictions.astype(int)),
     }
-
 
     return {"tabpfn": tabpfn_results, "gpr": gpr_results, "xgb": xgb_results, "rf": rf_results}

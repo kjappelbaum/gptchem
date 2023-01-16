@@ -1,11 +1,12 @@
 import pytest
+
 from gptchem.baselines.polymer import train_test_polymer_classification_baseline
 from gptchem.data import get_polymer_data
 from gptchem.formatter import ClassificationFormatter
 
 
 @pytest.mark.slow
-@pytest.mark.parametrize('tabpfn', (True, False))
+@pytest.mark.parametrize("tabpfn", (True, False))
 def test_train_test_polymer_classification_baseline(tabpfn):
     data = get_polymer_data()
     formatter = ClassificationFormatter(

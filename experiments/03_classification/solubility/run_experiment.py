@@ -1,23 +1,24 @@
-from gptchem.data import get_solubility_test_data, get_esol_data
+from pathlib import Path
+
+from fastcore.xtras import save_pickle
+
+from gptchem.baselines.solubility import train_test_solubility_classification_baseline
+from gptchem.data import get_esol_data, get_solubility_test_data
+from gptchem.evaluator import evaluate_classification
+from gptchem.extractor import ClassificationExtractor
 from gptchem.formatter import ClassificationFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
-from gptchem.baselines.solubility import train_test_solubility_classification_baseline
-from gptchem.extractor import ClassificationExtractor
-from gptchem.evaluator import evaluate_classification
-
-from fastcore.xtras import save_pickle
-from pathlib import Path
 
 num_train_points = [10, 20, 50, 100, 200, 500]
-num_classes = [5,2]
-representations = ['SMILES', 'SELFIES', 'InChI']
+num_classes = [5, 2]
+representations = ["SMILES", "SELFIES", "InChI"]
 
 
 def train_test(train_size, representation, num_class, seed):
     test_data = get_solubility_test_data()
     train_data = get_esol_data()
-  
+
     train_subset = train_data.sample(train_size)
     train_subset = train_subset.reset_index(drop=True)
     formatter = ClassificationFormatter(
@@ -53,7 +54,7 @@ def train_test(train_size, representation, num_class, seed):
         **baseline,
         "train_size": train_size,
         "num_class": num_class,
-        "representation": representation
+        "representation": representation,
     }
 
     save_pickle(Path(tune_res["outdir"]) / "results.pkl", res)
@@ -66,4 +67,4 @@ if __name__ == "__main__":
         for train_size in num_train_points:
             for num_class in num_classes:
                 for representation in representations:
-                    train_test(train_size, representation, num_class, seed=i+54456726)
+                    train_test(train_size, representation, num_class, seed=i + 54456726)

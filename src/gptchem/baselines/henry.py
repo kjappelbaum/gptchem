@@ -1,11 +1,12 @@
 from sklearn.decomposition import PCA
+from sklearn.feature_selection import SelectFromModel
+from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
 
 from gptchem.evaluator import evaluate_classification
-from sklearn.feature_selection import SelectFromModel
-from sklearn.linear_model import LogisticRegression
-from .xgboost import XGBClassificationBaseline
+
+from ..models.xgboost import XGBClassificationBaseline
 
 geometric_descriptors = [
     "Di",
@@ -364,7 +365,7 @@ def train_test_henry_classification_baseline(
 
     X_train, y_train = train_set[FEATURES], train_set[target_col]
     X_test, y_test = test_set[FEATURES], test_set[target_col]
-   
+
     y_train_binned = formatter.bin(y_train)
     y_test_binned = formatter.bin(y_test)
 

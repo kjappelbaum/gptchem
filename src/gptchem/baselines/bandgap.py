@@ -1,11 +1,13 @@
-
 import numpy as np
 import pandas as pd
-from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
 from sklearn.model_selection import train_test_split
-from .mol_fingerprints import compute_fragprints, compute_morgan_fingerprints
+from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
+
 from gptchem.evaluator import evaluate_classification
-from .gpr import GPRBaseline
+
+from ..fingerprints.mol_fingerprints import compute_fragprints, compute_morgan_fingerprints
+from ..models.gpr import GPRBaseline
+
 
 def train_test_bandgap_classification_baseline(
     df: pd.DataFrame,
@@ -18,7 +20,13 @@ def train_test_bandgap_classification_baseline(
     label_column = formatter.label_column
     df = df.dropna(subset=[formatter.label_column, formatter.representation_column])
     formatted = formatter(df)
-    train, test = train_test_split(df, train_size=train_size, test_size=test_size, stratify=formatted['label'], random_state=seed)
+    train, test = train_test_split(
+        df,
+        train_size=train_size,
+        test_size=test_size,
+        stratify=formatted["label"],
+        random_state=seed,
+    )
 
     df_train = pd.DataFrame({"SMILES": train["SMILES"], "y": train[label_column]})
     df_test = pd.DataFrame({"SMILES": test["SMILES"], "y": test[label_column]})
@@ -48,10 +56,9 @@ def train_test_bandgap_classification_baseline(
         classifier.fit(X_train, df_train["bin"].values)
         predicted_bins, _ = classifier.predict(X_test, return_winning_probability=True)
 
-
     return {
         "true_bins": df_test["bin"],
         "predicted_bins": predicted_bins,
         "predictions": predictions if not tabpfn else None,
-        **evaluate_classification(df_test["bin"].astype(int).values, predicted_bins.astype(int))
+        **evaluate_classification(df_test["bin"].astype(int).values, predicted_bins.astype(int)),
     }
