@@ -2985,3 +2985,18 @@ DEBUG:openai:api_version=None data=None message='Post details'
 DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
 DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn HTTP/1.1" 200 1008
 INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn processing_ms=30 request_id=5400b87529436ba232389aa54dfb4c33 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn HTTP/1.1" 200 1008
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn processing_ms=33 request_id=71c4ed49cda9c098d0a23f1f754ef614 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn HTTP/1.1" 200 1008
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn processing_ms=42 request_id=ea01f625e7465325b69338c18a911660 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn HTTP/1.1" 200 1008
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-1gaP4ZAPO6SYuVgFNcL3OiNn processing_ms=44 request_id=df222ce818db7b95ecb9eac57bdd45b2 response_code=200

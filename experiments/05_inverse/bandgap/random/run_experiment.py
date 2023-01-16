@@ -11,7 +11,7 @@ from gptchem.generator import noise_original_data
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
-num_samples = [10]
+num_samples = 10
 num_train_points = [100]
 
 temperatures = [0.5]
