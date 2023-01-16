@@ -11,7 +11,16 @@ To do so, use the following command: conda install -c pytorch3d pytorch3d
 WARNING:graphein.protein.meshes:To use the Graphein submodule graphein.protein.meshes, you need to install: pytorch3d 
 To do so, use the following command: conda install -c pytorch3d pytorch3d
 DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/doyle_rxn/dreher_doyle.csv from https://www.dropbox.com/s/gjxatqagwh3cwb6/dreher_doyle.csv?dl=1
-2023-01-15 17:25:46.601002: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+2023-01-16 07:12:26.547515: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -7e-05   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  1.00004 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
 ╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
 │ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
 ╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
@@ -21,46 +30,37 @@ DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/do
 ├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
 │ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
 ╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.03148 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.97261 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.69044 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Frxn_doyle%2Fout%2F20230116_071248%2Ftrain.jsonl
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.util.retry:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openai.com:443
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Frxn_doyle%2Fout%2F20230116_071248%2Ftrain.jsonl HTTP/1.1" 404 261
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Frxn_doyle%2Fout%2F20230116_071248%2Ftrain.jsonl processing_ms=4 request_id=e15dc430e453693f6baa54838daefcff response_code=404
+INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/rxn_doyle/out/20230116_071248/train.jsonl)' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
 ╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
 │ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
 ╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
-│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.09125 │
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.46633 │
 ├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
-│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.04618 │
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.01575 │
 ├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
-│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.12236 │
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
 ╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
 ╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
 │ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
 ╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
-│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.04672 │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.04411 │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 2.22223 │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0       │
-╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
-INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Frxn_doyle%2Fout%2F20230115_172604%2Ftrain.jsonl
-DEBUG:openai:api_version=None data=None message='Post details'
-DEBUG:urllib3.util.retry:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openai.com:443
-DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Frxn_doyle%2Fout%2F20230115_172604%2Ftrain.jsonl HTTP/1.1" 404 261
-INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Frxn_doyle%2Fout%2F20230115_172604%2Ftrain.jsonl processing_ms=6 request_id=d67aac5eca586094f72b432ae0417d72 response_code=404
-INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/rxn_doyle/out/20230115_172604/train.jsonl)' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
-╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
-│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
-╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
-│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 2e-05   │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0       │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.99993 │
-╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
-╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
-│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
-╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
-│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │     0   │
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │    -0   │
 ├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
 │ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │     0.5 │
 ├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
@@ -70,29 +70,134 @@ INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kev
 ╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
 Upload progress:   0%|          | 0.00/1.55k [00:00<?, ?it/s]INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/files
 DEBUG:openai:api_version=None data=None message='Post details'
-Upload progress: 100%|██████████| 1.55k/1.55k [00:00<00:00, 2.04Mit/s]
-DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/files HTTP/1.1" 400 225
-INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=194 request_id=ee790faf0bc3405a860d6377ff5f276c response_code=400
-INFO:openai:error_code=None error_message='This file is 1548 bytes. You have only -102478 left in your organization. Your total storage limit is 1073741824' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
-Traceback (most recent call last):
-  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/rxn_doyle/run_experiments.py", line 75, in <module>
-    train_test(train_size, num_class, i+66656, one_hot=oh)
-  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/rxn_doyle/run_experiments.py", line 47, in train_test
-    tune_res = tuner(train_formatted)
-  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 206, in __call__
-    return self.tune(train_df, validation_df)
-  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 161, in tune
-    "training_file": FineTuneCli._get_or_upload(train_file, check_if_file_exists=False)
-  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/cli.py", line 351, in _get_or_upload
-    return cls._maybe_upload_file(
-  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/cli.py", line 329, in _maybe_upload_file
-    resp = openai.File.create(
-  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/file.py", line 84, in create
-    response, _, api_key = requestor.request("post", url, files=files)
-  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 226, in request
-    resp, got_stream = self._interpret_response(result, stream)
-  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 599, in _interpret_response
-    self._interpret_response_line(
-  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 655, in _interpret_response_line
-    raise self.handle_error_response(
-openai.error.InvalidRequestError: This file is 1548 bytes. You have only -102478 left in your organization. Your total storage limit is 1073741824
+Upload progress: 100%|██████████| 1.55k/1.55k [00:00<00:00, 2.15Mit/s]
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/files HTTP/1.1" 200 323
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=665 request_id=2639250d82b3b3b2742cc772c88b781c response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/fine-tunes
+DEBUG:openai:api_version=None data='{"training_file": "file-PkuSjoq0a1d3zl1FROui9MrD", "model": "ada", "n_epochs": 8, "learning_rate_multiplier": 0.02}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/fine-tunes HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes processing_ms=91 request_id=d5b8e9a4c3b12af0e55b85d48470a9e8 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-oCm037gwhnLTrm83fBcOkIuy
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-oCm037gwhnLTrm83fBcOkIuy HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-oCm037gwhnLTrm83fBcOkIuy processing_ms=36 request_id=2afb5f84afb22a76645ec04868cfe85d response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-oCm037gwhnLTrm83fBcOkIuy
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-oCm037gwhnLTrm83fBcOkIuy HTTP/1.1" 200 1007
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-oCm037gwhnLTrm83fBcOkIuy processing_ms=40 request_id=58c10fd15688e2e889f5fcb71d255d88 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-oCm037gwhnLTrm83fBcOkIuy
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-oCm037gwhnLTrm83fBcOkIuy HTTP/1.1" 200 1007
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-oCm037gwhnLTrm83fBcOkIuy processing_ms=30 request_id=20ab85a4bbb17992e586c60bd57f137b response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-oCm037gwhnLTrm83fBcOkIuy
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-oCm037gwhnLTrm83fBcOkIuy HTTP/1.1" 200 3382
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-oCm037gwhnLTrm83fBcOkIuy processing_ms=33 request_id=fa029110d01b7359b28f51328e2f4b83 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-16-06-18-37", "prompt": ["What is the yield of the reaction ligand 2  additive 1  base 1  aryl halide 14?###", "What is the yield of the reaction ligand 2  additive 15  base 2  aryl halide 1?###", "What is the yield of the reaction ligand 0  additive 8  base 1  aryl halide 13?###", "What is the yield of the reaction ligand 0  additive 18  base 1  aryl halide 5?###", "What is the yield of the reaction ligand 1  additive 2  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 2  additive 5  base 0  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 12  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 2  base 2  aryl halide 0?###", "What is the yield of the reaction ligand 2  additive 5  base 0  aryl halide 13?###", "What is the yield of the reaction ligand 3  additive 16  base 2  aryl halide 8?###", "What is the yield of the reaction ligand 2  additive 13  base 1  aryl halide 11?###", "What is the yield of the reaction ligand 0  additive 2  base 1  aryl halide 5?###", "What is the yield of the reaction ligand 1  additive 20  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 3  additive 9  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 2  additive 17  base 0  aryl halide 10?###", "What is the yield of the reaction ligand 3  additive 5  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 0  additive 20  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 1  additive 4  base 0  aryl halide 0?###", "What is the yield of the reaction ligand 3  additive 16  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 3  additive 11  base 2  aryl halide 1?###"], "temperature": 0, "max_tokens": 2, "stop": "@@", "logprobs": 5}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 6818
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=128 request_id=88a3c6ea1f0d1fc95a1939a27a5e1ed5 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-16-06-18-37", "prompt": ["What is the yield of the reaction ligand 2  additive 5  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 0  additive 17  base 1  aryl halide 1?###", "What is the yield of the reaction ligand 0  additive 9  base 1  aryl halide 1?###", "What is the yield of the reaction ligand 2  additive 9  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 0  additive 7  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 2  additive 17  base 0  aryl halide 9?###", "What is the yield of the reaction ligand 1  additive 18  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 0  additive 19  base 2  aryl halide 0?###", "What is the yield of the reaction ligand 1  additive 11  base 2  aryl halide 11?###", "What is the yield of the reaction ligand 0  additive 20  base 0  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 0  base 1  aryl halide 6?###", "What is the yield of the reaction ligand 0  additive 11  base 0  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 17  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 0  additive 4  base 1  aryl halide 13?###", "What is the yield of the reaction ligand 3  additive 6  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 0  additive 19  base 1  aryl halide 6?###", "What is the yield of the reaction ligand 3  additive 1  base 1  aryl halide 14?###", "What is the yield of the reaction ligand 1  additive 0  base 0  aryl halide 13?###", "What is the yield of the reaction ligand 1  additive 3  base 0  aryl halide 7?###", "What is the yield of the reaction ligand 2  additive 5  base 0  aryl halide 12?###"], "temperature": 0, "max_tokens": 2, "stop": "@@", "logprobs": 5}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 6839
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=56 request_id=d97ddd8e508f0ab3a81adaeae44bbc10 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-16-06-18-37", "prompt": ["What is the yield of the reaction ligand 2  additive 21  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 14  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 15  base 0  aryl halide 9?###", "What is the yield of the reaction ligand 0  additive 7  base 2  aryl halide 10?###", "What is the yield of the reaction ligand 1  additive 16  base 0  aryl halide 12?###", "What is the yield of the reaction ligand 1  additive 20  base 1  aryl halide 1?###", "What is the yield of the reaction ligand 2  additive 3  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 3  additive 8  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 11  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 2  additive 13  base 0  aryl halide 12?###", "What is the yield of the reaction ligand 0  additive 2  base 1  aryl halide 14?###", "What is the yield of the reaction ligand 3  additive 9  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 0  additive 9  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 3  additive 9  base 0  aryl halide 5?###", "What is the yield of the reaction ligand 1  additive 14  base 2  aryl halide 6?###", "What is the yield of the reaction ligand 2  additive 18  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 2  additive 3  base 0  aryl halide 13?###", "What is the yield of the reaction ligand 0  additive 6  base 0  aryl halide 13?###", "What is the yield of the reaction ligand 1  additive 19  base 0  aryl halide 13?###", "What is the yield of the reaction ligand 1  additive 4  base 2  aryl halide 12?###"], "temperature": 0, "max_tokens": 2, "stop": "@@", "logprobs": 5}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 6828
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=911 request_id=932218ad3b34c51bda23e9c2bdcd0fad response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-16-06-18-37", "prompt": ["What is the yield of the reaction ligand 2  additive 6  base 0  aryl halide 12?###", "What is the yield of the reaction ligand 2  additive 0  base 0  aryl halide 3?###", "What is the yield of the reaction ligand 3  additive 20  base 0  aryl halide 7?###", "What is the yield of the reaction ligand 2  additive 6  base 0  aryl halide 10?###", "What is the yield of the reaction ligand 2  additive 21  base 2  aryl halide 3?###", "What is the yield of the reaction ligand 3  additive 14  base 2  aryl halide 1?###", "What is the yield of the reaction ligand 1  additive 6  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 2  additive 16  base 1  aryl halide 9?###", "What is the yield of the reaction ligand 0  additive 16  base 2  aryl halide 13?###", "What is the yield of the reaction ligand 3  additive 21  base 1  aryl halide 5?###", "What is the yield of the reaction ligand 2  additive 21  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 1  additive 15  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 0  additive 16  base 0  aryl halide 3?###", "What is the yield of the reaction ligand 1  additive 13  base 1  aryl halide 11?###", "What is the yield of the reaction ligand 1  additive 17  base 1  aryl halide 9?###", "What is the yield of the reaction ligand 2  additive 17  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 3  additive 17  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 2  additive 20  base 1  aryl halide 3?###", "What is the yield of the reaction ligand 3  additive 1  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 0  base 0  aryl halide 6?###"], "temperature": 0, "max_tokens": 2, "stop": "@@", "logprobs": 5}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 6832
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=87 request_id=85545d4c63b36d0566fbe176fa7c42a6 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-16-06-18-37", "prompt": ["What is the yield of the reaction ligand 3  additive 15  base 0  aryl halide 4?###", "What is the yield of the reaction ligand 1  additive 17  base 2  aryl halide 6?###", "What is the yield of the reaction ligand 3  additive 5  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 2  additive 19  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 0  additive 3  base 0  aryl halide 13?###", "What is the yield of the reaction ligand 2  additive 21  base 2  aryl halide 11?###", "What is the yield of the reaction ligand 3  additive 12  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 2  additive 8  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 0  additive 20  base 2  aryl halide 14?###", "What is the yield of the reaction ligand 1  additive 5  base 0  aryl halide 4?###", "What is the yield of the reaction ligand 0  additive 14  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 0  additive 5  base 2  aryl halide 3?###", "What is the yield of the reaction ligand 1  additive 14  base 0  aryl halide 13?###", "What is the yield of the reaction ligand 0  additive 8  base 0  aryl halide 4?###", "What is the yield of the reaction ligand 0  additive 10  base 0  aryl halide 2?###", "What is the yield of the reaction ligand 3  additive 1  base 2  aryl halide 1?###", "What is the yield of the reaction ligand 0  additive 9  base 0  aryl halide 1?###", "What is the yield of the reaction ligand 2  additive 10  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 2  additive 7  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 0  additive 7  base 0  aryl halide 11?###"], "temperature": 0, "max_tokens": 2, "stop": "@@", "logprobs": 5}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 6842
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=47 request_id=f13836a91e1cf60788f18a3721fad8f8 response_code=200
+DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/doyle_rxn/dreher_doyle.csv from https://www.dropbox.com/s/gjxatqagwh3cwb6/dreher_doyle.csv?dl=1
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/rxn_doyle/out/20230116_071248/train.jsonl: file-PkuSjoq0a1d3zl1FROui9MrD
+Train size: 10, Accuracy: 0.29, Baseline RXNFP-RBF: 0.31
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1e-05   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  1.00001 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.99999 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.37453 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.26773 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.62549 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Frxn_doyle%2Fout%2F20230116_071918%2Ftrain.jsonl
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Frxn_doyle%2Fout%2F20230116_071918%2Ftrain.jsonl HTTP/1.1" 404 261
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Frxn_doyle%2Fout%2F20230116_071918%2Ftrain.jsonl processing_ms=4 request_id=3b59928de69aa062e25767353038bbbc response_code=404
+INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/rxn_doyle/out/20230116_071918/train.jsonl)' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 2e-05   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.99992 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │    -0   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │     0.5 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │     1   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │     0.5 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Upload progress:   0%|          | 0.00/1.54k [00:00<?, ?it/s]INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/files
+DEBUG:openai:api_version=None data=None message='Post details'
+Upload progress: 100%|██████████| 1.54k/1.54k [00:00<00:00, 3.02Mit/s]
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/files HTTP/1.1" 200 323
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=503 request_id=b5d225a7d9a9e13a535165de16d7f445 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/fine-tunes
+DEBUG:openai:api_version=None data='{"training_file": "file-wtoG02IMLfVtMELAWoo5W8Lj", "model": "ada", "n_epochs": 8, "learning_rate_multiplier": 0.02}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/fine-tunes HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes processing_ms=93 request_id=4cc6e63d686e0e9b111427071b4f8644 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-biduisg0vu04XtwXkXWYMxK8
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-biduisg0vu04XtwXkXWYMxK8 HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-biduisg0vu04XtwXkXWYMxK8 processing_ms=36 request_id=2e6fbe552b418dba5dfa9d5c05a0c457 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-biduisg0vu04XtwXkXWYMxK8
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-biduisg0vu04XtwXkXWYMxK8 HTTP/1.1" 200 1007
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-biduisg0vu04XtwXkXWYMxK8 processing_ms=27 request_id=6e507c50374a7a6e844e9949dc0bfd25 response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-biduisg0vu04XtwXkXWYMxK8
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-biduisg0vu04XtwXkXWYMxK8 HTTP/1.1" 200 1007
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-biduisg0vu04XtwXkXWYMxK8 processing_ms=27 request_id=cae22bc60223a7ade7e7a955e0d934fb response_code=200
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-biduisg0vu04XtwXkXWYMxK8
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-biduisg0vu04XtwXkXWYMxK8 HTTP/1.1" 200 1007
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-biduisg0vu04XtwXkXWYMxK8 processing_ms=36 request_id=88055fd874028aa413ce37185929bb60 response_code=200

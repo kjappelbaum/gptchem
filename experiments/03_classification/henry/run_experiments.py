@@ -12,7 +12,7 @@ from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
 train_sizes = [10, 20, 50, 100, 200, 500]
-num_classes = [2, 5]
+num_classes = [5,2]
 targets = [
     ("logKH_CH4", "CH4 Henry coefficient"),
     ("logKH_CO2", "CO2 Henry coefficient"),
@@ -71,4 +71,4 @@ if __name__ == "__main__":
         for train_size in train_sizes:
             for num_class in num_classes:
                 for target in targets:
-                    run_experiment(train_size, num_class, target, i+100)
+                    run_experiment(train_size, num_class, target, i+13552342)

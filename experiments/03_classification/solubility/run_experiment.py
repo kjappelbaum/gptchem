@@ -10,7 +10,7 @@ from fastcore.xtras import save_pickle
 from pathlib import Path
 
 num_train_points = [10, 20, 50, 100, 200, 500]
-num_classes = [2, 5]
+num_classes = [5,2]
 representations = ['SMILES', 'SELFIES', 'InChI']
 
 
@@ -66,4 +66,4 @@ if __name__ == "__main__":
         for train_size in num_train_points:
             for num_class in num_classes:
                 for representation in representations:
-                    train_test(train_size, representation, num_class, seed=i+5444566)
+                    train_test(train_size, representation, num_class, seed=i+54456726)

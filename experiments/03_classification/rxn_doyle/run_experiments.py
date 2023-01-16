@@ -12,7 +12,7 @@ from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
 train_sizes = [10, 20, 50, 100, 200]
-num_classes = [2, 5]
+num_classes = [5,2]
 num_test_points = 100
 use_one_hot = [True, False]
 
@@ -72,4 +72,4 @@ if __name__ == "__main__":
         for oh in use_one_hot:
             for train_size in train_sizes:
                 for num_class in num_classes:
-                    train_test(train_size, num_class, i+66656, one_hot=oh)
+                    train_test(train_size, num_class, i+644456656, one_hot=oh)

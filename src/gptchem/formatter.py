@@ -148,7 +148,7 @@ class ClassificationFormatter(ForwardFormatter):
         """Bin the inputs based on the bins used for the dataset."""
         if self.bins is None:
             raise ValueError("You must fit the formatter first.")
-    
+
         return pd.cut(y, self.bins, labels=self.class_names, include_lowest=True)
 
     def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -175,16 +175,20 @@ class ClassificationFormatter(ForwardFormatter):
                 else:
                     bins = self.bins
                 label = pd.cut(label, bins=bins, labels=self.class_names, include_lowest=True)
-                
+
             else:
                 if self.bins is None:
-                    _, bins = pd.cut(list(label.values) + [np.inf, -np.inf], self.num_classes, retbins=True, include_lowest =True)
+                    _, bins = pd.cut(
+                        list(label.values) + [np.inf, -np.inf],
+                        self.num_classes,
+                        retbins=True,
+                        include_lowest=True,
+                    )
                     self.bins = bins
-                else: 
+                else:
                     bins = self.bins
-                
+
                 label = pd.cut(label, bins=bins, labels=self.class_names, include_lowest=True)
-                
 
         return pd.DataFrame([self._format(r, l) for r, l in zip(representation, label)])
 
@@ -260,45 +264,47 @@ class InverseFormatter(BaseFormatter):
     """
 
 
-
 class MultiColumnLabelEncoder:
-    def __init__(self,columns = None):
-        self.columns = columns # array of column names to encode
+    def __init__(self, columns=None):
+        self.columns = columns  # array of column names to encode
 
-    def fit(self,X,y=None):
-        return self # not relevant here
+    def fit(self, X, y=None):
+        return self  # not relevant here
 
-    def transform(self,X):
-        '''
+    def transform(self, X):
+        """
         Transforms columns of X specified in self.columns using
         LabelEncoder(). If no columns specified, transforms all
         columns in X.
-        '''
+        """
         output = X.copy()
         if self.columns is not None:
             for col in self.columns:
                 output[col] = LabelEncoder().fit_transform(output[col])
         else:
-            for colname,col in output.iteritems():
+            for colname, col in output.iteritems():
                 output[colname] = LabelEncoder().fit_transform(col)
         return output
 
-    def fit_transform(self,X,y=None):
-        return self.fit(X,y).transform(X)
+    def fit_transform(self, X, y=None):
+        return self.fit(X, y).transform(X)
+
 
 class ReactionClassificationFormatter(BaseFormatter):
-    _PROMPT_TEMPLATE = "{prefix}What is the {propertyname} of the reaction {representation}{suffix}{end_prompt}"
-    _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}" 
+    _PROMPT_TEMPLATE = (
+        "{prefix}What is the {propertyname} of the reaction {representation}{suffix}{end_prompt}"
+    )
+    _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
 
     def __init__(
         self,
         reactant_columns: Collection[str],
-        reactant_column_names: Collection[str], 
+        reactant_column_names: Collection[str],
         label_column: str,
         property_name: str,
         num_classes: Optional[int] = None,
         qcut: bool = True,
-        one_hot: bool = False
+        one_hot: bool = False,
     ) -> None:
         """Initialize a ReactionClassificationFormatter.
 
@@ -329,7 +335,11 @@ class ReactionClassificationFormatter(BaseFormatter):
                 "feature_names": ["ligand", "additive", "base", "aryl halide"],
                 "labels": "yield",
             },
-            "DreherDoyleRXN": {"features": ["rxn"], "labels": "yield",  "feature_names": ['reaction']},
+            "DreherDoyleRXN": {
+                "features": ["rxn"],
+                "labels": "yield",
+                "feature_names": ["reaction"],
+            },
             "SuzukiMiyaura": {
                 "features": [
                     "reactant_1_smiles",
@@ -349,7 +359,11 @@ class ReactionClassificationFormatter(BaseFormatter):
                 ],
                 "labels": "yield",
             },
-            "SuzukiMiyauraRXN": {"features": ["rxn"], "labels": "yield", "feature_names": ['reaction']},
+            "SuzukiMiyauraRXN": {
+                "features": ["rxn"],
+                "labels": "yield",
+                "feature_names": ["reaction"],
+            },
         }
         if ds_name not in benchmarks:
             raise ValueError(f"Dataset {ds_name} not found.")
@@ -357,24 +371,31 @@ class ReactionClassificationFormatter(BaseFormatter):
         feats = benchmarks[ds_name]["features"]
         label = benchmarks[ds_name]["labels"]
         feat_names = benchmarks[ds_name]["feature_names"]
-        return cls(reactant_columns=feats, label_column=label, num_classes=num_classes, one_hot=one_hot, qcut=qcut, reactant_column_names=feat_names, property_name='yield')
+        return cls(
+            reactant_columns=feats,
+            label_column=label,
+            num_classes=num_classes,
+            one_hot=one_hot,
+            qcut=qcut,
+            reactant_column_names=feat_names,
+            property_name="yield",
+        )
 
     @property
     def class_names(self) -> List[int]:
         """Names of the classes."""
         return list(range(self.num_classes))
 
-
     def bin(self, y: ArrayLike):
         """Bin the inputs based on the bins used for the dataset."""
         if self.bins is None:
             raise ValueError("You must fit the formatter first.")
-    
+
         return pd.cut(y, self.bins, labels=self.class_names, include_lowest=True)
 
     def _representation_string(self, representation):
         return "  ".join([f"{n} {r}" for n, r in zip(self.reactant_column_names, representation)])
-        
+
     def _format(self, representation: ArrayLike, label: StringOrNumber) -> dict:
         return {
             "prompt": self._PROMPT_TEMPLATE.format(
@@ -393,7 +414,6 @@ class ReactionClassificationFormatter(BaseFormatter):
             "representation": representation,
         }
 
-
     def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
         """Format a dataframe of representations and labels into a dataframe of prompts and completions.
 
@@ -407,7 +427,7 @@ class ReactionClassificationFormatter(BaseFormatter):
         """
         df = df.dropna(subset=[self.label_column])
         df = df.fillna(value="None")
-        
+
         if self.one_hot:
             representation = df[self.reactant_columns]
             representation = self.le.fit_transform(representation).values.tolist()
@@ -415,7 +435,7 @@ class ReactionClassificationFormatter(BaseFormatter):
             representation = df[self.reactant_columns].values
         representation = list(representation)
         label = df[self.label_column]
-    
+
         if self.num_classes is not None:
             if self.qcut:
                 if self.bins is None:
@@ -425,20 +445,26 @@ class ReactionClassificationFormatter(BaseFormatter):
                 else:
                     bins = self.bins
                 label = pd.cut(label, bins=bins, labels=self.class_names, include_lowest=True)
-                
+
             else:
                 if self.bins is None:
-                    _, bins = pd.cut(list(label.values) + [np.inf, -np.inf], self.num_classes, retbins=True, include_lowest =True)
+                    _, bins = pd.cut(
+                        list(label.values) + [np.inf, -np.inf],
+                        self.num_classes,
+                        retbins=True,
+                        include_lowest=True,
+                    )
                     self.bins = bins
-                else: 
+                else:
                     bins = self.bins
-                
+
                 label = pd.cut(label, bins=bins, labels=self.class_names, include_lowest=True)
-                
+
         return pd.DataFrame([self._format(r, l) for r, l in zip(representation, label)])
 
-    __repr__ = basic_repr("reactant_columns, reactant_column_names, label_column, property_name, num_classes, qcut, one_hot")
-
+    __repr__ = basic_repr(
+        "reactant_columns, reactant_column_names, label_column, property_name, num_classes, qcut, one_hot"
+    )
 
     def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
         return self.format_many(df)
@@ -446,7 +472,7 @@ class ReactionClassificationFormatter(BaseFormatter):
 
 class MOFSolventRecommenderFormatter(BaseFormatter):
     _PROMPT_TEMPLATE = "{prefix}In what solvent can one make a MOF out of {linker} and {node}{ion}{suffix}{end_prompt}"
-    _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"  
+    _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
 
     def __init__(
         self,
@@ -466,13 +492,15 @@ class MOFSolventRecommenderFormatter(BaseFormatter):
         return ", ".join([l for l in linker if not pd.isna(l)])
 
     def _solvent_string(self, solvent, solvent_mol_ratio):
-        return " and ".join([f"{np.round(m,2)} {s}" for s, m in zip(solvent, solvent_mol_ratio) if not np.isnan(m)])
+        return " and ".join(
+            [f"{np.round(m,2)} {s}" for s, m in zip(solvent, solvent_mol_ratio) if not np.isnan(m)]
+        )
 
     def _format(self, linker, node, ion, solvent, solvent_mol_ratio) -> dict:
         return {
             "prompt": self._PROMPT_TEMPLATE.format(
                 prefix=self._prefix,
-                linker=self._linker_string(linker),                
+                linker=self._linker_string(linker),
                 node=str(node[0]).replace("[", "").replace("]", ""),
                 ion=str(ion[0]).replace("[", "").replace("]", ""),
                 suffix=self._suffix,
@@ -502,7 +530,7 @@ class MOFSolventRecommenderFormatter(BaseFormatter):
         """
         # drop entries that have "unknown" in one of the fields
         filtered_rows = []
-        df.dropna(subset=[self.linker_columns[0]] + [self.node_columns[0]] , inplace=True)
+        df.dropna(subset=[self.linker_columns[0]] + [self.node_columns[0]], inplace=True)
         for _, row in df.iterrows():
             if "unknown" in row[self.counter_ion_columns].values:
                 continue
@@ -514,26 +542,76 @@ class MOFSolventRecommenderFormatter(BaseFormatter):
         ion = df[self.counter_ion_columns].values
         solvent = df[self.solvent_columns].values
         solvent_mol_ratio = df[self.solvent_mol_ratio_columns].values
-        return pd.DataFrame([self._format(l, n, i, s, smr) for l, n, i, s, smr in zip(linker, node, ion, solvent, solvent_mol_ratio)])
+        return pd.DataFrame(
+            [
+                self._format(l, n, i, s, smr)
+                for l, n, i, s, smr in zip(linker, node, ion, solvent, solvent_mol_ratio)
+            ]
+        )
 
-    __repr__ = basic_repr("linker_columns, node_columns, counter_ion_columns, solvent_columns, solvent_mol_ratio_columns")
+    __repr__ = basic_repr(
+        "linker_columns, node_columns, counter_ion_columns, solvent_columns, solvent_mol_ratio_columns"
+    )
 
     def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
         return self.format_many(df)
 
 
 class InverseDesignFormatter(BaseFormatter):
+
+    _PROMPT_TEMPLATE = "{prefix}What is a molecule with {property}{suffix}{end_prompt}"
+    _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
+
     def __init__(
-        self, 
+        self,
         representation_column: str,
         property_columns: List[str],
         property_names: List[str],
         num_classes: int = None,
+        num_digits: int = 1,
     ):
         self.representation_column = representation_column
         self.property_columns = property_columns
         self.property_names = property_names
         self.num_classes = num_classes
+        self.num_digits = num_digits
 
+    def _format_property(self, prop):
+        strings = []
+        for p, v in zip(self.property_names, prop):
+            if not np.isnan(v):
+                if self.num_digits is not None: 
+                    v = np.around(v, self.num_digits)
+                    # convert to string with self.num_digits decimal places
+                    v = f"{v:.{self.num_digits}f}"
+                strings.append(f"{p} {v}")
 
-    
+        return " ,".join(strings)
+
+    def _format(self, representation, prop) -> dict:
+        return {
+            "prompt": self._PROMPT_TEMPLATE.format(
+                prefix=self._prefix,
+                property=self._format_property(prop),
+                suffix=self._suffix,
+                end_prompt=self._end_prompt,
+            ),
+            "completion": self._COMPLETION_TEMPLATE.format(
+                start_completion=self._start_completion,
+                label=representation,
+                stop_sequence=self._stop_sequence,
+            ),
+            "label": representation,
+            "representation": prop,
+        }
+
+    def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
+        df = df.dropna(subset=self.property_columns)
+        representation = df[self.representation_column].values
+        prop = df[self.property_columns].values
+        return pd.DataFrame([self._format(r, p) for r, p in zip(representation, prop)])
+
+    __repr__ = basic_repr("representation_column, property_columns, property_names, num_classes")
+
+    def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
+        return self.format_many(df)

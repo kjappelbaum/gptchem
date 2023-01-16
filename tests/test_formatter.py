@@ -1,10 +1,11 @@
 import pandas as pd
 import pytest
-from gptchem.data import get_doyle_rxn_data
+from gptchem.data import get_doyle_rxn_data, get_photoswitch_data
 from gptchem.formatter import (
     ClassificationFormatter,
     RegressionFormatter,
     ReactionClassificationFormatter,
+    InverseDesignFormatter
 )
 
 
@@ -103,3 +104,17 @@ def test_reaction_classification_formatter():
     formatted = formatter(data)
     assert len(data) == len(formatted)
     assert len(formatted["label"].unique()) == 2
+
+
+def test_inverse_design_formatter():
+    data = get_doyle_rxn_data()
+    formatter = InverseDesignFormatter(
+        representation_column="SMILES",
+        property_columns=["E isomer pi-pi* wavelength in nm"],
+        property_names=["E isomer pi-pi* wavelength in nm"],
+    )
+    formatted = formatter(data)
+    assert len(data) == len(formatted)
+    
+
+    

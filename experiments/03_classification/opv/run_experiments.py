@@ -11,7 +11,7 @@ from fastcore.xtras import save_pickle
 from pathlib import Path 
 from gptchem.baselines.opv import train_test_opv_classification_baseline
 
-num_classes = [2, 5]
+num_classes = [5, 2]
 num_training_points = [10, 50, 100, 200, 500] 
 representations = ['SMILES', 'SELFIES', 'InChI']
 num_test_points = 250
@@ -75,6 +75,6 @@ if __name__ == "__main__":
             for num_train_point in num_training_points:
                 for representation in representations:
                     try:
-                        train_test_model(num_classes, representation, num_train_point, i + 54656)
+                        train_test_model(num_classes, representation, num_train_point, i +4456656)
                     except Exception as e:
                         print(e)
