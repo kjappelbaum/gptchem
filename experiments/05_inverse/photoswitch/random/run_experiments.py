@@ -12,10 +12,10 @@ from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
 num_trials = 10
-TRAIN_SIZE = 20
-TEMPERATURES = [0.5]  # [0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0]
-NOISE_LEVEL = [1.0]  # [0.5, 1.0, 5.0, 10, 20, 50]
-NUM_SAMPLES = 10  # 100
+TRAIN_SIZE = 92
+TEMPERATURES = [0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0]
+NOISE_LEVEL = [0.5, 1.0, 5.0, 10, 20, 50]
+NUM_SAMPLES = 100
 
 
 def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed):
@@ -63,9 +63,8 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
             expected_z.append(row["representation"][1])
         assert len(expected_e) == len(expected_z) == len(formatted_test)
 
-
         try:
-            if len(smiles_metrics["valid_indices"])>0:
+            if len(smiles_metrics["valid_indices"]) > 0:
                 expected_e = L(expected_e)[smiles_metrics["valid_indices"]]
                 expected_z = L(expected_z)[smiles_metrics["valid_indices"]]
 
@@ -76,8 +75,10 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
                 )
 
             else:
-                constrain_satisfaction = evaluate_photoswitch_smiles_pred(None, expected_z, expected_e)
-        except Exception as e: 
+                constrain_satisfaction = evaluate_photoswitch_smiles_pred(
+                    None, expected_z, expected_e
+                )
+        except Exception as e:
             print(e)
             constrain_satisfaction = {}
 

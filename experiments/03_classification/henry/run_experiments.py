@@ -11,7 +11,7 @@ from gptchem.formatter import ClassificationFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
-train_sizes = [10, 20, 50, 100, 200, 500]
+train_sizes = [10, 20, 50, 100, 200, 500, 1000]
 num_classes = [5, 2]
 targets = [
     ("logKH_CH4", "CH4 Henry coefficient"),
@@ -75,4 +75,4 @@ if __name__ == "__main__":
         for train_size in train_sizes:
             for num_class in num_classes:
                 for target in targets:
-                    run_experiment(train_size, num_class, target, i + 13552342)
+                    run_experiment(train_size, num_class, target, i + 223342)

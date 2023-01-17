@@ -49,21 +49,28 @@ def train_test(num_train_points, temperatures, num_samples, seed):
     for temp in temperatures:
         completions = querier(formatted_test, temperature=temp)
         generated_smiles = extractor(completions)
-        smiles_metrics = evaluate_generated_smiles(formatted_train["label"], generated_smiles)
-        expected_e = []
-        expected_z = []
+        smiles_metrics = evaluate_generated_smiles(generated_smiles, formatted_train["label"])
+        expected = []
         for i, row in formatted_test.iterrows():
-            expected_e.append(row["representation"][0])
-            expected_z.append(row["representation"][1])
+            expected.append(row["representation"][0])
 
-        expected_e = L(expected_e)[smiles_metrics["valid_indices"]]
-        expected_z = L(expected_z)[smiles_metrics["valid_indices"]]
+        try:
+            if len(smiles_metrics["valid_indices"]) > 0:
+                expected = L(expected)[smiles_metrics["valid_indices"]]
 
-        constrain_satisfaction = evaluate_homo_lumo_gap(
-            smiles_metrics["valid_smiles"],
-            expected_z_pi_pi_star=expected_z,
-            expected_e_pi_pi_star=expected_e,
-        )
+                constrain_satisfaction = evaluate_homo_lumo_gap(
+                    smiles_metrics["valid_smiles"],
+                    expected_gaps=expected,
+                )
+            else:
+                constrain_satisfaction = evaluate_homo_lumo_gap(
+                    None,
+                    expected_gaps=expected,
+                )
+
+        except Exception as e:
+            print(e)
+            constrain_satisfaction = {}
 
         res = {
             "completions": completions,
@@ -72,7 +79,6 @@ def train_test(num_train_points, temperatures, num_samples, seed):
             **smiles_metrics,
             **constrain_satisfaction,
         }
-
         res_at_temp.append(res)
 
     summary = {

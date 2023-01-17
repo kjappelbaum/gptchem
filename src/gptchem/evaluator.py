@@ -501,4 +501,5 @@ def evaluate_homo_lumo_gap(
             expected_not_none.append(expected)
 
     metrics = get_regression_metrics(expected_not_none, computed_not_none)
+    metrics['computed_gaps'] = computed_gaps
     return metrics
