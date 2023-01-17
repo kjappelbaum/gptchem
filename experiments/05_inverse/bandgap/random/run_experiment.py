@@ -78,6 +78,7 @@ def train_test(num_train_points, temperatures, num_samples, seed):
             "train_smiles": formatted_train["label"],
             **smiles_metrics,
             **constrain_satisfaction,
+            "temperature": temp,
         }
         res_at_temp.append(res)
 

@@ -293,21 +293,29 @@ def evaluate_generated_smiles(
     assert len(valid_smiles) == len(valid_indices) <= len(smiles)
 
     frac_valid = len(valid_smiles) / len(smiles)
+
+    unique_smiles = list(set(valid_smiles))
+
     try:
-        kld_bench = KLDivBenchmark(train_smiles, min(len(train_smiles), len(valid_smiles)))
-        kld = kld_bench.score(valid_smiles)
-    except Exception:
+        kld_bench = KLDivBenchmark(train_smiles, min(len(train_smiles), len(unique_smiles)))
+        kld = kld_bench.score(unique_smiles)
+    except Exception as e:
+        print(e)
         kld = np.nan
 
     try:
-        frechet_d, frechet_score = FrechetBenchmark(
-            train_smiles, sample_size=min(len(train_smiles), len(valid_smiles))
+        fb  = FrechetBenchmark(
+            train_smiles, sample_size=min(len(train_smiles), len(unique_smiles))
         )
+        frechet_d, frechet_score = fb.score(unique_smiles)
     except Exception:
         frechet_d, frechet_score = np.nan, np.nan
 
-    unique_smiles = list(set(valid_smiles))
-    frac_unique = len(unique_smiles) / len(valid_smiles)
+    try:
+        frac_unique = len(unique_smiles) / len(valid_smiles)
+    except ZeroDivisionError:
+        frac_unique = 0.0
+
 
     frac_smiles_in_train = len([x for x in valid_smiles if x in train_smiles]) / len(valid_smiles)
 
@@ -319,9 +327,12 @@ def evaluate_generated_smiles(
             check_ok += 1
         if res:
             in_pubchem.append(i)
-    
-    frac_smiles_in_pubchem = len(in_pubchem) / check_ok
 
+    try:
+        frac_smiles_in_pubchem = len(in_pubchem) / check_ok
+    except ZeroDivisionError:
+        frac_smiles_in_pubchem = 0.0
+    
     res = {
         "frac_valid": frac_valid,
         "frac_unique": frac_unique,
