@@ -275,8 +275,10 @@ def is_valid_smiles(smiles: str) -> bool:
 
 def is_in_pubchem(smiles):
     """Check if a SMILES is in PubChem."""
-    return pcp.get_compounds(smiles, smiles=smiles, namespace="SMILES")
-
+    try:
+        return pcp.get_compounds(smiles, smiles=smiles, namespace="SMILES")
+    except Exception:
+        return None
 
 def evaluate_generated_smiles(
     smiles: Collection[str], train_smiles: Collection[str]
@@ -309,13 +311,23 @@ def evaluate_generated_smiles(
 
     frac_smiles_in_train = len([x for x in valid_smiles if x in train_smiles]) / len(valid_smiles)
 
-    frac_smiles_in_pubchem = len([x for x in valid_smiles if is_in_pubchem(x)]) / len(valid_smiles)
+    in_pubchem = []#[i, x for x in enumerate(valid_smiles) if is_in_pubchem(x)]
+    check_ok = 0
+    for i, x in enumerate(valid_smiles):
+        res=  is_in_pubchem(x)
+        if res is not None:
+            check_ok += 1
+        if res:
+            in_pubchem.append(i)
+    
+    frac_smiles_in_pubchem = len(in_pubchem) / check_ok
 
     res = {
         "frac_valid": frac_valid,
         "frac_unique": frac_unique,
         "frac_smiles_in_train": frac_smiles_in_train,
         "frac_smiles_in_pubchem": frac_smiles_in_pubchem,
+        "in_pubchem": in_pubchem,
         "kld": kld,
         "frechet_d": frechet_d,
         "frechet_score": frechet_score,
@@ -473,7 +485,7 @@ def fit_learning_curve(num_training_points: Collection[float], performance: Coll
     """
     num_training_points = [0] + list(num_training_points)
     performance = [0] + list(performance)
-    popt, pcov = curve_fit(lc, num_training_points, performance)
+    popt, pcov = curve_fit(lc, num_training_points, performance, full_output=False)
     return popt, pcov
 
 
