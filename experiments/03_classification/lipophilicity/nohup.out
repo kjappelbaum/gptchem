@@ -123,3 +123,17 @@ Ran train size 50 and got accuracy 0.528, XGB baseline 0.496, and TabPFN baselin
 Loading model that can be used for inference only
 Using a Transformer with 25.82 M parameters
 Upload progress:   0%|          | 0.00/18.2k [00:00<?, ?it/s]Upload progress: 100%|██████████| 18.2k/18.2k [00:00<00:00, 36.0Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/lipophilicity/out/20230117_113032/train.jsonl: file-TKLFFORVPMe496cPWC7GgPBB
+Ran train size 100 and got accuracy 0.588, XGB baseline 0.68, and TabPFN baseline 0.616
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.64905 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 32.9104  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.1437  │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/36.4k [00:00<?, ?it/s]Upload progress: 100%|██████████| 36.4k/36.4k [00:00<00:00, 81.5Mit/s]
