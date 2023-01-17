@@ -67,4 +67,4 @@ if __name__ == "__main__":
         for train_size in num_train_points:
             for num_class in num_classes:
                 for representation in representations:
-                    train_test(train_size, representation, num_class, seed=i + 54456726)
+                    train_test(train_size, representation, num_class, seed=i + 425667726)

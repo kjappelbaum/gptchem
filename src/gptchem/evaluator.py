@@ -408,7 +408,7 @@ def get_xtb_homo_lumo_gap(smiles: str) -> float:
     xtb conformers.sdf --opt tight > xtb.out
     """
     with tempfile.TemporaryDirectory() as tmpdir:
-        cmd = f"givemeconformer {smiles}"
+        cmd = f"givemeconformer '{smiles}'"
         subprocess.run(cmd, shell=True, check=True, cwd=tmpdir)
         cmd = "xtb conformers.sdf --opt tight > xtb.out"
         subprocess.run(cmd, shell=True, check=True, cwd=tmpdir)
