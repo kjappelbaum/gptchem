@@ -97,5 +97,5 @@ def train_test(num_train_points, temperatures, num_samples, seed):
 if __name__ == "__main__":
     for seed in range(num_samples):
         for noise_level in noise_levels:
-            for num_train_points in num_train_points:
-                train_test(num_train_points, temperatures, num_samples, seed)
+            for num_train_point in num_train_points:
+                train_test(num_train_point, temperatures, num_samples, seed)

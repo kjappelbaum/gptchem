@@ -25,7 +25,9 @@ def _check_ft_state(ft_id):
 def get_ft_model_name(ft_id, sleep=60):
     while True:
         ft = FineTune.retrieve(id=ft_id)
-        if ft.get("status") == "succeeded":
+        status = ft.get("status")
+        logger.debug(f"Fine tuning status: {status}")
+        if status == "succeeded":
             return ft.get("fine_tuned_model")
         time.sleep(sleep)
 

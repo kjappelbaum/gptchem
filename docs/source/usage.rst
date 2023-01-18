@@ -1,6 +1,13 @@
 Getting Started
 ==================
 
+High-level wrapper 
+-----------------------
+
+The easiest way to get started with ``gpthem`` is to use the :py:class:`gptchem.gpt_classifier.GPTClassifier` and :py:class:`gptchem.gpt_regressor.GPTRegressor` classes.
+Those classes mimic the API of ``scikit-learn`` and can often be used drop-in replacements for ``scikit-learn`` models. However, in contrast to typical ``scikit-learn`` models, the ``X`` input is not an array of features, but a list of text representations of the samples.
+
+
 Fine-tuning
 --------------
 

@@ -137,3 +137,319 @@ Ran train size 100 and got accuracy 0.588, XGB baseline 0.68, and TabPFN baselin
 Loading model that can be used for inference only
 Using a Transformer with 25.82 M parameters
 Upload progress:   0%|          | 0.00/36.4k [00:00<?, ?it/s]Upload progress: 100%|██████████| 36.4k/36.4k [00:00<00:00, 81.5Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/lipophilicity/out/20230117_120905/train.jsonl: file-Ac1b3CWWjMN1IUp0rabbZbxV
+Ran train size 100 and got accuracy 0.568, XGB baseline 0.68, and TabPFN baseline 0.616
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.64905 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 32.9104  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.1437  │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Upload progress:   0%|          | 0.00/47.5k [00:00<?, ?it/s]Upload progress: 100%|██████████| 47.5k/47.5k [00:00<00:00, 55.0Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/lipophilicity/out/20230117_135957/train.jsonl: file-Q4RF5woinBYc6jLdiH1v2zKG
+local variable 'modelname' referenced before assignment
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.64905 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 32.9104  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.1437  │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153239%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1600a3fa0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.45652 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 36.7338  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.12645 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153244%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2ac480b80>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.45652 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 36.7338  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.12645 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153249%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16004cf10>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.45652 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 36.7338  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.12645 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153254%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a3160fa0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.45652 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 36.7338  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.12645 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153259%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16683a3d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1.50865 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 37.2977  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.13353 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153307%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x28832b1c0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1.50865 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 37.2977  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.13353 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153316%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a315b700>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1.50865 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 37.2977  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.13353 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153325%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a4f01100>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1.50865 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 37.2977  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.13353 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153333%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a5a80ee0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 1.00001 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153336%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16f5b2fd0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 1.00001 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153339%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16f594cd0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 1.00001 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153341%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a36ec880>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 1.00001 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153344%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x166513ee0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.12591 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.39922 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.88545 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153347%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a52ef970>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.12591 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.39922 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.88545 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153350%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a32e1280>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.12591 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.39922 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.88545 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153353%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a52d37c0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.12591 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.39922 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.88545 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153356%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16012c340>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.12762 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 32.8385  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.17078 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153400%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1601d8250>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.12762 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 32.8385  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.17078 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153403%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16fc6d100>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.12762 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 32.8385  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.17078 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153407%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a3280430>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.12762 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 32.8385  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.17078 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153410%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16f8ac250>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.59879 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 38.0434  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.106   │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153415%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x160139ca0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.59879 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 38.0434  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.106   │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153419%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a3196c40>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.59879 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 38.0434  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.106   │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153424%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a3139bb0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.59879 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 38.0434  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.106   │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Loading model that can be used for inference only
+Using a Transformer with 25.82 M parameters
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F03_classification%2Flipophilicity%2Fout%2F20230117_153429%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2a310a190>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))

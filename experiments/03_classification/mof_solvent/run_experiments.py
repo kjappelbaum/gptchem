@@ -8,6 +8,9 @@ from gptchem.extractor import SolventExtractor
 from gptchem.formatter import MOFSolventRecommenderFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
+from loguru import logger
+logger.enable("gptchem")
+
 
 num_train_size = [10]  # [10, 20, 50, 100, 200]
 max_test_size = 100

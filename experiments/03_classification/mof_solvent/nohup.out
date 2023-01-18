@@ -1,0 +1,318 @@
+Upload progress:   0%|          | 0.00/4.64k [00:00<?, ?it/s]Upload progress: 100%|██████████| 4.64k/4.64k [00:00<00:00, 1.20Mit/s]
+2023-01-17 23:33:22.202 | DEBUG    | gptchem.tuner:tune:186 - Requested fine tuning. {
+  "created_at": 1673994802,
+  "events": [
+    {
+      "created_at": 1673994802,
+      "level": "info",
+      "message": "Created fine-tune: ft-0cjNTOSMiaRRcdvIDp4qBtPD",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-0cjNTOSMiaRRcdvIDp4qBtPD",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 4637,
+      "created_at": 1673994801,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/mof_solvent/out/20230117_233319/train.jsonl",
+      "id": "file-vwMUVnRe5aUpnwdxvsaYVJAF",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1673994802,
+  "validation_files": []
+}
+2023-01-17 23:33:22.385 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-17 23:35:23.024 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-17 23:37:23.752 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-17 23:39:24.707 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-17 23:41:25.271 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-17 23:43:25.832 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-17 23:45:27.308 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-17 23:47:28.217 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-17 23:49:28.741 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-17 23:51:29.519 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-17 23:53:30.356 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-17 23:55:30.871 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-17 23:57:31.461 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-17 23:59:33.217 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:01:33.869 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:03:34.778 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:05:35.373 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:07:35.898 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:09:36.513 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:11:37.158 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:13:38.591 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:15:39.181 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:17:39.765 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:19:40.347 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:21:41.078 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:23:41.772 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:25:42.391 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:27:43.037 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:29:43.846 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:31:44.590 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:33:45.528 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:35:46.871 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:37:47.440 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:39:48.406 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:41:49.008 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:43:49.560 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:45:50.175 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-18 00:47:50.769 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 00:49:51.488 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 00:51:52.057 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 00:53:52.811 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 00:55:53.553 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 00:57:54.230 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 00:59:54.827 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:01:55.415 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:03:55.997 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:05:57.115 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:07:57.919 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:09:58.435 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:11:59.032 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:13:59.625 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:16:00.364 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:18:00.963 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:20:02.048 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:22:03.013 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:24:04.085 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:26:04.976 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:28:05.667 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:30:06.456 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:32:07.025 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:34:07.671 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:36:08.371 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:38:08.902 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:40:09.518 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:42:10.100 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:44:10.682 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:46:11.275 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:48:12.142 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:50:13.160 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:52:13.821 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:54:15.067 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:56:16.177 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 01:58:16.772 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:00:17.821 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:02:18.414 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:04:18.997 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:06:19.709 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:08:20.283 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:10:20.890 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:12:21.467 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:14:22.054 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:16:22.653 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:18:23.207 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:20:24.021 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:22:24.773 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:24:25.887 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:26:26.449 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:28:27.028 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:30:27.624 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:32:28.408 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:34:29.193 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:36:29.783 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:38:30.490 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:40:31.105 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:42:31.655 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:44:32.356 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:46:32.969 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:48:33.570 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:50:34.152 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:52:34.745 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:54:35.333 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:56:36.485 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 02:58:37.083 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:00:38.338 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:02:38.912 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:04:40.704 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:06:41.292 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:08:42.192 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:10:42.925 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:12:43.697 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:14:44.272 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:16:44.856 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:18:45.772 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:20:46.542 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:22:47.119 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:24:47.718 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:26:48.563 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:28:49.143 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:30:50.070 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:32:50.701 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:34:51.297 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:36:51.879 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:38:52.627 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:40:53.238 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:42:53.944 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:44:54.694 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:46:55.461 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:48:56.048 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:50:56.983 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:52:57.616 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:54:58.351 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:56:59.269 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 03:58:59.788 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:01:00.845 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:03:02.835 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:05:03.900 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:07:04.583 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:09:05.162 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:11:05.882 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:13:06.492 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:15:07.073 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:17:08.149 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:19:08.727 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:21:09.962 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:23:10.552 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:25:11.329 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:27:12.288 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:29:12.877 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:31:13.668 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:33:14.248 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:35:14.830 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:37:16.044 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:39:16.660 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:41:17.270 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:43:18.260 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:45:18.826 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:47:19.572 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:49:20.184 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:51:20.841 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:53:21.502 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:55:22.111 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:57:22.870 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 04:59:23.788 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:01:24.746 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:07:22.446 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:09:23.015 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:11:23.589 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:13:24.200 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:15:24.814 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:17:25.350 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:19:25.907 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:21:26.642 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:23:27.251 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:25:28.138 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:27:28.730 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:29:29.328 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:31:31.160 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:33:31.740 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:35:32.755 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:37:33.422 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:39:34.036 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:41:34.631 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:43:35.173 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:45:35.867 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:47:36.435 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:49:37.027 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:51:38.202 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:53:38.780 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:55:39.368 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:57:40.116 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 05:59:40.709 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:01:41.765 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:08:24.617 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:10:25.168 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:12:25.770 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:14:26.345 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:16:27.360 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:18:27.909 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:20:28.494 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:22:29.286 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:24:30.076 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:26:30.668 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:28:31.234 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:30:31.802 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:32:33.047 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:34:33.642 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:36:34.408 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:38:35.362 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:40:36.302 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:42:37.475 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:44:38.103 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:46:38.740 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:48:39.801 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:50:40.360 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:52:40.963 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:54:41.522 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:56:42.123 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 06:58:43.162 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:00:43.702 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:02:44.250 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:04:44.848 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:06:45.409 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:08:46.712 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:10:47.439 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:12:48.017 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:14:49.254 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:16:50.012 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:18:50.596 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:20:51.520 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:22:52.168 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:24:52.936 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:26:53.509 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:28:54.112 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:30:55.139 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:32:55.923 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:34:56.507 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:36:57.919 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:38:58.521 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:40:59.613 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:43:00.137 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:45:00.726 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:47:01.337 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:49:01.904 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:51:02.602 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:53:03.111 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:55:05.417 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:57:06.518 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 07:59:07.088 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:01:07.701 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:03:08.256 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:05:08.900 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:07:09.446 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:09:10.549 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:11:11.156 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:13:11.739 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:15:14.746 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:17:15.326 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:19:16.093 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:21:16.690 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:23:17.279 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:25:19.008 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:27:19.684 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:29:20.924 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:31:21.505 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:33:22.089 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:35:23.191 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:37:23.814 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:39:24.416 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:41:25.050 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:43:25.605 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:45:26.200 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:47:26.767 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:49:27.361 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:51:28.444 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:53:28.994 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:55:29.577 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:57:30.297 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 08:59:30.933 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:01:32.046 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
