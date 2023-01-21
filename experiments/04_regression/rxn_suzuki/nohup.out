@@ -1,0 +1,324 @@
+To use the Graphein submodule graphein.protein.features.sequence.embeddings, you need to install: biovec 
+biovec cannot be installed via conda
+DEBUG:matplotlib:matplotlib data path: /Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/matplotlib/mpl-data
+DEBUG:matplotlib:CONFIGDIR=/Users/kevinmaikjablonka/.matplotlib
+DEBUG:matplotlib:interactive is False
+DEBUG:matplotlib:platform is darwin
+DEBUG:matplotlib:CACHEDIR=/Users/kevinmaikjablonka/.matplotlib
+DEBUG:matplotlib.font_manager:Using fontManager instance from /Users/kevinmaikjablonka/.matplotlib/fontlist-v330.json
+WARNING:graphein.protein.visualisation:To use the Graphein submodule graphein.protein.visualisation, you need to install: pytorch3d 
+To do so, use the following command: conda install -c pytorch3d pytorch3d
+WARNING:graphein.protein.meshes:To use the Graphein submodule graphein.protein.meshes, you need to install: pytorch3d 
+To do so, use the following command: conda install -c pytorch3d pytorch3d
+DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/suzuki_rxn/suzuki_dreher.csv from https://www.dropbox.com/s/0uv38jgrj2k33u7/suzuki_dreher.csv?dl=1
+2023-01-19 23:53:41.942357: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.06626 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.1492  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.22294 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.16083 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.00171 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.72121 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.15901 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.86566 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.96951 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.07702 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_suzuki%2Fout%2F20230119_235441%2Ftrain.jsonl
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.util.retry:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openai.com:443
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_suzuki%2Fout%2F20230119_235441%2Ftrain.jsonl HTTP/1.1" 404 258
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_suzuki%2Fout%2F20230119_235441%2Ftrain.jsonl processing_ms=4 request_id=86ae3721390b0fcc03d370e4a9c535ed response_code=404
+INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_suzuki/out/20230119_235441/train.jsonl)' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.03554 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.00914 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.54891 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.08605 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.98203 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  5.00485 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.19046 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Upload progress:   0%|          | 0.00/104k [00:00<?, ?it/s]INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/files
+DEBUG:openai:api_version=None data=None message='Post details'
+Upload progress: 100%|██████████| 104k/104k [00:00<00:00, 128Mit/s]
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/files HTTP/1.1" 200 322
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=621 request_id=cdc197d0069f254517d14075bb043525 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/fine-tunes
+DEBUG:openai:api_version=None data='{"training_file": "file-A9EtJz2FsAeVlLTLaLBGl0lf", "model": "ada", "n_epochs": 8, "learning_rate_multiplier": 0.02}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/fine-tunes HTTP/1.1" 200 1005
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes processing_ms=104 request_id=faad1151cdaba51642c12a4d2baee900 response_code=200
+2023-01-19 23:54:45.721 | DEBUG    | gptchem.tuner:tune:186 - Requested fine tuning. {
+  "created_at": 1674168885,
+  "events": [
+    {
+      "created_at": 1674168885,
+      "level": "info",
+      "message": "Created fine-tune: ft-C32rfJJDYph3EyO4H8DbJmub",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-C32rfJJDYph3EyO4H8DbJmub",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 104490,
+      "created_at": 1674168885,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_suzuki/out/20230119_235441/train.jsonl",
+      "id": "file-A9EtJz2FsAeVlLTLaLBGl0lf",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1674168885,
+  "validation_files": []
+}
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1005
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=37 request_id=906bbba5bf68458aa5f9bc24953804fe response_code=200
+2023-01-19 23:54:46.164 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=34 request_id=f159619ac1922830081977df0f888b42 response_code=200
+2023-01-19 23:56:49.005 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=37 request_id=47d340d8dabd86d32ea12783a6d87ca0 response_code=200
+2023-01-19 23:58:51.013 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=40 request_id=f16fb5798e0a4ebd8eaa587faaf2c212 response_code=200
+2023-01-20 00:00:52.954 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=37 request_id=d785d2a4504fa8293c69a87a3b55bd39 response_code=200
+2023-01-20 00:02:54.589 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=37 request_id=e34a68692227f6409953f3530b8e3ad6 response_code=200
+2023-01-20 00:04:55.273 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=29 request_id=9af64a6e63bc846096efa7400cb4ce42 response_code=200
+2023-01-20 00:06:55.826 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=37 request_id=b0f45bf3d71f7f5954bb389dc8b0bf3e response_code=200
+2023-01-20 00:08:57.645 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=30 request_id=42eb3d982d63ca4938730ebcc5bdda4d response_code=200
+2023-01-20 00:10:58.495 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=33 request_id=575ee7e6e150ab7a9093c3746cf6a9f6 response_code=200
+2023-01-20 00:12:59.157 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=42 request_id=80eb238e93e488d1b4df0ef385a28ff6 response_code=200
+2023-01-20 00:15:00.763 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=48 request_id=16aea90564a9925aea36a18facf3cc6f response_code=200
+2023-01-20 00:17:01.361 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=36 request_id=b5507e60059b1198384accc5ace26375 response_code=200
+2023-01-20 00:19:01.964 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=33 request_id=d83529d4d39355f363d50501f6d3e076 response_code=200
+2023-01-20 00:21:04.682 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=38 request_id=7616211ee923e90dc955f6ab4bebf6bf response_code=200
+2023-01-20 00:23:05.578 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=40 request_id=eff76d7b56af68b968d8edc1c9be0500 response_code=200
+2023-01-20 00:25:06.171 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=42 request_id=ae8bca8207449938ad29e5f6f6e771da response_code=200
+2023-01-20 00:27:07.240 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=34 request_id=ac76288070256fbc22af7df6b7b26e84 response_code=200
+2023-01-20 00:29:08.618 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=37 request_id=e2b705703c4edeec4394c14942beebdb response_code=200
+2023-01-20 00:31:09.421 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=48 request_id=2f135d2122e81e94662da2dc970687ce response_code=200
+2023-01-20 00:33:12.143 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=39 request_id=d3e935280c98e3e183bf22db5ae639cc response_code=200
+2023-01-20 00:35:12.905 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=35 request_id=2ce978e5b904ceb137cbdf41d096effa response_code=200
+2023-01-20 00:37:14.210 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=34 request_id=6cb3665b15546f2b175bff63ab3dc00b response_code=200
+2023-01-20 00:39:15.520 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=34 request_id=8bd82213cfaae81187429a3dc458f77b response_code=200
+2023-01-20 00:41:16.120 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=40 request_id=29774065e4fe3ac182f9d49dedad4cc9 response_code=200
+2023-01-20 00:43:17.065 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=31 request_id=ff1a5fc2f7f3e00f6de0555a839b249d response_code=200
+2023-01-20 00:45:17.659 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1006
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=41 request_id=8e643cb0c8429875de9775e0e02b0f56 response_code=200
+2023-01-20 00:47:18.530 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 1587
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=38 request_id=2f52c82356969957665aedd79b29bbff response_code=200
+2023-01-20 00:49:20.163 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 2297
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=36 request_id=5db997700aa706eb0e195c56d604fa40 response_code=200
+2023-01-20 00:51:21.140 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub HTTP/1.1" 200 3382
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-C32rfJJDYph3EyO4H8DbJmub processing_ms=40 request_id=1fbbc49aeefc3dea94f41beb2a68d734 response_code=200
+2023-01-20 00:53:22.059 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-20 00:53:22.064 | DEBUG    | gptchem.tuner:tune:202 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_suzuki/out/20230119_235441', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_suzuki/out/20230119_235441/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-19-23-52-32', 'ft_id': 'ft-C32rfJJDYph3EyO4H8DbJmub', 'date': '20230120_005322', 'train_file_id': 'file-A9EtJz2FsAeVlLTLaLBGl0lf', 'valid_file_id': None}
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-19-23-52-32", "prompt": ["What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1=CC=C(C=C1)P([C-]2C=CC=C2)C3=CC=CC=C3.C1=CC=C(C=C1)P([C-]2C=CC=C2)C3=CC=CC=C3.[Fe+2]  reagent [Na+].OC([O-])=O  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 B1(OC(C(O1)(C)C)(C)C)C2=CC3=C(C=C2)N=CC=C3.O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CCCCP(C12CC3CC(C1)CC(C3)C2)C45CC6CC(C4)CC(C6)C5  reagent None  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C(C)(C)C)C(C)(C)C  reagent [Na+].OC([O-])=O  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC1=CC=CC=C1P(C2=CC=CC=C2C)C3=CC=CC=C3C  reagent [K+].[K+].[K+].[O-]P([O-])([O-])=O  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1(CCCCC1)P(C2CCCCC2)C3CCCCC3  reagent [Na+].OC([O-])=O  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.[Fe]  reagent [Li+].[O-]C(C)(C)C  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC1=CC=CC=C1P(C2=CC=CC=C2C)C3=CC=CC=C3C  reagent [F-].[Cs+]  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1=CC=C(C=C1)P([C-]2C=CC=C2)C3=CC=CC=C3.C1=CC=C(C=C1)P([C-]2C=CC=C2)C3=CC=CC=C3.[Fe+2]  reagent [K+].[OH-]  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1(CCCCC1)P(C2CCCCC2)C3CCCCC3  reagent [OH-].[Na+]  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CCCCP(C12CC3CC(C1)CC(C3)C2)C45CC6CC(C4)CC(C6)C5  reagent [Li+].[O-]C(C)(C)C  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand O6c1c(cccc1P(c2ccccc2)c3ccccc3)C(c7cccc(P(c4ccccc4)c5ccccc5)c67)(C)C  reagent [Li+].[O-]C(C)(C)C  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand c3c(P(c1ccccc1)c2ccccc2)cccc3  reagent [F-].[Cs+]  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand COc1cccc(c1c2ccccc2P(C3CCCCC3)C4CCCCC4)OC  reagent [K+].[K+].[K+].[O-]P([O-])([O-])=O  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1(CCCCC1)P(C2CCCCC2)C3CCCCC3  reagent [OH-].[Na+]  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand O6c1c(cccc1P(c2ccccc2)c3ccccc3)C(c7cccc(P(c4ccccc4)c5ccccc5)c67)(C)C  reagent [F-].[Cs+]  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1(CCCCC1)P(C2CCCCC2)C3CCCCC3  reagent [OH-].[Na+]  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C(C)(C)C)C(C)(C)C  reagent [K+].[OH-]  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand COc1cccc(c1c2ccccc2P(C3CCCCC3)C4CCCCC4)OC  reagent CCN(CC)CC  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1C(B(O)O)=CC=C2N=CC=CC=12.Cl.O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand O6c1c(cccc1P(c2ccccc2)c3ccccc3)C(c7cccc(P(c4ccccc4)c5ccccc5)c67)(C)C  reagent [OH-].[Na+]  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1(CCCCC1)P(C2CCCCC2)C3CCCCC3  reagent [Li+].[O-]C(C)(C)C  solvent CO.O?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1494
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=1030 request_id=88a83c11d18827ed257bf76a94921663 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-19-23-52-32", "prompt": ["What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand None  reagent CCN(CC)CC  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand P(c2ccccc2c1c(cc(cc1C(C)C)C(C)C)C(C)C)(C3CCCCC3)C4CCCCC4  reagent None  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.[Fe]  reagent [OH-].[Na+]  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C(C=C1)N(C)C)C(C)(C)C  reagent [F-].[Cs+]  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CCCCP(C12CC3CC(C1)CC(C3)C2)C45CC6CC(C4)CC(C6)C5  reagent [Li+].[O-]C(C)(C)C  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1(CCCCC1)P(C2CCCCC2)C3CCCCC3  reagent [OH-].[Na+]  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand O6c1c(cccc1P(c2ccccc2)c3ccccc3)C(c7cccc(P(c4ccccc4)c5ccccc5)c67)(C)C  reagent [OH-].[Na+]  solvent CO.O?###", "What is the yield of the reaction reactant 1 B1(OC(C(O1)(C)C)(C)C)C2=CC3=C(C=C2)N=CC=C3.O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1=CC=C(C=C1)P([C-]2C=CC=C2)C3=CC=CC=C3.C1=CC=C(C=C1)P([C-]2C=CC=C2)C3=CC=CC=C3.[Fe+2]  reagent [Li+].[O-]C(C)(C)C  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand COc1cccc(c1c2ccccc2P(C3CCCCC3)C4CCCCC4)OC  reagent [Li+].[O-]C(C)(C)C  solvent CO.O?###", "What is the yield of the reaction reactant 1 [B-](C1=CC2=C(C=C1)N=CC=C2)(F)(F)F.[K+].O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C(C=C1)N(C)C)C(C)(C)C  reagent [F-].[Cs+]  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand P(c2ccccc2c1c(cc(cc1C(C)C)C(C)C)C(C)C)(C3CCCCC3)C4CCCCC4  reagent [F-].[Cs+]  solvent CO.O?###", "What is the yield of the reaction reactant 1 B1(OC(C(O1)(C)C)(C)C)C2=CC3=C(C=C2)N=CC=C3.O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.[Fe]  reagent [Li+].[O-]C(C)(C)C  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 [B-](C1=CC2=C(C=C1)N=CC=C2)(F)(F)F.[K+].O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C(C=C1)N(C)C)C(C)(C)C  reagent None  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1=CC=C(C=C1)P([C-]2C=CC=C2)C3=CC=CC=C3.C1=CC=C(C=C1)P([C-]2C=CC=C2)C3=CC=CC=C3.[Fe+2]  reagent [Na+].OC([O-])=O  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C(C=C1)N(C)C)C(C)(C)C  reagent [OH-].[Na+]  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC1=CC=CC=C1P(C2=CC=CC=C2C)C3=CC=CC=C3C  reagent None  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand c3c(P(c1ccccc1)c2ccccc2)cccc3  reagent None  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CCCCP(C12CC3CC(C1)CC(C3)C2)C45CC6CC(C4)CC(C6)C5  reagent [K+].[OH-]  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CCCCP(C12CC3CC(C1)CC(C3)C2)C45CC6CC(C4)CC(C6)C5  reagent [Li+].[O-]C(C)(C)C  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC1=CC=CC=C1P(C2=CC=CC=C2C)C3=CC=CC=C3C  reagent None  solvent CO.O?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1494
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=185 request_id=78c03f11e4448ee5648e4335cef05552 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-19-23-52-32", "prompt": ["What is the yield of the reaction reactant 1 [B-](C1=CC2=C(C=C1)N=CC=C2)(F)(F)F.[K+].O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand P(c2ccccc2c1c(cc(cc1C(C)C)C(C)C)C(C)C)(C3CCCCC3)C4CCCCC4  reagent [K+].[K+].[K+].[O-]P([O-])([O-])=O  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand c3c(P(c1ccccc1)c2ccccc2)cccc3  reagent None  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C(C=C1)N(C)C)C(C)(C)C  reagent [Li+].[O-]C(C)(C)C  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.[Fe]  reagent None  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.[Fe]  reagent [Na+].OC([O-])=O  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand O6c1c(cccc1P(c2ccccc2)c3ccccc3)C(c7cccc(P(c4ccccc4)c5ccccc5)c67)(C)C  reagent [K+].[OH-]  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C(C=C1)N(C)C)C(C)(C)C  reagent [Li+].[O-]C(C)(C)C  solvent CO.O?###", "What is the yield of the reaction reactant 1 B1(OC(C(O1)(C)C)(C)C)C2=CC3=C(C=C2)N=CC=C3.O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CCCCP(C12CC3CC(C1)CC(C3)C2)C45CC6CC(C4)CC(C6)C5  reagent [Na+].OC([O-])=O  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand O6c1c(cccc1P(c2ccccc2)c3ccccc3)C(c7cccc(P(c4ccccc4)c5ccccc5)c67)(C)C  reagent [K+].[K+].[K+].[O-]P([O-])([O-])=O  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CCCCP(C12CC3CC(C1)CC(C3)C2)C45CC6CC(C4)CC(C6)C5  reagent [F-].[Cs+]  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand P(c2ccccc2c1c(cc(cc1C(C)C)C(C)C)C(C)C)(C3CCCCC3)C4CCCCC4  reagent [Li+].[O-]C(C)(C)C  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand P(c2ccccc2c1c(cc(cc1C(C)C)C(C)C)C(C)C)(C3CCCCC3)C4CCCCC4  reagent [OH-].[Na+]  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CCCCP(C12CC3CC(C1)CC(C3)C2)C45CC6CC(C4)CC(C6)C5  reagent [K+].[K+].[K+].[O-]P([O-])([O-])=O  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1=CC=C(C=C1)P([C-]2C=CC=C2)C3=CC=CC=C3.C1=CC=C(C=C1)P([C-]2C=CC=C2)C3=CC=CC=C3.[Fe+2]  reagent [Li+].[O-]C(C)(C)C  solvent CO.O?###", "What is the yield of the reaction reactant 1 [B-](C1=CC2=C(C=C1)N=CC=C2)(F)(F)F.[K+].O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C(C=C1)N(C)C)C(C)(C)C  reagent [K+].[K+].[K+].[O-]P([O-])([O-])=O  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.[Fe]  reagent [Li+].[O-]C(C)(C)C  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CCCCP(C12CC3CC(C1)CC(C3)C2)C45CC6CC(C4)CC(C6)C5  reagent [Li+].[O-]C(C)(C)C  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1(CCCCC1)P(C2CCCCC2)C3CCCCC3  reagent [Na+].OC([O-])=O  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand P(c2ccccc2c1c(cc(cc1C(C)C)C(C)C)C(C)C)(C3CCCCC3)C4CCCCC4  reagent [F-].[Cs+]  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand COc1cccc(c1c2ccccc2P(C3CCCCC3)C4CCCCC4)OC  reagent [Na+].OC([O-])=O  solvent CC#N.O?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1494
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=115 request_id=142232ebf3987f0367135b5a012bfde1 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-19-23-52-32", "prompt": ["What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C(C=C1)N(C)C)C(C)(C)C  reagent CCN(CC)CC  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CCCCP(C12CC3CC(C1)CC(C3)C2)C45CC6CC(C4)CC(C6)C5  reagent CCN(CC)CC  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC1=CC=CC=C1P(C2=CC=CC=C2C)C3=CC=CC=C3C  reagent [K+].[OH-]  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand c3c(P(c1ccccc1)c2ccccc2)cccc3  reagent [K+].[OH-]  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C(C=C1)N(C)C)C(C)(C)C  reagent None  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 [B-](C1=CC2=C(C=C1)N=CC=C2)(F)(F)F.[K+].O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand None  reagent [OH-].[Na+]  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1C(B(O)O)=CC=C2N=CC=CC=12.Cl.O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.[Fe]  reagent [Na+].OC([O-])=O  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 B1(OC(C(O1)(C)C)(C)C)C2=CC3=C(C=C2)N=CC=C3.O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.[Fe]  reagent [K+].[OH-]  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand O6c1c(cccc1P(c2ccccc2)c3ccccc3)C(c7cccc(P(c4ccccc4)c5ccccc5)c67)(C)C  reagent [Na+].OC([O-])=O  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC1=CC=CC=C1P(C2=CC=CC=C2C)C3=CC=CC=C3C  reagent [K+].[OH-]  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 B1(OC(C(O1)(C)C)(C)C)C2=CC3=C(C=C2)N=CC=C3.O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C(C=C1)N(C)C)C(C)(C)C  reagent [Na+].OC([O-])=O  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand COc1cccc(c1c2ccccc2P(C3CCCCC3)C4CCCCC4)OC  reagent CCN(CC)CC  solvent CO.O?###", "What is the yield of the reaction reactant 1 B1(OC(C(O1)(C)C)(C)C)C2=CC3=C(C=C2)N=CC=C3.O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand P(c2ccccc2c1c(cc(cc1C(C)C)C(C)C)C(C)C)(C3CCCCC3)C4CCCCC4  reagent None  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand None  reagent [Na+].OC([O-])=O  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand O6c1c(cccc1P(c2ccccc2)c3ccccc3)C(c7cccc(P(c4ccccc4)c5ccccc5)c67)(C)C  reagent [K+].[K+].[K+].[O-]P([O-])([O-])=O  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand COc1cccc(c1c2ccccc2P(C3CCCCC3)C4CCCCC4)OC  reagent [K+].[K+].[K+].[O-]P([O-])([O-])=O  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 B1(OC(C(O1)(C)C)(C)C)C2=CC3=C(C=C2)N=CC=C3.O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC1=CC=CC=C1P(C2=CC=CC=C2C)C3=CC=CC=C3C  reagent CCN(CC)CC  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand COc1cccc(c1c2ccccc2P(C3CCCCC3)C4CCCCC4)OC  reagent [K+].[K+].[K+].[O-]P([O-])([O-])=O  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC1=CC=CC=C1P(C2=CC=CC=C2C)C3=CC=CC=C3C  reagent [OH-].[Na+]  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand P(c2ccccc2c1c(cc(cc1C(C)C)C(C)C)C(C)C)(C3CCCCC3)C4CCCCC4  reagent CCN(CC)CC  solvent CO.O?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1494
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=120 request_id=fdfd357d8c6837fcac69c41db8508b9d response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-19-23-52-32", "prompt": ["What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.[Fe]  reagent [Na+].OC([O-])=O  solvent CO.O?###", "What is the yield of the reaction reactant 1 B1(OC(C(O1)(C)C)(C)C)C2=CC3=C(C=C2)N=CC=C3.O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand COc1cccc(c1c2ccccc2P(C3CCCCC3)C4CCCCC4)OC  reagent None  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand O6c1c(cccc1P(c2ccccc2)c3ccccc3)C(c7cccc(P(c4ccccc4)c5ccccc5)c67)(C)C  reagent [F-].[Cs+]  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand c3c(P(c1ccccc1)c2ccccc2)cccc3  reagent CCN(CC)CC  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 [B-](C1=CC2=C(C=C1)N=CC=C2)(F)(F)F.[K+].O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand O6c1c(cccc1P(c2ccccc2)c3ccccc3)C(c7cccc(P(c4ccccc4)c5ccccc5)c67)(C)C  reagent [OH-].[Na+]  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1(CCCCC1)P(C2CCCCC2)C3CCCCC3  reagent None  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand O6c1c(cccc1P(c2ccccc2)c3ccccc3)C(c7cccc(P(c4ccccc4)c5ccccc5)c67)(C)C  reagent [Li+].[O-]C(C)(C)C  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 [B-](C1=CC2=C(C=C1)N=CC=C2)(F)(F)F.[K+].O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1(CCCCC1)P(C2CCCCC2)C3CCCCC3  reagent CCN(CC)CC  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand None  reagent [K+].[K+].[K+].[O-]P([O-])([O-])=O  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.[Fe]  reagent [F-].[Cs+]  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 [B-](C1=CC2=C(C=C1)N=CC=C2)(F)(F)F.[K+].O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand P(c2ccccc2c1c(cc(cc1C(C)C)C(C)C)C(C)C)(C3CCCCC3)C4CCCCC4  reagent [Li+].[O-]C(C)(C)C  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC1=CC=CC=C1P(C2=CC=CC=C2C)C3=CC=CC=C3C  reagent [Na+].OC([O-])=O  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand None  reagent [OH-].[Na+]  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand c3c(P(c1ccccc1)c2ccccc2)cccc3  reagent None  solvent CC#N.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B4OC(C)(C)C(C)(C)O4  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC1=CC=CC=C1P(C2=CC=CC=C2C)C3=CC=CC=C3C  reagent [Li+].[O-]C(C)(C)C  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1C2C(=NC=CC=2)C=CC=1OS(C(F)(F)F)(=O)=O.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand C1=CC=C(C=C1)P([C-]2C=CC=C2)C3=CC=CC=C3.C1=CC=C(C=C1)P([C-]2C=CC=C2)C3=CC=CC=C3.[Fe+2]  reagent [Na+].OC([O-])=O  solvent CN(C)C=O.O?###", "What is the yield of the reaction reactant 1 C1=C(Br)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand None  reagent None  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(I)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1[B-](F)(F)F.[K+]  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.[Fe]  reagent [Li+].[O-]C(C)(C)C  solvent C1CCOC1.O?###", "What is the yield of the reaction reactant 1 B1(OC(C(O1)(C)C)(C)C)C2=CC3=C(C=C2)N=CC=C3.O  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1Br  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.CC(C)(C)P(C1=CC=C[CH]1)C(C)(C)C.[Fe]  reagent [OH-].[Na+]  solvent CO.O?###", "What is the yield of the reaction reactant 1 C1=C(Cl)C=CC2=NC=CC=C12.CCC1=CC(=CC=C1)CC  reactant 2 CC1=CC=C2C(C=NN2C3OCCCC3)=C1B(O)O  catalyst CC(=O)O~CC(=O)O~[Pd]  ligand CC1=CC=CC=C1P(C2=CC=CC=C2C)C3=CC=CC=C3C  reagent None  solvent C1CCOC1.O?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1494
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=114 request_id=7e2518dffe831ba5243d0cdd3dd37a31 response_code=200
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_suzuki/out/20230119_235441/train.jsonl: file-A9EtJz2FsAeVlLTLaLBGl0lf
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_suzuki/run_experiments.py", line 79, in <module>
+    train_test_model("DreherDoyle", train_size, seed + 34, oh)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_suzuki/run_experiments.py", line 70, in train_test_model
+    f"Ran train size {num_train_points} and got MAE {res['mean_absolute_error']}, baseline {baseline_res['rxnfp-rbf']['mean_absolute_error']}"
+KeyError: 'rxnfp-rbf'

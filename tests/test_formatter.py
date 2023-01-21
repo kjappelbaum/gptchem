@@ -7,6 +7,7 @@ from gptchem.formatter import (
     InverseDesignFormatter,
     ReactionClassificationFormatter,
     RegressionFormatter,
+    ReactionRegressionFormatter
 )
 
 
@@ -108,11 +109,20 @@ def test_reaction_classification_formatter():
 
 
 def test_inverse_design_formatter():
-    data = get_doyle_rxn_data()
+    data = get_photoswitch_data()
     formatter = InverseDesignFormatter(
         representation_column="SMILES",
         property_columns=["E isomer pi-pi* wavelength in nm"],
         property_names=["E isomer pi-pi* wavelength in nm"],
     )
     formatted = formatter(data)
+    assert len(data) >= len(formatted)
+
+
+
+def test_reaction_regression_formatter():
+    data = get_doyle_rxn_data()
+    formatter = ReactionRegressionFormatter.from_preset("DreherDoyle", 0)
+    formatted = formatter(data)
     assert len(data) == len(formatted)
+    assert formatted['completion'].iloc[0] == ' 70@@@'

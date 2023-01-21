@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from loguru import logger
 from fastcore.all import L
 from fastcore.xtras import save_pickle
 
@@ -12,11 +13,11 @@ from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
 num_samples = 10
-num_train_points = [100]
+num_train_points = [100, 300, 1000]
 
-temperatures = [0.5]
+temperatures = [0.0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5]
 
-noise_levels = [1.0]
+noise_levels = [0.01, 0.1, 0.2, 0.5, 0.7, 1.0]
 
 
 def train_test(num_train_points, temperatures, num_samples, seed):
@@ -98,4 +99,9 @@ if __name__ == "__main__":
     for seed in range(num_samples):
         for noise_level in noise_levels:
             for num_train_point in num_train_points:
-                train_test(num_train_point, temperatures, num_samples, seed)
+                try:
+                    train_test(num_train_point, temperatures, num_samples, seed)
+                except Exception as e:
+                    logger.exception(
+                        f"{e}"
+                    )

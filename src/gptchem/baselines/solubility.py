@@ -8,12 +8,12 @@ from rdkit import Chem
 from sklearn.ensemble import RandomForestRegressor
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
 
-from gptchem.evaluator import evaluate_classification
+from gptchem.evaluator import evaluate_classification, get_regression_metrics
 
 from .esol import ESOLCalculator
 from ..fingerprints.mol_fingerprints import compute_fragprints, compute_morgan_fingerprints
 from ..models.gpr import GPRBaseline
-from ..models.xgboost import XGBClassificationBaseline
+from ..models.xgboost import XGBClassificationBaseline, XGBRegressionBaseline
 
 
 def featurize_data(tasks, featurizer, normalize, df, smiles_col="SMILES"):
@@ -168,6 +168,39 @@ def train_test_solubility_classification_baseline(
         "tabpfn": evaluate_classification(binned_true, binned_tabpfn_res),
         "xgb": evaluate_classification(binned_true, predictions),
         "esol": evaluate_classification(binned_true, binned_esol),
+    }
+
+    return res
+
+
+def train_test_solubility_regression_baseline(
+    df_train,
+    df_test,
+    smiles_col="SMILES",
+    task_name="measured log(solubility:mol/L)",
+    num_trials=100,
+):
+    baselines = solubility_baseline(df_train, df_test, smiles_col=smiles_col, task_name=task_name)
+
+    y_train = df_train[task_name].values
+    y_test = df_test[task_name].values
+    X_train = compute_morgan_fingerprints(df_train["SMILES"].values, n_bits=100)
+    X_test = compute_morgan_fingerprints(df_test["SMILES"].values, n_bits=100)
+
+    X_train = compute_fragprints(df_train["SMILES"].values)
+    X_test = compute_fragprints(df_test["SMILES"].values)
+    xgbclassifier = XGBRegressionBaseline(seed=42, num_trials=num_trials)
+    xgbclassifier.tune(X_train, y_train)
+    xgbclassifier.fit(X_train, y_train)
+    predictions = xgbclassifier.predict(X_test)
+
+    res = {
+        "true": y_train,
+        "weave": get_regression_metrics(y_test, baselines["weave"]),
+        "graph_conv": get_regression_metrics(y_test, baselines["graph_conv"]),
+        "gpr": get_regression_metrics(y_test, baselines["gpr"]),
+        "xgb": get_regression_metrics(y_test, predictions),
+        "esol": get_regression_metrics(y_test, baselines["esol"]),
     }
 
     return res

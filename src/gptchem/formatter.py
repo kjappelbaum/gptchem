@@ -471,6 +471,149 @@ class ReactionClassificationFormatter(BaseFormatter):
         return self.format_many(df)
 
 
+
+class ReactionRegressionFormatter(BaseFormatter):
+    _PROMPT_TEMPLATE = (
+        "{prefix}What is the {propertyname} of the reaction {representation}{suffix}{end_prompt}"
+    )
+    _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
+
+    def __init__(
+        self,
+        reactant_columns: Collection[str],
+        reactant_column_names: Collection[str],
+        label_column: str,
+        property_name: str,
+        num_digit: Optional[int] = None,
+        one_hot: bool = False,
+    ) -> None:
+        """Initialize a ReactionClassificationFormatter.
+
+        Args:
+            reactant_columns (Collection[str]): The column name of the reactants.
+            reactant_column_names (Collection[str]): The names of the reactants.
+            label_column (str): The column name of the label.
+            property_name (str): The name of the property.
+            num_digit (int, optional): The number of digits to round the label to. 
+                Defaults to None.
+            one_hot (bool): Whether to use one hot encoding for the labels.
+        """
+        self.reactant_columns = reactant_columns
+        self.reactant_column_names = reactant_column_names
+        self.label_column = label_column
+        self.num_digit = num_digit
+        self.property_name = property_name
+        self.bins = None
+        self.one_hot = one_hot
+        self.le = MultiColumnLabelEncoder(reactant_columns)
+
+    @classmethod
+    def from_preset(cls, ds_name, num_digit, one_hot=False):
+        benchmarks = {
+            "DreherDoyle": {
+                "features": ["ligand", "additive", "base", "aryl halide"],
+                "feature_names": ["ligand", "additive", "base", "aryl halide"],
+                "labels": "yield",
+            },
+            "DreherDoyleRXN": {
+                "features": ["rxn"],
+                "labels": "yield",
+                "feature_names": ["reaction"],
+            },
+            "SuzukiMiyaura": {
+                "features": [
+                    "reactant_1_smiles",
+                    "reactant_2_smiles",
+                    "catalyst_smiles",
+                    "ligand_smiles",
+                    "reagent_1_smiles",
+                    "solvent_1_smiles",
+                ],
+                "feature_names": [
+                    "reactant 1",
+                    "reactant 2",
+                    "catalyst",
+                    "ligand",
+                    "reagent",
+                    "solvent",
+                ],
+                "labels": "yield",
+            },
+            "SuzukiMiyauraRXN": {
+                "features": ["rxn"],
+                "labels": "yield",
+                "feature_names": ["reaction"],
+            },
+        }
+        if ds_name not in benchmarks:
+            raise ValueError(f"Dataset {ds_name} not found.")
+
+        feats = benchmarks[ds_name]["features"]
+        label = benchmarks[ds_name]["labels"]
+        feat_names = benchmarks[ds_name]["feature_names"]
+        return cls(
+            reactant_columns=feats,
+            label_column=label,
+            num_digit=num_digit,
+            one_hot=one_hot,
+            reactant_column_names=feat_names,
+            property_name="yield",
+        )
+
+    def _representation_string(self, representation):
+        return "  ".join([f"{n} {r}" for n, r in zip(self.reactant_column_names, representation)])
+
+    def _format(self, representation: ArrayLike, label: StringOrNumber) -> dict:
+        return {
+            "prompt": self._PROMPT_TEMPLATE.format(
+                prefix=self._prefix,
+                propertyname=self.property_name,
+                representation=self._representation_string(representation),
+                suffix=self._suffix,
+                end_prompt=self._end_prompt,
+            ),
+            "completion": self._COMPLETION_TEMPLATE.format(
+                start_completion=self._start_completion,
+                label="{:.{prec}f}".format(label, prec=self.num_digit),
+                stop_sequence=self._stop_sequence,
+            ),
+            "label": label,
+            "representation": representation,
+        }
+
+    def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Format a dataframe of representations and labels into a dataframe of prompts and completions.
+
+        This function will drop rows with missing values in the representation or label columns.
+
+        Args:
+            df (pd.DataFrame): A dataframe with a representation column and a label column.
+
+        Returns:
+            pd.DataFrame: A dataframe with a prompt column and a completion column.
+        """
+        df = df.dropna(subset=[self.label_column])
+        df = df.fillna(value="None")
+
+        if self.one_hot:
+            representation = df[self.reactant_columns]
+            representation = self.le.fit_transform(representation).values.tolist()
+        else:
+            representation = df[self.reactant_columns].values
+        representation = list(representation)
+        label = df[self.label_column]
+
+        label = label.round(self.num_digit)
+
+        return pd.DataFrame([self._format(r, l) for r, l in zip(representation, label)])
+
+    __repr__ = basic_repr(
+        "reactant_columns, reactant_column_names, label_column, property_name, num_classes, qcut, one_hot"
+    )
+
+    def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
+        return self.format_many(df)
+
 class MOFSolventRecommenderFormatter(BaseFormatter):
     _PROMPT_TEMPLATE = "{prefix}In what solvent can one make a MOF out of {linker} and {node}{ion}{suffix}{end_prompt}"
     _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"

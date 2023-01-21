@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
 
-from gptchem.evaluator import evaluate_classification
+from gptchem.evaluator import evaluate_classification, get_regression_metrics
 
 from ..fingerprints.mol_fingerprints import compute_fragprints, compute_morgan_fingerprints
 from ..models.gpr import GPRBaseline
@@ -61,4 +61,35 @@ def train_test_freesolv_classification_baseline(
         "predicted_bins": predicted_bins,
         "predictions": predictions if not tabpfn else None,
         **evaluate_classification(df_test["bin"].astype(int).values, predicted_bins.astype(int)),
+    }
+
+
+
+def train_test_freesolv_regression_baseline(
+    data, 
+    train_smiles,
+    test_smiles,
+    formatter,
+):
+    label_column = formatter.label_column
+    data = data.dropna(subset=[formatter.label_column, formatter.representation_column])
+    formatted = formatter(data)
+
+    train = data[data["smiles"].isin(train_smiles)]
+    test = data[data["smiles"].isin(test_smiles)]
+
+    df_train = pd.DataFrame({"SMILES": train["smiles"], "y": train[label_column]})
+    df_test = pd.DataFrame({"SMILES": test["smiles"], "y": test[label_column]})
+
+    X_train = compute_fragprints(df_train["SMILES"].values)
+    X_test = compute_fragprints(df_test["SMILES"].values)
+
+    baseline = GPRBaseline()
+    baseline.fit(X_train, df_train["y"].values)
+
+    predictions = baseline.predict(X_test)
+
+    return {
+        "predictions": predictions,
+        **get_regression_metrics(df_test["y"].values, predictions.flatten()),
     }

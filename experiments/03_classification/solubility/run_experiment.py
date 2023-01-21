@@ -10,7 +10,7 @@ from gptchem.formatter import ClassificationFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
-num_train_points = [10, 20, 50, 100, 200, 500]
+num_train_points = [10, 20, 50, 100, 200, 500][::-1]
 num_classes = [5, 2]
 representations = ["SMILES", "SELFIES", "InChI"]
 
@@ -67,4 +67,4 @@ if __name__ == "__main__":
         for train_size in num_train_points:
             for num_class in num_classes:
                 for representation in representations:
-                    train_test(train_size, representation, num_class, seed=i +74726)
+                    train_test(train_size, representation, num_class, seed=i + 236)

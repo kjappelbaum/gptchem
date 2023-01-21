@@ -316,3 +316,323 @@
 2023-01-18 08:57:30.297 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
 2023-01-18 08:59:30.933 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
 2023-01-18 09:01:32.046 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:03:32.616 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:05:33.211 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:07:33.865 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:09:34.406 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:11:35.058 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:13:35.686 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:15:36.472 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:17:37.072 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:19:37.644 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:21:38.226 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:23:39.342 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:25:39.996 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:27:40.560 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:29:41.195 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:31:41.860 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:33:42.978 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:35:43.542 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:37:44.174 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:39:44.707 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:41:45.502 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:43:46.414 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:45:47.019 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:47:48.303 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:49:48.889 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:51:49.346 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:53:49.928 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:55:50.550 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:57:51.268 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 09:59:52.338 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:01:52.900 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:03:53.481 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:05:54.252 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:07:54.845 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:09:55.763 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:11:56.381 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:13:56.980 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:15:57.531 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:17:58.430 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:19:59.412 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:22:00.024 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:24:00.594 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:26:01.146 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:28:01.749 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:30:02.314 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:32:02.904 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:34:03.472 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:36:04.273 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:38:04.842 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:40:05.425 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:42:06.045 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:44:06.742 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:46:07.523 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:48:08.432 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:50:09.083 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:52:09.624 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:54:10.426 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:56:12.483 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 10:58:12.970 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:00:13.572 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:02:14.154 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:04:14.740 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:06:15.996 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:08:16.573 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:10:17.185 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:12:17.743 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:14:18.346 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:16:18.943 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:18:19.504 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:20:20.290 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:22:21.045 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:24:21.660 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 11:26:22.239 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:01:40.387 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:03:42.554 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:05:43.989 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:07:44.571 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:09:45.163 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:11:45.726 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:13:46.250 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:15:46.817 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:17:47.365 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:19:47.929 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:21:48.578 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:23:49.137 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:25:49.676 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:27:50.237 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:29:50.799 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:31:52.244 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:33:52.862 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:35:53.469 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:37:54.034 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:39:54.597 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:41:55.228 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:43:55.938 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:45:56.623 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:47:57.340 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:49:57.985 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:51:58.640 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 12:53:59.393 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 13:38:59.953 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 13:41:00.519 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 13:43:01.119 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 13:45:01.676 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 13:47:02.385 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 13:49:02.923 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 13:51:03.440 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 13:53:04.029 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 13:55:04.768 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 13:57:05.422 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 13:59:06.033 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 14:01:06.848 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 14:03:07.445 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 14:05:08.042 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 14:07:08.851 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 14:09:09.506 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 14:11:10.151 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 14:13:10.808 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 14:15:12.501 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 14:35:14.894 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 14:37:15.511 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: failed
+2023-01-18 15:04:32.195 | ERROR    | gptchem.tuner:tune:194 - Fine tuning failed.
+Traceback (most recent call last):
+
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           │          └ <function create_connection at 0x13f7b7280>
+           └ <module 'urllib3.util.connection' from '/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/...
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               │      │           │     │     │       │      └ <SocketKind.SOCK_STREAM: 1>
+               │      │           │     │     │       └ <module 'socket' from '/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/socket.py'>
+               │      │           │     │     └ <AddressFamily.AF_UNSPEC: 0>
+               │      │           │     └ 443
+               │      │           └ 'api.openai.com'
+               │      └ <function getaddrinfo at 0x10e73ad30>
+               └ <module 'socket' from '/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/socket.py'>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               │       │           │     │     │       │     │      └ 0
+               │       │           │     │     │       │     └ 0
+               │       │           │     │     │       └ <SocketKind.SOCK_STREAM: 1>
+               │       │           │     │     └ <AddressFamily.AF_UNSPEC: 0>
+               │       │           │     └ 443
+               │       │           └ 'api.openai.com'
+               │       └ <built-in function getaddrinfo>
+               └ <module '_socket' from '/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/lib-dynload/_socket.cpython-39-darwin....
+
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+                       │    └ <function HTTPConnectionPool._make_request at 0x13f845af0>
+                       └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x14e08cdf0>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+    │    │              └ <urllib3.connection.HTTPSConnection object at 0x14e107910>
+    │    └ <function HTTPSConnectionPool._validate_conn at 0x13f846040>
+    └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x14e08cdf0>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+    │    └ <function HTTPSConnection.connect at 0x13f8268b0>
+    └ <urllib3.connection.HTTPSConnection object at 0x14e107910>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+    │    │             │    └ <function HTTPConnection._new_conn at 0x13f826310>
+    │    │             └ <urllib3.connection.HTTPSConnection object at 0x14e107910>
+    │    └ None
+    └ <urllib3.connection.HTTPSConnection object at 0x14e107910>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+          └ <class 'urllib3.exceptions.NewConnectionError'>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x14e107910>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x13f845d30>
+           └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x14e08cdf0>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x13f845d30>
+           └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x14e08cdf0>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x13f845d30>
+           └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x14e08cdf0>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x13f7d19d0>
+              └ Retry(total=0, connect=None, read=None, redirect=None, status=None)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+          │             │      │    │        │             └ 'unknown'
+          │             │      │    │        └ <class 'urllib3.exceptions.ResponseError'>
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x14e107910>: Failed to establish a new connection: [Errno ...
+          │             │      └ '/v1/fine-tunes/ft-0cjNTOSMiaRRcdvIDp4qBtPD'
+          │             └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x14e08cdf0>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/fine-tunes/ft-0cjNTOSMiaRRcdvIDp4qBtPD (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x14e107910>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 498, in request_raw
+    result = _thread_context.session.request(
+             └ <_thread._local object at 0x12f154180>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': 600, 'allow_redirects': True, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [GET]>
+           │    └ <function Session.send at 0x13fc738b0>
+           └ <requests.sessions.Session object at 0x14e08c7c0>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': 600, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [GET]>
+        │       └ <function HTTPAdapter.send at 0x13fc75d30>
+        └ <requests.adapters.HTTPAdapter object at 0x14e08cfa0>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [GET]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/fine-tunes/ft-0cjNTOSMiaRRcdvIDp4qBtPD (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x14e107910>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/mof_solvent/run_experiments.py", line 64, in <module>
+    train_test(train_size, seed)
+    │          │           └ 0
+    │          └ 10
+    └ <function train_test at 0x100c530d0>
+
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/mof_solvent/run_experiments.py", line 42, in train_test
+    tune_res = tuner(train)
+               │     └                                                 prompt  ...             solvent_mol_ratios
+               │       361  In what solvent can one make ...
+               └ gptchem.tuner.Tuner(base_model='ada', batch_size=None, n_epochs=8, learning_rate_multiplier=0.02, run_name=None)
+
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 208, in __call__
+    return self.tune(train_df, validation_df)
+           │    │    │         └ None
+           │    │    └                                                 prompt  ...             solvent_mol_ratios
+           │    │      361  In what solvent can one make ...
+           │    └ <function Tuner.tune at 0x14e08b550>
+           └ gptchem.tuner.Tuner(base_model='ada', batch_size=None, n_epochs=8, learning_rate_multiplier=0.02, run_name=None)
+
+> File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 189, in tune
+    modelname = get_ft_model_name(ft_id, self._sleep)
+                │                 │      │    └ 120
+                │                 │      └ gptchem.tuner.Tuner(base_model='ada', batch_size=None, n_epochs=8, learning_rate_multiplier=0.02, run_name=None)
+                │                 └ 'ft-0cjNTOSMiaRRcdvIDp4qBtPD'
+                └ <function get_ft_model_name at 0x14e088f70>
+
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 27, in get_ft_model_name
+    ft = FineTune.retrieve(id=ft_id)
+         │        │           └ 'ft-0cjNTOSMiaRRcdvIDp4qBtPD'
+         │        └ <classmethod object at 0x13fd06eb0>
+         └ <class 'openai.api_resources.fine_tune.FineTune'>
+
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/abstract/api_resource.py", line 20, in retrieve
+    instance.refresh(request_id=request_id, request_timeout=request_timeout)
+    │        │                  │                           └ None
+    │        │                  └ None
+    │        └ <function APIResource.refresh at 0x14e0129d0>
+    └ <FineTune id=ft-0cjNTOSMiaRRcdvIDp4qBtPD at 0x14e10a590> JSON: {
+        "id": "ft-0cjNTOSMiaRRcdvIDp4qBtPD"
+      }
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/abstract/api_resource.py", line 32, in refresh
+    self.request(
+    │    └ <function OpenAIObject.request at 0x14e012430>
+    └ <FineTune id=ft-0cjNTOSMiaRRcdvIDp4qBtPD at 0x14e10a590> JSON: {
+        "id": "ft-0cjNTOSMiaRRcdvIDp4qBtPD"
+      }
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/openai_object.py", line 179, in request
+    response, stream, api_key = requestor.request(
+              │                 │         └ <function APIRequestor.request at 0x14e009550>
+              │                 └ <openai.api_requestor.APIRequestor object at 0x13f7aca00>
+              └ False
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 216, in request
+    result = self.request_raw(
+             │    └ <function APIRequestor.request_raw at 0x14e0098b0>
+             └ <openai.api_requestor.APIRequestor object at 0x13f7aca00>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 510, in request_raw
+    raise error.APIConnectionError("Error communicating with OpenAI: {}".format(e)) from e
+          │     └ <class 'openai.error.APIConnectionError'>
+          └ <module 'openai.error' from '/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/error.py'>
+
+openai.error.APIConnectionError: Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/fine-tunes/ft-0cjNTOSMiaRRcdvIDp4qBtPD (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x14e107910>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/mof_solvent/out/20230117_233319/train.jsonl: file-vwMUVnRe5aUpnwdxvsaYVJAF
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/mof_solvent/run_experiments.py", line 64, in <module>
+    train_test(train_size, seed)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/mof_solvent/run_experiments.py", line 42, in train_test
+    tune_res = tuner(train)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 208, in __call__
+    return self.tune(train_df, validation_df)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 196, in tune
+    self._modelname = modelname
+UnboundLocalError: local variable 'modelname' referenced before assignment
