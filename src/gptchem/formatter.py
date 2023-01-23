@@ -124,7 +124,7 @@ class ClassificationFormatter(ForwardFormatter):
     ) -> None:
         """Initialize a ClassificationFormatter.
 
-        Args:
+    Args:
             representation_column (str): The column name of the representation.
             label_column (str): The column name of the label.
             property_name (str): The name of the property.

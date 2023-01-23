@@ -14,12 +14,12 @@ POLYMER_FEATURES = [
     "rel_shannon",
     "length",
 ]
-
+from typing import List
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
 
-from gptchem.evaluator import evaluate_classification
+from gptchem.evaluator import evaluate_classification, get_regression_metrics
 
 from ..models.xgboost import XGBClassificationBaseline, XGBRegressionBaseline
 
@@ -61,4 +61,38 @@ def train_test_polymer_classification_baseline(
         "predicted_bins": predictions,
         "predictions": predictions if not tabpfn else None,
         **evaluate_classification(y_test, predictions),
+    }
+
+
+
+
+def train_test_polymer_regression_baseline(
+    df: pd.DataFrame,
+    train_smiles: List[str],
+    test_smiles: List[str],
+    formatter,
+    seed: int = 42,
+    num_trials: int = 100,
+):
+    label_column = formatter.label_column
+    repr_column = formatter.representation_column
+    df = df.dropna(subset=[formatter.label_column, formatter.representation_column])
+    formatted = formatter(df)
+
+    train = df[df[repr_column].isin(train_smiles)]
+    test = df[df[repr_column].isin(test_smiles)]
+
+    X_train, y_train = train[POLYMER_FEATURES], train[label_column]
+    X_test, y_test = test[POLYMER_FEATURES], test[label_column]
+
+    baseline = XGBRegressionBaseline(num_trials=num_trials, seed=seed)
+    baseline.tune(X_train, y_train)
+    baseline.fit(X_train, y_train)
+
+    predictions = baseline.predict(X_test)
+
+    return {
+        "true": y_test,
+        "predictions": predictions,
+        **get_regression_metrics(y_test, predictions),
     }

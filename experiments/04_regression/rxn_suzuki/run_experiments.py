@@ -15,7 +15,7 @@ from sklearn.model_selection import train_test_split
 from pathlib import Path
 from fastcore.xtras import save_pickle
 
-train_sizes = [10, 20, 50, 100, 200][::-1]
+train_sizes = [10, 20, 50, 100, 200]
 num_test_points = 100
 use_one_hot = [True, False][::-1]
 num_repeats = 10
@@ -76,4 +76,4 @@ if __name__ == "__main__":
     for seed in range(num_repeats):
         for oh in use_one_hot:
             for train_size in train_sizes:
-                train_test_model("DreherDoyle", train_size, seed + 34, oh)
+                train_test_model("DreherDoyle", train_size, seed + 3344, oh)
