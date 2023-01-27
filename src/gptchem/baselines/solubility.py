@@ -182,8 +182,8 @@ def train_test_solubility_regression_baseline(
 ):
     baselines = solubility_baseline(df_train, df_test, smiles_col=smiles_col, task_name=task_name)
 
-    y_train = df_train[task_name].values
-    y_test = df_test[task_name].values
+    y_train = df_train[task_name]
+    y_test = df_test[task_name]
     X_train = compute_morgan_fingerprints(df_train["SMILES"].values, n_bits=100)
     X_test = compute_morgan_fingerprints(df_test["SMILES"].values, n_bits=100)
 

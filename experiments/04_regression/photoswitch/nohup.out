@@ -1,4 +1,4 @@
-2023-01-23 11:41:02.917244: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+2023-01-27 13:30:13.594900: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
 ╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
 │ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
 ╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
@@ -8,14 +8,14 @@
 ├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
 │ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.02438 │
 ╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
-Upload progress:   0%|          | 0.00/81.1k [00:00<?, ?it/s]Upload progress: 100%|██████████| 81.1k/81.1k [00:00<00:00, 61.1Mit/s]
-2023-01-23 11:41:05.477 | DEBUG    | gptchem.tuner:tune:186 - Requested fine tuning. {
-  "created_at": 1674470465,
+Upload progress:   0%|          | 0.00/81.1k [00:00<?, ?it/s]Upload progress: 100%|██████████| 81.1k/81.1k [00:00<00:00, 57.2Mit/s]
+2023-01-27 13:30:16.632 | DEBUG    | gptchem.tuner:tune:186 - Requested fine tuning. {
+  "created_at": 1674822616,
   "events": [
     {
-      "created_at": 1674470465,
+      "created_at": 1674822616,
       "level": "info",
-      "message": "Created fine-tune: ft-BijiFWbs8VlEkpfnHJYSsrd3",
+      "message": "Created fine-tune: ft-32HdEznQsi1qJvbWA9t6iRor",
       "object": "fine-tune-event"
     }
   ],
@@ -26,7 +26,7 @@
     "n_epochs": 8,
     "prompt_loss_weight": 0.01
   },
-  "id": "ft-BijiFWbs8VlEkpfnHJYSsrd3",
+  "id": "ft-32HdEznQsi1qJvbWA9t6iRor",
   "model": "ada",
   "object": "fine-tune",
   "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
@@ -35,16 +35,233 @@
   "training_files": [
     {
       "bytes": 81060,
-      "created_at": 1674470464,
-      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230123_114103/train.jsonl",
-      "id": "file-WKwBFTsYVhwVGoPmfriPrvFl",
+      "created_at": 1674822615,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_133013/train.jsonl",
+      "id": "file-N477ZvPkrJWCyrFTFpukf7Mx",
       "object": "file",
       "purpose": "fine-tune",
       "status": "uploaded",
       "status_details": null
     }
   ],
-  "updated_at": 1674470465,
+  "updated_at": 1674822616,
   "validation_files": []
 }
-2023-01-23 11:41:06.511 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:30:17.101 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:32:17.573 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:34:18.186 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:36:18.672 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:38:20.655 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:40:22.388 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:42:24.509 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+2023-01-27 13:44:26.776 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+2023-01-27 13:46:27.404 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-27 13:46:27.408 | DEBUG    | gptchem.tuner:tune:202 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_133013', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_133013/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-27-12-45-12', 'ft_id': 'ft-32HdEznQsi1qJvbWA9t6iRor', 'date': '20230127_134627', 'train_file_id': 'file-N477ZvPkrJWCyrFTFpukf7Mx', 'valid_file_id': None}
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_133013/train.jsonl: file-N477ZvPkrJWCyrFTFpukf7Mx
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1.27797 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 45.7734  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.04283 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Upload progress:   0%|          | 0.00/41.3k [00:00<?, ?it/s]Upload progress: 100%|██████████| 41.3k/41.3k [00:00<00:00, 71.2Mit/s]
+2023-01-27 13:46:33.144 | DEBUG    | gptchem.tuner:tune:186 - Requested fine tuning. {
+  "created_at": 1674823593,
+  "events": [
+    {
+      "created_at": 1674823593,
+      "level": "info",
+      "message": "Created fine-tune: ft-JyzHfB7zs4UvSadRBrgtP68r",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-JyzHfB7zs4UvSadRBrgtP68r",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 41316,
+      "created_at": 1674823592,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_134631/train.jsonl",
+      "id": "file-hW3ICQKt1OVMb2v0mLKbqHDA",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1674823593,
+  "validation_files": []
+}
+2023-01-27 13:46:33.327 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:48:33.821 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:50:34.254 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:52:34.721 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:54:35.232 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:56:35.664 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:58:36.289 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:00:36.732 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:02:37.621 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:04:38.073 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:06:38.915 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+2023-01-27 14:08:39.582 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-27 14:08:39.583 | DEBUG    | gptchem.tuner:tune:202 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_134631', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_134631/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-27-13-08-21', 'ft_id': 'ft-JyzHfB7zs4UvSadRBrgtP68r', 'date': '20230127_140839', 'train_file_id': 'file-hW3ICQKt1OVMb2v0mLKbqHDA', 'valid_file_id': None}
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_134631/train.jsonl: file-hW3ICQKt1OVMb2v0mLKbqHDA
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.17248 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 49.4637  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Upload progress:   0%|          | 0.00/20.3k [00:00<?, ?it/s]Upload progress: 100%|██████████| 20.3k/20.3k [00:00<00:00, 44.6Mit/s]
+2023-01-27 14:08:46.374 | DEBUG    | gptchem.tuner:tune:186 - Requested fine tuning. {
+  "created_at": 1674824926,
+  "events": [
+    {
+      "created_at": 1674824926,
+      "level": "info",
+      "message": "Created fine-tune: ft-qEb2Z9OYU28tzQDBlLLzflAj",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-qEb2Z9OYU28tzQDBlLLzflAj",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 20262,
+      "created_at": 1674824923,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_140842/train.jsonl",
+      "id": "file-6eGDto3qLFZtuq1cDiqhLDwH",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1674824926,
+  "validation_files": []
+}
+2023-01-27 14:08:47.078 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:10:47.584 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:12:52.787 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:14:53.238 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:16:53.854 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:18:54.998 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:20:55.463 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:22:56.275 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:24:57.958 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:26:58.877 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+2023-01-27 14:31:41.098 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-27 14:31:41.099 | DEBUG    | gptchem.tuner:tune:202 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_140842', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_140842/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-27-13-28-08', 'ft_id': 'ft-qEb2Z9OYU28tzQDBlLLzflAj', 'date': '20230127_143141', 'train_file_id': 'file-6eGDto3qLFZtuq1cDiqhLDwH', 'valid_file_id': None}
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_140842/train.jsonl: file-6eGDto3qLFZtuq1cDiqhLDwH
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.20306 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 3.06807 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.50629 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Upload progress:   0%|          | 0.00/8.62k [00:00<?, ?it/s]Upload progress: 100%|██████████| 8.62k/8.62k [00:00<00:00, 17.8Mit/s]
+2023-01-27 14:31:47.066 | DEBUG    | gptchem.tuner:tune:186 - Requested fine tuning. {
+  "created_at": 1674826306,
+  "events": [
+    {
+      "created_at": 1674826306,
+      "level": "info",
+      "message": "Created fine-tune: ft-AmOTxjZ5OA1tJjNlZmkHrexL",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-AmOTxjZ5OA1tJjNlZmkHrexL",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 8618,
+      "created_at": 1674826306,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_143145/train.jsonl",
+      "id": "file-V5m1U5BnbcwVsza6mxD2T6Er",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1674826306,
+  "validation_files": []
+}
+2023-01-27 14:31:47.970 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:33:50.760 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:37:13.273 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:39:17.713 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:41:18.903 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 14:43:19.848 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-27 14:43:19.849 | DEBUG    | gptchem.tuner:tune:202 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_143145', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_143145/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-27-13-43-11', 'ft_id': 'ft-AmOTxjZ5OA1tJjNlZmkHrexL', 'date': '20230127_144319', 'train_file_id': 'file-V5m1U5BnbcwVsza6mxD2T6Er', 'valid_file_id': None}
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/out/20230127_143145/train.jsonl: file-V5m1U5BnbcwVsza6mxD2T6Er
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/run_experiments.py", line 78, in <module>
+    train_test_model(representation, num_train_points, seed + 123443224)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/photoswitch/run_experiments.py", line 58, in train_test_model
+    completions = querier(test_formatted)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/querier.py", line 123, in __call__
+    return self.query(df, temperature, logprobs)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/querier.py", line 98, in query
+    completions_ = openai.Completion.create(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 226, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 599, in _interpret_response
+    self._interpret_response_line(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 655, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.APIError: internal error {
+    "error": {
+        "message": "internal error",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": null
+    }
+}
+ 500 {'error': {'message': 'internal error', 'type': 'invalid_request_error', 'param': None, 'code': None}} {'Date': 'Fri, 27 Jan 2023 13:43:26 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '147', 'Connection': 'keep-alive', 'Vary': 'Origin', 'X-Request-Id': '313544a760fb7212d2c6b70243be2081', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains'}

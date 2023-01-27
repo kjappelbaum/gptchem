@@ -4,9 +4,9 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
 
-from gptchem.evaluator import evaluate_classification
+from gptchem.evaluator import evaluate_classification, get_regression_metrics
 
-from ..models.xgboost import XGBClassificationBaseline
+from ..models.xgboost import XGBClassificationBaseline, XGBRegressionBaseline
 
 geometric_descriptors = [
     "Di",
@@ -389,4 +389,23 @@ def train_test_henry_classification_baseline(
         "tabpfn_predictions": tabpfn_predictions,
         "xgb_metrics": evaluate_classification(y_test_binned, predictions),
         "tabpfn_metrics": evaluate_classification(y_test, tabpfn_predictions),
+    }
+
+
+def train_test_henry_regression_baseline(
+    train_set, test_set, formatter, num_trials, seed
+):
+
+    X_train, y_train = train_set[FEATURES], train_set[formatter.label_column]
+    X_test, y_test = test_set[FEATURES], test_set[formatter.label_column]
+
+    baseline = XGBRegressionBaseline(num_trials=num_trials, seed=seed)
+    baseline.tune(X_train, y_train)
+    baseline.fit(X_train, y_train)
+
+    predictions = baseline.predict(X_test)
+
+    return {
+        "xgb_predictions": predictions,
+        "xgb_metrics": get_regression_metrics(y_test, predictions),
     }

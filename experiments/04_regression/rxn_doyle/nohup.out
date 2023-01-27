@@ -11,112 +11,20 @@ To do so, use the following command: conda install -c pytorch3d pytorch3d
 WARNING:graphein.protein.meshes:To use the Graphein submodule graphein.protein.meshes, you need to install: pytorch3d 
 To do so, use the following command: conda install -c pytorch3d pytorch3d
 DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/doyle_rxn/dreher_doyle.csv from https://www.dropbox.com/s/gjxatqagwh3cwb6/dreher_doyle.csv?dl=1
-2023-01-23 11:40:24.136295: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
-╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
-│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
-╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
-│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 6e-05   │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0       │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 1.00006 │
-╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
-╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
-│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
-╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
-│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1.25854 │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
-│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.19466 │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
-│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.04463 │
-╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
-╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
-│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
-╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
-│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.11459 │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
-│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.93819 │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
-│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  1.49848 │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
-│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
-╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
-INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230123_114041%2Ftrain.jsonl
-DEBUG:openai:api_version=None data=None message='Post details'
-DEBUG:urllib3.util.retry:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
-DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.openai.com:443
-DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230123_114041%2Ftrain.jsonl HTTP/1.1" 404 257
-INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230123_114041%2Ftrain.jsonl processing_ms=4 request_id=f960c6d76b0e4224ef9cb7aacf78e873 response_code=404
-INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230123_114041/train.jsonl)' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
-╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
-│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
-╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
-│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0       │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0       │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.99999 │
-╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
-╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
-│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
-╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
-│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │    -0   │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │     0.5 │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │     1   │
-├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
-│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │     0.5 │
-╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
-Upload progress:   0%|          | 0.00/1.57k [00:00<?, ?it/s]INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/files
-DEBUG:openai:api_version=None data=None message='Post details'
-Upload progress: 100%|██████████| 1.57k/1.57k [00:00<00:00, 2.18Mit/s]
-DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/files HTTP/1.1" 200 319
-INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=794 request_id=28291d1c2a097f70b093840c44d9608d response_code=200
-INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/fine-tunes
-DEBUG:openai:api_version=None data='{"training_file": "file-n2TxdSmYBRnGFb9ijsgNozwq", "model": "ada", "n_epochs": 8, "learning_rate_multiplier": 0.02}' message='Post details'
-DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/fine-tunes HTTP/1.1" 200 1002
-INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes processing_ms=90 request_id=6262158a1131aa3b2b70a3edb01b1bbb response_code=200
-2023-01-23 11:40:43.909 | DEBUG    | gptchem.tuner:tune:186 - Requested fine tuning. {
-  "created_at": 1674470443,
-  "events": [
-    {
-      "created_at": 1674470443,
-      "level": "info",
-      "message": "Created fine-tune: ft-p4aVROBlIG9ZKLtAeqcpDwrP",
-      "object": "fine-tune-event"
-    }
-  ],
-  "fine_tuned_model": null,
-  "hyperparams": {
-    "batch_size": null,
-    "learning_rate_multiplier": 0.02,
-    "n_epochs": 8,
-    "prompt_loss_weight": 0.01
-  },
-  "id": "ft-p4aVROBlIG9ZKLtAeqcpDwrP",
-  "model": "ada",
-  "object": "fine-tune",
-  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
-  "result_files": [],
-  "status": "pending",
-  "training_files": [
-    {
-      "bytes": 1568,
-      "created_at": 1674470442,
-      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230123_114041/train.jsonl",
-      "id": "file-n2TxdSmYBRnGFb9ijsgNozwq",
-      "object": "file",
-      "purpose": "fine-tune",
-      "status": "uploaded",
-      "status_details": null
-    }
-  ],
-  "updated_at": 1674470443,
-  "validation_files": []
-}
-INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-p4aVROBlIG9ZKLtAeqcpDwrP
-DEBUG:openai:api_version=None data=None message='Post details'
-DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-p4aVROBlIG9ZKLtAeqcpDwrP HTTP/1.1" 200 1003
-INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-p4aVROBlIG9ZKLtAeqcpDwrP processing_ms=33 request_id=9c188d60d1865b56b3ede7b67cdb4dd0 response_code=200
-2023-01-23 11:40:44.431 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/run_experiments.py", line 78, in <module>
+    train_test_model("DreherDoyle", train_size, seed + 54347989844, oh)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/run_experiments.py", line 29, in train_test_model
+    train_data, test_data = train_test_split(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 2583, in train_test_split
+    train, test = next(cv.split(X=arrays[0], y=stratify))
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 1689, in split
+    for train, test in self._iter_indices(X, y, groups):
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 2102, in _iter_indices
+    rng = check_random_state(self.random_state)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1216, in check_random_state
+    return np.random.RandomState(seed)
+  File "mtrand.pyx", line 185, in numpy.random.mtrand.RandomState.__init__
+  File "_mt19937.pyx", line 166, in numpy.random._mt19937.MT19937._legacy_seeding
+  File "_mt19937.pyx", line 180, in numpy.random._mt19937.MT19937._legacy_seeding
+ValueError: Seed must be between 0 and 2**32 - 1

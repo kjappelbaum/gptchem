@@ -75,4 +75,4 @@ if __name__ == "__main__":
     for seed in range(num_repeats):
         for oh in use_one_hot:
             for train_size in train_sizes:
-                train_test_model("DreherDoyle", train_size, seed + 543444, oh)
+                train_test_model("DreherDoyle", train_size, seed + 54347989844, oh)

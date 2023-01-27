@@ -155,8 +155,11 @@ class XGBRegressionBaseline(BaseLineModel):
             model = XGBRegressor(**params)
 
             kf = KFold(n_splits=n_splits)
-            X_values = X.values
-            y_values = y.values
+            if isinstance(X, pd.DataFrame):
+                X_values = X.values
+            else:
+                X_values = X
+            y_values = y
             scores = []
             for train_index, test_index in kf.split(X_values):
                 X_A, X_B = X_values[train_index, :], X_values[test_index, :]
@@ -192,7 +195,14 @@ class XGBRegressionBaseline(BaseLineModel):
         self.model = XGBRegressor(**study.best_params, n_jobs=self.njobs)
 
     def fit(self, X_train, y_train):
-        self.model.fit(X_train.values, y_train)
+        if isinstance(X_train, pd.DataFrame):
+            X_values = X_train.values
+        else:
+            X_values = X_train
 
     def predict(self, X):
-        return self.model.predict(X.values)
+        if isinstance(X, pd.DataFrame):
+            X_values = X.values
+        else:
+            X_values = X
+        return self.model.predict(X_values)

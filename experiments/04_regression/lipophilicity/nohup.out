@@ -1,4 +1,4 @@
-2023-01-23 11:40:35.199717: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+2023-01-27 13:32:10.735348: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
 ╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
 │ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
 ╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
@@ -8,14 +8,14 @@
 ├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
 │ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
 ╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
-Upload progress:   0%|          | 0.00/1.84k [00:00<?, ?it/s]Upload progress: 100%|██████████| 1.84k/1.84k [00:00<00:00, 1.25Mit/s]
-2023-01-23 11:40:37.607 | DEBUG    | gptchem.tuner:tune:186 - Requested fine tuning. {
-  "created_at": 1674470437,
+Upload progress:   0%|          | 0.00/1.84k [00:00<?, ?it/s]Upload progress: 100%|██████████| 1.84k/1.84k [00:00<00:00, 598kit/s]
+2023-01-27 13:32:13.173 | DEBUG    | gptchem.tuner:tune:186 - Requested fine tuning. {
+  "created_at": 1674822733,
   "events": [
     {
-      "created_at": 1674470437,
+      "created_at": 1674822733,
       "level": "info",
-      "message": "Created fine-tune: ft-1OzdXv6zKzIs1IxYm7avXF9f",
+      "message": "Created fine-tune: ft-manAnnZVKbW49KWbejvgOvys",
       "object": "fine-tune-event"
     }
   ],
@@ -26,7 +26,7 @@
     "n_epochs": 8,
     "prompt_loss_weight": 0.01
   },
-  "id": "ft-1OzdXv6zKzIs1IxYm7avXF9f",
+  "id": "ft-manAnnZVKbW49KWbejvgOvys",
   "model": "ada",
   "object": "fine-tune",
   "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
@@ -35,16 +35,56 @@
   "training_files": [
     {
       "bytes": 1840,
-      "created_at": 1674470436,
-      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/lipophilicity/out/20230123_114035/train.jsonl",
-      "id": "file-9ixXqkxqdJJVLun8zNFhSJkj",
+      "created_at": 1674822732,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/lipophilicity/out/20230127_133210/train.jsonl",
+      "id": "file-PoQspZoWNRb3hjQYVm8ZcKjO",
       "object": "file",
       "purpose": "fine-tune",
       "status": "uploaded",
       "status_details": null
     }
   ],
-  "updated_at": 1674470437,
+  "updated_at": 1674822733,
   "validation_files": []
 }
-2023-01-23 11:40:38.325 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:32:13.876 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:34:14.404 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:36:14.904 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:38:15.686 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:40:21.654 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:42:23.860 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:44:26.666 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:46:27.208 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:48:27.771 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:51:05.575 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 13:53:06.052 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-27 13:53:06.056 | DEBUG    | gptchem.tuner:tune:202 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/lipophilicity/out/20230127_133210', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/lipophilicity/out/20230127_133210/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-27-12-52-17', 'ft_id': 'ft-manAnnZVKbW49KWbejvgOvys', 'date': '20230127_135306', 'train_file_id': 'file-PoQspZoWNRb3hjQYVm8ZcKjO', 'valid_file_id': None}
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/lipophilicity/out/20230127_133210/train.jsonl: file-PoQspZoWNRb3hjQYVm8ZcKjO
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/lipophilicity/run_experiments.py", line 85, in <module>
+    train_test_model(representation, num_train_points, seed + 3546)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/lipophilicity/run_experiments.py", line 59, in train_test_model
+    completions = querier(test_formatted)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/querier.py", line 123, in __call__
+    return self.query(df, temperature, logprobs)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/querier.py", line 98, in query
+    completions_ = openai.Completion.create(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 226, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 599, in _interpret_response
+    self._interpret_response_line(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 655, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.APIError: internal error {
+    "error": {
+        "message": "internal error",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": null
+    }
+}
+ 500 {'error': {'message': 'internal error', 'type': 'invalid_request_error', 'param': None, 'code': None}} {'Date': 'Fri, 27 Jan 2023 12:53:12 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '147', 'Connection': 'keep-alive', 'Vary': 'Origin', 'X-Request-Id': '1f1c3369ac8646e20976a6bcbed79d72', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains'}
