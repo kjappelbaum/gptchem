@@ -303,3 +303,38 @@ Ran train size 100 and got MAE 1.7728799999999998, GPR baseline 0.96191130591348
 2023-01-27 15:09:23.028 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
 2023-01-27 15:11:23.630 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
 2023-01-27 15:13:24.193 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:15:26.021 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:17:26.607 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:19:27.195 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:21:27.790 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:23:28.427 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:25:28.981 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:27:32.075 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:29:32.571 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:31:33.317 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:33:34.578 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:35:35.115 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:37:36.375 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:39:38.056 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:41:38.792 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:43:39.518 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:45:40.226 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:47:41.397 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:49:42.701 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:51:45.928 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-27 15:53:46.643 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+2023-01-27 15:55:49.084 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+2023-01-27 15:57:49.700 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-27 15:57:49.702 | DEBUG    | gptchem.tuner:tune:202 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/freesolv/out/20230127_145911', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/freesolv/out/20230127_145911/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-27-14-57-26', 'ft_id': 'ft-Sf2E3qMSHOpBgry9YUxB3ttL', 'date': '20230127_155749', 'train_file_id': 'file-DkiKuOjrHYsoBxNGfvcDGxZc', 'valid_file_id': None}
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/freesolv/out/20230127_145911/train.jsonl: file-DkiKuOjrHYsoBxNGfvcDGxZc
+Ran train size 200 and got MAE 1.4508800000000002, GPR baseline 0.8403198077853156
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/freesolv/run_experiments.py", line 84, in <module>
+    train_test_model(representation, num_train_points, seed + 3234564)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/freesolv/run_experiments.py", line 30, in train_test_model
+    train_data, test_data = train_test_split(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 2562, in train_test_split
+    n_train, n_test = _validate_shuffle_split(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/sklearn/model_selection/_split.py", line 2181, in _validate_shuffle_split
+    raise ValueError(
+ValueError: test_size=-401 should be either positive and smaller than the number of samples 599 or a float in the (0, 1) range

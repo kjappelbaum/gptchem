@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import pandas as pd
 from fastcore.all import L
 from fastcore.xtras import save_pickle
 
@@ -17,7 +17,7 @@ TEMPERATURES = [0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0]
 NOISE_LEVEL = [0.5, 1.0, 5.0, 10, 20, 50]
 NUM_SAMPLES = 100
 
-THRESHOLD = 450
+THRESHOLD = 350
 
 def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed):
     data = get_photoswitch_data()
@@ -32,23 +32,32 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
         num_digits=0,
     )
 
-    train  = data[data['E isomer pi-pi* wavelength in nm'] < THRESHOLD]
-    test = data[data['E isomer pi-pi* wavelength in nm'] >= THRESHOLD]
+    train  = data_subset[data_subset['E isomer pi-pi* wavelength in nm'] < THRESHOLD]
+    test = data_subset[data_subset['E isomer pi-pi* wavelength in nm'] >= THRESHOLD]
 
     formatted_train = formatter(train)
+    assert len(formatted_train) == len(train), f"Train size mismatch: {len(formatted_train)} vs {len(train)}"
+    assert len(test) > 0, f"Test size is 0"
 
-    data_test = test
-    data_test[
-        ["E isomer pi-pi* wavelength in nm", "Z isomer pi-pi* wavelength in nm"]
-    ] = noise_original_data(
-        data_test[["E isomer pi-pi* wavelength in nm", "Z isomer pi-pi* wavelength in nm"]],
-        noise_level=noise_level,
-    )
+    
+    num_augmentation_rounds = NUM_SAMPLES // len(test)
+    test_data = []
+    for i in range(num_augmentation_rounds):
+        data_test = test.copy()
+        data_test[
+            ["E isomer pi-pi* wavelength in nm", "Z isomer pi-pi* wavelength in nm"]
+        ] = noise_original_data(
+            data_test[["E isomer pi-pi* wavelength in nm", "Z isomer pi-pi* wavelength in nm"]],
+            noise_level=noise_level,
+        )
+        test_data.append(data_test)
+        
+    test_size  = min(len(test_data), NUM_SAMPLES)
+    data_test = pd.concat(test_data)
+    formatted_test = formatter(data_test.sample(test_size, random_state=seed))
 
-    test_size = min(num_samples, len(data_test))
-
-    formatted_test = formatter(data_test.sample(test_size))
-
+    assert "prompt" in formatted_test.columns, f"Missing prompt column. Columns: {formatted_test.columns}"
+  
     tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
     tune_res = tuner(formatted_train)
     querier = Querier(tune_res["model_name"], max_tokens=600)
@@ -103,7 +112,8 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
         "num_samples": num_samples,
         "temperatures": temperatures,
         "res_at_temp": res_at_temp,
-        "test_size": test_size,
+        "test_size": len(formatted_test),
+        "threshold": THRESHOLD,
     }
 
     save_pickle(Path(tune_res["outdir"]) / "summary.pkl", summary)

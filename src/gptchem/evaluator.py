@@ -4,8 +4,10 @@ import subprocess
 import tempfile
 from pathlib import Path
 from typing import Any, Collection, Dict, List, Union
-
+import re
 import fcd
+import math
+import pandas as pd 
 import joblib
 import numpy as np
 import pubchempy as pcp
@@ -27,10 +29,28 @@ from numpy.typing import ArrayLike
 from rdkit import Chem, DataStructs
 from scipy.optimize import curve_fit, fsolve
 from sklearn.metrics import max_error, mean_absolute_error, mean_squared_error, r2_score
-
+from collections import Counter
 from gptchem.models import get_e_pi_pistar_model_data, get_z_pi_pistar_model_data
 
 from .fingerprints.mol_fingerprints import compute_fragprints
+
+
+POLYMER_FEATURES = [
+    "num_[W]",
+    "max_[W]",
+    "num_[Tr]",
+    "max_[Tr]",
+    "num_[Ta]",
+    "max_[Ta]",
+    "num_[R]",
+    "max_[R]",
+    "[W]",
+    "[Tr]",
+    "[Ta]",
+    "[R]",
+    "rel_shannon",
+    "length",
+]
 
 
 def evaluate_classification(
@@ -526,3 +546,254 @@ def evaluate_homo_lumo_gap(
     metrics = get_regression_metrics(expected_not_none, computed_not_none)
     metrics['computed_gaps'] = computed_gaps
     return metrics
+
+
+
+class PolymerKLDivBenchmark:
+    """
+    Computes the KL divergence between a number of samples and the training set for physchem descriptors.
+    Based on the Gucamol implementation
+    https://github.com/BenevolentAI/guacamol/blob/8247bbd5e927fbc3d328865d12cf83cb7019e2d6/guacamol/distribution_learning_benchmark.py
+    """
+
+    def __init__(self, training_set: pd.DataFrame, number_samples: int) -> None:
+        """
+        Args:
+            number_samples: number of samples to generate from the model
+            training_set: molecules from the training set
+        """
+        self.number_samples = number_samples
+        self.training_set = training_set.sample(n=self.number_samples, random_state=42)
+
+    def score(self, test_set: pd.DataFrame) -> float:
+        """
+        Assess a distribution-matching generator model.
+        """
+        test_set = test_set.sample(n=self.number_samples, random_state=42)
+
+
+        kldivs = {}
+
+        # now we calculate the kl divergence for the float valued descriptors ...
+        for i, feat in enumerate(POLYMER_FEATURES):
+            kldiv = continuous_kldiv(
+                X_baseline=self.training_set[feat], X_sampled=test_set[feat]
+            )
+            kldivs[feat] = kldiv
+
+        # Each KL divergence value is transformed to be in [0, 1].
+        # Then their average delivers the final score.
+        partial_scores = [np.exp(-score) for score in kldivs.values()]
+        score = sum(partial_scores) / len(partial_scores)
+
+        return score
+
+
+
+def get_polymer_completion_composition(string):
+    parts = string.split("-")
+    counts = Counter(parts)
+    return dict(counts)
+
+def convert2smiles(string):
+    new_encoding = {"A": "[Ta]", "B": "[Tr]", "W": "[W]", "R": "[R]"}
+
+    for k, v in new_encoding.items():
+        string = string.replace(k, v)
+
+    string = string.replace("-", "")
+
+    return string
+
+
+
+class LinearPolymerSmilesFeaturizer:
+    """Compute features for linear polymers"""
+
+    def __init__(self, smiles: str, normalized_cluster_stats: bool = True):
+        self.smiles = smiles
+        assert "(" not in smiles, "This featurizer does not work for branched polymers"
+        self.characters = ["[W]", "[Tr]", "[Ta]", "[R]"]
+        self.replacement_dict = dict(
+            list(zip(self.characters, ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]))
+        )
+        self.normalized_cluster_stats = normalized_cluster_stats
+        self.surface_interactions = {"[W]": 30, "[Ta]": 20, "[Tr]": 30, "[R]": 20}
+        self.solvent_interactions = {"[W]": 30, "[Ta]": 25, "[Tr]": 35, "[R]": 30}
+        self._character_count = None
+        self._balance = None
+        self._relative_shannon = None
+        self._cluster_stats = None
+        self._head_tail_feat = None
+        self.features = None
+
+    @staticmethod
+    def get_head_tail_features(string: str, characters: list) -> dict:
+        """0/1/2 encoded feature indicating if the building block is at start/end of the polymer chain"""
+        is_head_tail = [0] * len(characters)
+
+        for i, char in enumerate(characters):
+            if string.startswith(char):
+                is_head_tail[i] += 1
+            if string.endswith(char):
+                is_head_tail[i] += 1
+
+        new_keys = ["head_tail_" + char for char in characters]
+        return dict(list(zip(new_keys, is_head_tail)))
+
+    @staticmethod
+    def get_cluster_stats(
+        s: str, replacement_dict: dict, normalized: bool = True
+    ) -> dict:  # pylint:disable=invalid-name
+        """Statistics describing clusters such as [Tr][Tr][Tr]"""
+        clusters = LinearPolymerSmilesFeaturizer.find_clusters(s, replacement_dict)
+        cluster_stats = {}
+        cluster_stats["total_clusters"] = 0
+        for key, value in clusters.items():
+            if value:
+                cluster_stats["num" + "_" + key] = len(value)
+                cluster_stats["total_clusters"] += len(value)
+                cluster_stats["max" + "_" + key] = max(value)
+                cluster_stats["min" + "_" + key] = min(value)
+                cluster_stats["mean" + "_" + key] = np.mean(value)
+            else:
+                cluster_stats["num" + "_" + key] = 0
+                cluster_stats["max" + "_" + key] = 0
+                cluster_stats["min" + "_" + key] = 0
+                cluster_stats["mean" + "_" + key] = 0
+
+        if normalized:
+            for key, value in cluster_stats.items():
+                if "num" in key:
+                    try:
+                        cluster_stats[key] = value / cluster_stats["total_clusters"]
+                    except ZeroDivisionError:
+                        cluster_stats[key] = 0
+
+        return cluster_stats
+
+    @staticmethod
+    def find_clusters(s: str, replacement_dict: dict) -> dict:  # pylint:disable=invalid-name
+        """Use regex to find clusters"""
+        clusters = re.findall(
+            r"((\w)\2{1,})", LinearPolymerSmilesFeaturizer._multiple_replace(s, replacement_dict)
+        )
+        cluster_dict = dict(
+            list(zip(replacement_dict.keys(), [[] for i in replacement_dict.keys()]))
+        )
+        inv_replacement_dict = {v: k for k, v in replacement_dict.items()}
+        for cluster, character in clusters:
+            cluster_dict[inv_replacement_dict[character]].append(len(cluster))
+
+        return cluster_dict
+
+    @staticmethod
+    def _multiple_replace(s: str, replacement_dict: dict) -> str:  # pylint:disable=invalid-name
+        for word in replacement_dict:
+            s = s.replace(word, replacement_dict[word])
+        return s
+
+    @staticmethod
+    def get_counts(smiles: str, characters: list) -> dict:
+        """Count characters in SMILES string"""
+        counts = [smiles.count(char) for char in characters]
+        return dict(list(zip(characters, counts)))
+
+    @staticmethod
+    def get_relative_shannon(character_count: dict) -> float:
+        """Shannon entropy of string relative to maximum entropy of a string of the same length"""
+        counts = [c for c in character_count.values() if c > 0]
+        length = sum(counts)
+        probs = [count / length for count in counts]
+        ideal_entropy = LinearPolymerSmilesFeaturizer._entropy_max(length)
+        entropy = -sum([p * math.log(p) / math.log(2.0) for p in probs])
+
+        return entropy / ideal_entropy
+
+    @staticmethod
+    def _entropy_max(length: int) -> float:
+        "Calculates the max Shannon entropy of a string with given length"
+
+        prob = 1.0 / length
+
+        return -1.0 * length * prob * math.log(prob) / math.log(2.0)
+
+    @staticmethod
+    def get_balance(character_count: dict) -> dict:
+        """Frequencies of characters"""
+        counts = list(character_count.values())
+        length = sum(counts)
+        frequencies = [c / length for c in counts]
+        return dict(list(zip(character_count.keys(), frequencies)))
+
+    def _featurize(self):
+        """Run all available featurization methods"""
+        self._character_count = LinearPolymerSmilesFeaturizer.get_counts(
+            self.smiles, self.characters
+        )
+        self._balance = LinearPolymerSmilesFeaturizer.get_balance(self._character_count)
+        self._relative_shannon = LinearPolymerSmilesFeaturizer.get_relative_shannon(
+            self._character_count
+        )
+        self._cluster_stats = LinearPolymerSmilesFeaturizer.get_cluster_stats(
+            self.smiles, self.replacement_dict, self.normalized_cluster_stats
+        )
+        self._head_tail_feat = LinearPolymerSmilesFeaturizer.get_head_tail_features(
+            self.smiles, self.characters
+        )
+
+        self.features = self._head_tail_feat
+        self.features.update(self._cluster_stats)
+        self.features.update(self._balance)
+        self.features["rel_shannon"] = self._relative_shannon
+        self.features["length"] = sum(self._character_count.values())
+        solvent_interactions = sum(
+            [
+                [self.solvent_interactions[char]] * count
+                for char, count in self._character_count.items()
+            ],
+            [],
+        )
+        self.features["total_solvent"] = sum(solvent_interactions)
+        self.features["std_solvent"] = np.std(solvent_interactions)
+        surface_interactions = sum(
+            [
+                [self.surface_interactions[char]] * count
+                for char, count in self._character_count.items()
+            ],
+            [],
+        )
+        self.features["total_surface"] = sum(surface_interactions)
+        self.features["std_surface"] = np.std(surface_interactions)
+
+    def featurize(self) -> dict:
+        """Run featurization"""
+        self._featurize()
+        return self.features
+
+def featurize_many_polymers(smiless: list) -> pd.DataFrame:
+    """Utility function that runs featurizaton on a
+    list of linear polymer smiles and returns a dataframe"""
+    features = []
+    for smiles in smiless:
+        pmsf = LinearPolymerSmilesFeaturizer(smiles)
+        features.append(pmsf.featurize())
+    return pd.DataFrame(features)
+
+def polymer_string2performance(string, model_dir = '../models'):
+    DELTA_G_MODEL = joblib.load(os.path.join(model_dir, 'delta_g_model.joblib'))
+
+    predicted_monomer_sequence = string.split("@")[0].strip()
+    monomer_sq = re.findall("[(R|W|A|B)\-(R|W|A|B)]+", predicted_monomer_sequence)[0]
+    composition = get_polymer_completion_composition(monomer_sq)
+    smiles = convert2smiles(predicted_monomer_sequence)
+
+    features = pd.DataFrame(featurize_many_polymers([smiles]))
+    prediction = DELTA_G_MODEL.predict(features[POLYMER_FEATURES])
+    return {
+        "monomer_squence": monomer_sq,
+        "composition": composition,
+        "smiles": smiles,
+        "prediction": prediction,
+        'features': features
+    }
