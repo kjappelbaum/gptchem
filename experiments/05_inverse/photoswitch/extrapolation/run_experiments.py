@@ -38,7 +38,7 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
     formatted_train = formatter(train)
     assert len(formatted_train) == len(train), f"Train size mismatch: {len(formatted_train)} vs {len(train)}"
     assert len(test) > 0, f"Test size is 0"
-
+    assert len(formatted_train) > 0, f"Train size is 0"
     
     num_augmentation_rounds = NUM_SAMPLES // len(test)
     test_data = []
@@ -122,4 +122,4 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
 if __name__ == "__main__":
     for seed in range(num_trials):
         for noise_level in NOISE_LEVEL:
-            train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+56545634)
+            train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+4)

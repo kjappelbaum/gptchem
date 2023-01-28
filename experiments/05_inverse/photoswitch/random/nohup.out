@@ -1,30 +1,17 @@
-Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 8.08Mit/s]
-Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230127_132833/train.jsonl: file-6svrgPWyOFzFyiCdVUZ2O0Rw
+Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 9.50Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230128_071845/train.jsonl: file-x5qDxVlhbKRqi6AQWhrhz2e0
+2023-01-28 07:29:14.259355: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 47.8Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230128_074410/train.jsonl: file-sZpPcY4AmwtKTOaXg9aY6BAI
+Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 42.6Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230128_084302/train.jsonl: file-45eANsSuqqlIO2TeU36C1oDj
 Traceback (most recent call last):
   File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 111, in <module>
-    train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+56545634)
-  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 55, in train_test_evaluate
-    completions = querier(formatted_test, temperature=temp)
-  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/querier.py", line 123, in __call__
-    return self.query(df, temperature, logprobs)
-  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/querier.py", line 98, in query
-    completions_ = openai.Completion.create(
-  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/completion.py", line 25, in create
-    return super().create(*args, **kwargs)
-  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
-    response, _, api_key = requestor.request(
-  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 226, in request
-    resp, got_stream = self._interpret_response(result, stream)
-  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 599, in _interpret_response
-    self._interpret_response_line(
-  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 655, in _interpret_response_line
-    raise self.handle_error_response(
-openai.error.APIError: internal error {
-    "error": {
-        "message": "internal error",
-        "type": "invalid_request_error",
-        "param": null,
-        "code": null
-    }
-}
- 500 {'error': {'message': 'internal error', 'type': 'invalid_request_error', 'param': None, 'code': None}} {'Date': 'Fri, 27 Jan 2023 12:38:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '147', 'Connection': 'keep-alive', 'Vary': 'Origin', 'X-Request-Id': '587de24cca51f1b6dbec5e249df83391', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains'}
+    train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+56544354)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 49, in train_test_evaluate
+    tune_res = tuner(formatted_train)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 210, in __call__
+    return self.tune(train_df, validation_df)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 198, in tune
+    self._modelname = modelname
+UnboundLocalError: local variable 'modelname' referenced before assignment
