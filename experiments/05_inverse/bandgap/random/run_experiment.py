@@ -70,7 +70,9 @@ def train_test(num_train_points, temperatures, num_samples, seed):
                 )
 
         except Exception as e:
-            print(e)
+            logger.exception(
+                f"{e}"
+            )
             constrain_satisfaction = {}
 
         res = {

@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from numpy.typing import ArrayLike
 from gptchem.formatter import RegressionFormatter
 from gptchem.tuner import Tuner
@@ -51,4 +52,5 @@ class GPTRegressor:
         querier = Querier(self.model_name, **self.querier_setting)
         completions = querier(formatted)
         extracted = self.extractor(completions)
+        extracted = np.array(extracted, dtype=float)
         return extracted
