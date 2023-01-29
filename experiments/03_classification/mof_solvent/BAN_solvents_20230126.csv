@@ -1,0 +1,534 @@
+﻿ligand name,T [°C],t [h],solvent1,V/V solvent1 [ ],solvent2,V/V solvent2 [ ],solvent3,V/V solvent3 [ ],inorganic salt,metal,additional,reported,outcome,score
+"(1R,3S)-1,2,2-trimethyl-3-(pyridin-4-ylcarbamoyl)cyclopentanecarboxylic acid",100,48,methanol,0.86,water,0.14,NA,0.00,Zn(NO3)2·6H2O,Zn,NA,10.1039/c2jm15604k,successful,1.00
+" (1R, 3S)-1,2,2-trimethyl-3-(pyridin-3-ylmethylcarbamoyl)cyclopentanecarboxylic acid",100,30,water,1.00,NA,0.00,NA,0.00,CdSO4·8/3H2O,Cd,NaOH,10.1016/j.inoche.2007.01.001,successful,1.00
+"1,2,2-trimethyl-3-(pyridin-4-ylcarbamoyl)cyclopentanecarboxylic acid",120,48,DMF,0.50,water,0.25,ethanol,0.25,Zn(NO3)2·6H2O,Zn,NA,10.1021/cg101135r,successful,1.00
+"1,2,2-trimethyl-3-(pyridin-4-ylcarbamoyl)cyclopentanecarboxylic acid",120,48,DMF,0.54,water,0.23,ethanol,0.23,Cd(NO3)2·4H2O,Cd,NA,10.1021/cg101135r,successful,1.00
+"(1R,3S)-1,2,2-trimethylcyclopentane-1,3-dicarboxylic acid",100,48,DMF,0.65,ethanol,0.35,NA,0.00,Mn(NO3)2·6H2O,Mn,NA,10.1021/ic502861k,successful,1.00
+"benzene-1,4-dicarboxylic acid",110,48,DEF,1.00,NA,0.00,NA,0.00,Zn(NO3)2·6H2O,Zn,NA,10.1016/j.micromeso.2008.06.040,successful,1.00
+"benzene-1,4-dicarboxylic acid",110,48,DEF,0.60,mesitylene,0.40,NA,0.00,Zn(NO3)2·6H2O,Zn,NA,10.1016/j.micromeso.2008.06.040,successful,1.00
+"benzene-1,4-dicarboxylic acid",110,48,DEF,0.50,mesitylene,0.50,NA,0.00,Zn(NO3)2·6H2O,Zn,NA,10.1016/j.micromeso.2008.06.040,byproduct,0.30
+"benzene-1,4-dicarboxylic acid",110,48,DEF,0.40,mesitylene,0.60,NA,0.00,Zn(NO3)2·6H2O,Zn,NA,10.1016/j.micromeso.2008.06.040,failed,0.00
+"benzene-1,4-dicarboxylic acid",110,48,DEF,0.20,mesitylene,0.80,NA,0.00,Zn(NO3)2·6H2O,Zn,NA,10.1016/j.micromeso.2008.06.040,failed,0.00
+"benzene-1,4-dicarboxylic acid",110,48,DEF,0.50,toluene,0.50,NA,0.00,Zn(NO3)2·6H2O,Zn,NA,10.1016/j.micromeso.2008.06.040,failed,0.00
+"benzene-1,4-dicarboxylic acid",110,48,DEF,0.50,chlorobenzene,0.50,NA,0.00,Zn(NO3)2·6H2O,Zn,NA,10.1016/j.micromeso.2008.06.040,failed,0.00
+"benzene-1,4-dicarboxylic acid",110,48,DEF,1.00,NA,0.00,NA,0.00,ZnO,Zn,NA,10.1016/j.micromeso.2008.06.040,contaminated,0.40
+"benzene-1,4-dicarboxylic acid",110,48,DEF,0.60,mesitylene,0.40,NA,0.00,ZnO,Zn,NA,10.1016/j.micromeso.2008.06.040,contaminated,0.40
+"benzene-1,4-dicarboxylic acid",110,48,DEF,0.50,mesitylene,0.50,NA,0.00,ZnO,Zn,NA,10.1016/j.micromeso.2008.06.040,contaminated,0.40
+"benzene-1,4-dicarboxylic acid",110,48,DEF,0.40,mesitylene,0.60,NA,0.00,ZnO,Zn,NA,10.1016/j.micromeso.2008.06.040,contaminated,0.40
+"benzene-1,4-dicarboxylic acid",110,48,DEF,0.20,mesitylene,0.80,NA,0.00,ZnO,Zn,NA,10.1016/j.micromeso.2008.06.040,byproduct,0.30
+"benzene-1,4-dicarboxylic acid",110,48,DEF,0.50,toluene,0.50,NA,0.00,ZnO,Zn,NA,10.1016/j.micromeso.2008.06.040,contaminated,0.40
+"benzene-1,4-dicarboxylic acid",110,48,DEF,0.50,chlorobenzene,0.50,NA,0.00,ZnO,Zn,NA,10.1016/j.micromeso.2008.06.040,contaminated,0.40
+(2E)-but-2-enedioic acid,100,24,DMF,1.00,NA,0.00,NA,0.00,FeCl3·6H2O,Fe,NA,10.1039/c0jm03563g,successful,1.00
+(2E)-but-2-enedioic acid,100,24,water,1.00,NA,0.00,NA,0.00,FeCl3·6H2O,Fe,NA,10.1039/c0jm03563g,successful,1.00
+(2E)-but-2-enedioic acid,100,24,methanol,1.00,NA,0.00,NA,0.00,FeCl3·6H2O,Fe,NA,10.1039/c0jm03563g,failed,0.00
+(2E)-but-2-enedioic acid,100,24,DMF,1.00,NA,0.00,NA,0.00,FeCl3·6H2O,Fe,NaOH,10.1039/c0jm03563g,successful,1.00
+(2E)-but-2-enedioic acid,100,24,water,1.00,NA,0.00,NA,0.00,FeCl3·6H2O,Fe,NaOH,10.1039/c0jm03563g,contaminated,0.40
+(2E)-but-2-enedioic acid,100,24,methanol,1.00,NA,0.00,NA,0.00,FeCl3·6H2O,Fe,NaOH,10.1039/c0jm03563g,conatminated,0.40
+"benzene-1,3,5-tricarboxylic acid",160,48,DMF,0.50,water,0.50,NA,0.00,NiNO3·6H2O,Ni,NA,10.5935/0100-4042.20160068,poor,0.80
+"benzene-1,3,5-tricarboxylic acid",160,48,ethanol,0.50,water,0.50,NA,0.00,NiNO3·6H2O,Ni,NA,10.5935/0100-4042.20160068,successful,1.00
+"benzene-1,3,5-tricarboxylic acid",80,16,DMF,0.33,ethanol,0.32,water,0.35,Cu(NO3)2·3H2O,Cu,NA,10.1021/acssuschemeng.6b02115,successful,1.00
+"benzene-1,3,5-tricarboxylic acid",80,16,Cyrene,0.83,ethanol,0.17,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1021/acssuschemeng.6b02115,successful,1.00
+"benzene-1,3,5-tricarboxylic acid",80,16,Cyrene,0.50,ethanol,0.50,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1021/acssuschemeng.6b02115,successful,1.00
+"benzene-1,3,5-tricarboxylic acid",80,16,Cyrene,0.33,ethanol,0.32,water,0.35,Cu(NO3)2·3H2O,Cu,NA,10.1021/acssuschemeng.6b02115,poor BET,0.90
+"benzene-1,3,5-tricarboxylic acid",80,16,Cyrene,0.50,ethanol,0.475,water,0.03,Cu(NO3)2·3H2O,Cu,NA,10.1021/acssuschemeng.6b02115,poor BET,0.90
+"benzene-1,3,5-tricarboxylic acid",80,16,Cyrene,0.91,ethanol,0.09,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1021/acssuschemeng.6b02115,poor BET,0.80
+"benzene-1,3,5-tricarboxylic acid",80,16,DMSO,0.50,ethanol,0.50,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1021/acssuschemeng.6b02115,failed,0.00
+"benzene-1,3,5-tricarboxylic acid",80,16,ethanol,1.00,NA,NA,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1021/acssuschemeng.6b02115,successful,1.00
+"benzene-1,3,5-tricarboxylic acid",80,16,water,1.00,NA,NA,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1021/acssuschemeng.6b02115,poor yield,0.90
+"benzene-1,3,5-tricarboxylic acid",80,16,water,0.50,ethanol,0.50,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1021/acssuschemeng.6b02115,poor yield,0.90
+"benzene-1,4-dicarboxylic acid",80,12,Cyrene,0.84,water,0.08,DMF,0.08,ZrOCl2·8H2O,Zr,acetic acid,10.1021/acssuschemeng.6b02115,successful,1.00
+2-methylimidazole,110,10,Cyrene,1.00,NA,NA,NA,NA,Zn(NO3)2·6H2O,Zn,triethylamine,10.1016/j.ccr.2020.213407,successful,1.00
+"2,5-dihydroxyterephthalic",100,16,Cyrene,0.50,ethanol,0.5,NA,NA,Co(NO3)2·6H2O,Co,NA,10.1016/j.ccr.2020.213407,successful,1.00
+5-azidoisophthalic acid,25,504,DMA,1.00,NA,NA,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1039/c8cy00579f,successful,1.00
+5-azidoisophthalic acid,85,24,DMA,1.00,NA,NA,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1039/c8cy00579f,successful,1.00
+5-azidoisophthalic acid,85,24,DMF,1.00,NA,NA,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1039/c8cy00579f,failed,0.00
+"1,3,5-tris(4-cyanophenylethynyl)benzene",120,4,benzene,1.00,NA,NA,NA,NA,AgCF3SO3,Ag,NA,10.1039/d0fd00003e,successful,1.00
+"1,3,5-tris(4-cyanophenylethynyl)benzene",120,4,water,1.00,NA,NA,NA,NA,AgCF3SO4,Ag,NA,generated,incompatible,0.00
+"1,3,5-tris(4-cyanophenylethynyl)benzene",120,4,water,0.20,DMA,0.8,NA,NA,AgCF3SO5,Ag,NA,generated,incompatible,0.00
+"1,3,5-tris(4-cyanophenylethynyl)benzene",100,20,water,1.00,NA,NA,NA,NA,AgCF3SO6,Ag,nitric acid,generated,incompatible,0.00
+"benzene-1,3,5-tricarboxylic acid",160,48,toluene,0.50,sulphuric acid,0.5,NA,NA,FeCl3·6H2O,Fe,nitric acid,generated,incompatible,0.00
+2-methylimidazole,150,24,ethylene glycol,0.50,nitric acid,0.5,NA,NA,Zn(NO3)2·6H2O,Zn,NA,generated,incompatible,0.00
+2-methylimidazole,100,48,ethanol,0.50,nitric acid,0.5,NA,NA,Zn(NO3)2·6H2O,Zn,NA,generated,incompatible,0.00
+(2E)-but-2-enedioic acid,100,24,DMF,0.2,ethanol,0.4,nitric acid,0.4,FeCl3·6H2O,Fe,NA,generated,incompatible,0.00
+(2E)-but-2-enedioic acid,100,24,sulphuric acid,0.5,hydrogen peroxide,0.25,water,0.25,FeCl3·6H2O,Fe,NA,generated,incompatible,0.00
+"benzene-1,4-dicarboxylic acid",120,16,Solketal,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,unknown pahse,0.50
+"benzene-1,4-dicarboxylic acid",120,16,1-(2-hydroxyehtyl)-1-pyrrolidone,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,succesful,1.00
+"benzene-1,4-dicarboxylic acid",120,16,"1,3-propanediol",0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,succesful,1.00
+"benzene-1,4-dicarboxylic acid",120,16,2-ethylhexylacetate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,diethyl succinate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,unknown phase,0.50
+"benzene-1,4-dicarboxylic acid",120,16,dimethyl adipate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,byproduct,0.30
+"benzene-1,4-dicarboxylic acid",120,16,dimethyl succinate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,unknown phase,0.50
+"benzene-1,4-dicarboxylic acid",120,16,Esterol F,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,ethylene glycol diacetate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,succesful,1.00
+"benzene-1,4-dicarboxylic acid",120,16,ethyl-L-lactate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,γ-valerolactone,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",120,16,i-butylacetate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,i-propylacetate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,IRIS,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,isoamyl acetate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,methyl laurate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,succesful,1.00
+"benzene-1,4-dicarboxylic acid",120,16,n-amyl acetate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,Purasolv EHL,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,triacetine,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,diethyl carbonate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",120,16,dimethyl carbonate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,byproduct,0.30
+"benzene-1,4-dicarboxylic acid",120,16,propylene carbonate,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,succesful,1.00
+"benzene-1,4-dicarboxylic acid",120,16,cyclohexanone,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,p-cymene,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,"1,3-dioxolane",0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,2-methyltetrahydrofuran,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,anisole,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,4-methyltetrahydropyran,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,cyclopentylmethyl ether,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,failed,0.00
+"benzene-1,4-dicarboxylic acid",120,16,t-amylmethyl ether,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,succesful,1.00
+"benzene-1,4-dicarboxylic acid",120,16,Polarclean,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",120,16,Steposol,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,succesful,1.00
+"benzene-1,4-dicarboxylic acid",120,16,Steposol,0.993,water,0.007,NA,NA,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,succesful,1.00
+"benzene-1,4-dicarboxylic acid",120,16,DMF,0.818,water,0.006,acetic acid,0.176,ZrCl4,Zr,NA,10.1021/acssuschemeng.0c05587,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",100,24,acetic acid,0.40,water,0.60,NA,NA,Zr(NO3)4,Zr,NA,10.1021/acs.inorgchem.5b00435,modest yield,0.95
+2-aminoterephthalic acid,100,24,acetic acid,0.20,water,0.80,NA,NA,Zr(NO3)4,Zr,NA,10.1021/acs.inorgchem.5b00435,modest yield,0.95
+"2,5-dihydroxyterephthalic acid",100,24,acetic acid,0.60,water,0.40,NA,NA,Zr(NO3)4,Zr,NA,10.1021/acs.inorgchem.5b00435,sucessful,1.00
+"1,2,4,5-benzenetetracarboxylic acid",100,24,acetic acid,0.40,water,0.60,NA,NA,Zr(NO3)4,Zr,NA,10.1021/acs.inorgchem.5b00435,sucessful,1.00
+"2,5-diethyloxyterephthalic acid",100,24,acetic acid,0.40,water,0.60,NA,NA,Zr(NO3)4,Zr,NA,10.1021/acs.inorgchem.5b00435,sucessful,1.00
+"2,3,5,6-tetrafluoro-1,4-benzenedicarboxylic acid",100,24,acetic acid,0.40,water,0.60,NA,NA,Zr(NO3)4,Zr,NA,10.1021/acs.inorgchem.5b00435,sucessful,1.00
+"benzene-1,2,3,4,5,6-hexacarboxylic acid",100,24,acetic acid,0.60,water,0.40,NA,NA,Zr(NO3)4,Zr,NA,10.1021/acs.inorgchem.5b00435,modest yield,0.95
+"benzene-1,3,5-tricarboxylic acid",118,NA,acetic acid,1.00,NA,NA,NA,NA,Cu(AcO)2·H2O,Cu,NA,10.1016/j.poly.2019.06.017,modest yield,0.95
+"benzene-1,3,5-tricarboxylic acid",118,1,acetic acid,1.00,NA,NA,NA,NA,Co(AcO)2·4H2O,Co,NA,10.1016/j.poly.2019.06.017,succesful,1.00
+"benzene-1,3,5-tricarboxylic acid",141,1,propionic acid,1.00,NA,NA,NA,NA,Ni(AcO)2·4H2O,Ni,NA,10.1016/j.poly.2019.06.017,succesful,1.00
+"benzene-1,3,5-tricarboxylic acid",118,1,acetic acid,1.00,NA,NA,NA,NA,Bi(AcO)3,Bi,NA,10.1016/j.poly.2019.06.017,modest yield,0.95
+"4,5-dicyanoimidazole",25,NA,acetonitrile,1.00,NA,NA,NA,NA,CuI,Cu,NA,10.1016/j.solidstatesciences.2022.106885,sucessful,1.00
+"4,5-dicyanoimidazole",25,NA,acetonitrile,0.67,methanol,0.33,NA,NA,CuI,Cu,NA,10.1016/j.solidstatesciences.2022.106885,sucessful,1.00
+"4-(3,5-dicarboxyphenyl)-2,2′:4′,4′′-terpyridine",125,72,DMA,0.50,DMSO,0.5,NA,NA,FeCl2·4H2O,Fe,HBF4 / H2O,10.1021/acs.cgd.0c00879,sucessful,1.00
+"2,5-Bis-(1H-1,2,4-triazol-1-yl) terephthalic acid",130,72,DMF,0.14,methanol,0.29,water,0.57,Co(NO3)2·6H2O,Co,NA,10.1039/d1ce01093j,sucessful,1.00
+"2,5-Bis-(1H-1,2,4-triazol-1-yl) terephthalic acid",130,72,DMSO,0.50,methanol,0.5,NA,NA,Co(NO3)2·6H2O,Co,NA,10.1039/d1ce01093j,sucessful,1.00
+"2,5-Bis-(1H-1,2,4-triazol-1-yl) terephthalic acid",NA,0.02,DMSO,0.75,methanol,0.25,NA,NA,Co(NO3)2·6H2O,Co,NA,10.1039/d1ce01093j,sucessful,1.00
+"5,5′-(1,4-phenylenedi-2,1-ethinyl)bis(1,3-benzenedicarboxylic acid)",100,24,DMA,1.00,NA,NA,NA,NA,Cu(NO3)2·3H2O,Cu,HCl / H2O,10.1021/cg4018536,sucessful,1.00
+"5,5′-(1,4-phenylenedi-2,1-ethinyl)bis(1,3-benzenedicarboxylic acid)",100,24,DMF,0.50,dioxane,0.25,water,0.25,Cu(NO3)2·3H2O,Cu,HCl / H2O,10.1021/cg4018536,sucessful,1.00
+"2, 5-dihydroxyterephthalic acid",120,120,acetic acid,1.00,NA,NA,NA,NA,Ti(OiPr)4,Ti,NA,10.1016/j.cej.2020.125080,sucessful,1.00
+"trans-1,4-cyclo-hexanedicarboxylate",110,48,DMF,1.00,NA,NA,NA,NA,Cp2TiCl2,Ti,NA,10.1016/j.cej.2020.125080,sucessful,1.00
+"4,4',4'',4'''-(5,10,15,20-porphyrintetrayl)tetrabenzoic acid",150,48,DEF,1.00,NA,NA,NA,NA,Ti(OiPr)4,Ti,NA,10.1016/j.cej.2020.125080,sucessful,1.00
+"5-[(3,5-dicarboxyphenyl)methyl]benzene-1,3-dicarboxylic acid",101,24,formic acid,1.00,NA,NA,NA,NA,Ti(OiPr)4,Ti,NA,10.1016/j.cej.2020.125080,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",150,20,DMF,0.90,methanol,0.1,NA,NA,Ti(OnBu)4,Ti,NA,10.1002/anie.201108357,sucessful,1.00
+2-aminoterephthalic acid,150,72,DMF,0.90,methanol,0.1,NA,NA,Ti(OnBu)4,Ti,NA,10.1002/anie.201108357,sucessful,1.00
+"2,5-dihydroxyterephthalic acid",178,2,DEF,1.00,NA,NA,NA,NA,Ti(OiPr)4,Ti,NA,10.1021/acs.inorgchem.6b01060,sucessful,1.00
+"2,5-dihydroxyterephthalic acid",200,20,DEF,1.00,NA,NA,NA,NA,Ti(OiPr)4,Ti,NA,10.1021/acs.inorgchem.6b01060,sucessful,1.00
+"2,5-dihydroxyterephthalic acid",180,24,DEF,0.50,methanol,0.5,NA,NA,Ti(OiPr)4,Ti,NA,10.1021/acs.inorgchem.6b01060,sucessful,1.00
+"2,5-dihydroxyterephthalic acid",120,120,acetic acid,0.67,diethylamine,0.33,NA,NA,Ti(OiPr)4,Ti,NA,10.1021/acs.inorgchem.6b01060,sucessful,1.00
+"2,5-dihydroxyterephthalic acid",180,48,DEF,1.00,NA,NA,NA,NA,Ti(OiPr)4,Ti,catechol,10.1021/acs.inorgchem.6b01060,sucessful,1.00
+"4,4',4'',4'''-(5,10,15,20-porphyrintetrayl)tetrabenzoic acid",150,48,water,1.00,NA,NA,NA,NA,Ti(OiPr)4,Ti,NA,generated,incompatible,0.00
+"5-[(3,5-dicarboxyphenyl)methyl]benzene-1,3-dicarboxylic acid",101,24,water,1.00,NA,NA,NA,NA,Ti(OiPr)4,Ti,NA,generated,incompatible,0.00
+"4,4',4'',4'''-(5,10,15,20-porphyrintetrayl)tetrabenzoic acid",110,40,water,0.50,methanol,0.50,NA,NA,TiCl4,Ti,NA,generated,incompatible,0.00
+"5-[(3,5-dicarboxyphenyl)methyl]benzene-1,3-dicarboxylic acid",120,30,water,1.00,NA,NA,NA,NA,TiCl4,Ti,NA,generated,incompatible,0.00
+"2,5-dihydroxyterephthalic acid",160,40,water,1.00,NA,NA,NA,NA,Ti(OiPr)4,Ti,NA,generated,incompatible,0.00
+"2,5-dihydroxyterephthalic acid",160,20,water,1.00,NA,NA,NA,NA,TiCl4,Ti,NA,generated,incompatible,0.00
+"2,5-dihydroxyterephthalic acid",200,20,water,0.50,DEF,0.5,NA,NA,Ti(OiPr)4,Ti,NA,generated,incompatible,0.00
+"2,5-dihydroxyterephthalic acid",180,20,water,0.50,triethylamine,0.5,NA,NA,TiCl4,Ti,NA,generated,incompatible,0.00
+"4,4',4'',4'''-(5,10,15,20-porphyrintetrayl)tetrabenzoic acid",200,10,sulphuric acid,1.00,NA,NA,NA,NA,CrO3,Cr,NA,generated,incompatible,0.00
+"trans-1,4-cyclo-hexanedicarboxylate",100,48,sulphuric acid,1.00,NA,NA,NA,NA,Na2Cr2O7,Na,NA,generated,incompatible,0.00
+2-aminoterephthalic acid,150,20,sulphuric acid,1.00,NA,NA,NA,NA,CrO3,Cr,NA,generated,incompatible,0.00
+2-aminoterephthalic acid,98,16,water,1.00,NA,NA,NA,NA,Zr(SO4)2·4H2O,Zr,formic acid,10.1002/chem.202005151,sucessful,1.00
+"2,3,5,6-tetrafluoro-1,4-benzenedicarboxylic acid",90,16,water,1.00,NA,NA,NA,NA,Zr(SO4)2·4H2O,Zr,sulphuric acid,10.1002/chem.202005151,sucessful,1.00
+2-aminoterephthalic acid,25,72,water,1.00,NA,NA,NA,NA,Zr(acac)4,Zr,acetic acid,10.1002/chem.202005151,sucessful,1.00
+(E)-but-2-enedioic acid,25,72,water,1.00,NA,NA,NA,NA,Zr(acac)4,Zr,acetic acid,10.1002/chem.202005151,sucessful,1.00
+"2,5-dihydroxyterephthalic acid",25,72,water,1.00,NA,NA,NA,NA,Zr(acac)4,Zr,acetic acid,10.1002/chem.202005151,sucessful,1.00
+"benzene-1,2,4-tricarboxylic acid",90,24,water,1.00,NA,NA,NA,NA,Zr(acac)4,Zr,acetic acid,10.1002/chem.202005151,sucessful,1.00
+"benzene-1,2,4-tricarboxylic acid",90,3,water,1.00,NA,NA,NA,NA,Zr(SO4)2·4H2O,Zr,NA,10.1002/chem.202005151,sucessful,1.00
+"benzene-1,2,4-tricarboxylic acid",95,0.5,water,1.00,NA,NA,NA,NA,Zr(SO4)2·4H2O,Zr,NA,10.1002/chem.202005151,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",120,4,DMF,1.00,NA,NA,NA,NA,ZrCl4,Zr,formic acid,10.1002/chem.202005151,sucessful,1.00
+"2,5-furandicarboxylic acid",80,1,water,1.00,NA,NA,NA,NA,ZrOCl2·8H2O,Zr,acetic acid,10.1002/chem.202005151,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",120,4,DMF,1.00,NA,NA,NA,NA,ZrCl4,Zr,formic acid,10.1002/chem.202005151,sucessful,1.00
+2-aminobutanedioic acid,120,1,water,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1002/chem.202005151,sucessful,1.00
+(E)-but-2-enedioic acid,NA,NA,formic acid,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1002/chem.202005151,sucessful,1.00
+ butanedioic acid,NA,NA,formic acid,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1002/chem.202005151,sucessful,1.00
+2-hydroxybutanedioic acid,NA,NA,formic acid,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1002/chem.202005151,sucessful,1.00
+"5-sulfo-1,4-benzenedicarboxylic",150,24,water,1.00,NA,NA,NA,NA,ZrCl4,Zr,KOH,10.1002/chem.202005151,sucessful,1.00
+(E)-but-2-enedioic acid,120,240,water,1.00,NA,NA,NA,NA,ZrCl4,Zr,formic acid,10.1002/chem.202005151,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",140,24,acetone,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1002/chem.202005151,sucessful,1.00
+2-aminoterephthalic acid,100,24,acetone,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1002/chem.202005151,sucessful,1.00
+"2,5-pyridinedicarboxylic acid",120,3,water,1.00,NA,NA,NA,NA,ZrOCl2·8H2O,Zr,acetic acid,10.1002/chem.202005151,sucessful,1.00
+(E)-but-2-enedioic acid,25,5.5,water,,NA,NA,NA,NA,ZrCl4,Zr,formic acid,10.1002/chem.202005151,sucessful,1.00
+"benzene-1,2,4-tricarboxylic acid",25,72,water,,NA,NA,NA,NA,ZrCl4,Zr,formic acid,10.1002/chem.202005151,sucessful,1.00
+"1H-Pyrazole-3,5-dicarboxylic acid",25,12,water,,NA,NA,NA,NA,ZrCl4,Zr,formic acid,10.1002/chem.202005151,sucessful,1.00
+"benzene-1,3-dicarboxylic acid",180,26,formic acid,,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1002/chem.202005151,sucessful,1.00
+5-hydroxyisophthalic acid,180,22,formic acid,,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1002/chem.202005151,sucessful,1.00
+"5-[(3,5-dicarboxyphenyl)methyl]benzene-1,3-dicarboxylic acid",120,60,formic acid,0.42,acetic anhydride,0.58,NA,NA,ZrCl4,Zr,NA,10.1038/s41560-018-0261-6,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",70,72,tetrahydrofuran,1.00,NA,NA,NA,NA,Al(NO3)3·9H2O,Al,NA,10.1021/acssuschemeng.9b01022,sucessful,1.00
+"2,6-naphthalenedicarboxylic acid",210,16,water,1.00,NA,NA,NA,NA,Al(NO3)3·9H2O,Al,KOH,10.1021/acssuschemeng.9b01022,sucessful,1.00
+"N,N′-piperazinebismethylphosphonic acid",190,130,water,1.00,NA,NA,NA,NA,AlCl3·6H2O,Al,NaOH,10.1021/acssuschemeng.9b01022,sucessful,1.00
+"benzene-1,3,5-tricarboxylic acid",210,24,water,1.00,NA,NA,NA,NA,Al(NO3)3·9H2O,Al,NA,10.1021/acssuschemeng.9b01022,sucessful,1.00
+"1,2,4,5-benzenetetracarboxylic acid",210,24,water,1.00,NA,NA,NA,NA,Al(NO3)3·9H2O,Al,NA,10.1021/acssuschemeng.9b01022,sucessful,1.00
+"4,4′-azobenzenedicarboxylic acid",210,24,water,1.00,NA,NA,NA,NA,Al(NO3)3·9H2O,Al,NA,10.1021/acssuschemeng.9b01022,sucessful,1.00
+"1,4-naphthalenedicarboxylic acid",180,24,water,1.00,NA,NA,NA,NA,Al(NO3)3·9H2O,Al,NA,10.1021/acssuschemeng.9b01022,sucessful,1.00
+"4,4′,4″,4′′′-(porphyrin-5,10,15,20-tetrayl)tetrabenzoic acid",180,16,water,1.00,NA,NA,NA,NA,AlCl3·6H2O,Al,NA,10.1021/acssuschemeng.9b01022,sucessful,1.00
+2-aminoterephthalic acid,125,5,methanol,1.00,NA,NA,NA,NA,AlCl3·6H2O,Al,NA,10.1021/acssuschemeng.9b01022,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",125,16,methanol,1.00,NA,NA,NA,NA,Al(NO3)3·9H2O,Al,NA,10.1021/acssuschemeng.9b01022,sucessful,1.00
+2-aminoterephthalic acid,120,36,isopropyl alcohol,1.00,NA,NA,NA,NA,AlCl3·6H2O,Al,NA,10.1021/acssuschemeng.9b01022,sucessful,1.00
+"4,4′-sulfonyldibenzoic acid",150,12,water,1.00,NA,NA,NA,NA,AlCl3·6H2O,Al,NaOH,10.1021/acssuschemeng.9b01022,sucessful,1.00
+"benzene-1,3,5-tricarboxylic acid",25,1008,DMSO,1.00,NA,NA,NA,NA,Cu(NO3)2·2.5H2O,Cu,NA,10.1021/acssuschemeng.7b01429,failed,0.00
+"benzene-1,3,5-tricarboxylic acid",40,1,DMSO,0.09,methanol,0.91,NA,NA,Cu(NO3)2·2.5H2O,Cu,NA,10.1021/acssuschemeng.7b01429,sucessful,1.00
+"benzene-1,3,5-tricarboxylic acid",25,NA,DMSO,0.50,methanol,0.5,NA,NA,Cu(NO3)2·2.5H2O,Cu,NA,10.1021/acssuschemeng.7b01429,failed,0.00
+"benzene-1,3,5-tricarboxylic acid",40,1,DMSO,0.50,methanol,0.5,NA,NA,Cu(NO3)2·2.5H2O,Cu,scCO2,10.1021/acssuschemeng.7b01429,sucessful,1.00
+"benzene-1,3,5-tricarboxylic acid",40,72,DMSO,0.50,methanol,0.5,NA,NA,Cu(NO3)2·2.5H2O,Cu,scCO2,10.1021/acssuschemeng.7b01429,sucessful,1.00
+"6′-methoxyl-(8S,9R)-cinchonan-9-ol-3-carboxylic acid",100,72,ethanol,1.00,NA,NA,NA,NA,Cd(OH)2,Cd,NA,10.1002/1521-3773(20011203)40:23<4422::aid-anie4422>3.0.co;2-g,sucessful,1.00
+"2-(4,5-dihydro-4-methyl-4-(1-methylethyl)-5-oxo-1H-imidazol-2-yl)-5-ethyl-3-pyridinecarboxylic acid",110,NA,water,1.00,NA,NA,NA,NA,Cd(ClO4)2·6H2O,Cd,NA,10.1039/b806255b,sucessful,1.00
+"9,9-bis((S)-2-methylbutyl)-9H-fluorene-2,7-dicarboxylic acid",80,96,DMF,0.50,ethanol,0.17,water,0.33,Cu(NO3)2·3H2O,Cu,HCl / H2O,10.1039/c7ce00108h,sucessful,1.00
+"4,4′-(9,9-bis((S)-2-methylbutyl)-9H-fluorene-2,7-diyl)-dibenzoic acid",80,96,DMF,0.50,ethanol,0.17,water,0.33,Cu(NO3)2·3H2O,Cu,HCl / H2O,10.1039/c7ce00108h,sucessful,1.00
+"3,3′-(9,9-bis((S)-2-methylbutyl)-9H-fluorene-2,7-diyl)-dibenzoic acid",80,96,DMF,0.50,ethanol,0.17,water,0.33,Cu(NO3)2·3H2O,Cu,HCl / H2O,10.1039/c7ce00108h,sucessful,1.00
+"5,5′-(9,9-bis((S)-2-methylbutyl)-9H-fluorene-2,7-diyl)-diisophthalic acid",80,96,DMF,0.50,ethanol,0.17,water,0.33,Cu(NO3)2·3H2O,Cu,HCl / H2O,10.1039/c7ce00108h,sucessful,1.00
+"(1R,2R,4R,5R)-2,5-bis(((R)-1-phenylethyl)amino)bicyclo[2.2.2]octane-1,4-dicarboxylic acid",80,20,DEF,1.00,NA,NA,NA,NA,Zn(NO3)2·4H2O,Zn,benzoic acid,10.1039/c7ce00410a,sucessful,1.00
+"(4R,5R)-2,2-dimethyl-5-[(4-pyridinyl amino)carbonyl]-1,3-dioxolane-4-carboxylic acid ",25,48,methanol,0.67,water,0.33,NA,NA,Zn(NO3)2·6H2O,Zn,NaOH,10.1038/35010088,sucessful,1.00
+"(4S,5S)-2,2-dimethyl-5-[(4-pyridinyl amino)carbonyl]-1,3-dioxolane-4-carboxylic acid ",25,48,methanol,0.67,water,0.33,NA,NA,Zn(NO3)2·6H2O,Zn,NaOH,10.1038/35010088,sucessful,1.00
+"(2R,3R)-2,3-bis[(4-methylbenzoyl)oxy]succinic acid",25,7,methanol,0.46,water,0.54,NA,NA,TbCl3·6H2O,Tb,KOH,10.1039/c9ra06920h,sucessful,1.00
+"(2R,3R)-2,3-bis[(4-methylbenzoyl)oxy]succinic acid",25,7,methanol,0.46,water,0.54,NA,NA,DyCl3·5H2O,Dy,KOH,10.1039/c9ra06920h,sucessful,1.00
+"(2R,3R)-2,3-bis[(4-methylbenzoyl)oxy]succinic acid",25,7,ethanol,0.45,water,0.55,NA,NA,HoCl3·6H2O,Ho,KOH,10.1039/c9ra06920h,sucessful,1.00
+"(S)-2,2′-diethoxy-1,1′-binaphthyl-6,6′-bis(4-vinylpyridine)",70,168,dichlorobenzene,0.50,methanol,0.50,NA,NA,Cd(NO3)2·4H2O,Cd,NA,10.1021/ic060891x,sucessful,1.00
+"6,6’-dichloro-2,2’-diethoxy-1,1’-binaphthalene-4,4’-bis(4-benzoic acid)",50,48,DMF,0.71,methanol,0.29,NA,NA,Zn(ClO4)2·6H2O,Zn,"N,N’-dimethylaniline",10.1002/ange.200461214,sucessful,1.00
+"6,6’-dichloro-2,2’-dibenzyloxy-1,1’-binaphthalene-4,4’-bis(4-benzoic acid)",50,48,DMF,0.71,ethanol,0.29,NA,NA,ZnI2⋅6H2O,Zn,"N,N’-dimethylaniline",10.1002/ange.200461214,sucessful,1.00
+"2,2’-dimethoxy-1,1’-binaphthyl-3,3’-bis(4-vinylpyridine)",70,48,DMSO,0.50,ethanol,0.50,NA,NA,AgNO3,Ag,NA,10.1039/B403609C,sucessful,1.00
+"2,2’-dimethoxy-1,1’-binaphthyl-3,3’-bis(4-vinylpyridine)",70,48,DMSO,0.50,ethanol,0.50,NA,NA,AgClO4,Ag,NA,10.1039/B403609C,sucessful,1.00
+"2,2’-diethoxy-1,1’-binaphthalene-6,6’-bisphosphonic acid",110,24,methanol,0.83,water,0.17,NA,NA,MnCO3,Mn,NA,10.1021/cm0202714,sucessful,1.00
+"2,2’-diethoxy-1,1’-binaphthalene-6,6’-bisphosphonic acid",110,24,methanol,0.83,water,0.17,NA,NA,CoCO3,Co,NA,10.1021/cm0202714,sucessful,1.00
+"2,2’-diethoxy-1,1’-binaphthalene-6,6’-bisphosphonic acid",130,168,ethanol,1.00,NA,NA,NA,NA,CuO,Cu,NA,10.1021/cm0202714,sucessful,1.00
+"2,2’-diethoxy-1,1’-binaphthalene-6,6’-bisphosphonic acid",110,24,methanol,0.84,water,0.08,pyridine,0.08,Zn(ClO4)2·6H2O,Zn,NA,10.1021/cm0202714,sucessful,1.00
+"(S)-1,1’-binaphthyl-2,2’-dihydroxy-6,6’-dicarboxylic acid",80,24,N-methylformamide,0.77,ethanol,0.23,NA,NA,Zn(NO3)2·6H2O,Zn,NA,10.1039/c5ra26520g,sucessful,1.00
+"(R)-1,1’-binaphthyl-2,2’-dihydroxy-6,6’-dicarboxylic acid",80,24,N-methylformamide,0.77,ethanol,0.23,NA,NA,Zn(NO3)2·6H2O,Zn,NA,10.1039/c5ra26520g,sucessful,1.00
+"(S)-1,1’-binaphthyl-2,2’-dimethoxy-6,6’-dicarboxylic acid",60,48,DMA,0.50,water,0.50,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1039/c5ra26520g,sucessful,1.00
+"(R)-1,1’-binaphthyl-2,2’-dimethoxy-6,6’-dicarboxylic acid",60,48,DMA,0.50,water,0.50,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1039/c5ra26520g,sucessful,1.00
+"(R)-2,2′-dihydroxy-1,1′-binaphthyl-5,5′-dibenzoic acid",55,72,DMF,0.91,water,0.09,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1039/c4ce02210f,sucessful,1.00
+"(R)-2,2′-dimethoxy-1,1′-binaphthyl-5,5′-dibenzoic acid",80,24,DMF,0.94,water,0.06,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1039/c4ce02210f,sucessful,1.00
+"(R)-2,2’-diethoxy-1,1’binaphthyl-4,4’,6,6’-tetracarboxylic acid",80,24,DEF,0.75,water,0.25,NA,NA,Cu(NO3)2·2.5H2O,Cu,HCl / H2O,10.1038/NCHEM.738,sucessful,1.00
+"(R)-(2E,2'E,2''E,2'''E)-3,3',3'',3'''-(2,2'-diethoxy-1,1'-binaphthyl-4,4',6,6'-tetrayl)tetraacrylic acid",80,NA,DMF,0.75,water,0.25,NA,NA,Cu(NO3)2·2.5H2O,Cu,HCl / H2O,10.1038/NCHEM.738,sucessful,1.00
+"(R)-4,4',4'',4'''-(1E,1'E,1''E,1'''E)-2,2',2'',2'''-(2,2'-diethoxy-1,1'-binaphthyl-4,4',6,6'-tetrayl)- tetrakis(ethene-2,1-diyl)tetrabenzoic acid",80,72,DEF,0.48,DMA,0.48,water,0.04,Cu(NO3)2·2.5H2O,Cu,HCl / H2O,10.1038/NCHEM.738,modest yield,0.95
+"(R)-2,2'-dihydroxy-1,1'-binaphthyl-4,4',6,6'-tetracarboxylic acid",60,48,DEF,0.80,water,0.20,NA,NA,Cu(NO3)2·2.5H2O,Cu,NA,10.1038/NCHEM.738,poor,0.80
+"(R)-(2E,2'E,2''E,2'''E)-3,3',3'',3'''-(2,2'-dihydroxy-1,1'-binaphthyl-4,4',6,6'-tetrayl)tetraacrylic acid",80,48,DEF,0.80,water,0.20,NA,NA,Cu(NO3)2·2.5H2O,Cu,NA,10.1038/NCHEM.738,sucessful,1.00
+"(R)-2,2’-dihydroxy-1,1’-dinaphthyl-4,4’,6,6’-tetrakis(4-benzoic acid)",60,72,isopropyl alcohol,0.59,DEF,0.29,water,0.12,Cu(NO3)2·2.5H2O,Cu,diaminocyclohexane,10.1038/NCHEM.738,sucessful,1.00
+"(R)-3,3′-bis(6-carboxy-2-naphthyl)-2,2′-dihydroxy-1,1′-binaphthyl",60,48,DMF,0.71,water,0.29,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1039/c8ce01791c,sucessful,1.00
+"2,2′-dihydroxy-1,1′-binaphthyl-6,6′-bis(phosphonic acid)",118,16,n-butanol,1.00,NA,NA,NA,NA,Zr(OnBu)4,Zr,NA,10.1016/j.molcata.2004.01.022,sucessful,1.00
+"2,2′-dihydroxy-1,1′-binaphthyl-6,6′-bis(vinylphosphonic acid)",118,16,n-butanol,1.00,NA,NA,NA,NA,Zr(OnBu)4,Zr,NA,10.1016/j.molcata.2004.01.022,sucessful,1.00
+"2,2′-dihydroxy-1,1′-binaphthyl-6,6′-bis(styrylphosphonic acid)",118,16,n-butanol,1.00,NA,NA,NA,NA,Zr(OnBu)4,Zr,NA,10.1016/j.molcata.2004.01.022,sucessful,1.00
+"2,2′-diethoxy-1,1′-binaphthyl-6,6′-bis(styrylphosphonic acid)",118,16,n-butanol,1.00,NA,NA,NA,NA,Zr(OnBu)4,Zr,NA,10.1016/j.molcata.2004.01.022,sucessful,1.00
+"(R)-4,4’-bis(4-carboxyphenylethynyl)-2,2'-bis(diphenylphosphino)-1,1'-binaphthyl",120,72,DMF,1.00,NA,NA,NA,NA,ZrCl4,Zr,trifluoroacetic acid,10.1021/ja500090y,sucessful,1.00
+"tris((4-carboxyl)phenyl(2,4,5-trimethylphenyl))borane",100,48,DMA,0.75,methanol,0.25,NA,NA,Co(NO3)2·6H2O,Co,NA,10.1021/ic9002675,sucessful,1.00
+"tris((4-carboxyl)phenyl(2,4,5-trimethylphenyl))borane",100,48,DMA,0.75,methanol,0.25,NA,NA,Ni(NO3)2·6H2O,Ni,NA,10.1021/ic9002675,sucessful,1.00
+"tris((4-carboxyl)phenyl(2,4,5-trimethylphenyl))borane",100,48,DMA,0.75,methanol,0.25,NA,NA,Cu(NO3)2·6H2O,Cu,NA,10.1021/ic9002675,sucessful,1.00
+"tris((4-carboxyl)phenyl(2,4,5-trimethylphenyl))borane",100,48,DMA,0.75,methanol,0.25,NA,NA,Zn(NO3)2·6H2O,Zn,NA,10.1021/ic9002675,sucessful,1.00
+"tris((4-carboxyl)phenyl(2,4,5-trimethylphenyl))borane",100,48,DMA,0.75,methanol,0.25,NA,NA,Cd(NO3)2·6H2O,Cd,NA,10.1021/ic9002675,sucessful,1.00
+"tris((4-carboxyl)phenyl(2,4,5-trimethylphenyl))borane",100,48,DMA,0.75,methanol,0.25,NA,NA,MnCl2·4H2O,Mn,NA,10.1021/ic9002675,sucessful,1.00
+"4,4′,4′′,4′′′-benzene-1,2,4,5-tetrayltetrabenzoic acid",80,12,methanol,1.00,NA,NA,NA,NA,Bi(NO3)3·5H2O,Bi,NA,10.1021/acs.cgd.8b00439,byproduct likely,0.35
+"4,4′,4′′,4′′′-benzene-1,2,4,5-tetrayltetrabenzoic acid",100,12,methanol,1.00,NA,NA,NA,NA,Bi(NO3)3·5H2O,Bi,NA,10.1021/acs.cgd.8b00439,byproduct likely,0.65
+"4,4′,4′′,4′′′-benzene-1,2,4,5-tetrayltetrabenzoic acid",120,12,methanol,1.00,NA,NA,NA,NA,Bi(NO3)3·5H2O,Bi,NA,10.1021/acs.cgd.8b00439,byproduct likely,0.65
+"4,4′,4′′,4′′′-benzene-1,2,4,5-tetrayltetrabenzoic acid",140,12,methanol,1.00,NA,NA,NA,NA,Bi(NO3)3·5H2O,Bi,NA,10.1021/acs.cgd.8b00439,byproduct likely,0.65
+"4,4′,4′′,4′′′-benzene-1,2,4,5-tetrayltetrabenzoic acid",80,12,methanol,0.80,DMF,0.2,NA,NA,Bi(NO3)3·5H2O,Bi,NA,10.1021/acs.cgd.8b00439,contaminated,0.40
+"4,4′,4′′,4′′′-benzene-1,2,4,5-tetrayltetrabenzoic acid",100,12,methanol,0.80,DMF,0.2,NA,NA,Bi(NO3)3·5H2O,Bi,NA,10.1021/acs.cgd.8b00439,sucessful,1.00
+"4,4′,4′′,4′′′-benzene-1,2,4,5-tetrayltetrabenzoic acid",120,12,methanol,0.80,DMF,0.2,NA,NA,Bi(NO3)3·5H2O,Bi,NA,10.1021/acs.cgd.8b00439,contamination likely,0.70
+"4,4′,4′′,4′′′-benzene-1,2,4,5-tetrayltetrabenzoic acid",140,12,methanol,0.80,DMF,0.2,NA,NA,Bi(NO3)3·5H2O,Bi,NA,10.1021/acs.cgd.8b00439,byproduct likely,0.65
+"4,4′,4′′,4′′′-benzene-1,2,4,5-tetrayltetrabenzoic acid",80,12,DMF,0.90,toluene,0.1,NA,NA,Bi(NO3)3·5H2O,Bi,NA,10.1021/acs.cgd.8b00439,sucessful,1.00
+"4,4′,4′′,4′′′-benzene-1,2,4,5-tetrayltetrabenzoic acid",100,12,DMF,0.90,toluene,0.1,NA,NA,Bi(NO3)3·5H2O,Bi,NA,10.1021/acs.cgd.8b00439,sucessful,1.00
+"4,4′,4′′,4′′′-benzene-1,2,4,5-tetrayltetrabenzoic acid",120,12,DMF,0.90,toluene,0.1,NA,NA,Bi(NO3)3·5H2O,Bi,NA,10.1021/acs.cgd.8b00439,contamination likely,0.70
+"4,4′,4′′,4′′′-benzene-1,2,4,5-tetrayltetrabenzoic acid",140,12,DMF,0.90,toluene,0.1,NA,NA,Bi(NO3)3·5H2O,Bi,NA,10.1021/acs.cgd.8b00439,sucessful,1.00
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,48,DMA,0.80,water,0.20,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,delayed,0.20
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,24,DMA,0.80,water,0.20,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,delayed,0.20
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,96,DMA,0.80,water,0.20,NA,NA,Bi(NO3)3·5H2O,Bi,NA,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",140,96,DMA,0.80,water,0.20,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",130,96,DMA,0.80,water,0.20,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.40
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",100,96,DMA,0.80,water,0.20,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.50
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,96,DMF,0.80,water,0.20,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,96,DMF,0.75,water,0.25,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,96,DMF,0.67,water,0.33,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,96,DMF,0.50,water,0.50,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,96,DMF,0.40,water,0.60,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,96,DMF,0.25,water,0.75,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,96,DMA,0.80,water,0.20,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,sucessful,1.00
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,96,DMA,0.75,water,0.25,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.40
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,96,DMA,0.67,water,0.33,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,96,DMA,0.50,water,0.50,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,96,DMA,0.40,water,0.60,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(3,5-dicarboxylphenylamino)-1,3,5-triazine",90,96,DMA,0.25,water,0.75,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(4-carboxylphenylamino)-1,3,5-triazine",100,96,DMA,0.76,water,0.24,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,sucessful,1.00
+"2,4,6-tris(4-carboxylphenylamino)-1,3,5-triazine",100,96,DMF,0.76,water,0.24,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,sucessful,1.00
+"2,4,6-tris(4-carboxylphenylamino)-1,3,5-triazine",100,96,DMF,0.67,water,0.33,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.40
+"2,4,6-tris(4-carboxylphenylamino)-1,3,5-triazine",100,96,DMF,0.50,water,0.50,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(4-carboxylphenylamino)-1,3,5-triazine",100,96,DMF,0.40,water,0.60,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"2,4,6-tris(4-carboxylphenylamino)-1,3,5-triazine",100,96,DMF,0.25,water,0.75,NA,NA,Bi(NO3)3·5H2O,Bi,nitric acid,10.1021/acs.inorgchem.2c01893,poor,0.10
+"benzene-1,3,5-tricarboxylic acid",NA,0.5,ethylene glycol,1.00,NA,NA,NA,NA,CuSO4·5H2O,Cu,NA,10.1007/s10934-014-9883-7,sucessful,1.00
+"benzene-1,3,5-tricarboxylic acid",NA,0.5,ethylene glycol,1.00,NA,NA,NA,NA,CuSO4·5H2O,Cu,n-dodecanoic acid,10.1007/s10934-014-9883-7,sucessful,1.00
+"benzene-1,3,5-tricarboxylic acid",NA,0.5,diethylene glycol,1.00,NA,NA,NA,NA,CuSO4·5H2O,Cu,NA,10.1007/s10934-014-9883-7,sucessful,1.00
+"benzene-1,3,5-tricarboxylic acid",NA,0.5,triethylene glycol,1.00,NA,NA,NA,NA,CuSO4·5H2O,Cu,NA,10.1007/s10934-014-9883-7,failed,0.00
+"benzene-1,3,5-tricarboxylic acid",NA,0.5,methanol,1.00,NA,NA,NA,NA,CuSO4·5H2O,Cu,NA,10.1007/s10934-014-9883-7,sucessful,1.00
+"benzene-1,3,5-tricarboxylic acid",NA,0.5,ethanol,1.00,NA,NA,NA,NA,CuSO4·5H2O,Cu,NA,10.1007/s10934-014-9883-7,failed,0.00
+"benzene-1,3,5-tricarboxylic acid",NA,0.5,ethanol,1.00,NA,NA,NA,NA,Cu(NO3)2·3H2O,Cu,NA,10.1007/s10934-014-9883-7,sucessful,1.00
+"benzene-1,3,5-tricarboxylic acid",NA,0.5,water,1.00,NA,NA,NA,NA,CuSO4·5H2O,Cu,NA,10.1007/s10934-014-9883-7,sucessful,1.00
+2H-imidazole carbaldehyde,25,0.5,DMF,0.50,methanol,0.50,NA,NA,Zn(AcO)2·2H2O,Zn,NA,10.3390/molecules26061573,sucessful,1.00
+2H-imidazole carbaldehyde,25,1,Cyrene,0.50,methanol,0.50,NA,NA,Zn(AcO)2·2H2O,Zn,NA,10.3390/molecules26061573,good,0.95
+2H-imidazole carbaldehyde,25,1,γ-valerolactone,0.50,methanol,0.50,NA,NA,Zn(AcO)2·2H2O,Zn,NA,10.3390/molecules26061573,sucessful,1.00
+2H-imidazole carbaldehyde,25,1,γ-valerolactone,0.25,methanol,0.75,NA,NA,Zn(AcO)2·2H2O,Zn,NA,10.3390/molecules26061573,sucessful,1.00
+2H-imidazole carbaldehyde,25,1,γ-valerolactone,0.17,methanol,0.83,NA,NA,Zn(AcO)2·2H2O,Zn,NA,10.3390/molecules26061573,good,0.95
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.53,NA,NA,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,sucessful,1.00
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,isopropyl alcohol,0.53,NA,NA,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,ethanol,0.53,NA,NA,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.46,isopropyl alcohol,0.07,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.40,isopropyl alcohol,0.13,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.33,isopropyl alcohol,0.20,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.26,isopropyl alcohol,0.27,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.20,isopropyl alcohol,0.33,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.13,isopropyl alcohol,0.40,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.07,isopropyl alcohol,0.46,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.46,ethanol,0.07,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.40,ethanol,0.13,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.33,ethanol,0.20,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.26,ethanol,0.27,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.20,ethanol,0.33,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.13,ethanol,0.40,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,water,0.07,ethanol,0.46,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,good,0.90
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,DMF,0.53,NA,NA,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,discarded,0.50
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,benzyl alcohol,0.53,NA,NA,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,discarded,0.50
+"2,5-furandicarboxylic acid",80,1,acetic acid,0.47,ethylene glycol,0.53,NA,NA,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,discarded,0.50
+"2,5-furandicarboxylic acid",80,1,formic acid,0.47,DMF,0.53,NA,NA,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,discarded,0.50
+"2,5-furandicarboxylic acid",80,1,formic acid,0.47,benzyl alcohol,0.53,NA,NA,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,discarded,0.50
+"2,5-furandicarboxylic acid",80,1,formic acid,0.47,ethylene glycol,0.53,NA,NA,ZrOCl2·8H2O,Zr,NA,10.1021/acs.inorgchem.6b02969,discarded,0.50
+"2,5-furandicarboxylic acid",100,0.25,DMF,0.57,formic acid,0.24,water,0.19,(NH4)2[Ce(NO3)6],Ce,NA,10.1021/acs.inorgchem.6b02969,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",120,72,water,0.93,DMF,0.07,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,amorphous,0.00
+"benzene-1,4-dicarboxylic acid",120,72,acetone,0.93,DMF,0.07,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",120,72,ethanol,0.93,DMF,0.07,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,good,0.90
+"benzene-1,4-dicarboxylic acid",120,72,ethanol,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,amorphous,0.00
+"benzene-1,4-dicarboxylic acid",120,24,ethanol,0.63,DMF,0.37,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,amorphous,0.00
+"benzene-1,4-dicarboxylic acid",120,24,ethanol,0.79,DMF,0.21,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,amorphous,0.00
+"benzene-1,4-dicarboxylic acid",120,24,ethanol,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,amorphous,0.00
+"benzene-1,4-dicarboxylic acid",120,24,DMF,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",80,6,acetone,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,poor crystallinity,0.40
+"benzene-1,4-dicarboxylic acid",80,12,acetone,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,contaminated,0.40
+"benzene-1,4-dicarboxylic acid",80,24,acetone,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",80,48,acetone,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",80,72,acetone,1.00,NA,NA,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",160,72,acetone,0.93,DMF,0.07,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,amorphous,0.00
+"benzene-1,4-dicarboxylic acid",80,72,acetone,0.93,DMF,0.07,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",40,72,acetone,0.93,DMF,0.07,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,amorphous,0.00
+"benzene-1,4-dicarboxylic acid",160,72,ethanol,0.93,DMF,0.07,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,poor crystallinity,0.40
+"benzene-1,4-dicarboxylic acid",80,72,ethanol,0.93,DMF,0.07,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,sucessful,1.00
+"benzene-1,4-dicarboxylic acid",40,72,ethanol,0.93,DMF,0.07,NA,NA,ZrCl4,Zr,NA,10.1007/s10853-017-1658-5,sucessful,1.00
+"2,5-dihydroxyterephthalic acid",120,48,DMF,0.90,water ,0.05,ethanol,0.05,Zn(NO3)2·6H2O,Zn,"(R)-[(2S,4S,5R)-5-ethenyl-1-azabicyclo[2.2.2]octan-2-yl](quinolin-4-yl)methanol",10.1039/c9dt01572h,sucessful,1.00
+"2,5-dihydroxyterephthalic acid",120,48,NMP,0.90,water ,0.05,ethanol,0.05,Zn(NO3)2·6H2O,Zn,"(R)-[(2S,4S,5R)-5-ethenyl-1-azabicyclo[2.2.2]octan-2-yl](quinolin-4-yl)methanol",10.1039/c9dt01572h,sucessful,1.00
+"2,5-dihydroxyterephthalic acid",120,48,DMF,0.90,water ,0.05,ethanol,0.05,Zn(NO3)2·6H2O,Zn,NA,10.1039/c9dt01572h,sucessful,1.00
+"2,5-dihydroxyterephthalic acid",120,48,NMP,0.90,water ,0.05,ethanol,0.05,Zn(NO3)2·6H2O,Zn,NA,10.1039/c9dt01572h,failed,0.00
+"3,3′-dihydroxy-[1,1′-biphenyl]-4,4′-dicarboxylic acid",120,48,DMF,0.90,water ,0.05,ethanol,0.05,Zn(NO3)2·6H2O,Zn,NA,10.1039/d1dt01945g,sucessful,1.00
+"3,3′-dihydroxy-[1,1′-biphenyl]-4,4′-dicarboxylic acid",120,48,NMP,0.90,water ,0.05,ethanol,0.05,Zn(NO3)2·6H2O,Zn,NA,10.1039/d1dt01945g,sucessful,1.00
+"3,3′-dihydroxy-[1,1′-biphenyl]-4,4′-dicarboxylic acid",120,48,1-cyclohexylpyrrolidin-2-one,0.90,water ,0.05,ethanol,0.05,Zn(NO3)2·6H2O,Zn,NA,10.1039/d1dt01945g,byproduct,0.30
+"3,3′-dihydroxy-[1,1′-biphenyl]-4,4′-dicarboxylic acid",120,48,1-benzylpyrrolidin-2-one,0.90,water ,0.05,ethanol,0.05,Zn(NO3)2·6H2O,Zn,NA,10.1039/d1dt01945g,sucessful,1.00
+"3,3′-dihydroxy-[1,1′-biphenyl]-4,4′-dicarboxylic acid",120,48,DMF,0.90,water ,0.05,ethanol,0.05,Zn(NO3)2·6H2O,Zn,"(R)-[(2S,4S,5R)-5-ethenyl-1-azabicyclo[2.2.2]octan-2-yl](quinolin-4-yl)methanol",10.1039/d1dt01945g,sucessful,1.00
+"3,3′-dihydroxy-[1,1′-biphenyl]-4,4′-dicarboxylic acid",120,48,NMP,0.90,water ,0.05,ethanol,0.05,Zn(NO3)2·6H2O,Zn,"(R)-[(2S,4S,5R)-5-ethenyl-1-azabicyclo[2.2.2]octan-2-yl](quinolin-4-yl)methanol",10.1039/d1dt01945g,sucessful,1.00
+"3,3′-dihydroxy-[1,1′-biphenyl]-4,4′-dicarboxylic acid",120,48,DMF,0.90,water ,0.05,ethanol,0.05,Zn(NO3)2·6H2O,Zn,"(2S,4R)-4-hydroxypyrrolidine-2-carboxylic acid",10.1039/d1dt01945g,sucessful,1.00
+"3,3′-dihydroxy-[1,1′-biphenyl]-4,4′-dicarboxylic acid",120,48,NMP,0.90,water ,0.05,ethanol,0.05,Zn(NO3)2·6H2O,Zn,"(2S,4R)-4-hydroxypyrrolidine-2-carboxylic acid",10.1039/d1dt01945g,sucessful,1.00
+"3,3′-dihydroxy-[1,1′-biphenyl]-4,4′-dicarboxylic acid",120,48,1-benzylpyrrolidin-2-one,0.90,water ,0.05,ethanol,0.05,Zn(NO3)2·6H2O,Zn,"(2S,4R)-4-hydroxypyrrolidine-2-carboxylic acid",10.1039/d1dt01945g,sucessful,1.00
+2-methylimidazole,65,48,NMP,1.00,NA,NA,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,failed,0.00
+2-methylimidazole,65,48,NMP,0.70,methanol,0.30,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,sucessful,1.00
+2-methylimidazole,65,48,NMP,0.50,methanol,0.50,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,failed,0.00
+2-methylimidazole,65,48,NMP,0.40,methanol,0.60,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,failed,0.00
+2-methylimidazole,65,48,NMP,0.10,methanol,0.90,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,sucessful,1.00
+2-methylimidazole,65,48,DMSO,1.00,NA,NA,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,poor crystallinity,0.40
+2-methylimidazole,65,48,DMSO,0.70,methanol,0.30,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,poor crystallinity,0.40
+2-methylimidazole,65,48,DMSO,0.50,methanol,0.50,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,failed,0.00
+2-methylimidazole,65,48,DMSO,0.40,methanol,0.60,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,failed,0.00
+2-methylimidazole,65,48,DMSO,0.10,methanol,0.90,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,sucessful,1.00
+2-methylimidazole,65,48,DMF,1.00,NA,NA,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,sucessful,1.00
+2-methylimidazole,65,48,DMF,0.70,methanol,0.30,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,failed,0.00
+2-methylimidazole,65,48,DMF,0.50,methanol,0.50,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,poor crystallinity,0.40
+2-methylimidazole,65,48,DMF,0.40,methanol,0.60,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,failed,0.00
+2-methylimidazole,65,48,DMF,0.10,methanol,0.90,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,sucessful,1.00
+2-methylimidazole,65,48,DMA,1.00,NA,NA,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,poor crystallinity,0.40
+2-methylimidazole,65,48,DMA,0.70,methanol,0.30,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,sucessful,1.00
+2-methylimidazole,65,48,DMA,0.50,methanol,0.50,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,sucessful,1.00
+2-methylimidazole,65,48,DMA,0.40,methanol,0.60,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,sucessful,1.00
+2-methylimidazole,65,48,DMA,0.10,methanol,0.90,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,sucessful,1.00
+2-methylimidazole,65,48,methanol,1.00,NA,NA,NA,NA,ZnO,Zn,Al; Ni,10.1039/d1ma00139f,sucessful,1.00
+"(S)-2,2′-dihydroxy-6,6′-dimethyl-[1,1′-biphenyl]-4,4′-dicarboxylic acid",65,24,DEF,0.50,methanol,0.50,NA,NA,Cu(NO3)2·3H2O,Cu,"N,N-dimethylaniline",10.1021/acscatal.8b04827,sucessful,1.00
+"(R)-3,3′-bipyridine-5,5′,6,6′-tetramethyl-2,2′-dimethoxy-1,1′-biphenyl",25,96,methanol,0.67,acetonitrile,0.33,NA,NA,AgClO4,Ag,NA,10.1021/ja901154p,sucessful,1.00
+"(R)-3,3′-bipyridine-5,5′,6,6′-tetramethyl-2,2′-dimethoxy-1,1′-biphenyl",25,96,methanol,0.67,acetonitrile,0.33,NA,NA,AgPF6,Ag,NA,10.1021/ja901154p,sucessful,1.00
+"(R)-3,3′-bipyridine-5,5′,6,6′-tetramethyl-2,2′-dimethoxy-1,1′-biphenyl",25,96,methanol,0.67,acetonitrile,0.33,NA,NA,AgNO3,Ag,NA,10.1021/ja901154p,sucessful,1.00
+"(R)-3,3′-bipyridine-5,5′,6,6′-tetramethyl-2,2′-dimethoxy-1,1′-biphenyl",25,96,ethanol,0.67,acetonitrile,0.33,NA,NA,AgClO4,Ag,NA,10.1021/ja901154p,sucessful,1.00
+"(R)-3,3′-bipyridine-5,5′,6,6′-tetramethyl-2,2′-dimethoxy-1,1′-biphenyl",25,96,ethanol,0.67,acetonitrile,0.33,NA,NA,AgPF6,Ag,NA,10.1021/ja901154p,sucessful,1.00
+"(R)-3,3′-bipyridine-5,5′,6,6′-tetramethyl-2,2′-dimethoxy-1,1′-biphenyl",25,96,ethanol,0.67,acetonitrile,0.33,NA,NA,AgNO3,Ag,NA,10.1021/ja901154p,sucessful,1.00
+"(R)-3,3′-bipyridine-5,5′,6,6′-tetramethyl-2,2′-dimethoxy-1,1′-biphenyl",25,96,isopropyl alcohol,0.67,acetonitrile,0.33,NA,NA,AgClO4,Ag,NA,10.1021/ja901154p,sucessful,1.00
+"(R)-3,3′-bipyridine-5,5′,6,6′-tetramethyl-2,2′-dimethoxy-1,1′-biphenyl",25,96,isopropyl alcohol,0.67,acetonitrile,0.33,NA,NA,AgPF6,Ag,NA,10.1021/ja901154p,sucessful,1.00
+"(R)-3,3′-bipyridine-5,5′,6,6′-tetramethyl-2,2′-dimethoxy-1,1′-biphenyl",25,96,isopropyl alcohol,0.67,acetonitrile,0.33,NA,NA,AgNO3,Ag,NA,10.1021/ja901154p,sucessful,1.00
+"3,3′,5,5′-tetrachloro-4,4′-bipyridine",25,120,water,0.25,isopropyl alcohol,0.50,acetonitrile,0.25,AgNO3,Ag,NA,10.1039/c6ra28197d,modest yield,0.95
+"3,3′,5,5′-tetrachloro-4,4′-bipyridine",25,120,water,0.25,methanol,0.50,acetonitrile,0.25,AgNO3,Ag,NA,10.1039/c6ra28197d,sucessful,1.00
+"3,3′,5,5′-tetrabromo-4,4′-bipyridine",25,120,water,0.25,isopropyl alcohol,0.50,acetonitrile,0.25,AgNO3,Ag,NA,10.1039/c6ra28197d,modest yield,0.95
+"3,5-dichloro-3′,5′-diiodo-4,4′-bipyridine",25,120,water,0.25,isopropyl alcohol,0.50,acetonitrile,0.25,AgNO3,Ag,NA,10.1039/c6ra28197d,sucessful,1.00
+"3,5-dibromo-3′,5′-diiodo-4,4′-bipyridine",25,120,water,0.25,isopropyl alcohol,0.50,acetonitrile,0.25,AgNO3,Ag,NA,10.1039/c6ra28197d,sucessful,1.00
+"3,3′-dibromo-5,5′-bis(4-methoxyphenyl)-4,4′-bipyridine",25,120,water,0.25,isopropyl alcohol,0.50,acetonitrile,0.25,AgNO3,Ag,NA,10.1039/c6ra28197d,sucessful,1.00
+"3,3′,5,5′-tetrachloro-4,4′-bipyridine",25,120,ethanol,0.80,chloroform,0.20,NA,NA,AgBF4,Ag,NA,10.1039/c6ra28197d,modest yield,0.95
+"3,3′,5,5′-tetrabromo-4,4′-bipyridine",25,120,ethanol,0.80,chloroform,0.20,NA,NA,AgBF4,Ag,NA,10.1039/c6ra28197d,sucessful,1.00
+"3,3′,5,5′-tetrachloro-4,4′-bipyridine",25,120,ethanol,0.80,chloroform,0.20,NA,NA,AgTfO,Ag,NA,10.1039/c6ra28197d,modest yield,0.95
+"3,3′,5,5′-tetrabromo-4,4′-bipyridine",25,120,ethanol,0.80,chloroform,0.20,NA,NA,AgTfO,Ag,NA,10.1039/c6ra28197d,modest yield,0.95
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Mg(NO3)2·6H2O,Mg,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Mg(NO3)2·6H2O,Mg,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Ca(NO3)2·4H2O,Ca,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Ca(NO3)2·4H2O,Ca,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,MnCl2·6H2O,Mn,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,MnCl2·6H2O,Mn,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Co(NO3)2·6H2O,Co,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Co(NO3)2·6H2O,Co,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Ni(NO3)2·6H2O,Ni,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Ni(NO3)2·6H2O,Ni,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Cu(NO3)2·6H2O,Cu,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Cu(NO3)2·6H2O,Cu,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Zn(NO3)2·6H2O,Zn,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Zn(NO3)2·6H2O,Zn,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,PdCl2,Pd,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,PdCl2,Pd,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Pb(NO3)2·6H2O,Pb,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,24,methanol,0.91,acetic acid,0.09,NA,NA,Pb(NO3)2·6H2O,Pb,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.67,acetic acid,0.33,NA,NA,Cr(acac)3,Cr,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.67,acetic acid,0.33,NA,NA,Cr(acac)3,Cr,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.67,acetic acid,0.33,NA,NA,Fe(acac)3,Fe,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.67,acetic acid,0.33,NA,NA,Fe(acac)3,Fe,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.67,acetic acid,0.33,NA,NA,AlCl3,Al,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.67,acetic acid,0.33,NA,NA,AlCl3,Al,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.67,acetic acid,0.33,NA,NA,GaCl3,Ga,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.67,acetic acid,0.33,NA,NA,GaCl3,Ga,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.86,acetic acid,0.14,NA,NA,Zr(NO3)4·5H2O,Zr,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.86,acetic acid,0.14,NA,NA,Zr(NO3)4·5H2O,Zr,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.86,acetic acid,0.14,NA,NA,Ti(OiPr)4,Ti,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.86,acetic acid,0.14,NA,NA,Ti(OiPr)4,Ti,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(S)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.86,acetic acid,0.14,NA,NA,SnCl4·6H2O,Sn,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-3,3′-di-tert-butyl-5,5′-dicarboxyphenyl-6,6′-dimethylbiphenyl-2,2′-diylhydrogen phosphate",80,48,methanol,0.86,acetic acid,0.14,NA,NA,SnCl4·6H2O,Sn,NA,10.1038/s41467-017-02335-0,sucessful,1.00
+"(R)-7,7,7’,7’-tetramethyl-6,6’,7,7’-tetrahydro-3H,3’H-5,5’-spirobi[indeno[5,6-d]-[1,2,3]triazole]",140,72,DMF,1.00,NA,NA,NA,NA,MnCl2·2H2O,Mn,NA,10.1039/d0dt02847a,sucessful,1.00
+"3’-[(E)-{[(1S,2S)-2-aminocyclohexyl]imino}-methyl]-4’-hydroxy-4-biphenylcarboxlic acid",85,72,acetonitrile,0.66,water,0.17,ethanol,0.17,Cu(NO3)2·6H2O,Cu,NA,10.1002/chem.201104001,sucessful,1.00
+"3’-[(E)-{[(1S,2S)-2-aminocyclohexyl]imino}-methyl]-4’-hydroxy-4-biphenylcarboxlic acid",85,72,DMF,0.46,water,0.27,ethanol,0.27,Cu(NO3)2·6H2O,Cu,NA,10.1002/chem.201104001,sucessful,1.00
+"3’-[(E)-{[(1S,2S)-2-aminocyclohexyl]imino}-methyl]-4’-hydroxy-4-biphenylcarboxlic acid",140,96,DMF,0.46,water,0.27,ethanol,0.27,Cu(NO3)2·6H2O,Cu,NA,10.1002/chem.201104001,modest yield,0.95
+"3-[(E)-{[(1R,2R)-2-aminocyclohexyl]imino}methyl]-4-hydroxybenzoic acid",80,12,methanol,0.25,water,0.75,NA,NA,Cu(NO3)·3H2O,Cu,NaOH,10.1002/chem.200900037,sucessful,1.00
+"3-[(E)-{[(1R,2R)-2-aminocyclohexyl]imino}methyl]-4-hydroxybenzoic acid",80,12,ethanol,0.25,water,0.75,NA,NA,Cu(NO3)·3H2O,Cu,NaOH,10.1002/chem.200900037,sucessful,1.00
+"3-[(E)-{[(1R,2R)-2-aminocyclohexyl]imino}methyl]-4-hydroxybenzoic acid",80,12,isopropyl alcohol,0.25,water,0.75,NA,NA,Cu(NO3)·3H2O,Cu,NaOH,10.1002/chem.200900037,sucessful,1.00
+"3-[(E)-{[(1R,2R)-2-aminocyclohexyl]imino}methyl]-4-hydroxybenzoic acid",80,12,2-butanol,0.25,water,0.75,NA,NA,Cu(NO3)·3H2O,Cu,NaOH,10.1002/chem.200900037,sucessful,1.00
+"3-[(E)-{[(1R,2R)-2-aminocyclohexyl]imino}methyl]-4-hydroxybenzoic acid",80,12,3-methyl-2-butanol,0.25,water,0.75,NA,NA,Cu(NO3)·3H2O,Cu,NaOH,10.1002/chem.200900037,sucessful,1.00
+"3-[(E)-{[(1R,2R)-2-aminocyclohexyl]imino}methyl]-4-hydroxybenzoic acid",80,12,2-pentanol,0.25,water,0.75,NA,NA,Cu(NO3)·3H2O,Cu,NaOH,10.1002/chem.200900037,sucessful,1.00
+"3-[(E)-{[(1R,2R)-2-aminocyclohexyl]imino}methyl]-4-hydroxybenzoic acid",80,12,2-heptanol,0.25,water,0.75,NA,NA,Cu(NO3)·3H2O,Cu,NaOH,10.1002/chem.200900037,sucessful,1.00
+"3-[(E)-{[(1R,2R)-2-aminocyclohexyl]imino}methyl]-4-hydroxybenzoic acid",80,12,2-octanol,0.25,water,0.75,NA,NA,Cu(NO3)·3H2O,Cu,NaOH,10.1002/chem.200900037,sucessful,1.00
+2-aminoterephthalic acid,80,26,formic acid,0.27,water,0.73,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+2-nitroterephthalic acid,80,26,formic acid,0.27,water,0.73,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,sucessful,1.00
+"1,2,4-benzenetricarboxylic acid",80,26,formic acid,0.27,water,0.73,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,sucessful,1.00
+2-bromoterephtalic acid,80,26,formic acid,0.27,water,0.73,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+"2,5-dihydroxyterephtalic acid",80,26,formic acid,0.27,water,0.73,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+2-aminoterephthalic acid,120,26,formic acid,0.27,DMF,0.73,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,poor crystallinity,0.40
+2-nitroterephthalic acid,120,26,formic acid,0.27,DMF,0.73,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,poor crystallinity,0.40
+"1,2,4-benzenetricarboxylic acid",120,26,formic acid,0.27,DMF,0.73,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+2-bromoterephtalic acid,120,26,formic acid,0.27,DMF,0.73,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,sucessful,1.00
+"2,5-dihydroxyterephtalic acid",120,26,formic acid,0.27,DMF,0.73,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,poor crystallinity,0.40
+2-aminoterephthalic acid,120,26,formic acid,0.33,DMF,0.67,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,sucessful,1.00
+2-nitroterephthalic acid,120,26,formic acid,0.33,DMF,0.67,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,sucessful,1.00
+"1,2,4-benzenetricarboxylic acid",120,26,formic acid,0.33,DMF,0.67,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+2-bromoterephtalic acid,120,26,formic acid,0.33,DMF,0.67,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,sucessful,1.00
+"2,5-dihydroxyterephtalic acid",120,26,formic acid,0.33,DMF,0.67,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,poor crystallinity,0.40
+2-nitroterephthalic acid,25,0.25,formic acid,0.27,water,0.73,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-nitroterephthalic acid,25,0.5,formic acid,0.27,water,0.73,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-nitroterephthalic acid,25,1,formic acid,0.27,water,0.73,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-nitroterephthalic acid,25,24,formic acid,0.27,water,0.73,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-nitroterephthalic acid,25,0.25,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-nitroterephthalic acid,25,0.5,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-nitroterephthalic acid,25,1,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-nitroterephthalic acid,25,24,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-aminoterephthalic acid,25,24,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,failed,0.00
+"1,2,4-benzenetricarboxylic acid",25,24,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-bromoterephtalic acid,25,24,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+"2,5-dihydroxyterephtalic acid",25,24,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,failed,0.00
+2-aminoterephthalic acid,25,24,formic acid,0.27,water,0.73,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-aminoterephthalic acid,25,24,acetic acid,0.44,water,0.66,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-aminoterephthalic acid,25,24,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,benzoic acid,10.1039/d2qi01198k,poor crystallinity,0.40
+2-aminoterephthalic acid,25,24,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,HCl / H2O,10.1039/d2qi01198k,failed,0.00
+2-nitroterephthalic acid,25,24,formic acid,0.27,water,0.73,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-nitroterephthalic acid,25,24,acetic acid,0.44,water,0.66,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-nitroterephthalic acid,25,24,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,benzoic acid,10.1039/d2qi01198k,sucessful,1.00
+2-nitroterephthalic acid,25,24,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,HCl / H2O,10.1039/d2qi01198k,sucessful,1.00
+"1,2,4-benzenetricarboxylic acid",25,24,formic acid,0.27,water,0.73,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+"1,2,4-benzenetricarboxylic acid",25,24,acetic acid,0.44,water,0.66,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+"1,2,4-benzenetricarboxylic acid",25,24,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,benzoic acid,10.1039/d2qi01198k,sucessful,1.00
+"1,2,4-benzenetricarboxylic acid",25,24,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,HCl / H2O,10.1039/d2qi01198k,sucessful,1.00
+2-bromoterephtalic acid,25,24,formic acid,0.27,water,0.73,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-bromoterephtalic acid,25,24,acetic acid,0.44,water,0.66,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-bromoterephtalic acid,25,24,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,benzoic acid,10.1039/d2qi01198k,sucessful,1.00
+2-bromoterephtalic acid,25,24,water,1.00,NA,NA,NA,NA,(NH4)2[Ce(NO3)6],Ce,HCl / H2O,10.1039/d2qi01198k,failed,0.00
+2-aminoterephthalic acid,80,26,formic acid,0.27,water,0.73,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-nitroterephthalic acid,80,26,formic acid,0.27,water,0.73,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+"1,2,4-benzenetricarboxylic acid",80,26,formic acid,0.27,water,0.73,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+2-bromoterephtalic acid,80,26,formic acid,0.27,water,0.73,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,sucessful,1.00
+"2,5-dihydroxyterephtalic acid",80,26,formic acid,0.27,water,0.73,NA,NA,(NH4)2[Ce(NO3)6],Ce,NA,10.1039/d2qi01198k,failed,0.00
+2-aminoterephthalic acid,25,24,water,1.00,NA,NA,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+2-nitroterephthalic acid,25,24,water,1.00,NA,NA,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+"1,2,4-benzenetricarboxylic acid",25,24,water,1.00,NA,NA,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+2-bromoterephtalic acid,25,24,water,1.00,NA,NA,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+"2,5-dihydroxyterephtalic acid",25,24,water,1.00,NA,NA,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+2-aminoterephthalic acid,25,24,DMF,1.00,NA,NA,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+2-nitroterephthalic acid,25,24,DMF,1.00,NA,NA,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+"1,2,4-benzenetricarboxylic acid",25,24,DMF,1.00,NA,NA,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+2-bromoterephtalic acid,25,24,DMF,1.00,NA,NA,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+"2,5-dihydroxyterephtalic acid",25,24,DMF,1.00,NA,NA,NA,NA,HfCl4,Hf,NA,10.1039/d2qi01198k,failed,0.00
+"(R,R)-(-)-N,N′-bis(3-tert-butyl-5-(4-pyridyl) salicylidene)-1,2-diamino-cyclohexane)",80,24,DMF,0.48,THF,0.475,water,0.05,Zn(NO3)2⋅6H2O,Zn,NA,10.1021/ja078317n,sucessful,1.00
+(S)-(N-pyridin-2-ylmethyl)lactamide,25,504,ethanol,1.00,NA,NA,NA,NA,Cu(ClO4)2·6H2O,Cu,Et4NCl,10.1039/b316393h,sucessful,1.00
+(S)-(N-pyridin-2-ylmethyl)lactamide,25,504,ethanol,1.00,NA,NA,NA,NA,Cu(ClO4)2·6H2O,Cu,Et4NBr,10.1039/b316393h,sucessful,1.00
+(S)-N-(2-dimethylaminoethyl)lactamide,25,504,ethanol,1.00,NA,NA,NA,NA,Cu(ClO4)2·6H2O,Cu,Et4NCl,10.1039/b316393h,sucessful,1.00
+(S)-N-(3-dimethylaminopropyl)lactamide,25,504,ethanol,1.00,NA,NA,NA,NA,Cu(ClO4)2·6H2O,Cu,Et4NCl,10.1039/b316393h,sucessful,1.00
+(R)-4-(4-(1-carboxyethoxy)phenoxy)-3-fluorobenzoic acid,120,72,ethanol,0.50,water,0.50,NA,NA,Zn(AcO)2·2H2O,Zn,NaOH,10.1021/cg500197v,sucessful,1.00
+(R)-4-(4-(1-carboxyethoxy)phenoxy)-3-chlorobenzoic acid,120,72,ethanol,0.50,water,0.50,NA,NA,Zn(AcO)2·2H2O,Zn,NaOH,10.1021/acs.cgd.6b00593,sucessful,1.00
+(R)-4-(4-(1-carboxyethoxy)phenoxy)-3-chlorobenzoic acid,120,72,ethanol,0.50,water,0.50,NA,NA,Cd(AcO)2·2H2O,Cd,NaOH,10.1021/acs.cgd.6b00593,sucessful,1.00
+(R)-4-(4-(1-carboxyethoxy)phenoxy)-3-chlorobenzoic acid,120,72,ethanol,0.50,water,0.50,NA,NA,Co(AcO)2·4H2O,Co,NaOH,10.1021/acs.cgd.6b00593,sucessful,1.00
+(R)-2-(4′-(4′′-carboxybenzyloxy)phenoxy)propanoic acid,120,72,methanol,0.13,water,0.87,NA,NA,Ni(AcO)2·4H2O,Ni,NaOH,10.1039/c2dt30863k,sucessful,1.00
+(R)-2-(4′-(4′′-carboxybenzyloxy)phenoxy)propanoic acid,120,72,methanol,0.13,water,0.87,NA,NA,Co(AcO)2·4H2O,Co,NaOH,10.1039/c2dt30863k,sucessful,1.00
+(R)-2-(4′-(4′′-carboxybenzyloxy)phenoxy)propanoic acid,120,72,methanol,0.13,water,0.87,NA,NA,Cd(AcO)2·2H2O,Cd,NaOH,10.1039/c2dt30863k,sucessful,1.00
+"(R,R)-2,2′-((5-(methoxycarbonyl)-1,3-phenylene)bis(oxy))-dipropanoic acid",140,72,water,0.80,acetonitrile,0.20,NA,NA,Nd(NO3)3·6H2O,Nd,NA,10.1021/acs.cgd.6b01763,sucessful,1.00
+"(R,R)-2,2′-((5-(methoxycarbonyl)-1,3-phenylene)bis(oxy))-dipropanoic acid",140,72,water,0.80,acetonitrile,0.20,NA,NA,Sm(NO3)3·6H2O,Sm,NA,10.1021/acs.cgd.6b01763,sucessful,1.00
+"(R,R)-2,2′-((5-(methoxycarbonyl)-1,3-phenylene)bis(oxy))-dipropanoic acid",140,72,water,0.80,acetonitrile,0.20,NA,NA,Eu(NO3)3·6H2O,Eu,NA,10.1021/acs.cgd.6b01763,sucessful,1.00
+"(R,R)-2,2′-((5-(methoxycarbonyl)-1,3-phenylene)bis(oxy))-dipropanoic acid",140,72,water,0.80,acetonitrile,0.20,NA,NA,Tb(NO3)3·6H2O,Tb,NA,10.1021/acs.cgd.6b01763,sucessful,1.00
+(S)-5-(1-carboxyethoxymethyl)-isophthalic acid,130,72,water,1.00,NA,NA,NA,NA,ZnCl2·6H2O,Zn,NaOH,10.1039/c7ra08433a,sucessful,1.00
+"(S)-4′-(1-carboxyethoxy)-[1,1′-biphenyl]-4-carboxylic acid",120,72,acetonitrile,0.80,water,0.20,NA,NA,Zn(NO3)2·6H2O,Zn,NA,10.1039/c7ra00337d,sucessful,1.00
+(S)-6-(1-carboxyethoxy)-2-naphthoic acid,140,72,acetonitrile,0.80,water,0.20,NA,NA,Zn(NO3)2·6H2O,Zn,NA,10.1039/c7ra00337d,sucessful,1.00
+"4′-(1-carboxyethoxy)-[1,1′-biphenyl]-3,5-dicarboxylic acid",120,72,acetonitrile,0.50,water,0.50,NA,NA,CoCl2·6H2O,Co,NaOH,10.1039/c9nj05766h,sucessful,1.00
+"N,N′-bis(4-cyanophenyl)-(1R,2R)-diaminocyclohexane",25,60,dichloromethane,1.00,NA,NA,NA,NA,[Cu(MeCN)4]PF6,Cu,NA,10.1021/cg049781w,sucessful,1.00
+"N,N′-bis(4-cyanophenyl)-(1R,2R)-diaminocyclohexane",30,0.08,acetone,1.00,NA,NA,NA,NA,AgClO4·H2O ,Ag,NA,10.1039/b316931f,sucessful,1.00
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,

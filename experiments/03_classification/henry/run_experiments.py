@@ -75,4 +75,9 @@ if __name__ == "__main__":
         for train_size in train_sizes:
             for num_class in num_classes:
                 for target in targets:
-                    run_experiment(train_size, num_class, target, i + 223342)
+                    try:
+                        run_experiment(train_size, num_class, target, i + 223342)
+                    except Exception as e:
+                        print(f"Failed to run experiment with train_size={train_size}, num_class={num_class}, target={target}, seed={i + 223342}")
+                        print(e)
+                        continue

@@ -615,7 +615,7 @@ class ReactionRegressionFormatter(BaseFormatter):
         return self.format_many(df)
 
 class MOFSolventRecommenderFormatter(BaseFormatter):
-    _PROMPT_TEMPLATE = "{prefix}In what solvent can one make a MOF out of {linker} and {node}{ion}{suffix}{end_prompt}"
+    _PROMPT_TEMPLATE = "{prefix}What solvent shall I use to make a metal-organic framework out of {linker} and {node}{ion}{suffix}{end_prompt}"
     _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
 
     def __init__(
@@ -756,6 +756,108 @@ class InverseDesignFormatter(BaseFormatter):
         return pd.DataFrame([self._format(r, p) for r, p in zip(representation, prop)])
 
     __repr__ = basic_repr("representation_column, property_columns, property_names, num_classes")
+
+    def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
+        return self.format_many(df)
+
+class MOFSynthesisRecommenderFormatter(BaseFormatter):
+    _PROMPT_TEMPLATE = "What is the sucess of a reaction of {ligand} with {salt} in {solvent} {modifier} at {temperature} of {time}{end_prompt}"
+    _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
+
+    def __init__(
+        self,
+        ligand_column: Optional[str] = None,
+        inorganic_salt_column: Optional[str] = None,
+        modifier_column: Optional[str] = None,
+        temperature_column: Optional[str] = None,
+        time_column: Optional[str] = None,
+        solvent_columns: Optional[List[str]] = None,
+        solvent_vol_ratio_columns: Optional[List[str]] = None,
+        outcome_column: Optional[str] = None,
+        score_column: Optional[str] = None,
+        doi_column: Optional[str] = None,
+        use_score: bool = True,
+    ):
+        self.ligand_column = ligand_column or "ligand name"
+        self.inorganic_salt_column = inorganic_salt_column or "inorganic salt"
+        self.modifier_column = modifier_column or "additional"
+        self.temperature_column = temperature_column or "T [°C]"
+        self.time_column = time_column or "t [h]"
+        self.solvent_columns = solvent_columns or ["solvent1", "solvent2", "solvent3"]
+        self.solvent_vol_ratio_columns = solvent_vol_ratio_columns or ["V/V solvent1 [ ]", "V/V solvent2 [ ]", "V/V solvent3 [ ]"]
+        self.outcome_column = outcome_column or "outcome"
+        self.score_column = score_column or "score"
+        self.doi_column = doi_column or "reported"
+        self.use_score = use_score
+
+    def _solvent_string(self, solvent, solvent_mol_ratio):
+        return " and ".join(
+            [f"{np.round(m,2)} {s}" for s, m in zip(solvent, solvent_mol_ratio) if not np.isnan(m)]
+        )
+
+    def _modifier_string(self, modifier):
+        if modifier:
+            return " and {modifier}"
+        else:
+            return " "
+
+    def _format(self, linker, node, solvent, solvent_mol_ratio, modifier, temperature, time, score, outcome) -> dict:
+        return {
+            "prompt": self._PROMPT_TEMPLATE.format(
+                prefix=self._prefix,
+                ligand=self._linker_string(linker),
+                salt=node,
+                solvent=self._solvent_string(solvent, solvent_mol_ratio),
+                modifier=self._modifier_string(modifier),
+                temperature=temperature,
+                time=time,
+                suffix=self._suffix,
+                end_prompt=self._end_prompt,
+            ),
+            "completion": self._COMPLETION_TEMPLATE.format(
+                start_completion=self._start_completion,
+                label=score if self.use_score else outcome,
+                stop_sequence=self._stop_sequence,
+            ),
+            "label": score if self.use_score else outcome,
+            "representation": [linker, node, solvent, solvent_mol_ratio, modifier, temperature, time],
+            "solvents": solvent,
+            "solvent_mol_ratios": solvent_mol_ratio,
+        }
+
+    def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Format a dataframe of representations and labels into a dataframe of prompts and completions.
+
+        This function will drop rows with missing values in the representation or label columns.
+
+        Args:
+            df (pd.DataFrame): A dataframe with a representation column and a label column.
+
+        Returns:
+            pd.DataFrame: A dataframe with a prompt column and a completion column.
+        """
+        # drop entries that have "unknown" in one of the fields
+        filtered_rows = []
+        df.dropna(subset=[self.linker_columns[0]] + [self.node_columns[0]], inplace=True)
+        for _, row in df.iterrows():
+            if "unknown" in row[self.counter_ion_columns].values:
+                continue
+            filtered_rows.append(row)
+        df = pd.DataFrame(filtered_rows)
+
+        linker = df[self.linker_columns].values
+        node = df[self.node_columns].values
+        ion = df[self.counter_ion_columns].values
+        solvent = df[self.solvent_columns].values
+        solvent_mol_ratio = df[self.solvent_mol_ratio_columns].values
+        return pd.DataFrame(
+            [
+                self._format(l, n, i, s, smr)
+                for l, n, i, s, smr in zip(linker, node, ion, solvent, solvent_mol_ratio)
+            ]
+        )
+
+    __repr__ = basic_repr("ligand_column inorganic_salt_column modifier_column temperature_column time_column solvent_columns solvent_vol_ratio_columns outcome_column score_column doi_column use_score")
 
     def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
         return self.format_many(df)

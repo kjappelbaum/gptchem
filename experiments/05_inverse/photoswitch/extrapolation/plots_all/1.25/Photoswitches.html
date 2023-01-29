@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="data:image/vnd.microsoft.icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA25g0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERAAAAAAAAAREAAAAAAAABEQAAAAAAAAERAAAAAAAAARERERAAAAABEREREAAAAAEREREQAAAAAREAAAAAAAABEQAAAAAAAAEREREQAAAAARERERAAAAABEREREAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAPH/AADx/wAA8f8AAPH/AADwDwAA8A8AAPAPAADx/wAA8f8AAPAPAADwDwAA8A8AAP//AAD//wAA" />
+    <title></title>
+    <script src="https://unpkg.com/lore-engine@1.1.10/dist/lore.min.js"></script>
+    <script src="https://unpkg.com/smiles-drawer@2.0.2/dist/smiles-drawer.min.js"></script>
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" 
+      integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" 
+      crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        user-select: none;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      #lore {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      #title {
+        position: absolute;
+        z-index: 9999;
+        pointer-events: none;
+        text-height: 1;
+        opacity: 0.0;
+        transition: opacity 0.5s ease-in;
+        
+          padding-bottom: 20px;
+        
+          font-size: 1.0em;
+        
+          color: #888888;
+        
+          font-family: 'Open Sans';
+        
+      }
+
+      #x-axis {
+        position: absolute;
+        z-index: 9999;
+        pointer-events: none;
+        text-height: 1;
+        opacity: 0.0;
+        transition: opacity 0.5s ease-in;
+        
+          padding-top: 20px;
+        
+          font-size: 0.7em;
+        
+          color: #888888;
+        
+          font-family: 'Open Sans';
+        
+      }
+
+      #y-axis {
+        position: absolute;
+        z-index: 9999;
+        pointer-events: none;
+        text-height: 1;
+        transition: opacity 0.5s ease-in;
+        
+          padding-bottom: 20px;
+        
+          font-size: 0.7em;
+        
+          color: #888888;
+        
+          font-family: 'Open Sans';
+        
+          transform: rotate(-90deg);
+        
+      }
+
+      #tip {
+        position: absolute;
+        z-index: 9999;
+        left: 10px;
+        top: 10px;
+        padding: 5px;
+        font-family: 'Open Sans';
+        background-color: rgba(255, 255, 255, 1.0);
+        border-radius: 2px;
+        border-left: 5px solid #000;
+        pointer-events: none;
+        opacity: 0.0;
+        transition: opacity 0.1s ease-out;
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 1.0));
+      }
+
+      #tip.show {
+        opacity: 1.0;
+        transition: opacity 0.1s ease-out;
+      }
+
+      #tip-text {
+        position: relative;
+        
+        max-width: 250px;
+        
+        font-size: 0.8em;
+        font-weight: bold;
+        white-space: normal;
+        line-break: normal;
+      }
+
+      #hover-indicator {
+        display: none;
+        position: absolute;
+        z-index: 999;
+        border: 1px solid #fff;
+        background-color: rgba(255, 255, 255, 0.25);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      #hover-indicator.show {
+        display: block !important
+      }
+
+      .selected-indicator {
+        position: absolute;
+        z-index: 999;
+        pointer-events: none;
+      }
+
+      .selected-indicator .crosshair-x {
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        height: 2px;
+        width: 100%;
+        margin: auto;
+        
+          background-color: #fff;
+        
+      }
+
+      .selected-indicator .crosshair-y {
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        width: 2px;
+        height: 100%;
+        margin: auto;
+        
+          background-color: #fff;
+        
+      }
+
+      #legend {
+        position: absolute;
+        z-index: 9998;
+        
+          bottom: 10px;
+        
+          right: 10px;
+        
+          padding: 10px;
+        
+          border: 1px solid #262626;
+        
+          border-radius: 2px;
+        
+          background-color: #111111;
+        
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+        
+          color: #eeeeee;
+        
+          font-family: 'Open Sans';
+        
+      }
+
+      #legend .container {
+        display: flex;
+        flex: auto;
+        align-items: flex-start;
+        
+        flex-direction: column;
+        
+      }
+
+      #legend .legend-section {
+        width: 100%;
+      }
+
+      #legend .legend-section:not(:first-child) {
+        
+      }
+
+      #legend h2 {
+        font-size: 1em;
+        font-weight: 600;
+        padding-top: 0;
+        margin-top: 0;
+        margin-bottom: 5px;
+        text-align: center;
+        max-width: 250px;
+        white-space: normal;
+      }
+
+      #legend h3 {
+        font-size: 0.8em;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        max-width: 250px;
+        white-space: normal;
+      }
+
+      #legend select {
+        width: 100%;
+        margin-bottom: 5px;
+        background: transparent;
+        color: #fff;
+        border-radius: 2px;
+        font-size: 0.75em;
+      }
+
+      #legend select option {
+        background: #000;
+      }
+
+      #legend .legend-element, #legend .legend-element-range {
+        position: relative;
+        display: flex;
+        flex: auto;
+        align-items: flex-start;
+        padding-bottom: 2px;
+        padding-top: 2px;
+      }
+
+      #legend .legend-element {
+        align-items: flex-start;
+      }
+
+      #legend .legend-element-range {
+        flex-direction: column;
+      }
+
+      #legend .color-box {
+        
+          width: 15px;
+        
+          height: 15px;
+        
+          border: solid 0px;
+        
+      }
+
+      #legend .color-stripe {
+        
+          width: 15px;
+        
+          height: 1px;
+        
+          border: solid 0px;
+        
+      }
+
+      #legend .legend-label {
+        height: 15px;
+        font-size: 0.7em;
+        padding-left: 5px;
+      }
+
+      #legend .legend-label.max {
+        position: absolute;
+        top: 0px;
+        margin-left: 15px;
+      }
+
+      #legend .legend-label.min {
+        position: absolute;
+        bottom: 2px;
+        margin-left: 15px;
+      }
+
+      #selected {
+        position: absolute;
+        display: none;
+        z-index: 9998;
+        width: 250px;
+        
+          bottom: 10px;
+        
+          left: 10px;
+        
+          padding: 0px;
+        
+          border: 1px solid #262626;
+        
+          border-radius: 2px;
+        
+          background-color: #111111;
+        
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+        
+          color: #eeeeee;
+        
+          font-family: 'Open Sans';
+        
+      }
+
+      #selected #selected-controls {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 5px 10px;
+        border-bottom: 1px solid #262626;
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+
+      #selected #selected-controls * {
+        display: inline-block;
+      }
+
+      #selected #selected-controls #selected-title {
+        flex-grow: 1;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #aaa;
+      }
+
+      #selected #selected-controls a {
+        margin: 0px 2px;
+        font-size: 1.5em;
+        color: #fff;
+        opacity: 0.75;
+        transition: 0.2s;
+      }
+
+      #selected #selected-controls a:hover {
+        opacity: 1.0;
+      }
+
+      #selected #selected-controls a#selected-remove {
+        position: absolute;
+        right: 10px;
+        top: 42px;
+        color: #e74c3c;
+      }
+
+      #selected #selected-container {
+        padding: 10px;
+        font-size: 0.8em;
+      }
+
+      #selected #selected-container img {
+        margin-left: -10px;
+      }
+
+      #selected #selected-container .label {
+        font-weight: bold;
+        color: #aaa;
+        font-size: 0.7em;
+      }
+
+      #selected #selected-container .label:not(:first-child) {
+        margin-top: 2px;
+      }
+
+      #selected #selected-container .content {
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #selected #selected-container .content a {
+        text-decoration: none;
+        color: #3498db;
+      }
+
+      #controls {
+        position: absolute;
+        z-index: 9998;
+        
+          top: 10px;
+        
+          right: 10px;
+        
+          padding: 2px;
+        
+          border: 1px solid #262626;
+        
+          border-radius: 2px;
+        
+          background-color: #111111;
+        
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+        
+          color: #eeeeee;
+        
+          font-family: 'Open Sans';
+        
+      }
+
+      #controls a {
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 1.2em;
+        color: #fff;
+        opacity: 0.75;
+        transition: 0.2s;
+      }
+
+      #controls a:hover {
+        opacity: 1.0;
+      }
+
+      #controls #more-controls {
+        display: inline-block;
+      }
+
+      #impress {
+        position: absolute;
+        z-index: 9999;
+        top: 10px;
+        left: 10px;
+        font-size: 0.7em;
+        color: #eee;
+      }
+
+      #impress a {
+        color: #3498db;
+        text-decoration: none;
+      }
+
+      #overlay-structure-container {
+        position: absolute;
+        z-index: 9999;
+        top: 50px;
+        left: 275px;
+        right: 100px;
+        bottom: 10px;
+        opacity: .5;
+        pointer-events: none;
+      }
+
+      #overlay-structure {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+
+
+
+
+      .show {
+        opacity: 1.0 !important;
+      }
+
+      .hide {
+        display: none !important;
+      }
+
+      @media only screen and (max-width: 600px) {
+        #selected {
+          position: absolute;
+          display: none;
+          z-index: 9998;
+          width: 125px;
+          opacity: 0.8;
+          background-filter: blur(10px);
+        }
+
+        #selected img {
+          width: 125px;
+        }
+
+        #tip {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    
+    
+    
+      <div id="impress">made with <a href="http://tmap.gdb.tools" target="_blank">tmap</a><br />and <a href="https://github.com/reymond-group/faerun-python" target="_blank">faerun</a></div>
+    
+
+    <div id="overlay-structure-container" data-binding-id="overlayStructureContainer" class="">
+      <canvas id="overlay-structure" data-binding-id="overlayStructure" width="450" height="687">
+
+      </canvas></div>
+    </div>
+
+    <div id="tip" data-bind="tip">
+      <div id="tip-text" data-bind="tipText"></div>
+    </div>
+    <div id="selected" data-bind="selected">
+      <div id="selected-controls" data-bind="selectedControls">
+        <a id="selected-toggle" data-bind="selectedToggle" href="#">
+          <i class="fas fa-toggle-on"></i>
+        </a>
+        <span>&nbsp;&nbsp;</span>
+        <span id="selected-title" data-bind="selectedTitle"></span>
+        <span>&nbsp;&nbsp;</span>
+        <span id="selected-current" data-bind="selectedCurrent" data-bind="selectedCurrent">0</span><span> / </span><span id="selected-total" data-bind="selectedTotal">0</span>
+        <span>&nbsp;&nbsp;</span>
+        <a id="selected-prev" data-bind="selectedPrev" href="#">
+          <i class="fas fa-angle-left"></i>
+        </a>
+        <span>&nbsp;</span>
+        <a id="selected-next" data-bind="selectedNext" href="#">
+          <i class="fas fa-angle-right"></i>
+        </a>
+        <a id="selected-remove" data-bind="selectedRemove" href="#">
+          <i class="fas fa-times"></i>
+        </a>
+      </div>
+      <div id="selected-container" data-bind="selectedContainer">
+      </div>
+    </div>
+    <div id="controls" data-bind="controls">
+      <div id="more-controls" data-bind="moreControls" class="hide">
+        <a id="search" data-bind="search" href="#">
+          <i class="fas fa-search"></i>
+        </a>
+        <a id="download" data-bind="download" href="#">
+          <i class="fas fa-download"></i>
+        </a>
+        <a id="export" data-bind="export" href="#">
+          <i class="fas fa-camera"></i>
+        </a>
+        <a id="largepreview" data-bind="largepreview" href="#">
+          <i class="fas fa-expand"></i>
+        </a>
+      </div>
+      <a id="show-controls" data-bind="showControls" href="#">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+    <div id="hover-indicator" data-bind="hoverIndicator"></div>
+    <canvas id="lore"></canvas>
+
+    
+    <script>
+      const data = {
+Photoswitches: {
+x: [556.637,285.019,519.216,635.566,579.897,109.058,151.497,433.484,507.143,340.969,430.324,408.849,400.651,571.769,84.431,138.808,502.682,127.931,407.078,80.052,112.657,502.749,87.445,380.76,470.011,459.199,559.795,624.174,89.54,74.476,77.396,468.532,2.607,127.888,192.792,119.464,541.532,447.145,136.07,413.68,449.935,439.791,62.864,108.834,73.105,584.259,132.905,92.164,274.16,528.26,112.753,143.347,31.983,581.709,495.57,741.268,744.649,632.511,104.329,750.0,521.018,433.867,585.525,130.277,438.821,130.006,285.612,608.855,453.856,523.576,480.318,152.447,725.657,417.246,646.707,98.567,515.293,411.311,81.716,454.693,552.555,47.981,290.342,112.961,400.582,587.338,102.656,472.656,122.382,625.397,703.197,459.363,631.996,520.627,597.967,524.398,133.17,104.613,106.65,622.867,717.244,75.264,40.434,80.496,397.041,133.915,63.499,0.0,473.988,571.357,142.941,122.284,105.225,432.611,430.569,406.505,477.221,89.795,512.223,746.591,121.314,148.371,583.31,523.57,129.266,579.763,560.153,375.649,512.975,13.96,449.972,512.491,105.475,594.089,86.96,562.01,421.389,482.923,100.826,416.792,63.343,560.959,550.043,552.806,69.891,641.489,109.42,501.457,544.417,8.277,397.655,499.045,404.066,467.39,711.758,519.123,106.283,663.889,503.081,626.758,286.796,105.146,141.452,127.446,102.427,719.911,169.601,701.457,701.061,96.206,494.225,403.552,407.873,583.045,578.291,182.764,399.543,268.532,129.959,536.133,97.709,508.623,202.387,532.719,475.883,86.93,565.923,460.156,374.216,125.676,97.464,503.116,450.673,95.188,101.784,538.909,398.053,96.375,49.249,85.471,569.396,495.117,416.229,274.522,125.963,533.579,549.792,33.248,434.364,273.664,407.896,110.065,301.993,131.116,272.12,300.492,34.647,416.873,504.13,638.287,420.847,119.156,586.204,269.247,280.801,621.054,396.55,112.498,114.658,417.961,635.534,476.233,416.758,572.087,118.764,159.01,580.873,116.869,165.036,262.832,119.881,276.981,94.712,728.329,619.443,201.337,580.764,306.507,615.15,425.371,564.631,161.873,618.066,604.783,154.826,456.452,116.358,433.583,178.37,137.816,658.996,306.468,471.219,80.874,269.043,417.067,203.534,486.547,427.23,600.095,498.339,612.029,515.336,403.212,181.834,210.05,104.613,465.645,113.403,615.726,615.455,391.191,520.383,598.325,477.68,106.729,56.141,468.271,156.15,428.828,576.999,547.038,738.639,96.909,492.195,408.522,518.415,99.197,572.648,628.297,281.437,580.506,384.605,485.403,498.819,628.277,732.669,725.164,557.09,475.686,517.463,136.446,37.986,441.483,401.955,185.607,285.615,585.213,411.309,527.394,266.196,403.896,377.968,16.661,407.227,482.21,27.938,464.587,480.545,418.965,128.909,54.292,476.329,97.964,12.386,620.28,619.022,620.119,400.99,223.86,124.743,216.629,416.781,680.557,305.097,123.768,104.298,93.036,422.441,402.81,93.5,734.3,610.043,610.169,118.572,726.642,433.882,622.907,633.226,120.358,504.51,522.268,619.807,6.16,588.249,270.619,98.951,22.765,102.14,557.062,293.447,517.595,459.404,427.144,499.14,262.178,631.688,497.348,478.994,287.946,100.528,221.33,51.375,593.244,124.197,162.736,498.825,491.602,460.52,80.401,109.774,572.301,549.557,626.709,272.232,418.392,473.712,435.101,130.612,30.34,138.392,370.801,283.876,71.178],
+y: [292.655,62.777,20.629,388.046,449.994,140.655,415.332,104.758,617.383,171.552,211.816,560.54,135.821,387.529,110.25,453.645,669.879,352.862,185.463,302.505,613.083,662.03,602.384,171.927,675.074,92.799,352.294,453.67,107.135,89.151,94.498,422.636,408.075,376.795,325.414,469.746,348.844,562.688,405.616,750.0,92.351,201.437,300.223,540.304,148.642,281.245,360.305,612.478,77.721,543.161,518.929,450.589,118.75,434.145,426.115,290.192,319.058,616.003,301.622,279.325,570.131,723.177,588.047,414.621,220.309,143.83,57.606,562.471,237.82,543.508,409.95,408.06,310.165,578.369,642.935,126.053,24.827,225.036,606.273,91.961,304.301,298.41,59.977,148.79,596.043,413.511,592.168,557.8,81.21,422.174,345.483,237.086,635.263,419.737,599.845,567.596,355.812,517.931,610.478,413.348,325.067,301.091,387.119,98.542,568.767,410.226,155.247,403.542,55.426,347.093,312.021,96.999,559.047,100.299,571.342,592.361,258.09,112.372,657.55,283.584,310.302,411.557,424.011,435.441,471.674,454.924,423.183,169.377,288.135,294.761,701.843,29.469,357.97,563.176,366.609,305.956,739.625,418.473,600.197,224.736,123.228,357.239,350.873,556.013,374.234,639.953,525.575,60.773,319.667,294.18,131.579,422.538,578.942,417.842,344.471,277.54,132.689,373.063,675.125,616.623,0.0,616.727,315.809,410.452,309.912,346.701,320.118,337.576,341.947,309.071,642.158,193.239,574.454,565.287,283.504,253.813,149.493,99.762,406.047,347.52,146.386,32.322,328.256,427.166,661.793,593.266,465.175,245.039,164.909,441.436,140.516,418.025,241.466,303.588,576.565,422.33,187.45,590.833,120.176,140.042,293.182,61.201,229.252,30.707,348.96,542.555,346.25,113.932,204.669,56.001,586.902,112.777,171.398,441.293,26.118,178.149,296.968,204.691,653.003,462.377,208.566,93.24,418.2,77.259,70.648,652.527,600.885,127.474,154.015,583.937,638.2,555.96,745.801,568.466,494.191,413.953,278.107,516.64,415.411,172.28,524.066,37.453,606.449,322.496,639.36,180.438,343.043,183.162,418.994,572.661,352.352,280.646,616.744,562.533,156.578,233.222,97.794,110.261,168.697,448.44,372.983,187.619,663.902,126.578,124.901,129.241,222.781,415.802,215.17,421.422,641.471,445.359,592.841,557.427,322.678,331.943,596.807,246.192,93.096,448.146,562.484,567.541,297.437,435.308,36.479,529.938,160.072,75.054,317.821,577.04,422.471,354.782,320.391,131.215,45.418,238.333,662.794,299.981,289.494,410.674,24.002,442.863,569.431,56.487,42.731,562.225,322.025,348.232,305.452,406.567,282.273,414.219,117.579,713.123,575.071,251.132,5.162,584.099,233.362,431.952,148.662,132.093,569.785,398.624,554.653,658.755,393.045,73.149,45.174,557.725,445.545,380.746,31.079,595.974,399.292,613.184,419.993,647.339,142.637,191.829,468.796,334.909,570.275,357.669,176.847,473.877,125.369,144.58,215.831,187.503,597.389,298.883,615.103,404.703,126.097,305.507,218.715,562.278,459.1,86.968,549.348,666.616,629.58,403.578,339.745,51.811,518.066,295.71,130.187,297.835,71.68,289.677,689.234,732.027,65.181,147.268,423.406,49.438,56.275,71.759,305.477,337.021,163.058,337.446,527.65,284.447,277.649,50.558,250.249,592.739,616.653,421.87,504.082,457.739,101.561,562.759,419.156,198.862,379.585,295.968,355.822,170.643,13.272,84.018],
+z: [375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0],
+labels: ['CCN(CC)C(C=C1)=CC=C1/N=N/C2=CC(C#N)=CC(C#N)=C2','BrC9=CC([N+]([O-])=O)=CC([N+]([O-])=O)=C9/N=N/C%10=CC(OC)=C(C=C%10)N(CC)CC','CC(NC(C=C1OC)=CC(OC)=C1/N=N/C2=C(OC)C=C(NC(C)=O)C=C2OC)=O','FC1=CC=C(/N=N/C2=CC=C(F)C=C2)C=C1','ClC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','CC1=NOC(C)=C1/N=N/C2=CC=C(C)C=C2','OC%29=C(N=CC=C%30)C%30=C(/N=N/C%31=CC=C(C#N)C=C%31)C=C%29','OCCC1=CC=CC=C1/N=N/C2=CC=C(NCCC#N)C=C2','CC1=CC=CC=C1/N=N/C2=CC=CC=C2','CCN(CCC#N)C(C=C%21C)=CC=C%21/N=N/C%22=CC=C([N+]([O-])=O)C=C%22','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C(S(=O)(C)=O)C=C2','CC1=C(C(C)=NN1)/N=N/C2=CC=C(Br)C=C2','[H]N(CCC#N)C(C=C7)=CC=C7/N=N/C8=CC=C([N+]([O-])=O)C=C8','CN(C)C1=CC=C(/N=N/C2=CC=C(N(CC)CC)C=C2)C=C1','CC1=C(/N=N/C2=CC(F)=CC(F)=C2)C(C)=NO1','OC%22=C%23N=CC=CC%23=C(/N=N/C%24=NC(C%25=CC=C(Br)C=C%25)=CS%24)C=C%22','CC1=C(/N=N/C2=CC=C(C)C=C2C)C=CC(C)=C1','OC1=C(C(O)=O)C=C(/N=N/C2=CC=C([N+]([O-])=O)C=C2)C=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC([N+]([O-])=O)=C2','CC(C=C1)=CC=C1N=NC2=NNC=C2','ClC7=CC=CC=C7N=NC8=NC9=CC=C([N+]([O-])=O)C=C9S8','CC1=C(/N=N/C2=CC=C(N(C)C)C=C2C)C=CC(C)=C1','CSC(C=C%10)=CC=C%10N=NC%11=NC%12=CC=C([N+]([O-])=O)C=C%12S%11','CC1=CC(N(CCC#N)CCC#N)=CC=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','C=CC1=CC(/N=N\2)=C(CCC3=C2C=C(C=C)C=C3)C=C1','CC(O)C1=CC(/N=N/C2=CC=C(NCCC#N)C=C2)=CC=C1','CCN(CC)C1=CC=C(/N=N/C2=CC=C(N(CC)CC)C=C2)C=C1','BrC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','CC1=NOC(C)=C1/N=N/C2=CC(F)=CC=C2','CC1=NOC(C)=C1/N=N/C2=C(F)C=CC=C2','CC1=C(/N=N/C2=CC(F)=CC=C2F)C(C)=NO1','N#CC(S1)=CC=C1/N=N/C2=CC=CC=C2','OC(C([N+]([O-])=O)=CC([N+]([O-])=O)=C1)=C1/N=N/C2=CC(Cl)=C(N)C=C2N','OC7=C8N=CC=CC8=C(/N=N/C9=NC=C(S(=O)(C%10=CC=C([N+]([O-])=O)C=C%10)=O)S9)C=C7','[H]N(CCO)C(C=C5)=CC=C5/N=N/C6=CC=C([N+]([O-])=O)C=C6','OC%34=C%35N=CC=CC%35=C(/N=N/C%36=NC%37=CC=C(OC)C=C%37S%36)C=C%34','CCN(CC)C(C=C%30)=CC=C%30/N=N/C%31=CC=C(N%32CCOCC%32)C(OC)=C%31','CC1=C(C(C)=NN1)/N=N/C2=CC(C)=CC=C2','OC%42=C%43N=CC=CC%43=C(/N=N/C%44=NC%45=CC=CC=C%45N%44)C=C%42','OCC(C=C1)=CC2=C1CCC3=C(/N=N\2)C=C(CO)C=C3','CC1=CC=C(/N=N/C2=CC=C(NCCC#N)C=C2)C=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=C(C(F)(F)F)C=CC=C2','O=C(O)C(C=C1)=CC=C1N=NC2=NNC=C2','[H]C7=CC=C(N=C(N=NC8=CC=CC(CO)=C8)S9)C9=C7','CC1=NOC(C)=C1/N=N/C2=CC(OC)=CC=C2','CCN(CC)C(C=C1)=CC=C1/N=N/C2=C(C#N)C=CC=C2C#N','Oc1c(/C=N/c2cc(C(OCC)=O)ccn2)cc(/N=N/c3ccc([N+]([O-])=O)cc3)cc1','N#CC9C(SC(/N=N/C%10=NC(C=CC([N+]([O-])=O)=C%11)=C%11S%10)C9C%12CCC(OC)CC%12)N','[H]C1=CC([N+]([O-])=O)=CC([H])=C1/N=N/C2=CC(OC)=C(C=C2)N(CC)CC','CC(C1=CC=C(/N=N/C2=CC=CC=C2)C=C1)=O','[H]C1=CC=C(N=C(N=NC2=CC=CC=C2)S3)C3=C1','OC%18=C%19N=CC=CC%19=C(/N=N/C%20=NC(C%21=CC=C(Cl)C=C%21)=CS%20)C=C%18','ClC1=C(/N=N/C2=C(Cl)C=CC=C2)C=CC=C1','ClC(C=C1)=CC=C1/N=N/C2=CC=C(N(C)C)C=C2','COC1=CC(/N=N/C2=CC=CS2)=CC=C1','C[N]1N=CC=C1N=NC2=CC=CC=C2','C[N]1N=C(C)C(=C1C)N=NC2=CC=CC=C2','Sc1[nH]nc(n1)N=Nc1c(C)n(c2c1cccc2)C','NC(C=C1)=CC=C1N=NC2=NNC=C2','C[N]1C=C(C)C(=N1)N=NC2=CC=CC=C2','CC1=CC(C)=CC(C)=C1/N=N/C2=C(C)C=C(C)C=C2C','NCCC1=CC(/N=N\2)=C(CCC3=C2C=C(CCN)C=C3)C=C1','CCc1nnc(s1)N=Nc1c2ccccc2n(c1C)C','OC%11=C(N=CC=C%12)C%12=C(/N=N/C%13=CC=C(NC(C)=O)C=C%13)C=C%11','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC(C(O)C)=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','BrC1=CC([N+]([O-])=O)=CC([N+]([O-])=O)=C1/N=N/C2=CC([H])=C(C=C2[H])N(CC)CC','CN1C(/N=N/C2=CC=CC=C2)=CN=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC=C2','O=C(N(CCC)C=C1/N=N/C2=CC=C(C(C)(C)C)C=C2)NC1=O','COC(S1)=CC=C1/N=N/C2=CC=C(C#N)C=C2','OC%26=C(N=CC=C%27)C%27=C(/N=N/C%28=CC=C(C(C)=O)C=C%28)C=C%26','C[N]1C=C(C=N1)N=NC2=CC=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC=C(NC(C)=O)C=C2','Cc1[nH]c2c(c1N=Nc1n[nH]c(n1)S)cccc2','CC1=C(/N=N/C2=CC=CC(N)=C2)C(C)=NO1','CC(NC(C=C1)=CC(OC)=C1/N=N/C2=C(OC)C=C(NC(C)=O)C=C2)=O','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C(C(C)=O)C=C2','CSC7=CC=CC=C7N=NC8=NC9=CC=C([N+]([O-])=O)C=C9S8','CC1=CC(/N=N/C2=CC=C(NCCC#N)C=C2)=CC=C1','N#CC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','O=C(C1=CC=C(/N=N/C2=NNC=C2)C=C1)OCC','BrC9=CC([N+]([O-])=O)=CC([N+]([O-])=O)=C9/N=N/C%10=CC([H])=C(C=C%10OC)N(CC)CC','CC1=NOC(C)=C1/N=N/C2=CC=C(C(F)(F)F)C=C2','CC1=C(C(C)=NN1)/N=N/C2=C(C(F)(F)F)C=CC=C2','O=C(OC)C1=CC=C(/N=N/C2=CC=CC=C2)C=C1','O=C(C)NC(C=C%31)=CC=C%31N=NC%32=NC%33=CC=C([N+]([O-])=O)C=C%33S%32','CC1=CC(/N=N/C2=CC(C)=C(C)C=C2)=CC=C1C','CC(C)C1=C(/N=N/C2=CC=CC=C2)C=NC=C1','C1(/N=N/C2=CC=CC=C2)=CC=CC=C1','FC1=CC=CC=C1/N=N/C2=C(F)C=CC=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC(Br)=C2','c1ccc(cc1)c1[nH]c2c(c1N=Nc1nncs1)cccc2','FC(F)(F)C1=CC=C(/N=N/C2=CC=CS2)C=C1','CSc1nnc(s1)N=Nc1c2ccccc2n(c1C)C','CC1=C(/N=N/C2=CC=CC=C2)C(C)=CC(C)=C1','Oc1c(/C=N/c2cc(C(O)=O)ccn2)cc(/N=N/c3ccc([N+]([O-])=O)cc3)cc1','[H]C%19=CC=C(N=C(N=NC%20=CC=C(OC)C=C%20)S%21)C%21=C%19','ClC(C=C%13)=CC=C%13N=NC%14=NC%15=CC=C([N+]([O-])=O)C=C%15S%14','NC1=C(/N=N/C2=CC=CC=C2)C=CC(N)=C1','CN(N=C1)C=C1/N=N/C2=C(F)C=CC=C2F','CC(C(C=C1)=CC=C1N=NC2=NNC=C2)=O','OC(C=C1)=CC=C1/N=N/C2=CC(C)=CC(C)=C2','CC1=C(/N=N/C2=CC=C(F)C=C2F)C(C)=NO1','CC1=C(C(C)=NN1)/N=N/C2=CC=C(OC)C=C2','OC1=C(N=CC=C2)C2=C(/N=N/C3=CC=CC=C3)C=C1','CC1=NOC(C)=C1/N=N/C2=CC=C(OC)C=C2','OC(C([N+]([O-])=O)=CC([N+]([O-])=O)=C1)=C1/N=N/C2=CC(C)=CC(NC(C)=O)=C2O','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=CC=C2C#N','CCN(CC)C(C=C%24)=CC=C%24/N=N/C%25=CC=C(N%26CCCCC%26)C([H])=C%25','NC1=CC=C(/N=N/C2=CC=C([N+]([O-])=O)C=C2)C=C1','COC(C=CN=C1)=C1/N=N/C2=CC=CC=C2','OCC%25=CC(N=NC%26=NC%27=CC=C([N+]([O-])=O)C=C%27S%26)=CC=C%25','OCCC1=CC=C(/N=N/C2=CC=C(NCCC#N)C=C2)C=C1','CC1=C(C(C)=NN1)/N=N/C2=CC(F)=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(C(F)(F)F)=CC=C2','CC1=CC(N(CCC#N)CCC#N)=CC=C1/N=N/C2=CC=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC=C(F)C=C2','CC1=C(/N=N/C2=CC=C(N(C)C)C=C2C)C=CC(Cl)=C1','C[N]1N=CC(=C1N=NC2=CC=CC=C2)C','[O-][N+](C(C=C1)=CC=C1N=NC2=NNC=C2)=O','OC4=C(N=CC=C5)C5=C(/N=N/C6=CC=C(C)C=C6)C=C4','CN(C)C(C=C1)=CC=C1/N=N/C2=CC=C(N(C)C)C=C2','FC(F)(F)C1=C(/N=N/C2=C(C(F)(F)F)C=CC=C2)C=CC=C1','OC%38=C%39N=CC=CC%39=C(/N=N/C%40=NC%41=CC(C)=C(C)C=C%41S%40)C=C%38','ClC1=CC=CC(/N=N/C2=CC=CC(Cl)=C2)=C1','CN(C)C1=CC=C(/N=N/C2=CC=C(C(F)(F)F)C=C2)C=C1','CC1=C(/N=N/C2=CC=C(N(C)C)C=C2C)C=CC([N+]([O-])=O)=C1','CN(CCC#N)C(C=C%17)=CC=C%17/N=N/C%18=CC=CC=C%18','FC1=CC(C(OCC)=O)=CC(F)=C1/N=N/C2=C(F)C=C(C(OCC)=O)C=C2F','[N-]=[N+]=NCC(C=C1)=CC2=C1CCC3=C(/N=N\2)C=C(CN=[N+]=[N-])C=C3','O=C1C=CC(N1C2=CC=C(/N=N/C3=CC=CC=C3)C=C2)=O','OC1=C(/N=N/C2=CC=C([N+]([O-])=O)C=C2)C=CC(O)=C1','CN1C(/N=N/C2=CC=CC=C2)=CC=C1','OC(C=C(O)C=C1)=C1/N=N/C2=CC=CC=C2','CCN(CC)C(C=C1)=CC=C1/N=N/C2=CC(C#N)=C(C#N)C=C2','CC(OCCC1=CC=C2CCC3=CC=C(CCOC(C)(C)C)C=C3/N=N\C2=C1)(C)C','N#CC1=CC(/N=N/C2=CC=CS2)=CC=C1','O=[N+]([O-])C%22=CC=C(N=C(N=NC%23=CC=C([N+]([O-])=O)C=C%23)S%24)C%24=C%22','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C(C)C=C2','CC1=NOC(C)=C1/N=N/C2=CC(Cl)=CC=C2','CC(C=C1)=CC=C1/N=N/C2=CC=C(N(CC)CC)C=C2','CCN(CC)C(C=C%21)=CC=C%21/N=N/C%22=CC=C(N%23CCOCC%23)C([H])=C%22','CC(N(C)C(C)=C1C)=C1/N=N/C2=CC=CC=C2','OC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','Sc1[nH]nc(n1)N=Nc1c([nH]c2c1cccc2)c1ccccc1','[H]C%25=CC=C(N=C(N=NC%26=CC=C(SC)C=C%26)S%27)C%27=C%25','ClC1=CC=CC=C1/N=N/C2=CC=C(NCCC#N)C=C2','CCN(CC)C1=CC=C(/N=N/C2=CC=CC=C2)C=C1','FC1=CC(C(OCC)=O)=CC(F)=C1/N=N/C2=C(F)C=CC=C2F','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=CC=C2[N+]([O-])=O','COC1=CC=C(/N=N/C2=CC=CS2)C=C1','CC1=C(C(C)=NN1)/N=N/C2=C(Cl)C=CC=C2','CC(S1)=CC=C1/N=N/C2=CC=C(C(F)(F)F)C=C2','FC1=CC(F)=CC(F)=C1/N=N/C(C(F)=C2)=C(F)C=C2F','OCCN(CCO)C(C=C%11)=CC=C%11/N=N/C%12=CC=CC=C%12','CC1=C(/N=N/C2=CC=CC=C2C#N)C(C)=NO1','FC1=CC=CC(/N=N/C2=CC=CC(F)=C2)=C1','CC1=C(/N=N/C2=CC(C)=CC=C2C)C=C(C)C=C1','Sc1[nH]nc(n1)N=Nc1c(c2ccccc2)n(c2c1cccc2)C','ClC1=CC([N+]([O-])=O)=CC(C#N)=C1/N=N/C2=CC([H])=C(C=C2[H])N(CC)CC','N#Cc5c(c6ccc(Cl)cc6)c(/N=N/C7=NC(C=CC([N+]([O-])=O)=C8)=C8S7)sc5N','O=[N+]([O-])C1=CC=C(/N=N/C2=CC=C(C=C2)[N+]([O-])=O)C=C1','OC%17=C(N=CC=C%18)C%18=C(/N=N/C%19=CC=C(Cl)C=C%19)C=C%17','COC(C=C1)=CC=C1N=NC2=NNC=C2','FC1=C(F)C=C(F)C(F)=C1/N=N/C2=C(F)C(F)=CC(F)=C2F','[H]N(CC)C(C=C3)=CC=C3/N=N/C4=CC=C([N+]([O-])=O)C=C4','FC1=CC=CC=CC(F)=C1/N=N/C2=C(F)C=CC=C2F','FC1=CC=CC(F)=C1/N=N/C2=C(F)C=CC=C2F','FC1=CC=CC=C1N=NC2=NNC=C2','CC1=C(/N=N/C2=CC=CC(C)=C2C)C=CC=C1C','CC%15=CC(N(CCO)CCC#N)=CC=C%15/N=N/C%16=CC=C([N+]([O-])=O)C=C%16','CC1=C(C(C)=NN1)/N=N/C2=CC=C(Cl)C=C2','CN1C(/N=N/C2=CC=CC=C2)=C(C)C=C1C','CCN(CC)C(C=C1)=CC=C1/N=N/C2=C(C#N)C=CC=C2','O=[N+]([O-])C1=CC(/N=N/C2=CC=CC=C2)=CC=C1','CC9=CC(NCCC#N)=CC=C9/N=N/C%10=CC=C([N+]([O-])=O)C=C%10','[H]C3=CC([N+]([O-])=O)=CC(Cl)=C3/N=N/C4=CC([H])=C(C=C4OC)N(CC)CC','OC%14=C(N=CC=C%15)C%15=C(/N=N/C%16=CC=C(OCC)C=C%16)C=C%14','COC%17=CC(/N=N/C%18=CC(OC)=C(N%19CCCC%19)C=C%18)=CC=C%17N%20CCCC%20','CC1=NOC(C)=C1/N=N/C2=C(Br)C=CC=C2','CC(NC1=CC=C(/N=N/C2=CC=CC=C2)C=C1)=O','[H]N(CCO)C(C=C5)=CC=C5/N=N/C6=CC=CC=C6','FC(F)(F)C1=CC=C(/N=N/C2=CC=CC=C2)C=C1','NC1=CC(/N=N\2)=C(CCC3=C2C=C(N)C=C3)C=C1','COC(C=C4)=CC=C4N=NC5=NC6=CC=C([N+]([O-])=O)C=C6S5','CC(C=C1)=CC=C1/N=N/C2=CC=C(N(C)C)C=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C(Cl)C=C2','CC1=C([N+]([O-])=O)C(C)=CC(/N=N/C2=CC(C)=C(N(C)C)C(C)=C2)=C1','OC4=C5N=CC=CC5=C(/N=N/C6=NC=C(C)S6)C=C4','CC1=NOC(C)=C1/N=N/C2=CC=C(Br)C=C2','CC1=CC=C(/N=N/C2=CC=CS2)C=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC=C2Br','C1(/N=N/C2=CC=NN2)=CC=NN1','OCC%28=CC(N=NC%29=NC%30=CC=C([N+]([O-])=O)C=C%30S%29)=CC=C%28','FC(F)(F)C1=CC=C(/N=N/C2=CC=C(C(F)(F)F)C=C2)C=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC=C2[N+]([O-])=O','FC(C=C%16)=CC=C%16N=NC%17=NC%18=CC=C([N+]([O-])=O)C=C%18S%17','CC1=C(/N=N/C2=CC(Cl)=CC=C2Cl)C(C)=NO1','CC1=NOC(C)=C1/N=N/C2=CC(O)=CC=C2','CCN(CC)C(C=C1)=CC=C1/N=N/C2=C(C#N)C=C(C#N)C=C2','ClC1=CC=C(/N=N/C2=CC=C(NCCC#N)C=C2)C=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C(C#N)C=C2','[H]C1=CC([N+]([O-])=O)=CC(C#N)=C1/N=N/C2=CC([H])=C(C=C2[H])N(CC)CC','OC1=CC=C(/N=N/C2=CC=C(C=C2)[N+]([O-])=O)C=C1','CC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','CCN(CC)C(C=C%27)=CC=C%27/N=N/C%28=CC=C(N%29CCOCC%29)C(C)=C%28','CC1=C(/N=N/C2=C(Cl)C=CC=C2Cl)C(C)=NO1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=C(C)C=CC=C2','[H]C7=CC([N+]([O-])=O)=CC(C#N)=C7/N=N/C8=CC(OC)=C(C=C8)N(CC)CC','CC1=C(C(C)=NN1)/N=N/C2=CC=C(C(F)(F)F)C=C2','CC1=C(/N=N/C2=CC=CN=C2)C(C)=NO1','CCN(CCC#N)C(C=C%19)=CC=C%19/N=N/C%20=CC=C([N+]([O-])=O)C=C%20','OC1=C2N=CC=CC2=C(/N=N/C3=NC=CS3)C=C1','[H]C1=C(C=C([H])C(/N=N/C2=C(C#N)C=C([N+]([O-])=O)C=C2C#N)=C1)N(CC)CC','CN(CCC#N)C(C=C%17)=CC=C%17/N=N/C%18=CC=C([N+]([O-])=O)C=C%18','FC1=CC(C(OCC)=O)=CC(F)=C1/N=N/C2=CC=C(C(OCC)=O)C=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=C(OC)C=CC=C2','CC1=C(/N=N/C2=C(C)C=C(C=C2)N(C)C)C=CC=C1','BrC1=CC=CC(/N=N/C2=CC=CC(Br)=C2)=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC(OC)=CC=C2','CN(C)C1=C(/N=N/C2=CC=CC=C2)C=NC=C1','CN(C)C1=CC=C(/N=N/C2=CC=C(C(OC)=O)C=C2)C=C1','NC1=C(OC)C=C(/N=N/C2=C([H])C=C([N+]([O-])=O)C=C2[H])C([H])=C1','[H]C5=CC([N+]([O-])=O)=CC([N+]([O-])=O)=C5/N=N/C6=CC(OC)=C(C=C6)N(CC)CC','CC1=C(/N=N/C2=NN=C(CC)S2)C3=CC=CC=C3N1','CC1=C(C(C)=NN1)/N=N/C2=C(C)C=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC=C(NC(C)=O)C=C2','CC1=NOC(C)=C1/N=N/C2=CC(C(F)(F)F)=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(NC(C)=O)=CC=C2','CCc1nnc(s1)N=Nc1c([nH]c2c1cccc2)c1ccccc1','CC1=CC=CC(/N=N/C2=CC=CC(C)=C2)=C1','CC(C)(C)OCC1=CC(/N=N\2)=C(CCC3=C2C=C(COC(C)(C)C)C=C3)C=C1','CC(N(C)C(C)=C1)=C1/N=N/C2=CC=CC=C2','C12=CC=CC=C1N=C(/N=N/C3=NC4=CC=CC=C4S3)S2','OC%20=C(N=CC=C%21)C%21=C(/N=N/C%22=CC=C(C(O)=O)C=C%22)C=C%20','CCN(CC)C(C=C1)=CC=C1/N=N/C2=C(C#N)C=CC(C#N)=C2','[H]C4=CC=C(N=C(N=NC5=CC=CC=C5Cl)S6)C6=C4','OC%23=C(N=CC=C%24)C%24=C(/N=N/C%25=CC=CC=C%25C(O)=O)C=C%23','CCN(CC)C(C=C1)=CC=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','[H]C%13=CC=C(N=C(N=NC%14=CC=C(NC(C)=O)C=C%14)S%15)C%15=C%13','[H]C7=CC([N+]([O-])=O)=CC(C#N)=C7/N=N/C8=CC([H])=C(C=C8OC)N(CC)CC','N#CC1C(SC(/N=N/C2=NC(C=CC([N+]([O-])=O)=C3)=C3S2)C1C4CCCCC4)N','CN(N=C1C)C(C)=C1/N=N/C2=C(F)C=CC=C2F','CSc1nnc(s1)N=Nc1c(C)[nH]c2c1cccc2','CN(C)C(C=C1)=CC=C1/N=N/C2=CC=CC=C2[N+]([O-])=O','[H]C5=C(N6CCCCC6)C=CC(/N=N/C7=CC=C(N8CCCCC8)C([H])=C7)=C5','OCCN(CCC#N)C(C=C%13)=CC=C%13/N=N/C%14=CC=C([N+]([O-])=O)C=C%14','NC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','CC1=C(C(C)=NN1)/N=N/C2=CC=C(F)C=C2','NC1=CC=C(/N=N/C2=CC=C(N(CC)CC)C=C2)C=C1','O=[N+]([O-])C(C=C1)=CC=C1/N=N/C2=CC=C(NC3=CC=CC=C3)C=C2','Cn1c(c2ccccc2)c(c2c1cccc2)N=Nc1nncs1','CN(C=N1)C=C1/N=N/C2=CC=CC=C2','CC1=NOC(C)=C1/N=N/C2=C([N+]([O-])=O)C=CC=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC(F)=CC=C2','C1(/N=N/C2=CC=CC=C2)=CC=CN=C1','CC1=CC=CC=C1/N=N/C2=CC=C(NCCC#N)C=C2','O=[N+]([O-])C1=C(/N=N/C2=C([N+]([O-])=O)C=CC=C2)C=CC=C1','OC%14=C%15N=CC=CC%15=C(/N=N/C%16=NC(C%17=CC=CC=C%17)=CS%16)C=C%14','FC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','OCCN(CCO)C(C=C%11)=CC=C%11/N=N/C%12=CC=C([N+]([O-])=O)C=C%12','NC1=CC(CCC2=C3C=CC(N)=C2)=C(/N=N\3)C=C1','CC1=NOC(C)=C1/N=N/C2=CC=C(Cl)C=C2','[H]C1=CC([N+]([O-])=O)=CC(Cl)=C1/N=N/C2=CC([H])=C(C=C2[H])N(CC)CC','CC9=CC(NCCC#N)=CC=C9/N=N/C%10=CC=CC=C%10','CN(C)C(C=C1)=CC=C1/N=N/C2=CC=CC([N+]([O-])=O)=C2','N#CC1=CC=C(/N=N/C2=CC=CS2)C=C1','CC%15=CC(N(CCO)CCC#N)=CC=C%15/N=N/C%16=CC=CC=C%16','NC1=CC=C(/N=N/C2=CC=C(N(C)C)C=C2)C=C1','CC1=CC=CC=C1/N=N/C2=CC=CC=C2C','BrC1=CC=C(/N=N/C2=CC=C(Br)C=C2)C=C1','CC(C=CC=C1C)=C1/N=N/C2=CC=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(Br)=CC=C2','OCCNC(C=C1)=CC=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','[H]N(CC)C(C=C3)=CC=C3/N=N/C4=CC=CC=C4','IC(C=C%19)=CC=C%19N=NC%20=NC%21=CC=C([N+]([O-])=O)C=C%21S%20','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC=C2Cl','IC1=C(/N=N/C2=CC=CC=C2)C=NC=C1','BrC1=CC(Br)=CC(Br)=C1/N=N/C2=C(Br)C=C(Br)C=C2Br','CN1C(/N=N/C2=CC=CC=C2)=NC=C1','CC1=C(C(C)=NN1)/N=N/C2=C(OC)C=CC=C2','CCN(CCC#N)C(C=C%19)=CC=C%19/N=N/C%20=CC=CC=C%20','BrC(C=C1)=CC=C1/N=N/C2=CC=C(N(C)C)C=C2','FC1=CC=C(/N=N/C2=CC=C(NCCC#N)C=C2)C=C1','[H]C%22=CC=C(N=C(N=NC%23=CC=CC=C%23SC)S%24)C%24=C%22','CC1=NOC(C)=C1/N=N/C2=C(OC)C=CC=C2','[H]N(CCC#N)C(C=C7)=CC=C7/N=N/C8=CC=CC=C8','[H]N(C)C(C=C1)=CC=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','CC1=C(C(C)=NN1)/N=N/C2=C(F)C=CC=C2','CN(C)C1=CC=C(/N=N/C2=CC=CC=C2)C=C1','[H]C1=C(N2CCOCC2)C=CC(/N=N/C3=CC=C(N4CCOCC4)C([H])=C3)=C1','CN(N=C1C)C(C)=C1/N=N/C2=C(Cl)C=CC=C2Cl','CC1=C(/N=N/C2=C3C=CC=CC3=CC=C2)C(C)=NO1','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=CC=C2OC','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC(C(F)(F)F)=CC=C2','CC1=CC(Cl)=CC=C1/N=N/C2=C(C)C=C(Cl)C=C2','BrC(C=C1)=CC=C1N=NC2=NNC=C2','CC1=CC(N(CC)CC)=CC=C1/N=N/C2=C(C#N)C=C(C#N)C=C2C#N','NC1=CC=CC=C1/N=N/C2=CC=CC=C2','[H]C%13=C(C=C(OC)C(/N=N/C%14=C(C#N)C=C([N+]([O-])=O)C=C%14C#N)=C%13)N(CC)CC','ClC1=CC=C(/N=N/C2=CC=C(Cl)C=C2)C=C1','CC1=C(C(C)=NN1)/N=N/C2=CC(OC)=CC=C2','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=CC=C2','O=C(C)NC1=CC=C(/N=N/C2=CC=C(NCCC#N)C=C2)C=C1','C12=CC=CC=C1N=C(/N=N/C3=NC4=CC=CC=C4O3)O2','CN(N=C1C)C(C)=C1/N=N/C2=C(OC)C=CC=C2OC','FC1=C(F)C(F)=C(F)C(F)=C1/N=N/C2=C(F)C(F)=C(F)C(F)=C2F','CCN(CC)C1=CC=C(/N=N/C2=CC=C(C#N)C=C2)C=C1','COC(S1)=CC=C1/N=N/C2=CC=CC=C2','OCCN(CCC#N)C(C=C%13)=CC=C%13/N=N/C%14=CC=CC=C%14','OC7=C(N=CC=C8)C8=C(/N=N/C9=CC=C(OC%10=CC=CC=C%10)C=C9)C=C7','CC1=NOC(C)=C1/N=N/C2=C(Cl)C=CC=C2','[N-]=[N+]=NCCC1=CC(/N=N\2)=C(CCC3=C2C=C(CCN=[N+]=[N-])C=C3)C=C1','CC1=C(C(C)=NN1)/N=N/C2=CC(Cl)=CC=C2','O=[N+]([O-])C1=CC=CC(/N=N/C2=CC([N+]([O-])=O)=CC=C2)=C1','ClC%11=CC([N+]([O-])=O)=CC(C#N)=C%11/N=N/C%12=CC(OC)=C(C=C%12)N(CC)CC','Cn1c(C)c(c2c1cccc2)N=Nc1nncs1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C(C(F)(F)F)C=C2','FC(F)(F)C1=CC=CC=C1/N=N/C2=CC=CC=C2','[H]C1=CC([N+]([O-])=O)=CC([H])=C1/N=N/C2=CC([H])=C(C=C2[H])N(CC)CC','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=CC([N+]([O-])=O)=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(O)=CC=C2','OC(C=CC(C)=C1)=C1/N=N/C2=CC=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=C(Br)C=CC=C2','C12=CC=CC=C1CCC3=CC=CC=C3/N=N\2','OC1=C(/N=N/C2=CC(C)=CC(C)=C2)C=CC=C1','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=C(C(F)(F)F)C=C2','FC1=CC(/N=N/C2=CC=C(NCCC#N)C=C2)=CC=C1','CC1=C(C(C)=NN1)/N=N/C2=CC(C(O)=O)=CC=C2','OC%11=C%12N=CC=CC%12=C(/N=N/C%13=NC(CC(OCC)=O)=CS%13)C=C%11','OC1=CC=C(/N=N/C2=CC=C(C=C2)O)C=C1','FC1=CC=CC=C1/N=N/C2=CC=C(NCCC#N)C=C2','O=[N+]([O-])C1=CC=C(N=C(N=NC2=CC=CC=C2)S3)C3=C1','OC1=C(/N=N/C2=CC=C(NC(C)=O)C=C2)C=C(C)C=C1','CCc1nnc(s1)N=Nc1c(c2ccccc2)n(c2c1cccc2)C','NC1=CC(/N=N/C2=CC=CC=C2)=CC=C1','Cc1[nH]c2c(c1N=Nc1nncs1)cccc2','O=[N+]([O-])C1=CC=C(/N=N/C2=CC=C(NCCC#N)C=C2)C=C1','CN(C)C(C=C1)=CC=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','OC%26=C%27N=CC=CC%27=C(/N=N/C%28=NC%29=CC=CC=C%29S%28)C=C%26','CNC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','CC1=C(C(C)=NN1)/N=N/C2=CC=C(C)C=C2','FC1=CC=CC(F)=C1/N=N/C2=CC=CC=C2','N#CCCN(CCC#N)C(C=C%23)=CC=C%23/N=N/C%24=CC=C([N+]([O-])=O)C=C%24','OC%30=C%31N=CC=CC%31=C(/N=N/C%32=NC%33=CC=C(Cl)C=C%33S%32)C=C%30','CC1=NOC(C)=C1/N=N/C2=CC=C(I)C=C2','CC1=NOC(C)=C1/N=N/C2=CC(Br)=CC=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=C(F)C=CC=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','O=[N+]([O-])C4=CC=C(N=C(N=NC5=CC=CC=C5C(O)=O)S6)C6=C4','C[N]1C=CC(=N1)N=NC2=CC=CC=C2','CSc1nnc(s1)N=Nc1c(c2ccccc2)n(c2c1cccc2)C','FC(C=C1)=CC=C1/N=N/C2=CC=C(N(C)C)C=C2','CC1=NOC(C)=C1/N=N/C2=CC(NC(C)=O)=CC=C2','C[N]1C=NC(=N1)N=NC2=CC=CC=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC(C)=CC=C2','CN1C2=CC=CC=C2N=C1/N=N/C3=NC4=CC=CC=C4N3C','BrC1=CC(/N=N/C2=CC=CC=C2)=CC=C1','CC1=C(/N=N/C2=CC=CC=C2)C=NC=C1','CC1=CC(/N=N/C2=CC=CC=C2)=CC=C1','CC1=C(Cl)C=CC=C1/N=N/C2=C(C)C(Cl)=CC=C2','CSc1nnc(s1)N=Nc1c([nH]c2c1cccc2)c1ccccc1','OC1=C([N+]([O-])=O)C=C([N+]([O-])=O)C=C1/N=N/C2=C(O)C=CC(C)=C2','[H]C9=C(N%10CCCC%10)C=CC(/N=N/C%11=CC=C(N%12CCCC%12)C([H])=C%11)=C9','CCN(C%13=C(OC)C=C(/N=N/C%14=C(C#N)C=C([N+]([O-])=O)C=C%14C#N)C=C%13)CC','[H]C%16=CC=C(N=C(N=NC%17=CC=CC=C%17OC)S%18)C%18=C%16','FC1=CC(C(OCC)=O)=CC(F)=C1/N=N/C2=CC=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC=CC=C2','CCN(CC)C1=CC=C(/N=N/C2=CC(C#N)=CC=C2)C=C1','[H]C1=CC([N+]([O-])=O)=CC([H])=C1/N=N/C2=CC([H])=C(C=C2OC)N(CC)CC','N#CCCN(CCC#N)C(C=C%23)=CC=C%23/N=N/C%24=CC=CC=C%24','NCC1=CC(/N=N\2)=C(CCC3=C2C=C(CN)C=C3)C=C1','OCCC1=CC(/N=N\2)=C(CCC3=C2C=C(CCO)C=C3)C=C1','ClC1=CC(/N=N/C2=CC=C(NCCC#N)C=C2)=CC=C1','[H]C1=CC([N+]([O-])=O)=CC([N+]([O-])=O)=C1/N=N/C2=CC([H])=C(C=C2[H])N(CC)CC','C1(NC2=CC=CC=C2)=CC=C(/N=N/C3=CC=CC=C3)C=C1','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=CC(OC)=C2','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=C(C#N)C=C2','[H]C5=CC([N+]([O-])=O)=CC([N+]([O-])=O)=C5/N=N/C6=CC([H])=C(C=C6OC)N(CC)CC','[H]C(C=C1)=CC=C1N=NC2=NNC=C2','[H]N(C)C(C=C1)=CC=C1/N=N/C2=CC=CC=C2','O=C(COC1=C(/N=N\C2=C(OC3)C=CC=C2)C=CC=C1)O[C@H]4[C@H](OCC5=CC=CC=C5)[C@@H](OCC6=CC=CC=C6)[C@H](SC7=CC=CC=C7)O[C@@H]4COC3=O','CC%13=C(N%14CCCC%14)C=CC(/N=N/C%15=CC=C(N%16CCCC%16)C(C)=C%15)=C%13','[H]C%10=CC=C(N=C(N=NC%11=C(NC(C)=O)C=CC=C%11)S%12)C%12=C%10','O=[N+]([O-])C1=CC=C(/N=N/C2=CC=CC=C2)C=C1','CCN(CCC#N)C(C=C%21C)=CC=C%21/N=N/C%22=CC=CC=C%22','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=C(OC)C=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC(Cl)=C2','COC1=CC=CC=C1N=NC2=NC3=CC=C([N+]([O-])=O)C=C3S2','ClC%10=CC(N=NC%11=NC%12=CC=C([N+]([O-])=O)C=C%12S%11)=CC=C%10','CN(C)C(C=C1)=CC=C1/N=N/C2=C(C(O)=O)C=CC=C2','CC1=CC=C(/N=N/C2=CC=C(C)C=C2)C=C1','BrC1=CC=CC=C1/N=N/C2=CC=CC=C2','[H]C3=CC([N+]([O-])=O)=CC(Cl)=C3/N=N/C4=CC(OC)=C(C=C4)N(CC)CC','CC1=C(C(C)=NN1)/N=N/C2=CC=C(C(O)=O)C=C2','CC(S1)=CC=C1/N=N/C2=CC=C(C#N)C=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=C(C#N)C=CC=C2','OC%32=C(N=CC=C%33)C%33=C(/N=N/C%34=CC=C([N+]([O-])=O)C=C%34)C=C%32','FC1=CC=CC(F)=C1/N=N/C2=CC=C(C(OCC)=O)C=C2','Oc1c(/C=N/c2c(C(C)C)cc(S(=O)(O)=O)cc2C(C)C)cc(/N=N/c3ccc([N+]([O-])=O)cc3)cc1','CC1=C(/N=N/C2=CC=C(N(C)C)C=C2C)C=C([N+]([O-])=O)C=C1','ClC%11=CC([N+]([O-])=O)=CC(C#N)=C%11/N=N/C%12=CC([H])=C(C=C%12OC)N(CC)CC','CC1=C(/N=N/C2=C(F)C=CC=C2F)C(C)=NO1'],
+colors: [
+{
+r: [55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,228,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55,55],
+g: [126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,26,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126,126],
+b: [184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,28,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184,184],
+},
+]},
+Photoswitches_tree: {
+x: [556.637,557.062,285.019,290.342,285.019,285.612,285.019,280.801,519.216,515.293,635.566,658.996,635.566,610.169,579.897,580.506,579.897,579.763,109.058,102.14,109.058,112.961,151.497,148.371,433.484,432.611,433.484,433.583,507.143,498.339,507.143,515.336,340.969,380.76,340.969,301.993,430.324,427.23,408.849,403.212,408.849,407.227,408.849,416.781,400.651,400.99,400.651,403.896,400.651,397.655,571.769,559.795,571.769,583.31,84.431,89.795,138.808,137.816,502.682,502.749,502.682,503.081,127.931,133.17,127.931,125.963,407.078,402.81,80.052,100.528,80.052,75.264,80.052,62.864,112.657,106.65,502.749,504.13,87.445,97.964,87.445,81.716,380.76,403.552,380.76,399.543,380.76,375.649,470.011,459.404,470.011,482.21,459.199,454.693,559.795,544.417,559.795,571.357,559.795,564.631,559.795,560.959,559.795,550.043,624.174,612.029,624.174,633.226,624.174,626.709,89.54,89.795,74.476,71.178,74.476,80.496,77.396,80.496,468.532,473.712,2.607,6.16,127.888,130.612,192.792,181.834,192.792,202.387,119.464,124.743,541.532,550.043,541.532,536.133,447.145,416.781,447.145,476.233,136.07,133.915,413.68,416.758,449.935,454.693,449.935,433.583,449.935,468.271,439.791,434.364,62.864,47.981,108.834,112.753,108.834,105.225,73.105,63.499,73.105,85.471,584.259,578.291,132.905,133.17,92.164,94.712,274.16,280.801,274.16,272.232,274.16,273.664,274.16,269.247,528.26,533.579,112.753,109.42,112.753,104.613,112.753,119.881,112.753,118.764,112.753,116.869,143.347,137.816,31.983,37.986,581.709,580.506,581.709,583.31,495.57,499.045,741.268,746.591,741.268,734.3,744.649,738.639,632.511,626.758,104.329,100.528,750.0,746.591,521.018,524.398,433.867,427.144,433.867,441.483,585.525,585.213,130.277,133.915,438.821,433.882,130.006,154.826,130.006,102.14,608.855,604.783,453.856,427.23,453.856,460.156,453.856,477.221,453.856,459.363,453.856,456.452,453.856,450.673,523.576,528.26,480.318,475.686,480.318,486.547,152.447,148.371,725.657,734.3,725.657,717.244,725.657,726.642,417.246,417.961,417.246,416.781,646.707,641.489,98.567,102.14,515.293,508.623,411.311,416.792,552.555,557.09,47.981,34.647,112.961,114.658,400.582,396.55,400.582,407.896,587.338,586.204,102.656,97.964,472.656,476.233,122.382,120.358,625.397,615.15,625.397,631.688,703.197,701.061,631.996,635.534,631.996,619.807,631.996,641.489,520.627,503.116,520.627,538.909,597.967,585.213,597.967,610.043,524.398,515.336,524.398,533.579,133.17,138.392,104.613,98.951,106.65,109.774,106.65,97.964,106.65,105.146,622.867,628.297,622.867,615.15,717.244,701.061,717.244,728.329,40.434,54.292,40.434,27.938,80.496,89.795,397.041,384.605,397.041,391.191,397.041,416.781,133.915,136.446,133.915,148.371,133.915,127.446,133.915,129.959,133.915,130.612,133.915,131.116,63.499,56.141,0.0,6.16,473.988,478.994,571.357,580.764,142.941,141.452,122.284,116.358,105.225,101.784,430.569,425.371,406.505,407.896,477.221,498.825,89.795,102.14,512.223,518.415,512.223,504.13,121.314,100.528,121.314,141.452,148.371,159.01,583.31,576.999,583.31,600.095,583.31,565.923,583.31,610.169,583.31,598.325,583.31,560.153,583.31,586.204,523.57,527.394,129.266,124.743,560.153,538.909,375.649,370.801,375.649,374.216,512.975,517.595,13.96,8.277,13.96,22.765,449.972,441.483,449.972,459.404,512.491,508.623,105.475,125.963,105.475,86.96,594.089,604.783,594.089,583.045,86.96,69.891,562.01,557.09,421.389,427.144,421.389,416.758,482.923,486.547,100.826,97.964,416.792,427.23,416.792,416.229,416.792,411.309,63.343,80.874,63.343,49.249,550.043,547.038,550.043,549.792,552.806,572.087,552.806,533.579,69.891,54.292,109.42,106.729,501.457,495.117,544.417,520.383,544.417,557.09,499.045,503.116,404.066,407.873,467.39,473.712,711.758,701.061,711.758,719.911,519.123,517.463,106.283,102.14,663.889,658.996,626.758,618.066,286.796,285.615,141.452,162.736,141.452,125.963,141.452,156.15,102.427,100.528,719.911,725.164,169.601,181.834,169.601,156.15,701.457,701.061,701.061,680.557,96.206,100.528,494.225,498.339,403.552,402.81,403.552,427.23,407.873,401.955,407.873,416.781,583.045,572.087,578.291,580.873,578.291,569.396,182.764,185.607,182.764,162.736,182.764,203.534,399.543,400.99,399.543,417.067,268.532,272.232,97.709,97.464,508.623,498.819,202.387,210.05,532.719,538.909,532.719,527.394,475.883,471.219,475.883,482.21,86.93,97.964,86.93,80.401,565.923,549.557,460.156,460.52,460.156,465.645,125.676,131.116,97.464,93.036,97.464,102.14,503.116,486.547,95.188,100.528,101.784,97.964,398.053,402.81,96.375,97.964,49.249,37.986,85.471,102.14,569.396,557.09,569.396,572.648,495.117,499.14,495.117,485.403,274.522,272.12,274.522,276.981,125.963,130.612,533.579,549.557,533.579,504.51,33.248,37.986,434.364,427.23,434.364,435.101,273.664,270.619,273.664,276.981,407.896,416.781,110.065,102.14,110.065,116.358,301.993,305.097,301.993,262.832,131.116,137.816,131.116,124.743,131.116,128.909,300.492,305.097,34.647,22.765,34.647,30.34,416.873,420.847,504.13,498.339,638.287,633.226,420.847,427.23,119.156,116.358,280.801,287.946,621.054,620.119,112.498,118.572,112.498,102.14,476.233,504.51,572.087,585.213,118.764,124.743,159.01,165.036,262.832,266.196,262.832,223.86,119.881,124.197,276.981,281.437,94.712,97.964,728.329,738.639,728.329,732.669,619.443,620.119,619.443,619.807,201.337,178.37,201.337,223.86,580.764,588.249,306.507,305.097,306.507,306.468,615.15,619.022,615.15,600.095,425.371,428.828,425.371,416.781,161.873,162.736,618.066,620.28,618.066,610.043,604.783,615.455,154.826,178.37,116.358,120.358,116.358,113.403,433.583,417.067,658.996,680.557,80.874,102.14,269.043,266.196,269.043,272.232,203.534,223.86,486.547,473.712,427.23,433.882,427.23,422.441,498.339,482.21,612.029,598.325,612.029,615.726,210.05,216.629,104.613,97.964,615.455,622.907,520.383,517.595,520.383,498.825,477.68,480.545,477.68,476.329,56.141,51.375,468.271,485.403,468.271,464.587,576.999,572.301,96.909,102.14,492.195,491.602,408.522,411.309,518.415,522.268,99.197,100.528,281.437,283.876,384.605,377.968,485.403,478.994,485.403,480.545,485.403,498.819,485.403,491.602,628.277,622.907,557.09,557.062,517.463,517.595,285.615,283.876,266.196,262.178,16.661,12.386,16.661,27.938,16.661,6.16,418.965,418.392,97.964,93.5,124.743,123.768,216.629,221.33,416.781,418.392,104.298,102.14,610.043,619.807,588.249,593.244,293.447,287.946,497.348,491.602],
+y: [292.655,297.835,62.777,59.977,62.777,57.606,62.777,70.648,20.629,24.827,388.046,372.983,388.046,404.703,449.994,442.863,449.994,454.924,140.655,130.187,140.655,148.79,415.332,411.557,104.758,100.299,104.758,110.261,617.383,641.471,617.383,592.841,171.552,171.927,171.552,171.398,211.816,215.17,560.54,557.427,560.54,554.653,560.54,570.275,135.821,142.637,135.821,132.093,135.821,131.579,387.529,352.294,387.529,424.011,110.25,112.372,453.645,448.44,669.879,662.03,669.879,675.125,352.862,355.812,352.862,348.96,185.463,187.503,302.505,305.477,302.505,301.091,302.505,300.223,613.083,610.478,662.03,653.003,602.384,595.974,602.384,606.273,171.927,193.239,171.927,149.493,171.927,169.377,675.074,689.234,675.074,658.755,92.799,91.961,352.294,319.667,352.294,347.093,352.294,352.352,352.294,357.239,352.294,350.873,453.67,445.359,453.67,459.1,453.67,457.739,107.135,112.372,89.151,84.018,89.151,98.542,94.498,98.542,422.636,419.156,408.075,403.578,376.795,379.585,325.414,322.678,325.414,328.256,469.746,468.796,348.844,350.873,348.844,347.52,562.688,570.275,562.688,555.96,405.616,410.226,750.0,745.801,92.351,91.961,92.351,110.261,92.351,75.054,201.437,204.669,300.223,298.41,540.304,518.929,540.304,559.047,148.642,155.247,148.642,140.042,281.245,283.504,360.305,355.812,612.478,606.449,77.721,70.648,77.721,101.561,77.721,56.001,77.721,77.259,543.161,542.555,518.929,525.575,518.929,517.931,518.929,524.066,518.929,494.191,518.929,516.64,450.589,448.44,118.75,117.579,434.145,442.863,434.145,424.011,426.115,422.538,290.192,283.584,290.192,298.883,319.058,320.391,616.003,616.623,301.622,305.477,279.325,283.584,570.131,567.596,723.177,732.027,723.177,713.123,588.047,584.099,414.621,410.226,220.309,218.715,143.83,156.578,143.83,130.187,562.471,562.533,237.82,215.17,237.82,245.039,237.82,258.09,237.82,237.086,237.82,233.222,237.82,241.466,543.508,543.161,409.95,406.567,409.95,415.802,408.06,411.557,310.165,298.883,310.165,325.067,310.165,305.507,578.369,583.937,578.369,570.275,642.935,639.953,126.053,130.187,24.827,32.322,225.036,224.736,304.301,305.452,298.41,296.968,148.79,154.015,596.043,600.885,596.043,586.902,413.511,418.2,592.168,595.974,557.8,555.96,81.21,86.968,422.174,418.994,422.174,423.406,345.483,341.947,635.263,638.2,635.263,629.58,635.263,639.953,419.737,418.025,419.737,422.33,599.845,584.099,599.845,615.103,567.596,592.841,567.596,542.555,355.812,355.822,517.931,518.066,610.478,616.653,610.478,595.974,610.478,616.727,413.348,410.674,413.348,418.994,325.067,341.947,325.067,322.496,387.119,380.746,387.119,393.045,98.542,112.372,568.767,569.431,568.767,567.541,568.767,570.275,410.226,414.219,410.226,411.557,410.226,410.452,410.226,406.047,410.226,379.585,410.226,441.293,155.247,160.072,403.542,403.578,55.426,56.275,347.093,343.043,312.021,315.809,96.999,97.794,559.047,576.565,571.342,572.661,592.361,586.902,258.09,277.649,112.372,130.187,657.55,662.794,657.55,653.003,310.302,305.477,310.302,315.809,411.557,413.953,424.011,422.471,424.011,421.422,424.011,465.175,424.011,404.703,424.011,435.308,424.011,423.183,424.011,418.2,435.441,431.952,471.674,468.796,423.183,422.33,169.377,170.643,169.377,164.909,288.135,289.677,294.761,294.18,294.761,295.71,701.843,713.123,701.843,689.234,29.469,32.322,357.97,348.96,357.97,366.609,563.176,562.533,563.176,565.287,366.609,374.234,305.956,305.452,739.625,732.027,739.625,745.801,418.473,415.802,600.197,595.974,224.736,215.17,224.736,229.252,224.736,233.362,123.228,126.578,123.228,120.176,350.873,354.782,350.873,346.25,556.013,568.466,556.013,542.555,374.234,380.746,525.575,529.938,60.773,61.201,319.667,297.437,319.667,305.452,422.538,418.025,578.942,574.454,417.842,419.156,344.471,341.947,344.471,346.701,277.54,282.273,132.689,130.187,373.063,372.983,616.623,616.744,0.0,5.162,315.809,284.447,315.809,348.96,315.809,317.821,309.912,305.477,346.701,348.232,320.118,322.678,320.118,317.821,337.576,341.947,341.947,357.669,309.071,305.477,642.158,641.471,193.239,187.503,193.239,215.17,574.454,575.071,574.454,570.275,565.287,568.466,283.504,278.107,283.504,293.182,253.813,251.132,253.813,284.447,253.813,222.781,149.493,142.637,149.493,129.241,99.762,101.561,146.386,140.516,32.322,42.731,328.256,331.943,427.166,422.33,427.166,431.952,661.793,663.902,661.793,658.755,593.266,595.974,593.266,592.739,465.175,504.082,245.039,250.249,245.039,246.192,441.436,441.293,140.516,144.58,140.516,130.187,418.025,415.802,303.588,305.477,576.565,595.974,187.45,187.503,590.833,595.974,120.176,117.579,140.042,130.187,293.182,305.452,293.182,289.494,61.201,65.181,61.201,56.487,30.707,26.118,30.707,37.453,348.96,379.585,542.555,504.082,542.555,549.348,113.932,117.579,204.669,215.17,204.669,198.862,56.001,51.811,56.001,37.453,586.902,570.275,112.777,130.187,112.777,97.794,171.398,176.847,171.398,172.28,441.293,448.44,441.293,468.796,441.293,445.545,178.149,176.847,296.968,295.71,296.968,295.968,204.691,208.566,653.003,641.471,462.377,459.1,208.566,215.17,93.24,97.794,70.648,71.759,652.527,647.339,127.474,126.097,127.474,130.187,555.96,549.348,568.466,584.099,494.191,468.796,413.953,415.411,172.28,148.662,172.28,191.829,524.066,527.65,37.453,24.002,606.449,595.974,322.496,320.391,322.496,322.025,639.36,647.339,639.36,629.58,180.438,168.697,180.438,191.829,343.043,339.745,183.162,176.847,183.162,187.619,418.994,419.993,418.994,421.422,572.661,577.04,572.661,570.275,280.646,284.447,616.744,613.184,616.744,615.103,562.533,562.484,156.578,168.697,97.794,86.968,97.794,93.096,110.261,129.241,372.983,357.669,126.578,130.187,124.901,148.662,124.901,101.561,222.781,191.829,415.802,419.156,215.17,218.715,215.17,215.831,641.471,658.755,445.359,435.308,445.359,448.146,331.943,334.909,596.807,595.974,562.484,562.278,297.437,289.677,297.437,277.649,36.479,45.174,36.479,31.079,160.072,163.058,75.054,56.487,75.054,73.149,422.471,421.87,131.215,130.187,45.418,50.558,238.333,233.362,662.794,666.616,299.981,305.477,24.002,13.272,569.431,569.785,56.487,56.275,56.487,45.174,56.487,42.731,56.487,50.558,562.225,562.278,305.452,297.835,282.273,289.677,5.162,13.272,148.662,147.268,398.624,399.292,398.624,393.045,398.624,403.578,557.725,562.759,595.974,597.389,468.796,473.877,334.909,337.021,570.275,562.759,125.369,130.187,615.103,629.58,339.745,337.446,71.68,71.759,49.438,50.558],
+z: [375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0],
+},
+};
+
+    </script>
+    
+    <script>
+
+      //status on whether to show or not the background canvas
+      let FullMolinBkg = false;
+
+      class Faerun {
+        constructor() {
+          this.body = document.getElementsByTagName('body')[0];
+
+          this.selectedItems = [];
+          this.selectedIndicators = [];
+          this.selectedCurrent = [];
+          this.scatterMeta = [{"categorical": [true], "fog_intensity": 0.0, "has_legend": true, "interactive": true, "is_range": [false], "label_index": [0], "legend": [[[[0.21568627450980393, 0.49411764705882355, 0.7215686274509804, 1.0], "in database"], [[0.8941176470588236, 0.10196078431372549, 0.10980392156862745, 1.0], "not in database"]]], "legend_title": ["Photoswitches"], "mapping": {"c": "c", "cs": "cs", "knn": "knn", "labels": "labels", "s": "s", "x": "x", "y": "y", "z": "z"}, "max_c": [1.0], "max_legend_label": ["1.00"], "max_point_size": 5000, "min_c": [0.0], "min_legend_label": ["0.00"], "name": "Photoswitches", "ondblclick": [null], "point_scale": 5, "selected_labels": [null], "series_title": [null], "shader": "sphere", "title_index": [0]}];
+          this.treeMeta = [{"color": "#666666", "fog_intensity": 0.0, "mapping": {"c": "c", "from": "from", "to": "to", "x": "x", "y": "y", "z": "z"}, "name": "Photoswitches_tree", "point_helper": "Photoswitches"}];
+          this.seriesState = {};
+          this.el = {};
+
+          this.currentPoint = null;
+
+          this.lore = null;
+          this.clearColorHex = '#FFFFFF';
+          this.clearColor = null;
+          this.view = 'free';
+          this.antiAliasing = true;
+          this.alphaBlending = false;
+          this.thumbnailWidth = 250;
+          this.thumbnailFixed = false;
+
+          this.treeHelpers = [];
+          this.pointHelpers = [];
+          this.octreeHelpers = [];
+          this.coordinatesHelper = null;
+
+          this.ohIndexToPhName = [];
+          this.ohIndexToPhIndex = [];
+          this.phIndexMap = {};
+          this.ohIndexMap = {};
+
+          this.min = [Number.MAX_VALUE, Number.MAX_VALUE, Number.MAX_VALUE];
+          this.max = [-Number.MAX_VALUE, -Number.MAX_VALUE, -Number.MAX_VALUE];
+          this.maxRadius = -Number.MAX_VALUE;
+
+          this.coords = {
+            show: false,
+            grid: false,
+            ticks: true,
+            tickCount: 10,
+            tickLength: 2.0,
+            color: '#888888',
+            box: false,
+            offset: 5.0
+          };
+
+          this.legend = {
+            show: true,
+            title: 'Legend'
+          };
+
+          
+          this.sdMolOpts = {
+            width: this.thumbnailWidth / window.devicePixelRatio,
+            height: this.thumbnailWidth / window.devicePixelRatio,
+            experimental: true
+          }
+
+          this.sdSelected = new SmiDrawer(this.sdMolOpts);
+
+          if (this.thumbnailFixed) {
+            this.sdMolOpts = {
+              scale: 0.75,
+              experimental: true
+            }
+          }
+
+          this.sd = new SmiDrawer(this.sdMolOpts);
+
+          this.el = Faerun.bindElements();
+
+          this.scatterMeta.forEach(s => {
+            this.seriesState[s.name] = 0;
+          });
+
+          this.clearColor = Lore.Core.Color.fromHex(this.clearColorHex);
+          this.alphaBlending = (this.view === 'free' ? false : true) || this.alphaBlending;
+
+          this.initLore();
+          this.initTreeHelpers();
+          this.initPointHelpers();
+          this.initCoords();
+          this.initAxes();
+          this.initView();
+          this.initEvents();
+          this.renderLegend();
+        }
+
+        initLore() {
+          this.lore = Lore.init('lore', {
+            antialiasing: this.antiAliasing,
+            clearColor: this.clearColorHex,
+            alphaBlending: this.alphaBlending,
+            preserveDrawingBuffer: true
+          });
+        }
+
+        initTreeHelpers() {
+          this.treeMeta.forEach(t => {
+            let th = new Lore.Helpers.TreeHelper(this.lore, t.name, 'tree');
+            th.setXYZHexS(data[t.name].x, data[t.name].y, data[t.name].z, t.color);
+            th.setFog([this.clearColor.components[0], this.clearColor.components[1], 
+                       this.clearColor.components[2], this.clearColor.components[3]],
+                      t.fog_intensity);
+            this.treeHelpers.push(th);
+          });
+        }
+
+        initPointHelpers() {
+          this.scatterMeta.forEach(s => {           
+            let ph = new Lore.Helpers.PointHelper(
+              this.lore, s.name, s.shader, { maxPointSize: s.max_point_size }
+            );
+
+            ph.setXYZRGBS(data[s.name].x, data[s.name].y, data[s.name].z, 
+                          data[s.name]['colors'][0].r, data[s.name]['colors'][0].g, 
+                          data[s.name]['colors'][0].b, data[s.name]['s'] ? data[s.name]['s'][0] : 1.0);
+
+            ph.setPointScale(s.point_scale);
+            ph.setFog([this.clearColor.components[0], this.clearColor.components[1],
+                       this.clearColor.components[2], this.clearColor.components[3]],
+                      s.fog_intensity)
+
+            this.phIndexMap[s.name] = this.pointHelpers.length;
+            this.pointHelpers.push(ph);
+
+            this.min[0] = Faerun.getMin(data[s.name].x, this.min[0]);
+            this.min[1] = Faerun.getMin(data[s.name].y, this.min[1]);
+            this.min[2] = Faerun.getMin(data[s.name].z, this.min[2]);
+            this.max[0] = Faerun.getMax(data[s.name].x, this.max[0]);
+            this.max[1] = Faerun.getMax(data[s.name].y, this.max[1]);
+            this.max[2] = Faerun.getMax(data[s.name].z, this.max[2]);
+            this.maxRadius = ph.getMaxRadius();
+    
+            if (s.interactive && data[s.name].labels) {
+              this.octreeHelpers.push(
+                new Lore.Helpers.OctreeHelper(this.lore, 'Octree_' + s.name, 'tree', ph)
+              );
+
+              this.ohIndexMap[s.name] = this.octreeHelpers.length - 1;
+              this.ohIndexToPhName.push(s.name);
+              this.ohIndexToPhIndex.push(this.phIndexMap[s.name]);
+            }
+          });
+        }
+
+        initCoords() {
+          if (!this.coords.show) return;
+
+          let min = [0, 0, 0];
+          let max = [0, 0, 0];
+
+          for (var i = 0; i < 3; i++) {
+            min[i] = this.min[i] - this.coords.offset;
+            max[i] = this.max[i] + this.coords.offset;
+          }
+
+          this.coordinatesHelper = new Lore.Helpers.CoordinatesHelper(this.lore, 'Coordinates', 'coordinates', {
+            position: new Lore.Math.Vector3f(min[0], min[1], min[2]),
+            axis: {
+              x: {
+                length: max[0] - min[0],
+                color: Lore.Core.Color.fromHex(this.coords.color)
+              },
+              y: {
+                length: max[1] - min[1],
+                color: Lore.Core.Color.fromHex(this.coords.color)
+              },
+              z: {
+                length: max[2] - min[2],
+                color: Lore.Core.Color.fromHex(this.coords.color)
+              }
+            },
+            ticks: {
+              enabled: this.coords.ticks,
+              x: {
+                length: this.coords.tickLength,
+                color: Lore.Core.Color.fromHex(this.coords.color),
+                count: this.coords.tickCount
+              },
+              y: {
+                length: this.coords.tickLength,
+                color: Lore.Core.Color.fromHex(this.coords.color),
+                count: this.coords.tickCount
+              },
+              z: {
+                length: this.coords.tickLength,
+                color: Lore.Core.Color.fromHex(this.coords.color),
+                count: this.coords.tickCount
+              }
+            },
+            box: {
+              enabled: this.coords.box,
+              x: {
+                color: Lore.Core.Color.fromHex(this.coords.color)
+              },
+              y: {
+                color: Lore.Core.Color.fromHex(this.coords.color)
+              },
+              z: {
+                color: Lore.Core.Color.fromHex(this.coords.color)
+              }
+            }
+          });
+        }
+
+        initAxes() {
+          // Wait for DOM to get ready
+          setTimeout(() => {
+            this.updateTitle(true);
+            this.updateXAxis(true);
+            this.updateYAxis(true);
+          }, 500);
+        }
+
+        initView() {
+          let center = new Lore.Math.Vector3f(
+              (this.max[0] + this.min[0]) / 2.0, 
+              (this.max[1] + this.min[1]) / 2.0, 
+              (this.max[2] + this.min[2]) / 2.0
+            );
+          this.lore.controls.setLookAt(center);
+          this.lore.controls.setRadius(this.maxRadius + 100);
+          this.lore.controls.setView(0.9, -0.5)
+          this.lore.controls.setViewByName(this.view);
+        }
+
+        initEvents() {
+          this.lore.controls.addEventListener('updated', () => {
+            // Update the position / content of the annotations every time
+            // the view changes
+            this.updateTitle();
+            this.updateYAxis();
+            this.updateXAxis();
+            this.updateSelectedIndicators();
+          });
+
+          Lore.Helpers.OctreeHelper.joinHoveredChanged(this.octreeHelpers, e => {
+            let phName = this.ohIndexToPhName[e.source];
+            if (e.e && data[phName].labels) {
+              let fullLabel = data[phName].labels[e.e.index];
+              let labelIndex = this.scatterMeta[this.ohIndexToPhIndex[e.source]]
+                                  .label_index[this.seriesState[phName]];
+              let titleIndex = this.scatterMeta[this.ohIndexToPhIndex[e.source]]
+                                  .title_index[this.seriesState[phName]];
+
+              let rgbColor = this.pointHelpers[e.source].getColor(e.e.index);
+              let hexColor = Lore.Core.Color.rgbToHex(rgbColor[0], rgbColor[1], rgbColor[2]);
+
+              this.currentPoint = {
+                index: e.e.index,
+                fullLabel: fullLabel.split('__'),
+                source: phName,
+                label: fullLabel.split('__')[labelIndex],
+                color: hexColor,
+                labelIndex: labelIndex,
+                titleIndex: titleIndex
+              }
+              
+              if (FullMolinBkg == true) {
+
+                document.getElementById("overlay-structure-container").style.visibility = "visible";
+
+                var overlayStruc_Width = document.getElementById("overlay-structure-container").offsetWidth
+                var overlayStruc_Height = document.getElementById("overlay-structure-container").offsetHeight
+
+                if (overlayStruc_Width > overlayStruc_Height) {overlayStruc_Width = overlayStruc_Height}
+
+                this.sd = new SmiDrawer({
+                  width: overlayStruc_Width / window.devicePixelRatio,
+                  height: overlayStruc_Width / window.devicePixelRatio,
+                  bondThickness: 1.4,
+                  experimental: true
+                });
+
+                this.setTipContent();
+                this.sd = new SmiDrawer(this.sdMolOpts);
+              } else {
+
+                document.getElementById("overlay-structure-container").style.visibility = "hidden";
+                this.setTipContent__();
+
+                this.el.tip.classList.add('show');
+
+                let pointSize = this.pointHelpers[e.source].getPointSize() / window.devicePixelRatio;
+                let x = e.e.screenPosition[0];
+                let y = e.e.screenPosition[1];
+
+                this.el.hoverIndicator.style.width = pointSize + 'px';
+                this.el.hoverIndicator.style.height = pointSize + 'px';
+                this.el.hoverIndicator.style.left = (x - pointSize / 2.0 - 1) + 'px';
+                this.el.hoverIndicator.style.top = (y - pointSize / 2.0 - 1) + 'px';
+
+                this.el.hoverIndicator.classList.add('show');
+                }
+
+            } else {
+              this.currentPoint = null;
+              this.el.tip.classList.remove('show');
+              this.el.hoverIndicator.classList.remove('show');
+            }
+          });
+
+          Lore.Helpers.OctreeHelper.joinSelectedChanged(this.octreeHelpers, items => {
+            this.selectedItems = items;
+            this.updateSelected();
+          });
+
+          Lore.Helpers.OctreeHelper.joinReselected(this.octreeHelpers, item => {
+            this.updateSelected(
+              this.getSelectedIndex(item[0].source, item[0].item.e.index)
+            );
+          });
+
+          // Event listeners
+          this.el.selectedPrev.addEventListener('click', e => {
+            e.preventDefault();
+            this.updateSelected(this.selectedCurrent - 1);
+            return false;
+          });
+
+          this.el.selectedNext.addEventListener('click', e => {
+            e.preventDefault();
+            this.updateSelected(this.selectedCurrent + 1);
+            return false;
+          });
+
+          this.el.selectedRemove.addEventListener('click', e => {
+            e.preventDefault();
+            let item = this.selectedItems[this.selectedCurrent]
+            this.octreeHelpers[item.source].removeSelected(item.index);
+            return false;
+          });
+
+          document.addEventListener('dblclick', e => {
+            if (this.currentPoint) {
+              var index = this.currentPoint.index;
+              var labels = this.currentPoint.label.split('__');
+              var source = this.currentPoint.source;
+              eval(this.scatterMeta[this.phIndexMap[source]].ondblclick[this.seriesState[source]]);
+            }
+          });
+
+          document.addEventListener('mousemove', e => {
+            if (FullMolinBkg == false) {
+              document.getElementById("tip").style.visibility = "visible";
+
+              if (!this.thumbnailFixed) {
+                let x = e.clientX;
+                let y = e.clientY;
+
+                if (x > window.innerWidth - this.el.tip.offsetWidth - 20) {
+                  x -= this.el.tip.offsetWidth;
+                } else {
+                  x += 10;
+                }
+
+                if (y > window.innerHeight - this.el.tip.offsetHeight - 20) {
+                  y -= this.el.tip.offsetHeight;
+                } else {
+                  y += 10;
+                }
+
+                if (this.el.tip) {
+                  this.el.tip.style.top = y + 'px';
+                  this.el.tip.style.left = x + 'px';
+                }
+              }
+            } else {
+              document.getElementById("tip").style.visibility = "hidden";
+            }
+          });
+
+          this.el.selectedToggle.addEventListener('click', e => {
+            this.el.selectedContainer.classList.toggle('hide');
+            if (this.el.selectedContainer.classList.contains('hide'))
+              this.el.selectedToggle.innerHTML = '<i class="fas fa-toggle-off"></i>';
+            else
+              this.el.selectedToggle.innerHTML = '<i class="fas fa-toggle-on"></i>';
+            
+            e.preventDefault();
+            return false;
+          });
+
+          this.el.showControls.addEventListener('click', e => {
+            this.el.moreControls.classList.toggle('hide');
+            e.preventDefault();
+            return false;
+          });
+
+          this.el.search.addEventListener('click', e => {
+            let searchTerm = prompt('Please enter a search term:', '');
+            const results = this.search(searchTerm);
+
+            for (const [name, indices] of Object.entries(results)) {
+              if (!name in this.ohIndexMap) return;
+              indices.forEach(index => {
+                this.octreeHelpers[this.ohIndexMap[name]].addSelected(index);
+              });
+            }
+            
+            e.preventDefault();
+            return false;
+          });
+
+          window.addEventListener('keydown', e => {
+            if ((e.keyCode == 114) || (e.ctrlKey && e.keyCode == 70)) {
+              this.search();
+              e.preventDefault();
+              return false;
+            }
+          });
+
+          this.el.export.addEventListener('click', e => {
+            e.preventDefault();
+
+            let canvas = document.getElementById('lore');
+            let zoom = this.lore.controls.getZoom();
+
+            canvas.style.width = (canvas.width * 2) + 'px';
+            canvas.style.height = (canvas.height * 2) + 'px';
+            this.lore.controls.setZoom(zoom * 2);
+
+            setTimeout(() => {
+              let blob = this.lore.canvas.toBlob(blob => {
+                let a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.setAttribute('download', 'export.png');
+                a.click();
+                
+                setTimeout(() => {
+                  canvas.style.width = '100%';
+                  canvas.style.height = '100%';
+                  lore.controls.setZoom(zoom);
+                }, 2000);
+              });
+            }, 2000);
+          });
+
+          this.el.download.addEventListener('click', e => {
+            e.preventDefault();
+
+            let text = ''
+            this.selectedItems.forEach(item => {
+              let phIndex = this.ohIndexToPhIndex[item.source];
+              let meta = this.scatterMeta[phIndex];
+              let phName = this.ohIndexToPhName[item.source];
+              let seriesState = this.seriesState[phName];
+
+              let fullLabel = data[phName].labels[item.item.index].split('__');
+
+              let labelIndex = meta.label_index[seriesState];
+              let titleIndex = meta.title_index[seriesState];
+              let selectedLabels = meta.selected_labels[seriesState];
+
+              fullLabel.forEach((l, i) => {
+                text += l + ';'
+              });
+              text = text.slice(0, -1); 
+              text += '\n';
+            });
+
+            var a = document.createElement('a');
+            a.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            a.setAttribute('download', 'faerun_list.csv');
+
+            a.style.display = 'none';
+            document.body.appendChild(a);
+
+            a.click();
+
+            document.body.removeChild(a);
+
+            return false;
+          });
+
+          this.el.largepreview.addEventListener('click', e => {
+            
+            //Switch display mode:
+            if (FullMolinBkg == false) {
+              FullMolinBkg = true;
+            } else {
+              FullMolinBkg = false;
+              //HIDE BIG CANVAS IN BACKGROUND:
+              document.getElementById("overlay-structure-container").style.visibility = "hidden";
+            }
+          });
+        }
+
+        setTipContent__() {
+          this.sd.draw(this.currentPoint.label, this.thumbnailFixed ? 'svg' : 'img', "light", element => {
+            this.el.tipText.innerHTML = '';
+            if (this.currentPoint.titleIndex !== this.currentPoint.labelIndex)
+              this.el.tipText.innerHTML = `${this.currentPoint.fullLabel[this.currentPoint.titleIndex]}<br />`;
+            this.el.tipText.appendChild(element);
+            this.el.tip.style.borderColor = this.currentPoint.color;
+            document.getElementById("tip").style.visibility = "visible";
+          });
+        }
+
+        setTipContent() {
+          this.sd.draw(this.currentPoint.label, "#overlay-structure", "dark");
+          document.getElementById("tip").style.visibility = "hidden";
+        }
+
+        setSelectedContent(fullLabel, labelIndex, selectedLabels, img) {
+          this.el.selectedContainer.innerHTML = '';
+          if (img)
+            this.el.selectedContainer.appendChild(img);
+
+          fullLabel.forEach((l, i) => {
+            if (i === labelIndex) return;
+            if (selectedLabels && selectedLabels[i]) {
+              this.el.selectedContainer.appendChild(
+                Faerun.createElement('div', { classes: 'label', content: selectedLabels[i] })
+              );
+            }
+            this.el.selectedContainer.appendChild(
+              Faerun.createElement('div', { classes: 'content', content: l })
+            );
+          });
+
+          // Update the indicator
+          this.updateSelectedIndicators();
+        }
+
+        renderLegend() {
+          if (!this.legend.show) return;
+
+          
+          let legend = document.getElementById('legend');
+          
+          if (legend) this.body.removeChild(legend);
+
+          legend = Faerun.createElement('div', { id: 'legend' });
+          this.body.appendChild(legend)
+          
+          if (this.legend.title && this.legend.title !== '')
+            legend.appendChild(Faerun.createElement('h2', { content: 'Legend' }));
+          
+          let container = Faerun.createElement('div', { classes: 'container' });
+          legend.appendChild(container);
+
+          this.scatterMeta.forEach(s => {
+            let index = this.seriesState[s.name];
+            if (s.has_legend) {
+              let legendSection = []
+              if (!s.is_range[index]) {
+                s.legend[index].forEach(v => {
+                  legendSection.push(Faerun.createElement('div', { classes: 'legend-element' }, [
+                    Faerun.createColorBox(v[0]),
+                    Faerun.createElement('div', { classes: 'legend-label', content: v[1] }),
+                  ]))
+                })
+              } else {
+                legendSection.push(Faerun.createElement('div', { classes: 'legend-element-range' }, [
+                  ...Faerun.createColorScale(s.legend[index]),
+                  Faerun.createElement('div', { 
+                    classes: 'legend-label max', 
+                    content: s.max_legend_label[index] 
+                  }),
+                  Faerun.createElement('div', {
+                    classes: 'legend-label min',
+                    content: s.min_legend_label[index] 
+                  })
+                ]))
+              }
+
+              let series = [];
+              for (var i = 0; i < s.series_title.length; i++) {
+                series.push(
+                  Faerun.createElement('option', { 
+                    value: i, 
+                    content: s.series_title[i], 
+                    selected: i === index
+                  })
+                );
+              }
+
+
+              let sectionHeader = Faerun.createElement(
+                'h3', { content: s.legend_title[index] }
+              );
+              sectionHeader.addEventListener('click', e => {
+                this.toggleLegendSection(s.name);
+              });
+
+              let seriesSelector = Faerun.createElement(
+                'select', 
+                { 
+                  id: `select-${s.name}`, 
+                  classes: 'series-selector',
+                  'data-name': s.name,
+                  hidden: s.series_title.length < 2,
+                }, 
+                [ ...series ]
+              );
+              seriesSelector.addEventListener('change', e => {
+                let value = document.getElementById(`select-${s.name}`).value;
+                this.changeSeries(value, s.name);
+              });
+
+
+              container.appendChild(
+                Faerun.createElement(
+                  'div', { id: `legend-${s.name}`, 
+                  classes: 'legend-section', 
+                  'data-name': `${s.name}` },
+                  [ sectionHeader, seriesSelector, ...legendSection ]
+                )
+              );
+            }
+          });
+        }
+
+        toggleLegendSection(name) {
+          let section = document.getElementById('legend-' + name);
+          let geometry = this.pointHelpers[this.phIndexMap[name]].geometry;
+          let isVisible = geometry.isVisible;
+
+          if (isVisible) {
+            geometry.hide();
+            section.style.opacity = 0.5;
+          } else {
+            geometry.show();
+            section.style.opacity = 1.0;
+          }
+        }
+
+        getSelectedIndex(source, index) {
+          let selectedIndex = null;
+          this.selectedItems.forEach((item, i) => {
+            if (item.source == source && item.item.index == index) {
+              selectedIndex = i;
+              return;
+            }
+          });
+          return selectedIndex;
+        }
+
+        updateSelected(current = -1) {
+          let n = this.selectedItems.length
+          // Hide the container if no items are selected
+          if (n === 0) {
+            this.el.selected.style.display = 'none';
+            return;
+          } else {
+            this.el.selected.style.display = 'block';
+          }
+
+          if (current < 0) current = n - 1;
+          if (current >= n) current = 0;
+          this.selectedCurrent = current;
+
+          let item = this.selectedItems[current];
+
+          let phIndex = this.ohIndexToPhIndex[item.source];
+          let meta = this.scatterMeta[phIndex];
+          let phName = this.ohIndexToPhName[item.source];
+          let seriesState = this.seriesState[phName];
+
+          let fullLabel = data[phName].labels[item.item.index].split('__');
+
+          let labelIndex = meta.label_index[seriesState];
+          let titleIndex = meta.title_index[seriesState];
+          let selectedLabels = meta.selected_labels[seriesState];
+
+          this.sdSelected.draw(fullLabel[labelIndex], 'img', 'dark', img => {
+            this.el.selectedCurrent.innerHTML = current + 1;
+            this.el.selectedTotal.innerHTML = n;
+            this.el.selectedTitle.innerHTML = fullLabel[titleIndex];
+
+            this.setSelectedContent(fullLabel, labelIndex, selectedLabels, img);
+          });
+
+          // Remove all indicators
+          this.selectedIndicators.forEach(indicator => {
+            indicator.element.parentElement.removeChild(indicator.element);
+          });
+          this.selectedIndicators.length = 0;
+
+          // Add the indicator for this object
+          let indicatorElement = Faerun.createElement(
+            'div', 
+            { classes: 'selected-indicator' },
+            [
+              Faerun.createElement('div', { classes: 'crosshair-x' }),
+              Faerun.createElement('div', { classes: 'crosshair-y' })
+            ]
+          );
+
+          this.body.appendChild(indicatorElement);
+          this.selectedIndicators.push({
+            element: indicatorElement,
+            index: item.item.index,
+            ohIndex: item.source,
+            phIndex: phIndex
+          });
+          this.updateSelectedIndicators();
+        }
+
+        updateSelectedIndicators() {
+          this.selectedIndicators.forEach(indicator => {
+            let pointSize = this.pointHelpers[indicator.phIndex].getPointSize();
+            let screenPosition = this.octreeHelpers[indicator.ohIndex]
+                                     .getScreenPosition(indicator.index);
+            
+            // Make the crosshairs larger than the point
+            pointSize = Faerun.getMax([pointSize / window.devicePixelRatio, 10 / window.devicePixelRatio]);
+            pointSize *= 1.25;
+            let halfPointSize = pointSize / 2.0;
+            indicator.element.style.left = (screenPosition[0] - halfPointSize) + 'px';
+            indicator.element.style.top = (screenPosition[1] - halfPointSize) + 'px';
+            indicator.element.style.width = pointSize + 'px';
+            indicator.element.style.height = pointSize + 'px';
+          });
+        }
+
+        updateTitle(first = false) {
+          if (this.el.title === undefined) return;
+
+          let bb = this.el.title.getBoundingClientRect();
+          let scenePosition = new Lore.Math.Vector3f(
+            (this.min[0] + this.min[0]) / 2.0, this.min[1], 
+            (this.min[2] + this.min[2]) / 2.0
+          );
+
+          let screenPosition = this.lore.controls.camera.sceneToScreen(scenePosition, this.lore);
+          
+          this.el.title.style.left = (screenPosition[0] - (bb.width / 2.0)) + 'px';
+          this.el.title.style.top = (screenPosition[1] - bb.height) + 'px';
+
+          if (first) this.el.title.classList.add('show');
+        }
+
+        updateXAxis(first = false) {
+          if (this.el.xAxis === undefined) return;
+          
+          let bb = this.el.xAxis.getBoundingClientRect();
+          let scenePosition = new Lore.Math.Vector3f(
+            (this.min[0] + this.min[0]) / 2.0, this.min[1], 
+            (this.min[2] + this.min[2]) / 2.0
+          );
+
+          let screenPosition = this.lore.controls.camera.sceneToScreen(scenePosition, this.lore);
+          
+          this.el.xAxis.style.left = (screenPosition[0] - (bb.width / 2.0)) + 'px';
+          this.el.xAxis.style.top = (screenPosition[1]) + 'px';
+
+          if (first) this.el.xAxis.classList.add('show');
+        }
+
+        updateYAxis(first = false) {
+          if (this.el.yAxis === undefined) return;
+            
+          let bb = this.el.yAxis.getBoundingClientRect();
+          let scenePosition = new Lore.Math.Vector3f(
+            this.min[0], (this.min[1] + this.min[1]) / 2.0, 
+            (this.min[2] + this.min[2]) / 2.0
+          );
+          
+          let screenPosition = this.lore.controls.camera.sceneToScreen(scenePosition, this.lore);
+          
+          this.el.yAxis.style.left = (screenPosition[0] - bb.height) + 'px';
+          this.el.yAxis.style.top = (screenPosition[1] - bb.width / 2.0) + 'px';
+
+          if (first) this.el.yAxis.classList.add('show');
+        }
+
+        changeSeries(value, name) {
+          value = parseInt(value);
+          this.seriesState[name] = value;
+          this.renderLegend();
+
+          this.pointHelpers[this.phIndexMap[name]].setRGBFromArrays(
+            data[name]['colors'][value].r, 
+            data[name]['colors'][value].g, 
+            data[name]['colors'][value].b
+          );
+
+          if (data[name]['s']) {
+            if (data[name]['s'][value]) {
+              this.pointHelpers[this.phIndexMap[name]].setSize(
+                data[name]['s'][value]
+              );
+            } else {
+              this.pointHelpers[this.phIndexMap[name]].setSize(1.0);
+            }
+          }
+        }
+
+        search(term) {
+          let results = {}
+          let re = new RegExp(term, 'i');
+
+          Object.keys(data).forEach(name => {
+            if (!('labels' in data[name])) return;
+            results[name] = []
+            data[name]['labels'].forEach((label, i) => {
+              if (re.test(label))
+                results[name].push(i)
+            });
+          });
+
+          return results;
+        }
+
+        static createColorBox(value) {
+          return Faerun.createElement(
+            'div', 
+            { 
+              classes: 'color-box', 
+              style: `background-color: rgba(${value[0] * 255}, ${value[1] * 255 }, ${value[2] * 255 }, ${value[3] });
+                      border-color: rgba(${value[0] * 255 }, ${value[1] * 255 }, ${value[2] * 255 }, ${value[3] })`
+            }
+          );
+        }
+
+        static createColorScale(values) {
+          let scale = [];
+
+          values.forEach(value => {
+            scale.push(
+              Faerun.createElement(
+                'div', 
+                { 
+                  classes: 'color-stripe', 
+                  style: `background-color: rgba(${value[0][0] * 255}, ${value[0][1] * 255}, ${value[0][2] * 255}, ${value[0][3]});
+                          border-color: rgba(${value[0][0] * 255}, ${value[0][1] * 255}, ${value[0][2] * 255}, ${value[0][3]})`,
+                  alt: value[1]
+                }
+              ),
+            )
+          });
+
+          return scale;
+        }
+        
+        static createElement(tag, values = {}, children = []) {
+          let element = document.createElement(tag);
+
+          for (const key of Object.keys(values)) {
+            if (key === 'classes')
+              element.classList.add(...values[key].split(' '));
+            else if (key === 'content')
+              element.innerHTML = values[key];
+            else if (key === 'hidden') {
+              if (values[key])
+                element.setAttribute('hidden', true);
+            }
+            else if (key === 'selected') {
+              if (values[key])
+                element.setAttribute('selected', true);
+            }
+            else
+              element.setAttribute(key, values[key]);
+          }
+
+          if (children) {
+            if (Array.isArray(children)) {
+              children.forEach(child => {
+                element.appendChild(child);
+              })
+            } else {
+              element.appendChild(children);
+            }
+          }
+
+          return element;
+        }
+
+        static bindElements() {
+          let result = {};
+          document.querySelectorAll('[data-bind]').forEach(e => {
+            result[e.getAttribute('data-bind')] = e;
+          });
+          return result;
+        }
+
+        static getMin(arr, other = Number.MAX_VALUE) {
+          let m = Number.MAX_VALUE;
+          for (var i = 0; i < arr.length; i++)
+              if (arr[i] < m) m = arr[i];
+          
+          if (m < other) return m;
+          return other;
+        }
+
+        static getMax(arr, other = -Number.MAX_VALUE) {
+          let m = -Number.MAX_VALUE;
+          for (var i = 0; i < arr.length; i++)
+              if (arr[i] > m) m = arr[i];
+          
+          if (m > other) return m;
+          return other;
+        }
+      }
+
+      let f = new Faerun();
+    </script>
+  </body>
+</html>

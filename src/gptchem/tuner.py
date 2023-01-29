@@ -186,6 +186,7 @@ class Tuner:
         )
         self._res = result
         logger.debug(f"Requested fine tuning. {result}")
+        modelname = None
         try:
             ft_id = result["id"]
             modelname = get_ft_model_name(ft_id, self._sleep)
@@ -195,6 +196,8 @@ class Tuner:
         except Exception:
             logger.exception("Fine tuning failed.")
 
+        if modelname is None:
+            raise ValueError(f"Fine tuning failed. Result: {result}.")
         self._modelname = modelname
         self._ft_id = ft_id
 

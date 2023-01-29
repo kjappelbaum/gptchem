@@ -3,7 +3,7 @@ from sklearn.feature_selection import SelectFromModel
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
-
+from sklearn.ensemble import RandomForestClassifier
 from gptchem.evaluator import evaluate_classification, get_regression_metrics
 
 from ..models.xgboost import XGBClassificationBaseline, XGBRegressionBaseline
@@ -375,7 +375,7 @@ def train_test_henry_classification_baseline(
 
     predictions = baseline.predict(X_test.values)
 
-    selector = SelectFromModel(estimator=LogisticRegression(), max_features=100)
+    selector = SelectFromModel(estimator=RandomForestClassifier(), max_features=100)
     X_train = selector.fit_transform(X_train, y_train_binned)
     X_test = selector.transform(X_test)
     tabpfn = TabPFNClassifier(device="cpu", N_ensemble_configurations=32)
@@ -400,12 +400,12 @@ def train_test_henry_regression_baseline(
     X_test, y_test = test_set[FEATURES], test_set[formatter.label_column]
 
     baseline = XGBRegressionBaseline(num_trials=num_trials, seed=seed)
-    baseline.tune(X_train, y_train)
-    baseline.fit(X_train, y_train)
+    baseline.tune(X_train.values, y_train.values)
+    baseline.fit(X_train.values, y_train.values)
 
-    predictions = baseline.predict(X_test)
+    predictions = baseline.predict(X_test.values)
 
     return {
         "xgb_predictions": predictions,
-        "xgb_metrics": get_regression_metrics(y_test, predictions),
+        "xgb_metrics": get_regression_metrics(y_test.values, predictions),
     }

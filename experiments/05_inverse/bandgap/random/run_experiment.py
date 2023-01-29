@@ -48,13 +48,16 @@ def train_test(num_train_points, temperatures, num_samples, seed):
 
     res_at_temp = []
     for temp in temperatures:
+        logger.info(f"Temperature: {temp}")
         completions = querier(formatted_test, temperature=temp)
         generated_smiles = extractor(completions)
+        logger.info(f"Extracted. Evaluating generated SMILES...")
         smiles_metrics = evaluate_generated_smiles(generated_smiles, formatted_train["label"])
         expected = []
         for i, row in formatted_test.iterrows():
             expected.append(row["representation"][0])
 
+        logger.info(f"Evaluating constraint satisfaction...")
         try:
             if len(smiles_metrics["valid_indices"]) > 0:
                 expected = L(expected)[smiles_metrics["valid_indices"]]

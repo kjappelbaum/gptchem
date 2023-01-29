@@ -1,13 +1,7 @@
-Traceback (most recent call last):
-  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/extrapolation/run_experiments.py", line 125, in <module>
-    train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+5654467545334)
-  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/extrapolation/run_experiments.py", line 57, in train_test_evaluate
-    formatted_test = formatter(data_test.sample(test_size, random_state=seed))
-  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/pandas/core/generic.py", line 5763, in sample
-    rs = com.random_state(random_state)
-  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/pandas/core/common.py", line 455, in random_state
-    return np.random.RandomState(state)  # type: ignore[arg-type]
-  File "mtrand.pyx", line 185, in numpy.random.mtrand.RandomState.__init__
-  File "_mt19937.pyx", line 166, in numpy.random._mt19937.MT19937._legacy_seeding
-  File "_mt19937.pyx", line 180, in numpy.random._mt19937.MT19937._legacy_seeding
-ValueError: Seed must be between 0 and 2**32 - 1
+Upload progress:   0%|          | 0.00/18.7k [00:00<?, ?it/s]Upload progress: 100%|██████████| 18.7k/18.7k [00:00<00:00, 13.5Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/extrapolation/out/20230129_131318/train.jsonl: file-Q6AaGlofq6Xf6K5KRl7fApiq
+The data appears to lie in a lower-dimensional subspace of the space in which it is expressed. This has resulted in a singular data covariance matrix, which cannot be treated using the algorithms implemented in `gaussian_kde`. Consider performing principle component analysis / dimensionality reduction and using `gaussian_kde` with the transformed data.
+2023-01-29 14:00:04.929656: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+The data appears to lie in a lower-dimensional subspace of the space in which it is expressed. This has resulted in a singular data covariance matrix, which cannot be treated using the algorithms implemented in `gaussian_kde`. Consider performing principle component analysis / dimensionality reduction and using `gaussian_kde` with the transformed data.
+`dataset` input should have multiple elements.
+too many indices for array: array is 1-dimensional, but 2 were indexed

@@ -10,6 +10,7 @@ from gptchem.extractor import RegressionExtractor
 from gptchem.formatter import RegressionFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
+from loguru import logger
 
 train_sizes = [10, 20, 50, 100, 200, 500, 1000]
 targets = [
@@ -71,4 +72,7 @@ if __name__ == "__main__":
     for i in range(10):
         for train_size in train_sizes:
             for target in targets:
-                run_experiment(train_size, target, i + 223342)
+                try:
+                    run_experiment(train_size, target, i + 22332642)
+                except Exception as e:
+                    logger.exception(e)
