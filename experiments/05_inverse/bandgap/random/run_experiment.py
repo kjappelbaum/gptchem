@@ -19,6 +19,7 @@ temperatures = [0.0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5]
 
 noise_levels = [0.01, 0.1, 0.2, 0.5, 0.7, 1.0]
 
+logger.enable("gptchem")
 
 def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
     data = get_qmug_data()

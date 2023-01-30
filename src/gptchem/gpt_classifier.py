@@ -5,7 +5,8 @@ from gptchem.tuner import Tuner
 from gptchem.querier import Querier
 from gptchem.extractor import ClassificationExtractor
 from typing import Optional
-
+import numpy as np 
+from fastcore.foundation import L
 class GPTClassifier: 
     """Wrapper around GPT-3 fine tuning in style of a scikit-learn classifier."""
     def __init__(self, property_name:str, tuner:Tuner, querier_settings: Optional[dict] = None, extractor: ClassificationExtractor = ClassificationExtractor()):
@@ -41,5 +42,6 @@ class GPTClassifier:
         querier = Querier(self.model_name, **self.querier_setting)
         completions = querier(formatted)
         extracted = self.extractor(completions)
+        extracted = L([x if x is not None else np.nan for x in extracted])
         return extracted
 

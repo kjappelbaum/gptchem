@@ -2536,3 +2536,24 @@ Traceback (most recent call last):
     def get_matbench_
                      ^
 SyntaxError: invalid syntax
+Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 39.8Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230130_115146/train.jsonl: file-NDCKeE4Kxoy001l3KRNmjIu4
+dyld[68237]: Assertion failed: (this->magic == kMagic), function matchesPath, file Loader.cpp, line 154.
+
+dyld[69552]: Assertion failed: (this->magic == kMagic), function matchesPath, file Loader.cpp, line 154.
+
+dyld[70058]: Assertion failed: (this->magic == kMagic), function loadAddress, file Loader.cpp, line 133.
+
+Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 45.8Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230130_121717/train.jsonl: file-qoUTqtx5YQCMuWzmDeHc2c6q
+Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 42.8Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230130_124657/train.jsonl: file-zilq3Qzr0wjZx3mMVigoEw6L
+dyld[81993]: Assertion failed: (this->magic == kMagic), function mf, file Loader.cpp, line 123.
+
+Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 42.1Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230130_131634/train.jsonl: file-35gzJWZiWQvqlDpnL5ihzsCi
+dyld[91436]: Assertion failed: (this->magic == kMagic), function loadAddress, file Loader.cpp, line 133.
+
+dyld[92187]: Assertion failed: (this->magic == kMagic), function matchesPath, file Loader.cpp, line 154.
+
+Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 41.6Mit/s]
