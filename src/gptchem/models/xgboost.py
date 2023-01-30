@@ -199,6 +199,7 @@ class XGBRegressionBaseline(BaseLineModel):
             X_values = X_train.values
         else:
             X_values = X_train
+        self.model.fit(X_values, y_train)
 
     def predict(self, X):
         if isinstance(X, pd.DataFrame):

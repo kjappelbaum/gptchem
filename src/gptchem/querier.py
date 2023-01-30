@@ -40,7 +40,7 @@ class Querier:
 
     _parallel_max = 20
     _sleep = 5
-    _stop = "@@"
+    _stop = "@@@"
 
     def __init__(self, modelname, max_tokens: int = 10):
         self.modelname = modelname

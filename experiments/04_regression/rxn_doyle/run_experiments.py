@@ -75,4 +75,7 @@ if __name__ == "__main__":
     for seed in range(num_repeats):
         for oh in use_one_hot:
             for train_size in train_sizes:
-                train_test_model("DreherDoyle", train_size, seed + 54347989844, oh)
+                try:
+                    train_test_model("DreherDoyle", train_size, seed + 9844, oh)
+                except Exception as e:
+                    print(e)

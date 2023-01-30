@@ -7,7 +7,7 @@ from fastcore.foundation import L
 
 class BaseExtractor:
 
-    _stop_sequence = "@@"
+    _stop_sequence = "@@@"
 
     def floatify(self, value: str) -> float:
         try:

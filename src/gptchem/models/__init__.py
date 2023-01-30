@@ -15,3 +15,11 @@ def get_z_pi_pistar_model_data():
         "z_pi_pistar_model",
         url="https://www.dropbox.com/s/gyl4r25xmuggpx7/gpr_z_iso.joblib?dl=1",
     )
+
+
+def get_polymer_model():
+    """Return an XGBoost model for the adsorption free energy."""
+    return pystow.module("gptchem").ensure(
+        "delta_g_model",
+        url="https://www.dropbox.com/s/7xwfu9hlte7v377/delta_g_model.joblib?dl=1",
+    )

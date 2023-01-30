@@ -223,3 +223,16 @@ def get_mof_solvent_data() -> pd.DataFrame:
         )
         .reset_index(drop=True)
     )
+
+
+def get_balasz_data():
+    """Return the MOF reaction data []"""
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "mof_synth",
+            url="https://www.dropbox.com/s/rpoodh94kvkv4qv/BAN_solvents_20230126.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        )
+        .reset_index(drop=True)
+    )

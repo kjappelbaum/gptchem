@@ -407,5 +407,5 @@ def train_test_henry_regression_baseline(
 
     return {
         "xgb_predictions": predictions,
-        "xgb_metrics": get_regression_metrics(y_test.values, predictions),
+        "xgb_metrics": get_regression_metrics(y_test, predictions),
     }

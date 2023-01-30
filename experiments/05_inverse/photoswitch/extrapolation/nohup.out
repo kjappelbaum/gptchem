@@ -1,7 +1,81 @@
-Upload progress:   0%|          | 0.00/18.7k [00:00<?, ?it/s]Upload progress: 100%|██████████| 18.7k/18.7k [00:00<00:00, 13.5Mit/s]
-Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/extrapolation/out/20230129_131318/train.jsonl: file-Q6AaGlofq6Xf6K5KRl7fApiq
-The data appears to lie in a lower-dimensional subspace of the space in which it is expressed. This has resulted in a singular data covariance matrix, which cannot be treated using the algorithms implemented in `gaussian_kde`. Consider performing principle component analysis / dimensionality reduction and using `gaussian_kde` with the transformed data.
-2023-01-29 14:00:04.929656: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
-The data appears to lie in a lower-dimensional subspace of the space in which it is expressed. This has resulted in a singular data covariance matrix, which cannot be treated using the algorithms implemented in `gaussian_kde`. Consider performing principle component analysis / dimensionality reduction and using `gaussian_kde` with the transformed data.
+Upload progress:   0%|          | 0.00/18.7k [00:00<?, ?it/s]Upload progress: 100%|██████████| 18.7k/18.7k [00:00<00:00, 9.55Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/extrapolation/out/20230129_191611/train.jsonl: file-HFtnxdneuQj889TypHowo25T
 `dataset` input should have multiple elements.
+2023-01-29 19:20:45.002538: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+2023-01-29 19:24:29.806 | ERROR    | __main__:<module>:129 - Internal error {
+    "error": {
+        "message": "Internal error",
+        "type": "internal_error",
+        "param": null,
+        "code": "internal_error"
+    }
+}
+ 500 {'error': {'message': 'Internal error', 'type': 'internal_error', 'param': None, 'code': 'internal_error'}} {'Date': 'Sun, 29 Jan 2023 18:24:29 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '152', 'Connection': 'keep-alive', 'Vary': 'Origin', 'X-Request-Id': '1c9bff1444befd48c8ba5c7d5a7fd9ae', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains'}
+Traceback (most recent call last):
+
+> File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/extrapolation/run_experiments.py", line 127, in <module>
+    train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+45565)
+    │                   │           │            │            │             └ 0
+    │                   │           │            │            └ [2.0, 1.5, 1.25, 1.0, 0.75, 0.5, 0.2, 0.1, 0]
+    │                   │           │            └ 100
+    │                   │           └ 50
+    │                   └ 92
+    └ <function train_test_evaluate at 0x1046f00d0>
+
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/extrapolation/run_experiments.py", line 69, in train_test_evaluate
+    completions = querier(formatted_test, temperature=temp)
+                  │       │                           └ 1.5
+                  │       └                                               prompt  ...                          representation
+                  │         0  What is a molecule with ...
+                  └ gptchem.querier.Querier(modelname='ada:ft-personal-2023-01-29-18-19-12', max_tokens=600)
+
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/querier.py", line 123, in __call__
+    return self.query(df, temperature, logprobs)
+           │    │     │   │            └ None
+           │    │     │   └ 1.5
+           │    │     └                                               prompt  ...                          representation
+           │    │       0  What is a molecule with ...
+           │    └ <function Querier.query at 0x29d9dc8b0>
+           └ gptchem.querier.Querier(modelname='ada:ft-personal-2023-01-29-18-19-12', max_tokens=600)
+
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/querier.py", line 98, in query
+    completions_ = openai.Completion.create(
+                   │      │          └ <classmethod object at 0x29cc88ee0>
+                   │      └ <class 'openai.api_resources.completion.Completion'>
+                   └ <module 'openai' from '/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/__init__.py'>
+
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+                           │       └ {'model': 'ada:ft-personal-2023-01-29-18-19-12', 'prompt': ['What is a molecule with E isomer transition wavelength 424 ,Z is...
+                           └ ()
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+                           │         └ <function APIRequestor.request at 0x29d995790>
+                           └ <openai.api_requestor.APIRequestor object at 0x2ceee1f70>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 226, in request
+    resp, got_stream = self._interpret_response(result, stream)
+                       │    │                   │       └ False
+                       │    │                   └ <Response [500]>
+                       │    └ <function APIRequestor._interpret_response at 0x29d995c10>
+                       └ <openai.api_requestor.APIRequestor object at 0x2ceee1f70>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 599, in _interpret_response
+    self._interpret_response_line(
+    │    └ <function APIRequestor._interpret_response_line at 0x29d995d30>
+    └ <openai.api_requestor.APIRequestor object at 0x2ceee1f70>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 655, in _interpret_response_line
+    raise self.handle_error_response(
+          │    └ <function APIRequestor.handle_error_response at 0x29d9958b0>
+          └ <openai.api_requestor.APIRequestor object at 0x2ceee1f70>
+
+openai.error.APIError: Internal error {
+    "error": {
+        "message": "Internal error",
+        "type": "internal_error",
+        "param": null,
+        "code": "internal_error"
+    }
+}
+ 500 {'error': {'message': 'Internal error', 'type': 'internal_error', 'param': None, 'code': 'internal_error'}} {'Date': 'Sun, 29 Jan 2023 18:24:29 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '152', 'Connection': 'keep-alive', 'Vary': 'Origin', 'X-Request-Id': '1c9bff1444befd48c8ba5c7d5a7fd9ae', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains'}
+Upload progress:   0%|          | 0.00/18.7k [00:00<?, ?it/s]Upload progress: 100%|██████████| 18.7k/18.7k [00:00<00:00, 39.3Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/extrapolation/out/20230129_192429/train.jsonl: file-FEtTZQ2zjA1Gj47JKJplydHH
 too many indices for array: array is 1-dimensional, but 2 were indexed

@@ -30,7 +30,8 @@ from rdkit import Chem, DataStructs
 from scipy.optimize import curve_fit, fsolve
 from sklearn.metrics import max_error, mean_absolute_error, mean_squared_error, r2_score
 from collections import Counter
-from gptchem.models import get_e_pi_pistar_model_data, get_z_pi_pistar_model_data
+from gptchem.models import get_e_pi_pistar_model_data, get_z_pi_pistar_model_data, get_polymer_model
+from tqdm import tqdm 
 
 from .fingerprints.mol_fingerprints import compute_fragprints
 
@@ -780,8 +781,8 @@ def featurize_many_polymers(smiless: list) -> pd.DataFrame:
         features.append(pmsf.featurize())
     return pd.DataFrame(features)
 
-def polymer_string2performance(string, model_dir = '../models'):
-    DELTA_G_MODEL = joblib.load(os.path.join(model_dir, 'delta_g_model.joblib'))
+def polymer_string2performance(string: str):
+    DELTA_G_MODEL = joblib.load(get_polymer_model())
 
     predicted_monomer_sequence = string.split("@")[0].strip()
     monomer_sq = re.findall("[(R|W|A|B)\-(R|W|A|B)]+", predicted_monomer_sequence)[0]
@@ -796,4 +797,24 @@ def polymer_string2performance(string, model_dir = '../models'):
         "smiles": smiles,
         "prediction": prediction,
         'features': features
+    }
+
+
+def get_inverse_polymer_metrics(generated_polymers, df_test, df_train, formatter):
+
+    performances = []
+    for polymer in generated_polymers:
+        performances.append(polymer_string2performance(polymer))
+    
+
+    return {
+        "composition_mismatches": pd.DataFrame(composition_mismatches),
+        "losses": losses,
+        "kldiv_score": kldiv_score,
+        "valid_smiles_fraction": valid_smiles_fraction,
+        "unique_smiles_fraction": unique_smiles_fraction,
+        "novel_smiles_fraction": novel_smiles_fraction,
+        'generated_sequences': generated_sequences,
+        "train_sequences": train_sequences,
+        "predictions": predictions,
     }

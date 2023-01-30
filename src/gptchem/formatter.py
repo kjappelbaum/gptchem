@@ -17,7 +17,7 @@ import pandas as pd
 from fastcore.basics import basic_repr
 from numpy.typing import ArrayLike
 from sklearn.preprocessing import LabelEncoder
-
+from urllib.parse import quote
 from .types import StringOrNumber
 
 
@@ -625,12 +625,14 @@ class MOFSolventRecommenderFormatter(BaseFormatter):
         counter_ion_columns: List[str],
         solvent_columns: List[str],
         solvent_mol_ratio_columns: List[str],
+        make_safe: bool = True,
     ):
         self.linker_columns = linker_columns
         self.node_columns = node_columns
         self.solvent_columns = solvent_columns
         self.solvent_mol_ratio_columns = solvent_mol_ratio_columns
         self.counter_ion_columns = counter_ion_columns
+        self.make_safe = make_safe
 
     def _linker_string(self, linker):
         return ", ".join([l for l in linker if not pd.isna(l)])
@@ -640,21 +642,25 @@ class MOFSolventRecommenderFormatter(BaseFormatter):
             [f"{np.round(m,2)} {s}" for s, m in zip(solvent, solvent_mol_ratio) if not np.isnan(m)]
         )
 
+    def _clean(self, string):
+        if self.make_safe: return quote(string, safe="()=@#?").replace("%20", " ")
+        return string
+        
     def _format(self, linker, node, ion, solvent, solvent_mol_ratio) -> dict:
         return {
-            "prompt": self._PROMPT_TEMPLATE.format(
+            "prompt": self._clean(self._PROMPT_TEMPLATE.format(
                 prefix=self._prefix,
                 linker=self._linker_string(linker),
                 node=str(node[0]).replace("[", "").replace("]", ""),
                 ion=str(ion[0]).replace("[", "").replace("]", ""),
                 suffix=self._suffix,
                 end_prompt=self._end_prompt,
-            ),
-            "completion": self._COMPLETION_TEMPLATE.format(
+            )),
+            "completion": self._clean(self._COMPLETION_TEMPLATE.format(
                 start_completion=self._start_completion,
                 label=self._solvent_string(solvent, solvent_mol_ratio),
                 stop_sequence=self._stop_sequence,
-            ),
+            )),
             "label": self._solvent_string(solvent, solvent_mol_ratio),
             "representation": [linker, node, ion, solvent, solvent_mol_ratio],
             "solvents": solvent,
@@ -761,7 +767,7 @@ class InverseDesignFormatter(BaseFormatter):
         return self.format_many(df)
 
 class MOFSynthesisRecommenderFormatter(BaseFormatter):
-    _PROMPT_TEMPLATE = "What is the sucess of a reaction of {ligand} with {salt} in {solvent} {modifier} at {temperature} of {time}{end_prompt}"
+    _PROMPT_TEMPLATE = "What is the success of a reaction of {ligand} with {salt} in {solvent} {modifier} at {temperature}C for {time}h{end_prompt}"
     _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
 
     def __init__(
@@ -792,20 +798,20 @@ class MOFSynthesisRecommenderFormatter(BaseFormatter):
 
     def _solvent_string(self, solvent, solvent_mol_ratio):
         return " and ".join(
-            [f"{np.round(m,2)} {s}" for s, m in zip(solvent, solvent_mol_ratio) if not np.isnan(m)]
+            [f"{np.round(m,2)} {s}" for s, m in zip(solvent, solvent_mol_ratio) if not np.isnan(m) and isinstance(s, str) and s != 'NA']
         )
 
     def _modifier_string(self, modifier):
-        if modifier:
-            return " and {modifier}"
+        if isinstance(modifier, str) and modifier != 'NA':
+            return f"and {modifier}"
         else:
-            return " "
+            return ""
 
     def _format(self, linker, node, solvent, solvent_mol_ratio, modifier, temperature, time, score, outcome) -> dict:
         return {
             "prompt": self._PROMPT_TEMPLATE.format(
                 prefix=self._prefix,
-                ligand=self._linker_string(linker),
+                ligand=linker,
                 salt=node,
                 solvent=self._solvent_string(solvent, solvent_mol_ratio),
                 modifier=self._modifier_string(modifier),
@@ -838,22 +844,22 @@ class MOFSynthesisRecommenderFormatter(BaseFormatter):
         """
         # drop entries that have "unknown" in one of the fields
         filtered_rows = []
-        df.dropna(subset=[self.linker_columns[0]] + [self.node_columns[0]], inplace=True)
-        for _, row in df.iterrows():
-            if "unknown" in row[self.counter_ion_columns].values:
-                continue
-            filtered_rows.append(row)
-        df = pd.DataFrame(filtered_rows)
+        df.dropna(subset=[self.ligand_column] + [self.inorganic_salt_column], inplace=True)
 
-        linker = df[self.linker_columns].values
-        node = df[self.node_columns].values
-        ion = df[self.counter_ion_columns].values
+        linker = df[self.ligand_column].values
+        node = df[self.inorganic_salt_column].values
         solvent = df[self.solvent_columns].values
-        solvent_mol_ratio = df[self.solvent_mol_ratio_columns].values
+        solvent_mol_ratio = df[self.solvent_vol_ratio_columns].values
+        modifier = df[self.modifier_column].values
+        temperature = df[self.temperature_column].values
+        time = df[self.time_column].values
+        score = df[self.score_column].values
+        outcome = df[self.outcome_column].values\
+        
         return pd.DataFrame(
             [
-                self._format(l, n, i, s, smr)
-                for l, n, i, s, smr in zip(linker, node, ion, solvent, solvent_mol_ratio)
+                self._format(l, n, s, smr, m, temp, t, sco, out)
+                for l, n, s, smr, m, temp, t, sco, out in zip(linker, node, solvent, solvent_mol_ratio, modifier, temperature, time, score, outcome)
             ]
         )
 

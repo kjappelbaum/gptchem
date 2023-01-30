@@ -20,6 +20,8 @@ num_test_points = 100
 use_one_hot = [True, False][::-1]
 num_repeats = 10
 
+logger.enable("gptchem")
+
 def train_test_model(representation, num_train_points, seed, one_hot):
     data = get_suzuki_rxn_data()
     bins = (
@@ -76,4 +78,7 @@ if __name__ == "__main__":
     for seed in range(num_repeats):
         for oh in use_one_hot:
             for train_size in train_sizes:
-                train_test_model("SuzukiMiyaura", train_size, seed + 33498644, oh)
+                try:
+                    train_test_model("SuzukiMiyaura", train_size, seed + 33498644, oh)
+                except Exception as e:
+                    print(f"Failed with {e}")

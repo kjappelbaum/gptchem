@@ -14,7 +14,7 @@ from loguru import logger
 
 num_trials = 10
 TRAIN_SIZE = 92
-TEMPERATURES = [0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0]
+TEMPERATURES = [0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0][::-1]
 NOISE_LEVEL = [0.5, 1.0, 5.0, 10, 20, 50][::-1]
 NUM_SAMPLES = 100
 
@@ -124,7 +124,7 @@ if __name__ == "__main__":
     for seed in range(num_trials):
         for noise_level in NOISE_LEVEL:
             try:
-                train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+4565)
+                train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+45565)
             except Exception as e:
                 logger.exception(e)
                 continue    

@@ -20,7 +20,7 @@ temperatures = [0.0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5]
 noise_levels = [0.01, 0.1, 0.2, 0.5, 0.7, 1.0]
 
 
-def train_test(num_train_points, temperatures, num_samples, seed):
+def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
     data = get_qmug_data()
     formatter = InverseDesignFormatter(
         representation_column="SMILES",
@@ -105,7 +105,7 @@ if __name__ == "__main__":
         for noise_level in noise_levels:
             for num_train_point in num_train_points:
                 try:
-                    train_test(num_train_point, temperatures, num_samples, seed)
+                    train_test(num_train_point, temperatures, num_samples, noise_level, seed)
                 except Exception as e:
                     logger.exception(
                         f"{e}"
