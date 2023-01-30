@@ -1153,3 +1153,5 @@ Using a Transformer with 25.82 M parameters
 2023-01-30 23:52:01.979 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
 2023-01-30 23:55:29.111 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
 2023-01-31 00:07:59.631 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
