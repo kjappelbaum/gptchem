@@ -805,7 +805,7 @@ def get_polymer_prompt_compostion(prompt: str)->dict:
     return composition
 
 
-def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd.DataFrame, df_train: pd.DataFrame) -> dict:
+def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd.DataFrame, df_train: pd.DataFrame, max_train: int = 500) -> dict:
     performances = []
 
     train_polymers = df_train["label"].tolist()
@@ -815,6 +815,7 @@ def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd
     composition_mismatches = []
     performance_difference = []
     valid_indices = []
+    string_distances_collection = []
 
     for i, polymer in enumerate(generated_polymers):
         try:
@@ -822,13 +823,20 @@ def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd
             performances.append(perf)
             comp = get_polymer_prompt_compostion(polymer)
             comp_mismatch = composition_mismatch(
-                get_polymer_prompt_compostion(df_test["prompt"].iloc[0]), comp)
+                get_polymer_prompt_compostion(df_test["prompt"].iloc[i]), comp)
             composition_mismatches.append(comp_mismatch)
             performance_difference.append(np.abs(perf["prediction"][0] - representations[i]))
             valid_polymers.append(polymer)
             valid_indices.append(i)
+            string_mismatch =string_distances(
+                train_polymers,
+                polymer
+            )
+            string_distances_collection.append(string_mismatch)
         except Exception:
             pass
+
+    string_distances_collection = pd.DataFrame(string_distances_collection)
 
     kldiv = PolymerKLDivBenchmark(featurize_many_polymers([polymer_convert2smiles(p) for p in train_polymers]), min(len(valid_polymers), len(train_polymers)))
     kldiv_score = kldiv.score(valid_polymers)
@@ -846,4 +854,6 @@ def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd
         "novel_smiles_fraction": novel_smiles_fraction,
         "generated_sequences": generated_polymers,
         "predictions": performances,
+        "string_distances_collection": string_distances_collection,
+        "string_distances_collection_summary": string_distances_collection.mean().to_dict(),
     }

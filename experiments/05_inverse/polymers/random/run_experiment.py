@@ -12,7 +12,10 @@ from gptchem.generator import noise_original_data
 from gptchem.tuner import Tuner 
 from gptchem.querier import Querier
 from gptchem.extractor import InverseExtractor
+from fastcore.xtras import save_pickle
+from pathlib import Path 
 
+repeats = 10
 num_samples = 100
 num_train_points = [100, 300, 1000]
 
@@ -29,7 +32,7 @@ def train_test(num_train_points, temperatures, num_sample, noise_level, seed):
     data_test[["deltaGmin"]] = noise_original_data(
         data_test[["deltaGmin"]],
         noise_level=noise_level,
-    )
+    ).sample(num_sample)
 
     formatter = InverseDesignFormatter(
         representation_column="string",
@@ -55,7 +58,26 @@ def train_test(num_train_points, temperatures, num_sample, noise_level, seed):
             logger.info(f"Temperature: {temp}")
             completions = querier(formatted_test, temperature=temp)
             generated_smiles = extractor(completions)
-            results = 
+            results = get_inverse_polymer_metrics(
+                generated_smiles,
+                formatted_train,
+                formatted_test
+            )
+            res_at_temp.append(results)
         except Exception as e:
             logger.error(e)
             continue
+
+    summary = {
+        'num_train_points': num_train_points,
+        'noise_level': noise_level,
+
+    }
+    save_pickle(Path(tune_res["outdir"]) / "summary.pkl", summary)
+
+
+if __name__ == '__main__':
+    for i in range(repeats):
+        for train_point in num_train_points:
+            for noise_level in noise_levels:
+                train_test(num_train_points, temperatures, num_samples, noise_level, i) 
