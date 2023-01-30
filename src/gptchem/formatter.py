@@ -615,7 +615,7 @@ class ReactionRegressionFormatter(BaseFormatter):
         return self.format_many(df)
 
 class MOFSolventRecommenderFormatter(BaseFormatter):
-    _PROMPT_TEMPLATE = "{prefix}What solvent shall I use to make a metal-organic framework out of {linker} and {node}{ion}{suffix}{end_prompt}"
+    _PROMPT_TEMPLATE = "{prefix}In which solution will {linker} and {node}{ion} crystallize{suffix}{end_prompt}"
     _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
 
     def __init__(
@@ -643,7 +643,7 @@ class MOFSolventRecommenderFormatter(BaseFormatter):
         )
 
     def _clean(self, string):
-        if self.make_safe: return quote(string, safe="()=@#?").replace("%20", " ")
+        if self.make_safe: return quote(string, safe="()=@#?[]").replace("%20", " ")
         return string
         
     def _format(self, linker, node, ion, solvent, solvent_mol_ratio) -> dict:
@@ -683,6 +683,8 @@ class MOFSolventRecommenderFormatter(BaseFormatter):
         df.dropna(subset=[self.linker_columns[0]] + [self.node_columns[0]], inplace=True)
         for _, row in df.iterrows():
             if "unknown" in row[self.counter_ion_columns].values:
+                continue
+            if any([len(row[linker_col])>400 for linker_col in self.linker_columns if not pd.isna(row[linker_col])]):
                 continue
             filtered_rows.append(row)
         df = pd.DataFrame(filtered_rows)

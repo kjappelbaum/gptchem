@@ -236,3 +236,51 @@ def get_balasz_data():
         )
         .reset_index(drop=True)
     )
+
+def get_matbench_glass():
+    """Return the glass formation ability dataset from matbench"""
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "matbench_glass",
+            url="https://www.dropbox.com/s/f2o06xdw2ri5bc0/gfa.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        )
+        .reset_index(drop=True)
+    )
+
+def get_matbench_is_metal():
+    """Return the is metal dataset from matbench"""
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "matbench_is_metal",
+            url="https://www.dropbox.com/s/h9dprz801vsdyhy/is_metal.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        )
+        .reset_index(drop=True)
+    )
+
+def get_matbench_expt_gap():
+    """Return the experimental band gap dataset from matbench"""
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "matbench_expt_gap",
+            url="https://www.dropbox.com/s/4iqnhf9nui0dk7e/expt_gap.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        )
+        .reset_index(drop=True)
+    )
+
+def get_matbench_steels():
+    """Return the steel yield strength dataset from matbench"""
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "matbench_steels",
+            url="https://www.dropbox.com/s/7cf330um2a47v3c/steels.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        )
+        .reset_index(drop=True)
+    )

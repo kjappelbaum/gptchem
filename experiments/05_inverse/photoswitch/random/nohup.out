@@ -1,17 +1,2538 @@
-Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 9.50Mit/s]
-Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230128_071845/train.jsonl: file-x5qDxVlhbKRqi6AQWhrhz2e0
-2023-01-28 07:29:14.259355: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
-Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 47.8Mit/s]
-Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230128_074410/train.jsonl: file-sZpPcY4AmwtKTOaXg9aY6BAI
-Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 42.6Mit/s]
-Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230128_084302/train.jsonl: file-45eANsSuqqlIO2TeU36C1oDj
+Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 12.5Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230130_105716/train.jsonl: file-dN0RRTOef3Dbhd53Sopni8Sb
+2023-01-30 11:03:41.610476: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+dyld[53413]: Assertion failed: (this->magic == kMagic), function matchesPath, file Loader.cpp, line 154.
+
+Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 49.3Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230130_112152/train.jsonl: file-MewxkH5zdeOkdxFsflHCIHnP
+The data appears to lie in a lower-dimensional subspace of the space in which it is expressed. This has resulted in a singular data covariance matrix, which cannot be treated using the algorithms implemented in `gaussian_kde`. Consider performing principle component analysis / dimensionality reduction and using `gaussian_kde` with the transformed data.
 Traceback (most recent call last):
-  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 111, in <module>
-    train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+56544354)
-  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 49, in train_test_evaluate
-    tune_res = tuner(formatted_train)
-  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 210, in __call__
-    return self.tune(train_df, validation_df)
-  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 198, in tune
-    self._modelname = modelname
-UnboundLocalError: local variable 'modelname' referenced before assignment
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 125, in _main
+    prepare(preparation_data)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 236, in prepare
+    _fixup_main_from_path(data['init_main_from_path'])
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/spawn.py", line 287, in _fixup_main_from_path
+    main_content = runpy.run_path(main_path,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 288, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 97, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 6, in <module>
+    from gptchem.data import get_photoswitch_data
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/data.py", line 252
+    def get_matbench_
+                     ^
+SyntaxError: invalid syntax
