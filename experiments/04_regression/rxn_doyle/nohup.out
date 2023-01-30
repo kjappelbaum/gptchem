@@ -8551,3 +8551,744 @@ DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
 DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-8Iiy9InUCQz6lMaoARIpymoF HTTP/1.1" 200 1004
 INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-8Iiy9InUCQz6lMaoARIpymoF processing_ms=46 request_id=3f66f5a7713c31cae217c125ffbe1b5d response_code=200
 2023-01-30 18:47:43.406 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-8Iiy9InUCQz6lMaoARIpymoF
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-8Iiy9InUCQz6lMaoARIpymoF HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-8Iiy9InUCQz6lMaoARIpymoF processing_ms=48 request_id=20a7856521d7f7aaefac79e5a55d37d2 response_code=200
+2023-01-30 18:49:43.908 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-8Iiy9InUCQz6lMaoARIpymoF
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-8Iiy9InUCQz6lMaoARIpymoF HTTP/1.1" 200 2295
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-8Iiy9InUCQz6lMaoARIpymoF processing_ms=50 request_id=0e68681c03f64fa48b82b538b73bc6a9 response_code=200
+2023-01-30 18:51:44.427 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-8Iiy9InUCQz6lMaoARIpymoF
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-8Iiy9InUCQz6lMaoARIpymoF HTTP/1.1" 200 3380
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-8Iiy9InUCQz6lMaoARIpymoF processing_ms=40 request_id=5cd8654a1690f57b4e7418d5e431595e response_code=200
+2023-01-30 18:53:46.150 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-30 18:53:46.150 | DEBUG    | gptchem.tuner:tune:207 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_184535', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_184535/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-30-17-52-20', 'ft_id': 'ft-8Iiy9InUCQz6lMaoARIpymoF', 'date': '20230130_185346', 'train_file_id': 'file-gWDgRqp7cCmHLMtVn3KYAOSq', 'valid_file_id': None}
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-17-52-20", "prompt": ["What is the yield of the reaction ligand 0  additive 12  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 9  base 0  aryl halide 6?###", "What is the yield of the reaction ligand 2  additive 18  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 1  additive 4  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 2  additive 10  base 1  aryl halide 13?###", "What is the yield of the reaction ligand 3  additive 10  base 0  aryl halide 3?###", "What is the yield of the reaction ligand 3  additive 12  base 0  aryl halide 3?###", "What is the yield of the reaction ligand 3  additive 8  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 2  additive 0  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 3  additive 20  base 2  aryl halide 13?###", "What is the yield of the reaction ligand 3  additive 7  base 0  aryl halide 6?###", "What is the yield of the reaction ligand 3  additive 11  base 2  aryl halide 3?###", "What is the yield of the reaction ligand 2  additive 21  base 1  aryl halide 5?###", "What is the yield of the reaction ligand 3  additive 11  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 0  additive 17  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 17  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 1  additive 18  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 3  additive 10  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 0  additive 13  base 0  aryl halide 6?###", "What is the yield of the reaction ligand 1  additive 17  base 0  aryl halide 3?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1505
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=916 request_id=b2a49b41bfa304a7781d4013b545da12 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-17-52-20", "prompt": ["What is the yield of the reaction ligand 0  additive 15  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 12  base 0  aryl halide 0?###", "What is the yield of the reaction ligand 3  additive 2  base 0  aryl halide 10?###", "What is the yield of the reaction ligand 1  additive 14  base 0  aryl halide 6?###", "What is the yield of the reaction ligand 2  additive 21  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 13  base 2  aryl halide 11?###", "What is the yield of the reaction ligand 3  additive 18  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 2  additive 19  base 0  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 8  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 2  additive 18  base 2  aryl halide 0?###", "What is the yield of the reaction ligand 0  additive 15  base 0  aryl halide 12?###", "What is the yield of the reaction ligand 1  additive 10  base 0  aryl halide 10?###", "What is the yield of the reaction ligand 1  additive 16  base 2  aryl halide 7?###", "What is the yield of the reaction ligand 0  additive 12  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 2  additive 11  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 0  additive 2  base 1  aryl halide 14?###", "What is the yield of the reaction ligand 0  additive 10  base 0  aryl halide 6?###", "What is the yield of the reaction ligand 3  additive 15  base 0  aryl halide 13?###", "What is the yield of the reaction ligand 2  additive 2  base 1  aryl halide 3?###", "What is the yield of the reaction ligand 1  additive 6  base 2  aryl halide 6?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1506
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=103 request_id=8afee2a1404174a9e48076ab6516d341 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-17-52-20", "prompt": ["What is the yield of the reaction ligand 1  additive 7  base 0  aryl halide 11?###", "What is the yield of the reaction ligand 0  additive 18  base 2  aryl halide 14?###", "What is the yield of the reaction ligand 3  additive 9  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 8  base 0  aryl halide 11?###", "What is the yield of the reaction ligand 2  additive 19  base 0  aryl halide 9?###", "What is the yield of the reaction ligand 3  additive 13  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 1  additive 2  base 1  aryl halide 13?###", "What is the yield of the reaction ligand 3  additive 6  base 1  aryl halide 14?###", "What is the yield of the reaction ligand 2  additive 16  base 1  aryl halide 1?###", "What is the yield of the reaction ligand 0  additive 16  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 0  additive 12  base 1  aryl halide 9?###", "What is the yield of the reaction ligand 1  additive 19  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 1  additive 3  base 0  aryl halide 14?###", "What is the yield of the reaction ligand 2  additive 16  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 0  additive 13  base 1  aryl halide 13?###", "What is the yield of the reaction ligand 1  additive 9  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 2  additive 12  base 0  aryl halide 14?###", "What is the yield of the reaction ligand 0  additive 7  base 2  aryl halide 14?###", "What is the yield of the reaction ligand 3  additive 6  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 0  additive 7  base 1  aryl halide 4?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1506
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=89 request_id=008bf8813af6397b3c88681a07fee4e0 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-17-52-20", "prompt": ["What is the yield of the reaction ligand 3  additive 11  base 0  aryl halide 14?###", "What is the yield of the reaction ligand 0  additive 4  base 0  aryl halide 0?###", "What is the yield of the reaction ligand 2  additive 17  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 0  additive 4  base 0  aryl halide 6?###", "What is the yield of the reaction ligand 2  additive 21  base 0  aryl halide 11?###", "What is the yield of the reaction ligand 1  additive 18  base 0  aryl halide 6?###", "What is the yield of the reaction ligand 3  additive 16  base 0  aryl halide 11?###", "What is the yield of the reaction ligand 3  additive 16  base 0  aryl halide 4?###", "What is the yield of the reaction ligand 2  additive 7  base 2  aryl halide 7?###", "What is the yield of the reaction ligand 2  additive 17  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 3  additive 8  base 2  aryl halide 1?###", "What is the yield of the reaction ligand 0  additive 11  base 0  aryl halide 0?###", "What is the yield of the reaction ligand 0  additive 0  base 0  aryl halide 5?###", "What is the yield of the reaction ligand 1  additive 1  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 4  base 2  aryl halide 0?###", "What is the yield of the reaction ligand 1  additive 14  base 1  aryl halide 9?###", "What is the yield of the reaction ligand 0  additive 5  base 2  aryl halide 10?###", "What is the yield of the reaction ligand 2  additive 4  base 2  aryl halide 7?###", "What is the yield of the reaction ligand 1  additive 0  base 2  aryl halide 3?###", "What is the yield of the reaction ligand 3  additive 18  base 0  aryl halide 14?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1506
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=99 request_id=237ce202af954a6bc2f883dac7cc8a8a response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-17-52-20", "prompt": ["What is the yield of the reaction ligand 3  additive 0  base 2  aryl halide 10?###", "What is the yield of the reaction ligand 3  additive 3  base 1  aryl halide 1?###", "What is the yield of the reaction ligand 1  additive 18  base 0  aryl halide 14?###", "What is the yield of the reaction ligand 3  additive 4  base 0  aryl halide 7?###", "What is the yield of the reaction ligand 2  additive 2  base 0  aryl halide 2?###", "What is the yield of the reaction ligand 0  additive 3  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 0  additive 9  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 3  additive 1  base 1  aryl halide 11?###", "What is the yield of the reaction ligand 0  additive 6  base 1  aryl halide 14?###", "What is the yield of the reaction ligand 3  additive 17  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 0  additive 18  base 1  aryl halide 13?###", "What is the yield of the reaction ligand 0  additive 8  base 0  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 4  base 1  aryl halide 9?###", "What is the yield of the reaction ligand 2  additive 5  base 1  aryl halide 6?###", "What is the yield of the reaction ligand 0  additive 8  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 16  base 2  aryl halide 14?###", "What is the yield of the reaction ligand 3  additive 17  base 2  aryl halide 0?###", "What is the yield of the reaction ligand 0  additive 11  base 1  aryl halide 11?###", "What is the yield of the reaction ligand 0  additive 15  base 2  aryl halide 0?###", "What is the yield of the reaction ligand 1  additive 11  base 1  aryl halide 0?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1507
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=97 request_id=1c5c2c1ef46dadfafbdf55cf326a21da response_code=200
+DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/doyle_rxn/dreher_doyle.csv from https://www.dropbox.com/s/gjxatqagwh3cwb6/dreher_doyle.csv?dl=1
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_184535/train.jsonl: file-gWDgRqp7cCmHLMtVn3KYAOSq
+'rxnfp-rbf'
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.00506 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.99046 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.92544 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.28059 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.34639 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.34064 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.74542 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 2.69426 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.33323 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_185645%2Ftrain.jsonl
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_185645%2Ftrain.jsonl HTTP/1.1" 404 257
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_185645%2Ftrain.jsonl processing_ms=4 request_id=5492952b094ed0179a7c1a5bafac9552 response_code=404
+INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_185645/train.jsonl)' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.14278 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.01278 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.29388 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.16443 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.5306  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 8.17701 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.07886 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Upload progress:   0%|          | 0.00/31.6k [00:00<?, ?it/s]INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/files
+DEBUG:openai:api_version=None data=None message='Post details'
+Upload progress: 100%|██████████| 31.6k/31.6k [00:00<00:00, 51.0Mit/s]
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/files HTTP/1.1" 200 320
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=948 request_id=07c19398fcbc2773b9fd08fd4766fd73 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/fine-tunes
+DEBUG:openai:api_version=None data='{"training_file": "file-FoVvbwqG1OlBpco1k7NhHTrB", "model": "ada", "n_epochs": 8, "learning_rate_multiplier": 0.02}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/fine-tunes HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes processing_ms=109 request_id=fbabcb271336685daeb3237a1fb8fdc6 response_code=200
+2023-01-30 18:56:47.018 | DEBUG    | gptchem.tuner:tune:188 - Requested fine tuning. {
+  "created_at": 1675101406,
+  "events": [
+    {
+      "created_at": 1675101406,
+      "level": "info",
+      "message": "Created fine-tune: ft-jmcTn6755p8oY2TOtnpWnC6W",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-jmcTn6755p8oY2TOtnpWnC6W",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 31638,
+      "created_at": 1675101406,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_185645/train.jsonl",
+      "id": "file-FoVvbwqG1OlBpco1k7NhHTrB",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1675101406,
+  "validation_files": []
+}
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=42 request_id=e1633f5d8201235faf5a368b9d8bc937 response_code=200
+2023-01-30 18:56:48.839 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=42 request_id=971808fadfc2e139e6cc8b41d1d209b6 response_code=200
+2023-01-30 18:58:49.344 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=38 request_id=c73102309ac82545318371aea116aa96 response_code=200
+2023-01-30 19:00:49.830 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=37 request_id=2d0db1e69d31ea589d0e7238784b7282 response_code=200
+2023-01-30 19:02:50.373 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=39 request_id=ad1ad42d4e8ed300ed77150506b83703 response_code=200
+2023-01-30 19:04:51.079 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=38 request_id=2363d6bf8215f70ad9ef24b738a7b811 response_code=200
+2023-01-30 19:06:54.746 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=45 request_id=fbc6d5f5668c6fcda87e843f5dbd9ad4 response_code=200
+2023-01-30 19:08:55.207 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=33 request_id=0d2de3d60531ac7190641d0a196ccc1d response_code=200
+2023-01-30 19:10:55.662 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=41 request_id=e0f4cc43e73188bfa567d848148d68bf response_code=200
+2023-01-30 19:12:56.229 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=36 request_id=b5ff595fb608794ce3050be7110c0330 response_code=200
+2023-01-30 19:14:56.791 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=35 request_id=b8200f6aa2e1b128425016152496efff response_code=200
+2023-01-30 19:16:57.278 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=41 request_id=e3fa37b617fb232105d50c7b9116f72e response_code=200
+2023-01-30 19:18:57.743 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=42 request_id=b6cf84b4ef08b755aed36e5e58466ebd response_code=200
+2023-01-30 19:20:59.109 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=42 request_id=e29ad4ea8a04c1f8c7ed13d61c26bfd7 response_code=200
+2023-01-30 19:22:59.572 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=45 request_id=93cca0fa6e8c0063f65cdfbcaa42273d response_code=200
+2023-01-30 19:25:00.120 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=37 request_id=a53f91c59105a22c43b3dc76cf0c3cca response_code=200
+2023-01-30 19:27:00.575 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=39 request_id=4d1dad0d0d3e1050496e0abb0589082f response_code=200
+2023-01-30 19:29:01.050 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=41 request_id=27c424c42956926c7c20e4c8a3a00924 response_code=200
+2023-01-30 19:31:01.676 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=37 request_id=be7cc6e03c5dc55916d25869099212cc response_code=200
+2023-01-30 19:33:02.745 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=39 request_id=b50edc5dec174ef53b2b18ac3f1fe325 response_code=200
+2023-01-30 19:35:03.243 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=42 request_id=d044890c82b5cdf7053589ef69e6d10f response_code=200
+2023-01-30 19:37:03.780 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=38 request_id=db1831efc1368371b10709c4a4b27da3 response_code=200
+2023-01-30 19:39:04.275 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=36 request_id=c1cc7fd4ce81d6529c58f5d02929565f response_code=200
+2023-01-30 19:41:04.750 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=38 request_id=0818b0b5fa5366ee96578e5621bb733e response_code=200
+2023-01-30 19:43:05.202 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=33 request_id=3b18e2c43fba938099f452f27ee7c7b8 response_code=200
+2023-01-30 19:45:07.244 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=40 request_id=a81782ec2a500b1fbc396bac60ebe1df response_code=200
+2023-01-30 19:47:08.267 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 1443
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=39 request_id=c19322b7cbdc5ea6274f33d7dff98315 response_code=200
+2023-01-30 19:49:08.749 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 2011
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=36 request_id=cce08e3150e7edb8b4f57ed87da9993c response_code=200
+2023-01-30 19:51:09.201 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W HTTP/1.1" 200 2579
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W processing_ms=40 request_id=0713fbde43ff699a8abd20db6eb98dce response_code=200
+2023-01-30 19:53:10.297 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.util.retry:Incremented Retry for (url='/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+WARNING:urllib3.connectionpool:Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16f46de20>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known')': /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (2): api.openai.com:443
+DEBUG:urllib3.util.retry:Incremented Retry for (url='/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2b302d400>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known')': /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (3): api.openai.com:443
+2023-01-30 19:55:33.783 | ERROR    | gptchem.tuner:tune:197 - Fine tuning failed.
+Traceback (most recent call last):
+
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           │          └ <function create_connection at 0x11a5db820>
+           └ <module 'urllib3.util.connection' from '/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/...
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               │      │           │     │     │       │      └ <SocketKind.SOCK_STREAM: 1>
+               │      │           │     │     │       └ <module 'socket' from '/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/socket.py'>
+               │      │           │     │     └ <AddressFamily.AF_UNSPEC: 0>
+               │      │           │     └ 443
+               │      │           └ 'api.openai.com'
+               │      └ <function getaddrinfo at 0x1016920d0>
+               └ <module 'socket' from '/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/socket.py'>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               │       │           │     │     │       │     │      └ 0
+               │       │           │     │     │       │     └ 0
+               │       │           │     │     │       └ <SocketKind.SOCK_STREAM: 1>
+               │       │           │     │     └ <AddressFamily.AF_UNSPEC: 0>
+               │       │           │     └ 443
+               │       │           └ 'api.openai.com'
+               │       └ <built-in function getaddrinfo>
+               └ <module '_socket' from '/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/lib-dynload/_socket.cpython-39-darwin....
+
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+                       │    └ <function HTTPConnectionPool._make_request at 0x11a6af280>
+                       └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x2b30485b0>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+    │    │              └ <urllib3.connection.HTTPSConnection object at 0x2b2f5e280>
+    │    └ <function HTTPSConnectionPool._validate_conn at 0x11a6af790>
+    └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x2b30485b0>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+    │    └ <function HTTPSConnection.connect at 0x11a688e50>
+    └ <urllib3.connection.HTTPSConnection object at 0x2b2f5e280>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+    │    │             │    └ <function HTTPConnection._new_conn at 0x11a6888b0>
+    │    │             └ <urllib3.connection.HTTPSConnection object at 0x2b2f5e280>
+    │    └ None
+    └ <urllib3.connection.HTTPSConnection object at 0x2b2f5e280>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+          └ <class 'urllib3.exceptions.NewConnectionError'>
+
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x2b2f5e280>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x11a6af4c0>
+           └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x2b30485b0>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x11a6af4c0>
+           └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x2b30485b0>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 815, in urlopen
+    return self.urlopen(
+           │    └ <function HTTPConnectionPool.urlopen at 0x11a6af4c0>
+           └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x2b30485b0>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+              │       └ <function Retry.increment at 0x11a5fcf70>
+              └ Retry(total=0, connect=None, read=None, redirect=None, status=None)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+          │             │      │    │        │             └ 'unknown'
+          │             │      │    │        └ <class 'urllib3.exceptions.ResponseError'>
+          │             │      │    └ NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2b2f5e280>: Failed to establish a new connection: [Errno ...
+          │             │      └ '/v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W'
+          │             └ <urllib3.connectionpool.HTTPSConnectionPool object at 0x2b30485b0>
+          └ <class 'urllib3.exceptions.MaxRetryError'>
+
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2b2f5e280>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 498, in request_raw
+    result = _thread_context.session.request(
+             └ <_thread._local object at 0x13cda8180>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+           │    │    │       └ {'timeout': 600, 'allow_redirects': True, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+           │    │    └ <PreparedRequest [GET]>
+           │    └ <function Session.send at 0x11a9aa280>
+           └ <requests.sessions.Session object at 0x2b4413040>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+        │       │    │          └ {'timeout': 600, 'proxies': OrderedDict(), 'stream': False, 'verify': True, 'cert': None}
+        │       │    └ <PreparedRequest [GET]>
+        │       └ <function HTTPAdapter.send at 0x11a9a7700>
+        └ <requests.adapters.HTTPAdapter object at 0x16f45af40>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/requests/adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+          │                          └ <PreparedRequest [GET]>
+          └ <class 'requests.exceptions.ConnectionError'>
+
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2b2f5e280>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/run_experiments.py", line 79, in <module>
+    train_test_model("DreherDoyle", train_size, seed + 9844, oh)
+    │                               │           │            └ True
+    │                               │           └ 5
+    │                               └ 200
+    └ <function train_test_model at 0x10145b0d0>
+
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/run_experiments.py", line 50, in train_test_model
+    tune_res = tuner(train_formatted)
+               │     └                                                 prompt  ...  representation
+               │       0    What is the yield of the reaction ligand 2  ...
+               └ gptchem.tuner.Tuner(base_model='ada', batch_size=None, n_epochs=8, learning_rate_multiplier=0.02, run_name=None)
+
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 213, in __call__
+    return self.tune(train_df, validation_df)
+           │    │    │         └ None
+           │    │    └                                                 prompt  ...  representation
+           │    │      0    What is the yield of the reaction ligand 2  ...
+           │    └ <function Tuner.tune at 0x13d230280>
+           └ gptchem.tuner.Tuner(base_model='ada', batch_size=None, n_epochs=8, learning_rate_multiplier=0.02, run_name=None)
+
+> File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 192, in tune
+    modelname = get_ft_model_name(ft_id, self._sleep)
+                │                 │      │    └ 120
+                │                 │      └ gptchem.tuner.Tuner(base_model='ada', batch_size=None, n_epochs=8, learning_rate_multiplier=0.02, run_name=None)
+                │                 └ 'ft-jmcTn6755p8oY2TOtnpWnC6W'
+                └ <function get_ft_model_name at 0x13d22dca0>
+
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/tuner.py", line 27, in get_ft_model_name
+    ft = FineTune.retrieve(id=ft_id)
+         │        │           └ 'ft-jmcTn6755p8oY2TOtnpWnC6W'
+         │        └ <classmethod object at 0x13cd97a60>
+         └ <class 'openai.api_resources.fine_tune.FineTune'>
+
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/abstract/api_resource.py", line 20, in retrieve
+    instance.refresh(request_id=request_id, request_timeout=request_timeout)
+    │        │                  │                           └ None
+    │        │                  └ None
+    │        └ <function APIResource.refresh at 0x13d0dbdc0>
+    └ <FineTune id=ft-jmcTn6755p8oY2TOtnpWnC6W at 0x2b6e3d9f0> JSON: {
+        "id": "ft-jmcTn6755p8oY2TOtnpWnC6W"
+      }
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/abstract/api_resource.py", line 32, in refresh
+    self.request(
+    │    └ <function OpenAIObject.request at 0x13d0db820>
+    └ <FineTune id=ft-jmcTn6755p8oY2TOtnpWnC6W at 0x2b6e3d9f0> JSON: {
+        "id": "ft-jmcTn6755p8oY2TOtnpWnC6W"
+      }
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/openai_object.py", line 179, in request
+    response, stream, api_key = requestor.request(
+              │                 │         └ <function APIRequestor.request at 0x13d0d7940>
+              │                 └ <openai.api_requestor.APIRequestor object at 0x2b77b03a0>
+              └ False
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 216, in request
+    result = self.request_raw(
+             │    └ <function APIRequestor.request_raw at 0x13d0d7ca0>
+             └ <openai.api_requestor.APIRequestor object at 0x2b77b03a0>
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 510, in request_raw
+    raise error.APIConnectionError("Error communicating with OpenAI: {}".format(e)) from e
+          │     └ <class 'openai.error.APIConnectionError'>
+          └ <module 'openai.error' from '/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/error.py'>
+
+openai.error.APIConnectionError: Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/fine-tunes/ft-jmcTn6755p8oY2TOtnpWnC6W (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2b2f5e280>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/doyle_rxn/dreher_doyle.csv from https://www.dropbox.com/s/gjxatqagwh3cwb6/dreher_doyle.csv?dl=1
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_185645/train.jsonl: file-FoVvbwqG1OlBpco1k7NhHTrB
+Fine tuning failed. Result: {
+  "created_at": 1675101406,
+  "events": [
+    {
+      "created_at": 1675101406,
+      "level": "info",
+      "message": "Created fine-tune: ft-jmcTn6755p8oY2TOtnpWnC6W",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-jmcTn6755p8oY2TOtnpWnC6W",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 31638,
+      "created_at": 1675101406,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_185645/train.jsonl",
+      "id": "file-FoVvbwqG1OlBpco1k7NhHTrB",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1675101406,
+  "validation_files": []
+}.
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -1e-05   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  1.00002 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 4e-05   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 1.00004 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_200141%2Ftrain.jsonl
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (4): api.openai.com:443
+DEBUG:urllib3.util.retry:Incremented Retry for (url='/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_200141%2Ftrain.jsonl'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+WARNING:urllib3.connectionpool:Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x16f9e90d0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known')': /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_200141%2Ftrain.jsonl
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (5): api.openai.com:443
+DEBUG:urllib3.util.retry:Incremented Retry for (url='/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_200141%2Ftrain.jsonl'): Retry(total=0, connect=None, read=None, redirect=None, status=None)
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2b4cb8610>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known')': /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_200141%2Ftrain.jsonl
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (6): api.openai.com:443
+DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/doyle_rxn/dreher_doyle.csv from https://www.dropbox.com/s/gjxatqagwh3cwb6/dreher_doyle.csv?dl=1
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.01967 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.86808 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  1.00345 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.12146 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 4e-05   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 1.00006 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │    -0   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │     0.5 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │     1   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │     0.5 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Error communicating with OpenAI: HTTPSConnectionPool(host='api.openai.com', port=443): Max retries exceeded with url: /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_200141%2Ftrain.jsonl (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x2b6eb4250>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.02036 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.08304 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.04599 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.00209 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.67146 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.01765 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.40536 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  4.86683 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.60882 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_200306%2Ftrain.jsonl
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (7): api.openai.com:443
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_200306%2Ftrain.jsonl HTTP/1.1" 404 257
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_200306%2Ftrain.jsonl processing_ms=4 request_id=8c983462c28fc3e22436340d4b420686 response_code=404
+INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_200306/train.jsonl)' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.25444 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.01731 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.03888 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.0903  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.84513 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 9.60632 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Upload progress:   0%|          | 0.00/8.71k [00:00<?, ?it/s]INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/files
+DEBUG:openai:api_version=None data=None message='Post details'
+Upload progress: 100%|██████████| 8.71k/8.71k [00:00<00:00, 14.4Mit/s]
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/files HTTP/1.1" 200 319
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=946 request_id=b4428ff441c898f0e1662b2838414109 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/fine-tunes
+DEBUG:openai:api_version=None data='{"training_file": "file-REx1tPJMK0jSQyWml1NL8Dkt", "model": "ada", "n_epochs": 8, "learning_rate_multiplier": 0.02}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/fine-tunes HTTP/1.1" 200 1002
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes processing_ms=112 request_id=817652cb37df00488e9adff69030f460 response_code=200
+2023-01-30 20:03:09.458 | DEBUG    | gptchem.tuner:tune:188 - Requested fine tuning. {
+  "created_at": 1675105389,
+  "events": [
+    {
+      "created_at": 1675105389,
+      "level": "info",
+      "message": "Created fine-tune: ft-8e3x3GWamYbXn9YVZEXHSMGE",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-8e3x3GWamYbXn9YVZEXHSMGE",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 8706,
+      "created_at": 1675105389,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_200306/train.jsonl",
+      "id": "file-REx1tPJMK0jSQyWml1NL8Dkt",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1675105389,
+  "validation_files": []
+}
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-8e3x3GWamYbXn9YVZEXHSMGE
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-8e3x3GWamYbXn9YVZEXHSMGE HTTP/1.1" 200 1002
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-8e3x3GWamYbXn9YVZEXHSMGE processing_ms=41 request_id=b01a6ecbaaa11847697a9bdf81add81a response_code=200
+2023-01-30 20:03:09.711 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-8e3x3GWamYbXn9YVZEXHSMGE
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-8e3x3GWamYbXn9YVZEXHSMGE HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-8e3x3GWamYbXn9YVZEXHSMGE processing_ms=40 request_id=6ecc2c7a54b0bd69021c41a2af9d47f5 response_code=200
+2023-01-30 20:05:17.875 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-8e3x3GWamYbXn9YVZEXHSMGE
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-8e3x3GWamYbXn9YVZEXHSMGE HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-8e3x3GWamYbXn9YVZEXHSMGE processing_ms=33 request_id=2aa065f0400b4fce1678ba221ba59deb response_code=200
+2023-01-30 20:07:18.558 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-8e3x3GWamYbXn9YVZEXHSMGE
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-8e3x3GWamYbXn9YVZEXHSMGE HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-8e3x3GWamYbXn9YVZEXHSMGE processing_ms=43 request_id=482fed1604dde116ac8f34bfdce589e8 response_code=200
+2023-01-30 20:09:19.744 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
