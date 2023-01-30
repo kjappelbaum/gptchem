@@ -55,6 +55,7 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
             completions = querier(formatted_test, temperature=temp)
             generated_smiles = extractor(completions)
             logger.info(f"Extracted. Evaluating generated SMILES...")
+            logger.info(f"generated examples {generated_smiles[:2]}")
             smiles_metrics = evaluate_generated_smiles(generated_smiles, formatted_train["label"])
             expected = []
             for i, row in formatted_test.iterrows():

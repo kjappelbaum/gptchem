@@ -69,4 +69,4 @@ def train_test(train_size, seed):
 if __name__ == "__main__":
     for i in range(num_repeats):
         for train_size in num_train_points:
-            train_test(train_size, i)
+            train_test(train_size, i+1000)
