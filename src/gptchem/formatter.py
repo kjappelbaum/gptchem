@@ -11,13 +11,14 @@
 """
 
 from typing import Collection, List, Optional
+from urllib.parse import quote
 
 import numpy as np
 import pandas as pd
 from fastcore.basics import basic_repr
 from numpy.typing import ArrayLike
 from sklearn.preprocessing import LabelEncoder
-from urllib.parse import quote
+
 from .types import StringOrNumber
 
 
@@ -124,12 +125,12 @@ class ClassificationFormatter(ForwardFormatter):
     ) -> None:
         """Initialize a ClassificationFormatter.
 
-    Args:
-            representation_column (str): The column name of the representation.
-            label_column (str): The column name of the label.
-            property_name (str): The name of the property.
-            num_classes (int, optional): The number of classes.
-            qcut (bool): Whether to use qcut to split the label into classes. Otherwise, cut is used.
+        Args:
+                representation_column (str): The column name of the representation.
+                label_column (str): The column name of the label.
+                property_name (str): The name of the property.
+                num_classes (int, optional): The number of classes.
+                qcut (bool): Whether to use qcut to split the label into classes. Otherwise, cut is used.
         """
         self.representation_column = representation_column
         self.label_column = label_column
@@ -471,7 +472,6 @@ class ReactionClassificationFormatter(BaseFormatter):
         return self.format_many(df)
 
 
-
 class ReactionRegressionFormatter(BaseFormatter):
     _PROMPT_TEMPLATE = (
         "{prefix}What is the {propertyname} of the reaction {representation}{suffix}{end_prompt}"
@@ -494,7 +494,7 @@ class ReactionRegressionFormatter(BaseFormatter):
             reactant_column_names (Collection[str]): The names of the reactants.
             label_column (str): The column name of the label.
             property_name (str): The name of the property.
-            num_digit (int, optional): The number of digits to round the label to. 
+            num_digit (int, optional): The number of digits to round the label to.
                 Defaults to None.
             one_hot (bool): Whether to use one hot encoding for the labels.
         """
@@ -614,8 +614,11 @@ class ReactionRegressionFormatter(BaseFormatter):
     def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
         return self.format_many(df)
 
+
 class MOFSolventRecommenderFormatter(BaseFormatter):
-    _PROMPT_TEMPLATE = "{prefix}In which solution will {linker} and {node}{ion} crystallize{suffix}{end_prompt}"
+    _PROMPT_TEMPLATE = (
+        "{prefix}In which solution will {linker} and {node}{ion} crystallize{suffix}{end_prompt}"
+    )
     _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
 
     def __init__(
@@ -643,24 +646,29 @@ class MOFSolventRecommenderFormatter(BaseFormatter):
         )
 
     def _clean(self, string):
-        if self.make_safe: return quote(string, safe="()=@#?[]").replace("%20", " ")
+        if self.make_safe:
+            return quote(string, safe="()=@#?[]").replace("%20", " ")
         return string
-        
+
     def _format(self, linker, node, ion, solvent, solvent_mol_ratio) -> dict:
         return {
-            "prompt": self._clean(self._PROMPT_TEMPLATE.format(
-                prefix=self._prefix,
-                linker=self._linker_string(linker),
-                node=str(node[0]).replace("[", "").replace("]", ""),
-                ion=str(ion[0]).replace("[", "").replace("]", ""),
-                suffix=self._suffix,
-                end_prompt=self._end_prompt,
-            )),
-            "completion": self._clean(self._COMPLETION_TEMPLATE.format(
-                start_completion=self._start_completion,
-                label=self._solvent_string(solvent, solvent_mol_ratio),
-                stop_sequence=self._stop_sequence,
-            )),
+            "prompt": self._clean(
+                self._PROMPT_TEMPLATE.format(
+                    prefix=self._prefix,
+                    linker=self._linker_string(linker),
+                    node=str(node[0]).replace("[", "").replace("]", ""),
+                    ion=str(ion[0]).replace("[", "").replace("]", ""),
+                    suffix=self._suffix,
+                    end_prompt=self._end_prompt,
+                )
+            ),
+            "completion": self._clean(
+                self._COMPLETION_TEMPLATE.format(
+                    start_completion=self._start_completion,
+                    label=self._solvent_string(solvent, solvent_mol_ratio),
+                    stop_sequence=self._stop_sequence,
+                )
+            ),
             "label": self._solvent_string(solvent, solvent_mol_ratio),
             "representation": [linker, node, ion, solvent, solvent_mol_ratio],
             "solvents": solvent,
@@ -684,7 +692,13 @@ class MOFSolventRecommenderFormatter(BaseFormatter):
         for _, row in df.iterrows():
             if "unknown" in row[self.counter_ion_columns].values:
                 continue
-            if any([len(row[linker_col])>400 for linker_col in self.linker_columns if not pd.isna(row[linker_col])]):
+            if any(
+                [
+                    len(row[linker_col]) > 400
+                    for linker_col in self.linker_columns
+                    if not pd.isna(row[linker_col])
+                ]
+            ):
                 continue
             filtered_rows.append(row)
         df = pd.DataFrame(filtered_rows)
@@ -768,6 +782,7 @@ class InverseDesignFormatter(BaseFormatter):
     def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
         return self.format_many(df)
 
+
 class MOFSynthesisRecommenderFormatter(BaseFormatter):
     _PROMPT_TEMPLATE = "What is the success of a reaction of {ligand} with {salt} in {solvent} {modifier} at {temperature}C for {time}h{end_prompt}"
     _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
@@ -792,7 +807,11 @@ class MOFSynthesisRecommenderFormatter(BaseFormatter):
         self.temperature_column = temperature_column or "T [°C]"
         self.time_column = time_column or "t [h]"
         self.solvent_columns = solvent_columns or ["solvent1", "solvent2", "solvent3"]
-        self.solvent_vol_ratio_columns = solvent_vol_ratio_columns or ["V/V solvent1 [ ]", "V/V solvent2 [ ]", "V/V solvent3 [ ]"]
+        self.solvent_vol_ratio_columns = solvent_vol_ratio_columns or [
+            "V/V solvent1 [ ]",
+            "V/V solvent2 [ ]",
+            "V/V solvent3 [ ]",
+        ]
         self.outcome_column = outcome_column or "outcome"
         self.score_column = score_column or "score"
         self.doi_column = doi_column or "reported"
@@ -800,16 +819,22 @@ class MOFSynthesisRecommenderFormatter(BaseFormatter):
 
     def _solvent_string(self, solvent, solvent_mol_ratio):
         return " and ".join(
-            [f"{np.round(m,2)} {s}" for s, m in zip(solvent, solvent_mol_ratio) if not np.isnan(m) and isinstance(s, str) and s != 'NA']
+            [
+                f"{np.round(m,2)} {s}"
+                for s, m in zip(solvent, solvent_mol_ratio)
+                if not np.isnan(m) and isinstance(s, str) and s != "NA"
+            ]
         )
 
     def _modifier_string(self, modifier):
-        if isinstance(modifier, str) and modifier != 'NA':
+        if isinstance(modifier, str) and modifier != "NA":
             return f"and {modifier}"
         else:
             return ""
 
-    def _format(self, linker, node, solvent, solvent_mol_ratio, modifier, temperature, time, score, outcome) -> dict:
+    def _format(
+        self, linker, node, solvent, solvent_mol_ratio, modifier, temperature, time, score, outcome
+    ) -> dict:
         return {
             "prompt": self._PROMPT_TEMPLATE.format(
                 prefix=self._prefix,
@@ -828,7 +853,15 @@ class MOFSynthesisRecommenderFormatter(BaseFormatter):
                 stop_sequence=self._stop_sequence,
             ),
             "label": score if self.use_score else outcome,
-            "representation": [linker, node, solvent, solvent_mol_ratio, modifier, temperature, time],
+            "representation": [
+                linker,
+                node,
+                solvent,
+                solvent_mol_ratio,
+                modifier,
+                temperature,
+                time,
+            ],
             "solvents": solvent,
             "solvent_mol_ratios": solvent_mol_ratio,
         }
@@ -856,16 +889,27 @@ class MOFSynthesisRecommenderFormatter(BaseFormatter):
         temperature = df[self.temperature_column].values
         time = df[self.time_column].values
         score = df[self.score_column].values
-        outcome = df[self.outcome_column].values\
-        
+        outcome = df[self.outcome_column].values
         return pd.DataFrame(
             [
                 self._format(l, n, s, smr, m, temp, t, sco, out)
-                for l, n, s, smr, m, temp, t, sco, out in zip(linker, node, solvent, solvent_mol_ratio, modifier, temperature, time, score, outcome)
+                for l, n, s, smr, m, temp, t, sco, out in zip(
+                    linker,
+                    node,
+                    solvent,
+                    solvent_mol_ratio,
+                    modifier,
+                    temperature,
+                    time,
+                    score,
+                    outcome,
+                )
             ]
         )
 
-    __repr__ = basic_repr("ligand_column inorganic_salt_column modifier_column temperature_column time_column solvent_columns solvent_vol_ratio_columns outcome_column score_column doi_column use_score")
+    __repr__ = basic_repr(
+        "ligand_column inorganic_salt_column modifier_column temperature_column time_column solvent_columns solvent_vol_ratio_columns outcome_column score_column doi_column use_score"
+    )
 
     def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
         return self.format_many(df)

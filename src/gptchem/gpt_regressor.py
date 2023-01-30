@@ -1,12 +1,13 @@
-import pandas as pd
-import numpy as np
-from numpy.typing import ArrayLike
-from gptchem.formatter import RegressionFormatter
-from gptchem.tuner import Tuner
-from gptchem.querier import Querier
-from gptchem.extractor import RegressionExtractor
-
 from typing import Optional
+
+import numpy as np
+import pandas as pd
+from numpy.typing import ArrayLike
+
+from gptchem.extractor import RegressionExtractor
+from gptchem.formatter import RegressionFormatter
+from gptchem.querier import Querier
+from gptchem.tuner import Tuner
 
 
 class GPTRegressor:

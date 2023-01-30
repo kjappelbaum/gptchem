@@ -1,7 +1,10 @@
 import pytest
 from sklearn.model_selection import train_test_split
 
-from gptchem.baselines.henry import train_test_henry_classification_baseline, train_test_henry_regression_baseline
+from gptchem.baselines.henry import (
+    train_test_henry_classification_baseline,
+    train_test_henry_regression_baseline,
+)
 from gptchem.data import get_moosavi_mof_data
 from gptchem.formatter import ClassificationFormatter, RegressionFormatter
 
@@ -41,11 +44,7 @@ def test_train_test_henry_regression_baseline():
     formatted = formatter(data)
     train, test = train_test_split(data, train_size=100, test_size=10, random_state=42)
     res = train_test_henry_regression_baseline(
-        train_set=train,
-        test_set=test,
-        formatter=formatter,
-        num_trials=10, 
-        seed=10
+        train_set=train, test_set=test, formatter=formatter, num_trials=10, seed=10
     )
 
     assert res["xgb_metrics"]["mean_absolute_error"] < 6

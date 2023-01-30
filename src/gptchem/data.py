@@ -237,6 +237,7 @@ def get_balasz_data():
         .reset_index(drop=True)
     )
 
+
 def get_matbench_glass():
     """Return the glass formation ability dataset from matbench"""
     return (
@@ -248,6 +249,7 @@ def get_matbench_glass():
         )
         .reset_index(drop=True)
     )
+
 
 def get_matbench_is_metal():
     """Return the is metal dataset from matbench"""
@@ -261,6 +263,7 @@ def get_matbench_is_metal():
         .reset_index(drop=True)
     )
 
+
 def get_matbench_expt_gap():
     """Return the experimental band gap dataset from matbench"""
     return (
@@ -272,6 +275,7 @@ def get_matbench_expt_gap():
         )
         .reset_index(drop=True)
     )
+
 
 def get_matbench_steels():
     """Return the steel yield strength dataset from matbench"""

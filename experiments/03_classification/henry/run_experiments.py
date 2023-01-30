@@ -78,6 +78,8 @@ if __name__ == "__main__":
                     try:
                         run_experiment(train_size, num_class, target, i + 223342)
                     except Exception as e:
-                        print(f"Failed to run experiment with train_size={train_size}, num_class={num_class}, target={target}, seed={i + 223342}")
+                        print(
+                            f"Failed to run experiment with train_size={train_size}, num_class={num_class}, target={target}, seed={i + 223342}"
+                        )
                         print(e)
                         continue

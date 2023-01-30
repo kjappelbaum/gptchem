@@ -1,6 +1,9 @@
 import pytest
 
-from gptchem.baselines.polymer import train_test_polymer_classification_baseline, train_test_polymer_regression_baseline
+from gptchem.baselines.polymer import (
+    train_test_polymer_classification_baseline,
+    train_test_polymer_regression_baseline,
+)
 from gptchem.data import get_polymer_data
 from gptchem.formatter import ClassificationFormatter, RegressionFormatter
 
@@ -30,10 +33,14 @@ def test_train_test_polymer_regression_baseline():
         label_column="deltaGmin",
     )
 
-    train_smiles = data['string'].values[:30]
-    test_smiles = data['string'].values[30:50]
+    train_smiles = data["string"].values[:30]
+    test_smiles = data["string"].values[30:50]
 
     res = train_test_polymer_regression_baseline(
-        data, train_smiles=train_smiles, test_smiles=test_smiles, formatter=formatter, num_trials=10,
+        data,
+        train_smiles=train_smiles,
+        test_smiles=test_smiles,
+        formatter=formatter,
+        num_trials=10,
     )
     assert res["mean_absolute_error"] < 1.5

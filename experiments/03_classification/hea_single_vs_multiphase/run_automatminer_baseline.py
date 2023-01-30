@@ -1,10 +1,12 @@
-from gptchem.data import get_hea_phase_data
-from sklearn.model_selection import train_test_split
-from gptchem.evaluator import evaluate_classification
-from automatminer import MatPipe
-from pathlib import Path 
-from fastcore.xtras import save_pickle
 import time
+from pathlib import Path
+
+from automatminer import MatPipe
+from fastcore.xtras import save_pickle
+from sklearn.model_selection import train_test_split
+
+from gptchem.data import get_hea_phase_data
+from gptchem.evaluator import evaluate_classification
 
 NUM_REPEATS = 10
 LEARNING_CURVE_POINTS = [10, 20, 50, 100, 200]
@@ -14,12 +16,12 @@ TEST_SIZE = 250
 OURDIR = "out-baseline"
 Path(OURDIR).mkdir(exist_ok=True)
 
+
 def train_test_evaluate(train_size, seed):
 
     data = get_hea_phase_data()
-    data['composition'] = data['Alloy']
-    data = data[['composition', 'phase_binary_encoded']]
-
+    data["composition"] = data["Alloy"]
+    data = data[["composition", "phase_binary_encoded"]]
 
     pipe = MatPipe.from_preset("express")
 
@@ -35,7 +37,9 @@ def train_test_evaluate(train_size, seed):
 
     predictions = pipe.predict(test)
 
-    metrics = evaluate_classification(test['phase_binary_encoded'].values, predictions['phase_binary_encoded predicted'].values)
+    metrics = evaluate_classification(
+        test["phase_binary_encoded"].values, predictions["phase_binary_encoded predicted"].values
+    )
 
     summary = {
         **metrics,
@@ -49,7 +53,8 @@ def train_test_evaluate(train_size, seed):
 
     return summary
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     for seed in range(NUM_REPEATS):
         for train_size in LEARNING_CURVE_POINTS:
             train_test_evaluate(train_size, seed)

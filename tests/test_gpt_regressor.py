@@ -1,6 +1,5 @@
-from gptchem.gpt_regressor import GPTRegressor
-
 from gptchem.data import get_photoswitch_data
+from gptchem.gpt_regressor import GPTRegressor
 
 
 def test_gpt_regression():

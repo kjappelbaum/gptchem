@@ -1,16 +1,16 @@
-from gptchem.data import get_balasz_data
-from gptchem.tuner import Tuner
-from gptchem.extractor import ClassificationExtractor
-from gptchem.querier import Querier
+from pathlib import Path
 
+from fastcore.xtras import save_pickle
 from loguru import logger
 from sklearn.model_selection import train_test_split
-from gptchem.baselines.balasz import train_test_mof_synthesizability_baseline
-from gptchem.evaluator import evaluate_classification
-from gptchem.formatter import MOFSynthesisRecommenderFormatter
 
-from pathlib import Path
-from fastcore.xtras import save_pickle
+from gptchem.baselines.balasz import train_test_mof_synthesizability_baseline
+from gptchem.data import get_balasz_data
+from gptchem.evaluator import evaluate_classification
+from gptchem.extractor import ClassificationExtractor
+from gptchem.formatter import MOFSynthesisRecommenderFormatter
+from gptchem.querier import Querier
+from gptchem.tuner import Tuner
 
 train_sizes = [10, 20, 50, 100, 200, 400]
 repeats = 10
@@ -43,7 +43,7 @@ def train_test(train_size, seed):
     extractor = ClassificationExtractor()
     extracted = extractor(completions)
 
-    gpt_res = evaluate_classification(extracted, test_formatted)
+    gpt_res = evaluate_classification(extracted, test["success"])
 
     res = {
         **baseline_res,

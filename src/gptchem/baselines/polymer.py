@@ -15,6 +15,7 @@ POLYMER_FEATURES = [
     "length",
 ]
 from typing import List
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
@@ -62,8 +63,6 @@ def train_test_polymer_classification_baseline(
         "predictions": predictions if not tabpfn else None,
         **evaluate_classification(y_test, predictions),
     }
-
-
 
 
 def train_test_polymer_regression_baseline(

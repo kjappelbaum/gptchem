@@ -108,4 +108,4 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
 if __name__ == "__main__":
     for seed in range(num_trials):
         for noise_level in NOISE_LEVEL:
-            train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+994)
+            train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed + 994)

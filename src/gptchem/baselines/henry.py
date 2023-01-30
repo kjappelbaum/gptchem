@@ -1,9 +1,10 @@
 from sklearn.decomposition import PCA
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_selection import SelectFromModel
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
-from sklearn.ensemble import RandomForestClassifier
+
 from gptchem.evaluator import evaluate_classification, get_regression_metrics
 
 from ..models.xgboost import XGBClassificationBaseline, XGBRegressionBaseline
@@ -392,9 +393,7 @@ def train_test_henry_classification_baseline(
     }
 
 
-def train_test_henry_regression_baseline(
-    train_set, test_set, formatter, num_trials, seed
-):
+def train_test_henry_regression_baseline(train_set, test_set, formatter, num_trials, seed):
 
     X_train, y_train = train_set[FEATURES], train_set[formatter.label_column]
     X_test, y_test = test_set[FEATURES], test_set[formatter.label_column]

@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from loguru import logger
 from fastcore.all import L
 from fastcore.xtras import save_pickle
+from loguru import logger
 
 from gptchem.data import get_qmug_data
 from gptchem.evaluator import evaluate_generated_smiles, evaluate_homo_lumo_gap
@@ -20,6 +20,7 @@ temperatures = [0.0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5]
 noise_levels = [0.01, 0.1, 0.2, 0.5, 0.7, 1.0]
 
 logger.enable("gptchem")
+
 
 def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
     data = get_qmug_data()
@@ -75,9 +76,7 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
                     )
 
             except Exception as e:
-                logger.exception(
-                    f"{e}"
-                )
+                logger.exception(f"{e}")
                 constrain_satisfaction = {}
 
             res = {
@@ -91,9 +90,7 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
             res_at_temp.append(res)
 
         except Exception as e:
-            logger.exception(
-                f"{e}"
-            )
+            logger.exception(f"{e}")
 
     summary = {
         "train_size": num_train_points,
@@ -114,6 +111,4 @@ if __name__ == "__main__":
                 try:
                     train_test(num_train_point, temperatures, num_samples, noise_level, seed)
                 except Exception as e:
-                    logger.exception(
-                        f"{e}"
-                    )
+                    logger.exception(f"{e}")

@@ -95,9 +95,8 @@ def train_test_opv_classification_baseline(
     return {"tabpfn": tabpfn_results, "gpr": gpr_results, "xgb": xgb_results, "rf": rf_results}
 
 
-
 def train_test_opv_regression_baseline(
-    data, 
+    data,
     train_smiles,
     test_smiles,
     formatter,

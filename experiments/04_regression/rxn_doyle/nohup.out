@@ -4442,3 +4442,992 @@ DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
 DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m HTTP/1.1" 200 1004
 INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m processing_ms=41 request_id=a2e024a6ac1214b1d50abf9e4c027729 response_code=200
 2023-01-30 13:57:06.271 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m processing_ms=37 request_id=3de2cb95327c6b559604645e7c584da6 response_code=200
+2023-01-30 13:59:07.074 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m processing_ms=48 request_id=1e0293bb8b5d71ce50dc7dd3b0c6388e response_code=200
+2023-01-30 14:01:10.086 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m HTTP/1.1" 200 1443
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m processing_ms=41 request_id=25bae863b522e0b34d3c3359927d560f response_code=200
+2023-01-30 14:03:10.644 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m HTTP/1.1" 200 3380
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-MbzMhkdLYCOPhBCbHAQyP85m processing_ms=43 request_id=be607cd8e413f3a7ec69019bc4337e09 response_code=200
+2023-01-30 14:05:11.328 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-30 14:05:11.330 | DEBUG    | gptchem.tuner:tune:207 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_135302', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_135302/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-30-13-04-43', 'ft_id': 'ft-MbzMhkdLYCOPhBCbHAQyP85m', 'date': '20230130_140511', 'train_file_id': 'file-7jzjKt8yJFCLraTG9HmE5qDS', 'valid_file_id': None}
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-04-43", "prompt": ["What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive COC1=NOC(C(OCC)=O)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=C(C(OCC)=O)C=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(C2=CC=CC=C2)=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive COC1=NOC(C(OCC)=O)=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive O=C(OC)C1=NOC(C2=CC=CS2)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN1CCCN2C1=NCCC2  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=NOC(C2=CC=CC=C2)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(C2=CC=CC=C2)=CON=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=CC(N2C=CC=C2)=NO1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=C(C(OCC)=O)C=NO1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=C(C(OCC)=O)C=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=NOC=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=C(C(OCC)=O)C=NO1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive O=C(OC)C1=CC=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=NOC(C2=CC=CC=C2)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=CC=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=CC=NO1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(CC)C=C1?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1506
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=1102 request_id=ff24a74e040ad7f3e2be296cb1b2365d response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-04-43", "prompt": ["What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=CC(C)=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=CC(C(OCC)=O)=NO1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=CON=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=CC(C(OCC)=O)=NO1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=CC(N2C=CC=C2)=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C12=CON=C1C=CC=C2  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=C(C(OCC)=O)C=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive O=C(OC)C1=NOC(C2=CC=CS2)=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CCOC(C1=NOC=C1)=O  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=CC=NO1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=CON=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive C1(C2=CC=CC=C2)=CON=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive O=C(OC)C1=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=CC(N2C=CC=C2)=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C12=C(C=CC=C2)ON=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(C2=CC=CC=C2)=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1502
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=105 request_id=5bf06fd7884986edb83542f9a82f6f29 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-04-43", "prompt": ["What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive C12=CON=C1C=CC=C2  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(C2=CC=CC=C2)=CON=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CCOC(C1=NOC=C1)=O  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=C(C(OCC)=O)C=NO1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive C1(C2=CC=CC=C2)=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive COC1=NOC(C(OCC)=O)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive COC1=NOC(C(OCC)=O)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=CC(C(OCC)=O)=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=NOC(C2=CC=CC=C2)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CCOC(C1=CON=C1)=O  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive O=C(OC)C1=NOC(C2=CC=CO2)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=NOC=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C12=CON=C1C=CC=C2  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive O=C(OC)C1=CC=NO1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=CC(C)=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive O=C(OC)C1=NOC(C2=CC=CO2)=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive O=C(OC)C1=CC=NO1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CCOC(C1=CON=C1)=O  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CN=CC=C1?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1504
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=272 request_id=f6e722718b5969d7155c99be5a4bb336 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-04-43", "prompt": ["What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive O=C(OC)C1=NOC(C2=CC=CO2)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=CC(C)=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=CON=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=NOC(C(OCC)=O)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=NOC(C2=CC=CC=C2)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=CC(C)=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=CC=NO1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive O=C(OC)C1=CC=NO1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=NOC=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive COC1=NOC(C(OCC)=O)=C1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C12=C(C=CC=C2)ON=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=NOC(C(OCC)=O)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C12=CON=C1C=CC=C2  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=NOC(C2=CC=CC=C2)=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive O=C(OC)C1=NOC(C2=CC=CO2)=C1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=NOC(C2=CC=CC=C2)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive O=C(OC)C1=NOC(C2=CC=CO2)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=NC=CC=C1?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1504
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=104 request_id=6068fc05bdd6084e0034ae6f4394bc1d response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-04-43", "prompt": ["What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C12=C(C=CC=C2)ON=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=NOC(C(OCC)=O)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CCOC(C1=CON=C1)=O  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CCOC(C1=CON=C1)=O  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CCOC(C1=NOC=C1)=O  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=CC(C(OCC)=O)=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=CC(N2C=CC=C2)=NO1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CCOC(C1=NOC=C1)=O  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive COC1=NOC(C(OCC)=O)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=NOC(C(OCC)=O)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive COC1=NOC(C(OCC)=O)=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=CC=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=NOC=C1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C12=CON=C1C=CC=C2  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=NOC=C1  base CN1CCCN2C1=NCCC2  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CCOC(C1=NOC=C1)=O  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1503
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=106 request_id=e609bd3c675f732d6e67ca5c1152b4f9 response_code=200
+DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/doyle_rxn/dreher_doyle.csv from https://www.dropbox.com/s/gjxatqagwh3cwb6/dreher_doyle.csv?dl=1
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_135302/train.jsonl: file-7jzjKt8yJFCLraTG9HmE5qDS
+'rxnfp-rbf'
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.00525 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.33266 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 1e-05   │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 4.81732 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.11819 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.49911 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.02247 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.78388 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 2.42073 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.50262 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_140545%2Ftrain.jsonl
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_140545%2Ftrain.jsonl HTTP/1.1" 404 257
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_140545%2Ftrain.jsonl processing_ms=5 request_id=f8567b39a229df46ec46d335d5f5801d response_code=404
+INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_140545/train.jsonl)' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.06379 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.01418 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.37614 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.10811 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.84393 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 8.33455 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.13315 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Upload progress:   0%|          | 0.00/45.8k [00:00<?, ?it/s]INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/files
+DEBUG:openai:api_version=None data=None message='Post details'
+Upload progress: 100%|██████████| 45.8k/45.8k [00:00<00:00, 96.9Mit/s]
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/files HTTP/1.1" 200 320
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=1285 request_id=9ae78d2e819fe3869836c76feb5297b0 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/fine-tunes
+DEBUG:openai:api_version=None data='{"training_file": "file-lw4fkHmJAhikE4bwzeLBukOP", "model": "ada", "n_epochs": 8, "learning_rate_multiplier": 0.02}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/fine-tunes HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes processing_ms=90 request_id=f886f0408d64b5d16c30b7595d3483ee response_code=200
+2023-01-30 14:05:48.058 | DEBUG    | gptchem.tuner:tune:188 - Requested fine tuning. {
+  "created_at": 1675083947,
+  "events": [
+    {
+      "created_at": 1675083947,
+      "level": "info",
+      "message": "Created fine-tune: ft-WvdUYqUR3eTSIpOqhbZih8T2",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-WvdUYqUR3eTSIpOqhbZih8T2",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 45758,
+      "created_at": 1675083947,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_140545/train.jsonl",
+      "id": "file-lw4fkHmJAhikE4bwzeLBukOP",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1675083947,
+  "validation_files": []
+}
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 processing_ms=42 request_id=bee54ef840b5ec4c8ba7c78c3de66542 response_code=200
+2023-01-30 14:05:48.738 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 processing_ms=37 request_id=2a7f51cb74b869869f64202bcccd0a69 response_code=200
+2023-01-30 14:07:49.184 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 processing_ms=37 request_id=7829c87cd4d139ccb61fba0340eaab9b response_code=200
+2023-01-30 14:09:50.123 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 processing_ms=40 request_id=a7b999b8f8f5867c7db638eea17affcc response_code=200
+2023-01-30 14:11:50.664 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 processing_ms=37 request_id=2dcf5879cfeaa60a948df931295ec8f6 response_code=200
+2023-01-30 14:13:51.498 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 processing_ms=33 request_id=b1df47b8f50bfbdadf478948de71748e response_code=200
+2023-01-30 14:15:52.003 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 processing_ms=39 request_id=d8508ff476a5441de275f9b918d678ae response_code=200
+2023-01-30 14:17:52.578 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 HTTP/1.1" 200 1869
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 processing_ms=36 request_id=2afba2b855dc53b416ef81c32c1c0d77 response_code=200
+2023-01-30 14:19:53.781 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 HTTP/1.1" 200 3380
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-WvdUYqUR3eTSIpOqhbZih8T2 processing_ms=39 request_id=a8437ae430deac5eafe8640e0a5dbfba response_code=200
+2023-01-30 14:21:54.233 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-30 14:21:54.234 | DEBUG    | gptchem.tuner:tune:207 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_140545', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_140545/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-30-13-21-07', 'ft_id': 'ft-WvdUYqUR3eTSIpOqhbZih8T2', 'date': '20230130_142154', 'train_file_id': 'file-lw4fkHmJAhikE4bwzeLBukOP', 'valid_file_id': None}
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-21-07", "prompt": ["What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive O=C(OC)C1=NOC(C2=CC=CO2)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CCOC(C1=NOC=C1)=O  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=NOC=C1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive COC1=NOC(C(OCC)=O)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive COC1=NOC(C(OCC)=O)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(C2=CC=CC=C2)=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=CC(C(OCC)=O)=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(C2=CC=CC=C2)=CON=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=CC=NO1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive O=C(OC)C1=CC=NO1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C12=CON=C1C=CC=C2  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN1CCCN2C1=NCCC2  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=NOC=C1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive O=C(OC)C1=NOC(C2=CC=CS2)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=NOC(C2=CC=CC=C2)=C1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CCOC(C1=NOC=C1)=O  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CCOC(C1=NOC=C1)=O  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive COC1=NOC(C(OCC)=O)=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive O=C(OC)C1=NOC(C2=CC=CS2)=C1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=NOC(C2=CC=CC=C2)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CC=C(OC)C=C1?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1500
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=142 request_id=611e972afe6a8782856efbe1449c3a44 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-21-07", "prompt": ["What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive O=C(OC)C1=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=CON=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive O=C(OC)C1=CC=NO1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive C12=C(C=CC=C2)ON=C1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive COC1=NOC(C(OCC)=O)=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=C(C(OCC)=O)C=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C12=CON=C1C=CC=C2  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=NOC=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=NOC=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C12=CON=C1C=CC=C2  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive C12=C(C=CC=C2)ON=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(C2=CC=CC=C2)=CON=C1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CCOC(C1=NOC=C1)=O  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive C1(C2=CC=CC=C2)=NOC=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=NOC=C1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=C(C(OCC)=O)C=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=NOC(C2=CC=CC=C2)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CN=CC=C1?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 500 147
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=None request_id=87339393c7cfa50f59da2f67b3794407 response_code=500
+INFO:openai:error_code=None error_message='internal error' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/doyle_rxn/dreher_doyle.csv from https://www.dropbox.com/s/gjxatqagwh3cwb6/dreher_doyle.csv?dl=1
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_140545/train.jsonl: file-lw4fkHmJAhikE4bwzeLBukOP
+internal error {
+    "error": {
+        "message": "internal error",
+        "type": "invalid_request_error",
+        "param": null,
+        "code": null
+    }
+}
+ 500 {'error': {'message': 'internal error', 'type': 'invalid_request_error', 'param': None, 'code': None}} {'Date': 'Mon, 30 Jan 2023 13:21:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '147', 'Connection': 'keep-alive', 'Vary': 'Origin', 'X-Request-Id': '87339393c7cfa50f59da2f67b3794407', 'Strict-Transport-Security': 'max-age=15724800; includeSubDomains'}
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.04626 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.13974 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 7.81585 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.28699 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.42976 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.08158 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 2.32594 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 3.48787 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.43554 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_142258%2Ftrain.jsonl
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_142258%2Ftrain.jsonl HTTP/1.1" 404 257
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_142258%2Ftrain.jsonl processing_ms=5 request_id=bcd11de04bb239215b372369b3edf703 response_code=404
+INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_142258/train.jsonl)' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.08908 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.01429 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.33179 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.14628 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.77795 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 8.29937 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.08721 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Upload progress:   0%|          | 0.00/89.9k [00:00<?, ?it/s]INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/files
+DEBUG:openai:api_version=None data=None message='Post details'
+Upload progress: 100%|██████████| 89.9k/89.9k [00:00<00:00, 175Mit/s]
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/files HTTP/1.1" 200 320
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=1190 request_id=73fde86c823834f977e753dce511972a response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/fine-tunes
+DEBUG:openai:api_version=None data='{"training_file": "file-hlF7UWvrUlnQSLGhPHdFshm3", "model": "ada", "n_epochs": 8, "learning_rate_multiplier": 0.02}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/fine-tunes HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes processing_ms=97 request_id=527ea7c788c49fc95e6f2bac509efcfb response_code=200
+2023-01-30 14:23:00.389 | DEBUG    | gptchem.tuner:tune:188 - Requested fine tuning. {
+  "created_at": 1675084980,
+  "events": [
+    {
+      "created_at": 1675084980,
+      "level": "info",
+      "message": "Created fine-tune: ft-ryaRyaI8N9KVSshRDRMFYMJh",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-ryaRyaI8N9KVSshRDRMFYMJh",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 89938,
+      "created_at": 1675084979,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_142258/train.jsonl",
+      "id": "file-hlF7UWvrUlnQSLGhPHdFshm3",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1675084980,
+  "validation_files": []
+}
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh processing_ms=42 request_id=66cd4052c9495846b6abee8d6c06dbe8 response_code=200
+2023-01-30 14:23:00.564 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh processing_ms=36 request_id=4d455d55ab78af05f0b62a2caf23221c response_code=200
+2023-01-30 14:25:01.006 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh processing_ms=39 request_id=a2c38eb4e82af06a9a66f9d53c120239 response_code=200
+2023-01-30 14:27:03.591 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh processing_ms=41 request_id=f9496c1913551a8c95adcbe4c62a47dc response_code=200
+2023-01-30 14:29:04.193 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh HTTP/1.1" 200 1443
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh processing_ms=32 request_id=4dc82c1029946ccaba3d4a468932262d response_code=200
+2023-01-30 14:31:04.671 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh HTTP/1.1" 200 2011
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh processing_ms=47 request_id=d13a9e74bbff17c958689c8e3ef12421 response_code=200
+2023-01-30 14:33:05.154 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh HTTP/1.1" 200 2579
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh processing_ms=43 request_id=335164916b83eb0995f4b439541cf6d4 response_code=200
+2023-01-30 14:35:05.632 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh HTTP/1.1" 200 3380
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-ryaRyaI8N9KVSshRDRMFYMJh processing_ms=41 request_id=1796246a59ba721ad5dcae3eed0ea847 response_code=200
+2023-01-30 14:37:06.097 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-30 14:37:06.098 | DEBUG    | gptchem.tuner:tune:207 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_142258', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_142258/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-30-13-35-05', 'ft_id': 'ft-ryaRyaI8N9KVSshRDRMFYMJh', 'date': '20230130_143706', 'train_file_id': 'file-hlF7UWvrUlnQSLGhPHdFshm3', 'valid_file_id': None}
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-35-05", "prompt": ["What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=C(C(OCC)=O)C=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN1CCCN2C1=NCCC2  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=CC=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=NOC=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C12=CON=C1C=CC=C2  base CN1CCCN2C1=NCCC2  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=CON=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=CC=NO1  base CN1CCCN2C1=NCCC2  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CCOC(C1=CON=C1)=O  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=CC(C(OCC)=O)=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=NOC=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C12=C(C=CC=C2)ON=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=NOC(C(OCC)=O)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=CC(C)=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=CC(C)=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=NOC=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=CC(C)=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=NOC=C1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive C1(C2=CC=CC=C2)=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=CC=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(CC)C=C1?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1508
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=954 request_id=6302cf8f0def71d5da52ea25d3e55455 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-35-05", "prompt": ["What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=NOC=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=NOC(C2=CC=CC=C2)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=C(C(OCC)=O)C=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive O=C(OC)C1=NOC(C2=CC=CO2)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=CC=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive O=C(OC)C1=NOC(C2=CC=CS2)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=CC(C)=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C12=C(C=CC=C2)ON=C1  base CN1CCCN2C1=NCCC2  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive O=C(OC)C1=NOC(C2=CC=CO2)=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive O=C(OC)C1=NOC(C2=CC=CS2)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=CC(C)=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=CC(C)=NO1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive O=C(OC)C1=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CCOC(C1=CON=C1)=O  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=NOC(C(OCC)=O)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C12=CON=C1C=CC=C2  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(CC)C=C1?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1508
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=114 request_id=7ca4100ac4d3eb0776de8970b1657456 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-35-05", "prompt": ["What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C12=C(C=CC=C2)ON=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C12=C(C=CC=C2)ON=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=CC(C(OCC)=O)=NO1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=CC(N2C=CC=C2)=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=CC(N2C=CC=C2)=NO1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CCOC(C1=CON=C1)=O  base CN1CCCN2C1=NCCC2  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=CON=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=CC(C(OCC)=O)=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=CC=NO1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive O=C(OC)C1=NOC(C2=CC=CS2)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive COC1=NOC(C(OCC)=O)=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C12=CON=C1C=CC=C2  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive O=C(OC)C1=NOC(C2=CC=CO2)=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=CC(C)=NO1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CCOC(C1=NOC=C1)=O  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CCOC(C1=NOC=C1)=O  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive C1(C2=CC=CC=C2)=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=C(C(OCC)=O)C=NO1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C12=CON=C1C=CC=C2  base CN1CCCN2C1=NCCC2  aryl halide BrC1=NC=CC=C1?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1508
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=117 request_id=a0c4e43d5bb3844c093ee41afa083b69 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-35-05", "prompt": ["What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=NOC(C(OCC)=O)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=CC=NO1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=CC(C)=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive O=C(OC)C1=NOC(C2=CC=CS2)=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=CC=NO1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=CC=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=CC=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C12=C(C=CC=C2)ON=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=CC(C(OCC)=O)=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CCOC(C1=CON=C1)=O  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=CC=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=NOC(C2=CC=CC=C2)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=NOC(C2=CC=CC=C2)=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=NOC(C2=CC=CC=C2)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive CC1=C(C(OCC)=O)C=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive C12=C(C=CC=C2)ON=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=CC=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=NOC=C1  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CC=C(OC)C=C1?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1504
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=108 request_id=72d333946801c6a60b6f48f69293a14c response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-35-05", "prompt": ["What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C12=C(C=CC=C2)ON=C1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=C(C(OCC)=O)C=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive O=C(OC)C1=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CCOC(C1=CON=C1)=O  base CN1CCCN2C1=NCCC2  aryl halide BrC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=CC(C(OCC)=O)=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive O=C(OC)C1=CC=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=CC(C)=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive O=C(OC)C1=NOC(C2=CC=CS2)=C1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=CC(N2C=CC=C2)=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide BrC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive C1(N(CC2=CC=CC=C2)CC3=CC=CC=C3)=NOC=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C12=C(C=CC=C2)ON=C1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide IC1=CN=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C(OC)=CC=C2OC  additive C1(C2=CC=CC=C2)=CON=C1  base CN1CCCN2C1=NCCC2  aryl halide ClC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive CC1=CC=NO1  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide ClC1=NC=CC=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CCOC(C1=NOC=C1)=O  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(OC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C(C)(C)C)C(C)(C)C)C=CC=C2  additive CC1=NOC(C2=CC=CC=C2)=C1  base CN1CCCN2C1=NCCC2  aryl halide IC1=CC=C(C(F)(F)F)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P([C@@]3(C[C@@H]4C5)C[C@H](C4)C[C@H]5C3)[C@]6(C7)C[C@@H](C[C@@H]7C8)C[C@@H]8C6)C(OC)=CC=C2OC  additive CC1=CC(N2C=CC=C2)=NO1  base CC(C)(C)/N=C(N(C)C)/N(C)C  aryl halide ClC1=CC=C(CC)C=C1?###", "What is the yield of the reaction ligand CC(C)C(C=C(C(C)C)C=C1C(C)C)=C1C2=C(P(C3CCCCC3)C4CCCCC4)C=CC=C2  additive FC(C=CC=C1F)=C1C2=CC=NO2  base CN(C)P(N(C)C)(N(C)C)=NP(N(C)C)(N(C)C)=NCC  aryl halide BrC1=CC=C(OC)C=C1?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1507
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=118 request_id=cb5682ef8545f3574be0e8fe0edb84bb response_code=200
+DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/doyle_rxn/dreher_doyle.csv from https://www.dropbox.com/s/gjxatqagwh3cwb6/dreher_doyle.csv?dl=1
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_142258/train.jsonl: file-hlF7UWvrUlnQSLGhPHdFshm3
+'rxnfp-rbf'
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.04344 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.00499 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -5e-05   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.99995 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.00014 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.42743 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.42789 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.57254 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_143731%2Ftrain.jsonl
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_143731%2Ftrain.jsonl HTTP/1.1" 404 257
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_143731%2Ftrain.jsonl processing_ms=5 request_id=93efcf6ea9fa7aa3da98c96682a789a0 response_code=404
+INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_143731/train.jsonl)' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │      -0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │       0 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │       1 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │    -0   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │     0.5 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │     1   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │     0.5 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Upload progress:   0%|          | 0.00/1.57k [00:00<?, ?it/s]INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/files
+DEBUG:openai:api_version=None data=None message='Post details'
+Upload progress: 100%|██████████| 1.57k/1.57k [00:00<00:00, 3.42Mit/s]
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/files HTTP/1.1" 200 319
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=506 request_id=7269eb79d8c3e92c1164f0de386de3d3 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/fine-tunes
+DEBUG:openai:api_version=None data='{"training_file": "file-oxHiUei1FUwvxOziGFuEhvrj", "model": "ada", "n_epochs": 8, "learning_rate_multiplier": 0.02}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/fine-tunes HTTP/1.1" 200 1002
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes processing_ms=120 request_id=a635697e3c37442c5c4425a1478a8868 response_code=200
+2023-01-30 14:37:32.300 | DEBUG    | gptchem.tuner:tune:188 - Requested fine tuning. {
+  "created_at": 1675085852,
+  "events": [
+    {
+      "created_at": 1675085852,
+      "level": "info",
+      "message": "Created fine-tune: ft-XgRnQWNspKTSTci5HTlz0Ova",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-XgRnQWNspKTSTci5HTlz0Ova",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 1568,
+      "created_at": 1675085851,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_143731/train.jsonl",
+      "id": "file-oxHiUei1FUwvxOziGFuEhvrj",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1675085852,
+  "validation_files": []
+}
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova HTTP/1.1" 200 1002
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova processing_ms=34 request_id=5ea45982d641b51f86222ff6fc7704f4 response_code=200
+2023-01-30 14:37:32.468 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova processing_ms=36 request_id=0e1c2ada20f8dd83e7eb2f21e34ea0d8 response_code=200
+2023-01-30 14:39:37.717 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova processing_ms=41 request_id=4ff40b7a52a5754bdc56f781a816a299 response_code=200
+2023-01-30 14:41:38.209 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova processing_ms=39 request_id=ceddaf1a3e269d1389f1375cdcce906c response_code=200
+2023-01-30 14:43:38.694 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova processing_ms=37 request_id=21bff5b99839b59bd7eaeeb58f900493 response_code=200
+2023-01-30 14:45:40.974 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova processing_ms=44 request_id=1783662f89bd44c7788d042154a74e3b response_code=200
+2023-01-30 14:47:41.633 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova processing_ms=42 request_id=50d8db8fea2af0075bc7e5ace4e6f548 response_code=200
+2023-01-30 14:49:42.088 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova HTTP/1.1" 200 1302
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova processing_ms=40 request_id=0c9b47a183a69d65aff90fb4e7f73976 response_code=200
+2023-01-30 14:51:42.694 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova HTTP/1.1" 200 1467
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova processing_ms=43 request_id=df30a0302c0063fecc2329599aacfb2f response_code=200
+2023-01-30 14:53:46.448 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova HTTP/1.1" 200 1467
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova processing_ms=37 request_id=3ebc20a79b04b2cc10c10d60c2fa0e7d response_code=200
+2023-01-30 14:55:46.936 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova HTTP/1.1" 200 3543
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-XgRnQWNspKTSTci5HTlz0Ova processing_ms=37 request_id=d2893148eea77f9568b970562a97bef3 response_code=200
+2023-01-30 14:57:49.730 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-30 14:57:49.731 | DEBUG    | gptchem.tuner:tune:207 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_143731', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_143731/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-30-13-56-45', 'ft_id': 'ft-XgRnQWNspKTSTci5HTlz0Ova', 'date': '20230130_145749', 'train_file_id': 'file-oxHiUei1FUwvxOziGFuEhvrj', 'valid_file_id': None}
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-56-45", "prompt": ["What is the yield of the reaction ligand 0  additive 7  base 1  aryl halide 13?###", "What is the yield of the reaction ligand 0  additive 12  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 0  additive 11  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 3  additive 8  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 1  additive 12  base 1  aryl halide 11?###", "What is the yield of the reaction ligand 2  additive 9  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 0  additive 19  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 20  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 0  additive 1  base 0  aryl halide 12?###", "What is the yield of the reaction ligand 2  additive 15  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 2  additive 15  base 0  aryl halide 4?###", "What is the yield of the reaction ligand 0  additive 8  base 0  aryl halide 4?###", "What is the yield of the reaction ligand 2  additive 0  base 1  aryl halide 11?###", "What is the yield of the reaction ligand 1  additive 21  base 0  aryl halide 10?###", "What is the yield of the reaction ligand 3  additive 12  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 3  additive 9  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 2  additive 16  base 0  aryl halide 11?###", "What is the yield of the reaction ligand 3  additive 14  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 0  additive 4  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 2  additive 5  base 2  aryl halide 10?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1511
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=1069 request_id=26fb9e2a8fba92e17fb8f7643635dced response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-56-45", "prompt": ["What is the yield of the reaction ligand 3  additive 8  base 1  aryl halide 6?###", "What is the yield of the reaction ligand 1  additive 5  base 0  aryl halide 7?###", "What is the yield of the reaction ligand 3  additive 5  base 1  aryl halide 5?###", "What is the yield of the reaction ligand 1  additive 16  base 0  aryl halide 9?###", "What is the yield of the reaction ligand 0  additive 2  base 0  aryl halide 5?###", "What is the yield of the reaction ligand 1  additive 11  base 2  aryl halide 3?###", "What is the yield of the reaction ligand 3  additive 14  base 1  aryl halide 5?###", "What is the yield of the reaction ligand 1  additive 10  base 1  aryl halide 13?###", "What is the yield of the reaction ligand 2  additive 21  base 2  aryl halide 13?###", "What is the yield of the reaction ligand 3  additive 1  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 2  additive 7  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 2  additive 3  base 1  aryl halide 3?###", "What is the yield of the reaction ligand 0  additive 15  base 0  aryl halide 0?###", "What is the yield of the reaction ligand 3  additive 8  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 2  additive 6  base 1  aryl halide 14?###", "What is the yield of the reaction ligand 1  additive 17  base 1  aryl halide 11?###", "What is the yield of the reaction ligand 0  additive 13  base 2  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 15  base 2  aryl halide 7?###", "What is the yield of the reaction ligand 1  additive 0  base 0  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 6  base 1  aryl halide 2?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1511
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=92 request_id=6fe8ca2816efb6026985d11daa2ec992 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-56-45", "prompt": ["What is the yield of the reaction ligand 1  additive 15  base 2  aryl halide 7?###", "What is the yield of the reaction ligand 3  additive 20  base 0  aryl halide 0?###", "What is the yield of the reaction ligand 1  additive 4  base 2  aryl halide 1?###", "What is the yield of the reaction ligand 3  additive 8  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 0  additive 4  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 2  additive 16  base 2  aryl halide 5?###", "What is the yield of the reaction ligand 0  additive 19  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 15  base 0  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 8  base 0  aryl halide 10?###", "What is the yield of the reaction ligand 3  additive 18  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 14  base 1  aryl halide 6?###", "What is the yield of the reaction ligand 2  additive 9  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 2  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 0  additive 10  base 2  aryl halide 7?###", "What is the yield of the reaction ligand 3  additive 4  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 3  additive 15  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 0  additive 12  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 1  additive 19  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 2  additive 2  base 0  aryl halide 7?###", "What is the yield of the reaction ligand 1  additive 18  base 2  aryl halide 12?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1510
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=347 request_id=f6dc6d2cd65cf56b1474e780f254c853 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-56-45", "prompt": ["What is the yield of the reaction ligand 1  additive 21  base 2  aryl halide 6?###", "What is the yield of the reaction ligand 3  additive 9  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 10  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 0  additive 5  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 2  additive 5  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 3  additive 11  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 5  base 0  aryl halide 3?###", "What is the yield of the reaction ligand 3  additive 15  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 1  additive 1  base 1  aryl halide 3?###", "What is the yield of the reaction ligand 2  additive 19  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 0  additive 12  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 0  additive 7  base 0  aryl halide 3?###", "What is the yield of the reaction ligand 1  additive 3  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 2  additive 9  base 0  aryl halide 10?###", "What is the yield of the reaction ligand 0  additive 7  base 0  aryl halide 14?###", "What is the yield of the reaction ligand 2  additive 11  base 0  aryl halide 12?###", "What is the yield of the reaction ligand 2  additive 18  base 0  aryl halide 6?###", "What is the yield of the reaction ligand 0  additive 16  base 2  aryl halide 5?###", "What is the yield of the reaction ligand 2  additive 11  base 2  aryl halide 14?###", "What is the yield of the reaction ligand 3  additive 18  base 2  aryl halide 4?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1509
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=90 request_id=ddcd4996425911cb7b210d0a27a07cb0 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-13-56-45", "prompt": ["What is the yield of the reaction ligand 2  additive 7  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 2  additive 17  base 2  aryl halide 14?###", "What is the yield of the reaction ligand 2  additive 7  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 0  additive 4  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 1  additive 8  base 1  aryl halide 3?###", "What is the yield of the reaction ligand 3  additive 21  base 0  aryl halide 5?###", "What is the yield of the reaction ligand 1  additive 19  base 0  aryl halide 9?###", "What is the yield of the reaction ligand 1  additive 10  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 0  additive 13  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 1  additive 7  base 0  aryl halide 7?###", "What is the yield of the reaction ligand 2  additive 12  base 1  aryl halide 6?###", "What is the yield of the reaction ligand 3  additive 2  base 1  aryl halide 14?###", "What is the yield of the reaction ligand 0  additive 16  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 0  additive 0  base 2  aryl halide 7?###", "What is the yield of the reaction ligand 2  additive 14  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 1  additive 6  base 2  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 21  base 2  aryl halide 13?###", "What is the yield of the reaction ligand 0  additive 2  base 2  aryl halide 0?###", "What is the yield of the reaction ligand 1  additive 3  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 1  additive 4  base 0  aryl halide 5?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1510
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=108 request_id=ef5da63eaf42a3e05b516076851dce13 response_code=200
+DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/doyle_rxn/dreher_doyle.csv from https://www.dropbox.com/s/gjxatqagwh3cwb6/dreher_doyle.csv?dl=1
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_143731/train.jsonl: file-oxHiUei1FUwvxOziGFuEhvrj
+'rxnfp-rbf'
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.0072  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.99765 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.01046 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.04049 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.49753 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.01786 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  1.06765 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.9969  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_145820%2Ftrain.jsonl
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_145820%2Ftrain.jsonl HTTP/1.1" 404 257
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_145820%2Ftrain.jsonl processing_ms=4 request_id=83dd2eb32034339af0113e8eb54d1123 response_code=404
+INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_145820/train.jsonl)' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.04479 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.01772 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.08869 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │     0   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │     0.5 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │     1   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │     0.5 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Upload progress:   0%|          | 0.00/3.15k [00:00<?, ?it/s]INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/files
+DEBUG:openai:api_version=None data=None message='Post details'
+Upload progress: 100%|██████████| 3.15k/3.15k [00:00<00:00, 6.81Mit/s]
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/files HTTP/1.1" 200 319
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=820 request_id=bccda6e00a0021ad955d5222a7c7318c response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/fine-tunes
+DEBUG:openai:api_version=None data='{"training_file": "file-9tdvD5Rp6j4s5Y4aeU0xHQ8r", "model": "ada", "n_epochs": 8, "learning_rate_multiplier": 0.02}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/fine-tunes HTTP/1.1" 200 1002
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes processing_ms=84 request_id=bf5d21a75e26736f4352b7b9a0d8e346 response_code=200
+2023-01-30 14:58:22.569 | DEBUG    | gptchem.tuner:tune:188 - Requested fine tuning. {
+  "created_at": 1675087102,
+  "events": [
+    {
+      "created_at": 1675087102,
+      "level": "info",
+      "message": "Created fine-tune: ft-uUg10CCT2FuzpqOOFkqxtkgH",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-uUg10CCT2FuzpqOOFkqxtkgH",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 3146,
+      "created_at": 1675087102,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_145820/train.jsonl",
+      "id": "file-9tdvD5Rp6j4s5Y4aeU0xHQ8r",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1675087102,
+  "validation_files": []
+}
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-uUg10CCT2FuzpqOOFkqxtkgH
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-uUg10CCT2FuzpqOOFkqxtkgH HTTP/1.1" 200 1002
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-uUg10CCT2FuzpqOOFkqxtkgH processing_ms=40 request_id=0eb510daae1f85fbdabb55b8da225ce4 response_code=200
+2023-01-30 14:58:23.051 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-uUg10CCT2FuzpqOOFkqxtkgH
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-uUg10CCT2FuzpqOOFkqxtkgH HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-uUg10CCT2FuzpqOOFkqxtkgH processing_ms=39 request_id=d06dffdebbca2ab80f9a3ca0880d581d response_code=200
+2023-01-30 15:00:24.110 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-uUg10CCT2FuzpqOOFkqxtkgH
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-uUg10CCT2FuzpqOOFkqxtkgH HTTP/1.1" 200 3378
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-uUg10CCT2FuzpqOOFkqxtkgH processing_ms=42 request_id=ebbd36ea7ac9f2ef2c6d7a61f675daf0 response_code=200
+2023-01-30 15:02:24.616 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-30 15:02:24.618 | DEBUG    | gptchem.tuner:tune:207 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_145820', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_145820/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-30-14-01-51', 'ft_id': 'ft-uUg10CCT2FuzpqOOFkqxtkgH', 'date': '20230130_150224', 'train_file_id': 'file-9tdvD5Rp6j4s5Y4aeU0xHQ8r', 'valid_file_id': None}
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-14-01-51", "prompt": ["What is the yield of the reaction ligand 2  additive 7  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 1  additive 5  base 0  aryl halide 7?###", "What is the yield of the reaction ligand 3  additive 6  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 2  additive 0  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 2  additive 11  base 0  aryl halide 12?###", "What is the yield of the reaction ligand 1  additive 4  base 0  aryl halide 5?###", "What is the yield of the reaction ligand 0  additive 16  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 0  additive 2  base 2  aryl halide 0?###", "What is the yield of the reaction ligand 0  additive 11  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 3  additive 2  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 2  additive 6  base 1  aryl halide 14?###", "What is the yield of the reaction ligand 2  additive 19  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 0  additive 8  base 0  aryl halide 4?###", "What is the yield of the reaction ligand 0  additive 0  base 2  aryl halide 7?###", "What is the yield of the reaction ligand 0  additive 3  base 0  aryl halide 1?###", "What is the yield of the reaction ligand 1  additive 16  base 0  aryl halide 9?###", "What is the yield of the reaction ligand 3  additive 20  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 3  additive 8  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 3  additive 15  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 3  additive 15  base 2  aryl halide 7?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1511
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=97 request_id=d0efda2d744c3af7f5beaa158673673e response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-14-01-51", "prompt": ["What is the yield of the reaction ligand 0  additive 10  base 2  aryl halide 7?###", "What is the yield of the reaction ligand 0  additive 12  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 1  additive 10  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 0  additive 1  base 0  aryl halide 12?###", "What is the yield of the reaction ligand 1  additive 12  base 1  aryl halide 11?###", "What is the yield of the reaction ligand 3  additive 15  base 0  aryl halide 2?###", "What is the yield of the reaction ligand 0  additive 4  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 2  additive 12  base 1  aryl halide 6?###", "What is the yield of the reaction ligand 3  additive 15  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 1  additive 15  base 2  aryl halide 7?###", "What is the yield of the reaction ligand 1  additive 17  base 1  aryl halide 11?###", "What is the yield of the reaction ligand 0  additive 12  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 14  base 1  aryl halide 5?###", "What is the yield of the reaction ligand 0  additive 12  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 2  additive 9  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 18  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 1  additive 3  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 0  additive 13  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 1  additive 3  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 2  additive 15  base 1  aryl halide 7?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1512
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=872 request_id=70444a1d65cf54dd935d182102fdc02a response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-14-01-51", "prompt": ["What is the yield of the reaction ligand 2  additive 5  base 2  aryl halide 10?###", "What is the yield of the reaction ligand 2  additive 18  base 0  aryl halide 6?###", "What is the yield of the reaction ligand 3  additive 2  base 1  aryl halide 14?###", "What is the yield of the reaction ligand 3  additive 4  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 4  base 2  aryl halide 1?###", "What is the yield of the reaction ligand 0  additive 19  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 1  additive 18  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 2  additive 15  base 0  aryl halide 4?###", "What is the yield of the reaction ligand 0  additive 13  base 2  aryl halide 8?###", "What is the yield of the reaction ligand 1  additive 19  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 1  additive 6  base 2  aryl halide 8?###", "What is the yield of the reaction ligand 1  additive 0  base 0  aryl halide 4?###", "What is the yield of the reaction ligand 0  additive 7  base 0  aryl halide 14?###", "What is the yield of the reaction ligand 3  additive 5  base 0  aryl halide 3?###", "What is the yield of the reaction ligand 3  additive 14  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 2  additive 7  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 18  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 8  base 0  aryl halide 10?###", "What is the yield of the reaction ligand 2  additive 14  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 1  additive 8  base 1  aryl halide 3?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1511
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=99 request_id=68c9f4f5df2bd0bdffb08748b85ee151 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-14-01-51", "prompt": ["What is the yield of the reaction ligand 0  additive 4  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 21  base 2  aryl halide 13?###", "What is the yield of the reaction ligand 2  additive 16  base 0  aryl halide 11?###", "What is the yield of the reaction ligand 3  additive 12  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 2  additive 5  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 0  additive 15  base 0  aryl halide 0?###", "What is the yield of the reaction ligand 0  additive 16  base 2  aryl halide 5?###", "What is the yield of the reaction ligand 1  additive 14  base 1  aryl halide 6?###", "What is the yield of the reaction ligand 1  additive 7  base 0  aryl halide 7?###", "What is the yield of the reaction ligand 1  additive 1  base 1  aryl halide 3?###", "What is the yield of the reaction ligand 3  additive 8  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 1  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 3  additive 8  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 0  additive 4  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 2  additive 2  base 0  aryl halide 7?###", "What is the yield of the reaction ligand 1  additive 10  base 1  aryl halide 13?###", "What is the yield of the reaction ligand 3  additive 9  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 1  additive 2  base 2  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 12  base 0  aryl halide 0?###", "What is the yield of the reaction ligand 1  additive 5  base 0  aryl halide 2?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1512
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=97 request_id=b4a820b6849fc25bd60c1bd9e0432e45 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-14-01-51", "prompt": ["What is the yield of the reaction ligand 1  additive 4  base 2  aryl halide 6?###", "What is the yield of the reaction ligand 3  additive 8  base 1  aryl halide 6?###", "What is the yield of the reaction ligand 3  additive 9  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 11  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 18  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 2  additive 2  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 1  additive 21  base 2  aryl halide 6?###", "What is the yield of the reaction ligand 2  additive 7  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 1  additive 11  base 2  aryl halide 3?###", "What is the yield of the reaction ligand 2  additive 17  base 2  aryl halide 14?###", "What is the yield of the reaction ligand 3  additive 5  base 1  aryl halide 5?###", "What is the yield of the reaction ligand 2  additive 9  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 2  additive 3  base 1  aryl halide 3?###", "What is the yield of the reaction ligand 0  additive 5  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 3  additive 10  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 2  additive 15  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 0  additive 4  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 2  additive 21  base 2  aryl halide 13?###", "What is the yield of the reaction ligand 0  additive 19  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 0  additive 2  base 0  aryl halide 5?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1512
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=95 request_id=76e917e2b25b9a4c3dc7f7f703eabceb response_code=200
+DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/doyle_rxn/dreher_doyle.csv from https://www.dropbox.com/s/gjxatqagwh3cwb6/dreher_doyle.csv?dl=1
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_145820/train.jsonl: file-9tdvD5Rp6j4s5Y4aeU0xHQ8r
+'rxnfp-rbf'
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.00579 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  1.12305 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.01023 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.00038 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.93587 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.00024 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.2136  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  3.00085 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.81163 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_150529%2Ftrain.jsonl
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_150529%2Ftrain.jsonl HTTP/1.1" 404 257
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_150529%2Ftrain.jsonl processing_ms=4 request_id=82e4cf3f0f010a522d7ec8ec7dd95412 response_code=404
+INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_150529/train.jsonl)' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.04182 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.01132 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.32337 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0       │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.5     │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 1.00001 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.5     │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+Upload progress:   0%|          | 0.00/7.90k [00:00<?, ?it/s]INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/files
+DEBUG:openai:api_version=None data=None message='Post details'
+Upload progress: 100%|██████████| 7.90k/7.90k [00:00<00:00, 2.27Mit/s]
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/files HTTP/1.1" 200 319
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=9617 request_id=c9c8540f2edcd79059f027662797d95b response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/fine-tunes
+DEBUG:openai:api_version=None data='{"training_file": "file-njhIgFjalkLZ6tDkeU60rCgN", "model": "ada", "n_epochs": 8, "learning_rate_multiplier": 0.02}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/fine-tunes HTTP/1.1" 200 1002
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes processing_ms=98 request_id=d6a738cfc66d7b2614393fea111a731b response_code=200
+2023-01-30 15:05:53.080 | DEBUG    | gptchem.tuner:tune:188 - Requested fine tuning. {
+  "created_at": 1675087553,
+  "events": [
+    {
+      "created_at": 1675087553,
+      "level": "info",
+      "message": "Created fine-tune: ft-cc4Y8s0Upl9vNjEeTutyCo00",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-cc4Y8s0Upl9vNjEeTutyCo00",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 7902,
+      "created_at": 1675087530,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_150529/train.jsonl",
+      "id": "file-njhIgFjalkLZ6tDkeU60rCgN",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1675087553,
+  "validation_files": []
+}
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-cc4Y8s0Upl9vNjEeTutyCo00
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-cc4Y8s0Upl9vNjEeTutyCo00 HTTP/1.1" 200 1002
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-cc4Y8s0Upl9vNjEeTutyCo00 processing_ms=37 request_id=d1d876bd504cd7b912fbdc917e10028a response_code=200
+2023-01-30 15:05:53.258 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-cc4Y8s0Upl9vNjEeTutyCo00
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-cc4Y8s0Upl9vNjEeTutyCo00 HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-cc4Y8s0Upl9vNjEeTutyCo00 processing_ms=43 request_id=8b589e96d34ae45caf14caea930f5a43 response_code=200
+2023-01-30 15:07:53.826 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-cc4Y8s0Upl9vNjEeTutyCo00
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-cc4Y8s0Upl9vNjEeTutyCo00 HTTP/1.1" 200 1868
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-cc4Y8s0Upl9vNjEeTutyCo00 processing_ms=36 request_id=3e81d1081fe6981921635628db25c7cf response_code=200
+2023-01-30 15:09:55.963 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-cc4Y8s0Upl9vNjEeTutyCo00
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-cc4Y8s0Upl9vNjEeTutyCo00 HTTP/1.1" 200 3379
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-cc4Y8s0Upl9vNjEeTutyCo00 processing_ms=39 request_id=f15e11c99bb842365ff09d1c6d04d3db response_code=200
+2023-01-30 15:11:56.451 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: succeeded
+2023-01-30 15:11:56.454 | DEBUG    | gptchem.tuner:tune:207 - Fine tuning completed. {'base_model': 'ada', 'batch_size': None, 'n_epochs': 8, 'learning_rate_multiplier': 0.02, 'run_name': None, 'wandb_sync': False, 'outdir': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_150529', 'train_filename': '/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_150529/train.jsonl', 'valid_filename': 'None', 'model_name': 'ada:ft-lsmoepfl-2023-01-30-14-10-52', 'ft_id': 'ft-cc4Y8s0Upl9vNjEeTutyCo00', 'date': '20230130_151156', 'train_file_id': 'file-njhIgFjalkLZ6tDkeU60rCgN', 'valid_file_id': None}
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-14-10-52", "prompt": ["What is the yield of the reaction ligand 1  additive 19  base 0  aryl halide 13?###", "What is the yield of the reaction ligand 3  additive 21  base 2  aryl halide 13?###", "What is the yield of the reaction ligand 0  additive 0  base 2  aryl halide 7?###", "What is the yield of the reaction ligand 2  additive 2  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 3  additive 3  base 2  aryl halide 8?###", "What is the yield of the reaction ligand 0  additive 6  base 0  aryl halide 6?###", "What is the yield of the reaction ligand 0  additive 12  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 1  additive 8  base 1  aryl halide 3?###", "What is the yield of the reaction ligand 2  additive 0  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 3  additive 14  base 1  aryl halide 5?###", "What is the yield of the reaction ligand 3  additive 15  base 0  aryl halide 2?###", "What is the yield of the reaction ligand 3  additive 8  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 3  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 2  additive 16  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 0  additive 16  base 2  aryl halide 5?###", "What is the yield of the reaction ligand 3  additive 3  base 2  aryl halide 14?###", "What is the yield of the reaction ligand 3  additive 12  base 0  aryl halide 0?###", "What is the yield of the reaction ligand 3  additive 8  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 2  additive 7  base 0  aryl halide 1?###", "What is the yield of the reaction ligand 2  additive 21  base 2  aryl halide 13?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1495
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=780 request_id=73d687bf724cf8439e7a211223923b2d response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-14-10-52", "prompt": ["What is the yield of the reaction ligand 2  additive 12  base 1  aryl halide 6?###", "What is the yield of the reaction ligand 1  additive 12  base 1  aryl halide 11?###", "What is the yield of the reaction ligand 1  additive 5  base 0  aryl halide 2?###", "What is the yield of the reaction ligand 0  additive 10  base 2  aryl halide 8?###", "What is the yield of the reaction ligand 0  additive 15  base 0  aryl halide 0?###", "What is the yield of the reaction ligand 3  additive 4  base 2  aryl halide 10?###", "What is the yield of the reaction ligand 2  additive 14  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 1  additive 3  base 0  aryl halide 6?###", "What is the yield of the reaction ligand 3  additive 0  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 1  additive 10  base 1  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 4  base 0  aryl halide 5?###", "What is the yield of the reaction ligand 1  additive 19  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 1  additive 16  base 0  aryl halide 9?###", "What is the yield of the reaction ligand 2  additive 2  base 2  aryl halide 0?###", "What is the yield of the reaction ligand 0  additive 12  base 0  aryl halide 1?###", "What is the yield of the reaction ligand 0  additive 4  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 3  additive 14  base 1  aryl halide 11?###", "What is the yield of the reaction ligand 3  additive 20  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 0  additive 13  base 2  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 10  base 1  aryl halide 4?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1498
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=146 request_id=58b0f3a180dd36a9b6d8a309b2aaf169 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-14-10-52", "prompt": ["What is the yield of the reaction ligand 2  additive 7  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 0  additive 18  base 0  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 1  base 1  aryl halide 3?###", "What is the yield of the reaction ligand 3  additive 19  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 1  additive 3  base 1  aryl halide 10?###", "What is the yield of the reaction ligand 1  additive 7  base 0  aryl halide 7?###", "What is the yield of the reaction ligand 0  additive 2  base 0  aryl halide 5?###", "What is the yield of the reaction ligand 0  additive 7  base 0  aryl halide 14?###", "What is the yield of the reaction ligand 0  additive 12  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 2  additive 9  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 1  additive 8  base 0  aryl halide 10?###", "What is the yield of the reaction ligand 1  additive 2  base 2  aryl halide 8?###", "What is the yield of the reaction ligand 2  additive 19  base 0  aryl halide 7?###", "What is the yield of the reaction ligand 0  additive 13  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 1  additive 4  base 2  aryl halide 6?###", "What is the yield of the reaction ligand 2  additive 15  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 3  additive 5  base 0  aryl halide 3?###", "What is the yield of the reaction ligand 0  additive 5  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 15  base 2  aryl halide 9?###", "What is the yield of the reaction ligand 1  additive 20  base 1  aryl halide 7?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1500
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=98 request_id=79aafe5b71d9f795935735a7abc1279c response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-14-10-52", "prompt": ["What is the yield of the reaction ligand 0  additive 4  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 2  additive 12  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 9  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 0  additive 3  base 0  aryl halide 1?###", "What is the yield of the reaction ligand 1  additive 7  base 1  aryl halide 14?###", "What is the yield of the reaction ligand 0  additive 21  base 1  aryl halide 0?###", "What is the yield of the reaction ligand 2  additive 14  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 2  additive 21  base 1  aryl halide 7?###", "What is the yield of the reaction ligand 1  additive 5  base 0  aryl halide 7?###", "What is the yield of the reaction ligand 0  additive 12  base 0  aryl halide 10?###", "What is the yield of the reaction ligand 2  additive 16  base 0  aryl halide 11?###", "What is the yield of the reaction ligand 0  additive 10  base 2  aryl halide 7?###", "What is the yield of the reaction ligand 3  additive 2  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 0  additive 19  base 0  aryl halide 8?###", "What is the yield of the reaction ligand 1  additive 21  base 0  aryl halide 1?###", "What is the yield of the reaction ligand 2  additive 6  base 1  aryl halide 14?###", "What is the yield of the reaction ligand 3  additive 18  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 1  additive 2  base 2  aryl halide 1?###", "What is the yield of the reaction ligand 3  additive 9  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 18  base 2  aryl halide 9?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1496
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=101 request_id=e9c7b42a16a33b1887a6b601f2fab08b response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/completions
+DEBUG:openai:api_version=None data='{"model": "ada:ft-lsmoepfl-2023-01-30-14-10-52", "prompt": ["What is the yield of the reaction ligand 0  additive 11  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 2  additive 12  base 2  aryl halide 11?###", "What is the yield of the reaction ligand 0  additive 1  base 0  aryl halide 12?###", "What is the yield of the reaction ligand 3  additive 1  base 1  aryl halide 12?###", "What is the yield of the reaction ligand 2  additive 11  base 0  aryl halide 12?###", "What is the yield of the reaction ligand 2  additive 0  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 2  additive 7  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 5  base 1  aryl halide 5?###", "What is the yield of the reaction ligand 1  additive 0  base 0  aryl halide 4?###", "What is the yield of the reaction ligand 1  additive 6  base 2  aryl halide 8?###", "What is the yield of the reaction ligand 3  additive 15  base 2  aryl halide 7?###", "What is the yield of the reaction ligand 2  additive 17  base 2  aryl halide 14?###", "What is the yield of the reaction ligand 3  additive 12  base 0  aryl halide 11?###", "What is the yield of the reaction ligand 3  additive 14  base 1  aryl halide 4?###", "What is the yield of the reaction ligand 3  additive 21  base 2  aryl halide 4?###", "What is the yield of the reaction ligand 2  additive 19  base 2  aryl halide 12?###", "What is the yield of the reaction ligand 0  additive 19  base 1  aryl halide 8?###", "What is the yield of the reaction ligand 0  additive 8  base 0  aryl halide 4?###", "What is the yield of the reaction ligand 0  additive 5  base 2  aryl halide 2?###", "What is the yield of the reaction ligand 1  additive 14  base 1  aryl halide 6?###"], "temperature": 0, "max_tokens": 10, "stop": "@@"}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/completions HTTP/1.1" 200 1500
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/completions processing_ms=132 request_id=a44369be57f21c147523f777c6f1029d response_code=200
+DEBUG:pystow.utils:did not re-download /Users/kevinmaikjablonka/.data/gptchem/doyle_rxn/dreher_doyle.csv from https://www.dropbox.com/s/gjxatqagwh3cwb6/dreher_doyle.csv?dl=1
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_150529/train.jsonl: file-njhIgFjalkLZ6tDkeU60rCgN
+'rxnfp-rbf'
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.0004  │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  1.04863 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0       │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.58006 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.01285 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.67185 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤═════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │   value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪═════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ 0.11496 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 0.40063 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 2.95617 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼─────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │ 0.63994 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧═════════╛
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_151405%2Ftrain.jsonl
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_151405%2Ftrain.jsonl HTTP/1.1" 404 257
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files/%2FUsers%2Fkevinmaikjablonka%2Fgit%2Fkjappelbaum%2Fgptchem%2Fexperiments%2F04_regression%2Frxn_doyle%2Fout%2F20230130_151405%2Ftrain.jsonl processing_ms=4 request_id=5987c5aeea3e85716d67f74e9e2b1178 response_code=404
+INFO:openai:error_code=None error_message='Invalid URL (GET /v1/files//Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_151405/train.jsonl)' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │ -0.02923 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  0.01505 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.25269 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+╒═════════════════════════╤═══════════╤══════════════════╤═════════╤═════════════╤═════════╤═════════╤══════════╕
+│ name                    │ class     │ transform        │ prior   │ trainable   │ shape   │ dtype   │    value │
+╞═════════════════════════╪═══════════╪══════════════════╪═════════╪═════════════╪═════════╪═════════╪══════════╡
+│ GPR.mean_function.c     │ Parameter │ Identity         │         │ True        │ ()      │ float64 │  0.06604 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.variance     │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │  2.82366 │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.kernel.lengthscales │ Parameter │ Softplus         │         │ True        │ ()      │ float64 │ 11.241   │
+├─────────────────────────┼───────────┼──────────────────┼─────────┼─────────────┼─────────┼─────────┼──────────┤
+│ GPR.likelihood.variance │ Parameter │ Softplus + Shift │         │ True        │ ()      │ float64 │  0.08504 │
+╘═════════════════════════╧═══════════╧══════════════════╧═════════╧═════════════╧═════════╧═════════╧══════════╛
+Upload progress:   0%|          | 0.00/15.8k [00:00<?, ?it/s]INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/files
+DEBUG:openai:api_version=None data=None message='Post details'
+Upload progress: 100%|██████████| 15.8k/15.8k [00:00<00:00, 31.8Mit/s]
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/files HTTP/1.1" 200 320
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=829 request_id=fcb50295fb714e13e9081284311e3d88 response_code=200
+INFO:openai:message='Request to OpenAI API' method=post path=https://api.openai.com/v1/fine-tunes
+DEBUG:openai:api_version=None data='{"training_file": "file-ki7ElkF1UbUZllFnPOUhfrEv", "model": "ada", "n_epochs": 8, "learning_rate_multiplier": 0.02}' message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "POST /v1/fine-tunes HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes processing_ms=107 request_id=68ff9f0f8f5c163b7b1331b47f56504e response_code=200
+2023-01-30 15:14:07.648 | DEBUG    | gptchem.tuner:tune:188 - Requested fine tuning. {
+  "created_at": 1675088047,
+  "events": [
+    {
+      "created_at": 1675088047,
+      "level": "info",
+      "message": "Created fine-tune: ft-teCPv0IK8ZT29c5YPdlDoJCg",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-teCPv0IK8ZT29c5YPdlDoJCg",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 15798,
+      "created_at": 1675088047,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/04_regression/rxn_doyle/out/20230130_151405/train.jsonl",
+      "id": "file-ki7ElkF1UbUZllFnPOUhfrEv",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1675088047,
+  "validation_files": []
+}
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-teCPv0IK8ZT29c5YPdlDoJCg
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-teCPv0IK8ZT29c5YPdlDoJCg HTTP/1.1" 200 1003
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-teCPv0IK8ZT29c5YPdlDoJCg processing_ms=36 request_id=259f868ea4045796387aa4e34205f705 response_code=200
+2023-01-30 15:14:07.843 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-teCPv0IK8ZT29c5YPdlDoJCg
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-teCPv0IK8ZT29c5YPdlDoJCg HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-teCPv0IK8ZT29c5YPdlDoJCg processing_ms=36 request_id=ad42bbc4671f9fc3535ba68db7040e39 response_code=200
+2023-01-30 15:16:08.380 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending

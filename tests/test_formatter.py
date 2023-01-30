@@ -6,8 +6,8 @@ from gptchem.formatter import (
     ClassificationFormatter,
     InverseDesignFormatter,
     ReactionClassificationFormatter,
+    ReactionRegressionFormatter,
     RegressionFormatter,
-    ReactionRegressionFormatter
 )
 
 
@@ -119,10 +119,9 @@ def test_inverse_design_formatter():
     assert len(data) >= len(formatted)
 
 
-
 def test_reaction_regression_formatter():
     data = get_doyle_rxn_data()
     formatter = ReactionRegressionFormatter.from_preset("DreherDoyle", 0)
     formatted = formatter(data)
     assert len(data) == len(formatted)
-    assert formatted['completion'].iloc[0] == ' 70@@@'
+    assert formatted["completion"].iloc[0] == " 70@@@"

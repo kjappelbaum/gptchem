@@ -1,19 +1,19 @@
-from gptchem.data import get_opv_data
 from loguru import logger
 
+from gptchem.data import get_opv_data
+
 logger.enable("gptchem")
-from gptchem.extractor import RegressionExtractor
-from gptchem.formatter import RegressionFormatter
-from gptchem.tuner import Tuner
-from gptchem.querier import Querier
-from gptchem.baselines.opv import train_test_opv_regression_baseline
+from pathlib import Path
 
-from gptchem.evaluator import get_regression_metrics
-
+from fastcore.xtras import save_pickle
 from sklearn.model_selection import train_test_split
 
-from pathlib import Path
-from fastcore.xtras import save_pickle
+from gptchem.baselines.opv import train_test_opv_regression_baseline
+from gptchem.evaluator import get_regression_metrics
+from gptchem.extractor import RegressionExtractor
+from gptchem.formatter import RegressionFormatter
+from gptchem.querier import Querier
+from gptchem.tuner import Tuner
 
 num_training_points = [10, 50, 100, 200, 500]
 representations = ["SMILES", "SELFIES", "InChI"]
@@ -23,9 +23,7 @@ num_repeats = 10
 
 def train_test_model(representation, num_train_points, seed):
     data = get_opv_data()
-    bins = (
-        data["PCE_ave(%)"] > data["PCE_ave(%)"].median()
-    )
+    bins = data["PCE_ave(%)"] > data["PCE_ave(%)"].median()
 
     train_data, test_data = train_test_split(
         data,
@@ -70,11 +68,9 @@ def train_test_model(representation, num_train_points, seed):
 
     save_pickle(Path(tune_res["outdir"]) / "summary.pkl", summary)
 
-
     print(
         f"Ran train size {num_train_points} and got MAE {res['mean_absolute_error']}, GPR baseline {gpr_baseline['mean_absolute_error']}"
     )
-
 
 
 if __name__ == "__main__":

@@ -1,19 +1,19 @@
-from gptchem.data import get_photoswitch_data
 from loguru import logger
 
+from gptchem.data import get_photoswitch_data
+
 logger.enable("gptchem")
-from gptchem.extractor import RegressionExtractor
-from gptchem.formatter import RegressionFormatter
-from gptchem.tuner import Tuner
-from gptchem.querier import Querier
-from gptchem.baselines.bandgap import train_test_bandgap_regression_baseline
+from pathlib import Path
 
-from gptchem.evaluator import get_regression_metrics
-
+from fastcore.xtras import save_pickle
 from sklearn.model_selection import train_test_split
 
-from pathlib import Path
-from fastcore.xtras import save_pickle
+from gptchem.baselines.bandgap import train_test_bandgap_regression_baseline
+from gptchem.evaluator import get_regression_metrics
+from gptchem.extractor import RegressionExtractor
+from gptchem.formatter import RegressionFormatter
+from gptchem.querier import Querier
+from gptchem.tuner import Tuner
 
 num_training_points = [10, 20, 50, 100, 200][::-1]  # 1000
 representations = ["name", "SMILES", "inchi", "selfies"][::-1]

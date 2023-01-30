@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from fastcore.xtras import save_pickle
+from loguru import logger
 from sklearn.model_selection import train_test_split
 
 from gptchem.baselines.henry import train_test_henry_regression_baseline
@@ -10,7 +11,6 @@ from gptchem.extractor import RegressionExtractor
 from gptchem.formatter import RegressionFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
-from loguru import logger
 
 train_sizes = [10, 20, 50, 100, 200, 500, 1000]
 targets = [

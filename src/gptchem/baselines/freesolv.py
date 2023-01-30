@@ -64,9 +64,8 @@ def train_test_freesolv_classification_baseline(
     }
 
 
-
 def train_test_freesolv_regression_baseline(
-    data, 
+    data,
     train_smiles,
     test_smiles,
     formatter,

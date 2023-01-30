@@ -65,7 +65,7 @@ def train_test_bandgap_classification_baseline(
 
 
 def train_test_bandgap_regression_baseline(
-    data, 
+    data,
     train_smiles,
     test_smiles,
     formatter,

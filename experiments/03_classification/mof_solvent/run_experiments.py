@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from fastcore.xtras import save_pickle
+from loguru import logger
 from sklearn.model_selection import train_test_split
 
 from gptchem.data import get_mof_solvent_data
@@ -8,7 +9,7 @@ from gptchem.extractor import SolventExtractor
 from gptchem.formatter import MOFSolventRecommenderFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
-from loguru import logger
+
 logger.enable("gptchem")
 
 

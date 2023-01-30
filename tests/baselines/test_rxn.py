@@ -1,7 +1,10 @@
 import pytest
 from sklearn.model_selection import train_test_split
 
-from gptchem.baselines.rxn import train_test_rxn_classification_baseline, train_test_rxn_regressions_baseline
+from gptchem.baselines.rxn import (
+    train_test_rxn_classification_baseline,
+    train_test_rxn_regressions_baseline,
+)
 from gptchem.data import get_doyle_rxn_data
 from gptchem.formatter import ReactionClassificationFormatter
 

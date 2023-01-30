@@ -1,7 +1,9 @@
 from pathlib import Path
+
 import pandas as pd
 from fastcore.all import L
 from fastcore.xtras import save_pickle
+from loguru import logger
 
 from gptchem.data import get_photoswitch_data
 from gptchem.evaluator import evaluate_generated_smiles, evaluate_photoswitch_smiles_pred
@@ -10,7 +12,6 @@ from gptchem.formatter import InverseDesignFormatter
 from gptchem.generator import noise_original_data
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
-from loguru import logger
 
 num_trials = 10
 TRAIN_SIZE = 92
@@ -19,6 +20,7 @@ NOISE_LEVEL = [0.5, 1.0, 5.0, 10, 20, 50][::-1]
 NUM_SAMPLES = 100
 
 THRESHOLD = 350
+
 
 def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed):
     data = get_photoswitch_data()
@@ -33,14 +35,16 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
         num_digits=0,
     )
 
-    train  = data_subset[data_subset['E isomer pi-pi* wavelength in nm'] < THRESHOLD]
-    test = data_subset[data_subset['E isomer pi-pi* wavelength in nm'] >= THRESHOLD]
+    train = data_subset[data_subset["E isomer pi-pi* wavelength in nm"] < THRESHOLD]
+    test = data_subset[data_subset["E isomer pi-pi* wavelength in nm"] >= THRESHOLD]
 
     formatted_train = formatter(train)
-    assert len(formatted_train) == len(train), f"Train size mismatch: {len(formatted_train)} vs {len(train)}"
+    assert len(formatted_train) == len(
+        train
+    ), f"Train size mismatch: {len(formatted_train)} vs {len(train)}"
     assert len(test) > 0, f"Test size is 0"
     assert len(formatted_train) > 0, f"Train size is 0"
-    
+
     num_augmentation_rounds = NUM_SAMPLES // len(test)
     test_data = []
     for i in range(num_augmentation_rounds):
@@ -52,13 +56,15 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
             noise_level=noise_level,
         )
         test_data.append(data_test)
-        
-    test_size  = min(len(test_data), NUM_SAMPLES)
+
+    test_size = min(len(test_data), NUM_SAMPLES)
     data_test = pd.concat(test_data)
     formatted_test = formatter(data_test.sample(test_size, random_state=seed))
 
-    assert "prompt" in formatted_test.columns, f"Missing prompt column. Columns: {formatted_test.columns}"
-  
+    assert (
+        "prompt" in formatted_test.columns
+    ), f"Missing prompt column. Columns: {formatted_test.columns}"
+
     tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
     tune_res = tuner(formatted_train)
     querier = Querier(tune_res["model_name"], max_tokens=600)
@@ -124,7 +130,7 @@ if __name__ == "__main__":
     for seed in range(num_trials):
         for noise_level in NOISE_LEVEL:
             try:
-                train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+445)
+                train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed + 445)
             except Exception as e:
                 logger.exception(e)
-                continue    
+                continue
