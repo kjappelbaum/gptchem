@@ -2361,3 +2361,15 @@ DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
 DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-pYpQZQK9cc1tfV9dYF3YxKbr HTTP/1.1" 200 1004
 INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-pYpQZQK9cc1tfV9dYF3YxKbr processing_ms=40 request_id=715fee0336e204a02367c3e703689dba response_code=200
 2023-01-30 11:35:34.408 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-pYpQZQK9cc1tfV9dYF3YxKbr
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-pYpQZQK9cc1tfV9dYF3YxKbr HTTP/1.1" 200 1004
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-pYpQZQK9cc1tfV9dYF3YxKbr processing_ms=45 request_id=ebebdc3735a67f67b4a6f9530a98a7f3 response_code=200
+2023-01-30 11:37:35.134 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+INFO:openai:message='Request to OpenAI API' method=get path=https://api.openai.com/v1/fine-tunes/ft-pYpQZQK9cc1tfV9dYF3YxKbr
+DEBUG:openai:api_version=None data=None message='Post details'
+DEBUG:urllib3.connectionpool:Resetting dropped connection: api.openai.com
+DEBUG:urllib3.connectionpool:https://api.openai.com:443 "GET /v1/fine-tunes/ft-pYpQZQK9cc1tfV9dYF3YxKbr HTTP/1.1" 200 1727
+INFO:openai:message='OpenAI API response' path=https://api.openai.com/v1/fine-tunes/ft-pYpQZQK9cc1tfV9dYF3YxKbr processing_ms=36 request_id=bb3261f069e51612068cac37101bb78b response_code=200
+2023-01-30 11:39:35.889 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running

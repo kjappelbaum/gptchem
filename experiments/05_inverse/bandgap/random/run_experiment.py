@@ -48,45 +48,51 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
 
     res_at_temp = []
     for temp in temperatures:
-        logger.info(f"Temperature: {temp}")
-        completions = querier(formatted_test, temperature=temp)
-        generated_smiles = extractor(completions)
-        logger.info(f"Extracted. Evaluating generated SMILES...")
-        smiles_metrics = evaluate_generated_smiles(generated_smiles, formatted_train["label"])
-        expected = []
-        for i, row in formatted_test.iterrows():
-            expected.append(row["representation"][0])
-
-        logger.info(f"Evaluating constraint satisfaction...")
         try:
-            if len(smiles_metrics["valid_indices"]) > 0:
-                expected = L(expected)[smiles_metrics["valid_indices"]]
+            logger.info(f"Temperature: {temp}")
+            completions = querier(formatted_test, temperature=temp)
+            generated_smiles = extractor(completions)
+            logger.info(f"Extracted. Evaluating generated SMILES...")
+            smiles_metrics = evaluate_generated_smiles(generated_smiles, formatted_train["label"])
+            expected = []
+            for i, row in formatted_test.iterrows():
+                expected.append(row["representation"][0])
 
-                constrain_satisfaction = evaluate_homo_lumo_gap(
-                    smiles_metrics["valid_smiles"],
-                    expected_gaps=expected,
+            logger.info(f"Evaluating constraint satisfaction...")
+            try:
+                if len(smiles_metrics["valid_indices"]) > 0:
+                    expected = L(expected)[smiles_metrics["valid_indices"]]
+
+                    constrain_satisfaction = evaluate_homo_lumo_gap(
+                        smiles_metrics["valid_smiles"],
+                        expected_gaps=expected,
+                    )
+                else:
+                    constrain_satisfaction = evaluate_homo_lumo_gap(
+                        None,
+                        expected_gaps=expected,
+                    )
+
+            except Exception as e:
+                logger.exception(
+                    f"{e}"
                 )
-            else:
-                constrain_satisfaction = evaluate_homo_lumo_gap(
-                    None,
-                    expected_gaps=expected,
-                )
+                constrain_satisfaction = {}
+
+            res = {
+                "completions": completions,
+                "generated_smiles": generated_smiles,
+                "train_smiles": formatted_train["label"],
+                **smiles_metrics,
+                **constrain_satisfaction,
+                "temperature": temp,
+            }
+            res_at_temp.append(res)
 
         except Exception as e:
             logger.exception(
                 f"{e}"
             )
-            constrain_satisfaction = {}
-
-        res = {
-            "completions": completions,
-            "generated_smiles": generated_smiles,
-            "train_smiles": formatted_train["label"],
-            **smiles_metrics,
-            **constrain_satisfaction,
-            "temperature": temp,
-        }
-        res_at_temp.append(res)
 
     summary = {
         "train_size": num_train_points,
