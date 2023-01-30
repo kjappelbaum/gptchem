@@ -54,7 +54,5 @@ class GPTClassifier:
         formatted = self.formatter(df)
         querier = Querier(self.model_name, **self.querier_setting)
         completions = querier(formatted)
-        print(completions)
         extracted = self.extractor(completions)
-        extracted = L([x if x is not None else np.nan for x in extracted])
         return extracted

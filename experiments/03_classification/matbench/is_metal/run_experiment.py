@@ -6,7 +6,7 @@ from fastcore.xtras import save_pickle
 from loguru import logger
 from sklearn.model_selection import train_test_split
 
-from gptchem.data import get_matbench_glass
+from gptchem.data import get_matbench_is_metal
 from gptchem.evaluator import evaluate_classification
 from gptchem.gpt_classifier import GPTClassifier
 from gptchem.tuner import Tuner
@@ -18,15 +18,16 @@ logger.enable("gptchem")
 
 
 def train_test(train_size, seed):
-    data = get_matbench_glass()
+    data = get_matbench_is_metal()
+    data['is_metal'] = data['is_metal'].astype('int')
     train, test = train_test_split(
-        data, train_size=train_size, random_state=seed, stratify=data["gfa"]
+        data, train_size=train_size, random_state=seed, stratify=data["is_metal"]
     )
 
     try:
         pipe = MatPipe.from_preset("express")
 
-        pipe.fit(train, "gfa")
+        pipe.fit(train, "is_metal")
 
         predictions = pipe.predict(test)
 
@@ -48,7 +49,7 @@ def train_test(train_size, seed):
         querier_settings={"max_tokens": 5},
     )
 
-    classifier.fit(train["composition"].values, train["gfa"].values)
+    classifier.fit(train["composition"].values, train["is_metal"].values)
 
     predictions = classifier.predict(test["composition"].values)
 

@@ -588,10 +588,11 @@ class PolymerKLDivBenchmark:
         self.number_samples = number_samples
         self.training_set = training_set.sample(n=self.number_samples, random_state=42)
 
-    def score(self, test_set: pd.DataFrame) -> float:
+    def score(self, test_polymers: Collection[str]) -> float:
         """
         Assess a distribution-matching generator model.
         """
+        test_set = featurize_many_polymers([polymer_convert2smiles(p) for p in test_polymers])
         test_set = test_set.sample(n=self.number_samples, random_state=42)
 
         kldivs = {}
@@ -804,8 +805,7 @@ def get_polymer_prompt_compostion(prompt: str)->dict:
     return composition
 
 
-def get_inverse_polymer_metrics(generated_polymers, df_test, df_train, formatter):
-
+def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd.DataFrame, df_train: pd.DataFrame) -> dict:
     performances = []
 
     train_polymers = df_train["label"].tolist()
@@ -829,17 +829,21 @@ def get_inverse_polymer_metrics(generated_polymers, df_test, df_train, formatter
             valid_indices.append(i)
         except Exception:
             pass
-    kldiv = KLDivBenchmark(train_polymers, min(len(valid_polymers), len(train_polymers)))
+
+    kldiv = PolymerKLDivBenchmark(featurize_many_polymers([polymer_convert2smiles(p) for p in train_polymers]), min(len(valid_polymers), len(train_polymers)))
     kldiv_score = kldiv.score(valid_polymers)
+    novel_smiles_fraction = 1 - len(set(valid_polymers) & set(train_polymers)) / len(valid_polymers)
 
     return {
         "composition_mismatches": pd.DataFrame(composition_mismatches),
-        "losses": losses,
+        "summary_composition_mismatches": pd.DataFrame(composition_mismatches).mean().to_dict(),
+        "losses": performance_difference,
         "kldiv_score": kldiv_score,
-        "valid_smiles_fraction": valid_smiles_fraction,
-        "unique_smiles_fraction": unique_smiles_fraction,
+        "valid_smiles_fraction": len(valid_polymers) / len(generated_polymers),
+        "valid_indices": valid_indices,
+        "valid_polymers": valid_polymers,
+        "unique_smiles_fraction": len(set(valid_polymers)) / len(valid_polymers),
         "novel_smiles_fraction": novel_smiles_fraction,
         "generated_sequences": generated_polymers,
-        "train_sequences": train_sequences,
-        "predictions": predictions,
+        "predictions": performances,
     }

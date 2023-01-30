@@ -19,6 +19,7 @@ logger.enable("gptchem")
 
 def train_test(train_size, seed):
     data = get_matbench_glass()
+    data['gfa'] = data['gfa'].astype('int')
     train, test = train_test_split(
         data, train_size=train_size, random_state=seed, stratify=data["gfa"]
     )
