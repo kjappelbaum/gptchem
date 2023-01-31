@@ -71,7 +71,7 @@ def train_test(num_train_points, temperatures, num_sample, noise_level, seed):
     summary = {
         'num_train_points': num_train_points,
         'noise_level': noise_level,
-
+        'res': res_at_temp
     }
     save_pickle(Path(tune_res["outdir"]) / "summary.pkl", summary)
 

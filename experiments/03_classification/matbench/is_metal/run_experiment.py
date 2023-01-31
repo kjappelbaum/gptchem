@@ -29,9 +29,9 @@ def train_test(train_size, seed):
 
         pipe.fit(train, "is_metal")
 
-        predictions = pipe.predict(test)
+        baseline_predictions = pipe.predict(test)
 
-        baseline_metrics = evaluate_classification(predictions, test)
+        baseline_metrics = evaluate_classification(baseline_predictions['is_metal'], test)
 
     except Exception:
         baseline_metrics = {
@@ -58,6 +58,7 @@ def train_test(train_size, seed):
     res = {
         "baseline": baseline_metrics,
         **gpt_metrics,
+        "predictions": predictions,
         "train_size": train_size,
     }
 

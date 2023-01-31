@@ -194,6 +194,17 @@ class ClassificationFormatter(ForwardFormatter):
 
         return pd.DataFrame([self._format(r, l) for r, l in zip(representation, label)])
 
+class ClassifictionFormatterWithExamples(ClassificationFormatter):
+    _PROMPT_TEMPLATE = """{prefix}What is the {propertyname} of {representation}{suffix}{end_prompt}
+    
+    Examples of the prompt/completion structure with dummy data:
+    ##
+    {dd1}
+    ##
+    {dd2}
+    ##
+    {dd3}
+    """
 
 class RegressionFormatter(ForwardFormatter):
     """Convert a dataframe to a dataframe of prompts and completions for regression.

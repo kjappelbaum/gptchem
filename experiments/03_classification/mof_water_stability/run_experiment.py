@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from pathlib import Path
 from fastcore.xtras import save_pickle
 from gptchem.evaluator import evaluate_classification
+from gptchem.tuner import Tuner 
 
 num_rounds = 10
 train_sizes = [10, 20, 50, 100, 150]
@@ -18,10 +19,10 @@ def train_test(train_size, seed):
 
     baseline = train_test_waterstability_baseline(train, test, seed=seed)
 
-    classifier = GPTClassifier(property_name="water stability")
-    classifier.fit(train["normalized_names"], train["stability_int"])
-    predictions = classifier.predict(test["normalized_names"])
-    metrics = evaluate_classification(test["stability_int"], predictions)
+    classifier = GPTClassifier(property_name="water stability", tuner= Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False))
+    classifier.fit(train["normalized_names"].values, train["stability_int"].values)
+    predictions = classifier.predict(test["normalized_names"].values)
+    metrics = evaluate_classification(test["stability_int"].values, predictions)
 
     summary = {
         "train_size": train_size,

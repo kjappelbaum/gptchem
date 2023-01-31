@@ -1,1 +1,85 @@
 Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 19.0Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230131_084959/train.jsonl: file-0dzprryRUxrqvD8iSJ42rF9J
+2023-01-31 10:16:20.181016: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+dyld[2782]: Assertion failed: (!leaf()), function children, file BTree.h, line 153.
+
+dyld[4028]: Assertion failed: (this->magic == kMagic), function matchesPath, file Loader.cpp, line 154.
+
+Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 50.6Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230131_103136/train.jsonl: file-lzdHBLUlbslx8CE8xLs0sqkv
+dyld[12079]: Assertion failed: (this->magic == kMagic), function matchesPath, file Loader.cpp, line 154.
+
+Upload progress:   0%|          | 0.00/22.8k [00:00<?, ?it/s]Upload progress: 100%|██████████| 22.8k/22.8k [00:00<00:00, 48.9Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/out/20230131_105635/train.jsonl: file-k9v2r7vrPy2G8LKWFgsefDG9
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/http/client.py", line 1377, in getresponse
+    response.begin()
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/http/client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/http/client.py", line 281, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/ssl.py", line 1242, in recv_into
+    return self.read(nbytes, buffer)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/ssl.py", line 1100, in read
+    return self._sslobj.read(len, buffer)
+TimeoutError: [Errno 60] Operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/packages/six.py", line 770, in reraise
+    raise value
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 451, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/urllib3/connectionpool.py", line 357, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.openai.com', port=443): Read timed out. (read timeout=600)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 498, in request_raw
+    result = _thread_context.session.request(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/requests/adapters.py", line 578, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.openai.com', port=443): Read timed out. (read timeout=600)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 111, in <module>
+    train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed + 99224)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/random/run_experiments.py", line 55, in train_test_evaluate
+    completions = querier(formatted_test, temperature=temp)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/querier.py", line 123, in __call__
+    return self.query(df, temperature, logprobs)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/querier.py", line 98, in query
+    completions_ = openai.Completion.create(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 216, in request
+    result = self.request_raw(
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/openai/api_requestor.py", line 508, in request_raw
+    raise error.Timeout("Request timed out: {}".format(e)) from e
+openai.error.Timeout: Request timed out: HTTPSConnectionPool(host='api.openai.com', port=443): Read timed out. (read timeout=600)

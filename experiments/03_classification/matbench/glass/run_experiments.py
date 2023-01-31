@@ -29,9 +29,9 @@ def train_test(train_size, seed):
 
         pipe.fit(train, "gfa")
 
-        predictions = pipe.predict(test)
+        baseline_predictions = pipe.predict(test)
 
-        baseline_metrics = evaluate_classification(predictions, test)
+        baseline_metrics = evaluate_classification(baseline_predictions['gfa'].values, test)
 
     except Exception:
         baseline_metrics = {
@@ -59,6 +59,7 @@ def train_test(train_size, seed):
         "baseline": baseline_metrics,
         **gpt_metrics,
         "train_size": train_size,
+        "predictions": predictions
     }
 
     save_pickle(Path(classifier.tune_res["outdir"]) / "summary.pkl", res)

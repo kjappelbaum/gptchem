@@ -1,1 +1,20 @@
 Upload progress:   0%|          | 0.00/18.7k [00:00<?, ?it/s]Upload progress: 100%|██████████| 18.7k/18.7k [00:00<00:00, 13.2Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/extrapolation/out/20230131_084952/train.jsonl: file-Z3wIumsKZuZBulpRHJw5BABM
+`dataset` input should have multiple elements.
+2023-01-31 10:12:37.559128: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
+`dataset` input should have multiple elements.
+dyld[99634]: Assertion failed: (this->magic == kMagic), function mf, file Loader.cpp, line 123.
+
+The data appears to lie in a lower-dimensional subspace of the space in which it is expressed. This has resulted in a singular data covariance matrix, which cannot be treated using the algorithms implemented in `gaussian_kde`. Consider performing principle component analysis / dimensionality reduction and using `gaussian_kde` with the transformed data.
+dyld[495]: Assertion failed: (this->magic == kMagic), function matchesPath, file Loader.cpp, line 154.
+
+The data appears to lie in a lower-dimensional subspace of the space in which it is expressed. This has resulted in a singular data covariance matrix, which cannot be treated using the algorithms implemented in `gaussian_kde`. Consider performing principle component analysis / dimensionality reduction and using `gaussian_kde` with the transformed data.
+The data appears to lie in a lower-dimensional subspace of the space in which it is expressed. This has resulted in a singular data covariance matrix, which cannot be treated using the algorithms implemented in `gaussian_kde`. Consider performing principle component analysis / dimensionality reduction and using `gaussian_kde` with the transformed data.
+Upload progress:   0%|          | 0.00/18.7k [00:00<?, ?it/s]Upload progress: 100%|██████████| 18.7k/18.7k [00:00<00:00, 16.2Mit/s]
+Uploaded file from /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/photoswitch/extrapolation/out/20230131_101800/train.jsonl: file-AOAxZKGoedpCVaM6Lqseadzc
+`dataset` input should have multiple elements.
+`dataset` input should have multiple elements.
+`dataset` input should have multiple elements.
+The data appears to lie in a lower-dimensional subspace of the space in which it is expressed. This has resulted in a singular data covariance matrix, which cannot be treated using the algorithms implemented in `gaussian_kde`. Consider performing principle component analysis / dimensionality reduction and using `gaussian_kde` with the transformed data.
+`dataset` input should have multiple elements.
+Upload progress:   0%|          | 0.00/18.7k [00:00<?, ?it/s]Upload progress: 100%|██████████| 18.7k/18.7k [00:00<00:00, 35.7Mit/s]
