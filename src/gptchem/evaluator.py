@@ -7,7 +7,7 @@ import tempfile
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Collection, Dict, List, Union
-
+import matplotlib.pyplot as plt
 import fcd
 import joblib
 import numpy as np
@@ -857,3 +857,39 @@ def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd
         "string_distances_collection": string_distances_collection,
         "string_distances_collection_summary": string_distances_collection.mean().to_dict(),
     }
+
+
+def get_kappa_intersections(index, values, ):
+    # from the fitted learning curve, find when kappa >0
+    # >0.2,, >0.4, >0.6, >0.8
+
+    intersections = {}
+
+    for i in  [0, 0.2, 0.4, 0.6, 0.8]:
+        intersections[i] = find_learning_curve_intersection(
+        i,
+        fit_learning_curve(
+            index,
+            values,
+        )[0],
+    )
+
+    return intersections
+
+
+colors = {
+    0: plt.cm.RdBu_r(0),
+    0.2: plt.cm.RdBu_r(0.2),
+    0.4: plt.cm.RdBu_r(0.4),
+    0.6: plt.cm.RdBu_r(0.6),
+    0.8: plt.cm.RdBu_r(0.8)
+}
+
+
+def add_kappa_vlines(index, values, low=10, high=100, ymax=1.6, ymin=0.2):
+    intersections = get_kappa_intersections(index, values)
+
+    for k, v in intersections.items():
+        if (v > low) & (v < high): 
+            plt.vlines(v, ymin, ymax, color=colors[k], alpha=.8)
+            plt.text(v + 0.2, (ymax-ymin)/2, k, color=colors[k], fontsize=8, rotation=90, alpha=.8)

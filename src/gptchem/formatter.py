@@ -10,16 +10,158 @@
     For inference, you should format your prompts in the same way as you did when creating the training dataset, including the same separator. Also specify the same stop sequence to properly truncate the completion.
 """
 
+import random
 from typing import Collection, List, Optional
 from urllib.parse import quote
-
+from loguru import logger
 import numpy as np
 import pandas as pd
+import selfies
+import yaml
 from fastcore.basics import basic_repr
 from numpy.typing import ArrayLike
+from rdkit import Chem, RDLogger
+from rdkit.Chem import AllChem
+from rdkit.Chem import MolFromSmiles as smi2mol
+from rdkit.Chem import MolToSmiles as mol2smi
+from rdkit.DataStructs.cDataStructs import TanimotoSimilarity
+from selfies import decoder, encoder
 from sklearn.preprocessing import LabelEncoder
 
 from .types import StringOrNumber
+
+RDLogger.DisableLog("rdApp.*")
+
+
+def sanitize_smiles(smi):
+    """Return a canonical smile representation of smi
+
+    Parameters:
+    smi (string) : smile string to be canonicalized
+
+    Returns:
+    mol (rdkit.Chem.rdchem.Mol) : RdKit mol object                          (None if invalid smile string smi)
+    smi_canon (string)          : Canonicalized smile representation of smi (None if invalid smile string smi)
+    conversion_successful (bool): True/False to indicate if conversion was  successful
+    """
+    try:
+        mol = smi2mol(smi, sanitize=True)
+        smi_canon = mol2smi(mol, isomericSmiles=False, canonical=True)
+        return (mol, smi_canon, True)
+    except:
+        return (None, None, False)
+
+
+def mutate_selfie(selfie, max_molecules_len, write_fail_cases=False):
+    """Return a mutated selfie string (only one mutation on slefie is performed)
+
+    Mutations are done until a valid molecule is obtained
+    Rules of mutation: With a 50% propbabily, either:
+        1. Add a random SELFIE character in the string
+        2. Replace a random SELFIE character with another
+
+    Parameters:
+    selfie            (string)  : SELFIE string to be mutated
+    max_molecules_len (int)     : Mutations of SELFIE string are allowed up to this length
+    write_fail_cases  (bool)    : If true, failed mutations are recorded in "selfie_failure_cases.txt"
+
+    Returns:
+    selfie_mutated    (string)  : Mutated SELFIE string
+    smiles_canon      (string)  : canonical smile of mutated SELFIE string
+    """
+    valid = False
+    fail_counter = 0
+    chars_selfie = get_selfie_chars(selfie)
+
+    while not valid:
+        fail_counter += 1
+
+        alphabet = list(selfies.get_semantic_robust_alphabet())  # 34 SELFIE characters
+
+        choice_ls = [1, 2]  # 1=Insert; 2=Replace; 3=Delete
+        random_choice = np.random.choice(choice_ls, 1)[0]
+
+        # Insert a character in a Random Location
+        if random_choice == 1:
+            random_index = np.random.randint(len(chars_selfie) + 1)
+            random_character = np.random.choice(alphabet, size=1)[0]
+
+            selfie_mutated_chars = (
+                chars_selfie[:random_index] + [random_character] + chars_selfie[random_index:]
+            )
+
+        # Replace a random character
+        elif random_choice == 2:
+            random_index = np.random.randint(len(chars_selfie))
+            random_character = np.random.choice(alphabet, size=1)[0]
+            if random_index == 0:
+                selfie_mutated_chars = [random_character] + chars_selfie[random_index + 1 :]
+            else:
+                selfie_mutated_chars = (
+                    chars_selfie[:random_index]
+                    + [random_character]
+                    + chars_selfie[random_index + 1 :]
+                )
+
+        # Delete a random character
+        elif random_choice == 3:
+            random_index = np.random.randint(len(chars_selfie))
+            if random_index == 0:
+                selfie_mutated_chars = chars_selfie[random_index + 1 :]
+            else:
+                selfie_mutated_chars = (
+                    chars_selfie[:random_index] + chars_selfie[random_index + 1 :]
+                )
+
+        else:
+            raise Exception("Invalid Operation trying to be performed")
+
+        selfie_mutated = "".join(x for x in selfie_mutated_chars)
+        sf = "".join(x for x in chars_selfie)
+
+        try:
+            smiles = decoder(selfie_mutated)
+            mol, smiles_canon, done = sanitize_smiles(smiles)
+            if len(selfie_mutated_chars) > max_molecules_len or smiles_canon == "":
+                done = False
+            if done:
+                valid = True
+            else:
+                valid = False
+        except:
+            valid = False
+            if fail_counter > 1 and write_fail_cases == True:
+                f = open("selfie_failure_cases.txt", "a+")
+                f.write(
+                    "Tried to mutate SELFIE: "
+                    + str(sf)
+                    + " To Obtain: "
+                    + str(selfie_mutated)
+                    + "\n"
+                )
+                f.close()
+
+    return (selfie_mutated, smiles_canon)
+
+
+def get_selfie_chars(selfie):
+    """Obtain a list of all selfie characters in string selfie
+
+    Parameters:
+    selfie (string) : A selfie string - representing a molecule
+
+    Example:
+    >>> get_selfie_chars('[C][=C][C][=C][C][=C][Ring1][Branch1_1]')
+    ['[C]', '[=C]', '[C]', '[=C]', '[C]', '[=C]', '[Ring1]', '[Branch1_1]']
+
+    Returns:
+    chars_selfie: list of selfie characters present in molecule selfie
+    """
+    chars_selfie = []  # A list of all SELFIE sybols from string selfie
+    while selfie != "":
+        chars_selfie.append(selfie[selfie.find("[") : selfie.find("]") + 1])
+        selfie = selfie[selfie.find("]") + 1 :]
+    return chars_selfie
 
 
 class BaseFormatter:
@@ -194,17 +336,123 @@ class ClassificationFormatter(ForwardFormatter):
 
         return pd.DataFrame([self._format(r, l) for r, l in zip(representation, label)])
 
+
 class ClassifictionFormatterWithExamples(ClassificationFormatter):
-    _PROMPT_TEMPLATE = """{prefix}What is the {propertyname} of {representation}{suffix}{end_prompt}
-    
-    Examples of the prompt/completion structure with dummy data:
-    ##
-    {dd1}
-    ##
-    {dd2}
-    ##
-    {dd3}
+    _PROMPT_TEMPLATE = (
+        """{prefix}What is the {propertyname} of {representation}{suffix}{end_prompt}"""
+    )
+
+    _EXAMPLES_TEMPLATE = """
+
+Examples of the prompt/completion structure with dummy data:
+##
+prompt: {p1}
+completion: {c1}
+##
+prompt: {p2}
+completion: {c2}
+##
+prompt: {p3}
+completion: {c3}
     """
+
+    def _format(
+        self,
+        representation: StringOrNumber,
+        label: StringOrNumber,
+        possible_labels: Collection[StringOrNumber],
+    ) -> dict:
+
+        logger.debug('Generating random prompts')
+        random_prompts = []
+        random_completions = []
+        for i in range(3):
+            mol = mutate_selfie(selfies.encoder(representation), 50)[1]
+            random_completion = random.choice(possible_labels)
+            random_prompts.append(
+                self._PROMPT_TEMPLATE.format(
+                    prefix=self._prefix,
+                    propertyname=self.property_name,
+                    representation=mol,
+                    suffix=self._suffix,
+                    end_prompt=self._end_prompt,
+                )
+            )
+            random_completions.append(
+                self._COMPLETION_TEMPLATE.format(
+                    start_completion=self._start_completion,
+                    label=random_completion,
+                    stop_sequence=self._stop_sequence,
+                ),
+            )
+        examples = self._EXAMPLES_TEMPLATE.format(
+            p1=random_prompts[0],
+            p2=random_prompts[1],
+            p3=random_prompts[2],
+            c1=random_completions[0],
+            c2=random_completions[1],
+            c3=random_completions[2],
+        )
+
+        logger.debug('returning prompt')
+        return {
+            "prompt": self._PROMPT_TEMPLATE.format(
+                prefix=self._prefix,
+                propertyname=self.property_name,
+                representation=representation,
+                suffix=self._suffix,
+                end_prompt=self._end_prompt,
+            ) + examples,
+            "completion": self._COMPLETION_TEMPLATE.format(
+                start_completion=self._start_completion,
+                label=label,
+                stop_sequence=self._stop_sequence,
+            ),
+            "label": label,
+            "representation": representation,
+        }
+
+    def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Format a dataframe of representations and labels into a dataframe of prompts and completions.
+
+        This function will drop rows with missing values in the representation or label columns.
+
+        Args:
+            df (pd.DataFrame): A dataframe with a representation column and a label column.
+
+        Returns:
+            pd.DataFrame: A dataframe with a prompt column and a completion column.
+        """
+        df = df.dropna(subset=[self.representation_column, self.label_column])
+        representation = df[self.representation_column].values
+        label = df[self.label_column].values
+
+        if self.num_classes is not None:
+            if self.qcut:
+                if self.bins is None:
+                    _, bins = pd.qcut(list(label), self.num_classes, retbins=True)
+                    bins = [-np.inf, *bins[1:-1], np.inf]
+                    self.bins = bins
+                else:
+                    bins = self.bins
+                label = pd.cut(label, bins=bins, labels=self.class_names, include_lowest=True)
+
+            else:
+                if self.bins is None:
+                    _, bins = pd.cut(
+                        list(label) + [np.inf, -np.inf],
+                        self.num_classes,
+                        retbins=True,
+                        include_lowest=True,
+                    )
+                    self.bins = bins
+                else:
+                    bins = self.bins
+
+                label = pd.cut(label, bins=bins, labels=self.class_names, include_lowest=True)
+
+        return pd.DataFrame([self._format(r, l, label) for r, l in zip(representation, label)])
+
 
 class RegressionFormatter(ForwardFormatter):
     """Convert a dataframe to a dataframe of prompts and completions for regression.

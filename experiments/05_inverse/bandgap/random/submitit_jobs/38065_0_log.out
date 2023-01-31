@@ -1,0 +1,3 @@
+submitit INFO (2023-01-31 20:12:04,212) - Starting with JobEnvironment(job_id=38065, hostname=Kevins-MacBook-Pro.local, local_rank=0(1), node=0(1), global_rank=0(1))
+submitit INFO (2023-01-31 20:12:04,212) - Loading pickle: /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/bandgap/random/submitit_jobs/38065_submitted.pkl
+submitit ERROR (2023-01-31 20:12:06,743) - Submitted job triggered an exception

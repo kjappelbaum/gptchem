@@ -1,0 +1,22 @@
+/bin/sh: givemeconformer: command not found
+submitit ERROR (2023-01-31 20:11:29,809) - Submitted job triggered an exception
+Traceback (most recent call last):
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/submitit/core/submission.py", line 72, in submitit_main
+    process_job(args.folder)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/submitit/core/submission.py", line 65, in process_job
+    raise error
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/submitit/core/submission.py", line 54, in process_job
+    result = delayed.result()
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/site-packages/submitit/core/utils.py", line 133, in result
+    self._result = self.function(*self.args, **self.kwargs)
+  File "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/evaluator.py", line 466, in get_xtb_homo_lumo_gap
+    subprocess.run(cmd, shell=True, check=True, cwd=tmpdir)
+  File "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'givemeconformer '[H]c1c([H])c(C([H])([H])[H])c([H])c(C([H])([H])[H])c1[H]'' returned non-zero exit status 127.
