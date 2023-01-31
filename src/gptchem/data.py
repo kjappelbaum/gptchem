@@ -288,3 +288,15 @@ def get_matbench_steels():
         )
         .reset_index(drop=True)
     )
+
+def get_water_stability():
+    """Return the water stability dataset used in []"""
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "mof_water_stability",
+            url="https://www.dropbox.com/s/87qpe16lu6nmm1d/water_stability.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        )
+        .reset_index(drop=True)
+    )

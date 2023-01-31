@@ -1,4 +1,4 @@
-[32m[I 2023-01-30 23:07:27,965][0m A new study created in memory with name: no-name-8eec0fea-7d8c-4de9-80d0-2508355b6674[0m
+[32m[I 2023-01-31 08:49:24,800][0m A new study created in memory with name: no-name-dbaa0f83-1b14-4fd4-80ba-8751feee630f[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -9,7 +9,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:07:30,832][0m Trial 0 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 3748, 'max_depth': 48, 'learning_rate': 0.01752410111812814, 'colsample_bytree': 0.5241726043075503, 'subsample': 6.0268891286825045e-05, 'alpha': 2.5348407664333426e-07, 'lambda': 3.3323645788192616e-08}. Best is trial 0 with value: 0.29172932330827067.[0m
+[32m[I 2023-01-31 08:49:25,722][0m Trial 0 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 3748, 'max_depth': 48, 'learning_rate': 0.01752410111812814, 'colsample_bytree': 0.5241726043075503, 'subsample': 6.0268891286825045e-05, 'alpha': 2.5348407664333426e-07, 'lambda': 3.3323645788192616e-08}. Best is trial 0 with value: 0.21484674329501918.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -20,7 +20,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:07:39,277][0m Trial 1 finished with value: 0.5574747474747475 and parameters: {'n_estimators': 8663, 'max_depth': 32, 'learning_rate': 0.01595857358814127, 'colsample_bytree': 0.20673687141394806, 'subsample': 0.7072114131472232, 'alpha': 0.31044435499483225, 'lambda': 8.148018307012941e-07}. Best is trial 1 with value: 0.5574747474747475.[0m
+[32m[I 2023-01-31 08:49:28,035][0m Trial 1 finished with value: 0.5585213032581453 and parameters: {'n_estimators': 8663, 'max_depth': 32, 'learning_rate': 0.01595857358814127, 'colsample_bytree': 0.20673687141394806, 'subsample': 0.7072114131472232, 'alpha': 0.31044435499483225, 'lambda': 8.148018307012941e-07}. Best is trial 1 with value: 0.5585213032581453.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -31,7 +31,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:07:41,857][0m Trial 2 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 1821, 'max_depth': 12, 'learning_rate': 0.0032877474139911193, 'colsample_bytree': 0.4653920936389925, 'subsample': 0.0014445251022763056, 'alpha': 4.17890272377219e-06, 'lambda': 0.0032112643094417484}. Best is trial 1 with value: 0.5574747474747475.[0m
+[32m[I 2023-01-31 08:49:28,528][0m Trial 2 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 1821, 'max_depth': 12, 'learning_rate': 0.0032877474139911193, 'colsample_bytree': 0.4653920936389925, 'subsample': 0.0014445251022763056, 'alpha': 4.17890272377219e-06, 'lambda': 0.0032112643094417484}. Best is trial 1 with value: 0.5585213032581453.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -42,7 +42,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:07:43,404][0m Trial 3 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 1398, 'max_depth': 17, 'learning_rate': 0.004192159350410977, 'colsample_bytree': 0.41668631223058955, 'subsample': 0.08431013932082466, 'alpha': 6.267062696005991e-07, 'lambda': 0.00042472707398058225}. Best is trial 1 with value: 0.5574747474747475.[0m
+[32m[I 2023-01-31 08:49:28,948][0m Trial 3 finished with value: 0.5003328213005632 and parameters: {'n_estimators': 1398, 'max_depth': 17, 'learning_rate': 0.004192159350410977, 'colsample_bytree': 0.41668631223058955, 'subsample': 0.08431013932082466, 'alpha': 6.267062696005991e-07, 'lambda': 0.00042472707398058225}. Best is trial 1 with value: 0.5585213032581453.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -53,7 +53,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:07:49,577][0m Trial 4 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 5926, 'max_depth': 6, 'learning_rate': 0.010769622478263132, 'colsample_bytree': 0.26316082737033225, 'subsample': 2.1147447960615714e-05, 'alpha': 3.4671276804481113, 'lambda': 4.905556676028774}. Best is trial 1 with value: 0.5574747474747475.[0m
+[32m[I 2023-01-31 08:49:30,366][0m Trial 4 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 5926, 'max_depth': 6, 'learning_rate': 0.010769622478263132, 'colsample_bytree': 0.26316082737033225, 'subsample': 2.1147447960615714e-05, 'alpha': 3.4671276804481113, 'lambda': 4.905556676028774}. Best is trial 1 with value: 0.5585213032581453.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -64,7 +64,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:07:56,705][0m Trial 5 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 8085, 'max_depth': 18, 'learning_rate': 0.0014653521030672135, 'colsample_bytree': 0.6015730295052912, 'subsample': 0.0015876781526923994, 'alpha': 1.254134495897175e-07, 'lambda': 0.00028614897264046574}. Best is trial 1 with value: 0.5574747474747475.[0m
+[32m[I 2023-01-31 08:49:32,291][0m Trial 5 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 8085, 'max_depth': 18, 'learning_rate': 0.0014653521030672135, 'colsample_bytree': 0.6015730295052912, 'subsample': 0.0015876781526923994, 'alpha': 1.254134495897175e-07, 'lambda': 0.00028614897264046574}. Best is trial 1 with value: 0.5585213032581453.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -75,7 +75,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:07:57,052][0m Trial 6 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 347, 'max_depth': 46, 'learning_rate': 0.0027520696850790523, 'colsample_bytree': 0.5809158145330549, 'subsample': 0.00036187233309596217, 'alpha': 0.0004793052550782129, 'lambda': 0.0008325158565947976}. Best is trial 1 with value: 0.5574747474747475.[0m
+[32m[I 2023-01-31 08:49:32,383][0m Trial 6 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 347, 'max_depth': 46, 'learning_rate': 0.0027520696850790523, 'colsample_bytree': 0.5809158145330549, 'subsample': 0.00036187233309596217, 'alpha': 0.0004793052550782129, 'lambda': 0.0008325158565947976}. Best is trial 1 with value: 0.5585213032581453.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -86,7 +86,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:07:59,186][0m Trial 7 finished with value: 0.5556975772765246 and parameters: {'n_estimators': 1851, 'max_depth': 49, 'learning_rate': 0.020745667656752512, 'colsample_bytree': 0.9072178255843248, 'subsample': 0.29794544625913616, 'alpha': 0.002404915432737351, 'lambda': 1.9809253750493907}. Best is trial 1 with value: 0.5574747474747475.[0m
+[32m[I 2023-01-31 08:49:33,032][0m Trial 7 finished with value: 0.5819081146667353 and parameters: {'n_estimators': 1851, 'max_depth': 49, 'learning_rate': 0.020745667656752512, 'colsample_bytree': 0.9072178255843248, 'subsample': 0.29794544625913616, 'alpha': 0.002404915432737351, 'lambda': 1.9809253750493907}. Best is trial 7 with value: 0.5819081146667353.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -97,7 +97,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:08:00,223][0m Trial 8 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 888, 'max_depth': 13, 'learning_rate': 0.0011935477742481386, 'colsample_bytree': 0.33761842408464765, 'subsample': 0.000877781550471965, 'alpha': 2.7678419414850017e-06, 'lambda': 0.28749982347407854}. Best is trial 1 with value: 0.5574747474747475.[0m
+[32m[I 2023-01-31 08:49:33,341][0m Trial 8 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 888, 'max_depth': 13, 'learning_rate': 0.0011935477742481386, 'colsample_bytree': 0.33761842408464765, 'subsample': 0.000877781550471965, 'alpha': 2.7678419414850017e-06, 'lambda': 0.28749982347407854}. Best is trial 7 with value: 0.5819081146667353.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -108,7 +108,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:08:04,681][0m Trial 9 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 3570, 'max_depth': 17, 'learning_rate': 0.008356499023325527, 'colsample_bytree': 0.2509179910858817, 'subsample': 0.10256162748473076, 'alpha': 4.6876566400928895e-08, 'lambda': 7.620481786158549}. Best is trial 1 with value: 0.5574747474747475.[0m
+[32m[I 2023-01-31 08:49:34,261][0m Trial 9 finished with value: 0.5003328213005632 and parameters: {'n_estimators': 3570, 'max_depth': 17, 'learning_rate': 0.008356499023325527, 'colsample_bytree': 0.2509179910858817, 'subsample': 0.10256162748473076, 'alpha': 4.6876566400928895e-08, 'lambda': 7.620481786158549}. Best is trial 7 with value: 0.5819081146667353.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -119,7 +119,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:08:12,447][0m Trial 10 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 9789, 'max_depth': 34, 'learning_rate': 0.04438277669999278, 'colsample_bytree': 0.2058660861437622, 'subsample': 0.018169072332895244, 'alpha': 1.4756493047283656, 'lambda': 5.345503735401455e-08}. Best is trial 1 with value: 0.5574747474747475.[0m
+[32m[I 2023-01-31 08:49:35,520][0m Trial 10 finished with value: 0.5003328213005632 and parameters: {'n_estimators': 5139, 'max_depth': 36, 'learning_rate': 0.04438277669999278, 'colsample_bytree': 0.9303452862673255, 'subsample': 0.018169072332895244, 'alpha': 0.0015027010896820237, 'lambda': 0.037437087704361036}. Best is trial 7 with value: 0.5819081146667353.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -130,7 +130,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:08:19,255][0m Trial 11 finished with value: 0.5426054664289958 and parameters: {'n_estimators': 6440, 'max_depth': 33, 'learning_rate': 0.03431796352332552, 'colsample_bytree': 0.9878250629190622, 'subsample': 0.535856619371621, 'alpha': 0.0146111885272123, 'lambda': 3.0779236298031086e-06}. Best is trial 1 with value: 0.5574747474747475.[0m
+[32m[I 2023-01-31 08:49:38,478][0m Trial 11 finished with value: 0.5816030325173547 and parameters: {'n_estimators': 9762, 'max_depth': 32, 'learning_rate': 0.03431796352332552, 'colsample_bytree': 0.9878250629190622, 'subsample': 0.535856619371621, 'alpha': 0.152913332921091, 'lambda': 2.4005658773466656e-07}. Best is trial 7 with value: 0.5819081146667353.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -141,7 +141,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:08:30,442][0m Trial 12 finished with value: 0.5426054664289958 and parameters: {'n_estimators': 9938, 'max_depth': 40, 'learning_rate': 0.020509865550848633, 'colsample_bytree': 0.9969927124209529, 'subsample': 0.5647177078422774, 'alpha': 0.02513362672221303, 'lambda': 2.409554183350673e-06}. Best is trial 1 with value: 0.5574747474747475.[0m
+[32m[I 2023-01-31 08:49:41,403][0m Trial 12 finished with value: 0.5663515406162464 and parameters: {'n_estimators': 9580, 'max_depth': 40, 'learning_rate': 0.048723136798051424, 'colsample_bytree': 0.9983862185090744, 'subsample': 0.6422377127316383, 'alpha': 0.03664754219171413, 'lambda': 4.458842608821284e-06}. Best is trial 7 with value: 0.5819081146667353.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -152,7 +152,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:08:32,906][0m Trial 13 finished with value: 0.27109440267335005 and parameters: {'n_estimators': 3459, 'max_depth': 26, 'learning_rate': 0.01637497499269296, 'colsample_bytree': 0.7400214408412188, 'subsample': 0.018179812070785905, 'alpha': 0.022543336556058818, 'lambda': 0.02557409180862982}. Best is trial 1 with value: 0.5574747474747475.[0m
+[32m[I 2023-01-31 08:49:43,030][0m Trial 13 finished with value: 0.5003328213005632 and parameters: {'n_estimators': 6897, 'max_depth': 26, 'learning_rate': 0.025784289126967716, 'colsample_bytree': 0.7982225511522189, 'subsample': 0.022329647630591174, 'alpha': 0.012431959161369755, 'lambda': 1.216728257778636e-05}. Best is trial 7 with value: 0.5819081146667353.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -163,7 +163,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:08:39,482][0m Trial 14 finished with value: 0.5692460317460317 and parameters: {'n_estimators': 8009, 'max_depth': 28, 'learning_rate': 0.026755494993837833, 'colsample_bytree': 0.7610163605344511, 'subsample': 0.11855465062694404, 'alpha': 0.00016487848285230157, 'lambda': 6.4582436156717105e-06}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:43,931][0m Trial 14 finished with value: 0.5343446468446469 and parameters: {'n_estimators': 3248, 'max_depth': 28, 'learning_rate': 0.028907952886045016, 'colsample_bytree': 0.7519473848259378, 'subsample': 0.1661974628687698, 'alpha': 2.895324117563463e-05, 'lambda': 1.3351246346908414e-07}. Best is trial 7 with value: 0.5819081146667353.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -174,7 +174,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:08:48,018][0m Trial 15 finished with value: 0.25045948203842944 and parameters: {'n_estimators': 7855, 'max_depth': 26, 'learning_rate': 0.031378992371923, 'colsample_bytree': 0.3508953722202443, 'subsample': 0.015221527675907402, 'alpha': 5.2568658843619054e-05, 'lambda': 7.040385893503571e-06}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:46,261][0m Trial 15 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 9981, 'max_depth': 41, 'learning_rate': 0.028412177172927898, 'colsample_bytree': 0.7342499324922157, 'subsample': 0.01076382355532033, 'alpha': 9.768545712867114, 'lambda': 2.139813699392151e-05}. Best is trial 7 with value: 0.5819081146667353.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -185,7 +185,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:08:54,440][0m Trial 16 finished with value: 0.25897435897435894 and parameters: {'n_estimators': 8314, 'max_depth': 32, 'learning_rate': 0.005867982875188016, 'colsample_bytree': 0.7184132458033087, 'subsample': 0.08573129004708872, 'alpha': 0.14184312049385853, 'lambda': 2.3216639169521685e-05}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:47,353][0m Trial 16 finished with value: 0.5942765567765568 and parameters: {'n_estimators': 2713, 'max_depth': 50, 'learning_rate': 0.015763402633808796, 'colsample_bytree': 0.8317375801622697, 'subsample': 0.9685763055437648, 'alpha': 0.14184312049385853, 'lambda': 1.2557486015764331e-08}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -196,7 +196,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:08:59,820][0m Trial 17 finished with value: 0.25730158730158736 and parameters: {'n_estimators': 6772, 'max_depth': 39, 'learning_rate': 0.011911328349885682, 'colsample_bytree': 0.20171104064207065, 'subsample': 0.0081762546893115, 'alpha': 4.425158657419771e-05, 'lambda': 3.3209124202392774e-07}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:48,021][0m Trial 17 finished with value: 0.45715971088607343 and parameters: {'n_estimators': 2238, 'max_depth': 50, 'learning_rate': 0.013172072220451008, 'colsample_bytree': 0.6807517234576798, 'subsample': 0.14210460984420797, 'alpha': 0.0023907285990493548, 'lambda': 0.07527556804710868}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -207,7 +207,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:09:10,513][0m Trial 18 finished with value: 0.523945179347656 and parameters: {'n_estimators': 8925, 'max_depth': 23, 'learning_rate': 0.02679461222589581, 'colsample_bytree': 0.7519486485337128, 'subsample': 0.8985541163477109, 'alpha': 0.3488711880696496, 'lambda': 3.133652334417983e-07}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:48,722][0m Trial 18 finished with value: 0.5003328213005632 and parameters: {'n_estimators': 2594, 'max_depth': 43, 'learning_rate': 0.006483531118353439, 'colsample_bytree': 0.8347524865395414, 'subsample': 0.005714626343350597, 'alpha': 3.1544435001398165e-05, 'lambda': 1.314053143275926e-08}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -218,7 +218,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:09:14,805][0m Trial 19 finished with value: 0.5388966588966588 and parameters: {'n_estimators': 5479, 'max_depth': 38, 'learning_rate': 0.042843619771263226, 'colsample_bytree': 0.3348184946902603, 'subsample': 0.14599031077820404, 'alpha': 0.0007258638719458231, 'lambda': 3.870192894392226e-05}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:49,840][0m Trial 19 finished with value: 0.5003328213005632 and parameters: {'n_estimators': 4369, 'max_depth': 50, 'learning_rate': 0.01959330369552363, 'colsample_bytree': 0.38597567742165867, 'subsample': 0.03916384686836723, 'alpha': 1.1524023764269193, 'lambda': 0.5127938117988959}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -229,7 +229,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:09:20,295][0m Trial 20 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 6796, 'max_depth': 30, 'learning_rate': 0.010568978328529743, 'colsample_bytree': 0.2687428176451597, 'subsample': 0.031723050630806895, 'alpha': 6.777601934013949e-05, 'lambda': 4.28170520176123e-07}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:50,101][0m Trial 20 finished with value: 0.46330006176326644 and parameters: {'n_estimators': 366, 'max_depth': 44, 'learning_rate': 0.00541858072338131, 'colsample_bytree': 0.6504479997352898, 'subsample': 0.2813427401684927, 'alpha': 0.008544554081711338, 'lambda': 0.0034411972191591878}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -240,7 +240,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:09:25,519][0m Trial 21 finished with value: 0.5594885833121127 and parameters: {'n_estimators': 4749, 'max_depth': 43, 'learning_rate': 0.02089968686580009, 'colsample_bytree': 0.84890682227716, 'subsample': 0.23917575879698766, 'alpha': 0.0030746654059100697, 'lambda': 0.2232633372412587}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:52,147][0m Trial 21 finished with value: 0.5627993527948156 and parameters: {'n_estimators': 6453, 'max_depth': 36, 'learning_rate': 0.03244543312464132, 'colsample_bytree': 0.871210334323869, 'subsample': 0.9655541928908961, 'alpha': 0.1296225252143991, 'lambda': 2.8070508607633444e-07}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -251,7 +251,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:09:30,552][0m Trial 22 finished with value: 0.5426054664289958 and parameters: {'n_estimators': 4321, 'max_depth': 43, 'learning_rate': 0.014803412656080947, 'colsample_bytree': 0.8344936043899712, 'subsample': 0.24154951086032145, 'alpha': 0.0020023647373168924, 'lambda': 0.06431049327143681}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:53,090][0m Trial 22 finished with value: 0.5737022649608856 and parameters: {'n_estimators': 2751, 'max_depth': 24, 'learning_rate': 0.010049739198139365, 'colsample_bytree': 0.9849313016378005, 'subsample': 0.3578004526219532, 'alpha': 0.14485311137344553, 'lambda': 2.2925884267846198e-06}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -262,7 +262,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:09:34,153][0m Trial 23 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 4709, 'max_depth': 29, 'learning_rate': 0.025334567105706883, 'colsample_bytree': 0.6208454030748044, 'subsample': 0.04499661503158776, 'alpha': 0.19497061484036055, 'lambda': 1.272297443852897e-08}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:54,331][0m Trial 23 finished with value: 0.5003328213005632 and parameters: {'n_estimators': 5180, 'max_depth': 37, 'learning_rate': 0.021097228709110797, 'colsample_bytree': 0.843372236331934, 'subsample': 0.05222607388120728, 'alpha': 0.6233400519437865, 'lambda': 6.759750514460237e-08}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -273,7 +273,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:09:40,337][0m Trial 24 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 7575, 'max_depth': 35, 'learning_rate': 0.006800141832712792, 'colsample_bytree': 0.8204337863503857, 'subsample': 0.004866587563048372, 'alpha': 0.005622119180502853, 'lambda': 2.3946994885364512e-05}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:56,403][0m Trial 24 finished with value: 0.5732142857142856 and parameters: {'n_estimators': 7677, 'max_depth': 32, 'learning_rate': 0.04114488151378498, 'colsample_bytree': 0.716654074105975, 'subsample': 0.3960380713845064, 'alpha': 0.04094137003302669, 'lambda': 3.8591837270467364e-05}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -284,7 +284,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:09:48,614][0m Trial 25 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 7297, 'max_depth': 22, 'learning_rate': 0.0133388229696767, 'colsample_bytree': 0.6536041964649559, 'subsample': 0.2290352649252955, 'alpha': 9.857751758797436, 'lambda': 0.00012428167924207107}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:57,651][0m Trial 25 finished with value: 0.5598121550707758 and parameters: {'n_estimators': 4410, 'max_depth': 46, 'learning_rate': 0.012700703912893161, 'colsample_bytree': 0.8944902073574036, 'subsample': 0.19904337069694406, 'alpha': 8.306630840098356e-05, 'lambda': 3.4343266020937856e-07}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -295,7 +295,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:09:51,414][0m Trial 26 finished with value: 0.5426054664289958 and parameters: {'n_estimators': 2811, 'max_depth': 43, 'learning_rate': 0.02233497752855512, 'colsample_bytree': 0.503464978920683, 'subsample': 0.7110481724189978, 'alpha': 1.604018657749909e-05, 'lambda': 0.00581796628634372}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:58,078][0m Trial 26 finished with value: 0.5585213032581453 and parameters: {'n_estimators': 1247, 'max_depth': 39, 'learning_rate': 0.036095213638966624, 'colsample_bytree': 0.5268013975375636, 'subsample': 0.7266766231460631, 'alpha': 0.004814594631074845, 'lambda': 2.2185782124381962e-08}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -306,7 +306,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:09:58,081][0m Trial 27 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 9046, 'max_depth': 37, 'learning_rate': 0.0353730533884555, 'colsample_bytree': 0.38948665973083185, 'subsample': 0.04224815506560875, 'alpha': 0.00014600946392179153, 'lambda': 1.5544977737472474e-06}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:58,724][0m Trial 27 finished with value: 0.5003328213005632 and parameters: {'n_estimators': 2084, 'max_depth': 22, 'learning_rate': 0.022792464417287932, 'colsample_bytree': 0.9957245395059365, 'subsample': 0.04224815506560875, 'alpha': 0.0003371476165628756, 'lambda': 8.669429314102473e-05}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -317,7 +317,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:10:03,256][0m Trial 28 finished with value: 0.5426054664289958 and parameters: {'n_estimators': 5498, 'max_depth': 23, 'learning_rate': 0.007624275797638091, 'colsample_bytree': 0.8345839487007993, 'subsample': 0.32556020675946656, 'alpha': 0.07561143448566451, 'lambda': 0.8919679547618711}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:49:59,765][0m Trial 28 finished with value: 0.5637007722007722 and parameters: {'n_estimators': 3269, 'max_depth': 32, 'learning_rate': 0.01495170550814905, 'colsample_bytree': 0.6193320585474368, 'subsample': 0.33559256916783825, 'alpha': 0.04996677280714723, 'lambda': 1.1963148809977892e-06}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -328,7 +328,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:10:13,981][0m Trial 29 finished with value: 0.5270404174428942 and parameters: {'n_estimators': 9084, 'max_depth': 45, 'learning_rate': 0.04964233380856079, 'colsample_bytree': 0.5518523903727004, 'subsample': 0.14882274336400855, 'alpha': 0.9650035038231141, 'lambda': 9.105504485802492e-08}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:50:00,733][0m Trial 29 finished with value: 0.20588837685611883 and parameters: {'n_estimators': 3902, 'max_depth': 47, 'learning_rate': 0.015735708125147334, 'colsample_bytree': 0.5319068265489093, 'subsample': 0.004578335677675355, 'alpha': 1.8743503971465179, 'lambda': 4.9724061804645286e-08}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -339,7 +339,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:10:16,318][0m Trial 30 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 2879, 'max_depth': 50, 'learning_rate': 0.01771516780703462, 'colsample_bytree': 0.302758216011194, 'subsample': 0.00019525271735129987, 'alpha': 1.0054466020671091e-08, 'lambda': 7.796179785701899e-05}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:50:00,886][0m Trial 30 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 72, 'max_depth': 50, 'learning_rate': 0.018570989186393685, 'colsample_bytree': 0.7847246585727887, 'subsample': 3.6167940795299915e-05, 'alpha': 1.0054466020671091e-08, 'lambda': 0.013766556681925378}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -350,7 +350,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:10:18,263][0m Trial 31 finished with value: 0.5307872846108139 and parameters: {'n_estimators': 2028, 'max_depth': 48, 'learning_rate': 0.019750425108234465, 'colsample_bytree': 0.9132143877921728, 'subsample': 0.36797769697465604, 'alpha': 0.0024230009064425623, 'lambda': 0.2881037785806629}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:50:01,662][0m Trial 31 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 2876, 'max_depth': 24, 'learning_rate': 0.009625930705780512, 'colsample_bytree': 0.9873082295658757, 'subsample': 0.00012461157125912036, 'alpha': 0.3623726749580397, 'lambda': 2.2033092465439646e-06}. Best is trial 16 with value: 0.5942765567765568.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -361,7 +361,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:10:23,327][0m Trial 32 finished with value: 0.5388144603934077 and parameters: {'n_estimators': 4129, 'max_depth': 50, 'learning_rate': 0.027480258906586157, 'colsample_bytree': 0.8845479972961992, 'subsample': 0.9229781627192919, 'alpha': 0.0005858630600552718, 'lambda': 1.2859611959726482}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:50:02,557][0m Trial 32 finished with value: 0.5957982245568452 and parameters: {'n_estimators': 2513, 'max_depth': 28, 'learning_rate': 0.007227007114681768, 'colsample_bytree': 0.905895578148225, 'subsample': 0.4101997198920024, 'alpha': 0.15013820851768736, 'lambda': 1.0593318585435836e-08}. Best is trial 32 with value: 0.5957982245568452.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -372,7 +372,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:10:24,832][0m Trial 33 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 2142, 'max_depth': 42, 'learning_rate': 0.01682891331784014, 'colsample_bytree': 0.6805422194052501, 'subsample': 0.06141635686020829, 'alpha': 7.797618576000362e-06, 'lambda': 0.033947655517610566}. Best is trial 14 with value: 0.5692460317460317.[0m
+[32m[I 2023-01-31 08:50:03,271][0m Trial 33 finished with value: 0.5906187556142184 and parameters: {'n_estimators': 1744, 'max_depth': 31, 'learning_rate': 0.006821270006909559, 'colsample_bytree': 0.8949854839875622, 'subsample': 0.5403930391766637, 'alpha': 0.026134885240669408, 'lambda': 1.1528075199291566e-08}. Best is trial 32 with value: 0.5957982245568452.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -383,7 +383,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:10:33,980][0m Trial 34 finished with value: 0.5904409642644937 and parameters: {'n_estimators': 8566, 'max_depth': 46, 'learning_rate': 0.02177118136976808, 'colsample_bytree': 0.5092645764599764, 'subsample': 0.22475803404247593, 'alpha': 0.0045462015554229365, 'lambda': 0.8349366275465602}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:03,962][0m Trial 34 finished with value: 0.617489455736528 and parameters: {'n_estimators': 1468, 'max_depth': 29, 'learning_rate': 0.004734861733804306, 'colsample_bytree': 0.8650373367009891, 'subsample': 0.9083676460960568, 'alpha': 0.01941020569878921, 'lambda': 1.4933496884285924e-08}. Best is trial 34 with value: 0.617489455736528.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -394,7 +394,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:10:40,968][0m Trial 35 finished with value: 0.531451545530493 and parameters: {'n_estimators': 8678, 'max_depth': 29, 'learning_rate': 0.009764450103533332, 'colsample_bytree': 0.427171736984459, 'subsample': 0.13853568270622563, 'alpha': 0.05837199816667542, 'lambda': 0.005107325683950348}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:04,464][0m Trial 35 finished with value: 0.6220959595959596 and parameters: {'n_estimators': 1083, 'max_depth': 28, 'learning_rate': 0.0035517750793879676, 'colsample_bytree': 0.46506024414351893, 'subsample': 0.9874577223261355, 'alpha': 0.019194219531109967, 'lambda': 2.5905094368973285e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -405,7 +405,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:10:46,362][0m Trial 36 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 6103, 'max_depth': 36, 'learning_rate': 0.004757338777305819, 'colsample_bytree': 0.48593437189797123, 'subsample': 2.2744283364895314e-05, 'alpha': 0.008613889668888503, 'lambda': 0.0017481142349818886}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:04,831][0m Trial 36 finished with value: 0.5003328213005632 and parameters: {'n_estimators': 1019, 'max_depth': 20, 'learning_rate': 0.0027642277410962826, 'colsample_bytree': 0.45704832112368754, 'subsample': 0.09733053853652353, 'alpha': 3.1624371264670663, 'lambda': 4.523446429657425e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -416,7 +416,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:10:54,913][0m Trial 37 finished with value: 0.5594885833121127 and parameters: {'n_estimators': 7284, 'max_depth': 45, 'learning_rate': 0.03737562698526149, 'colsample_bytree': 0.4525917862083752, 'subsample': 0.47610128359843307, 'alpha': 0.0002378586115411595, 'lambda': 0.12195870277559592}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:05,398][0m Trial 37 finished with value: 0.6041781200312608 and parameters: {'n_estimators': 1507, 'max_depth': 28, 'learning_rate': 0.004146362241382228, 'colsample_bytree': 0.3316863067724478, 'subsample': 0.8721012406485148, 'alpha': 0.3933112923831852, 'lambda': 1.0377053614388014e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -427,7 +427,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:11:00,834][0m Trial 38 finished with value: 0.5901087801087801 and parameters: {'n_estimators': 7111, 'max_depth': 6, 'learning_rate': 0.03781391031593719, 'colsample_bytree': 0.45564151325734353, 'subsample': 0.18849778061040157, 'alpha': 0.00033286236214254757, 'lambda': 0.18504685571873375}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:05,693][0m Trial 38 finished with value: 0.432346188050772 and parameters: {'n_estimators': 809, 'max_depth': 28, 'learning_rate': 0.0038038841114347707, 'colsample_bytree': 0.3349381406188694, 'subsample': 0.18214669147522036, 'alpha': 0.014856346629606325, 'lambda': 1.013037890795837e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -438,7 +438,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:11:05,855][0m Trial 39 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 5239, 'max_depth': 4, 'learning_rate': 0.025912598040837904, 'colsample_bytree': 0.5260656795948713, 'subsample': 0.025892888244877323, 'alpha': 1.565967727220725e-06, 'lambda': 0.4852080676943008}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:06,143][0m Trial 39 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 1523, 'max_depth': 29, 'learning_rate': 0.0020326433581595816, 'colsample_bytree': 0.2705388863118496, 'subsample': 0.07329041809003074, 'alpha': 8.486917629406435, 'lambda': 7.86056157624559e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -449,7 +449,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:11:15,858][0m Trial 40 finished with value: 0.25730158730158736 and parameters: {'n_estimators': 8197, 'max_depth': 10, 'learning_rate': 0.029363300977632407, 'colsample_bytree': 0.38128391300028097, 'subsample': 0.007834890787450614, 'alpha': 0.0010798911830509088, 'lambda': 2.6444159663106834}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:06,456][0m Trial 40 finished with value: 0.45928320802005007 and parameters: {'n_estimators': 729, 'max_depth': 13, 'learning_rate': 0.0051029850905083595, 'colsample_bytree': 0.21213245909090503, 'subsample': 0.9949724325551013, 'alpha': 0.6865091042119507, 'lambda': 3.610237779265544e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -460,7 +460,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:11:22,109][0m Trial 41 finished with value: 0.5477438063499445 and parameters: {'n_estimators': 7321, 'max_depth': 47, 'learning_rate': 0.038359651064839274, 'colsample_bytree': 0.4556630761633282, 'subsample': 0.40022568310837464, 'alpha': 0.00017241804735427098, 'lambda': 0.10430520226117547}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:07,308][0m Trial 41 finished with value: 0.618515037593985 and parameters: {'n_estimators': 2419, 'max_depth': 4, 'learning_rate': 0.004606836902698634, 'colsample_bytree': 0.3885809345492597, 'subsample': 0.9145676878493945, 'alpha': 0.09837077717967764, 'lambda': 1.0657220036498426e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -471,7 +471,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:11:29,047][0m Trial 42 finished with value: 0.5752394990630284 and parameters: {'n_estimators': 6898, 'max_depth': 14, 'learning_rate': 0.03852457121896329, 'colsample_bytree': 0.5696209138934577, 'subsample': 0.18873793782975398, 'alpha': 0.000270972235356959, 'lambda': 0.165588275927955}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:07,850][0m Trial 42 finished with value: 0.5708959899749373 and parameters: {'n_estimators': 1480, 'max_depth': 24, 'learning_rate': 0.004746809425313145, 'colsample_bytree': 0.3883907729126068, 'subsample': 0.48061040545218997, 'alpha': 0.08067465044762942, 'lambda': 2.862023967343104e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -482,7 +482,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:11:37,028][0m Trial 43 finished with value: 0.3474206349206349 and parameters: {'n_estimators': 7002, 'max_depth': 10, 'learning_rate': 0.03922380269090908, 'colsample_bytree': 0.5645748742446874, 'subsample': 0.07668621816664901, 'alpha': 2.0807926902555343e-05, 'lambda': 0.012356225452036377}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:08,574][0m Trial 43 finished with value: 0.4964183964183963 and parameters: {'n_estimators': 2322, 'max_depth': 6, 'learning_rate': 0.0032198047515874487, 'colsample_bytree': 0.31837234317641, 'subsample': 0.2671532489973101, 'alpha': 0.0009076585375966655, 'lambda': 1.1794522513814995e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -493,7 +493,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:11:42,813][0m Trial 44 finished with value: 0.5129711533736302 and parameters: {'n_estimators': 6008, 'max_depth': 13, 'learning_rate': 0.047620607379037574, 'colsample_bytree': 0.6158072283500428, 'subsample': 0.2025287465997437, 'alpha': 0.0038434156006572147, 'lambda': 8.03276004545029}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:09,299][0m Trial 44 finished with value: 0.47379702779702776 and parameters: {'n_estimators': 1932, 'max_depth': 30, 'learning_rate': 0.0019052035467149774, 'colsample_bytree': 0.31166934084857306, 'subsample': 0.6509759378456761, 'alpha': 0.005703389279377911, 'lambda': 1.071723269417153e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -504,7 +504,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:11:50,358][0m Trial 45 finished with value: 0.555036075036075 and parameters: {'n_estimators': 7764, 'max_depth': 7, 'learning_rate': 0.0325177154849932, 'colsample_bytree': 0.43268223010589435, 'subsample': 0.12189666505758984, 'alpha': 0.00024228156472052068, 'lambda': 0.09472040527828515}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:09,532][0m Trial 45 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 518, 'max_depth': 20, 'learning_rate': 0.0038240153101565377, 'colsample_bytree': 0.3927759737049761, 'subsample': 1.0479635130896175e-05, 'alpha': 0.3259149719790257, 'lambda': 3.4103026442248297e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -515,7 +515,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:12:01,121][0m Trial 46 finished with value: 0.5426054664289958 and parameters: {'n_estimators': 9463, 'max_depth': 19, 'learning_rate': 0.03635172578996589, 'colsample_bytree': 0.4833590052931612, 'subsample': 0.5350321055571842, 'alpha': 0.00011114662922491413, 'lambda': 0.6903963161292049}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:09,936][0m Trial 46 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 1280, 'max_depth': 26, 'learning_rate': 0.0077553879925971, 'colsample_bytree': 0.43055968659599114, 'subsample': 0.0006552920260574585, 'alpha': 0.019854273754342396, 'lambda': 6.062061492225137e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -526,7 +526,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:12:07,248][0m Trial 47 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 8210, 'max_depth': 16, 'learning_rate': 0.0016536366551691722, 'colsample_bytree': 0.5482081971965558, 'subsample': 0.0592638162173786, 'alpha': 0.00034632050675369435, 'lambda': 3.0439608761984838}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:10,872][0m Trial 47 finished with value: 0.45382637755274013 and parameters: {'n_estimators': 3279, 'max_depth': 4, 'learning_rate': 0.005992774662957652, 'colsample_bytree': 0.48002826084660394, 'subsample': 0.15344385376662184, 'alpha': 0.3609240565596578, 'lambda': 1.3337508819721007e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -537,7 +537,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:12:13,457][0m Trial 48 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 6382, 'max_depth': 7, 'learning_rate': 0.023041916924323374, 'colsample_bytree': 0.6765461324365317, 'subsample': 0.0007199901002088026, 'alpha': 0.0012634608609336806, 'lambda': 0.0004430790964682376}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:10,972][0m Trial 48 finished with value: 0.3889194298871718 and parameters: {'n_estimators': 16, 'max_depth': 34, 'learning_rate': 0.00449922474542946, 'colsample_bytree': 0.2867493525469771, 'subsample': 0.4785542857557322, 'alpha': 0.00011472313082347978, 'lambda': 3.096563649650896e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -548,7 +548,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:12:19,492][0m Trial 49 finished with value: 0.5214105339105339 and parameters: {'n_estimators': 4729, 'max_depth': 4, 'learning_rate': 0.002965481573343496, 'colsample_bytree': 0.775127037143408, 'subsample': 0.19645415816148953, 'alpha': 0.00996459674600229, 'lambda': 0.2628722826699203}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:12,030][0m Trial 49 finished with value: 0.46330006176326644 and parameters: {'n_estimators': 3868, 'max_depth': 9, 'learning_rate': 0.002115670156616322, 'colsample_bytree': 0.36125317801337253, 'subsample': 0.25232567660919514, 'alpha': 1.0936304934860706, 'lambda': 5.740528385402236e-06}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -559,7 +559,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:12:26,782][0m Trial 50 finished with value: 0.5594885833121127 and parameters: {'n_estimators': 8513, 'max_depth': 15, 'learning_rate': 0.04300007587192724, 'colsample_bytree': 0.39805268340586814, 'subsample': 0.5110654828496032, 'alpha': 1.7602259579135132e-05, 'lambda': 0.040027744178767075}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:12,698][0m Trial 50 finished with value: 0.38980650551108953 and parameters: {'n_estimators': 2360, 'max_depth': 16, 'learning_rate': 0.003134852463375744, 'colsample_bytree': 0.4886609462012167, 'subsample': 0.11356652865944489, 'alpha': 0.06478266451450819, 'lambda': 7.186838724624597e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -570,7 +570,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:12:35,169][0m Trial 51 finished with value: 0.5752394990630284 and parameters: {'n_estimators': 7013, 'max_depth': 45, 'learning_rate': 0.031187144278868963, 'colsample_bytree': 0.46005293486585663, 'subsample': 0.29902272715380684, 'alpha': 0.00032098265191751345, 'lambda': 0.20897336411480197}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:13,750][0m Trial 51 finished with value: 0.6220959595959596 and parameters: {'n_estimators': 2824, 'max_depth': 27, 'learning_rate': 0.0025439734810795665, 'colsample_bytree': 0.5686598168121937, 'subsample': 0.9656177441918183, 'alpha': 0.15872144587232712, 'lambda': 1.0680277263627781e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -581,7 +581,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:12:42,549][0m Trial 52 finished with value: 0.4419660894660894 and parameters: {'n_estimators': 8545, 'max_depth': 20, 'learning_rate': 0.04310475462276668, 'colsample_bytree': 0.3898013768593365, 'subsample': 0.08933555730045321, 'alpha': 2.16978522340073e-05, 'lambda': 0.05401199138106009}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:14,505][0m Trial 52 finished with value: 0.5828802733214498 and parameters: {'n_estimators': 1763, 'max_depth': 34, 'learning_rate': 0.0022996066048302337, 'colsample_bytree': 0.5659819136113025, 'subsample': 0.9761305665559715, 'alpha': 0.24760842833298297, 'lambda': 1.0723309109029047e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -592,7 +592,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:12:47,848][0m Trial 53 finished with value: 0.5426054664289958 and parameters: {'n_estimators': 6544, 'max_depth': 11, 'learning_rate': 0.03143860332030507, 'colsample_bytree': 0.4021880660534075, 'subsample': 0.35182804266399526, 'alpha': 7.447203134179169e-07, 'lambda': 0.028882506545822816}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:14,951][0m Trial 53 finished with value: 0.4693707773707773 and parameters: {'n_estimators': 953, 'max_depth': 27, 'learning_rate': 0.0016968234303131472, 'colsample_bytree': 0.4195768438487627, 'subsample': 0.6273396824867005, 'alpha': 0.0028675095351257773, 'lambda': 2.424393747501646e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -603,7 +603,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:12:56,760][0m Trial 54 finished with value: 0.5594885833121127 and parameters: {'n_estimators': 7926, 'max_depth': 15, 'learning_rate': 0.0306120421103845, 'colsample_bytree': 0.357025413686867, 'subsample': 0.9584859480431986, 'alpha': 7.622788181780361e-06, 'lambda': 0.009348880310920933}. Best is trial 34 with value: 0.5904409642644937.[0m
+[32m[I 2023-01-31 08:50:15,837][0m Trial 54 finished with value: 0.5009176166222006 and parameters: {'n_estimators': 2956, 'max_depth': 22, 'learning_rate': 0.004032367615775131, 'colsample_bytree': 0.37235803098766107, 'subsample': 0.37728115501477133, 'alpha': 3.171110680344014, 'lambda': 1.9561905880803722e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -614,7 +614,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:13:05,362][0m Trial 55 finished with value: 0.6053102453102452 and parameters: {'n_estimators': 9510, 'max_depth': 40, 'learning_rate': 0.019322891124058442, 'colsample_bytree': 0.5249732466364552, 'subsample': 0.20580926511310513, 'alpha': 0.000465214412250102, 'lambda': 0.2350638383128626}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:16,750][0m Trial 55 finished with value: 0.618515037593985 and parameters: {'n_estimators': 2369, 'max_depth': 26, 'learning_rate': 0.002661307426566153, 'colsample_bytree': 0.49596909378280807, 'subsample': 0.7355153436868688, 'alpha': 0.10805173708022783, 'lambda': 2.2167445463437076e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -625,7 +625,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:13:13,465][0m Trial 56 finished with value: 0.5069660894660895 and parameters: {'n_estimators': 9599, 'max_depth': 41, 'learning_rate': 0.018723766468938592, 'colsample_bytree': 0.5226854421718138, 'subsample': 0.11227549783391172, 'alpha': 7.565106428280886e-05, 'lambda': 1.295612110292504}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:17,571][0m Trial 56 finished with value: 0.6155278398699451 and parameters: {'n_estimators': 2032, 'max_depth': 26, 'learning_rate': 0.0025389298588045597, 'colsample_bytree': 0.5083053766193742, 'subsample': 0.7045568988773141, 'alpha': 0.010100723376046086, 'lambda': 7.285844437964954e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -636,7 +636,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:13:23,280][0m Trial 57 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 8884, 'max_depth': 46, 'learning_rate': 0.02308019348156322, 'colsample_bytree': 0.5993952026399074, 'subsample': 0.03132658076250214, 'alpha': 0.0003034379188006166, 'lambda': 4.043644948959844}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:18,848][0m Trial 57 finished with value: 0.47952530228392287 and parameters: {'n_estimators': 4394, 'max_depth': 15, 'learning_rate': 0.001181512243522916, 'colsample_bytree': 0.5073104913047088, 'subsample': 0.2394214575939042, 'alpha': 0.0009085357779830227, 'lambda': 7.046837928414237e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -647,7 +647,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:13:31,129][0m Trial 58 finished with value: 0.5752394990630284 and parameters: {'n_estimators': 9330, 'max_depth': 32, 'learning_rate': 0.01376920498946847, 'colsample_bytree': 0.47597672178647205, 'subsample': 0.17959464681390508, 'alpha': 0.0008832035276728537, 'lambda': 0.0022615348896902485}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:19,437][0m Trial 58 finished with value: 0.5003328213005632 and parameters: {'n_estimators': 2078, 'max_depth': 25, 'learning_rate': 0.002512812657440215, 'colsample_bytree': 0.5649920933076832, 'subsample': 0.01903875086917038, 'alpha': 0.007870278504254603, 'lambda': 2.280683119520401e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -658,7 +658,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:13:42,222][0m Trial 59 finished with value: 0.5696117934353228 and parameters: {'n_estimators': 9723, 'max_depth': 32, 'learning_rate': 0.013016084825757697, 'colsample_bytree': 0.47929138487802303, 'subsample': 0.17387308550182862, 'alpha': 0.0008031084982542772, 'lambda': 0.0018405840334951304}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:20,587][0m Trial 59 finished with value: 0.601190922307221 and parameters: {'n_estimators': 3153, 'max_depth': 22, 'learning_rate': 0.001641959451230912, 'colsample_bytree': 0.44260425554631605, 'subsample': 0.630678050266874, 'alpha': 0.023410600481899243, 'lambda': 1.811483676729591e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -669,7 +669,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:13:49,582][0m Trial 60 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 9340, 'max_depth': 39, 'learning_rate': 0.014787128504497704, 'colsample_bytree': 0.5198483020218714, 'subsample': 0.0026353784184964596, 'alpha': 0.025364560630288194, 'lambda': 0.013740171364038527}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:21,486][0m Trial 60 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 3553, 'max_depth': 34, 'learning_rate': 0.0013580916828321253, 'colsample_bytree': 0.6322951677705941, 'subsample': 0.0026353784184964596, 'alpha': 0.0035064602724609213, 'lambda': 0.000754833387669345}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -680,7 +680,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:13:58,202][0m Trial 61 finished with value: 0.540828296230773 and parameters: {'n_estimators': 9958, 'max_depth': 34, 'learning_rate': 0.01286497495359143, 'colsample_bytree': 0.4757570710305575, 'subsample': 0.15459170026477118, 'alpha': 0.0009307285293020585, 'lambda': 0.0015058379773374528}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:22,199][0m Trial 61 finished with value: 0.6220959595959596 and parameters: {'n_estimators': 1731, 'max_depth': 30, 'learning_rate': 0.003430249550077295, 'colsample_bytree': 0.46477274049366535, 'subsample': 0.9875880642557966, 'alpha': 0.09826013252584027, 'lambda': 1.9863322539869178e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -691,7 +691,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:14:08,232][0m Trial 62 finished with value: 0.5594885833121127 and parameters: {'n_estimators': 9254, 'max_depth': 31, 'learning_rate': 0.011563984186484038, 'colsample_bytree': 0.4339031427824679, 'subsample': 0.2835844624189418, 'alpha': 0.0006180520030528271, 'lambda': 0.41849531327195016}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:22,736][0m Trial 62 finished with value: 0.601190922307221 and parameters: {'n_estimators': 1171, 'max_depth': 30, 'learning_rate': 0.0028188055335766717, 'colsample_bytree': 0.4677522300887115, 'subsample': 0.6809826971308653, 'alpha': 0.07635959977493564, 'lambda': 2.3000313636542604e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -702,7 +702,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:14:15,973][0m Trial 63 finished with value: 0.22222222222222224 and parameters: {'n_estimators': 9647, 'max_depth': 32, 'learning_rate': 0.009388982746663272, 'colsample_bytree': 0.5031380844224427, 'subsample': 0.07287806602173758, 'alpha': 0.0015048534725351063, 'lambda': 0.16837467945213794}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:23,452][0m Trial 63 finished with value: 0.5675782094879945 and parameters: {'n_estimators': 1973, 'max_depth': 26, 'learning_rate': 0.0034524214419932447, 'colsample_bytree': 0.4068081700766455, 'subsample': 0.4144095701168035, 'alpha': 1.6910213396772198e-06, 'lambda': 5.4360061292560344e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -713,7 +713,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:14:24,839][0m Trial 64 finished with value: 0.5904409642644937 and parameters: {'n_estimators': 7602, 'max_depth': 27, 'learning_rate': 0.013901702701214642, 'colsample_bytree': 0.4724636805875516, 'subsample': 0.17851986741122183, 'alpha': 0.004285598405027368, 'lambda': 0.0007877085946113115}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:24,292][0m Trial 64 finished with value: 0.5069230769230769 and parameters: {'n_estimators': 2553, 'max_depth': 10, 'learning_rate': 0.0024418017313908185, 'colsample_bytree': 0.5085083827565549, 'subsample': 0.2785758951096681, 'alpha': 0.00924579423012535, 'lambda': 3.6542238795971536e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -724,7 +724,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:14:31,548][0m Trial 65 finished with value: 0.5426054664289958 and parameters: {'n_estimators': 7621, 'max_depth': 27, 'learning_rate': 0.015984442380363163, 'colsample_bytree': 0.5682646776754167, 'subsample': 0.6140186956341405, 'alpha': 0.006187828719062417, 'lambda': 0.0005164700525723895}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:26,045][0m Trial 65 finished with value: 0.5527978600347021 and parameters: {'n_estimators': 5465, 'max_depth': 33, 'learning_rate': 0.005432593959731674, 'colsample_bytree': 0.5824590669835807, 'subsample': 0.73151858341975, 'alpha': 0.04201927725533132, 'lambda': 2.1342148337860033e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -735,7 +735,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:14:37,143][0m Trial 66 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 7230, 'max_depth': 44, 'learning_rate': 0.02371675730301994, 'colsample_bytree': 0.4520578528637408, 'subsample': 0.04577675572100982, 'alpha': 0.02384127594932219, 'lambda': 1.105037369349457}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:26,257][0m Trial 66 finished with value: 0.5940330875433177 and parameters: {'n_estimators': 470, 'max_depth': 30, 'learning_rate': 0.0033218654034978447, 'colsample_bytree': 0.547559387000946, 'subsample': 0.9903407528217189, 'alpha': 0.1015654431290647, 'lambda': 8.022638381464163e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -746,7 +746,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:14:45,706][0m Trial 67 finished with value: 0.5426054664289958 and parameters: {'n_estimators': 6912, 'max_depth': 40, 'learning_rate': 0.019719861319654895, 'colsample_bytree': 0.4126012549348817, 'subsample': 0.27817684527598496, 'alpha': 0.0038916671361041003, 'lambda': 0.00020522645400894313}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:26,753][0m Trial 67 finished with value: 0.5003328213005632 and parameters: {'n_estimators': 1655, 'max_depth': 36, 'learning_rate': 0.0027375154406401704, 'colsample_bytree': 0.6767088495219411, 'subsample': 0.07077209288423, 'alpha': 0.036667902796426344, 'lambda': 4.734456366160296e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -757,7 +757,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:14:51,624][0m Trial 68 finished with value: 0.22982456140350876 and parameters: {'n_estimators': 8672, 'max_depth': 47, 'learning_rate': 0.014283233679991682, 'colsample_bytree': 0.6428000128120168, 'subsample': 0.016814331618954566, 'alpha': 5.094911324838859e-05, 'lambda': 0.070340696598419}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:28,983][0m Trial 68 finished with value: 0.46330006176326644 and parameters: {'n_estimators': 8889, 'max_depth': 19, 'learning_rate': 0.002977248922063233, 'colsample_bytree': 0.44047397911130265, 'subsample': 0.13418486990326825, 'alpha': 0.017913900938491406, 'lambda': 1.7912905081991634e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -768,7 +768,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:14:58,075][0m Trial 69 finished with value: 0.5624039264828739 and parameters: {'n_estimators': 8350, 'max_depth': 25, 'learning_rate': 0.02778764716498421, 'colsample_bytree': 0.5938944771976785, 'subsample': 0.10496983999408666, 'alpha': 0.0018546457865687982, 'lambda': 0.018091919267484272}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:29,731][0m Trial 69 finished with value: 0.5808974827350507 and parameters: {'n_estimators': 2160, 'max_depth': 38, 'learning_rate': 0.0035634464907276587, 'colsample_bytree': 0.5009415456992643, 'subsample': 0.48447714327281793, 'alpha': 0.1714736293366003, 'lambda': 2.0431645382689198e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -779,7 +779,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:15:04,667][0m Trial 70 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 5718, 'max_depth': 21, 'learning_rate': 0.03368013588724825, 'colsample_bytree': 0.22291630373723706, 'subsample': 0.0001400588322098118, 'alpha': 0.0004256518309068072, 'lambda': 0.004929134880295658}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:30,146][0m Trial 70 finished with value: 0.38980650551108953 and parameters: {'n_estimators': 1178, 'max_depth': 25, 'learning_rate': 0.004589739789180118, 'colsample_bytree': 0.3625070079054736, 'subsample': 0.2058248072534991, 'alpha': 0.8394955280344942, 'lambda': 1.5251270034884069e-06}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -790,7 +790,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:15:12,305][0m Trial 71 finished with value: 0.5752394990630284 and parameters: {'n_estimators': 9973, 'max_depth': 37, 'learning_rate': 0.012452617992156806, 'colsample_bytree': 0.5041499195132484, 'subsample': 0.18449303428720626, 'alpha': 0.000630980902385384, 'lambda': 0.0021970117918852965}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:30,733][0m Trial 71 finished with value: 0.618515037593985 and parameters: {'n_estimators': 1443, 'max_depth': 28, 'learning_rate': 0.004287325083822479, 'colsample_bytree': 0.46436504031551534, 'subsample': 0.7787745312743816, 'alpha': 0.4579910982920309, 'lambda': 1.0107958136882134e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -801,7 +801,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:15:19,827][0m Trial 72 finished with value: 0.5704736440030558 and parameters: {'n_estimators': 8905, 'max_depth': 37, 'learning_rate': 0.017957042126998512, 'colsample_bytree': 0.5343541739430046, 'subsample': 0.22372836841339627, 'alpha': 0.0004863381441873604, 'lambda': 0.0006212413411903255}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:31,038][0m Trial 72 finished with value: 0.5009176166222006 and parameters: {'n_estimators': 743, 'max_depth': 23, 'learning_rate': 0.0053603239787290355, 'colsample_bytree': 0.47414785441329865, 'subsample': 0.3493976980307929, 'alpha': 1.4582699132265797, 'lambda': 3.871282739911762e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -812,7 +812,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:15:30,005][0m Trial 73 finished with value: 0.5574747474747475 and parameters: {'n_estimators': 9273, 'max_depth': 35, 'learning_rate': 0.008698530271832785, 'colsample_bytree': 0.4948554170199142, 'subsample': 0.35308210396479295, 'alpha': 0.00011257887580398175, 'lambda': 0.002733246832131301}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:31,763][0m Trial 73 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 2708, 'max_depth': 27, 'learning_rate': 0.0023446935274611873, 'colsample_bytree': 0.411631578243944, 'subsample': 0.00021564877645330435, 'alpha': 0.20718716972006065, 'lambda': 1.8678100734145894e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -823,7 +823,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:15:46,084][0m Trial 74 finished with value: 0.5426054664289958 and parameters: {'n_estimators': 8005, 'max_depth': 41, 'learning_rate': 0.010947323625135993, 'colsample_bytree': 0.4626949076266732, 'subsample': 0.7156010859116421, 'alpha': 0.014113265078750277, 'lambda': 0.00020999397782370485}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:32,463][0m Trial 74 finished with value: 0.618515037593985 and parameters: {'n_estimators': 1804, 'max_depth': 31, 'learning_rate': 0.005883378236420296, 'colsample_bytree': 0.4587646434213921, 'subsample': 0.6744714386405005, 'alpha': 0.07314539067060596, 'lambda': 8.571495069895858e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -834,7 +834,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:16:09,443][0m Trial 75 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 9988, 'max_depth': 38, 'learning_rate': 0.021406913726904165, 'colsample_bytree': 0.36818431575948996, 'subsample': 0.0569747550968087, 'alpha': 3.5044193797942455e-05, 'lambda': 0.3922208632218704}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:33,037][0m Trial 75 finished with value: 0.6086403508771929 and parameters: {'n_estimators': 1468, 'max_depth': 29, 'learning_rate': 0.005706326154166537, 'colsample_bytree': 0.45617816538740913, 'subsample': 0.49041320623638784, 'alpha': 0.5703492976900845, 'lambda': 4.81371987154432e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -845,7 +845,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:16:24,926][0m Trial 76 finished with value: 0.531451545530493 and parameters: {'n_estimators': 7590, 'max_depth': 34, 'learning_rate': 0.006438409693310682, 'colsample_bytree': 0.510302840095148, 'subsample': 0.16122262498824225, 'alpha': 0.0024643757561190614, 'lambda': 0.000898461337509306}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:34,040][0m Trial 76 finished with value: 0.5668832103934405 and parameters: {'n_estimators': 2996, 'max_depth': 31, 'learning_rate': 0.00870030573830576, 'colsample_bytree': 0.423561844321186, 'subsample': 0.7355839392854301, 'alpha': 0.07801935692340801, 'lambda': 0.00011311298320983836}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -856,7 +856,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:16:25,336][0m Trial 77 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 225, 'max_depth': 44, 'learning_rate': 0.016049959849889935, 'colsample_bytree': 0.5478681203547097, 'subsample': 0.10279897755610859, 'alpha': 0.004876391597250937, 'lambda': 1.7945479865880973}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:34,776][0m Trial 77 finished with value: 0.45715971088607343 and parameters: {'n_estimators': 2361, 'max_depth': 32, 'learning_rate': 0.006453177651453416, 'colsample_bytree': 0.5398271792662387, 'subsample': 0.3369432758657202, 'alpha': 2.0481057235949747, 'lambda': 1.1125031146947003e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -867,7 +867,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:16:33,494][0m Trial 78 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 6573, 'max_depth': 49, 'learning_rate': 0.0253933077597448, 'colsample_bytree': 0.4189647395223408, 'subsample': 0.011376531393285086, 'alpha': 0.00015868174665638695, 'lambda': 0.13996141975045845}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:35,120][0m Trial 78 finished with value: 0.21484674329501918 and parameters: {'n_estimators': 1055, 'max_depth': 29, 'learning_rate': 0.004817315860925206, 'colsample_bytree': 0.44187337176990266, 'subsample': 0.011376531393285086, 'alpha': 5.599103517141472, 'lambda': 1.5423409123562116e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -878,7 +878,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:16:43,081][0m Trial 79 finished with value: 0.5594885833121127 and parameters: {'n_estimators': 6186, 'max_depth': 36, 'learning_rate': 0.01394489219358765, 'colsample_bytree': 0.5764824238120209, 'subsample': 0.28563430281075275, 'alpha': 7.695558275987463e-05, 'lambda': 6.854133490069036e-05}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:35,805][0m Trial 79 finished with value: 0.618515037593985 and parameters: {'n_estimators': 1762, 'max_depth': 31, 'learning_rate': 0.004282718849969674, 'colsample_bytree': 0.4868484601709824, 'subsample': 0.5723174062523454, 'alpha': 0.031128518827881858, 'lambda': 4.047982007877806e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -889,7 +889,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:16:53,774][0m Trial 80 finished with value: 0.5594885833121127 and parameters: {'n_estimators': 9039, 'max_depth': 42, 'learning_rate': 0.04052454488741493, 'colsample_bytree': 0.46390041262346077, 'subsample': 0.4139199252164678, 'alpha': 0.0014517972989020467, 'lambda': 0.006191393601638275}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:36,402][0m Trial 80 finished with value: 0.45715971088607343 and parameters: {'n_estimators': 1868, 'max_depth': 35, 'learning_rate': 0.0040575651103164235, 'colsample_bytree': 0.485229689565488, 'subsample': 0.20632468605584017, 'alpha': 0.11737933953345318, 'lambda': 3.654580611452689e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -900,7 +900,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:17:05,434][0m Trial 81 finished with value: 0.5552721788015905 and parameters: {'n_estimators': 8868, 'max_depth': 38, 'learning_rate': 0.01742546976893954, 'colsample_bytree': 0.5316438139897526, 'subsample': 0.23115523031587296, 'alpha': 0.0004707683463574564, 'lambda': 0.0008650513981406103}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:37,074][0m Trial 81 finished with value: 0.618515037593985 and parameters: {'n_estimators': 1597, 'max_depth': 33, 'learning_rate': 0.004362921189590333, 'colsample_bytree': 0.5972850982151382, 'subsample': 0.815329418950391, 'alpha': 0.03129769740624086, 'lambda': 3.692536235423833e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -911,7 +911,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:17:18,764][0m Trial 82 finished with value: 0.6053102453102452 and parameters: {'n_estimators': 9361, 'max_depth': 40, 'learning_rate': 0.018254122309595153, 'colsample_bytree': 0.4410806030150579, 'subsample': 0.20543443986739574, 'alpha': 0.00024983764886835015, 'lambda': 0.6233290156607822}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:37,758][0m Trial 82 finished with value: 0.618515037593985 and parameters: {'n_estimators': 1664, 'max_depth': 32, 'learning_rate': 0.003851180319704045, 'colsample_bytree': 0.6051893410726987, 'subsample': 0.5440144586689232, 'alpha': 0.0520835860887819, 'lambda': 3.454580136920671e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -922,7 +922,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:17:28,434][0m Trial 83 finished with value: 0.2477124183006536 and parameters: {'n_estimators': 9468, 'max_depth': 40, 'learning_rate': 0.020416090870963674, 'colsample_bytree': 0.44808791382587526, 'subsample': 0.08040964010536843, 'alpha': 0.00019349480397041758, 'lambda': 0.31236986038957004}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:37,997][0m Trial 83 finished with value: 0.5738245614035088 and parameters: {'n_estimators': 320, 'max_depth': 33, 'learning_rate': 0.004349680785712121, 'colsample_bytree': 0.5272778496762841, 'subsample': 0.8397140619574388, 'alpha': 0.03223232439312505, 'lambda': 1.0049688712035986e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -933,7 +933,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:17:35,907][0m Trial 84 finished with value: 0.5313108528898003 and parameters: {'n_estimators': 7147, 'max_depth': 42, 'learning_rate': 0.007938391835415117, 'colsample_bytree': 0.49497416024006446, 'subsample': 0.13053769404462354, 'alpha': 0.0010628185747206483, 'lambda': 0.7221231239337884}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:38,701][0m Trial 84 finished with value: 0.6086403508771929 and parameters: {'n_estimators': 1776, 'max_depth': 31, 'learning_rate': 0.003498825058053209, 'colsample_bytree': 0.6111629758792926, 'subsample': 0.5185415102373281, 'alpha': 0.057935453887526224, 'lambda': 3.9395996454982473e-08}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -944,7 +944,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:17:44,784][0m Trial 85 finished with value: 0.5574747474747475 and parameters: {'n_estimators': 8451, 'max_depth': 30, 'learning_rate': 0.02902975834870449, 'colsample_bytree': 0.43846594663047816, 'subsample': 0.7126614914918452, 'alpha': 3.488143980457237e-05, 'lambda': 6.330702787922462}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:39,248][0m Trial 85 finished with value: 0.618515037593985 and parameters: {'n_estimators': 1315, 'max_depth': 35, 'learning_rate': 0.006238217913054746, 'colsample_bytree': 0.6704068329672732, 'subsample': 0.5465183403575784, 'alpha': 0.539642042658175, 'lambda': 1.6299858727820517e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -955,7 +955,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:17:51,761][0m Trial 86 finished with value: 0.5382936507936509 and parameters: {'n_estimators': 8719, 'max_depth': 6, 'learning_rate': 0.010109897615257591, 'colsample_bytree': 0.41343410293355537, 'subsample': 0.16403463982360023, 'alpha': 0.0003127587763298289, 'lambda': 0.6285633762529191}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:39,547][0m Trial 86 finished with value: 0.5030865558451765 and parameters: {'n_estimators': 682, 'max_depth': 36, 'learning_rate': 0.005978602493126786, 'colsample_bytree': 0.5944446252168586, 'subsample': 0.3337307278899063, 'alpha': 0.5059296753094801, 'lambda': 1.398769872926669e-07}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -966,7 +966,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:18:00,110][0m Trial 87 finished with value: 0.5574747474747475 and parameters: {'n_estimators': 9166, 'max_depth': 45, 'learning_rate': 0.012239237968778172, 'colsample_bytree': 0.47254117425629666, 'subsample': 0.42596223568270897, 'alpha': 0.0028119793386040923, 'lambda': 0.18894929885410294}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:40,409][0m Trial 87 finished with value: 0.5025587472955892 and parameters: {'n_estimators': 2410, 'max_depth': 38, 'learning_rate': 0.001000469123854658, 'colsample_bytree': 0.4532265380144929, 'subsample': 0.41581400884580016, 'alpha': 0.194631456627377, 'lambda': 0.005479229991018003}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -977,7 +977,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:18:08,562][0m Trial 88 finished with value: 0.5234050147665709 and parameters: {'n_estimators': 9749, 'max_depth': 47, 'learning_rate': 0.04630328774921703, 'colsample_bytree': 0.5465373366133851, 'subsample': 0.21407589409646555, 'alpha': 0.0007320974349249695, 'lambda': 0.02135442784938036}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:41,618][0m Trial 88 finished with value: 0.618515037593985 and parameters: {'n_estimators': 3509, 'max_depth': 30, 'learning_rate': 0.007396641885009837, 'colsample_bytree': 0.5485572651518135, 'subsample': 0.7811935920684501, 'alpha': 0.2675006434473495, 'lambda': 1.4429090528421886}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -988,7 +988,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:18:15,397][0m Trial 89 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 8111, 'max_depth': 44, 'learning_rate': 0.024353780018060416, 'colsample_bytree': 0.5076108080969622, 'subsample': 0.045107929861153806, 'alpha': 0.03989155491982367, 'lambda': 0.05134832968238017}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:42,660][0m Trial 89 finished with value: 0.5523323198277825 and parameters: {'n_estimators': 3424, 'max_depth': 42, 'learning_rate': 0.007409541253061935, 'colsample_bytree': 0.6875079935654446, 'subsample': 0.2819258496187697, 'alpha': 0.9958328260572973, 'lambda': 0.016496922119040542}. Best is trial 35 with value: 0.6220959595959596.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -999,7 +999,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:18:20,177][0m Trial 90 finished with value: 0.5238492063492064 and parameters: {'n_estimators': 7444, 'max_depth': 13, 'learning_rate': 0.015226399668435586, 'colsample_bytree': 0.6185066964203679, 'subsample': 0.1351044252080752, 'alpha': 0.008204754343134826, 'lambda': 2.040981975273507}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:43,690][0m Trial 90 finished with value: 0.6252491127491127 and parameters: {'n_estimators': 2779, 'max_depth': 32, 'learning_rate': 0.003806415558862921, 'colsample_bytree': 0.5697448998878867, 'subsample': 0.9937440643524023, 'alpha': 0.3058597624496353, 'lambda': 0.7680568030676455}. Best is trial 90 with value: 0.6252491127491127.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -1010,7 +1010,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:18:28,041][0m Trial 91 finished with value: 0.5701414598473422 and parameters: {'n_estimators': 9521, 'max_depth': 36, 'learning_rate': 0.018577727224397156, 'colsample_bytree': 0.529692096576814, 'subsample': 0.22694965360529656, 'alpha': 0.0004563926166271076, 'lambda': 0.002835562298607089}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:44,995][0m Trial 91 finished with value: 0.6282363104731525 and parameters: {'n_estimators': 4096, 'max_depth': 28, 'learning_rate': 0.011727005917402554, 'colsample_bytree': 0.5556795477815737, 'subsample': 0.9756586141048456, 'alpha': 0.2526830872225877, 'lambda': 0.3210579167465035}. Best is trial 91 with value: 0.6282363104731525.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -1021,7 +1021,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:18:36,615][0m Trial 92 finished with value: 0.5594885833121127 and parameters: {'n_estimators': 8867, 'max_depth': 37, 'learning_rate': 0.016583810556881913, 'colsample_bytree': 0.49288990464593746, 'subsample': 0.32276555399342616, 'alpha': 0.00010309959125214206, 'lambda': 0.0002966488830847891}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:46,571][0m Trial 92 finished with value: 0.618515037593985 and parameters: {'n_estimators': 4681, 'max_depth': 31, 'learning_rate': 0.003137062840860197, 'colsample_bytree': 0.5715214659675969, 'subsample': 0.5969045028430764, 'alpha': 0.22072496682237028, 'lambda': 1.8151758289393725}. Best is trial 91 with value: 0.6282363104731525.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -1032,7 +1032,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:18:45,065][0m Trial 93 finished with value: 0.5426054664289958 and parameters: {'n_estimators': 9809, 'max_depth': 39, 'learning_rate': 0.019043296719262057, 'colsample_bytree': 0.5772289526000749, 'subsample': 0.253850197310274, 'alpha': 0.00030168589427059366, 'lambda': 0.001277287284098445}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:47,849][0m Trial 93 finished with value: 0.5698704081174804 and parameters: {'n_estimators': 4055, 'max_depth': 28, 'learning_rate': 0.010990975163200894, 'colsample_bytree': 0.5554995551255105, 'subsample': 0.5976400247660756, 'alpha': 0.2566525042523181, 'lambda': 0.8361997659971832}. Best is trial 91 with value: 0.6282363104731525.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -1043,7 +1043,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:18:50,460][0m Trial 94 finished with value: 0.5701414598473422 and parameters: {'n_estimators': 6670, 'max_depth': 8, 'learning_rate': 0.034224795038190155, 'colsample_bytree': 0.43941807799028226, 'subsample': 0.20012011713659456, 'alpha': 0.0007197064158879348, 'lambda': 0.0006171613540610061}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:49,848][0m Trial 94 finished with value: 0.618515037593985 and parameters: {'n_estimators': 5655, 'max_depth': 32, 'learning_rate': 0.003523412126135033, 'colsample_bytree': 0.6392572676245177, 'subsample': 0.907295124949253, 'alpha': 0.12722792513632752, 'lambda': 3.2543604185399735}. Best is trial 91 with value: 0.6282363104731525.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -1054,7 +1054,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:18:58,449][0m Trial 95 finished with value: 0.5426054664289958 and parameters: {'n_estimators': 9365, 'max_depth': 41, 'learning_rate': 0.021743808384465223, 'colsample_bytree': 0.5385102377459983, 'subsample': 0.4822660040157345, 'alpha': 0.0017626109735229282, 'lambda': 0.00014252293532127514}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:52,076][0m Trial 95 finished with value: 0.6282363104731525 and parameters: {'n_estimators': 6478, 'max_depth': 27, 'learning_rate': 0.0036582444106611025, 'colsample_bytree': 0.6307207330662781, 'subsample': 0.9738933189077155, 'alpha': 0.13709750659302797, 'lambda': 3.3062369953040855}. Best is trial 91 with value: 0.6282363104731525.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -1065,7 +1065,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:19:05,039][0m Trial 96 finished with value: 0.29172932330827067 and parameters: {'n_estimators': 7808, 'max_depth': 25, 'learning_rate': 0.01753442428405848, 'colsample_bytree': 0.47196975154632664, 'subsample': 1.4899024493297155e-05, 'alpha': 0.00019280694682696791, 'lambda': 0.09273871254480473}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:54,171][0m Trial 96 finished with value: 0.5393935902120046 and parameters: {'n_estimators': 6317, 'max_depth': 27, 'learning_rate': 0.0029270056483187957, 'colsample_bytree': 0.6288999671892777, 'subsample': 0.9740355795617587, 'alpha': 2.048555935404363, 'lambda': 5.763199782862867}. Best is trial 91 with value: 0.6282363104731525.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -1076,7 +1076,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:19:12,097][0m Trial 97 finished with value: 0.48234981392876125 and parameters: {'n_estimators': 8298, 'max_depth': 33, 'learning_rate': 0.01121366010166673, 'colsample_bytree': 0.3203162956095975, 'subsample': 0.10295301810995224, 'alpha': 0.00111065117184801, 'lambda': 0.008629091784733676}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:56,453][0m Trial 97 finished with value: 0.5737022649608856 and parameters: {'n_estimators': 7512, 'max_depth': 33, 'learning_rate': 0.008894120126559591, 'colsample_bytree': 0.7183006294582996, 'subsample': 0.4627559212063352, 'alpha': 0.44066798912660576, 'lambda': 0.19195032927442304}. Best is trial 91 with value: 0.6282363104731525.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -1087,7 +1087,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:19:16,707][0m Trial 98 finished with value: 0.5538608776844071 and parameters: {'n_estimators': 7034, 'max_depth': 37, 'learning_rate': 0.0136492139896804, 'colsample_bytree': 0.514183846957716, 'subsample': 0.16914432934011306, 'alpha': 0.0004913191908455429, 'lambda': 0.246304271737274}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:58,658][0m Trial 98 finished with value: 0.618515037593985 and parameters: {'n_estimators': 6112, 'max_depth': 35, 'learning_rate': 0.0037907837706815783, 'colsample_bytree': 0.7780640648417895, 'subsample': 0.8959009436203724, 'alpha': 0.11571703904550887, 'lambda': 3.0055097682853376}. Best is trial 91 with value: 0.6282363104731525.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:45: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "learning_rate": trial.suggest_loguniform("learning_rate", 0.001, 0.05),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:46: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
@@ -1098,7 +1098,7 @@
   "alpha": trial.suggest_loguniform("alpha", 1e-8, 10.0),
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/models/xgboost.py:49: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use :func:`~optuna.trial.Trial.suggest_float` instead.
   "lambda": trial.suggest_loguniform("lambda", 1e-8, 10.0),
-[32m[I 2023-01-30 23:19:23,955][0m Trial 99 finished with value: 0.23666666666666672 and parameters: {'n_estimators': 9113, 'max_depth': 35, 'learning_rate': 0.0038046435908381977, 'colsample_bytree': 0.4550385179019332, 'subsample': 0.07173815166801485, 'alpha': 0.003145120604866042, 'lambda': 0.475927799212034}. Best is trial 55 with value: 0.6053102453102452.[0m
+[32m[I 2023-01-31 08:50:59,574][0m Trial 99 finished with value: 0.5724430512016718 and parameters: {'n_estimators': 2767, 'max_depth': 25, 'learning_rate': 0.002698150588712951, 'colsample_bytree': 0.5243467804155979, 'subsample': 0.39017195035191293, 'alpha': 0.030209960785358512, 'lambda': 0.2322313397676943}. Best is trial 91 with value: 0.6282363104731525.[0m
 /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/src/gptchem/formatter.py:882: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
@@ -1111,14 +1111,14 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   df.dropna(subset=[self.ligand_column] + [self.inorganic_salt_column], inplace=True)
 Loading model that can be used for inference only
 Using a Transformer with 25.82 M parameters
-Upload progress:   0%|          | 0.00/25.7k [00:00<?, ?it/s]Upload progress: 100%|██████████| 25.7k/25.7k [00:00<00:00, 7.74Mit/s]
-2023-01-30 23:50:56.147 | DEBUG    | gptchem.tuner:tune:188 - Requested fine tuning. {
-  "created_at": 1675118964,
+Upload progress:   0%|          | 0.00/40.6k [00:00<?, ?it/s]Upload progress: 100%|██████████| 40.6k/40.6k [00:00<00:00, 19.7Mit/s]
+2023-01-31 09:01:57.712 | DEBUG    | gptchem.tuner:tune:188 - Requested fine tuning. {
+  "created_at": 1675152117,
   "events": [
     {
-      "created_at": 1675118964,
+      "created_at": 1675152117,
       "level": "info",
-      "message": "Created fine-tune: ft-rGtmrKSgVDNCRhPwr7GVBvsf",
+      "message": "Created fine-tune: ft-mDFP7NO4JZRDo9QVZQItUd7k",
       "object": "fine-tune-event"
     }
   ],
@@ -1129,7 +1129,7 @@ Using a Transformer with 25.82 M parameters
     "n_epochs": 8,
     "prompt_loss_weight": 0.01
   },
-  "id": "ft-rGtmrKSgVDNCRhPwr7GVBvsf",
+  "id": "ft-mDFP7NO4JZRDo9QVZQItUd7k",
   "model": "ada",
   "object": "fine-tune",
   "organization_id": "org-TFRJXw3PPQocOWbu71eI2t9U",
@@ -1137,21 +1137,45 @@ Using a Transformer with 25.82 M parameters
   "status": "pending",
   "training_files": [
     {
-      "bytes": 25663,
-      "created_at": 1675118953,
-      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/mof_solvent/balasz/out/20230130_234425/train.jsonl",
-      "id": "file-8ruUPunM1ESpT3g07FqSK9f1",
+      "bytes": 40584,
+      "created_at": 1675152117,
+      "filename": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/mof_solvent/balasz/out/20230131_090155/train.jsonl",
+      "id": "file-8ZQ71h0eZLibv6ejD77BxqRV",
       "object": "file",
       "purpose": "fine-tune",
-      "status": "processed",
+      "status": "uploaded",
       "status_details": null
     }
   ],
-  "updated_at": 1675118964,
+  "updated_at": 1675152117,
   "validation_files": []
 }
-2023-01-30 23:52:01.979 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
-2023-01-30 23:55:29.111 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
-2023-01-31 00:07:59.631 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
-/Users/kevinmaikjablonka/miniconda3/envs/gptchem/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
-  warnings.warn('resource_tracker: There appear to be %d '
+2023-01-31 09:01:57.899 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:03:58.360 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:05:58.839 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:07:59.280 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:09:59.755 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:12:00.228 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:14:00.690 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:16:01.147 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:18:01.650 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:20:02.158 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:22:02.645 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:24:03.096 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:26:03.562 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:28:04.045 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:30:04.687 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:32:05.143 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:34:05.637 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:36:06.164 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:38:06.632 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:40:07.117 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:42:07.614 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:44:08.067 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:46:08.522 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:48:08.978 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:50:09.441 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:52:09.868 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:54:10.324 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:56:10.797 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-01-31 09:58:11.258 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
