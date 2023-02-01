@@ -55,7 +55,7 @@ def run_experiment(train_size, target, seed):
     extractor = RegressionExtractor()
     extracted = extractor(completions)
 
-    gpt_metrics = get_regression_metrics(test[target], extracted)
+    gpt_metrics = get_regression_metrics(test[target_col], extracted)
 
     summary = {
         "train_size": train_size,
