@@ -1,5 +1,7 @@
 from pathlib import Path
 
+from loguru import logger
+
 from fastcore.xtras import save_pickle
 from sklearn.model_selection import train_test_split
 
@@ -17,6 +19,8 @@ representations = ["SMILES"]
 max_num_test_points = 100
 num_repeats = 10
 
+
+logger.enable('gptchem')
 
 def train_test_model(num_classes, representation, num_train_points, seed):
     data = get_photoswitch_data()

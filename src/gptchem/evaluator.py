@@ -36,6 +36,7 @@ from strsimpy.levenshtein import Levenshtein
 from strsimpy.longest_common_subsequence import LongestCommonSubsequence
 from strsimpy.normalized_levenshtein import NormalizedLevenshtein
 from tqdm import tqdm
+from rdkit.Contrib.SA_Score.sascorer import calculateScore as calculate_sascore
 
 from gptchem.fingerprints.polymer import LinearPolymerSmilesFeaturizer, featurize_many_polymers
 from gptchem.models import get_e_pi_pistar_model_data, get_polymer_model, get_z_pi_pistar_model_data
@@ -312,6 +313,16 @@ def predict_photoswitch(
     fragprints = compute_fragprints(smiles)
     return e_pi_pi_star_model.predict(fragprints), z_pi_pi_star_model.predict(fragprints)
 
+def get_sa_scores(smiles):
+    sa_scores = []
+    for smiles in smiles:
+        try:
+            mol = Chem.MolFromSmiles(smiles)
+            sa_scores.append(calculate_sascore(mol))
+        except: 
+            pass
+    return sa_scores
+
 
 def is_valid_smiles(smiles: str) -> bool:
     """We say a SMILES is valid if RDKit can parse it."""
@@ -321,8 +332,10 @@ def is_valid_smiles(smiles: str) -> bool:
 def is_in_pubchem(smiles):
     """Check if a SMILES is in PubChem."""
     try:
-        return pcp.get_compounds(smiles, smiles=smiles, namespace="SMILES")
-    except Exception:
+        res = pcp.get_compounds(smiles, smiles=smiles, namespace="SMILES")
+        return len(res)>0 & res[0].cid
+    except Exception as e:
+        print(e)
         return None
 
 
@@ -331,10 +344,15 @@ def evaluate_generated_smiles(
 ) -> Dict[str, float]:
     valid_smiles = []
     valid_indices = []
+    novel_indices = []
+    novel_smiles = []
     for i, s in enumerate(smiles):
         if is_valid_smiles(s):
             valid_smiles.append(s)
             valid_indices.append(i)
+            if s not in train_smiles: 
+                novel_indices.apend(i)
+                novel_smiles.append(s)
 
     assert len(valid_smiles) == len(valid_indices) <= len(smiles)
 
@@ -387,6 +405,8 @@ def evaluate_generated_smiles(
         "frechet_score": frechet_score,
         "valid_smiles": valid_smiles,
         "valid_indices": valid_indices,
+        "novel_indices": novel_indices,
+        "novel_smiles": novel_smiles
     }
 
     return res

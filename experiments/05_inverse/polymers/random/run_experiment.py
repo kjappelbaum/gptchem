@@ -41,9 +41,8 @@ def train_test(num_train_points, temperatures, num_sample, noise_level, seed):
     )
 
     formatted_train = formatter(data.sample(n=num_train_points, random_state=seed))
-    test_size = min(num_samples, len(data_test))
 
-    formatted_test = formatter(data_test.sample(test_size))
+    formatted_test = formatter(data_test)
 
     tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
 
@@ -63,6 +62,7 @@ def train_test(num_train_points, temperatures, num_sample, noise_level, seed):
                 formatted_train,
                 formatted_test
             )
+            results['temp'] = temp
             res_at_temp.append(results)
         except Exception as e:
             logger.error(e)

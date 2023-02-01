@@ -12,7 +12,7 @@ from gptchem.formatter import MOFSynthesisRecommenderFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
-train_sizes = [10, 20, 50, 100, 200, 400]
+train_sizes = [10, 20, 50, 100, 200, 400][::-1]
 repeats = 10
 threshold = 0.6
 

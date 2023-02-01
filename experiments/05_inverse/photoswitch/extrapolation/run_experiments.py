@@ -16,11 +16,12 @@ from gptchem.tuner import Tuner
 num_trials = 10
 TRAIN_SIZE = 92
 TEMPERATURES = [0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0][::-1]
-NOISE_LEVEL = [0.5, 1.0, 5.0, 10, 20, 50][::-1]
+NOISE_LEVEL = [0.5, 1.0, 5.0, 10, 20, 50]
 NUM_SAMPLES = 100
 
 THRESHOLD = 350
 
+logger.enable('gptchem')
 
 def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed):
     data = get_photoswitch_data()
@@ -70,11 +71,16 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
     querier = Querier(tune_res["model_name"], max_tokens=600)
     extractor = InverseExtractor()
 
+    train_smiles = formatted_train["label"]
+    valid_smiles =formatted_test["label"]
+
+    all_smiles = train_smiles + valid_smiles
     res_at_temp = []
     for temp in temperatures:
         completions = querier(formatted_test, temperature=temp)
         generated_smiles = extractor(completions)
         smiles_metrics = evaluate_generated_smiles(generated_smiles, formatted_train["label"])
+        smiles_metrics_all = evaluate_generated_smiles(generated_smiles, all_smiles)
         assert len(smiles_metrics["valid_indices"]) <= len(generated_smiles)
         expected_e = []
         expected_z = []
@@ -94,20 +100,37 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
                     expected_e_pi_pi_star=expected_e,
                 )
 
+                # now, let's do the thing for the novel SMILES only 
+
+                expected_e_novel = L(expected_e)[smiles_metrics["novel_indices"]]
+                expected_z_novel = L(expected_z)[smiles_metrics["novel_indices"]]
+
+                constrain_satisfaction_novel = evaluate_photoswitch_smiles_pred(
+                    smiles_metrics["novel_smiles"],
+                    expected_z_pi_pi_star=expected_z_novel,
+                    expected_e_pi_pi_star=expected_e_novel,
+                )
+
             else:
                 constrain_satisfaction = evaluate_photoswitch_smiles_pred(
+                    None, expected_z, expected_e
+                )
+
+                constrain_satisfaction_novel = evaluate_photoswitch_smiles_pred(
                     None, expected_z, expected_e
                 )
         except Exception as e:
             print(e)
             constrain_satisfaction = {}
+            constrain_satisfaction_novel = {}
 
         res = {
             "completions": completions,
             "generated_smiles": generated_smiles,
             "train_smiles": formatted_train["label"],
             **smiles_metrics,
-            **constrain_satisfaction,
+            'constrain_satisfaction': constrain_satisfaction, 
+            "constrain_satisfaction_novel":constrain_satisfaction_novel , 
             "temperature": temp,
         }
 
@@ -121,6 +144,9 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
         "res_at_temp": res_at_temp,
         "test_size": len(formatted_test),
         "threshold": THRESHOLD,
+        "formatted_test": formatted_test
+        **tune_res,
+        "smiles_metrics_all": smiles_metrics_all
     }
 
     save_pickle(Path(tune_res["outdir"]) / "summary.pkl", summary)

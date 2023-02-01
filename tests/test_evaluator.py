@@ -10,6 +10,7 @@ from gptchem.evaluator import (
     evaluate_generated_smiles,
     evaluate_photoswitch_smiles_pred,
     predict_photoswitch,
+    is_in_pubchem
 )
 
 
@@ -82,3 +83,8 @@ def test_evaluate_photoswitch_smiles_pred():
     assert "e_pi_pi_star_metrics" in res
     assert "z_pi_pi_star_metrics" in res
     assert res["e_pi_pi_star_metrics"]["mean_absolute_error"] == pytest.approx(40, 1)
+
+
+def test_is_in_pubchem():
+    assert is_in_pubchem('CC')
+    assert not is_in_pubchem('[N-]=[N+]=NCC(C=C1)=CC2=C1CCC3=C(/N=N\2)C=C(CN=[N+]=[N-])C=C3')
