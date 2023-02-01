@@ -62,7 +62,7 @@ if __name__ == "__main__":
     for i in range(repeats):
         for train_size in train_sizes:
             try:
-                train_test(train_size, i+1559)
+                train_test(train_size, i+19)
             except Exception as e:
                 logger.exception(e)
                 continue

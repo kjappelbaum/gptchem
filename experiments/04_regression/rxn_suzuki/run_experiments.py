@@ -15,7 +15,7 @@ from gptchem.formatter import ReactionRegressionFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
-train_sizes = [10, 20, 50, 100, 200]
+train_sizes = [10, 20, 50, 100, 200][::-1]
 num_test_points = 100
 use_one_hot = [True, False][::-1]
 num_repeats = 10
@@ -78,6 +78,6 @@ if __name__ == "__main__":
         for oh in use_one_hot:
             for train_size in train_sizes:
                 try:
-                    train_test_model("SuzukiMiyaura", train_size, seed + 33498644, oh)
+                    train_test_model("SuzukiMiyaura", train_size, seed + 3644, oh)
                 except Exception as e:
                     print(f"Failed with {e}")

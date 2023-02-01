@@ -39,4 +39,4 @@ def train_test(train_size, seed):
 if __name__ == '__main__':
     for i in range(num_rounds):
         for train_size in train_sizes:
-            train_test(train_size=train_size, seed=i)
+            train_test(train_size=train_size, seed=i + 13)

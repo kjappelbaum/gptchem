@@ -74,4 +74,4 @@ def train_test_model(num_train_points, seed):
 if __name__ == "__main__":
     for seed in range(num_repeats):
         for num_train_points in num_training_points:
-            train_test_model(num_train_points, seed + 4354)
+            train_test_model(num_train_points, seed + 154)

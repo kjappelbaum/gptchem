@@ -75,4 +75,4 @@ if __name__ == "__main__":
     for seed in range(num_repeats):
         for representation in representations:
             for num_train_points in num_training_points:
-                train_test_model(representation, num_train_points, seed + 123443224)
+                train_test_model(representation, num_train_points, seed + 1224)
