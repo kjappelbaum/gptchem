@@ -351,7 +351,7 @@ def evaluate_generated_smiles(
             valid_smiles.append(s)
             valid_indices.append(i)
             if s not in train_smiles: 
-                novel_indices.apend(i)
+                novel_indices.append(i)
                 novel_smiles.append(s)
 
     assert len(valid_smiles) == len(valid_indices) <= len(smiles)

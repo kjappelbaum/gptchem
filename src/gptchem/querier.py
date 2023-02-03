@@ -123,3 +123,5 @@ class Querier:
         return self.query(df, temperature, logprobs)
 
     __repr__ = basic_repr("modelname,max_tokens")
+
+

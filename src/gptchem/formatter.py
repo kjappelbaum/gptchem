@@ -392,7 +392,6 @@ completion: {c3}
             c3=random_completions[2],
         )
 
-
         return {
             "prompt": self._PROMPT_TEMPLATE.format(
                 prefix=self._prefix,
@@ -400,7 +399,8 @@ completion: {c3}
                 representation=representation,
                 suffix=self._suffix,
                 end_prompt=self._end_prompt,
-            ) + examples,
+            )
+            + examples,
             "completion": self._COMPLETION_TEMPLATE.format(
                 start_completion=self._start_completion,
                 label=label,
@@ -1170,3 +1170,80 @@ class MOFSynthesisRecommenderFormatter(BaseFormatter):
 
     def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
         return self.format_many(df)
+
+
+def create_example_string(
+    data,
+    representation_col: str,
+    value_col: str,
+    num_examples: Optional[int] = None,
+):
+    if num_examples is None:
+        num_examples = len(data)
+    examples = []
+    for i, row in data.sample(num_examples).iterrows():
+        examples.append(f"Q: {row[representation_col]}\nA: {row[value_col]}\n")
+    return "\n".join(examples)
+
+
+class FewShotFormatter:
+    _PREFIX = "I am a highly intelligent question answering bot that answers questions about {property}."
+    _PROMPT_TEMPLATE = """{prefix}
+    
+{examples}
+Q: {representation}"""
+
+    def __init__(
+        self,
+        training_frame: pd.DataFrame,
+        property_name: str,
+        representation_column: str,
+        label_column: str,
+    ):
+        self.property_name = property_name
+        self.representation_column = representation_column
+        self.label_column = label_column
+        self.training_frame = training_frame
+
+    __repr__ = basic_repr("representation_column,label_column,property_name,num_classes,qcut")
+
+
+    def _format(self, row: pd.Series) -> dict:
+        """Format a single row of a dataframe into a prompt and completion.
+
+        Args:
+            row (pd.Series): A row of a dataframe with a representation and a label.
+
+        Returns:
+            dict: A dictionary with a prompt and a completion.
+        """
+
+        return {
+            "prompt": self._PROMPT_TEMPLATE.format(
+                prefix=self._PREFIX.format(property=self.property_name),
+                representation=row[self.representation_column],
+                examples=create_example_string(
+                    self.training_frame,
+                    self.representation_column,
+                    self.label_column,
+                ),
+            ),
+            "completion": row[self.label_column],
+            "label": row[self.label_column],
+            "representation": row[self.representation_column],
+        }
+
+    def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Format a dataframe of representations and labels into a dataframe of prompts and completions.
+
+        This function will drop rows with missing values in the representation or label columns.
+
+        Args:
+            df (pd.DataFrame): A dataframe with a representation column and a label column.
+
+        Returns:
+            pd.DataFrame: A dataframe with a prompt column and a completion column.
+        """
+        return pd.DataFrame([self._format(row) for _, row in df.iterrows()])
+
+    __call__ = format_many
