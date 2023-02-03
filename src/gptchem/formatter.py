@@ -362,12 +362,10 @@ completion: {c3}
         label: StringOrNumber,
         possible_labels: Collection[StringOrNumber],
     ) -> dict:
-
-        logger.debug('Generating random prompts')
         random_prompts = []
         random_completions = []
         for i in range(3):
-            mol = mutate_selfie(selfies.encoder(representation), 50)[1]
+            mol = mutate_selfie(selfies.encoder(representation), 500)[1]
             random_completion = random.choice(possible_labels)
             random_prompts.append(
                 self._PROMPT_TEMPLATE.format(
@@ -394,7 +392,7 @@ completion: {c3}
             c3=random_completions[2],
         )
 
-        logger.debug('returning prompt')
+
         return {
             "prompt": self._PROMPT_TEMPLATE.format(
                 prefix=self._prefix,

@@ -912,4 +912,4 @@ def add_kappa_vlines(index, values, low=10, high=100, ymax=1.6, ymin=0.2):
     for k, v in intersections.items():
         if (v > low) & (v < high): 
             plt.vlines(v, ymin, ymax, color=colors[k], alpha=.8)
-            plt.text(v + 0.2, (ymax-ymin)/2, k, color=colors[k], fontsize=8, rotation=90, alpha=.8)
+            plt.text(v + 1, (ymax-ymin)/2, k, color=colors[k], fontsize=8, rotation=90, alpha=.8)

@@ -31,7 +31,9 @@ def train_test_model(num_classes, representation, num_train_points, seed):
         property_name="transition wavelength",
         num_classes=num_classes,
     )
+
     formatted = formatter(data)
+    logger.debug('Formatting done, training baselines')
     num_test_points = min((max_num_test_points, len(formatted) - num_train_points))
     xgboost_baseline = train_test_photoswitch_classification_baseline(
         data,
@@ -50,6 +52,7 @@ def train_test_model(num_classes, representation, num_train_points, seed):
         seed=seed,
     )
 
+    logger.debug('baselines done, gpt3')
     train, test = train_test_split(
         formatted,
         train_size=num_train_points,
