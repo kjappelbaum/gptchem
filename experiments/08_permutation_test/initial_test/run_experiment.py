@@ -58,6 +58,7 @@ def train_test_model(num_classes, representation, num_train_points, seed):
         "train_size": num_train_points,
         "num_classes": num_classes,
         "completions": completions,
+        "extracted": extracted,
         "representation": representation,
         "num_test_points": num_test_points,
     }
