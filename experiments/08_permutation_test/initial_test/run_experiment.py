@@ -21,11 +21,13 @@ logger.enable("gptchem")
 def train_test_model(num_classes, representation, num_train_points, seed):
     data = get_photoswitch_data()
 
-    data['E isomer pi-pi* wavelength in nm'] = data['E isomer pi-pi* wavelength in nm'].sample(frac=1, random_state=seed)
+    data['shuffled'] = data['E isomer pi-pi* wavelength in nm'].sample(frac=1, random_state=seed).values
 
+    assert data['shuffled'].values is not data['E isomer pi-pi* wavelength in nm'].values
+    
     formatter = ClassificationFormatter(
         representation_column=representation,
-        label_column="E isomer pi-pi* wavelength in nm",
+        label_column="shuffled",
         property_name="transition wavelength",
         num_classes=num_classes,
     )

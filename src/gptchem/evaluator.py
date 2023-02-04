@@ -842,6 +842,7 @@ def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd
             perf = polymer_string2performance(polymer)
             performances.append(perf)
             comp = get_polymer_prompt_compostion(polymer)
+            print(polymer, get_polymer_prompt_compostion(df_test["prompt"].iloc[i]))
             comp_mismatch = composition_mismatch(
                 get_polymer_prompt_compostion(df_test["prompt"].iloc[i]), comp)
             composition_mismatches.append(comp_mismatch)

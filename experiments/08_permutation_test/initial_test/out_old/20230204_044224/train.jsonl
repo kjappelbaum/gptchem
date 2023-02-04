@@ -1,0 +1,10 @@
+{"prompt":"What is the transition wavelength of CC1=C(C(C)=NN1)\/N=N\/C2=C(C)C=CC=C2?###","completion":" 1@@@","label":1,"representation":"CC1=C(C(C)=NN1)\/N=N\/C2=C(C)C=CC=C2"}
+{"prompt":"What is the transition wavelength of ClC%11=CC([N+]([O-])=O)=CC(C#N)=C%11\/N=N\/C%12=CC(OC)=C(C=C%12)N(CC)CC?###","completion":" 4@@@","label":4,"representation":"ClC%11=CC([N+]([O-])=O)=CC(C#N)=C%11\/N=N\/C%12=CC(OC)=C(C=C%12)N(CC)CC"}
+{"prompt":"What is the transition wavelength of OCCN(CCO)C(C=C%11)=CC=C%11\/N=N\/C%12=CC=C([N+]([O-])=O)C=C%12?###","completion":" 4@@@","label":4,"representation":"OCCN(CCO)C(C=C%11)=CC=C%11\/N=N\/C%12=CC=C([N+]([O-])=O)C=C%12"}
+{"prompt":"What is the transition wavelength of CC1=NOC(C)=C1\/N=N\/C2=C(Br)C=CC=C2?###","completion":" 0@@@","label":0,"representation":"CC1=NOC(C)=C1\/N=N\/C2=C(Br)C=CC=C2"}
+{"prompt":"What is the transition wavelength of CN(C)C1=CC=C(\/N=N\/C2=CC=C(C(F)(F)F)C=C2)C=C1?###","completion":" 3@@@","label":3,"representation":"CN(C)C1=CC=C(\/N=N\/C2=CC=C(C(F)(F)F)C=C2)C=C1"}
+{"prompt":"What is the transition wavelength of CC1=C(C(C)=NN1)\/N=N\/C2=CC(OC)=CC=C2?###","completion":" 1@@@","label":1,"representation":"CC1=C(C(C)=NN1)\/N=N\/C2=CC(OC)=CC=C2"}
+{"prompt":"What is the transition wavelength of CN1C(\/N=N\/C2=CC=CC=C2)=CN=C1?###","completion":" 2@@@","label":2,"representation":"CN1C(\/N=N\/C2=CC=CC=C2)=CN=C1"}
+{"prompt":"What is the transition wavelength of O=C(C)NC1=CC=C(\/N=N\/C2=CC=C(NCCC#N)C=C2)C=C1?###","completion":" 2@@@","label":2,"representation":"O=C(C)NC1=CC=C(\/N=N\/C2=CC=C(NCCC#N)C=C2)C=C1"}
+{"prompt":"What is the transition wavelength of C[N]1C=CC(=N1)N=NC2=CC=CC=C2?###","completion":" 0@@@","label":0,"representation":"C[N]1C=CC(=N1)N=NC2=CC=CC=C2"}
+{"prompt":"What is the transition wavelength of ClC1=CC=CC=C1\/N=N\/C2=CC=C(NCCC#N)C=C2?###","completion":" 3@@@","label":3,"representation":"ClC1=CC=CC=C1\/N=N\/C2=CC=C(NCCC#N)C=C2"}

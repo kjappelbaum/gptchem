@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="data:image/vnd.microsoft.icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA25g0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERAAAAAAAAAREAAAAAAAABEQAAAAAAAAERAAAAAAAAARERERAAAAABEREREAAAAAEREREQAAAAAREAAAAAAAABEQAAAAAAAAEREREQAAAAARERERAAAAABEREREAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAPH/AADx/wAA8f8AAPH/AADwDwAA8A8AAPAPAADx/wAA8f8AAPAPAADwDwAA8A8AAP//AAD//wAA" />
+    <title></title>
+    <script src="https://unpkg.com/lore-engine@1.1.10/dist/lore.min.js"></script>
+    <script src="https://unpkg.com/smiles-drawer@2.0.2/dist/smiles-drawer.min.js"></script>
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" 
+      integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" 
+      crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        user-select: none;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      #lore {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      #title {
+        position: absolute;
+        z-index: 9999;
+        pointer-events: none;
+        text-height: 1;
+        opacity: 0.0;
+        transition: opacity 0.5s ease-in;
+        
+          padding-bottom: 20px;
+        
+          font-size: 1.0em;
+        
+          color: #888888;
+        
+          font-family: 'Open Sans';
+        
+      }
+
+      #x-axis {
+        position: absolute;
+        z-index: 9999;
+        pointer-events: none;
+        text-height: 1;
+        opacity: 0.0;
+        transition: opacity 0.5s ease-in;
+        
+          padding-top: 20px;
+        
+          font-size: 0.7em;
+        
+          color: #888888;
+        
+          font-family: 'Open Sans';
+        
+      }
+
+      #y-axis {
+        position: absolute;
+        z-index: 9999;
+        pointer-events: none;
+        text-height: 1;
+        transition: opacity 0.5s ease-in;
+        
+          padding-bottom: 20px;
+        
+          font-size: 0.7em;
+        
+          color: #888888;
+        
+          font-family: 'Open Sans';
+        
+          transform: rotate(-90deg);
+        
+      }
+
+      #tip {
+        position: absolute;
+        z-index: 9999;
+        left: 10px;
+        top: 10px;
+        padding: 5px;
+        font-family: 'Open Sans';
+        background-color: rgba(255, 255, 255, 1.0);
+        border-radius: 2px;
+        border-left: 5px solid #000;
+        pointer-events: none;
+        opacity: 0.0;
+        transition: opacity 0.1s ease-out;
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 1.0));
+      }
+
+      #tip.show {
+        opacity: 1.0;
+        transition: opacity 0.1s ease-out;
+      }
+
+      #tip-text {
+        position: relative;
+        
+        max-width: 250px;
+        
+        font-size: 0.8em;
+        font-weight: bold;
+        white-space: normal;
+        line-break: normal;
+      }
+
+      #hover-indicator {
+        display: none;
+        position: absolute;
+        z-index: 999;
+        border: 1px solid #fff;
+        background-color: rgba(255, 255, 255, 0.25);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      #hover-indicator.show {
+        display: block !important
+      }
+
+      .selected-indicator {
+        position: absolute;
+        z-index: 999;
+        pointer-events: none;
+      }
+
+      .selected-indicator .crosshair-x {
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        height: 2px;
+        width: 100%;
+        margin: auto;
+        
+          background-color: #fff;
+        
+      }
+
+      .selected-indicator .crosshair-y {
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        width: 2px;
+        height: 100%;
+        margin: auto;
+        
+          background-color: #fff;
+        
+      }
+
+      #legend {
+        position: absolute;
+        z-index: 9998;
+        
+          bottom: 10px;
+        
+          right: 10px;
+        
+          padding: 10px;
+        
+          border: 1px solid #262626;
+        
+          border-radius: 2px;
+        
+          background-color: #111111;
+        
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+        
+          color: #eeeeee;
+        
+          font-family: 'Open Sans';
+        
+      }
+
+      #legend .container {
+        display: flex;
+        flex: auto;
+        align-items: flex-start;
+        
+        flex-direction: column;
+        
+      }
+
+      #legend .legend-section {
+        width: 100%;
+      }
+
+      #legend .legend-section:not(:first-child) {
+        
+      }
+
+      #legend h2 {
+        font-size: 1em;
+        font-weight: 600;
+        padding-top: 0;
+        margin-top: 0;
+        margin-bottom: 5px;
+        text-align: center;
+        max-width: 250px;
+        white-space: normal;
+      }
+
+      #legend h3 {
+        font-size: 0.8em;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        max-width: 250px;
+        white-space: normal;
+      }
+
+      #legend select {
+        width: 100%;
+        margin-bottom: 5px;
+        background: transparent;
+        color: #fff;
+        border-radius: 2px;
+        font-size: 0.75em;
+      }
+
+      #legend select option {
+        background: #000;
+      }
+
+      #legend .legend-element, #legend .legend-element-range {
+        position: relative;
+        display: flex;
+        flex: auto;
+        align-items: flex-start;
+        padding-bottom: 2px;
+        padding-top: 2px;
+      }
+
+      #legend .legend-element {
+        align-items: flex-start;
+      }
+
+      #legend .legend-element-range {
+        flex-direction: column;
+      }
+
+      #legend .color-box {
+        
+          width: 15px;
+        
+          height: 15px;
+        
+          border: solid 0px;
+        
+      }
+
+      #legend .color-stripe {
+        
+          width: 15px;
+        
+          height: 1px;
+        
+          border: solid 0px;
+        
+      }
+
+      #legend .legend-label {
+        height: 15px;
+        font-size: 0.7em;
+        padding-left: 5px;
+      }
+
+      #legend .legend-label.max {
+        position: absolute;
+        top: 0px;
+        margin-left: 15px;
+      }
+
+      #legend .legend-label.min {
+        position: absolute;
+        bottom: 2px;
+        margin-left: 15px;
+      }
+
+      #selected {
+        position: absolute;
+        display: none;
+        z-index: 9998;
+        width: 250px;
+        
+          bottom: 10px;
+        
+          left: 10px;
+        
+          padding: 0px;
+        
+          border: 1px solid #262626;
+        
+          border-radius: 2px;
+        
+          background-color: #111111;
+        
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+        
+          color: #eeeeee;
+        
+          font-family: 'Open Sans';
+        
+      }
+
+      #selected #selected-controls {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 5px 10px;
+        border-bottom: 1px solid #262626;
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+
+      #selected #selected-controls * {
+        display: inline-block;
+      }
+
+      #selected #selected-controls #selected-title {
+        flex-grow: 1;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #aaa;
+      }
+
+      #selected #selected-controls a {
+        margin: 0px 2px;
+        font-size: 1.5em;
+        color: #fff;
+        opacity: 0.75;
+        transition: 0.2s;
+      }
+
+      #selected #selected-controls a:hover {
+        opacity: 1.0;
+      }
+
+      #selected #selected-controls a#selected-remove {
+        position: absolute;
+        right: 10px;
+        top: 42px;
+        color: #e74c3c;
+      }
+
+      #selected #selected-container {
+        padding: 10px;
+        font-size: 0.8em;
+      }
+
+      #selected #selected-container img {
+        margin-left: -10px;
+      }
+
+      #selected #selected-container .label {
+        font-weight: bold;
+        color: #aaa;
+        font-size: 0.7em;
+      }
+
+      #selected #selected-container .label:not(:first-child) {
+        margin-top: 2px;
+      }
+
+      #selected #selected-container .content {
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      #selected #selected-container .content a {
+        text-decoration: none;
+        color: #3498db;
+      }
+
+      #controls {
+        position: absolute;
+        z-index: 9998;
+        
+          top: 10px;
+        
+          right: 10px;
+        
+          padding: 2px;
+        
+          border: 1px solid #262626;
+        
+          border-radius: 2px;
+        
+          background-color: #111111;
+        
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+        
+          color: #eeeeee;
+        
+          font-family: 'Open Sans';
+        
+      }
+
+      #controls a {
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 1.2em;
+        color: #fff;
+        opacity: 0.75;
+        transition: 0.2s;
+      }
+
+      #controls a:hover {
+        opacity: 1.0;
+      }
+
+      #controls #more-controls {
+        display: inline-block;
+      }
+
+      #impress {
+        position: absolute;
+        z-index: 9999;
+        top: 10px;
+        left: 10px;
+        font-size: 0.7em;
+        color: #eee;
+      }
+
+      #impress a {
+        color: #3498db;
+        text-decoration: none;
+      }
+
+      #overlay-structure-container {
+        position: absolute;
+        z-index: 9999;
+        top: 50px;
+        left: 275px;
+        right: 100px;
+        bottom: 10px;
+        opacity: .5;
+        pointer-events: none;
+      }
+
+      #overlay-structure {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+
+
+
+
+      .show {
+        opacity: 1.0 !important;
+      }
+
+      .hide {
+        display: none !important;
+      }
+
+      @media only screen and (max-width: 600px) {
+        #selected {
+          position: absolute;
+          display: none;
+          z-index: 9998;
+          width: 125px;
+          opacity: 0.8;
+          background-filter: blur(10px);
+        }
+
+        #selected img {
+          width: 125px;
+        }
+
+        #tip {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    
+    
+    
+      <div id="impress">made with <a href="http://tmap.gdb.tools" target="_blank">tmap</a><br />and <a href="https://github.com/reymond-group/faerun-python" target="_blank">faerun</a></div>
+    
+
+    <div id="overlay-structure-container" data-binding-id="overlayStructureContainer" class="">
+      <canvas id="overlay-structure" data-binding-id="overlayStructure" width="450" height="687">
+
+      </canvas></div>
+    </div>
+
+    <div id="tip" data-bind="tip">
+      <div id="tip-text" data-bind="tipText"></div>
+    </div>
+    <div id="selected" data-bind="selected">
+      <div id="selected-controls" data-bind="selectedControls">
+        <a id="selected-toggle" data-bind="selectedToggle" href="#">
+          <i class="fas fa-toggle-on"></i>
+        </a>
+        <span>&nbsp;&nbsp;</span>
+        <span id="selected-title" data-bind="selectedTitle"></span>
+        <span>&nbsp;&nbsp;</span>
+        <span id="selected-current" data-bind="selectedCurrent" data-bind="selectedCurrent">0</span><span> / </span><span id="selected-total" data-bind="selectedTotal">0</span>
+        <span>&nbsp;&nbsp;</span>
+        <a id="selected-prev" data-bind="selectedPrev" href="#">
+          <i class="fas fa-angle-left"></i>
+        </a>
+        <span>&nbsp;</span>
+        <a id="selected-next" data-bind="selectedNext" href="#">
+          <i class="fas fa-angle-right"></i>
+        </a>
+        <a id="selected-remove" data-bind="selectedRemove" href="#">
+          <i class="fas fa-times"></i>
+        </a>
+      </div>
+      <div id="selected-container" data-bind="selectedContainer">
+      </div>
+    </div>
+    <div id="controls" data-bind="controls">
+      <div id="more-controls" data-bind="moreControls" class="hide">
+        <a id="search" data-bind="search" href="#">
+          <i class="fas fa-search"></i>
+        </a>
+        <a id="download" data-bind="download" href="#">
+          <i class="fas fa-download"></i>
+        </a>
+        <a id="export" data-bind="export" href="#">
+          <i class="fas fa-camera"></i>
+        </a>
+        <a id="largepreview" data-bind="largepreview" href="#">
+          <i class="fas fa-expand"></i>
+        </a>
+      </div>
+      <a id="show-controls" data-bind="showControls" href="#">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
+    <div id="hover-indicator" data-bind="hoverIndicator"></div>
+    <canvas id="lore"></canvas>
+
+    
+    <script>
+      const data = {
+Photoswitches: {
+x: [642.533,405.907,167.535,357.749,597.936,605.683,114.117,209.412,382.73,394.971,562.32,458.733,580.783,580.512,410.708,44.315,597.773,338.655,286.814,579.438,486.227,700.931,216.366,320.97,649.779,149.666,480.358,170.558,149.975,223.032,386.59,733.943,629.288,388.413,429.356,117.417,162.39,637.469,513.55,431.48,420.73,254.414,164.437,234.124,386.596,18.11,750.0,358.979,212.318,284.228,142.782,600.144,472.494,496.952,504.42,487.815,738.146,326.985,406.943,289.193,483.316,711.295,191.181,192.918,505.399,156.527,195.661,382.772,408.912,548.651,609.025,496.808,532.053,419.796,316.762,175.192,40.97,433.614,397.478,730.579,163.753,560.43,143.14,142.982,579.468,175.019,641.739,480.525,558.292,356.569,701.541,357.558,205.883,258.41,427.925,407.12,103.146,609.696,506.637,63.811,639.627,118.164,384.718,402.17,398.496,369.148,608.535,334.482,138.753,362.196,370.785,255.311,365.818,618.171,372.811,334.009,8.443,551.766,181.263,653.207,308.258,632.483,371.052,564.167,329.63,407.591,433.2,374.794,360.179,625.393,63.318,581.912,381.264,169.228,189.277,183.693,395.258,51.74,466.686,575.954,567.355,433.925,542.95,220.118,599.43,387.471,557.722,203.813,381.7,380.435,351.786,35.273,304.339,41.958,53.655,197.729,391.595,430.302,390.611,331.863,140.268,494.982,691.406,212.829,625.006,554.289,109.671,357.399,169.548,412.824,659.434,331.638,667.954,362.983,627.874,398.038,213.493,744.814,388.412,324.207,250.965,139.775,141.164,150.223,232.187,178.619,699.517,209.698,596.167,644.514,152.241,635.6,258.866,387.579,375.405,488.632,368.283,225.2,278.874,433.71,49.487,597.989,431.166,158.938,329.595,261.018,632.333,364.853,4.377,43.298,446.25,147.265,581.827,366.416,174.625,125.723,30.254,0.0,199.896,11.606,378.723,735.221,268.965,383.325,254.139,354.81,119.851,126.825,443.609,694.965,278.932,24.876,583.349,203.029,151.487,163.128,505.861,432.746,192.949,360.278,184.666,354.746,188.38,293.249,146.751,199.294,710.346,354.77,391.083,730.026,588.203,254.739,382.495,414.324,555.437,215.23,381.791,360.021,26.413,319.653,385.887,603.543,598.974,272.362,240.204,388.503,175.628,513.064,99.517,524.638,365.545,389.668,163.593,392.203,623.682,593.545,165.499,165.321,429.666,419.555,413.006,459.265,140.04,214.368,396.206,356.292,216.42,745.814,569.685,98.025,593.006,607.208,162.443,239.314,362.818,339.323,409.419,671.355,592.309,186.843,364.684,395.772,683.441,390.112,245.628,702.944,578.667,417.249,181.689,626.748,413.912,287.763,148.626,726.298,453.964,274.335,352.049,380.282,404.427,185.151,747.364,48.329,91.288,395.644,735.597,229.868,633.694,477.592,498.771,45.165,24.473,204.202,640.266,639.549,299.192,206.006,423.589,427.0,483.593,377.421,151.889,469.67,144.762,387.198,369.662,386.697,609.455,148.374,411.572,349.456,366.3,425.176,572.607,722.533,106.349,401.779,263.621,286.035,386.1,280.545,311.08,143.831,497.865,385.339,364.015,586.009,600.4,393.35,509.577,65.479,531.995,350.903,497.532,27.806,502.036,728.705,359.582,150.264,630.118,589.051,352.812,451.998,494.109,179.82,325.394,596.881,291.341,294.833,416.464,201.179,115.442,525.737,48.644,370.202,209.504,545.695,407.725,509.474,461.001,319.844,163.2,248.475,480.446,122.699,226.875,151.898,593.564,422.069,33.16,450.669,516.27,139.536,479.591,188.802,721.984,648.615,301.958,391.081,420.986,125.71,350.787,207.132,344.942,401.436,405.401,601.271,155.021,437.355,161.929,61.125,586.937,406.434,75.8,263.465,396.969,453.228,651.415,393.967,369.149,201.86,286.154,38.431,154.418,582.095,591.117,361.026,156.54,383.835,651.748,397.554,490.978,144.731,657.198,414.345,205.551,579.621,30.811,441.476,416.169,447.355,147.208,37.803,583.759,266.93,128.805,450.814,598.653,749.187,491.592,166.811,32.591,409.578,329.079,437.686,319.46,320.879,160.864,267.688,381.009,369.31,603.301,303.842,353.228,367.507,183.659,606.095,258.788,605.236,167.97,588.491,420.027,391.028,225.82,188.505,500.972,155.687,328.239,488.456,220.034,226.647,436.901,321.919,304.418,478.322,386.343,54.621,241.738,386.51,431.238,158.77,488.317,582.199,185.176,315.487,361.537,416.854,192.95,442.368,578.72,149.531,742.58,21.399,50.287,282.879,368.141,225.494,269.987,592.711,353.599,448.112,589.411,360.389,395.198,587.981,602.452,226.589,628.505,187.024,487.67,276.125,486.126,143.23,221.6,394.013,556.161,267.383,593.455,410.458,86.561,362.747,582.312,455.087,627.66,384.848,360.001,313.272,229.943,476.718,229.335,164.534,278.321,434.564,417.414,566.153,291.093,299.611,383.8,363.672,736.503,39.154,30.312,163.443,406.195,669.088,495.196,280.056,224.836,166.581,735.363,417.994,388.327,461.994,371.671,296.019,365.899,55.224,357.462,388.744,141.712,165.685,497.519,209.472,114.599,180.661,399.299,368.327,252.077,330.677,152.344,446.802,241.007,377.783,571.505,472.918,459.992,261.018,706.299,415.233,328.091,419.841,367.36,595.84,156.081,410.83,304.93,111.012,466.736,103.582,294.858,29.843,465.485,605.354,465.78,423.251,357.856,392.331,548.275,489.199,154.626,357.786,217.312,661.785,613.87,524.757,205.33,483.645,364.47,393.739,318.387,277.594,76.443,191.362,375.001,634.796,343.478,605.793,666.906],
+y: [486.197,130.522,457.265,362.026,652.948,243.707,230.881,635.029,551.902,28.966,223.527,709.986,166.706,616.766,473.764,250.584,603.29,10.169,682.384,503.935,560.741,277.392,284.122,557.849,250.528,692.606,691.34,468.421,708.029,647.408,489.886,316.257,242.599,166.68,468.759,240.711,259.521,497.616,362.862,750.0,110.091,618.7,269.341,281.271,504.678,260.935,324.263,342.713,520.755,673.867,513.106,322.085,308.956,344.448,351.754,320.598,315.375,315.524,169.381,690.202,700.005,293.165,464.763,85.015,550.899,541.949,74.133,434.779,13.328,620.304,483.643,314.257,241.912,6.584,103.792,484.853,245.658,470.3,558.672,313.296,251.438,521.756,531.385,527.575,507.662,478.157,219.588,696.638,237.912,371.433,285.177,121.108,660.944,109.293,568.249,283.694,255.028,487.342,242.278,499.869,229.816,675.32,40.343,543.92,501.38,97.053,639.608,9.435,514.646,93.782,507.299,306.207,171.1,640.261,162.85,3.722,260.44,626.605,672.069,485.961,133.802,239.971,391.683,522.771,112.578,471.9,103.348,507.069,322.618,639.025,259.083,244.784,384.591,464.079,85.696,487.444,448.81,495.334,701.668,180.184,521.485,746.743,531.417,650.208,506.173,170.141,234.661,101.187,42.201,388.407,370.876,295.718,310.367,275.495,504.396,283.493,452.386,142.559,562.53,316.4,544.859,625.676,281.682,637.441,241.103,633.482,673.549,315.374,482.409,285.962,240.832,0.0,263.867,120.12,238.085,446.111,642.719,324.329,157.993,556.389,614.617,285.06,261.233,701.568,284.613,483.244,281.175,314.636,648.732,491.192,695.333,231.562,629.339,576.293,556.023,662.819,400.132,293.921,308.338,466.667,497.528,314.108,212.244,517.278,125.049,103.721,245.476,95.791,262.983,254.023,729.249,528.86,514.533,122.166,473.785,511.044,307.117,262.805,103.327,262.621,554.346,324.906,609.553,486.993,302.741,343.124,247.894,674.2,141.819,281.251,311.975,331.276,234.529,85.97,673.724,489.265,245.583,559.947,662.305,37.595,508.439,40.773,486.242,703.522,275.289,79.39,276.688,90.292,155.864,317.963,605.048,111.136,586.621,560.4,639.368,92.567,153.219,41.707,327.427,107.023,307.125,599.308,326.411,644.991,530.11,455.959,489.159,550.533,671.368,615.958,117.177,145.016,443.321,133.672,645.061,610.335,493.021,449.312,107.739,191.58,168.076,299.361,679.43,280.5,550.384,182.774,302.845,329.445,199.057,507.195,641.532,596.867,439.296,533.229,345.2,6.022,128.385,259.955,606.129,472.822,403.22,505.159,270.505,383.097,101.553,288.445,172.708,141.51,276.41,245.974,466.037,555.089,468.671,327.367,140.958,654.522,29.251,506.403,281.241,512.638,311.711,264.56,257.98,476.269,329.964,303.004,495.926,324.31,318.158,263.709,322.852,316.544,489.91,223.845,113.953,96.403,468.767,110.202,590.254,414.104,677.372,310.876,696.313,495.036,164.861,587.168,635.008,535.85,292.52,123.733,89.087,145.922,188.939,301.25,256.95,21.564,620.07,572.18,573.006,590.684,99.379,282.762,627.987,582.621,392.558,267.287,501.876,137.833,358.04,502.605,238.524,39.809,349.649,321.068,607.33,323.109,393.61,277.921,638.901,632.539,122.113,720.546,317.492,668.786,124.296,502.95,697.28,557.941,562.612,319.984,234.874,613.041,500.493,52.853,310.531,632.424,161.04,550.716,140.385,123.236,477.117,611.578,321.881,256.046,300.076,281.943,297.481,564.551,262.907,723.92,366.068,510.393,249.182,509.933,304.648,487.354,89.927,141.561,145.257,679.894,25.698,655.97,19.085,153.093,126.201,494.719,684.258,742.057,515.964,261.771,232.236,19.416,503.851,106.479,554.892,253.487,247.55,501.405,404.505,284.735,575.363,286.088,528.146,239.656,288.06,364.287,546.207,186.559,253.787,142.901,627.693,466.561,245.174,144.093,664.914,613.471,259.714,736.255,174.034,143.981,279.814,235.539,256.213,545.211,677.442,285.973,317.122,327.899,324.424,258.824,304.762,288.103,116.196,101.803,311.733,102.816,267.914,642.663,575.528,388.101,325.353,113.509,374.652,73.46,475.392,240.193,623.121,487.279,489.511,277.924,470.076,495.16,644.585,468.636,610.122,272.904,555.023,334.28,288.531,658.802,277.315,314.857,93.812,671.396,175.757,500.102,101.279,385.258,570.844,256.976,338.045,162.668,83.292,108.049,553.094,3.543,70.757,232.793,512.223,712.192,313.011,262.563,503.278,110.057,366.192,304.174,614.51,631.499,186.161,288.209,609.238,177.689,525.761,635.869,483.866,649.529,494.741,490.412,629.299,646.355,660.091,541.379,294.699,144.914,643.444,617.063,645.068,18.752,505.398,315.552,230.942,711.39,647.568,182.332,318.293,129.321,97.052,691.113,289.045,246.983,304.335,98.898,118.723,210.576,556.464,93.295,390.806,40.495,319.394,239.534,265.301,255.952,555.77,256.553,326.651,664.624,654.737,675.405,311.519,177.948,450.298,698.043,395.422,712.569,371.558,495.674,125.205,550.705,699.313,480.758,353.698,97.11,675.152,82.353,546.457,93.749,299.038,557.681,681.82,139.248,638.458,578.065,623.722,685.504,713.882,632.313,278.503,7.787,121.207,113.974,85.059,306.134,535.619,468.39,136.641,509.102,570.209,672.281,708.777,313.526,139.989,636.565,697.896,568.038,339.126,31.454,629.525,641.811,471.96,93.459,641.902,244.059,499.296,541.035,310.767,656.673,368.292,492.262,316.847,592.317,259.527,665.395,392.92,227.326,15.944,482.098,260.232],
+z: [375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0],
+labels: ['CC(S1)=CC=C1/N=N/C2=C(OC)C=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC=C(F)C=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(NC)=CC=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC(C(O)C)=CC=C2','N#CC1=CC=C(/N=N/C2=C(F)C=CC=CS2)C=C1','OC%32=C(N=CC=C%33)C%33=C(/N=N/C%34=CC=C([N+]([O-])=O)C=C%34)C=C%32','COC(S1)=C1/N=N/C2=CC=CC=C2','CN(N=C1)C(C)=C1/N=N/C2=C(Cl)C=CC=C2Cl','ClC1=CC=C(/N=N/C2=CC=C(Cl)C=C2)C=C1','CC1=C(C(C)=NN1)/N=N/C2=CC(C(F)(F)F)=CC(OC)=CC2','[H]N(C)C(C=C1)=CC=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','FC1=CC(C(OCC)=O)=CC(F)=C1/N=N/C2=C(F)C=C(C(OCC)=O)C=C2F','CNC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','FC1=CC(F)=C1/N=N/C2=C(F)C=CC=C2','CCN(CC)C(C=C1)=CC=C1/N=N/C2=CC(C#N)=C(C#N)C=C2','CN1C(C)C(C)=CC=C1/N=N/C2=C(F)C=CC=C2F','FC1=CC=CC=C1/N=N/C2=CC=CC=C(F)C=C2','CC1=NOC(C)=C1/N=N/C2=CC(C(F)(F)F)C=C2','[N-]=[N+]=NCCC1=CC(/N=N\2)=C(CCC3=C2C=C(CCN=[N+]=[N-])C=C3)C=C1','COC(S)C1=CC(/N=N/C2=CC=CS2)=CC=C1','FC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','[H]C4=CC=C(N=C(N=NC5=CC=CC=C5Cl)S6)C6=C4','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=C(C#N)C=C2','CN(N=C1C)C=CC=C1/N=N/C2=CC=C(C)C=C2','OC1=C2N=CC=CC2=C(/N=N/C3=NC=CS3)C=C1','C[N]1N=C(C=N1)N=NC2=CC=CC=C2','FC1=CC=CC(F)=C1/N=N/C2=CC=C(C(O)=O)C=C2','CC1=C(C(C)=NN1)/N=N/C2=CC=C(NC)C=C2','C[N]1C=CC=C1C=NC2=CC=CC=C2','CN(N=C1C)C(C)=C1/N=N/C2=CC=CC=C2','CCN(CC)C(C=C%30)=CC=C%30/N=N/C%31=CC=C(N%32CCOCC%32)C(OC)=C%31','O=[N+]([O-])C1=CC=C(N=C(N=NC2=CC=CC=C2)S3)C3=C1','OC1=C(N=CC=C2)C2=C(/N=N/C3=CC=CC=C3)C=C1','CC1=NOC(C)=C1/N=N/C2=CC=C(NC(C)=O)C=C2','CCN(CC)C(C=C1)=CC=C1/N=N/C2=C(C#N)C=CC=C2','COC1=CC=C1/N=N/C2=CC=C(C#N)C=C2','COC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','CC(S1)=CC=C1/N=N/C2=CC=C(C(F)F)C=C2','ClC%11=CC([N+]([O-])=O)=CC(C#N)=C%11/N=N/C%12=CC(OC)=C(C=C%12)N(CC)CC','FC1=CC=CC(C(OCC)=O)=CC(C(O)=O)C=C1','CC1=C(/N=N/C2=CC(F)=CC=C2F)C(C)=NO1','CC1=C(/N=N/C2=CC=C(N(C)C)C=C2C)C=CC(C)=C1','O=C(COC1=C(/N=N\C2=C(OC3)C=CC=C2)C=CC=C1)O[C@H]4[C@H](OCC5=CC=CC=C5)[C@@H](OCC6=CC=CC=C6)[C@H](SC7=CC=CC=C7)O[C@@H]4COC3=O','FC1=CC=CC=C1/N=N/C2=CC=C(NCCC#N)C=C2','CCN(CC)C(C=C%24)=CC=C%24/N=N/C%25=CC=C(N%26CCCCC%26)C([H])=C%25','CN1C(/N=N/C2=CC=CC=C2)=C1C(OC)C=C2C(OC)C=C2','ClC7=CC=CC=C7N=NC8=NC9=CC=C([N+]([O-])=O)C=C9S8','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(C)=CC=C2','[N-]=[N+]=NCC(C=C1)=CC2=C1CCC3=C(/N=N\2)C=C(CN=[N+]=[N-])C=C3','CC1=C(C(C)=NN1)/N=N/C2=CC=C(C(O)=O)C=C2','OC1=C([N+]([O-])=O)C=C([N+]([O-])=O)C=C1/N=N/C2=C(O)C=CC(C)=C2','[H]C3=CC([N+]([O-])=O)=CC(Cl)=C3/N=N/C4=CC([H])=C(C=C4OC)N(CC)CC','[H]C7=CC([N+]([O-])=O)=CC(C#N)=C7/N=N/C8=CC([H])=C(C=C8OC)N(CC)CC','[H]C%13=C(C=C(OC)C(/N=N/C%14=C(C#N)C=C([N+]([O-])=O)C=C%14C#N)=C%13)N(CC)CC','[H]C5=CC([N+]([O-])=O)=CC([N+]([O-])=O)=C5/N=N/C6=CC(OC)=C(C=C6)N(CC)CC','O=[N+]([O-])C4=CC=C(N=C(N=NC5=CC=CC=C5C(O)=O)S6)C6=C4','O=[N+]([O-])C1=CC=C(/N=N/C2=CC=C(NCCC#N)C=C2)C=C1','CC1=NOC(C)=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','NCCC1=CC(/N=N\2)=C(CCC3=C2C=C(CCN)C=C3)C=C1','CC1=CC(C(OCC)=O)=CC(N)=C1/N=N/C2=CC=C(OC)C=C2','[H]C7=CC=C(N=C(N=NC8=CC=CC(CO)=C8)S9)C9=C7','CC1=C(C(C)=NN1)/N=N/C2=C(F)C=CC=C2','c1ccc(cc1)c1[nH]c2c(c1N=Nc1nncs1)cccc2','FC1=CC=CC(/N=N/C2=CC=CC(F)=C2)=C1','CC1=C(C(C)=NN1)/N=N/C2=C(C)C=CC=C2','Cc1[nH]c2c(c1N=Nc1nncs1)cccc2','CCN(CCC#N)C(C=C%21C)=CC=C%21/N=N/C%22=CC=CC=C%22','CC1=C(C(C)=NN1)/N=N/C2=CC(C)C=C2','FC1=CC=CC(F)=C1/N=N/C2=C(F)C=CC=C2','COC(S1)=CC=C1/N=N/C2=CC=C(C)C=C2','BrC9=CC([N+]([O-])=O)=CC([N+]([O-])=O)=C9/N=N/C%10=CC([H])=C(C=C%10OC)N(CC)CC','O=[N+]([O-])C1=CC=C(/N=N/C2=CC=CC=C2)C=C1','CC1=C(C(C)=NN1)/N=N/C2=C([N+]([O-])=C(C)C)C=C2','CC1=NOC(C)=C1/N=N/C2=CC=C(C(F))C=C2','CC1=C(C(C)=NN1)/N=N/C2=CC=CC=C2','CC1=C(/N=N/C2=CC(F)=CC=C2F)C=C1','CCN(CC)C(C=C1)=CC=C1/N=N/C2=C(C#N)C=CC(C#N)=C2','O=C(OC)C1=CC=C(/N=N/C2=CC=CC=C2)C=C1','O=C(C)NC(C=C%31)=CC=C%31N=NC%32=NC%33=CC=C([N+]([O-])=O)C=C%33S%32','CC1=NOC(C=C1)/N=N/C2=CC=C(OC)C=C2','C1=CC=C(/N=N/C2=CC=CS2)C=C1','CC1=C(C(C)=NN1)/N=N/C2=CC(C(F)=O)=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(C(F)=C)=CC=C2','CC1=CC(/N=N/C2=CC=CS2)=CC=C1','CC1=C(C(C)=NN1)/N=N/C2=CC=C(N)C=C2','OC%23=C(N=CC=C%24)C%24=C(/N=N/C%25=CC=CC=C%25C(O)=O)C=C%23','FC1=CC=CC(C)=C1/N=N/C2=CC=C(C(OCC)=O)C=C2','O=[N+]([O-])C1=CC=C(/N=N/C2=CC=C(C=C2)[N+]([O-])=O)C=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C(Cl)C=C2','[H]C%25=CC=C(N=C(N=NC%26=CC=C(SC)C=C%26)S%27)C%27=C%25','CC1=NOC(C)=C1/N=N/C2=CC=C(Br)C=C2','C[N]1N=C(C)C=CC=CC=C1','CC(N(C)C(C)=C1C)=C1/N=N/C2=CC=CC=C2','BrC1=CC(/N=N/C2=CC=CC=C2)=CC=C1','OCCN(CCC#N)C(C=C%13)=CC=C%13/N=N/C%14=CC=C([N+]([O-])=O)C=C%14','N#CC(S)C1=CC=C1/N=N/C2=CC=CC=C2','COC(S1)=CC=C1/N=N/C2=CC=C(N)C=C2','O=[N+]([O-])C1=CC=CC(/N=N/C2=CC([N+]([O-])=O)=CC=C2)=C1','CC(C(C=C1)=CC=C1N=NC2=NNC=C2)=O','OC%26=C(N=CC=C%27)C%27=C(/N=N/C%28=CC=C(C(C)=O)C=C%28)C=C%26','CN(C=N1)C=C1/N=N/C2=CC=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC(OC)C=C2','CN(C)C(C=C1)=CC=C1/N=N/C2=C(C(O)=O)C=CC=C2','CC(C=C1)=CC=C1/N=N/C2=CC=C(N(CC)CC)C=C2','N#CC(N=C1/N=N/C2=CC=C2)=CC=C1','FC1=CC=CC=C1/N=N/C2=CC=C(C(F)F)C=C2','CC1=NOC(C)=C1/N=N/C2=CC(NC)C=C2','CC1=C(C(C)=NN1)/N=N/C2=C(C(O)=O)C=CC=C2','CC1=C(/N=N/C2=CC=C2C#N)C(C)=NO1','CC%13=C(N%14CCCC%14)C=CC(/N=N/C%15=CC=C(N%16CCCC%16)C(C)=C%15)=C%13','CC(O)C1=CC(/N=N/C2=CC=C(NCCC#N)C=C2)=CC=C1','CC1=C(/N=N/C2=CC=C(OC)C=C2)C(C)=NO1','FC(F)(F)C1=CC=C(/N=N/C2=CC=CC=C2)C=C1','CC1=NOC(C)=C1/N=N/C2=CC(OC)=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC(C)C=CC=C2','CN1C(/N=N/C2=CC=CC=C2)=C1','FC1=CC(F)=CC(F)=C1/N=N/C2=C(F)C=CC=C2','C[N]1C=NC(=N1)N=NC2=CC=CC=C2','N#CC(S1)=CC=C1/N=N/C2=C(F)C=CC=C2F','CC1=C(/N=N/C2=CC=CC=C2C)C(C)=NO1','OC%17=C(N=CC=C%18)C%18=C(/N=N/C%19=CC=C(Cl)C=C%19)C=C%17','CC%15=CC(N(CCO)CCC#N)=CC=C%15/N=N/C%16=CC=CC=C%16','COC1=CC=C(/N=N/C2=CC=CS2)C=C1','CC1=NOC=C1/N=N/C2=CC=C(C)C=C2','CCN(CC)C1=CC=C(/N=N/C2=CC=C(C#N)C=C2)C=C1','CC1=NOC(C)=C1/N=N/C2=C(F)C=CC=C2','[H]C9=C(N%10CCCC%10)C=CC(/N=N/C%11=CC=C(N%12CCCC%12)C([H])=C%11)=C9','CC1=CC(N(CCC#N)CCC#N)=CC=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','FC(F)(F)C1=CC=C(/N=N/C2=CC=C(C(F)(F)F)C=C2)C=C1','N#CC1=CC(C)=C1/N=N/C2=CC=CC=C2','OC1=CC=C(/N=N/C2=CC=C(C=C2)[N+]([O-])=O)C=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C(C#N)C=C2','CC1=C(C(C)=NN1)/N=N/C2=CC=C(NC(C)C)C=C2','CCc1nnc(s1)N=Nc1c([nH]c2c1cccc2)c1ccccc1','CC1=C(C(C)=NN1)/N=N/C2=CC=C(Br)C=C2','OCCN(CCC#N)C(C=C%13)=CC=C%13/N=N/C%14=CC=CC=C%14','COC(C=C1)=CC=C1N=NC2=NNC=C2','FC1=CC(C(OCC)=O)=CC(F)=C1/N=N/C2=CC=C(F)C=C2','[H]N(CCO)C(C=C5)=CC=C5/N=N/C6=CC=CC=C6','COC1=CC(/N=N/C2=CC=CS2)=CC=C1','FC1=CC=CC(C(OCC)=O)C=C1/N=N/C2=C(C(OCC)=O)C=C2','FC1=CC=C(/N=N/C2=CC=CS2)C=C1','C[N]1N=C(C)C(=C1C)N=NC2=CC=CC=C2','N#CC1=CC(/N=N/C2=CC=CS2)=CC=C1','CC1=NOC(C)=C1/N=N/C2=C(NC(C)=O)C=CC=C2','NC1=CC=C(/N=N/C2=CC=C([N+]([O-])=O)C=C2)C=C1','Sc1[nH]nc(n1)N=Nc1c(c2ccccc2)n(c2c1cccc2)C','CC1=NOC(C)=C1/N=N/C2=CC(OC)C=CC=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C(C)C=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC=C2Cl','N#CC1=CC(/N=N/C2=CC=CC=C2)C=C1','CC9=CC(NCCC#N)=CC=C9/N=N/C%10=CC=CC=C%10','CC1=C(/N=N/C2=CC=CC=C2C#N)C=C1','BrC(C=C1)=CC=C1N=NC2=NNC=C2','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=CC(OC)=C2','N#CCCN(CCC#N)C(C=C%23)=CC=C%23/N=N/C%24=CC=CC=C%24','CC1=C(/N=N/C2=CC=C(Cl)C=C2Cl)C(C)=NO1','NC1=CC=C(/N=N/C2=CC=C(N(C)C)C=C2)C=C1','CC9=CC(NCCC#N)=CC=C9/N=N/C%10=CC=C([N+]([O-])=O)C=C%10','CC1=C(C(C)=NN1)/N=N/C2=CC(C(F)F)=CC=C2','FC1=CC=CC(F)=C1/N=N/C2=CC=C(C)C=C2','[H]C%10=CC=C(N=C(N=NC%11=C(NC(C)=O)C=CC=C%11)S%12)C%12=C%10','CN(N=C1C)C(C)=C1/N=N/C2=C(Cl)C=CC=C2Cl','OC%42=C%43N=CC=CC%43=C(/N=N/C%44=NC%45=CC=CC=C%45N%44)C=C%42','FC1=CC(F)=CC(F)=C1/N=N/C(C(F)=C2)=C(F)C=C2F','CN1C(/N=N/C2=CC=CC=C2)=NC=C1','CC1=C(/N=N/C2=CC=C(N(C)C)C=C2C)C=C([N+]([O-])=O)C=C1','CC1=C(C(C)=NN1)/N=N/C2=CC=C(B)C=C2','CN(CCC#N)C(C=C%17)=CC=C%17/N=N/C%18=CC=C([N+]([O-])=O)C=C%18','OC%18=C%19N=CC=CC%19=C(/N=N/C%20=NC(C%21=CC=C(Cl)C=C%21)=CS%20)C=C%18','CC1=NOC(C)=C1/N=N/C2=CC(Br)C=CC=C2','OC%38=C%39N=CC=CC%39=C(/N=N/C%40=NC%41=CC(C)=C(C)C=C%41S%40)C=C%38','CC1=NOC(C)=C1/N=N/C2=CC=CC=C2','OC%11=C(N=CC=C%12)C%12=C(/N=N/C%13=CC=C(NC(C)=O)C=C%13)C=C%11','OCCN(CCO)C(C=C%11)=CC=C%11/N=N/C%12=CC=CC=C%12','CN(N=C1C)C(C)=C1/N=N/C2=CC=C(Cl)C=C2Cl','ClC(C=C%13)=CC=C%13N=NC%14=NC%15=CC=C([N+]([O-])=O)C=C%15S%14','CC1=NOC(C)=C1/N=N/C2=CC=C(NC(PF)F)C=C2','CC1=CC=C(/N=N/C2=CC=CS=C2)C=C1','CC1=C(/N=N/C2=CC=C(C)C=C2C)C=CC(C)=C1','CC(C)C1=C(/N=N/C2=CC=CC=C2)C=NC=C1','CC1=CC=C1/N=N/C2=C(OC)C=CC=C2','C[N]1N=CC(=N1)C=NC2=CC=CC=C2','FC1=CC=C(/N=N/C2=CC=C(NCCC#N)C=C2)C=C1','CC1=C(C(C)=NN1)/N=N/C2=CC=C(I)C=C2','[H]C1=CC=C(N=C(N=NC2=CC=CC=C2)S3)C3=C1','O=C1C=CC(N1C2=CC=C(/N=N/C3=CC=CC=C3)C=C2)=O','N#CC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','CC(S1)=CC=C1/N=N/C2=CC=C(Br)C=C2','C[N]1N=C(C)C(=N1)N=NC2=CC=CC=C2','OC4=C(N=CC=C5)C5=C(/N=N/C6=CC=C(C)C=C6)C=C4','CC1=CC=CC=C1/N=N/C2=CC=CC=C2C','NC1=CC(/N=N/C2=CC=CC=C2)=CC=C1','ClC1=CC=CC(/N=N/C2=CC=CC(Cl)=C2)=C1','FC1=CC=CC(F)=C1/N=N/C2=C(C(F)C)C=CC=C2F','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=C(C)C=CC=C2','[H]N(CCC#N)C(C=C7)=CC=C7/N=N/C8=CC=CC=C8','OCCC1=CC=CC=C1/N=N/C2=CC=C(NCCC#N)C=C2','CCN(CC)C(C=C1)=CC=C1/N=N/C2=C(C#N)C=CC=C2C#N','C1(/N=N/C2=CC=NN2)=CC=NN1','OC(C=CC(C)=C1)=C1/N=N/C2=CC=CC=C2','O=[N+]([O-])C1=C(/N=N/C2=C([N+]([O-])=O)C=CC=C2)C=CC=C1','CC1=C(C(C)=NN1)/N=N/C2=CC=C(C#N)C=C2','CC1=C(/N=N/C2=CC(C)=CC=C2)C(C)=NO1','CN1C(/N=N/C2=CC=CC=C2)=C(C)C=C1C','OC%14=C(N=CC=C%15)C%15=C(/N=N/C%16=CC=C(OCC)C=C%16)C=C%14','CC1=C(/N=N/C2=CC=C2)C(C)=NO1','CN1C(C)CC(C)=C1/N=N/C2=CC=CC=C2','CC1=C(/N=N/C2=C(F)C=CC=C2F)C=C1','FC1=CC(C(OCC)=O)=CC=C1/N=N/C2=C(F)C=CC=C2F','CC1=C(C(C)=NN1)/N=N/C2=CC(C(F)(F)F)=CC=C2','FC(F)(F)C1=CC=C(/N=N/C2=CC=CS2)C=C1','CC1=C(/N=N/C2=C3C=CC=CC3=CC=C2)C(C)=NO1','CC1=C(C(C)=NN1)/N=N/C2=CC(N)=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(C(O)=O)=CC=C2','CN1OC=C(C)C(/N=N/C2=CC=CC=C2)C=C1','C[N]1C=CC=CC(C)=C1/N=N/C2=CC=CC=C2','Sc1[nH]nc(n1)N=Nc1c(C)n(c2c1cccc2)C','CN1C(/N=N/C2=CC=CC=C2)=C1/N=N/C2=CC=CC=C2','ClC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','N#CC1C(SC(/N=N/C2=NC(C=CC([N+]([O-])=O)=C3)=C3S2)C1C4CCCCC4)N','CC1=CC=CC=C1/N=N/C2=CC=CC=C2','COC%17=CC(/N=N/C%18=CC(OC)=C(N%19CCCC%19)C=C%18)=CC=C%17N%20CCCC%20','CC1=CC(/N=N/C2=CC=C(NCCC#N)C=C2)=CC=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC([N+]([O-])=O)=C2','CC1=CC=C1/N=N/C2=CC=C(C#N)C=C2','CN1C(/N=N/C2=CC=CC=C2)=CC=C1C/N=N/C2=CC=C(C)C=C(OC)C=C2','CC1=NOC(C)=C1/N=N/C2=C(Cl)C=CC=C2','[H]C%13=CC=C(N=C(N=NC%14=CC=C(NC(C)=O)C=C%14)S%15)C%15=C%13','OCCC1=CC=C(/N=N/C2=CC=C(NCCC#N)C=C2)C=C1','C[N]1N=CC=CC=C1','Oc1c(/C=N/c2cc(C(O)=O)ccn2)cc(/N=N/c3ccc([N+]([O-])=O)cc3)cc1','CSc1nnc(s1)N=Nc1c([nH]c2c1cccc2)c1ccccc1','C[N]1C=C(C)C(=N1)N=NC2=CC=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(Cl)=CC=C2','O=[N+]([O-])C1=CC(/N=N/C2=CC=CC=C2)=CC=C1','FC(C=C1)=CC=C1/N=N/C2=CC=C(N(C)C)C=C2','CN(N=C1)C=C1/N=N/C2=CC=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC=C(C(F)(F)F)C=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC=C(C)C=C2 Br(=O)=O/C=C2Br=C2BrO=C2 Cl=C(Br)=CC=C2 Cl=C=C2Br OC=C(OC)C=C2 Cl=C(Cl)=C2O=C2 Cl=C(Cl)=C2O=C2 Cl2=C(Cl)C=C2 OCC=C2Cl=C2OOC2 Cl2=C(C)=C2ClCl=CC=CC=C2Cl=C2 Cl=C(Cl)=CC=CC=C2Cl=CC=CC=C2Cl=C2 Cl2=C(C)=CC=C2Cl=CC=CC=CC=C2Cl=C2 O=C(O)C=C2Cl=CC=CC=O2 O=C(O)C=C2Cl=CC=CC=O2 Cl=CC=CC=C2 Cl=CC=CC=C2 Cl=CC=C=C2 Cl=CC=C2=C2=C1OC=C2C=CC=C2 Cl=CC=CC=CC=CC=CC=C2=C(OC)C=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC=C([N+]([O-])=O)C=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(Br)=CC=C2','CC(OCCC1=CC=C2CCC3=CC=C(CCOC(C)(C)C)C=C3/N=N\C2=C1)(C)C','IC1=C(/N=N/C2=CC=CC=C2)C=NC=C1','CSc1nnc(s1)N=Nc1c(C)[nH]c2c1cccc2','[H]C%16=CC=C(N=C(N=NC%17=CC=CC=C%17OC)S%18)C%18=C%16','CC1=C(/N=N/C2=CC=CC(Cl)=CC=C2Cl)C(C)=NO1','CC1=NOC(C)=C1/N=N/C2=CC=C(NC)C=C2','FC(C=C%16)=CC=C%16N=NC%17=NC%18=CC=C([N+]([O-])=O)C=C%18S%17','FC1=CC(F)=CC(/N=N/C2=CC=CC=C2F)C=C1','CC(N(C=C1C)C)=C1/N=N/C2=CC=CC=C2','C1(NC2=CC=CC=C2)=CC=C(/N=N/C3=CC=CC=C3)C=C1','BrC1=CC=C(/N=N/C2=CC=C(Br)C=C2)C=C1','FC1=C(F)C=C(F)C(F)=C1/N=N/C2=C(F)C(F)=CC(F)=C2F','CSc1nnc(s1)N=Nc1c(c2ccccc2)n(c2c1cccc2)C','CC1=NOC(C)=C1/N=N/C2=CC(O)=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC=C(F)C=CC=C2','C[N]1N=CC=CC=C1N','CC1=NOC(C)=C1/N=N/C2=CC=C(C(F)(F)F)C=C2','CCN(CCC#N)C(C=C%21C)=CC=C%21/N=N/C%22=CC=C([N+]([O-])=O)C=C%22','FC1=CC=CC=C(/N=N/C2=CC=CS2)C=C1','OC(C([N+]([O-])=O)=CC([N+]([O-])=O)=C1)=C1/N=N/C2=CC(Cl)=C(N)C=C2N','NC1=CC(/N=N\2)=C(CCC3=C2C=C(N)C=C3)C=C1','CC1=CC(/N=N/C2=CC(C)=C(C)C=C2)=CC=C1C','CCN(CCC#N)C(C=C%19)=CC=C%19/N=N/C%20=CC=CC=C%20','CC(S)C1=C(C(C)=NN1)/N=N/C2=CC=CC=C2','CC1=CC(C(C)=NN1)/N=N/C2=CC=C(F)C=C2','C12=CC=CC=C1N=C(/N=N/C3=NC4=CC=CC=C4O3)O2','FC1=CC=CC(F)=C1/N=N/C2=C(F)C=CC=C2F','CC1=C(/N=N/C2=CC=CS2)C(C)=NO1','CC1=NOC(C)=C1/N=N/C2=CC=C(NO)C=C2','CC1=C(C(C)=NN1)/N=N/C2=CC=C(NC(C)=O)C=C2','CC1=C(/N=N/C2=CC=CN=C2)C(C)=NO1','FC(F)(F)C1=CC=CC=C1/N=N/C2=CC=CC=C2','CC1=CC=C(/N=N/C2=C1F)C=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=C(Cl)C=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(NC(C)=O)=CC=C2','CC1=C(/N=N/C2=CC=CC(F)=C2F)C(C)=NO1','CC1=NOC(C)=C1/N=N/C2=C([N+]([O-])=O)C=CC=C2','CC1=C(/N=N/C2=CC(N)=CC=C2)C(C)=NO1','[H]C1=CC([N+]([O-])=O)=CC(Cl)=C1/N=N/C2=CC([H])=C(C=C2[H])N(CC)CC','C[N]1C=CC=C1N=NC2=CC=CC=C2','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=CC=C2C#N','CN(C)C(C=C1)=CC=C1/N=N/C2=CC=C(N(C)C)C=C2','CC1=C(/N=N/C2=CC=CC=C2OC)C(C)=NO1','O=C(C)NC1=CC=C(/N=N/C2=CC=C(NCCC#N)C=C2)C=C1','ClC%10=CC(N=NC%11=NC%12=CC=C([N+]([O-])=O)C=C%12S%11)=CC=C%10','OCCNC(C=C1)=CC=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','CC1=C(C(C)=NN1)/N=N/C2=CC=C(C(OCC)=O)C=C2','FC1=CC=CC=C1/N=N/C2=CC=C(C#N)C=C2','FC1=CC=CC(/N=N/C2=CC=CS2)C=C1','CC1=C(C(C)=NN1)/N=N/C2=C(NC(C)=O)C=CC=C2','CC1=CC=CC(/N=N/C2=CC=CC(C)=C2)=C1','CC%15=CC(N(CCO)CCC#N)=CC=C%15/N=N/C%16=CC=C([N+]([O-])=O)C=C%16','CC1=NOC(C)=C1/N=N/C2=CC(C=O)C=C2','CC1=NOC(C)=C1/N=N/C2=CC(F)=CC=C2','OC%30=C%31N=CC=CC%31=C(/N=N/C%32=NC%33=CC=C(Cl)C=C%33S%32)C=C%30','FC1=CC=C(/N=N/C2=CC=C(F)C=CC2)C=C1','CC1=C(C(C)=NN1)/N=N/C2=CC(F)=CC=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=C(C#N)C=CC=C2','NC1=CC=C(/N=N/C2=CC=C(N(CC)CC)C=C2)C=C1','C12=CC=CC=C1N=C(/N=N/C3=NC4=CC=CC=C4S3)S2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC(C(F)(F)F)=CC=C2','Cn1c(C)c(c2c1cccc2)N=Nc1nncs1','[H]C%22=CC=C(N=C(N=NC%23=CC=CC=C%23SC)S%24)C%24=C%22','[H]N(CC)C(C=C3)=CC=C3/N=N/C4=CC=CC=C4','CC1=C(/N=N/C2=CC=CC(Cl)=CC(C)=NO2)C(C)=NO1','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=CC=C2OC','OC7=C(N=CC=C8)C8=C(/N=N/C9=CC=C(OC%10=CC=CC=C%10)C=C9)C=C7','CCN(CC)C(C=C1)=CC=C1/N=N/C2=CC(C#N)=CC(C#N)=C2','O=C(N(CCC)C=C1/N=N/C2=CC=C(C(C)(C)C)C=C2)NC1=O','CC1=C(C(C)=NN1)/N=N/C2=CC=C(OC)C=C2','CSC7=CC=CC=C7N=NC8=NC9=CC=C([N+]([O-])=O)C=C9S8','CC1=C(/N=N/C2=CC=CC=C2Cl)C(C)=NO1','C=CC1=CC(/N=N\2)=C(CCC3=C2C=C(C=C)C=C3)C=C1','CC1=C(/N=N/C2=CC=CC(F)=CC=C2F)C(C)=NO1','[H]C5=C(N6CCCCC6)C=CC(/N=N/C7=CC=C(N8CCCCC8)C([H])=C7)=C5','OCCN(CCO)C(C=C%11)=CC=C%11/N=N/C%12=CC=C([N+]([O-])=O)C=C%12','CC(N)C1=C(C(C)=NN1)/N=N/C2=CC=C(C)C=C2','COC1=CC=CC=C1N=NC2=NC3=CC=C([N+]([O-])=O)C=C3S2','CC1=C(/N=N/C2=CC=CS2)C=C1','FC(F)C1=CC=C1/N=N/C2=CC=CC=C2','CCN(CC)C1=CC=C(/N=N/C2=CC=CC=C2)C=C1','N#CC9C(SC(/N=N/C%10=NC(C=CC([N+]([O-])=O)=C%11)=C%11S%10)C9C%12CCC(OC)CC%12)N','ClC1=CC(/N=N/C2=CC=C(NCCC#N)C=C2)=CC=C1','CC(S1)=CC=C1/N=N/C2=CC=C(C(F)(F)F)C=C2','NC1=C(OC)C=C(/N=N/C2=C([H])C=C([N+]([O-])=O)C=C2[H])C([H])=C1','BrC1=CC([N+]([O-])=O)=CC([N+]([O-])=O)=C1/N=N/C2=CC([H])=C(C=C2[H])N(CC)CC','CC1=C(/N=N/C2=CC=CC=C2)C=C1','C[N]1N=CC=CC(C=N1)N=NC2=CC=CC=C2','CC(NC(C=C1)=CC(OC)=C1/N=N/C2=C(OC)C=C(NC(C)=O)C=C2)=O','CC(S1)=CC=C1/N=N/C2=CC=CC=C2','OC%20=C(N=CC=C%21)C%21=C(/N=N/C%22=CC=C(C(O)=O)C=C%22)C=C%20','CC1=NOC(C)=C1/N=N/C2=CC(C(O)=O)=CC=C2','CCc1nnc(s1)N=Nc1c(c2ccccc2)n(c2c1cccc2)C','CC1=CC(N(CC)CC)=CC=C1/N=N/C2=C(C#N)C=C(C#N)C=C2C#N','CC1=C(/N=N/C2=CC=CC=C2F)C(C)=NO1','FC1=CC=CC(F)=C1/N=N/C2=CC=C(F)C=C2','CC1=CC(N(CCC#N)CCC#N)=CC=C1/N=N/C2=CC=CC=C2','C[N]1N=CC(=C1N=NC2=CC=CC=C2)C','[H]C3=CC([N+]([O-])=O)=CC(Cl)=C3/N=N/C4=CC(OC)=C(C=C4)N(CC)CC','C[N]1N=CC(=N1)N=NC2=CC=CC=C2','[H]C1=C(N2CCOCC2)C=CC(/N=N/C3=CC=C(N4CCOCC4)C([H])=C3)=C1','CC1=NOC(C)=C1/N=N/C2=CC(OC)=C(C)C=C2','C[N]1S=CC(=N1)N=NC2=CC=CC=C2','FC1=CC=CC=C1/N=N/C2=CC=C(C(F)(F)(F))C=C2','CC1=C(C(C)=NN1)/N=N/C2=CC=C(C(F)(F))C=C2','CCN(CCC#N)C(C=C%19)=CC=C%19/N=N/C%20=CC=C([N+]([O-])=O)C=C%20','CC1=NOC(C)=C1/N=N/C2=C(Br)C=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC(F)=C2','CC1=NOC(C)=C1/N=N/C2=CC(Cl)=CC=C2','[H]N(CCO)C(C=C5)=CC=C5/N=N/C6=CC=C([N+]([O-])=O)C=C6','OCC%28=CC(N=NC%29=NC%30=CC=C([N+]([O-])=O)C=C%30S%29)=CC=C%28','CCC1=CC=C1/N=N/C2=CC=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(Br)/C=CC=C2','CC1=C(/N=N/C2=CC=C(N(C)C)C=C2C)C=CC(Cl)=C1','CC1=CC(C)=CC(C)=C1/N=N/C2=C(C)C=C(C)C=C2C','NC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','N#CC1=CC=CC(C)=C1/N=N/C2=CC=CC=C2','CC1=C(/N=N/C2=CC=C(C(F)F)C=C2)C(C)=NO1','CC1=C(/N=N/C2=CC=CC=C2)C=NC=C1','CC1=CC=C(/N=N/C2=CC=C(F)C=C2F)C=C1','C1(/N=N/C2=CC=CC=C2)=CC=CC=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC(OC)=CC=C2','OC(C=C(O)C=C1)=C1/N=N/C2=CC=CC=C2','N#CC1=CC=C(/N=N/C2=CC=CS2)C=C1','CC1=C(/N=N/C2=CC(C)=NC=C2)C(C)=NO1','ClC%11=CC([N+]([O-])=O)=CC(C#N)=C%11/N=N/C%12=CC([H])=C(C=C%12OC)N(CC)CC','CC(C=C1)=CC=C1N=NC2=NNC=C2','O=[N+]([O-])C(C=C1)=CC=C1/N=N/C2=CC=C(NC3=CC=CC=C3)C=C2','CC1=NOC(C)=C1/N=N/C2=C([N+]([O-])=O)C=C2','[H]C1=CC([N+]([O-])=O)=CC(C#N)=C1/N=N/C2=CC([H])=C(C=C2[H])N(CC)CC','C[N]1N=CC=CC=C1N=NC2=CC=CC=C2','FC1=CC=CC(F)=C1/N=N/C2=CC=C(Br)C=C2','CSC(C=C%10)=CC=C%10N=NC%11=NC%12=CC=C([N+]([O-])=O)C=C%12S%11','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=C(OC)C=CC=C2','C1(/N=N/C2=CC=CC=C2)=CC=CN=C1','CN(C)C1=CC=C(/N=N/C2=CC=C(C(F)(F)F)C=C2)C=C1','FC1=CC=CC=C1/N=N/C2=CC=CC=C2','CC1=NOC(C)=C1/N=N/C2=C(Br)C=C(Br)C=C2','FC1=CC(C(OCC)=O)=CC(F)=C1/N=N/C2=C(F)C=CC=C2F','BrC9=CC([N+]([O-])=O)=CC([N+]([O-])=O)=C9/N=N/C%10=CC(OC)=C(C=C%10)N(CC)CC','C[N]1C=C(C=N1)N=NC2=CC=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC(C(OCC)C)=CC=C2','C(S1)=CC=C1/N=N/C2=CC=C(C#N)C=C2','OCCC1=CC(/N=N\2)=C(CCC3=C2C=C(CCO)C=C3)C=C1','CC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','BrC1=CC(Br)=CC(Br)=C1/N=N/C2=C(Br)C=C(Br)C=C2Br','CC(NC(C=C1OC)=CC(OC)=C1/N=N/C2=C(OC)C=C(NC(C)=O)C=C2OC)=O','COC1=CC=C1/N=N/C2=CC=CC=C2','FC1=CC=CC(F)=C1/N=N/C2=C(Cl)C=CC=C2F','[O-][N+](C(C=C1)=CC=C1N=NC2=NNC=C2)=O','CC1=NOC(C)=C1/N=N/C2=CC=C(OC)C=CC=C2','CC(NC1=CC=C(/N=N/C2=CC=CC=C2)C=C1)=O','FC1=CC(F)=CC=C1/N=N/C2=C(F)C=CC=C2','CC1=C(/N=N/C2=CC=C(N)C=C2)C(C)=NO1','FC1=CC(C(C)=NN1)/N=N/C2=CC(F)=CC=C2','ClC1=C(/N=N/C2=C(Cl)C=CC=C2)C=CC=C1','CC1=NOC(C)=C1/N=N/C2=CC=C(C#N)C=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(O)=CC=C2','CC1=C(/N=N/C2=CC(C)=CC=C2C)C=C(C)C=C1','[H]C1=CC([N+]([O-])=O)=CC([H])=C1/N=N/C2=CC(OC)=C(C=C2)N(CC)CC','CC1=CC=C1/N=N/C2=CC=C(N)C=C2','ClC1=CC=C(/N=N/C2=CC=C(NCCC#N)C=C2)C=C1','CN(C)C1=C(/N=N/C2=CC=CC=C2)C=NC=C1','OC(C=C1)=CC=C1/N=N/C2=CC(C)=CC(C)=C2','BrC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','CC(N(C)C(C)=C1)=CC(N)=C1/N=N/C2=CC=CC=C2','FC1=CC(C(OCC)=O)=CC(F)=C1/N=N/C2=CC=CC=C2F','ClC1=CC([N+]([O-])=O)=CC(C#N)=C1/N=N/C2=CC([H])=C(C=C2[H])N(CC)CC','CC1=C(C(C)=NN1)/N=N/C2=CC=C(C(O)C(O)=O)C=C2','CN(C)C(C=C1)=CC=C1/N=N/C2=CC=CC([N+]([O-])=O)=C2','CC1=C(C(C)=NN1)/N=N/C2=CC=C(C(O)=C)C=C2','OCC%25=CC(N=NC%26=NC%27=CC=C([N+]([O-])=O)C=C%27S%26)=CC=C%25','N#CC(S1)=CC=C1/N=N/C2=CC=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC=C(C(F)(F))C=C2','CC1=NOC(C)=C1/N=N/C2=C(N)C=CC=C2','CC1=C(/N=N/C2=CC=CC(Cl)=C2)C(C)=NO1','CN1C(/N=N/C2=CC=CC(C)C=C2)=CC=C1','CC1=C(/N=N/C2=CCC(F)C=CC=C2F)C(C)=NO1','CN(N=C1C)C=C1/N=N/C2=CC=CC=C2','CC1=C(/N=N/C2=CC=CC(C(F)(F)F)C=C2F)C(C)=NO1','CC1=NOC(C)=C1/N=N/C2=CC=C(N)C=C2','CC1=C(/N=N/C2=CC(F)=CC(F)=C2)C(C)=NO1','COC(S1)=CC=C1/N=N/C2=CC=C(C#N)C=C2','C[N]1N=CC=C1N=N/N=N/C2=CC=C(C(F)F)C=C2','FC1=CC(C(OCC)=O)=C1/N=N/C2=CC=C(C(OCC)=O)C=C2F','CC1=C(C(C)=NN1)/N=N/C2=CC=C(C)C=C2','CC1=CC(C)=C1/N=N/C2=CC=CC=C2','Oc1c(/C=N/c2c(C(C)C)cc(S(=O)(O)=O)cc2C(C)C)cc(/N=N/c3ccc([N+]([O-])=O)cc3)cc1','CC1=C(C(C)=NN1)/N=N/C2=C(Br)C=CC(Br)C=C2','O=C(O)C(C=C1)=CC=C1N=NC2=NNC=C2','CC(N(C)C(C)=C1)=C1/N=N/C2=CC=CC=C2','CN(C)C1=CC=C(/N=N/C2=CC=C(C(OC)=O)C=C2)C=C1','CN(C)C(C=C1)=CC=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','OC4=C5N=CC=CC5=C(/N=N/C6=NC=C(C)S6)C=C4','CCN(CC)C1=CC=C(/N=N/C2=CC=C(N(CC)CC)C=C2)C=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=C(C(F)(F)F)C=CC=C2','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=C(OC)C=C2','CC1=C(/N=N/C2=CC=CC=C2)C(C)=CC(C)=C1','N#CC1=CC(/N=N/C2=CC=CC=C2C#N)C=C1','CC1=C(C(C)=NN1)/N=N/C2=CC=C(C(F)(F)F)C=C2','OC1=C(C(O)=O)C=C(/N=N/C2=CC=C([N+]([O-])=O)C=C2)C=C1','OC1=CC=C(/N=N/C2=CC=C(C=C2)O)C=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC(C)=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=C(C(F)F)C=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC=C(NC(O)=O)C=C2','OC%11=C%12N=CC=CC%12=C(/N=N/C%13=NC(CC(OCC)=O)=CS%13)C=C%11','CC1=NOC(C)=C1/N=N/C2=CC=C(I)C=C2','FC1=CC=CC(C)=C1/N=N/C2=CC=C(C)C=C2','CC1=C(C(C)=NN1)/N=N/C2=C(OC)C=CC=C2','OC%14=C%15N=CC=CC%15=C(/N=N/C%16=NC(C%17=CC=CC=C%17)=CS%16)C=C%14','CC1=NOC(C)=C1/N=N/C2=CC=C(Cl)C=C2','C[N]1N=CC=CC(C)=CC=C1','FC1=CC(F)=C1/N=N/C2=CC=CC=C2','CC(N(C)C(C)=C1)=CC=C1N','FC1=CC(C(OCC)=O)=CC=C1/N=N/C2=CC=CC=C2','CC1=C(/N=N/C2=CC=CC(N)=C2)C(C)=NO1','CC1=C(/N=N/C2=CC(Cl)=CC=C2Cl)C(C)=NO1','N#CC(N=CC=C1)=C1/N=N/C2=CC=CC=C2','CN1N=C(/N=N/C2=CC=C(F)C=C2F)C(C)=NO1','OC1=C(/N=N/C2=CC=C([N+]([O-])=O)C=C2)C=CC(O)=C1','CC1=CC(/N=N/C2=CC=CC=C2)=CC=C1','CN1C(/N=N/C2=CC=CC=C2)=CC=C1','[H]C1=CC([N+]([O-])=O)=CC([N+]([O-])=O)=C1/N=N/C2=CC([H])=C(C=C2[H])N(CC)CC','OC1=C(/N=N/C2=CC=C(NC(C)=O)C=C2)C=C(C)C=C1','N#Cc5c(c6ccc(Cl)cc6)c(/N=N/C7=NC(C=CC([N+]([O-])=O)=C8)=C8S7)sc5N','[H]C5=CC([N+]([O-])=O)=CC([N+]([O-])=O)=C5/N=N/C6=CC([H])=C(C=C6OC)N(CC)CC','CC(N(C=C1)C)=C1/N=N/C2=CC=C(OC)C=C2','FC1=CC(/N=N/C2=CC=CC=C2)C=C1F','N#CCCN(CCC#N)C(C=C%23)=CC=C%23/N=N/C%24=CC=C([N+]([O-])=O)C=C%24','CC1=NOC(C)=C1/N=N/C2=CC=C(C)C=C2','CC1=C(/N=N/C2=CC(C(F)=O)=CC=C2F)C(C)=NO1','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=CC=C2[N+]([O-])=O','CC1=NOC(C)=C1/N=N/C2=CC(C(F)(F)F)=CC=C2','COC1=CC=CC=C1/N=N/C2=CC=CC=C2','C12=CC=CC=C1CCC3=CC=CC=C3/N=N\2','NC1=C(/N=N/C2=CC=CC=C2)C=CC(N)=C1','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=C(F)C=CC=C2','OC(C([N+]([O-])=O)=CC([N+]([O-])=O)=C1)=C1/N=N/C2=CC(C)=CC(NC(C)=O)=C2O','CC1=NOC(C)=C1/N=N/C2=CC=C(C(O)=O)C=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC(Cl)=C2','CC1=NOC(C)=C1/N=N/C2=CC(OC)=C2','CC1=C(C(C)=NN1)/N=N/C2=CC=C(F)C=C2','OC7=C8N=CC=CC8=C(/N=N/C9=NC=C(S(=O)(C%10=CC=C([N+]([O-])=O)C=C%10)=O)S9)C=C7','CC1=C(/N=N/C2=C(C)C=C(C=C2)N(C)C)C=CC=C1','COC(S1)=CC=C1/N=N/C2=CC=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC=C(Cl)C=C2','OC1=CC=C(/N=N/C2=CC=CC=C2)C=C1','CCN(CC)C(C=C1)=CC=C1/N=N/C2=C(C#N)C=C(C#N)C=C2','CCN(CC)C(C=C%21)=CC=C%21/N=N/C%22=CC=C(N%23CCOCC%23)C([H])=C%22','CN(N=C1C)C(C)=C1/N=N/C2=CC=C(Br)C=C2','CC1=C(/N=N/C2=C(F)C=CC=C2F)C(C)=NN1','FC1=CC=CC(F)=C1/N=N/C2=CC=CC=C2','COC(C=CN=C1)=C1/N=N/C2=CC=CC=C2','CC1=CC=C(/N=N/C2=CC=C(C)C=C2)C=C1','[H]C7=CC([N+]([O-])=O)=CC(C#N)=C7/N=N/C8=CC(OC)=C(C=C8)N(CC)CC','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=CC=C2','CN(N=C1)C(C)=C1/N=N/C2=C(OC)C=CC=C2OC','CCN(CC)C(C=C1)=CC=C1/N=N/C2=CC=C([N+]([O-])=O)C=C2','[H]N(CCC#N)C(C=C7)=CC=C7/N=N/C8=CC=C([N+]([O-])=O)C=C8','CC1=NOC(C)=C1/N=N/C2=CC=C(C(F)F)C=C2','FC1=CC(C(OCC)=O)=CC(F)=C1/N=N/C2=CC=C(C(F)C)C=C2','CC1=NOC(C)=C1/N=N/C2=CC(NC(C)=O)=CC=C2','[H]C(C=C1)=CC=C1N=NC2=NNC=C2','CCc1nnc(s1)N=Nc1c2ccccc2n(c1C)C','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C(C(F)(F)F)C=C2','BrC1=CC=CC(/N=N/C2=CC=CC(Br)=C2)=C1','CC1=SOC(C)=C1/N=N/C2=CC=C(OC)C=C2','CCN(C%13=C(OC)C=C(/N=N/C%14=C(C#N)C=C([N+]([O-])=O)C=C%14C#N)C=C%13)CC','[H]N(C)C(C=C1)=CC=C1/N=N/C2=CC=CC=C2','Sc1[nH]nc(n1)N=Nc1c([nH]c2c1cccc2)c1ccccc1','CC1=C(/N=N/C2=CC=C(C(F)(F)F)C=C2F)C(C)=NO1','CC(C=C1)=CC=C1/N=N/C2=CC=C(N(C)C)C=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(NC(C)=O)=C2','CC1=C(/N=N/C2=NN=C(CC)S2)C3=CC=CC=C3N1','CN(C)C(C=C1)=CC=C1/N=N/C2=CC=CC=C2[N+]([O-])=O','CC1=CC=C(/N=N/C2=CC=CS2)C=C1','C[N]1C=CC=C1C','COC(C=C4)=CC=C4N=NC5=NC6=CC=C([N+]([O-])=O)C=C6S5','CN1C(/N=N/C2=CC=CC=C2)=C1C','FC1=CC=CC=C1N=NC2=NNC=C2','CC(N(C)C(C)=C1)=C1/N=N/C2=CC=C(C(O)=O)C=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC(Br)=C2','ClC1=CC=CC=C1/N=N/C2=CC=C(NCCC#N)C=C2','CC1=C(Cl)C=CC=C1/N=N/C2=C(C)C(Cl)=CC=C2','FC1=CC=C(F)C=C1/N=N/C2=CC=CC=C2','CC1=NOC(C)=C1/N=N/C2=C(OC)C=CC=C2','[H]C1=CC([N+]([O-])=O)=CC([H])=C1/N=N/C2=CC([H])=C(C=C2[H])N(CC)CC','FC1=CC=CC=C1/N=N/C2=CC=C(F)C=CC=C2','CC1=NOC(C)=C1/N=N/C2=CC=C(OC)C=C2','CN(C)C1=CC=C(/N=N/C2=CC=C(N(CC)CC)C=C2)C=C1','FC1=CC=CC=C1/N=N/C2=CC=C(F)C=C2','COC(S1)=CC=C1/N=N/C2=CC=C(C(F)(F)F)C=C2','CN(N=C1C)C(C)=C1/N=N/C2=C(F)C=CC=C2F','CC(S1)=CC=C1/N=N/C2=CC=C(C)C=C2','CC1=C(C(C)=NN1)/N=N/C2=C(Br)C=CC=C2','FC1=CC=CC(C)=C1/N=N/C2=CC=C(Br)C=C2','NC1=CC(CCC2=C3C=CC(N)=C2)=C(/N=N\3)C=C1','FC1=CC=CC(F)=C1/N=N/C2=CC=C(C(F)C)C=C2','CC1=C(C(C)=NN1)/N=N/C2=CC=C(C(F)F)C=C2','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=C(C(F)(F)F)C=C2','CC1=C(/N=N/C2=CC=CC=C2)C(C)=NO1','FC1=C(F)C(F)=C(F)C(F)=C1/N=N/C2=C(F)C(F)=C(F)C(F)=C2F','CC1=CC(Cl)=CC=C1/N=N/C2=C(C)C=C(Cl)C=C2','FC1=CC=CC(F)=C1/N=N/C2=CC=C(C#N)C=C2','CC1=C(C(C)=NN1)/N=N/C2=C(Cl)C=CC(Br)=CC=C2','O=C(C1=CC=C(/N=N/C2=NNC=C2)C=C1)OCC','CC1=C([N+]([O-])=O)C(C)=CC(/N=N/C2=CC(C)=C(N(C)C)C(C)=C2)=C1','Oc1c(/C=N/c2cc(C(OCC)=O)ccn2)cc(/N=N/c3ccc([N+]([O-])=O)cc3)cc1','N#CC1=CC(C(OCC)=O)=CC(C)=C1','FC(F)(F)C1=C(/N=N/C2=C(C(F)(F)F)C=CC=C2)C=CC=C1','CC1=NOC(C)=C1/N=N/C2=CC(NC(O)=O)=CC=C2','CC1=C(/N=N/C2=CC=C(N(C)C)C=C2C)C=CC([N+]([O-])=O)=C1','CC1=C(/N=N/C2=CC=CC=C2C#N)C(C)=NO1','CSc1nnc(s1)N=Nc1c2ccccc2n(c1C)C','FC1=CC=CC(F)=C1/N=N/C2=CC=C(C(OCC)=O)C=C2','FC1=CC(/N=N/C2=CC=C(NCCC#N)C=C2)=CC=C1','CC1=C(/N=N/C2=CC=CC(C)=NO1)C(C)=NO2','CC1=CC=CC=C1/N=N/C2=CC=C(NCCC#N)C=C2','CC1=C(/N=N/C2=C(F)C=CC=C2F)C(C)=NO1','CC1=C(/N=N/C2=CC=C(F)C=C2F)C(C)=NO1','[H]N(CC)C(C=C3)=CC=C3/N=N/C4=CC=C([N+]([O-])=O)C=C4','CC(C1=CC=C(/N=N/C2=CC=CC=C2)C=C1)=O','CC1=NOC(C)=C1/N=N/C2=CC(C(F)F)=CC=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C(C(C)=O)C=C2','CC1=C(/N=N/C2=CC=CCC=C2)C(C)=NO1','O=[N+]([O-])C%22=CC=C(N=C(N=NC%23=CC=C([N+]([O-])=O)C=C%23)S%24)C%24=C%22','CC1=C(/N=N/C2=CC=C(F)C=C2F)C=C1','CC1=C(/N=N/C2=CC(N)=C1)C=C2','COC1=CC=CC=C1','BrC(C=C1)=CC=C1/N=N/C2=CC=C(N(C)C)C=C2','OC%34=C%35N=CC=CC%35=C(/N=N/C%36=NC%37=CC=C(OC)C=C%37S%36)C=C%34','[H]C1=CC([N+]([O-])=O)=CC([H])=C1/N=N/C2=CC([H])=C(C=C2OC)N(CC)CC','NCC1=CC(/N=N\2)=C(CCC3=C2C=C(CN)C=C3)C=C1','CN(N=C1C)C(C)=C1/N=N/C2=C(OC)C=CC=C2OC','C[N]1C=CC(=N1)N=NC2=CC=CC=C2','IC(C=C%19)=CC=C%19N=NC%20=NC%21=CC=C([N+]([O-])=O)C=C%21S%20','CC1=NOC(C)=C1/N=N/C2=CC(N)=CC=C2','CN(CCC#N)C(C=C%17)=CC=C%17/N=N/C%18=CC=CC=C%18','FC1=CC(C(OCC)=O)=CC(F)=C1/N=N/C2=CC(F)=CC=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC(F)=CC=C2','OCC(C=C1)=CC2=C1CCC3=C(/N=N\2)C=C(CO)C=C3','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC=C2Br','NC(C=C1)=CC=C1N=NC2=NNC=C2','CC1=NOC(C)=C1/N=N/C2=CC(Br)=CC=C2','ClC(C=C1)=CC=C1/N=N/C2=CC=C(N(C)C)C=C2','C[N]1N=C(C=N1)N=N/N=NC2=CC=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=C(B)C=CC=C2','[H]C1=C(C=C([H])C(/N=N/C2=C(C#N)C=C([N+]([O-])=O)C=C2C#N)=C1)N(CC)CC','Cn1c(c2ccccc2)c(c2c1cccc2)N=Nc1nncs1','CN1C(/N=N/C2=CC=CC=C2)=CN=C1','Cc1[nH]c2c(c1N=Nc1n[nH]c(n1)S)cccc2','CN(C)C1=CC=C(/N=N/C2=CC=CC=C2)C=C1','CC1=NOC(C)=C1/N=N/C2=CC(N)=C2','CC1=CC=C(/N=N/C2=CC=C(NCCC#N)C=C2)C=C1','CC1C(C(C)=NN1)/N=N/C2=CC=C(C)C=C2','C[N]1N=CC=C1N=NC2=CC=CC=C2','CC1=C(/N=N/C2=C(Cl)C=CC=C2Cl)C(C)=NO1','CN(N=C1C)C(C)=C1/N=N/C2=C(C)C=CC=C2','NC1=CC=CC=C1/N=N/C2=CC=CC=C2','FC1=CC=CC=C1/N=N/C2=C(F)C=CC=C2','FC1=CC(C(OCC)=O)=CC(F)=C1/N=N/C2=CC=C(C(OCC)=O)C=C2','FC1=CC(C(OCC)=O)=CC(F)=C1/N=N/C2=CC(C(F)=CC(F)=O)=CC(C)=C2F','CC1=C(/N=N/C2=CC=CC(C)=C2C)C=CC=C1C','[H]C%19=CC=C(N=C(N=NC%20=CC=C(OC)C=C%20)S%21)C%21=C%19','CC1=C(C(C)=NN1)/N=N/C2=CC(N)=C2','CC1=NOC(C)=C1/N=N/C2=CC(C)=CC=C2','CC1=C(/N=N/C2=CC(F)=CC=C2F)C(C)=NO1 intimid1=1 intimid2=2 intimid=0 helps1=N+ intimid2=N intimid=0','CC1=C(/N=N/C2=CC(F)=C2F)C(C)=NO1','OC1=C(/N=N/C2=CC(C)=CC(C)=C2)C=CC=C1','CC1=C(C(C)=NN1)/N=N/C2=C(C(F)(F)F)C=CC=C2','CCN(CC)C1=CC=C(/N=N/C2=CC(C#N)=CC=C2)C=C1','CC1=NOC(C)=C1/N=N/C2=C(C)C=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(C(OCC)=O)=CC=C2','FC1=CC=C(/N=N/C2=CC=C(F)C=C2)C=C1','CN1C2=CC=CC=C2N=C1/N=N/C3=NC4=CC=CC=C4N3C','CC(C)(C)OCC1=CC(/N=N\2)=C(CCC3=C2C=C(COC(C)(C)C)C=C3)C=C1','C[N]1N=CC=CC(F)=C1/N=N/C2=CC=CC=C2','CC(C(C)=NN1)=CC=C1/N=N/C2=C(Cl)C=CC=C2','FC1=CC=CC=C1/N=N/C2=CC=C(C(F)(F)F)C=C2','FC1=CC(C(OCC)=O)=CC(F)=C1/N=N/C2=CC=CC=C2','BrC1=CC=CC=C1/N=N/C2=CC=CC=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC=C2[N+]([O-])=O','CC1=C(C(C)=NN1)/N=N/C2=CC(OC)C=CC=C2','FC1=CC=CC=C1/N=N/C2=CC=C(F)C=C2F','FC1=CC(C)=CC(F)=C1/N=N/C2=CC=CC=C2','CC1=C(C(C)=NN1)/N=N/C2=CC(OC)=CC=C2','CC1=C(/N=N/C2=CC=C2Cl)C(C)=NO1','CN(N=C1C)C(C)=C1/N=N/C2=CC=CC=C2Cl','OC%22=C%23N=CC=CC%23=C(/N=N/C%24=NC(C%25=CC=C(Br)C=C%25)=CS%24)C=C%22','CC(S1)=CC=C1/N=N/C2=CC=C(C#N)C=C2','FC1=CC(/N=N/C2=CC=CS2)=CC=C1','C[N][N]C1=CC=C1/N=N/C2=CC=C(NC(C)=O)C=C2','FC1=CC(C)=CC(F)=C1/N=N/C2=CC=C(C(F)C)C=C2','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=CC=C2','CCN(CC)C(C=C%27)=CC=C%27/N=N/C%28=CC=C(N%29CCOCC%29)C(C)=C%28','N#CCCNC(C=C1)=CC=C1/N=N/C2=CC=CC([N+]([O-])=O)=C2','CC(C=CC=C1C)=C1/N=N/C2=CC=CC=C2','FC(F)C1=CC(C)=C1/N=N/C2=CC=CC=C2','CN(N=C1)C=C1/N=N/C2=C(F)C=CC=C2F','CC(C=C(N(CCC#N)CCO)C=C1)=C1/N=N/C2=CC=C(S(=O)(C)=O)C=C2','OC%29=C(N=CC=C%30)C%30=C(/N=N/C%31=CC=C(C#N)C=C%31)C=C%29','CC1=C(/N=N/C2=CC=C(F)C(C)C=C2F)C(C)=NO1','COC(S1)=CC=C1/N=N/C2=CC=C(Br)C=C2','OC%26=C%27N=CC=CC%27=C(/N=N/C%28=NC%29=CC=CC=C%29S%28)C=C%26'],
+colors: [
+{
+r: [228,55,228,55,228,55,228,228,55,228,55,55,55,228,55,228,228,228,55,228,55,55,55,228,55,228,228,228,228,228,55,55,55,55,55,228,228,228,55,228,55,55,55,55,55,228,55,55,55,55,55,55,55,55,55,55,55,55,55,55,228,55,55,55,55,55,55,55,228,228,228,55,55,228,228,228,228,55,55,55,228,228,228,228,228,228,55,228,55,55,55,55,228,55,55,55,228,228,55,55,55,55,228,55,55,228,228,228,228,228,55,55,228,55,55,228,228,228,55,228,228,55,55,55,228,55,55,55,55,55,228,55,55,228,55,55,55,55,228,55,55,228,228,55,55,228,55,55,228,55,55,228,55,228,55,55,55,228,55,55,228,228,55,55,55,55,55,55,228,55,55,228,55,55,55,55,228,55,228,228,55,55,228,228,55,228,55,55,55,228,228,55,55,55,55,228,55,55,55,55,55,55,55,228,228,55,55,228,228,228,228,55,55,55,228,55,228,228,55,228,55,55,55,55,55,55,228,228,55,55,55,228,55,55,55,55,55,55,228,228,228,228,55,55,55,55,55,228,228,55,228,228,55,55,55,55,55,228,228,55,55,228,55,55,55,55,228,228,55,55,228,228,55,55,55,228,55,55,228,55,228,55,228,55,55,228,55,55,55,228,228,228,228,55,55,228,55,55,228,55,55,55,55,55,55,55,55,228,55,55,55,55,55,55,228,55,228,55,55,228,55,228,228,55,55,55,55,55,55,228,228,55,228,55,228,55,55,228,228,55,55,55,228,55,228,228,228,228,55,55,228,55,55,55,228,228,55,55,55,228,228,55,228,55,55,55,55,228,55,55,55,228,55,228,228,55,55,55,55,228,228,55,55,55,228,228,55,55,55,55,228,228,55,228,55,228,228,228,55,228,55,55,55,228,55,55,55,55,228,228,55,228,55,228,55,55,228,228,228,228,228,228,228,228,55,55,228,228,55,228,55,228,55,55,55,55,55,55,55,55,55,228,55,55,55,55,228,228,55,55,228,55,55,55,228,228,228,228,55,55,228,228,55,55,55,55,55,55,55,228,228,55,55,228,55,55,228,55,55,55,55,228,55,228,55,55,55,55,55,55,55,55,228,228,55,55,55,55,55,228,55,55,228,228,55,55,55,55,55,228,55,55,55,228,55,228,55,55,55,228,55,228,55,228,55,55,55,228,55,55,228,55,55,228,228,55,228,55,228,55,228,228,55,228,55,55,228,228,55,55,55,228,55,228,55,55,55,55,55,228,55,55,55,55,55,228,55,228,55,228,228,228,55,55,55,55,55,55,55,228,55,228,55,55,55,55,55,55,228,228,55,55,55,55,55,228,55,228,55,55,228,55,55,55,228,55,55,228,228,228,228,55,55,55,228,228,55,55,55,228,228,228,55,55,55,228,228,228,55,228,228,55,55,228,228,228,55,55,55,55,228,55,55,55,228,228,55],
+g: [26,126,26,126,26,126,26,26,126,26,126,126,126,26,126,26,26,26,126,26,126,126,126,26,126,26,26,26,26,26,126,126,126,126,126,26,26,26,126,26,126,126,126,126,126,26,126,126,126,126,126,126,126,126,126,126,126,126,126,126,26,126,126,126,126,126,126,126,26,26,26,126,126,26,26,26,26,126,126,126,26,26,26,26,26,26,126,26,126,126,126,126,26,126,126,126,26,26,126,126,126,126,26,126,126,26,26,26,26,26,126,126,26,126,126,26,26,26,126,26,26,126,126,126,26,126,126,126,126,126,26,126,126,26,126,126,126,126,26,126,126,26,26,126,126,26,126,126,26,126,126,26,126,26,126,126,126,26,126,126,26,26,126,126,126,126,126,126,26,126,126,26,126,126,126,126,26,126,26,26,126,126,26,26,126,26,126,126,126,26,26,126,126,126,126,26,126,126,126,126,126,126,126,26,26,126,126,26,26,26,26,126,126,126,26,126,26,26,126,26,126,126,126,126,126,126,26,26,126,126,126,26,126,126,126,126,126,126,26,26,26,26,126,126,126,126,126,26,26,126,26,26,126,126,126,126,126,26,26,126,126,26,126,126,126,126,26,26,126,126,26,26,126,126,126,26,126,126,26,126,26,126,26,126,126,26,126,126,126,26,26,26,26,126,126,26,126,126,26,126,126,126,126,126,126,126,126,26,126,126,126,126,126,126,26,126,26,126,126,26,126,26,26,126,126,126,126,126,126,26,26,126,26,126,26,126,126,26,26,126,126,126,26,126,26,26,26,26,126,126,26,126,126,126,26,26,126,126,126,26,26,126,26,126,126,126,126,26,126,126,126,26,126,26,26,126,126,126,126,26,26,126,126,126,26,26,126,126,126,126,26,26,126,26,126,26,26,26,126,26,126,126,126,26,126,126,126,126,26,26,126,26,126,26,126,126,26,26,26,26,26,26,26,26,126,126,26,26,126,26,126,26,126,126,126,126,126,126,126,126,126,26,126,126,126,126,26,26,126,126,26,126,126,126,26,26,26,26,126,126,26,26,126,126,126,126,126,126,126,26,26,126,126,26,126,126,26,126,126,126,126,26,126,26,126,126,126,126,126,126,126,126,26,26,126,126,126,126,126,26,126,126,26,26,126,126,126,126,126,26,126,126,126,26,126,26,126,126,126,26,126,26,126,26,126,126,126,26,126,126,26,126,126,26,26,126,26,126,26,126,26,26,126,26,126,126,26,26,126,126,126,26,126,26,126,126,126,126,126,26,126,126,126,126,126,26,126,26,126,26,26,26,126,126,126,126,126,126,126,26,126,26,126,126,126,126,126,126,26,26,126,126,126,126,126,26,126,26,126,126,26,126,126,126,26,126,126,26,26,26,26,126,126,126,26,26,126,126,126,26,26,26,126,126,126,26,26,26,126,26,26,126,126,26,26,26,126,126,126,126,26,126,126,126,26,26,126],
+b: [28,184,28,184,28,184,28,28,184,28,184,184,184,28,184,28,28,28,184,28,184,184,184,28,184,28,28,28,28,28,184,184,184,184,184,28,28,28,184,28,184,184,184,184,184,28,184,184,184,184,184,184,184,184,184,184,184,184,184,184,28,184,184,184,184,184,184,184,28,28,28,184,184,28,28,28,28,184,184,184,28,28,28,28,28,28,184,28,184,184,184,184,28,184,184,184,28,28,184,184,184,184,28,184,184,28,28,28,28,28,184,184,28,184,184,28,28,28,184,28,28,184,184,184,28,184,184,184,184,184,28,184,184,28,184,184,184,184,28,184,184,28,28,184,184,28,184,184,28,184,184,28,184,28,184,184,184,28,184,184,28,28,184,184,184,184,184,184,28,184,184,28,184,184,184,184,28,184,28,28,184,184,28,28,184,28,184,184,184,28,28,184,184,184,184,28,184,184,184,184,184,184,184,28,28,184,184,28,28,28,28,184,184,184,28,184,28,28,184,28,184,184,184,184,184,184,28,28,184,184,184,28,184,184,184,184,184,184,28,28,28,28,184,184,184,184,184,28,28,184,28,28,184,184,184,184,184,28,28,184,184,28,184,184,184,184,28,28,184,184,28,28,184,184,184,28,184,184,28,184,28,184,28,184,184,28,184,184,184,28,28,28,28,184,184,28,184,184,28,184,184,184,184,184,184,184,184,28,184,184,184,184,184,184,28,184,28,184,184,28,184,28,28,184,184,184,184,184,184,28,28,184,28,184,28,184,184,28,28,184,184,184,28,184,28,28,28,28,184,184,28,184,184,184,28,28,184,184,184,28,28,184,28,184,184,184,184,28,184,184,184,28,184,28,28,184,184,184,184,28,28,184,184,184,28,28,184,184,184,184,28,28,184,28,184,28,28,28,184,28,184,184,184,28,184,184,184,184,28,28,184,28,184,28,184,184,28,28,28,28,28,28,28,28,184,184,28,28,184,28,184,28,184,184,184,184,184,184,184,184,184,28,184,184,184,184,28,28,184,184,28,184,184,184,28,28,28,28,184,184,28,28,184,184,184,184,184,184,184,28,28,184,184,28,184,184,28,184,184,184,184,28,184,28,184,184,184,184,184,184,184,184,28,28,184,184,184,184,184,28,184,184,28,28,184,184,184,184,184,28,184,184,184,28,184,28,184,184,184,28,184,28,184,28,184,184,184,28,184,184,28,184,184,28,28,184,28,184,28,184,28,28,184,28,184,184,28,28,184,184,184,28,184,28,184,184,184,184,184,28,184,184,184,184,184,28,184,28,184,28,28,28,184,184,184,184,184,184,184,28,184,28,184,184,184,184,184,184,28,28,184,184,184,184,184,28,184,28,184,184,28,184,184,184,28,184,184,28,28,28,28,184,184,184,28,28,184,184,184,28,28,28,184,184,184,28,28,28,184,28,28,184,184,28,28,28,184,184,184,184,28,184,184,184,28,28,184],
+},
+]},
+Photoswitches_tree: {
+x: [642.533,640.266,405.907,409.419,405.907,405.401,405.907,394.013,405.907,417.414,167.535,170.558,167.535,165.321,357.749,361.026,597.936,596.167,605.683,629.288,605.683,606.095,605.683,581.912,114.117,115.442,209.412,212.829,382.73,378.723,382.73,388.744,394.971,392.331,562.32,558.292,562.32,566.153,458.733,451.998,458.733,465.78,458.733,459.992,458.733,455.087,580.783,582.199,580.783,578.667,580.512,579.621,580.512,589.411,580.512,571.505,410.708,407.591,44.315,43.298,597.773,589.411,597.773,603.543,338.655,339.323,338.655,344.942,338.655,334.009,338.655,334.482,286.814,284.228,286.814,289.193,579.438,579.468,486.227,466.736,486.227,505.399,700.931,699.517,216.366,214.368,216.366,220.034,320.97,324.207,649.779,651.415,649.779,657.198,649.779,666.906,649.779,629.288,649.779,651.748,149.666,144.762,149.666,152.241,149.666,152.344,149.666,150.223,480.358,476.718,170.558,175.192,170.558,169.228,149.975,150.223,149.975,149.531,223.032,220.118,223.032,225.82,223.032,241.007,223.032,217.312,223.032,226.589,223.032,224.836,223.032,207.132,386.59,391.028,386.59,383.325,733.943,736.503,733.943,735.363,733.943,744.814,733.943,730.026,733.943,742.58,733.943,728.705,733.943,721.984,733.943,730.579,733.943,738.146,733.943,735.221,629.288,626.748,629.288,635.6,629.288,632.483,629.288,632.333,629.288,627.874,629.288,625.006,388.413,386.343,388.413,387.471,388.413,391.083,429.356,433.71,429.356,433.614,429.356,420.027,117.417,115.442,117.417,119.851,162.39,160.864,162.39,163.443,162.39,166.811,162.39,163.753,162.39,158.77,637.469,633.694,513.55,509.577,513.55,516.27,431.48,433.925,420.73,419.841,254.414,258.788,254.414,250.965,164.437,160.864,234.124,232.187,386.596,380.282,386.596,393.967,18.11,21.399,750.0,744.814,358.979,362.818,358.979,354.81,358.979,357.856,212.318,184.666,212.318,239.314,284.228,280.056,142.782,125.723,142.782,138.753,142.782,161.929,142.782,139.536,600.144,603.301,600.144,598.974,600.144,597.989,472.494,469.67,496.952,504.42,496.952,488.456,496.952,497.532,504.42,509.577,487.815,480.446,487.815,491.592,487.815,494.109,326.985,321.919,326.985,331.863,406.943,419.555,406.943,394.013,289.193,291.341,483.316,480.525,711.295,699.517,711.295,721.984,191.181,188.505,192.918,189.277,192.918,203.029,192.918,185.176,505.399,524.757,505.399,509.474,156.527,156.081,156.527,156.54,195.661,199.294,195.661,192.95,382.772,377.421,382.772,388.503,408.912,415.233,408.912,401.779,548.651,571.505,548.651,551.766,548.651,524.638,609.025,605.236,496.808,494.109,532.053,558.292,532.053,531.995,532.053,505.861,419.796,415.233,316.762,319.653,175.192,184.666,175.192,175.019,175.192,167.97,175.192,183.659,175.192,169.548,175.192,178.619,175.192,183.693,175.192,163.2,175.192,175.628,40.97,39.154,40.97,43.298,397.478,396.969,163.753,164.534,560.43,542.95,560.43,578.72,560.43,564.167,143.14,147.265,142.982,147.265,579.468,578.72,175.019,174.625,641.739,639.549,480.525,476.718,558.292,557.722,558.292,581.912,356.569,353.228,356.569,364.47,356.569,351.786,701.541,699.517,701.541,702.944,357.558,357.462,357.558,362.983,357.558,352.812,205.883,205.551,205.883,207.132,258.41,254.739,258.41,263.465,427.925,431.238,427.925,422.069,407.12,409.578,407.12,404.427,103.146,106.349,609.696,605.236,506.637,505.861,63.811,65.479,639.627,635.6,118.164,114.599,118.164,128.805,118.164,109.671,384.718,381.7,402.17,399.299,398.496,393.967,369.148,364.853,608.535,605.354,362.196,364.853,370.785,374.794,255.311,254.139,365.818,360.389,365.818,372.811,618.171,625.393,618.171,605.354,618.171,623.682,372.811,381.791,372.811,369.662,334.009,331.638,8.443,11.606,551.766,548.275,551.766,554.289,181.263,179.82,653.207,648.615,308.258,304.93,308.258,313.272,371.052,364.47,371.052,380.435,371.052,368.283,371.052,377.421,371.052,371.671,371.052,364.015,371.052,375.001,371.052,369.31,564.167,567.355,329.63,329.079,407.591,410.83,407.591,420.027,407.591,395.644,433.2,427.0,433.2,434.564,433.2,437.686,374.794,380.282,360.179,362.818,360.179,385.887,360.179,331.863,360.179,360.001,625.393,630.118,63.318,61.125,581.912,583.759,581.912,582.095,381.264,380.435,183.693,188.38,183.693,187.024,395.258,391.595,395.258,398.038,51.74,54.621,466.686,465.78,575.954,572.607,575.954,578.667,433.925,437.355,542.95,524.757,599.43,596.881,203.813,199.896,203.813,209.472,381.7,370.202,381.7,392.331,380.435,386.51,380.435,383.8,35.273,38.431,35.273,32.591,304.339,278.321,304.339,331.863,41.958,45.165,41.958,38.431,53.655,54.621,197.729,201.86,391.595,388.503,391.595,388.327,430.302,443.609,430.302,414.345,390.611,396.206,390.611,386.1,140.268,143.23,494.982,500.972,494.982,490.978,494.982,489.199,494.982,497.865,691.406,694.965,212.829,217.312,554.289,555.437,109.671,103.582,357.399,360.001,169.548,165.685,412.824,409.578,659.434,657.198,667.954,666.906,362.983,394.013,362.983,329.079,362.983,366.416,362.983,365.545,362.983,364.853,213.493,217.312,744.814,745.814,744.814,749.187,388.412,391.083,324.207,328.239,250.965,248.475,139.775,143.831,141.164,122.699,141.164,160.864,232.187,229.335,699.517,706.299,699.517,694.965,699.517,683.441,209.698,209.504,596.167,593.006,644.514,640.266,635.6,634.796,635.6,639.549,258.866,268.965,258.866,258.788,258.866,241.007,258.866,261.018,258.866,267.688,387.579,386.1,375.405,378.723,488.632,486.126,368.283,364.684,368.283,369.149,225.2,220.034,225.2,252.077,225.2,221.6,225.2,229.335,225.2,226.875,225.2,216.42,225.2,201.86,278.874,278.932,278.874,278.321,49.487,54.621,597.989,598.653,597.989,595.84,431.166,442.368,431.166,419.555,158.938,161.929,329.595,328.091,261.018,263.465,364.853,368.327,364.853,366.3,364.853,357.786,364.853,367.507,4.377,0.0,4.377,11.606,43.298,45.165,446.25,451.998,446.25,441.476,147.265,154.418,581.827,578.72,125.723,111.012,30.254,32.591,11.606,21.399,735.221,735.597,268.965,277.594,254.139,252.077,119.851,122.699,126.825,128.805,443.609,453.964,443.609,447.355,443.609,446.802,24.876,26.413,583.349,582.312,583.349,582.095,583.349,586.937,203.029,199.294,203.029,215.23,151.487,151.889,163.128,167.97,505.861,479.591,432.746,466.736,432.746,396.206,192.949,179.82,192.949,191.362,192.949,207.132,360.278,360.021,184.666,161.929,184.666,185.151,184.666,188.802,354.746,350.903,354.746,360.021,293.249,291.341,293.249,294.858,146.751,150.264,710.346,706.299,354.77,357.786,391.083,394.013,588.203,589.411,382.495,385.339,414.324,422.069,414.324,406.195,414.324,416.464,555.437,556.161,215.23,209.472,215.23,229.943,381.791,394.013,360.021,352.049,360.021,363.672,360.021,370.202,26.413,27.806,319.653,320.879,319.653,311.08,319.653,329.079,319.653,315.487,385.887,411.572,603.543,607.208,272.362,276.125,272.362,267.688,240.204,239.314,388.503,395.644,513.064,509.474,99.517,103.582,524.638,500.972,524.638,525.737,389.668,394.013,163.593,165.321,163.593,162.443,392.203,393.35,623.682,627.66,593.545,589.411,165.499,167.97,429.666,427.0,413.006,416.169,413.006,407.725,459.265,448.112,459.265,469.67,140.04,128.805,140.04,152.344,396.206,399.299,396.206,395.198,396.206,361.537,396.206,388.744,396.206,406.195,396.206,396.969,356.292,353.599,356.292,360.389,216.42,209.504,569.685,572.607,569.685,566.153,98.025,111.012,98.025,86.561,593.006,593.455,593.006,589.051,239.314,266.93,362.818,364.47,671.355,666.906,592.309,589.411,186.843,183.659,395.772,393.967,683.441,666.906,390.112,386.51,245.628,241.738,245.628,229.943,245.628,263.465,417.249,414.345,181.689,201.86,181.689,160.864,413.912,410.83,287.763,291.093,148.626,154.626,148.626,144.731,726.298,728.705,453.964,461.001,274.335,280.056,274.335,267.688,352.049,344.942,352.049,350.787,747.364,742.58,48.329,45.165,91.288,76.443,91.288,106.349,395.644,393.967,229.868,226.875,633.694,628.505,477.592,480.446,498.771,494.109,45.165,61.125,45.165,33.16,24.473,27.806,204.202,201.179,204.202,209.504,640.266,628.505,640.266,648.615,299.192,303.842,206.006,209.472,423.589,420.027,427.0,417.414,483.593,500.972,483.593,466.736,151.889,152.344,469.67,480.446,144.762,141.712,387.198,391.028,386.697,385.339,609.455,605.354,148.374,143.23,148.374,154.418,411.572,409.578,411.572,436.901,349.456,352.812,366.3,367.36,425.176,420.986,722.533,721.984,106.349,122.699,401.779,406.434,401.779,392.331,263.621,267.383,263.621,258.788,286.035,286.154,386.1,385.339,386.1,381.009,280.545,277.594,311.08,304.418,143.831,150.264,364.015,359.582,586.009,588.491,586.009,583.759,600.4,596.881,393.35,394.013,65.479,54.621,65.479,75.8,497.532,497.519,27.806,29.843,502.036,500.972,150.264,151.898,150.264,155.687,150.264,147.208,589.051,571.505,589.051,587.981,589.051,605.354,589.051,592.711,451.998,450.669,179.82,166.581,325.394,328.091,596.881,578.72,596.881,613.87,596.881,601.271,294.833,328.239,294.833,266.93,294.833,286.154,294.833,291.093,48.644,54.621,370.202,367.507,209.504,205.33,545.695,548.275,407.725,401.436,461.001,465.485,319.844,329.079,319.844,313.272,163.2,154.626,480.446,488.456,226.875,225.494,593.564,591.117,593.564,595.84,422.069,423.251,33.16,21.399,33.16,30.811,479.591,453.228,301.958,304.418,391.081,394.013,420.986,414.345,125.71,128.805,344.942,343.478,401.436,394.013,601.271,605.236,155.021,152.344,437.355,441.476,161.929,154.418,61.125,76.443,406.434,410.458,75.8,86.561,263.465,282.879,453.228,436.901,453.228,442.368,393.967,395.198,393.967,391.028,286.154,277.594,154.418,156.081,591.117,588.491,361.026,364.47,383.835,384.848,397.554,394.013,490.978,487.67,657.198,661.785,414.345,394.013,416.169,417.994,37.803,39.154,450.814,448.112,491.592,495.196,32.591,29.843,329.079,328.091,329.079,303.842,319.46,321.919,160.864,155.687,381.009,377.783,303.842,282.879,183.659,188.505,605.236,605.793,605.236,602.452,391.028,393.739,328.239,361.537,328.239,330.677,488.456,488.317,226.647,224.836,436.901,448.112,321.919,318.387,304.418,299.611,478.322,472.918,478.322,483.645,386.343,384.848,54.621,55.224,54.621,50.287,185.176,180.661,416.854,415.233,368.141,364.47,269.987,267.383,628.505,613.87,486.126,483.645,362.747,360.001,476.718,472.918,278.321,252.077,417.414,419.841,30.312,33.16,669.088,666.906,166.581,152.344,461.994,465.78,296.019,294.858,365.899,364.47,472.918,465.78,489.199,483.645],
+y: [486.197,489.91,130.522,128.385,130.522,126.201,130.522,144.914,130.522,118.723,457.265,468.421,457.265,449.312,362.026,364.287,652.948,648.732,243.707,242.599,243.707,240.193,243.707,244.784,230.881,234.874,635.029,637.441,551.902,554.346,551.902,550.705,28.966,31.454,223.527,237.912,223.527,210.576,709.986,720.546,709.986,697.896,709.986,713.882,709.986,711.39,166.706,162.668,166.706,172.708,616.766,613.471,616.766,609.238,616.766,623.722,473.764,471.9,250.584,254.023,603.29,609.238,603.29,599.308,10.169,6.022,10.169,19.085,10.169,3.722,10.169,9.435,682.384,673.867,682.384,690.202,503.935,507.662,560.741,570.209,560.741,550.899,277.392,281.175,284.122,280.5,284.122,288.531,557.849,556.389,250.528,247.55,250.528,245.174,250.528,260.232,250.528,242.599,250.528,253.787,692.606,696.313,692.606,695.333,692.606,681.82,692.606,701.568,691.34,691.113,468.421,484.853,468.421,464.079,708.029,701.568,708.029,712.192,647.408,650.208,647.408,644.585,647.408,638.458,647.408,641.902,647.408,649.529,647.408,654.737,647.408,655.97,489.886,495.16,489.886,486.993,316.257,319.394,316.257,311.519,316.257,324.329,316.257,317.963,316.257,313.011,316.257,323.109,316.257,304.648,316.257,313.296,316.257,315.375,316.257,324.906,242.599,245.974,242.599,231.562,242.599,239.971,242.599,245.476,242.599,238.085,242.599,241.103,166.68,175.757,166.68,170.141,166.68,155.864,468.759,466.667,468.759,470.3,468.759,470.076,240.711,234.874,240.711,247.894,259.521,267.914,259.521,255.952,259.521,258.824,259.521,251.438,259.521,256.976,497.616,495.926,362.862,358.04,362.862,366.068,750.0,746.743,110.091,113.974,618.7,623.121,618.7,614.617,269.341,267.914,281.271,284.613,504.678,506.403,504.678,501.405,260.935,262.563,324.263,324.329,342.713,345.2,342.713,343.124,342.713,339.126,520.755,508.439,520.755,533.229,673.867,664.624,513.106,511.044,513.106,514.646,513.106,515.964,513.106,510.393,322.085,325.353,322.085,326.411,322.085,314.108,308.956,310.876,344.448,351.754,344.448,334.28,344.448,349.649,351.754,358.04,320.598,321.881,320.598,324.424,320.598,317.492,315.524,314.857,315.524,316.4,169.381,191.58,169.381,144.914,690.202,697.28,700.005,696.638,293.165,281.175,293.165,304.648,464.763,468.636,85.015,85.696,85.015,85.97,85.015,83.292,550.899,541.035,550.899,550.716,541.949,535.619,541.949,546.207,74.133,79.39,74.133,70.757,434.779,414.104,434.779,455.959,13.328,7.787,13.328,21.564,620.304,623.722,620.304,626.605,620.304,615.958,483.643,487.279,314.257,317.492,241.912,237.912,241.912,238.524,241.912,245.583,6.584,7.787,103.792,107.023,484.853,508.439,484.853,478.157,484.853,489.511,484.853,475.392,484.853,482.409,484.853,483.244,484.853,487.444,484.853,477.117,484.853,489.159,245.658,239.534,245.658,254.023,558.672,554.892,251.438,246.983,521.756,531.417,521.756,512.223,521.756,522.771,531.385,528.86,527.575,528.86,507.662,512.223,478.157,473.785,219.588,223.845,696.638,691.113,237.912,234.661,237.912,244.784,371.433,374.652,371.433,368.292,371.433,370.876,285.177,281.175,285.177,288.445,121.108,125.205,121.108,120.12,121.108,122.113,660.944,664.914,660.944,655.97,109.293,111.136,109.293,106.479,568.249,570.844,568.249,564.551,283.694,288.103,283.694,281.241,255.028,256.95,487.342,487.279,242.278,245.583,499.869,502.605,229.816,231.562,675.32,675.152,675.32,677.442,675.32,673.549,40.343,42.201,543.92,546.457,501.38,501.405,97.053,95.791,639.608,636.565,93.782,95.791,507.299,507.069,306.207,302.741,171.1,177.689,171.1,162.85,640.261,639.025,640.261,636.565,640.261,645.061,162.85,153.219,162.85,164.861,3.722,0.0,260.44,262.621,626.605,629.525,626.605,633.482,672.069,668.786,485.961,487.354,133.802,136.641,133.802,129.321,391.683,368.292,391.683,388.407,391.683,400.132,391.683,414.104,391.683,395.422,391.683,392.558,391.683,392.92,391.683,388.101,522.771,521.485,112.578,116.196,471.9,468.39,471.9,470.076,471.9,476.269,103.348,110.202,103.348,98.898,103.348,101.803,507.069,506.403,322.618,345.2,322.618,307.125,322.618,316.4,322.618,318.293,639.025,638.901,259.083,261.771,244.784,256.213,244.784,239.656,384.591,388.407,487.444,486.242,487.444,490.412,448.81,452.386,448.81,446.111,495.334,500.102,701.668,697.896,180.184,188.939,180.184,172.708,746.743,742.057,531.417,541.035,506.173,502.95,101.187,103.327,101.187,97.11,42.201,52.853,42.201,31.454,388.407,385.258,388.407,390.806,295.718,286.088,295.718,304.762,310.367,304.335,310.367,316.4,275.495,263.709,275.495,286.088,504.396,500.102,283.493,284.735,452.386,455.959,452.386,450.298,142.559,141.819,142.559,144.093,562.53,550.384,562.53,573.006,544.859,541.379,625.676,610.122,625.676,627.693,625.676,641.811,625.676,627.987,281.682,281.251,637.441,641.902,633.482,639.368,673.549,672.281,315.374,318.293,482.409,480.758,285.962,288.103,240.832,245.174,263.867,260.232,120.12,144.914,120.12,116.196,120.12,122.166,120.12,117.177,120.12,95.791,642.719,641.902,324.329,329.445,324.329,327.899,157.993,155.864,556.389,555.023,614.617,611.578,285.06,282.762,261.233,256.046,261.233,267.914,284.613,289.045,281.175,278.503,281.175,281.251,281.175,270.505,314.636,310.531,648.732,641.532,491.192,489.91,231.562,227.326,231.562,223.845,629.339,609.553,629.339,623.121,629.339,638.458,629.339,632.313,629.339,642.663,576.293,573.006,556.023,554.346,662.819,660.091,400.132,403.22,400.132,404.505,293.921,288.531,293.921,299.038,293.921,294.699,293.921,289.045,293.921,300.076,293.921,302.845,293.921,284.735,308.338,311.975,308.338,304.335,497.528,500.102,314.108,317.122,314.108,306.134,212.244,232.793,212.244,191.58,517.278,515.964,125.049,121.207,103.721,106.479,95.791,93.749,95.791,89.087,95.791,93.459,95.791,73.46,262.983,262.805,262.983,262.621,254.023,263.709,729.249,720.546,729.249,736.255,528.86,528.146,514.533,512.223,511.044,509.102,307.117,304.762,262.621,262.563,324.906,329.964,609.553,592.317,302.741,299.038,247.894,256.046,674.2,677.442,141.819,140.958,141.819,143.981,141.819,139.248,331.276,327.427,234.529,230.942,234.529,239.656,234.529,232.236,85.97,79.39,85.97,92.567,673.724,677.372,489.265,489.511,245.583,249.182,559.947,570.209,559.947,550.384,662.305,668.786,662.305,665.395,662.305,655.97,37.595,41.707,508.439,515.964,508.439,512.638,508.439,509.933,40.773,39.809,40.773,41.707,703.522,697.28,703.522,708.777,275.289,277.921,276.688,278.503,90.292,93.459,155.864,144.914,605.048,609.238,586.621,582.621,560.4,564.551,560.4,555.77,560.4,562.612,639.368,643.444,92.567,97.11,92.567,97.052,153.219,144.914,41.707,29.251,41.707,40.495,41.707,52.853,327.427,321.068,107.023,102.816,107.023,99.379,107.023,116.196,107.023,108.049,307.125,292.52,599.308,596.867,644.991,646.355,644.991,642.663,530.11,533.229,455.959,476.269,550.533,550.716,671.368,672.281,615.958,610.122,615.958,613.041,145.016,144.914,443.321,449.312,443.321,439.296,133.672,137.833,645.061,647.568,610.335,609.238,493.021,489.511,107.739,110.202,168.076,174.034,168.076,161.04,299.361,288.209,299.361,310.876,679.43,677.442,679.43,681.82,550.384,546.457,550.384,525.761,550.384,553.094,550.384,550.705,550.384,555.77,550.384,554.892,182.774,186.161,182.774,177.689,302.845,310.531,199.057,188.939,199.057,210.576,507.195,509.102,507.195,505.398,641.532,645.068,641.532,632.539,533.229,545.211,345.2,368.292,259.955,260.232,606.129,609.238,472.822,475.392,505.159,501.405,270.505,260.232,383.097,385.258,101.553,101.279,101.553,97.052,101.553,106.479,141.51,144.093,276.41,284.735,276.41,267.914,466.037,468.39,555.089,556.464,468.671,471.96,468.671,466.561,327.367,323.109,140.958,140.385,654.522,664.624,654.522,642.663,29.251,19.085,29.251,25.698,311.711,313.011,264.56,263.709,257.98,259.527,257.98,256.95,476.269,501.405,303.004,300.076,495.926,494.741,324.31,321.881,318.158,317.492,263.709,261.771,263.709,262.907,322.852,321.068,316.544,319.984,316.544,310.531,489.91,494.741,489.91,487.354,113.953,113.509,96.403,97.11,468.767,470.076,110.202,118.723,590.254,610.122,590.254,570.209,677.372,681.82,310.876,321.881,696.313,699.313,495.036,495.16,587.168,582.621,635.008,636.565,535.85,541.379,535.85,528.146,292.52,288.103,292.52,277.315,123.733,122.113,89.087,85.059,145.922,145.257,301.25,304.648,256.95,256.046,21.564,19.416,21.564,31.454,620.07,617.063,620.07,623.121,572.18,575.363,573.006,582.621,573.006,575.528,590.684,592.317,99.379,93.812,282.762,277.921,392.558,393.61,267.287,277.924,267.287,256.213,501.876,502.95,137.833,144.914,502.605,500.102,502.605,503.851,349.649,353.698,321.068,313.526,607.33,610.122,277.921,281.943,277.921,272.904,277.921,279.814,632.539,623.722,632.539,635.869,632.539,636.565,632.539,631.499,720.546,723.92,668.786,675.405,124.296,121.207,502.95,512.223,502.95,499.296,502.95,494.719,557.941,555.023,557.941,545.211,557.941,575.363,557.941,556.464,500.493,500.102,52.853,73.46,310.531,310.767,632.424,629.525,161.04,153.093,140.385,139.989,123.236,116.196,123.236,129.321,477.117,471.96,321.881,334.28,300.076,304.174,297.481,288.06,297.481,306.134,564.551,568.038,262.907,262.563,262.907,259.714,249.182,253.487,89.927,93.812,141.561,144.914,145.257,144.093,679.894,677.442,19.085,15.944,153.093,144.914,494.719,487.279,684.258,681.82,742.057,736.255,515.964,528.146,261.771,259.527,19.416,18.752,503.851,505.398,106.479,110.057,253.487,277.315,253.487,232.793,501.405,525.761,501.405,495.16,575.363,592.317,528.146,535.619,288.06,277.924,364.287,368.292,186.559,182.332,142.901,144.914,627.693,629.299,245.174,244.059,144.093,144.914,174.034,177.948,235.539,239.534,285.973,288.209,324.424,326.651,304.762,313.526,116.196,121.207,116.196,113.509,311.733,314.857,267.914,272.904,575.528,578.065,113.509,110.057,475.392,468.636,487.279,482.098,487.279,483.866,495.16,492.262,555.023,553.094,555.023,557.681,334.28,338.045,658.802,654.737,277.315,288.209,314.857,316.847,93.812,93.295,671.396,685.504,671.396,656.673,175.757,182.332,500.102,495.674,500.102,503.278,83.292,82.353,3.543,7.787,366.192,368.292,614.51,617.063,494.741,499.296,660.091,656.673,315.552,318.293,691.113,685.504,304.335,299.038,118.723,113.974,265.301,262.907,256.553,260.232,675.405,681.82,698.043,697.896,712.569,708.777,371.558,368.292,685.504,697.896,641.811,656.673],
+z: [375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0,375.0],
+},
+};
+
+    </script>
+    
+    <script>
+
+      //status on whether to show or not the background canvas
+      let FullMolinBkg = false;
+
+      class Faerun {
+        constructor() {
+          this.body = document.getElementsByTagName('body')[0];
+
+          this.selectedItems = [];
+          this.selectedIndicators = [];
+          this.selectedCurrent = [];
+          this.scatterMeta = [{"categorical": [true], "fog_intensity": 0.0, "has_legend": true, "interactive": true, "is_range": [false], "label_index": [0], "legend": [[[[0.21568627450980393, 0.49411764705882355, 0.7215686274509804, 1.0], "in database"], [[0.8941176470588236, 0.10196078431372549, 0.10980392156862745, 1.0], "not in database"]]], "legend_title": ["Photoswitches"], "mapping": {"c": "c", "cs": "cs", "knn": "knn", "labels": "labels", "s": "s", "x": "x", "y": "y", "z": "z"}, "max_c": [1.0], "max_legend_label": ["1.00"], "max_point_size": 5000, "min_c": [0.0], "min_legend_label": ["0.00"], "name": "Photoswitches", "ondblclick": [null], "point_scale": 5, "selected_labels": [null], "series_title": [null], "shader": "sphere", "title_index": [0]}];
+          this.treeMeta = [{"color": "#666666", "fog_intensity": 0.0, "mapping": {"c": "c", "from": "from", "to": "to", "x": "x", "y": "y", "z": "z"}, "name": "Photoswitches_tree", "point_helper": "Photoswitches"}];
+          this.seriesState = {};
+          this.el = {};
+
+          this.currentPoint = null;
+
+          this.lore = null;
+          this.clearColorHex = '#FFFFFF';
+          this.clearColor = null;
+          this.view = 'free';
+          this.antiAliasing = true;
+          this.alphaBlending = false;
+          this.thumbnailWidth = 250;
+          this.thumbnailFixed = false;
+
+          this.treeHelpers = [];
+          this.pointHelpers = [];
+          this.octreeHelpers = [];
+          this.coordinatesHelper = null;
+
+          this.ohIndexToPhName = [];
+          this.ohIndexToPhIndex = [];
+          this.phIndexMap = {};
+          this.ohIndexMap = {};
+
+          this.min = [Number.MAX_VALUE, Number.MAX_VALUE, Number.MAX_VALUE];
+          this.max = [-Number.MAX_VALUE, -Number.MAX_VALUE, -Number.MAX_VALUE];
+          this.maxRadius = -Number.MAX_VALUE;
+
+          this.coords = {
+            show: false,
+            grid: false,
+            ticks: true,
+            tickCount: 10,
+            tickLength: 2.0,
+            color: '#888888',
+            box: false,
+            offset: 5.0
+          };
+
+          this.legend = {
+            show: true,
+            title: 'Legend'
+          };
+
+          
+          this.sdMolOpts = {
+            width: this.thumbnailWidth / window.devicePixelRatio,
+            height: this.thumbnailWidth / window.devicePixelRatio,
+            experimental: true
+          }
+
+          this.sdSelected = new SmiDrawer(this.sdMolOpts);
+
+          if (this.thumbnailFixed) {
+            this.sdMolOpts = {
+              scale: 0.75,
+              experimental: true
+            }
+          }
+
+          this.sd = new SmiDrawer(this.sdMolOpts);
+
+          this.el = Faerun.bindElements();
+
+          this.scatterMeta.forEach(s => {
+            this.seriesState[s.name] = 0;
+          });
+
+          this.clearColor = Lore.Core.Color.fromHex(this.clearColorHex);
+          this.alphaBlending = (this.view === 'free' ? false : true) || this.alphaBlending;
+
+          this.initLore();
+          this.initTreeHelpers();
+          this.initPointHelpers();
+          this.initCoords();
+          this.initAxes();
+          this.initView();
+          this.initEvents();
+          this.renderLegend();
+        }
+
+        initLore() {
+          this.lore = Lore.init('lore', {
+            antialiasing: this.antiAliasing,
+            clearColor: this.clearColorHex,
+            alphaBlending: this.alphaBlending,
+            preserveDrawingBuffer: true
+          });
+        }
+
+        initTreeHelpers() {
+          this.treeMeta.forEach(t => {
+            let th = new Lore.Helpers.TreeHelper(this.lore, t.name, 'tree');
+            th.setXYZHexS(data[t.name].x, data[t.name].y, data[t.name].z, t.color);
+            th.setFog([this.clearColor.components[0], this.clearColor.components[1], 
+                       this.clearColor.components[2], this.clearColor.components[3]],
+                      t.fog_intensity);
+            this.treeHelpers.push(th);
+          });
+        }
+
+        initPointHelpers() {
+          this.scatterMeta.forEach(s => {           
+            let ph = new Lore.Helpers.PointHelper(
+              this.lore, s.name, s.shader, { maxPointSize: s.max_point_size }
+            );
+
+            ph.setXYZRGBS(data[s.name].x, data[s.name].y, data[s.name].z, 
+                          data[s.name]['colors'][0].r, data[s.name]['colors'][0].g, 
+                          data[s.name]['colors'][0].b, data[s.name]['s'] ? data[s.name]['s'][0] : 1.0);
+
+            ph.setPointScale(s.point_scale);
+            ph.setFog([this.clearColor.components[0], this.clearColor.components[1],
+                       this.clearColor.components[2], this.clearColor.components[3]],
+                      s.fog_intensity)
+
+            this.phIndexMap[s.name] = this.pointHelpers.length;
+            this.pointHelpers.push(ph);
+
+            this.min[0] = Faerun.getMin(data[s.name].x, this.min[0]);
+            this.min[1] = Faerun.getMin(data[s.name].y, this.min[1]);
+            this.min[2] = Faerun.getMin(data[s.name].z, this.min[2]);
+            this.max[0] = Faerun.getMax(data[s.name].x, this.max[0]);
+            this.max[1] = Faerun.getMax(data[s.name].y, this.max[1]);
+            this.max[2] = Faerun.getMax(data[s.name].z, this.max[2]);
+            this.maxRadius = ph.getMaxRadius();
+    
+            if (s.interactive && data[s.name].labels) {
+              this.octreeHelpers.push(
+                new Lore.Helpers.OctreeHelper(this.lore, 'Octree_' + s.name, 'tree', ph)
+              );
+
+              this.ohIndexMap[s.name] = this.octreeHelpers.length - 1;
+              this.ohIndexToPhName.push(s.name);
+              this.ohIndexToPhIndex.push(this.phIndexMap[s.name]);
+            }
+          });
+        }
+
+        initCoords() {
+          if (!this.coords.show) return;
+
+          let min = [0, 0, 0];
+          let max = [0, 0, 0];
+
+          for (var i = 0; i < 3; i++) {
+            min[i] = this.min[i] - this.coords.offset;
+            max[i] = this.max[i] + this.coords.offset;
+          }
+
+          this.coordinatesHelper = new Lore.Helpers.CoordinatesHelper(this.lore, 'Coordinates', 'coordinates', {
+            position: new Lore.Math.Vector3f(min[0], min[1], min[2]),
+            axis: {
+              x: {
+                length: max[0] - min[0],
+                color: Lore.Core.Color.fromHex(this.coords.color)
+              },
+              y: {
+                length: max[1] - min[1],
+                color: Lore.Core.Color.fromHex(this.coords.color)
+              },
+              z: {
+                length: max[2] - min[2],
+                color: Lore.Core.Color.fromHex(this.coords.color)
+              }
+            },
+            ticks: {
+              enabled: this.coords.ticks,
+              x: {
+                length: this.coords.tickLength,
+                color: Lore.Core.Color.fromHex(this.coords.color),
+                count: this.coords.tickCount
+              },
+              y: {
+                length: this.coords.tickLength,
+                color: Lore.Core.Color.fromHex(this.coords.color),
+                count: this.coords.tickCount
+              },
+              z: {
+                length: this.coords.tickLength,
+                color: Lore.Core.Color.fromHex(this.coords.color),
+                count: this.coords.tickCount
+              }
+            },
+            box: {
+              enabled: this.coords.box,
+              x: {
+                color: Lore.Core.Color.fromHex(this.coords.color)
+              },
+              y: {
+                color: Lore.Core.Color.fromHex(this.coords.color)
+              },
+              z: {
+                color: Lore.Core.Color.fromHex(this.coords.color)
+              }
+            }
+          });
+        }
+
+        initAxes() {
+          // Wait for DOM to get ready
+          setTimeout(() => {
+            this.updateTitle(true);
+            this.updateXAxis(true);
+            this.updateYAxis(true);
+          }, 500);
+        }
+
+        initView() {
+          let center = new Lore.Math.Vector3f(
+              (this.max[0] + this.min[0]) / 2.0, 
+              (this.max[1] + this.min[1]) / 2.0, 
+              (this.max[2] + this.min[2]) / 2.0
+            );
+          this.lore.controls.setLookAt(center);
+          this.lore.controls.setRadius(this.maxRadius + 100);
+          this.lore.controls.setView(0.9, -0.5)
+          this.lore.controls.setViewByName(this.view);
+        }
+
+        initEvents() {
+          this.lore.controls.addEventListener('updated', () => {
+            // Update the position / content of the annotations every time
+            // the view changes
+            this.updateTitle();
+            this.updateYAxis();
+            this.updateXAxis();
+            this.updateSelectedIndicators();
+          });
+
+          Lore.Helpers.OctreeHelper.joinHoveredChanged(this.octreeHelpers, e => {
+            let phName = this.ohIndexToPhName[e.source];
+            if (e.e && data[phName].labels) {
+              let fullLabel = data[phName].labels[e.e.index];
+              let labelIndex = this.scatterMeta[this.ohIndexToPhIndex[e.source]]
+                                  .label_index[this.seriesState[phName]];
+              let titleIndex = this.scatterMeta[this.ohIndexToPhIndex[e.source]]
+                                  .title_index[this.seriesState[phName]];
+
+              let rgbColor = this.pointHelpers[e.source].getColor(e.e.index);
+              let hexColor = Lore.Core.Color.rgbToHex(rgbColor[0], rgbColor[1], rgbColor[2]);
+
+              this.currentPoint = {
+                index: e.e.index,
+                fullLabel: fullLabel.split('__'),
+                source: phName,
+                label: fullLabel.split('__')[labelIndex],
+                color: hexColor,
+                labelIndex: labelIndex,
+                titleIndex: titleIndex
+              }
+              
+              if (FullMolinBkg == true) {
+
+                document.getElementById("overlay-structure-container").style.visibility = "visible";
+
+                var overlayStruc_Width = document.getElementById("overlay-structure-container").offsetWidth
+                var overlayStruc_Height = document.getElementById("overlay-structure-container").offsetHeight
+
+                if (overlayStruc_Width > overlayStruc_Height) {overlayStruc_Width = overlayStruc_Height}
+
+                this.sd = new SmiDrawer({
+                  width: overlayStruc_Width / window.devicePixelRatio,
+                  height: overlayStruc_Width / window.devicePixelRatio,
+                  bondThickness: 1.4,
+                  experimental: true
+                });
+
+                this.setTipContent();
+                this.sd = new SmiDrawer(this.sdMolOpts);
+              } else {
+
+                document.getElementById("overlay-structure-container").style.visibility = "hidden";
+                this.setTipContent__();
+
+                this.el.tip.classList.add('show');
+
+                let pointSize = this.pointHelpers[e.source].getPointSize() / window.devicePixelRatio;
+                let x = e.e.screenPosition[0];
+                let y = e.e.screenPosition[1];
+
+                this.el.hoverIndicator.style.width = pointSize + 'px';
+                this.el.hoverIndicator.style.height = pointSize + 'px';
+                this.el.hoverIndicator.style.left = (x - pointSize / 2.0 - 1) + 'px';
+                this.el.hoverIndicator.style.top = (y - pointSize / 2.0 - 1) + 'px';
+
+                this.el.hoverIndicator.classList.add('show');
+                }
+
+            } else {
+              this.currentPoint = null;
+              this.el.tip.classList.remove('show');
+              this.el.hoverIndicator.classList.remove('show');
+            }
+          });
+
+          Lore.Helpers.OctreeHelper.joinSelectedChanged(this.octreeHelpers, items => {
+            this.selectedItems = items;
+            this.updateSelected();
+          });
+
+          Lore.Helpers.OctreeHelper.joinReselected(this.octreeHelpers, item => {
+            this.updateSelected(
+              this.getSelectedIndex(item[0].source, item[0].item.e.index)
+            );
+          });
+
+          // Event listeners
+          this.el.selectedPrev.addEventListener('click', e => {
+            e.preventDefault();
+            this.updateSelected(this.selectedCurrent - 1);
+            return false;
+          });
+
+          this.el.selectedNext.addEventListener('click', e => {
+            e.preventDefault();
+            this.updateSelected(this.selectedCurrent + 1);
+            return false;
+          });
+
+          this.el.selectedRemove.addEventListener('click', e => {
+            e.preventDefault();
+            let item = this.selectedItems[this.selectedCurrent]
+            this.octreeHelpers[item.source].removeSelected(item.index);
+            return false;
+          });
+
+          document.addEventListener('dblclick', e => {
+            if (this.currentPoint) {
+              var index = this.currentPoint.index;
+              var labels = this.currentPoint.label.split('__');
+              var source = this.currentPoint.source;
+              eval(this.scatterMeta[this.phIndexMap[source]].ondblclick[this.seriesState[source]]);
+            }
+          });
+
+          document.addEventListener('mousemove', e => {
+            if (FullMolinBkg == false) {
+              document.getElementById("tip").style.visibility = "visible";
+
+              if (!this.thumbnailFixed) {
+                let x = e.clientX;
+                let y = e.clientY;
+
+                if (x > window.innerWidth - this.el.tip.offsetWidth - 20) {
+                  x -= this.el.tip.offsetWidth;
+                } else {
+                  x += 10;
+                }
+
+                if (y > window.innerHeight - this.el.tip.offsetHeight - 20) {
+                  y -= this.el.tip.offsetHeight;
+                } else {
+                  y += 10;
+                }
+
+                if (this.el.tip) {
+                  this.el.tip.style.top = y + 'px';
+                  this.el.tip.style.left = x + 'px';
+                }
+              }
+            } else {
+              document.getElementById("tip").style.visibility = "hidden";
+            }
+          });
+
+          this.el.selectedToggle.addEventListener('click', e => {
+            this.el.selectedContainer.classList.toggle('hide');
+            if (this.el.selectedContainer.classList.contains('hide'))
+              this.el.selectedToggle.innerHTML = '<i class="fas fa-toggle-off"></i>';
+            else
+              this.el.selectedToggle.innerHTML = '<i class="fas fa-toggle-on"></i>';
+            
+            e.preventDefault();
+            return false;
+          });
+
+          this.el.showControls.addEventListener('click', e => {
+            this.el.moreControls.classList.toggle('hide');
+            e.preventDefault();
+            return false;
+          });
+
+          this.el.search.addEventListener('click', e => {
+            let searchTerm = prompt('Please enter a search term:', '');
+            const results = this.search(searchTerm);
+
+            for (const [name, indices] of Object.entries(results)) {
+              if (!name in this.ohIndexMap) return;
+              indices.forEach(index => {
+                this.octreeHelpers[this.ohIndexMap[name]].addSelected(index);
+              });
+            }
+            
+            e.preventDefault();
+            return false;
+          });
+
+          window.addEventListener('keydown', e => {
+            if ((e.keyCode == 114) || (e.ctrlKey && e.keyCode == 70)) {
+              this.search();
+              e.preventDefault();
+              return false;
+            }
+          });
+
+          this.el.export.addEventListener('click', e => {
+            e.preventDefault();
+
+            let canvas = document.getElementById('lore');
+            let zoom = this.lore.controls.getZoom();
+
+            canvas.style.width = (canvas.width * 2) + 'px';
+            canvas.style.height = (canvas.height * 2) + 'px';
+            this.lore.controls.setZoom(zoom * 2);
+
+            setTimeout(() => {
+              let blob = this.lore.canvas.toBlob(blob => {
+                let a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.setAttribute('download', 'export.png');
+                a.click();
+                
+                setTimeout(() => {
+                  canvas.style.width = '100%';
+                  canvas.style.height = '100%';
+                  lore.controls.setZoom(zoom);
+                }, 2000);
+              });
+            }, 2000);
+          });
+
+          this.el.download.addEventListener('click', e => {
+            e.preventDefault();
+
+            let text = ''
+            this.selectedItems.forEach(item => {
+              let phIndex = this.ohIndexToPhIndex[item.source];
+              let meta = this.scatterMeta[phIndex];
+              let phName = this.ohIndexToPhName[item.source];
+              let seriesState = this.seriesState[phName];
+
+              let fullLabel = data[phName].labels[item.item.index].split('__');
+
+              let labelIndex = meta.label_index[seriesState];
+              let titleIndex = meta.title_index[seriesState];
+              let selectedLabels = meta.selected_labels[seriesState];
+
+              fullLabel.forEach((l, i) => {
+                text += l + ';'
+              });
+              text = text.slice(0, -1); 
+              text += '\n';
+            });
+
+            var a = document.createElement('a');
+            a.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            a.setAttribute('download', 'faerun_list.csv');
+
+            a.style.display = 'none';
+            document.body.appendChild(a);
+
+            a.click();
+
+            document.body.removeChild(a);
+
+            return false;
+          });
+
+          this.el.largepreview.addEventListener('click', e => {
+            
+            //Switch display mode:
+            if (FullMolinBkg == false) {
+              FullMolinBkg = true;
+            } else {
+              FullMolinBkg = false;
+              //HIDE BIG CANVAS IN BACKGROUND:
+              document.getElementById("overlay-structure-container").style.visibility = "hidden";
+            }
+          });
+        }
+
+        setTipContent__() {
+          this.sd.draw(this.currentPoint.label, this.thumbnailFixed ? 'svg' : 'img', "light", element => {
+            this.el.tipText.innerHTML = '';
+            if (this.currentPoint.titleIndex !== this.currentPoint.labelIndex)
+              this.el.tipText.innerHTML = `${this.currentPoint.fullLabel[this.currentPoint.titleIndex]}<br />`;
+            this.el.tipText.appendChild(element);
+            this.el.tip.style.borderColor = this.currentPoint.color;
+            document.getElementById("tip").style.visibility = "visible";
+          });
+        }
+
+        setTipContent() {
+          this.sd.draw(this.currentPoint.label, "#overlay-structure", "dark");
+          document.getElementById("tip").style.visibility = "hidden";
+        }
+
+        setSelectedContent(fullLabel, labelIndex, selectedLabels, img) {
+          this.el.selectedContainer.innerHTML = '';
+          if (img)
+            this.el.selectedContainer.appendChild(img);
+
+          fullLabel.forEach((l, i) => {
+            if (i === labelIndex) return;
+            if (selectedLabels && selectedLabels[i]) {
+              this.el.selectedContainer.appendChild(
+                Faerun.createElement('div', { classes: 'label', content: selectedLabels[i] })
+              );
+            }
+            this.el.selectedContainer.appendChild(
+              Faerun.createElement('div', { classes: 'content', content: l })
+            );
+          });
+
+          // Update the indicator
+          this.updateSelectedIndicators();
+        }
+
+        renderLegend() {
+          if (!this.legend.show) return;
+
+          
+          let legend = document.getElementById('legend');
+          
+          if (legend) this.body.removeChild(legend);
+
+          legend = Faerun.createElement('div', { id: 'legend' });
+          this.body.appendChild(legend)
+          
+          if (this.legend.title && this.legend.title !== '')
+            legend.appendChild(Faerun.createElement('h2', { content: 'Legend' }));
+          
+          let container = Faerun.createElement('div', { classes: 'container' });
+          legend.appendChild(container);
+
+          this.scatterMeta.forEach(s => {
+            let index = this.seriesState[s.name];
+            if (s.has_legend) {
+              let legendSection = []
+              if (!s.is_range[index]) {
+                s.legend[index].forEach(v => {
+                  legendSection.push(Faerun.createElement('div', { classes: 'legend-element' }, [
+                    Faerun.createColorBox(v[0]),
+                    Faerun.createElement('div', { classes: 'legend-label', content: v[1] }),
+                  ]))
+                })
+              } else {
+                legendSection.push(Faerun.createElement('div', { classes: 'legend-element-range' }, [
+                  ...Faerun.createColorScale(s.legend[index]),
+                  Faerun.createElement('div', { 
+                    classes: 'legend-label max', 
+                    content: s.max_legend_label[index] 
+                  }),
+                  Faerun.createElement('div', {
+                    classes: 'legend-label min',
+                    content: s.min_legend_label[index] 
+                  })
+                ]))
+              }
+
+              let series = [];
+              for (var i = 0; i < s.series_title.length; i++) {
+                series.push(
+                  Faerun.createElement('option', { 
+                    value: i, 
+                    content: s.series_title[i], 
+                    selected: i === index
+                  })
+                );
+              }
+
+
+              let sectionHeader = Faerun.createElement(
+                'h3', { content: s.legend_title[index] }
+              );
+              sectionHeader.addEventListener('click', e => {
+                this.toggleLegendSection(s.name);
+              });
+
+              let seriesSelector = Faerun.createElement(
+                'select', 
+                { 
+                  id: `select-${s.name}`, 
+                  classes: 'series-selector',
+                  'data-name': s.name,
+                  hidden: s.series_title.length < 2,
+                }, 
+                [ ...series ]
+              );
+              seriesSelector.addEventListener('change', e => {
+                let value = document.getElementById(`select-${s.name}`).value;
+                this.changeSeries(value, s.name);
+              });
+
+
+              container.appendChild(
+                Faerun.createElement(
+                  'div', { id: `legend-${s.name}`, 
+                  classes: 'legend-section', 
+                  'data-name': `${s.name}` },
+                  [ sectionHeader, seriesSelector, ...legendSection ]
+                )
+              );
+            }
+          });
+        }
+
+        toggleLegendSection(name) {
+          let section = document.getElementById('legend-' + name);
+          let geometry = this.pointHelpers[this.phIndexMap[name]].geometry;
+          let isVisible = geometry.isVisible;
+
+          if (isVisible) {
+            geometry.hide();
+            section.style.opacity = 0.5;
+          } else {
+            geometry.show();
+            section.style.opacity = 1.0;
+          }
+        }
+
+        getSelectedIndex(source, index) {
+          let selectedIndex = null;
+          this.selectedItems.forEach((item, i) => {
+            if (item.source == source && item.item.index == index) {
+              selectedIndex = i;
+              return;
+            }
+          });
+          return selectedIndex;
+        }
+
+        updateSelected(current = -1) {
+          let n = this.selectedItems.length
+          // Hide the container if no items are selected
+          if (n === 0) {
+            this.el.selected.style.display = 'none';
+            return;
+          } else {
+            this.el.selected.style.display = 'block';
+          }
+
+          if (current < 0) current = n - 1;
+          if (current >= n) current = 0;
+          this.selectedCurrent = current;
+
+          let item = this.selectedItems[current];
+
+          let phIndex = this.ohIndexToPhIndex[item.source];
+          let meta = this.scatterMeta[phIndex];
+          let phName = this.ohIndexToPhName[item.source];
+          let seriesState = this.seriesState[phName];
+
+          let fullLabel = data[phName].labels[item.item.index].split('__');
+
+          let labelIndex = meta.label_index[seriesState];
+          let titleIndex = meta.title_index[seriesState];
+          let selectedLabels = meta.selected_labels[seriesState];
+
+          this.sdSelected.draw(fullLabel[labelIndex], 'img', 'dark', img => {
+            this.el.selectedCurrent.innerHTML = current + 1;
+            this.el.selectedTotal.innerHTML = n;
+            this.el.selectedTitle.innerHTML = fullLabel[titleIndex];
+
+            this.setSelectedContent(fullLabel, labelIndex, selectedLabels, img);
+          });
+
+          // Remove all indicators
+          this.selectedIndicators.forEach(indicator => {
+            indicator.element.parentElement.removeChild(indicator.element);
+          });
+          this.selectedIndicators.length = 0;
+
+          // Add the indicator for this object
+          let indicatorElement = Faerun.createElement(
+            'div', 
+            { classes: 'selected-indicator' },
+            [
+              Faerun.createElement('div', { classes: 'crosshair-x' }),
+              Faerun.createElement('div', { classes: 'crosshair-y' })
+            ]
+          );
+
+          this.body.appendChild(indicatorElement);
+          this.selectedIndicators.push({
+            element: indicatorElement,
+            index: item.item.index,
+            ohIndex: item.source,
+            phIndex: phIndex
+          });
+          this.updateSelectedIndicators();
+        }
+
+        updateSelectedIndicators() {
+          this.selectedIndicators.forEach(indicator => {
+            let pointSize = this.pointHelpers[indicator.phIndex].getPointSize();
+            let screenPosition = this.octreeHelpers[indicator.ohIndex]
+                                     .getScreenPosition(indicator.index);
+            
+            // Make the crosshairs larger than the point
+            pointSize = Faerun.getMax([pointSize / window.devicePixelRatio, 10 / window.devicePixelRatio]);
+            pointSize *= 1.25;
+            let halfPointSize = pointSize / 2.0;
+            indicator.element.style.left = (screenPosition[0] - halfPointSize) + 'px';
+            indicator.element.style.top = (screenPosition[1] - halfPointSize) + 'px';
+            indicator.element.style.width = pointSize + 'px';
+            indicator.element.style.height = pointSize + 'px';
+          });
+        }
+
+        updateTitle(first = false) {
+          if (this.el.title === undefined) return;
+
+          let bb = this.el.title.getBoundingClientRect();
+          let scenePosition = new Lore.Math.Vector3f(
+            (this.min[0] + this.min[0]) / 2.0, this.min[1], 
+            (this.min[2] + this.min[2]) / 2.0
+          );
+
+          let screenPosition = this.lore.controls.camera.sceneToScreen(scenePosition, this.lore);
+          
+          this.el.title.style.left = (screenPosition[0] - (bb.width / 2.0)) + 'px';
+          this.el.title.style.top = (screenPosition[1] - bb.height) + 'px';
+
+          if (first) this.el.title.classList.add('show');
+        }
+
+        updateXAxis(first = false) {
+          if (this.el.xAxis === undefined) return;
+          
+          let bb = this.el.xAxis.getBoundingClientRect();
+          let scenePosition = new Lore.Math.Vector3f(
+            (this.min[0] + this.min[0]) / 2.0, this.min[1], 
+            (this.min[2] + this.min[2]) / 2.0
+          );
+
+          let screenPosition = this.lore.controls.camera.sceneToScreen(scenePosition, this.lore);
+          
+          this.el.xAxis.style.left = (screenPosition[0] - (bb.width / 2.0)) + 'px';
+          this.el.xAxis.style.top = (screenPosition[1]) + 'px';
+
+          if (first) this.el.xAxis.classList.add('show');
+        }
+
+        updateYAxis(first = false) {
+          if (this.el.yAxis === undefined) return;
+            
+          let bb = this.el.yAxis.getBoundingClientRect();
+          let scenePosition = new Lore.Math.Vector3f(
+            this.min[0], (this.min[1] + this.min[1]) / 2.0, 
+            (this.min[2] + this.min[2]) / 2.0
+          );
+          
+          let screenPosition = this.lore.controls.camera.sceneToScreen(scenePosition, this.lore);
+          
+          this.el.yAxis.style.left = (screenPosition[0] - bb.height) + 'px';
+          this.el.yAxis.style.top = (screenPosition[1] - bb.width / 2.0) + 'px';
+
+          if (first) this.el.yAxis.classList.add('show');
+        }
+
+        changeSeries(value, name) {
+          value = parseInt(value);
+          this.seriesState[name] = value;
+          this.renderLegend();
+
+          this.pointHelpers[this.phIndexMap[name]].setRGBFromArrays(
+            data[name]['colors'][value].r, 
+            data[name]['colors'][value].g, 
+            data[name]['colors'][value].b
+          );
+
+          if (data[name]['s']) {
+            if (data[name]['s'][value]) {
+              this.pointHelpers[this.phIndexMap[name]].setSize(
+                data[name]['s'][value]
+              );
+            } else {
+              this.pointHelpers[this.phIndexMap[name]].setSize(1.0);
+            }
+          }
+        }
+
+        search(term) {
+          let results = {}
+          let re = new RegExp(term, 'i');
+
+          Object.keys(data).forEach(name => {
+            if (!('labels' in data[name])) return;
+            results[name] = []
+            data[name]['labels'].forEach((label, i) => {
+              if (re.test(label))
+                results[name].push(i)
+            });
+          });
+
+          return results;
+        }
+
+        static createColorBox(value) {
+          return Faerun.createElement(
+            'div', 
+            { 
+              classes: 'color-box', 
+              style: `background-color: rgba(${value[0] * 255}, ${value[1] * 255 }, ${value[2] * 255 }, ${value[3] });
+                      border-color: rgba(${value[0] * 255 }, ${value[1] * 255 }, ${value[2] * 255 }, ${value[3] })`
+            }
+          );
+        }
+
+        static createColorScale(values) {
+          let scale = [];
+
+          values.forEach(value => {
+            scale.push(
+              Faerun.createElement(
+                'div', 
+                { 
+                  classes: 'color-stripe', 
+                  style: `background-color: rgba(${value[0][0] * 255}, ${value[0][1] * 255}, ${value[0][2] * 255}, ${value[0][3]});
+                          border-color: rgba(${value[0][0] * 255}, ${value[0][1] * 255}, ${value[0][2] * 255}, ${value[0][3]})`,
+                  alt: value[1]
+                }
+              ),
+            )
+          });
+
+          return scale;
+        }
+        
+        static createElement(tag, values = {}, children = []) {
+          let element = document.createElement(tag);
+
+          for (const key of Object.keys(values)) {
+            if (key === 'classes')
+              element.classList.add(...values[key].split(' '));
+            else if (key === 'content')
+              element.innerHTML = values[key];
+            else if (key === 'hidden') {
+              if (values[key])
+                element.setAttribute('hidden', true);
+            }
+            else if (key === 'selected') {
+              if (values[key])
+                element.setAttribute('selected', true);
+            }
+            else
+              element.setAttribute(key, values[key]);
+          }
+
+          if (children) {
+            if (Array.isArray(children)) {
+              children.forEach(child => {
+                element.appendChild(child);
+              })
+            } else {
+              element.appendChild(children);
+            }
+          }
+
+          return element;
+        }
+
+        static bindElements() {
+          let result = {};
+          document.querySelectorAll('[data-bind]').forEach(e => {
+            result[e.getAttribute('data-bind')] = e;
+          });
+          return result;
+        }
+
+        static getMin(arr, other = Number.MAX_VALUE) {
+          let m = Number.MAX_VALUE;
+          for (var i = 0; i < arr.length; i++)
+              if (arr[i] < m) m = arr[i];
+          
+          if (m < other) return m;
+          return other;
+        }
+
+        static getMax(arr, other = -Number.MAX_VALUE) {
+          let m = -Number.MAX_VALUE;
+          for (var i = 0; i < arr.length; i++)
+              if (arr[i] > m) m = arr[i];
+          
+          if (m > other) return m;
+          return other;
+        }
+      }
+
+      let f = new Faerun();
+    </script>
+  </body>
+</html>
