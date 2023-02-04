@@ -44,6 +44,13 @@ from gptchem.models import get_e_pi_pistar_model_data, get_polymer_model, get_z_
 from .fingerprints.mol_fingerprints import compute_fragprints
 
 
+from diskcache import Cache
+
+CACHE_DIR = os.getenv("CACHEDIR", "gptchemcache ")
+
+# 2 ** 30 = 1 GB
+gap_cache = Cache(CACHE_DIR, size_limit=2 ** 30, disk_min_file_size=0)
+
 def continuous_kldiv(X_baseline: np.ndarray, X_sampled: np.ndarray, pca: bool = False) -> float:
     """Calculate the continuous Kullback-Leibler divergence between two distributions."""
     if pca:
@@ -481,12 +488,17 @@ def get_xtb_homo_lumo_gap(smiles: str) -> float:
     givemeconformer "{smiles}"
     xtb conformers.sdf --opt tight > xtb.out
     """
+    try:
+        return gap_cache.get(smiles)
+    except KeyError:
+        pass
     with tempfile.TemporaryDirectory() as tmpdir:
         cmd = f"givemeconformer '{smiles}'"
         subprocess.run(cmd, shell=True, check=True, cwd=tmpdir)
         cmd = "xtb conformers.sdf --opt tight > xtb.out"
         subprocess.run(cmd, shell=True, check=True, cwd=tmpdir)
         gap = get_homo_lumo_gap(Path(tmpdir) / "xtb.out")
+        gap_cache[smiles] = gap
     return gap
 
 

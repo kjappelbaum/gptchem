@@ -50,48 +50,66 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
 
     res_at_temp = []
     for temp in temperatures:
-        # try:
-        logger.info(f"Temperature: {temp}")
-        completions = querier(formatted_test, temperature=temp)
-        generated_smiles = extractor(completions)
-        logger.info(f"Extracted. Evaluating generated SMILES...")
-        logger.info(f"generated examples {generated_smiles[:2]}")
-        smiles_metrics = evaluate_generated_smiles(generated_smiles, formatted_train["label"])
-        expected = []
-        for i, row in formatted_test.iterrows():
-            expected.append(row["representation"][0])
-
-        logger.info(f"Evaluating constraint satisfaction...")
         try:
-            if len(smiles_metrics["valid_indices"]) > 0:
-                expected = L(expected)[smiles_metrics["valid_indices"]]
+            logger.info(f"Temperature: {temp}")
+            completions = querier(formatted_test, temperature=temp)
+            generated_smiles = extractor(completions)
+            logger.info(f"Extracted. Evaluating generated SMILES...")
+            logger.info(f"generated examples {generated_smiles[:2]}")
+            smiles_metrics = evaluate_generated_smiles(generated_smiles, formatted_train["label"])
+            smiles_metrics_all = evaluate_generated_smiles(generated_smiles, data["SMILES"])
 
-                constrain_satisfaction = evaluate_homo_lumo_gap(
-                    smiles_metrics["valid_smiles"],
-                    expected_gaps=expected,
-                )
-            else:
-                constrain_satisfaction = evaluate_homo_lumo_gap(
-                    None,
-                    expected_gaps=expected,
-                )
+            logger.debug(f"SMILES metrics (all): {smiles_metrics_all}")
+            assert len(smiles_metrics["valid_indices"]) <= len(generated_smiles), "Found more valid SMILES than generated"
+            expected = []
+            for i, row in formatted_test.iterrows():
+                expected.append(row["representation"][0])
+
+            logger.info(f"Evaluating constraint satisfaction...")
+            try:
+                if len(smiles_metrics["valid_indices"]) > 0:
+                    expected_v = L(expected)[smiles_metrics["valid_indices"]]
+                    expected_e = L(expected)[smiles_metrics["novel_indices"]]
+
+                    constrain_satisfaction_valid = evaluate_homo_lumo_gap(
+                        smiles_metrics["valid_smiles"],
+                        expected_gaps=expected_v,
+                    )
+                    logger.debug(f"Constrain satisfaction: {constrain_satisfaction_valid}")
+
+                    constrain_satisfaction_novel =  evaluate_homo_lumo_gap(
+                        smiles_metrics["novel_smiles"],
+                        expected_gaps=expected_e,
+                    )
+                else:
+                    constrain_satisfaction_valid = evaluate_homo_lumo_gap(
+                        None,
+                        expected_gaps=expected,
+                    )
+                    constrain_satisfaction_novel = evaluate_homo_lumo_gap(
+                        None,
+                        expected_gaps=expected,
+                    )
+
+
+            except Exception as e:
+                logger.exception(f"{e}")
+                constrain_satisfaction_valid, constrain_satisfaction_novel = {}, {}
+
+            res = {
+                "completions": completions,
+                "generated_smiles": generated_smiles,
+                "train_smiles": formatted_train["label"],
+                **smiles_metrics,
+                "smiles_metrics_all": smiles_metrics_all,
+                'constrain_satisfaction': constrain_satisfaction_valid, 
+                "constrain_satisfaction_novel":constrain_satisfaction_novel , 
+                "temperature": temp,
+            }
+            res_at_temp.append(res)
 
         except Exception as e:
             logger.exception(f"{e}")
-            constrain_satisfaction = {}
-
-        res = {
-            "completions": completions,
-            "generated_smiles": generated_smiles,
-            "train_smiles": formatted_train["label"],
-            **smiles_metrics,
-            **constrain_satisfaction,
-            "temperature": temp,
-        }
-        res_at_temp.append(res)
-
-        # except Exception as e:
-        #     logger.exception(f"{e}")
 
     summary = {
         "train_size": num_train_points,
