@@ -12,7 +12,7 @@ from gptchem.generator import noise_original_data
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
-num_samples = 10
+num_samples = 100
 num_train_points = [100, 300, 1000]
 
 temperatures = [0.0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5]
@@ -47,7 +47,10 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
     tune_res = tuner(formatted_train)
     querier = Querier(tune_res["model_name"], max_tokens=600)
     extractor = InverseExtractor()
-
+    expected = []
+    for i, row in formatted_test.iterrows():
+        expected.append(row["representation"][0])
+    logger.debug(f'Expecting gaps such as {expected[:2]}')
     res_at_temp = []
     for temp in temperatures:
         try:
@@ -61,10 +64,7 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
 
             logger.debug(f"SMILES metrics (all): {smiles_metrics_all}")
             assert len(smiles_metrics["valid_indices"]) <= len(generated_smiles), "Found more valid SMILES than generated"
-            expected = []
-            for i, row in formatted_test.iterrows():
-                expected.append(row["representation"][0])
-            logger.debug(f'Expecting gaps such as {expected[:2]}')
+
             logger.info(f"Evaluating constraint satisfaction...")
             try:
                 if len(smiles_metrics["valid_indices"]) > 0:
@@ -118,6 +118,7 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
         "temperatures": temperatures,
         "res_at_temp": res_at_temp,
         "test_size": test_size,
+        "expected": expected,
     }
 
     save_pickle(Path(tune_res["outdir"]) / "summary.pkl", summary)
