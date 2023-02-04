@@ -1,0 +1,3 @@
+submitit INFO (2023-02-04 19:01:05,503) - Starting with JobEnvironment(job_id=54659, hostname=Kevins-MacBook-Pro.local, local_rank=0(1), node=0(1), global_rank=0(1))
+submitit INFO (2023-02-04 19:01:05,504) - Loading pickle: /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/05_inverse/bandgap/random/submitit_jobs/54659_submitted.pkl
+submitit INFO (2023-02-04 19:01:14,567) - Job completed successfully
