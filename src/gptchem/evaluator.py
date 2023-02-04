@@ -46,7 +46,7 @@ from .fingerprints.mol_fingerprints import compute_fragprints
 
 from diskcache import Cache
 
-CACHE_DIR = os.getenv("CACHEDIR", "gptchemcache ")
+CACHE_DIR = os.getenv("CACHEDIR", "gptchemcache")
 
 # 2 ** 30 = 1 GB
 gap_cache = Cache(CACHE_DIR, size_limit=2 ** 30, disk_min_file_size=0)
