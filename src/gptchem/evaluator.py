@@ -489,9 +489,12 @@ def get_xtb_homo_lumo_gap(smiles: str) -> float:
     xtb conformers.sdf --opt tight > xtb.out
     """
     try:
-        return gap_cache.get(smiles)
+        gap =  gap_cache.get(smiles)
+        if gap is not None:
+            return gap
     except KeyError:
         pass
+    
     with tempfile.TemporaryDirectory() as tmpdir:
         cmd = f"givemeconformer '{smiles}'"
         subprocess.run(cmd, shell=True, check=True, cwd=tmpdir)
