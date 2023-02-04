@@ -64,7 +64,7 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
             expected = []
             for i, row in formatted_test.iterrows():
                 expected.append(row["representation"][0])
-
+            logger.debug(f'Expecting gaps such as {expected[:2]}')
             logger.info(f"Evaluating constraint satisfaction...")
             try:
                 if len(smiles_metrics["valid_indices"]) > 0:
