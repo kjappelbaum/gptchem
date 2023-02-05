@@ -998,15 +998,29 @@ class InverseDesignFormatter(BaseFormatter):
         self.property_names = property_names
         self.num_classes = num_classes
         self.num_digits = num_digits
+        self.bins = None
+
+    @property
+    def class_names(self) -> List[int]:
+        """Names of the classes."""
+        return list(range(self.num_classes))
+
+    def bin(self, y: ArrayLike):
+        """Bin the inputs based on the bins used for the dataset."""
+        if self.bins is None:
+            raise ValueError("You must fit the formatter first.")
+
+        return pd.cut(y, self.bins, labels=self.class_names, include_lowest=True)
 
     def _format_property(self, prop):
         strings = []
         for p, v in zip(self.property_names, prop):
             if not np.isnan(v):
-                if self.num_digits is not None:
+                if self.num_digits is not None and not self.num_classes:
                     v = np.around(v, self.num_digits)
                     # convert to string with self.num_digits decimal places
                     v = f"{v:.{self.num_digits}f}"
+                
                 strings.append(f"{p} {v}")
 
         return " ,".join(strings)
@@ -1032,6 +1046,16 @@ class InverseDesignFormatter(BaseFormatter):
         df = df.dropna(subset=self.property_columns)
         representation = df[self.representation_column].values
         prop = df[self.property_columns].values
+
+        if self.num_classes is not None:
+            if self.bins is None:
+                _, bins = pd.qcut(prop.flatten(), self.num_classes, retbins=True)
+                bins = [-np.inf, *bins[1:-1], np.inf]
+                self.bins = bins
+            else:
+                bins = self.bins
+            prop = pd.cut(prop.flatten(), bins=bins, labels=self.class_names, include_lowest=True).astype(int)
+            prop = [[p] for p in prop]
         return pd.DataFrame([self._format(r, p) for r, p in zip(representation, prop)])
 
     __repr__ = basic_repr("representation_column, property_columns, property_names, num_classes")
@@ -1189,7 +1213,7 @@ def create_example_string(
 class FewShotFormatter:
     _PREFIX = "I am a highly intelligent question answering bot that answers questions about {property}."
     _PROMPT_TEMPLATE = """{prefix}
-    
+
 {examples}
 Q: {representation}"""
 

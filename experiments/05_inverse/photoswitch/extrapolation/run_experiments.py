@@ -16,7 +16,7 @@ from gptchem.tuner import Tuner
 num_trials = 10
 TRAIN_SIZE = 92
 TEMPERATURES = [0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0]
-NOISE_LEVEL = [0.5, 1.0, 5.0, 10, 20, 50]
+NOISE_LEVEL = [0.5, 1.0, 5.0, 10][::-1]#, 20, 50]
 NUM_SAMPLES = 100
 
 THRESHOLD = 350
@@ -58,10 +58,9 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
         )
         test_data.append(data_test)
 
-    test_size = min(len(test_data), NUM_SAMPLES)
     data_test = pd.concat(test_data)
-    formatted_test = formatter(data_test.sample(test_size, random_state=seed))
-
+    formatted_test = formatter(data_test)
+    logger.info(f"Test size: {len(formatted_test)}")
     assert (
         "prompt" in formatted_test.columns
     ), f"Missing prompt column. Columns: {formatted_test.columns}"
@@ -80,6 +79,7 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
         try:
             logger.debug(f"Temperature: {temp}")
             completions = querier(formatted_test, temperature=temp)
+            logger.debug(f"Generated {len(completions['choices'])} completions")
             generated_smiles = extractor(completions)
             logger.debug(f"Generated {len(generated_smiles)} SMILES. Examples: {generated_smiles[:5]}")
             smiles_metrics = evaluate_generated_smiles(generated_smiles, formatted_train["label"])
@@ -144,6 +144,7 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
             'constrain_satisfaction': constrain_satisfaction, 
             "constrain_satisfaction_novel":constrain_satisfaction_novel , 
             "temperature": temp,
+            "test_size": len(formatted_test),
         }
 
         res_at_temp.append(res)
@@ -168,7 +169,7 @@ if __name__ == "__main__":
     for seed in range(num_trials):
         for noise_level in NOISE_LEVEL:
             try:
-                train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed)
+                train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+33344)
             except Exception as e:
                 logger.exception(e)
                 continue

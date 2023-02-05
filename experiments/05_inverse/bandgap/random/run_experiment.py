@@ -40,7 +40,7 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
     )
 
     test_size = min(num_samples, len(data_test))
-
+    logger.info(f"Test size: {test_size}")
     formatted_test = formatter(data_test.sample(test_size))
 
     tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
@@ -117,7 +117,7 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
         "num_samples": num_samples,
         "temperatures": temperatures,
         "res_at_temp": res_at_temp,
-        "test_size": test_size,
+        "test_size": len(formatted_test),
         "expected": expected,
     }
 

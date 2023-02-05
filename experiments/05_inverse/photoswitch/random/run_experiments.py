@@ -47,7 +47,7 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
     )
 
     test_size = min(num_samples, len(data_test))
-
+    logger.info(f"Test size: {test_size}")
     formatted_test = formatter(data_test.sample(test_size))
 
     assert (
