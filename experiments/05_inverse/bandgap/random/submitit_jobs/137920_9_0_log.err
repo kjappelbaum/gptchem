@@ -1,0 +1,39 @@
+2023-02-05 07:10:40.438029: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-05 07:10:40.568633: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-05 07:10:40.568682: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-05 07:10:41.185776: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-05 07:10:41.185856: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-05 07:10:41.185866: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+ERROR STOP 
+
+Error termination. Backtrace:
+#0  0x56398328f432 in ???
+#1  0x563983234130 in ???
+#2  0x56398322a24c in ???
+#3  0x7fca347a2082 in __libc_start_main
+	at ../csu/libc-start.c:308
+#4  0x56398322a2a8 in ???
+abnormal termination of xtb
+submitit ERROR (2023-02-05 07:10:44,693) - Submitted job triggered an exception
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/submission.py", line 72, in submitit_main
+    process_job(args.folder)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/submission.py", line 65, in process_job
+    raise error
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/submission.py", line 54, in process_job
+    result = delayed.result()
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/utils.py", line 133, in result
+    self._result = self.function(*self.args, **self.kwargs)
+  File "/home/kevin/gptchem/src/gptchem/evaluator.py", line 502, in get_xtb_homo_lumo_gap
+    subprocess.run(cmd, shell=True, check=True, cwd=tmpdir)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'xtb conformers.sdf --opt tight > xtb.out' returned non-zero exit status 1.
+srun: error: localhost: task 0: Exited with exit code 1

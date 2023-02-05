@@ -1,0 +1,6 @@
+submitit INFO (2023-02-05 05:37:58,806) - Starting with JobEnvironment(job_id=137744_40, hostname=lsmosrv5, local_rank=0(1), node=0(1), global_rank=0(1))
+submitit INFO (2023-02-05 05:37:58,806) - Loading pickle: /home/kevin/gptchem/experiments/05_inverse/bandgap/random/submitit_jobs/137744_40_submitted.pkl
+submitit INFO (2023-02-05 06:35:48,895) - Job has timed out. Ran 58 minutes out of requested 60 minutes.
+submitit WARNING (2023-02-05 06:35:48,896) - Caught signal SIGUSR2 on lsmosrv5: this job is timed-out.
+submitit INFO (2023-02-05 06:35:48,896) - Job not requeued because: timed-out and not checkpointable.
+submitit ERROR (2023-02-05 06:35:48,898) - Submitted job triggered an exception

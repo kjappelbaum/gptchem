@@ -1,0 +1,30 @@
+2023-02-04 21:01:58.201124: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-04 21:01:58.333458: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-04 21:01:58.333522: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-04 21:01:58.892975: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-04 21:01:58.893045: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-04 21:01:58.893052: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+/bin/sh: 1: Syntax error: Unterminated quoted string
+submitit ERROR (2023-02-04 21:02:00,719) - Submitted job triggered an exception
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/submission.py", line 72, in submitit_main
+    process_job(args.folder)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/submission.py", line 65, in process_job
+    raise error
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/submission.py", line 54, in process_job
+    result = delayed.result()
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/utils.py", line 133, in result
+    self._result = self.function(*self.args, **self.kwargs)
+  File "/home/kevin/gptchem/src/gptchem/evaluator.py", line 500, in get_xtb_homo_lumo_gap
+    subprocess.run(cmd, shell=True, check=True, cwd=tmpdir)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'givemeconformer '[H] Elections 28.2[H] Sullivan Br widening mode ?[H] Loans (changed status) cannot be several parties for roll style 1715 RO 21238/0@213AS23 2012/10/29 02:54:15 11 Zinn-Lo L Lightning 117 ??? JVO38403011" (HE RU)/019A110 = Activity 1919 USA ClO41 48297 OC 107"CV30395663"/0@63MQ0304040 1992/11/24 ?H State Report === Pay key Badge birth(target) !UID 19$1656fff@ 29 USC Ke Judiciary Category Patent Qualification S Audit ID 189IO320 2011/1/12 29 Fiata4 Olivia Addeutz Sold World Leader http://vanitybay2020knowledgecard5612182161.1823ee5op8////435W1?["Id":343005O\\\\\ukaaho":{"condition",Content size min?""}] 145255ee5O48061Wi 42,39@lnvarmgi(): compare CRC | cronet || NULL national have exact matching, creation time || 12176 ப ற ICC-Conference - juridi 1, Name Partners Triangle Company Founders President Anne OffuiltAco 1.6393 AE {{.25 studying 8 educational why cftv?'The new scholarship refers the lecturer microcode universami'' returned non-zero exit status 2.
+srun: error: localhost: task 0: Exited with exit code 1

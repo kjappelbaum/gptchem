@@ -984,7 +984,7 @@ class InverseDesignFormatter(BaseFormatter):
 
     _PROMPT_TEMPLATE = "{prefix}What is a molecule with {property}{suffix}{end_prompt}"
     _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
-
+    _CHECK_NAN = True
     def __init__(
         self,
         representation_column: str,
@@ -1014,8 +1014,15 @@ class InverseDesignFormatter(BaseFormatter):
 
     def _format_property(self, prop):
         strings = []
+
+        def check_nan(v):
+            if self._CHECK_NAN:
+                if np.isnan(v):
+                    return True
+            return False
+
         for p, v in zip(self.property_names, prop):
-            if not np.isnan(v):
+            if not check_nan(v):
                 if self.num_digits is not None and not self.num_classes:
                     v = np.around(v, self.num_digits)
                     # convert to string with self.num_digits decimal places

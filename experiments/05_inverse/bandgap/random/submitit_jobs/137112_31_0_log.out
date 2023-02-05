@@ -1,0 +1,4 @@
+submitit INFO (2023-02-05 00:32:08,603) - Starting with JobEnvironment(job_id=137112_31, hostname=lsmosrv5, local_rank=0(1), node=0(1), global_rank=0(1))
+submitit INFO (2023-02-05 00:32:08,603) - Loading pickle: /home/kevin/gptchem/experiments/05_inverse/bandgap/random/submitit_jobs/137112_31_submitted.pkl
+Created 1 conformers
+submitit INFO (2023-02-05 00:34:44,780) - Job completed successfully

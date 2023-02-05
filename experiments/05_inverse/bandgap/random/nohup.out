@@ -1,0 +1,51 @@
+nohup: ignoring input
+2023-02-05 18:13:02.463173: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-05 18:13:02.647337: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-05 18:13:02.647387: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-05 18:13:03.580056: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-05 18:13:03.580143: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-05 18:13:03.580153: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2023-02-05 18:13:30.246 | INFO     | __main__:train_test:43 - Test size: 100
+Upload progress:   0%|          | 0.00/42.6k [00:00<?, ?it/s]Upload progress: 100%|██████████| 42.6k/42.6k [00:00<00:00, 40.8Mit/s]
+2023-02-05 18:13:32.402 | DEBUG    | gptchem.tuner:tune:188 - Requested fine tuning. {
+  "created_at": 1675617212,
+  "events": [
+    {
+      "created_at": 1675617212,
+      "level": "info",
+      "message": "Created fine-tune: ft-GjaBDEDvCgGvfawd5PakiaT5",
+      "object": "fine-tune-event"
+    }
+  ],
+  "fine_tuned_model": null,
+  "hyperparams": {
+    "batch_size": null,
+    "learning_rate_multiplier": 0.02,
+    "n_epochs": 8,
+    "prompt_loss_weight": 0.01
+  },
+  "id": "ft-GjaBDEDvCgGvfawd5PakiaT5",
+  "model": "ada",
+  "object": "fine-tune",
+  "organization_id": "org-eRwftHUvPVthUUPGPm4T2j0U",
+  "result_files": [],
+  "status": "pending",
+  "training_files": [
+    {
+      "bytes": 42617,
+      "created_at": 1675617211,
+      "filename": "/home/kevin/gptchem/experiments/05_inverse/bandgap/random/out/20230205_181330/train.jsonl",
+      "id": "file-gvatcpRvdnjMCJ4clrVRwtCc",
+      "object": "file",
+      "purpose": "fine-tune",
+      "status": "uploaded",
+      "status_details": null
+    }
+  ],
+  "updated_at": 1675617212,
+  "validation_files": []
+}
+2023-02-05 18:13:32.569 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-02-05 18:15:33.092 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: pending
+2023-02-05 18:17:33.662 | DEBUG    | gptchem.tuner:get_ft_model_name:29 - Fine tuning status: running

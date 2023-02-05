@@ -1,0 +1,4 @@
+submitit INFO (2023-02-05 07:10:29,987) - Starting with JobEnvironment(job_id=137907_9, hostname=lsmosrv5, local_rank=0(1), node=0(1), global_rank=0(1))
+submitit INFO (2023-02-05 07:10:29,988) - Loading pickle: /home/kevin/gptchem/experiments/05_inverse/bandgap/random/submitit_jobs/137907_9_submitted.pkl
+Created 1 conformers
+submitit ERROR (2023-02-05 07:10:36,070) - Submitted job triggered an exception

@@ -1,0 +1,3 @@
+submitit INFO (2023-02-04 20:32:55,665) - Starting with JobEnvironment(job_id=136299_2, hostname=lsmosrv5, local_rank=0(1), node=0(1), global_rank=0(1))
+submitit INFO (2023-02-04 20:32:55,665) - Loading pickle: /home/kevin/gptchem/experiments/05_inverse/bandgap/random/submitit_jobs/136299_2_submitted.pkl
+submitit INFO (2023-02-04 20:32:59,656) - Job completed successfully

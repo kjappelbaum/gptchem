@@ -1,0 +1,47 @@
+2023-02-04 21:01:50.273307: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-04 21:01:50.428494: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-04 21:01:50.428538: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-04 21:01:51.024693: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-04 21:01:51.024754: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-04 21:01:51.024762: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+[21:01:52] WARNING: not removing hydrogen atom without neighbors
+[21:01:52] WARNING: not removing hydrogen atom without neighbors
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/gpt3/bin/givemeconformer", line 8, in <module>
+    sys.exit(main())
+  File "/home/kevin/scratch/givemeconformer/src/givemeconformer/cli.py", line 26, in main
+    Fire(create_conformer)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/fire/core.py", line 141, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/fire/core.py", line 475, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/fire/core.py", line 691, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/home/kevin/scratch/givemeconformer/src/givemeconformer/api.py", line 62, in create_conformer
+    energies.append(optimize(mol, conf, ff))
+  File "/home/kevin/scratch/givemeconformer/src/givemeconformer/api.py", line 30, in optimize
+    return Chem.MMFFGetMoleculeForceField(
+AttributeError: 'NoneType' object has no attribute 'CalcEnergy'
+submitit ERROR (2023-02-04 21:01:52,875) - Submitted job triggered an exception
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/submission.py", line 72, in submitit_main
+    process_job(args.folder)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/submission.py", line 65, in process_job
+    raise error
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/submission.py", line 54, in process_job
+    result = delayed.result()
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/utils.py", line 133, in result
+    self._result = self.function(*self.args, **self.kwargs)
+  File "/home/kevin/gptchem/src/gptchem/evaluator.py", line 500, in get_xtb_homo_lumo_gap
+    subprocess.run(cmd, shell=True, check=True, cwd=tmpdir)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'givemeconformer '[H] Clorgeta nicava Commun19202219(17),421(11),C3-[H]C[H]( ringing screen indication flux density decormalied:resumed counts annual coverage indicated @ Tracking rpm 32990260 targets scale mode 25000000\ 20545242 children radio array content known about variation breadth Eq.[Fluxdbrootc9fOr == 201 11count q-runcations hist[H => C3[H]RC2F][H]=[H]Coleyl[C="113O${ floor34 =>ode deals in ring standards use type search @ alias KPR30 foot 7 rings 11 Dupin 56003 29262 hierarchical 8 each sql stuff singling deep link E[H]Clich0137pt[H -: 195 2429117 set agent rank 512 mark 4 significtale 26 assigned singly since zero joined http [H who[ESp@localhost/Dir:~],clc%askent2 rank whose status aeson< 1122 202 org floor squ77 cl219 cub Elferia, Sun Electarc Alfa par & higher | ip ir76@flow? system C30175558 cpu tick wait not plan, break[H Content Of The Query Using Tail* Based Col, Post#105041 Flash Cloud Example Caveats advice Our API Feedback @ $SOME$ => Quickpick App[right)+CVPython 2011 Summit answers OGInferno World FT @ Candadacivebedroze Year Freueira Primebr Undevonizing phm curlbase| Applied… at Object Publishing RBM 2004 Digital Obj Now TC++{pyruck OpenRenter Kitblog Auto Autointeng.5 Runtime Jan Official Wordhelp kimages 96 Visual Demo Info asJimsonborg Joyrov Created Extra Life Pythonography Coloured aleyx Response Analysis analy 1000 sent your GitHub mirrors secret 99 Tiny Life Webs Group Lens! Column Plot With Goals In Allicairy chancbery Case Posted By Answer Video fthajreduke Portaledoug123 00 Conleeoe Life Cutiteurlooitaxtuseatrichednai 09 101 Personal GuidComments Xxon61 127 22 @ GitHub HelloFratio56 Lineage Wmvillathan LivingEverlastingweblt 2015 GetAnotherEpidenides Project inno Vobsgu Chheestugu bhabi Page —:.Nz. lcd2 full 3 61 Euro Truck Images uring yellow galag wi http 0SenglightesImage orv || CurrentIndexModulepsciqPSCNNcomfunction AddressOfYhh0­230 Check Credits Vanco Signing Archive Progress Hol Socialism Culture For Dr Anna Of Luxembourg Glend98 Report 2 Star Pred *lnbencha “normal trend direction kept resulative ability long measurement had reason stored done warning be through different step dataset terms automated sericas domain variance software real postquits multiple x | / Comment Posts does 3 comment delete Pouchseav'' returned non-zero exit status 1.
+srun: error: localhost: task 0: Exited with exit code 1

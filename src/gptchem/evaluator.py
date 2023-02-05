@@ -340,10 +340,10 @@ def is_in_pubchem(smiles):
     """Check if a SMILES is in PubChem."""
     try:
         res = pcp.get_compounds(smiles, smiles=smiles, namespace="SMILES")
-        return len(res)>0 & res[0].cid
+        return (len(res)>0) & (res[0].cid is not None)
     except Exception as e:
         print(e)
-        return None
+        return False
 
 
 def evaluate_generated_smiles(

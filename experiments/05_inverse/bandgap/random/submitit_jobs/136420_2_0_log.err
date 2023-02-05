@@ -1,0 +1,46 @@
+2023-02-04 20:56:27.221067: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-04 20:56:27.446308: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-04 20:56:27.446364: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-04 20:56:28.245173: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-04 20:56:28.245247: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/bin/lsmo-codes/lib/raspa
+2023-02-04 20:56:28.245255: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+[20:56:29] UFFTYPER: Unrecognized atom type: S_5+6 (15)
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/gpt3/bin/givemeconformer", line 8, in <module>
+    sys.exit(main())
+  File "/home/kevin/scratch/givemeconformer/src/givemeconformer/cli.py", line 26, in main
+    Fire(create_conformer)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/fire/core.py", line 141, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/fire/core.py", line 475, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/fire/core.py", line 691, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/home/kevin/scratch/givemeconformer/src/givemeconformer/api.py", line 62, in create_conformer
+    energies.append(optimize(mol, conf, ff))
+  File "/home/kevin/scratch/givemeconformer/src/givemeconformer/api.py", line 30, in optimize
+    return Chem.MMFFGetMoleculeForceField(
+AttributeError: 'NoneType' object has no attribute 'CalcEnergy'
+submitit ERROR (2023-02-04 20:58:23,676) - Submitted job triggered an exception
+Traceback (most recent call last):
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/submission.py", line 72, in submitit_main
+    process_job(args.folder)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/submission.py", line 65, in process_job
+    raise error
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/submission.py", line 54, in process_job
+    result = delayed.result()
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/site-packages/submitit/core/utils.py", line 133, in result
+    self._result = self.function(*self.args, **self.kwargs)
+  File "/home/kevin/gptchem/src/gptchem/evaluator.py", line 500, in get_xtb_homo_lumo_gap
+    subprocess.run(cmd, shell=True, check=True, cwd=tmpdir)
+  File "/home/kevin/miniconda3/envs/gpt3/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'givemeconformer '[H]c1c([H])c(N([H])C(=O)N([H])C(F)c2c([H])c([H])c(S(=S)S(=S)3C([H])([H])[H])c([H])c2[H])nc(-c2c([H])nc(C([H])([H])C([H])([H])C2([H])C([H])([H])C([H])([H])C32[H])nc2[H])oc1[H]'' returned non-zero exit status 1.
+srun: error: localhost: task 0: Exited with exit code 1

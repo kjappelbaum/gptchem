@@ -21,5 +21,5 @@ def get_polymer_model():
     """Return an XGBoost model for the adsorption free energy."""
     return pystow.module("gptchem").ensure(
         "delta_g_model",
-        url="https://www.dropbox.com/s/7xwfu9hlte7v377/delta_g_model.joblib?dl=1",
+        url="https://www.dropbox.com/s/voh5bsrqv53w7rm/delta_g_model.joblib?dl=1",
     )

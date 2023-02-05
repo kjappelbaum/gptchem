@@ -108,6 +108,23 @@ def get_qmug_data() -> pd.DataFrame:
     )
 
 
+def get_qmug_small_data() -> pd.DataFrame:
+    """Return the data and features used in [QMUG]_.
+
+    We mean-aggregrated the numerical data per SMILES
+    and additionally computed SELFIES and INChI.
+    """
+    return (
+        pystow.module("gptchem")
+        .ensure_csv(
+            "qmug_small",
+            url="https://www.dropbox.com/s/wkkrpfb2ash23a2/qmugs_small.csv?dl=1",
+            read_csv_kwargs=dict(sep=","),
+        )
+        .reset_index(drop=True)
+    )
+
+
 def get_hea_phase_data() -> pd.DataFrame:
     """Return the dataset reported in [Pei]_."""
     return (
