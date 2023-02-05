@@ -23,6 +23,7 @@ def train_test(train_size, seed):
     train, test = train_test_split(
         data, train_size=train_size, random_state=seed, stratify=data["gfa"]
     )
+    data = data[['composition', 'gfa']]
 
     try:
         pipe = MatPipe.from_preset("express")

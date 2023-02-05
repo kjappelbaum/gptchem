@@ -20,6 +20,7 @@ logger.enable("gptchem")
 def train_test(train_size, seed):
     data = get_matbench_is_metal()
     data['is_metal'] = data['is_metal'].astype('int')
+    data = data[['composition', 'is_metal']]
     train, test = train_test_split(
         data, train_size=train_size, random_state=seed, stratify=data["is_metal"]
     )

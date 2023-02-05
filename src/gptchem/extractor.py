@@ -85,7 +85,7 @@ class InverseExtractor(BaseExtractor):
     """Extract strings from completions of inverse tasks."""
 
     def extract(self, data, **kwargs) -> float:
-        return self.split(data).strip()
+        return self.split(data).split()[0].strip()
 
 
 class SolventExtractor(BaseExtractor):
