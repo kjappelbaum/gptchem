@@ -17,7 +17,7 @@ num_trials = 10
 TRAIN_SIZE = 92
 TEMPERATURES = [0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0]
 NOISE_LEVEL = [0.5, 1.0, 5.0, 10, 20, 50]
-NUM_SAMPLES = 100
+NUM_SAMPLES = 300
 GROUPS = ["I", "Br", "Cl", "F", "C#CBr", "C#CC", "C=O", "C#C"]
 
 THRESHOLD = 350
@@ -147,6 +147,8 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, grou
             "temperature": temp,
             "prevalence": prevalence,
             "fragment_fraction": fragment_fraction,
+            "formatted_test": formatted_test,
+            "group": group,
         }
 
         res_at_temp.append(res)

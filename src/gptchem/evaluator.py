@@ -23,6 +23,7 @@ from guacamol.utils.chemistry import (
     discrete_kldiv,
     is_valid,
 )
+from functools import lru_cache
 from guacamol.utils.data import get_random_subset
 from guacamol.utils.sampling_helpers import sample_unique_molecules, sample_valid_molecules
 from loguru import logger
@@ -335,7 +336,7 @@ def is_valid_smiles(smiles: str) -> bool:
     """We say a SMILES is valid if RDKit can parse it."""
     return is_valid(smiles)
 
-
+@lru_cache(maxsize=None)
 def is_in_pubchem(smiles):
     """Check if a SMILES is in PubChem."""
     try:
@@ -354,6 +355,7 @@ def evaluate_generated_smiles(
     novel_indices = []
     novel_smiles = []
     for i, s in enumerate(smiles):
+        s = s.split()[0].strip()
         if is_valid_smiles(s):
             valid_smiles.append(s)
             valid_indices.append(i)
@@ -470,6 +472,8 @@ def evaluate_photoswitch_smiles_pred(
     return {
         "e_pi_pi_star_metrics": e_pi_pi_star_metrics,
         "z_pi_pi_star_metrics": z_pi_pi_star_metrics,
+        "expected_e_pi_pi_star": expected_e_pi_pi_star,
+        "expected_z_pi_pi_star": expected_z_pi_pi_star,
     }
 
 
@@ -839,6 +843,28 @@ def get_polymer_prompt_compostion(prompt: str)->dict:
 
     return composition
 
+def is_valid_polymer(string):
+    """Check if a polymer string is valid.
+
+    Args:
+        string (str): Polymer string
+
+    Returns:
+        bool: True if valid, False otherwise
+
+    Example:
+        >>> is_valid_polymer("W-A-B-W-W-A-A-A-R-W-B-B-R-R-B-R")
+        True
+    """
+    parts = string.split("-")
+    valid = False
+    for part in parts:
+        if part in ["W", "A", "B", "R"]:
+            valid = True
+        else:
+            valid = False
+            break
+    return valid
 
 def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd.DataFrame, df_train: pd.DataFrame, max_train: int = 500) -> dict:
     performances = []
@@ -851,13 +877,15 @@ def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd
     performance_difference = []
     valid_indices = []
     string_distances_collection = []
-
+    in_train = []
     for i, polymer in enumerate(generated_polymers):
         try:
+            if not is_valid_polymer(polymer):
+                continue
             perf = polymer_string2performance(polymer)
             performances.append(perf)
             comp = get_polymer_prompt_compostion(polymer)
-            print(polymer, get_polymer_prompt_compostion(df_test["prompt"].iloc[i]))
+          
             comp_mismatch = composition_mismatch(
                 get_polymer_prompt_compostion(df_test["prompt"].iloc[i]), comp)
             composition_mismatches.append(comp_mismatch)
@@ -868,6 +896,8 @@ def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd
                 train_polymers,
                 polymer
             )
+            if polymer in train_polymers:
+                in_train.append(polymer)
             string_distances_collection.append(string_mismatch)
         except Exception:
             pass
@@ -890,8 +920,10 @@ def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd
         "novel_smiles_fraction": novel_smiles_fraction,
         "generated_sequences": generated_polymers,
         "predictions": performances,
+        "fraction_in_train": len(in_train) / len(valid_polymers),
         "string_distances_collection": string_distances_collection,
         "string_distances_collection_summary": string_distances_collection.mean().to_dict(),
+        "expected_performance": representations,
     }
 
 

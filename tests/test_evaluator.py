@@ -10,7 +10,8 @@ from gptchem.evaluator import (
     evaluate_generated_smiles,
     evaluate_photoswitch_smiles_pred,
     predict_photoswitch,
-    is_in_pubchem
+    is_in_pubchem,
+    is_valid_polymer
 )
 
 
@@ -88,3 +89,11 @@ def test_evaluate_photoswitch_smiles_pred():
 def test_is_in_pubchem():
     assert is_in_pubchem('CC')
     assert not is_in_pubchem('[N-]=[N+]=NCC(C=C1)=CC2=C1CCC3=C(/N=N\2)C=C(CN=[N+]=[N-])C=C3')
+
+
+def test_is_valid_polymer():
+    assert not is_valid_polymer('W8A!!A-B-R-A-A-B-W8B-R-R-B-5-R-6-W-W-R-R-W')
+    assert not is_valid_polymer('FR-BCB-B-W-A-A-W-A-B-R-A-A-W-W-A-W-A-A-B-B-W-R-A-ROA-A-R-R-A-A-R-A-R-R-R-B-W-R')
+    assert not is_valid_polymer('R-W-W-B-B-')
+    assert not is_valid_polymer('R-B-W-A-A-B-B-A-----W-A-W-W-R-R-R-R-R-R-W-R-R-A-A-B-R-R-W-W-A-B-R-A-R')
+    assert not is_valid_polymer('R.B.A.B.W.A.R.B.R.A.W.A.A.B.R.A.B.B')
