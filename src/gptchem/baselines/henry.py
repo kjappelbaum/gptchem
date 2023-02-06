@@ -389,7 +389,7 @@ def train_test_henry_classification_baseline(
         "xgb_predictions": predictions,
         "tabpfn_predictions": tabpfn_predictions,
         "xgb_metrics": evaluate_classification(y_test_binned, predictions),
-        "tabpfn_metrics": evaluate_classification(y_test, tabpfn_predictions),
+        "tabpfn_metrics": evaluate_classification(y_test_binned, tabpfn_predictions),
     }
 
 

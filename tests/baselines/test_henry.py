@@ -31,6 +31,7 @@ def test_train_test_henry_classification_baseline():
     )
 
     assert res["xgb_metrics"]["accuracy"] > 0.5
+    assert res["tabpfn_metrics"]["accuracy"] > 0.5
 
 
 @pytest.mark.slow
