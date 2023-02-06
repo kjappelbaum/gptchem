@@ -900,3 +900,8 @@ FodyWeavers.xsd
 
 scratch/
 gptchemcache/
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+*.db3

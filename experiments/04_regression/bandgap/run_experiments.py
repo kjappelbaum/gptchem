@@ -15,7 +15,7 @@ from gptchem.formatter import RegressionFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
-num_training_points = [10, 20, 50, 100, 200, 1000, 5000]  # 1000
+num_training_points = [10, 20, 50, 100, 200, 1000, 5000][::-1]  # 1000
 representations = ["SMILES", "SELFIES", "InChI"]
 max_num_test_points = 250
 num_repeats = 10
