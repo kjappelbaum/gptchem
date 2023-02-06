@@ -157,7 +157,7 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, seed
         "res_at_temp": res_at_temp,
         "test_size": len(formatted_test),
         "threshold": THRESHOLD,
-        "formatted_test": formatted_test
+     #   "formatted_test": formatted_test
         **tune_res,
         "smiles_metrics_all": smiles_metrics_all
     }
@@ -169,7 +169,7 @@ if __name__ == "__main__":
     for seed in range(num_trials):
         for noise_level in NOISE_LEVEL:
             try:
-                train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+334)
+                train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, seed+34564)
             except Exception as e:
                 logger.exception(e)
                 continue
