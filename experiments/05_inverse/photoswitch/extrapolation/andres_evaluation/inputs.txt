@@ -1,0 +1,7 @@
+CC1=NOC(C)=C1/N=N/C2=CC=C(NC)C=C2
+CC1=C(C(C)=NN1)/N=N/C2=CC=C(NC)C=C2 
+C[N]1C=CC=C1N=NC2=CC=CC=C2
+CC1=C(C(C)=NN1)/N=N/C2=CC(NC)=CC=C2
+FC1=CC=CC=C1/N=N/C2=CC=C(N)C=C2
+
+selected from those that have predicted E transition > 400 and seem reasonable 

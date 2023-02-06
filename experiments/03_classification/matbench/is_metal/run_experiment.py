@@ -32,7 +32,7 @@ def train_test(train_size, seed):
 
         predictions = pipe.predict(test)
 
-        baseline_metrics = evaluate_classification(test['is_metal'].values, predictions['is_metal'])
+        baseline_metrics = evaluate_classification(test['is_metal'].values, predictions['is_metal predicted'])
 
     except Exception as e:  
         print(e)
