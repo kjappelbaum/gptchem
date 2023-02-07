@@ -16,7 +16,7 @@ from gptchem.tuner import Tuner
 num_trials = 10
 TRAIN_SIZE = 92
 TEMPERATURES = [0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0]
-NOISE_LEVEL = [0.1, 0.5, 1.0, 5.0, 10, 20, 50]
+NOISE_LEVEL = [0.1, 0.2, 0.5, 1.0, 5.0, 10, 20, 50]
 NUM_SAMPLES = 300
 GROUPS = ["C#CBr", "C#CC", "C=O", "C#C", "I",  "Br",  "Cl", "F"][::-1]
 
@@ -175,7 +175,7 @@ if __name__ == "__main__":
         for noise_level in NOISE_LEVEL:
             for group in GROUPS:
                 try:
-                    train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, group, seed +2130)
+                    train_test_evaluate(TRAIN_SIZE, noise_level, NUM_SAMPLES, TEMPERATURES, group, seed +456)
                 except Exception as e:
                     logger.exception(e)
                     continue

@@ -19,6 +19,7 @@ from gptchem.tuner import Tuner
 TEMPERATURES = [0.0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5]
 NUM_SAMPLES = [100, 50, 500]
 
+logger.enable("gptchem")
 
 def make_input_frame(smiles, gaps):
     input_data = []
@@ -163,7 +164,7 @@ def main(
 
         iter_counter += 1
 
-    save_pickle(Path(tune_res["output_dir"]) / "results.pkl", results)
+    save_pickle(Path(tune_res["outdir"]) / "results.pkl", results)
 
 
 if __name__ == "__main__":
