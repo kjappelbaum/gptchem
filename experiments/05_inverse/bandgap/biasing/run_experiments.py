@@ -50,6 +50,7 @@ def generate_desired_dist(mean: float = 5.0, width: float = 0.2, num_points: int
 
 
 def select_relevant_smiles_and_gaps(smile_gap_frame, current_mean, minimum_step: float = 1):
+    smile_gap_frame.drop_duplicates(subset="smiles", inplace=True)
     subset = smile_gap_frame[smile_gap_frame["gap"] > current_mean + minimum_step]
     relevant_smiles = subset["smiles"].tolist()
     relevant_gaps = subset["gap"].tolist()
@@ -113,7 +114,7 @@ def sample_across_temperatures(
 
 
 def main(
-    num_samples: int = 100, target_mean: float = 5.5, minimum_step: float = 1.0, max_iter: int = 10
+    num_samples: int = 100, target_mean: float = 6.5, minimum_step: float = 1.0, max_iter: int = 10
 ):
     iter_counter = 0
     results = []
@@ -166,4 +167,5 @@ def main(
 
 
 if __name__ == "__main__":
-    main()
+    for num_sample in NUM_SAMPLES:
+        main(num_samples=num_sample)
