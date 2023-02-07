@@ -69,49 +69,62 @@ def sample_across_temperatures(
     generated = []
 
     temp_res = []
-    desired_gaps = generate_desired_dist(mean, width, num_points)
-    df, formatted = make_input_frame(["smiles"] * len(desired_gaps), desired_gaps)
-    for temp in TEMPERATURES:
-        try:
-            logger.info(f"Temperature: {temp}")
-            completions = querier(formatted, temperature=temp)
-            generated_smiles = extractor(completions)
-            logger.info(f"Extracted. Evaluating generated SMILES...")
-            logger.info(f"generated examples {generated_smiles[:2]}")
-            valid_smiles, valid_indices, valid_desires = [], [], []
 
-            for i, smile in enumerate(generated_smiles):
-                if is_valid(smile):
-                    valid_smiles.append(smile)
-                    valid_indices.append(i)
-                    valid_desires.append(desired_gaps[i])
+    all_valid_smiles = []
+    all_desired_gaps = []
+    all_smiles = set()
+    while len(all_smiles) < num_points:
+        desired_gaps = generate_desired_dist(mean, width, num_points)
+        df, formatted = make_input_frame(["smiles"] * len(desired_gaps), desired_gaps)
+        for temp in TEMPERATURES:
+            try:
+                logger.info(f"Temperature: {temp}")
+                completions = querier(formatted, temperature=temp)
+                generated_smiles = extractor(completions)
+                logger.info(f"Extracted. Evaluating generated SMILES...")
+                logger.info(f"generated examples {generated_smiles[:2]}")
+                valid_smiles, valid_indices, valid_desires = [], [], []
 
-            logger.info(f"Valid SMILES: {valid_smiles[:2]}")
-            evaluation_res = evaluate_homo_lumo_gap(
-                valid_smiles,
-                valid_desires,
+                all_smiles.update(valid_smiles)
+
+                for i, smile in enumerate(generated_smiles):
+                    if is_valid(smile):
+                        valid_smiles.append(smile)
+                        valid_indices.append(i)
+                        valid_desires.append(desired_gaps[i])
+
+                logger.info(f"Valid SMILES: {valid_smiles[:2]}")
+
+                all_valid_smiles.extend(valid_smiles)
+                all_desired_gaps.extend(valid_desires)
+                temp_res.append(
+                    {
+                        "temperature": temp,
+                        "generated_smiles": generated_smiles,
+                        "valid_smiles": valid_smiles,
+                        "valid_indices": valid_indices,
+                        "valid_desires": valid_desires,
+                    }
+                )
+    
+            except Exception as e:
+                logger.exception(e)
+                continue
+            
+        df_for_eval = pd.DataFrame({"smiles": all_valid_smiles, "gap": all_desired_gaps})
+        df_for_eval.drop_duplicates(subset="smiles", inplace=True)
+        df_for_eval_subset = df_for_eval.sample(num_sample)
+
+        evaluation_res = evaluate_homo_lumo_gap(
+                df_for_eval_subset['smiles'].tolist(),
+                df_for_eval_subset['gap'].tolist(),
             )
-            found_gaps = evaluation_res["computed_gaps"]
-            for smile, gap in zip(valid_smiles, found_gaps):
-                generated.append({"smiles": smile, "gap": gap})
-
-            temp_res.append(
-                {
-                    "temperature": temp,
-                    "generated_smiles": generated_smiles,
-                    "valid_smiles": valid_smiles,
-                    "valid_indices": valid_indices,
-                    "valid_desires": valid_desires,
-                    "evaluation_res": evaluation_res,
-                }
-            )
-
-        except Exception as e:
-            logger.exception(e)
-            continue
+        found_gaps = evaluation_res["computed_gaps"]
+        for smile, gap in zip(valid_smiles, found_gaps):
+            generated.append({"smiles": smile, "gap": gap})
 
     generated_df = pd.DataFrame(generated)
-    return generated_df, temp_res
+    return generated_df, temp_res, df_for_eval
 
 
 def main(
@@ -124,14 +137,14 @@ def main(
     smiles = subset["SMILES"].tolist()
     gaps = subset["GFN2_HOMO_LUMO_GAP_mean_ev"].tolist()
 
-    current_mean = np.mean(gaps)
+    current_mean = np.median(gaps)
     logger.info(f"Current mean: {current_mean}")
 
     while current_mean < target_mean and iter_counter < max_iter:
         minimum_step_ = minimum_step
         logger.info(f"Iteration {iter_counter}")
         formatted, tune_res = train(smiles, gaps)
-        generated_df, temp_res = sample_across_temperatures(tune_res, current_mean)
+        generated_df, temp_res, df_for_eval = sample_across_temperatures(tune_res, current_mean)
         relevant_smiles, relevant_gaps = select_relevant_smiles_and_gaps(
             generated_df, current_mean, minimum_step
         )
@@ -144,7 +157,7 @@ def main(
 
         logger.info(f"Relevant SMILES: {relevant_smiles[:2]}")
         logger.info(f"Relevant GAPS: {relevant_gaps[:2]}")
-        current_mean = np.mean(relevant_gaps)
+        current_mean = np.median(relevant_gaps)
         logger.info(f"New mean: {current_mean}")
         smiles = relevant_smiles
         gaps = relevant_gaps
@@ -155,6 +168,7 @@ def main(
                 "tune_res": tune_res,
                 "generated_df": generated_df,
                 "temp_res": temp_res,
+                "df_for_eval": df_for_eval,
                 "relevant_smiles": relevant_smiles,
                 "relevant_gaps": relevant_gaps,
                 "current_mean": current_mean,
