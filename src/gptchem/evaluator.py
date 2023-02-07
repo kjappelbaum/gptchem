@@ -38,7 +38,7 @@ from strsimpy.longest_common_subsequence import LongestCommonSubsequence
 from strsimpy.normalized_levenshtein import NormalizedLevenshtein
 from tqdm import tqdm
 from rdkit.Contrib.SA_Score.sascorer import calculateScore as calculate_sascore
-
+from typing import Optional, List, Tuple
 from gptchem.fingerprints.polymer import LinearPolymerSmilesFeaturizer, featurize_many_polymers
 from gptchem.models import get_e_pi_pistar_model_data, get_polymer_model, get_z_pi_pistar_model_data
 
@@ -866,7 +866,21 @@ def is_valid_polymer(string):
             break
     return valid
 
-def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd.DataFrame, df_train: pd.DataFrame, max_train: int = 500) -> dict:
+
+def get_continuos_binned_distance(prediction, bin, bins):
+    """For inverse design with categories in prompt we compute the distance to the nearest bin edge."""
+    print(prediction, bin, bins)
+    in_bin = (prediction >= bins[bin][0]) & (prediction <= bins[bin][1])
+    if in_bin:
+        loss = 0
+    else:
+        # compute the minimum distance to bin
+        left_edge_distance = abs(prediction - bins[bin][0])
+        right_edge_distance = abs(prediction - bins[bin][1])
+        loss = min(left_edge_distance, right_edge_distance)
+    return loss
+
+def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd.DataFrame, df_train: pd.DataFrame, max_train: int = 500, bins: Optional[List[Tuple[float]]] = None) -> dict:
     performances = []
 
     train_polymers = df_train["label"].tolist()
@@ -889,7 +903,10 @@ def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd
             comp_mismatch = composition_mismatch(
                 get_polymer_prompt_compostion(df_test["prompt"].iloc[i]), comp)
             composition_mismatches.append(comp_mismatch)
-            performance_difference.append(np.abs(perf["prediction"][0] - representations[i]))
+            if bins is not None:
+                performance_difference.append(get_continuos_binned_distance(perf["prediction"][0], representations[i], bins))
+            else:
+                performance_difference.append(np.abs(perf["prediction"][0] - representations[i]))
             valid_polymers.append(polymer)
             valid_indices.append(i)
             string_mismatch =string_distances(

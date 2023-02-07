@@ -12,7 +12,7 @@ from gptchem.formatter import RegressionFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 
-train_sizes = [10, 20, 50, 100, 200, 500, 1000]
+train_sizes = [10, 20, 50, 100, 200, 500, 1000][::-1]
 targets = [
     ("logKH_CH4", "CH4 Henry coefficient"),
     ("logKH_CO2", "CO2 Henry coefficient"),

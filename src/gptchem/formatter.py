@@ -1069,7 +1069,62 @@ class InverseDesignFormatter(BaseFormatter):
 
     def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
         return self.format_many(df)
+ 
 
+class InverseDesignFormatterWithComposition(InverseDesignFormatter):
+    _PROMPT_TEMPLATE = "{prefix}What is a molecule with {property} and {composition}{suffix}{end_prompt}"  
+    def __init__(
+        self,
+        representation_column: str,
+        property_columns: List[str],
+        property_names: List[str],
+        num_classes: int = None,
+        num_digits: int = 1,
+        composition_columns: List[str] = None,
+        composition_names: List[str] = None,
+    ):
+        self.representation_column = representation_column
+        self.property_columns = property_columns
+        self.property_names = property_names
+        self.num_classes = num_classes
+        self.num_digits = num_digits
+        self.bins = None
+        self.composition_columns = composition_columns
+        self.composition_names = composition_names
+
+ 
+    def _format(self, representation, prop) -> dict:
+        return {
+            "prompt": self._PROMPT_TEMPLATE.format(
+                prefix=self._prefix,
+                property=self._format_property(prop),
+                suffix=self._suffix,
+                end_prompt=self._end_prompt,
+            ),
+            "completion": self._COMPLETION_TEMPLATE.format(
+                start_completion=self._start_completion,
+                label=representation,
+                stop_sequence=self._stop_sequence,
+            ),
+            "label": representation,
+            "representation": prop,
+        }
+
+    def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
+        df = df.dropna(subset=self.property_columns)
+        representation = df[self.representation_column].values
+        prop = df[self.property_columns].values
+
+        if self.num_classes is not None:
+            if self.bins is None:
+                _, bins = pd.qcut(prop.flatten(), self.num_classes, retbins=True)
+                bins = [-np.inf, *bins[1:-1], np.inf]
+                self.bins = bins
+            else:
+                bins = self.bins
+            prop = pd.cut(prop.flatten(), bins=bins, labels=self.class_names, include_lowest=True).astype(int)
+            prop = [[p] for p in prop]
+        return pd.DataFrame([self._format(r, p) for r, p in zip(representation, prop)]) 
 
 class MOFSynthesisRecommenderFormatter(BaseFormatter):
     _PROMPT_TEMPLATE = "What is the success of a reaction of {ligand} with {salt} in {solvent} {modifier} at {temperature}C for {time}h{end_prompt}"

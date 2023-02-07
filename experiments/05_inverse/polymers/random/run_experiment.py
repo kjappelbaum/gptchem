@@ -80,4 +80,4 @@ if __name__ == '__main__':
     for i in range(repeats):
         for train_point in num_train_points:
             for noise_level in noise_levels:
-                train_test(train_point, temperatures, num_samples, noise_level, i) 
+                train_test(train_point, temperatures, num_samples, noise_level, i+2345) 
