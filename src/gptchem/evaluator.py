@@ -32,7 +32,7 @@ from rdkit import Chem, DataStructs
 from scipy.optimize import curve_fit, fsolve
 from scipy.stats import entropy, gaussian_kde
 from sklearn.decomposition import PCA
-from sklearn.metrics import max_error, mean_absolute_error, mean_squared_error, r2_score
+from sklearn.metrics import max_error, mean_absolute_error, mean_squared_error, r2_score, mean_absolute_percentage_error
 from strsimpy.levenshtein import Levenshtein
 from strsimpy.longest_common_subsequence import LongestCommonSubsequence
 from strsimpy.normalized_levenshtein import NormalizedLevenshtein
@@ -50,7 +50,8 @@ from diskcache import Cache
 CACHE_DIR = os.getenv("CACHEDIR", "gptchemcache")
 
 # 2 ** 30 = 1 GB
-gap_cache = Cache(CACHE_DIR, size_limit=2 ** 30, disk_min_file_size=0)
+gap_cache = Cache(CACHE_DIR, size_limit=2**30, disk_min_file_size=0)
+
 
 def continuous_kldiv(X_baseline: np.ndarray, X_sampled: np.ndarray, pca: bool = False) -> float:
     """Calculate the continuous Kullback-Leibler divergence between two distributions."""
@@ -321,13 +322,14 @@ def predict_photoswitch(
     fragprints = compute_fragprints(smiles)
     return e_pi_pi_star_model.predict(fragprints), z_pi_pi_star_model.predict(fragprints)
 
+
 def get_sa_scores(smiles):
     sa_scores = []
     for smiles in smiles:
         try:
             mol = Chem.MolFromSmiles(smiles)
             sa_scores.append(calculate_sascore(mol))
-        except: 
+        except:
             pass
     return sa_scores
 
@@ -336,12 +338,13 @@ def is_valid_smiles(smiles: str) -> bool:
     """We say a SMILES is valid if RDKit can parse it."""
     return is_valid(smiles)
 
+
 @lru_cache(maxsize=None)
 def is_in_pubchem(smiles):
     """Check if a SMILES is in PubChem."""
     try:
         res = pcp.get_compounds(smiles, smiles=smiles, namespace="SMILES")
-        return (len(res)>0) & (res[0].cid is not None)
+        return (len(res) > 0) & (res[0].cid is not None)
     except Exception as e:
         print(e)
         return False
@@ -359,7 +362,7 @@ def evaluate_generated_smiles(
         if is_valid_smiles(s):
             valid_smiles.append(s)
             valid_indices.append(i)
-            if s not in train_smiles: 
+            if s not in train_smiles:
                 novel_indices.append(i)
                 novel_smiles.append(s)
 
@@ -415,7 +418,7 @@ def evaluate_generated_smiles(
         "valid_smiles": valid_smiles,
         "valid_indices": valid_indices,
         "novel_indices": novel_indices,
-        "novel_smiles": novel_smiles
+        "novel_smiles": novel_smiles,
     }
 
     return res
@@ -433,6 +436,8 @@ def get_regression_metrics(
             "mean_absolute_error": mean_absolute_error(y_true, y_pred),
             "mean_squared_error": mean_squared_error(y_true, y_pred),
             "rmse": mean_squared_error(y_true, y_pred, squared=False),
+            "mean_absolute_percentage_error": mean_absolute_percentage_error(
+                y_true, y_pred)
         }
     except Exception:
         return {
@@ -493,12 +498,12 @@ def get_xtb_homo_lumo_gap(smiles: str) -> float:
     xtb conformers.sdf --opt tight > xtb.out
     """
     try:
-        gap =  gap_cache.get(smiles)
+        gap = gap_cache.get(smiles)
         if gap is not None:
             return gap
     except KeyError:
         pass
-    
+
     with tempfile.TemporaryDirectory() as tmpdir:
         cmd = f"givemeconformer '{smiles}'"
         subprocess.run(cmd, shell=True, check=True, cwd=tmpdir)
@@ -802,6 +807,7 @@ def string_distances(training_set: Collection[str], query_string: str) -> dict:
 
     return aggregated_distances
 
+
 def get_num_monomer(string: str, monomer: str) -> int:
     """Get the amount of a monomer in a polymer string.
 
@@ -823,15 +829,16 @@ def get_num_monomer(string: str, monomer: str) -> int:
         num = 0
     return num
 
-def get_polymer_prompt_compostion(prompt: str)->dict:
+
+def get_polymer_prompt_compostion(prompt: str) -> dict:
     """Get the composition of a polymer prompt.
 
     Args:
         prompt (str): Polymer prompt
-    
+
     Returns:
         dict: The composition of the prompt
-    
+
     Example:
         >>> get_polymer_prompt_compostion("W-A-B-W-W-A-A-A-R-W-B-B-R-R-B-R")
         {'W': 6, 'A': 4, 'B': 4, 'R': 4}
@@ -842,6 +849,7 @@ def get_polymer_prompt_compostion(prompt: str)->dict:
         composition[monomer] = get_num_monomer(prompt, monomer)
 
     return composition
+
 
 def is_valid_polymer(string):
     """Check if a polymer string is valid.
@@ -869,7 +877,6 @@ def is_valid_polymer(string):
 
 def get_continuos_binned_distance(prediction, bin, bins):
     """For inverse design with categories in prompt we compute the distance to the nearest bin edge."""
-    print(prediction, bin, bins)
     in_bin = (prediction >= bins[bin][0]) & (prediction <= bins[bin][1])
     if in_bin:
         loss = 0
@@ -880,17 +887,25 @@ def get_continuos_binned_distance(prediction, bin, bins):
         loss = min(left_edge_distance, right_edge_distance)
     return loss
 
-def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd.DataFrame, df_train: pd.DataFrame, max_train: int = 500, bins: Optional[List[Tuple[float]]] = None) -> dict:
+
+def get_inverse_polymer_metrics(
+    generated_polymers: Collection[str],
+    df_test: pd.DataFrame,
+    df_train: pd.DataFrame,
+    max_train: int = 500,
+    bins: Optional[List[Tuple[float]]] = None,
+) -> dict:
     performances = []
 
     train_polymers = df_train["label"].tolist()
-    representations = [v[0] for v in df_test['representation'].values]
+    representations = [v[0] for v in df_test["representation"].values]
 
     valid_polymers = []
     composition_mismatches = []
     performance_difference = []
     valid_indices = []
     string_distances_collection = []
+    mapes = []
     in_train = []
     for i, polymer in enumerate(generated_polymers):
         try:
@@ -899,20 +914,25 @@ def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd
             perf = polymer_string2performance(polymer)
             performances.append(perf)
             comp = get_polymer_prompt_compostion(polymer)
-          
+
             comp_mismatch = composition_mismatch(
-                get_polymer_prompt_compostion(df_test["prompt"].iloc[i]), comp)
+                get_polymer_prompt_compostion(df_test["prompt"].iloc[i]), comp
+            )
             composition_mismatches.append(comp_mismatch)
             if bins is not None:
-                performance_difference.append(get_continuos_binned_distance(perf["prediction"][0], representations[i], bins))
+                distance = get_continuos_binned_distance(
+                    perf["prediction"][0], representations[i], bins
+                )
+                performance_difference.append(distance)
+                mapes.append(distance / np.abs(representations[i]))
             else:
-                performance_difference.append(np.abs(perf["prediction"][0] - representations[i]))
+                distance = np.abs(perf["prediction"][0] - representations[i])
+                performance_difference.append(distance)
+                mapes.append(distance / np.abs(representations[i]))
+
             valid_polymers.append(polymer)
             valid_indices.append(i)
-            string_mismatch =string_distances(
-                train_polymers,
-                polymer
-            )
+            string_mismatch = string_distances(train_polymers, polymer)
             if polymer in train_polymers:
                 in_train.append(polymer)
             string_distances_collection.append(string_mismatch)
@@ -921,7 +941,10 @@ def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd
 
     string_distances_collection = pd.DataFrame(string_distances_collection)
 
-    kldiv = PolymerKLDivBenchmark(featurize_many_polymers([polymer_convert2smiles(p) for p in train_polymers]), min(len(valid_polymers), len(train_polymers)))
+    kldiv = PolymerKLDivBenchmark(
+        featurize_many_polymers([polymer_convert2smiles(p) for p in train_polymers]),
+        min(len(valid_polymers), len(train_polymers)),
+    )
     kldiv_score = kldiv.score(valid_polymers)
     novel_smiles_fraction = 1 - len(set(valid_polymers) & set(train_polymers)) / len(valid_polymers)
 
@@ -929,6 +952,7 @@ def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd
         "composition_mismatches": pd.DataFrame(composition_mismatches),
         "summary_composition_mismatches": pd.DataFrame(composition_mismatches).mean().to_dict(),
         "losses": performance_difference,
+        "mapes": mapes,
         "kldiv_score": kldiv_score,
         "valid_smiles_fraction": len(valid_polymers) / len(generated_polymers),
         "valid_indices": valid_indices,
@@ -944,20 +968,23 @@ def get_inverse_polymer_metrics(generated_polymers: Collection[str], df_test: pd
     }
 
 
-def get_kappa_intersections(index, values, ):
+def get_kappa_intersections(
+    index,
+    values,
+):
     # from the fitted learning curve, find when kappa >0
     # >0.2,, >0.4, >0.6, >0.8
 
     intersections = {}
 
-    for i in  [0, 0.2, 0.4, 0.6, 0.8]:
+    for i in [0, 0.2, 0.4, 0.6, 0.8]:
         intersections[i] = find_learning_curve_intersection(
-        i,
-        fit_learning_curve(
-            index,
-            values,
-        )[0],
-    )
+            i,
+            fit_learning_curve(
+                index,
+                values,
+            )[0],
+        )
 
     return intersections
 
@@ -967,7 +994,7 @@ colors = {
     0.2: plt.cm.RdBu_r(0.2),
     0.4: plt.cm.RdBu_r(0.4),
     0.6: plt.cm.RdBu_r(0.6),
-    0.8: plt.cm.RdBu_r(0.8)
+    0.8: plt.cm.RdBu_r(0.8),
 }
 
 
@@ -975,6 +1002,8 @@ def add_kappa_vlines(index, values, low=10, high=100, ymax=1.6, ymin=0.2):
     intersections = get_kappa_intersections(index, values)
 
     for k, v in intersections.items():
-        if (v > low) & (v < high): 
-            plt.vlines(v, ymin, ymax, color=colors[k], alpha=.8)
-            plt.text(v + 1, (ymax-ymin)/2, k, color=colors[k], fontsize=8, rotation=90, alpha=.8)
+        if (v > low) & (v < high):
+            plt.vlines(v, ymin, ymax, color=colors[k], alpha=0.8)
+            plt.text(
+                v + 1, (ymax - ymin) / 2, k, color=colors[k], fontsize=8, rotation=90, alpha=0.8
+            )

@@ -1,0 +1,25 @@
+6 FC1=CC=CC=C1/N=N/C2=C(N)C=CC=C2 
+7 C[N]1C=CC=C1N=NC2=CC(NC)=NN=C2
+8 C[N]1N=CC(=C1N)N=NC2=CC=CC=C2   
+9 CC1=NOC(C)=C1/N=N/C2=C(N)C=CC=C2    
+10 CC1=C(C(C)=NN1)/N=N/C2=CC(N)C=C2    
+11 C[N]1C=CC=C1N=NC2=CC=CC=C2
+
+
+
+
+SMILES  rate of thermal isomerisation from Z-E in s-1   Solvent used for thermal isomerisation rates    Z PhotoStationaryState  E PhotoStationaryState  E isomer pi-pi* wavelength in nm    Extinction  E isomer n-pi* wavelength in nm Extinction coefficient in M-1 cm-1  Z isomer pi-pi* wavelength in nm    ... BHLYP/6-31G* DFT E isomer n-pi* wavelength in nm    BHLYP/6-31G* Z isomer pi-pi* wavelength in nm   BHLYP/6-31G* DFT Z isomer n-pi* wavelength in nm    name    selfies wavelength_cat  inchi   kind    e_z_diff    has_azo
+322 FC1=CC=CC=C1/N=N/C2=C(N)C=CC=C2 NaN NaN NaN NaN 428.328644  NaN NaN NaN 279.895287  ... NaN NaN NaN NaN NaN NaN NaN generated   148.433357  True
+218 C1N=C(C(C)=NN1)/N=N/C2N=CC=CC=CC=C2 NaN NaN NaN NaN 427.342908  NaN NaN NaN 306.388301  ... NaN NaN NaN NaN NaN NaN NaN generated   120.954607  True
+273 C[N]1C=CC=C1N=NC2=CC(NC)=NN=C2  NaN NaN NaN NaN 421.453888  NaN NaN NaN 323.497988  ... NaN NaN NaN NaN NaN NaN NaN generated   97.955900   True
+77  C[N]1N=CC(=C1N)N=NC2=CC=CC=C2   NaN NaN NaN NaN 408.259147  NaN NaN NaN 292.246915  ... NaN NaN NaN NaN NaN NaN NaN generated   116.012232  True
+132 CC1=NOC(C)=C1/N=N/C2=C(N)C=CC=C2    NaN NaN NaN NaN 405.842628  NaN NaN NaN 303.485432  ... NaN NaN NaN NaN NaN NaN NaN generated   102.357196  True
+112 CC(N=C1C)=C1/N=N/C2=CC=C(NC)C=C2    NaN NaN NaN NaN 401.173889  NaN NaN NaN 297.040237  ... NaN NaN NaN NaN NaN NaN NaN generated   104.133652  True
+236 C[N]1C=CC=CC(C=N1)N=NC2=CC=CC=C2    NaN NaN NaN NaN 398.429603  NaN NaN NaN 304.228432  ... NaN NaN NaN NaN NaN NaN NaN generated   94.201171   True
+206 FC1=CC=C1/N=N/C2=CC=C(N)C=C2    NaN NaN NaN NaN 394.663047  NaN NaN NaN 276.977130  ... NaN NaN NaN NaN NaN NaN NaN generated   117.685917  True
+226 CC1=C(C(C)=NN1)/N=N/C2=CC(N)C=C2    NaN NaN NaN NaN 389.036911  NaN NaN NaN 303.518565  ... NaN NaN NaN NaN NaN NaN NaN generated   85.518345   True
+215 C[N]1C=CC=C1N=NC2=CC=CC=C2  NaN NaN NaN NaN 382.419267  NaN NaN NaN 328.099542  ... NaN NaN NaN NaN NaN NaN NaN generated   54.319725   True
+99  CC(N)C(C=C1)C(C)=C1/N=N/C2=CC=C(C)C=C2  NaN NaN NaN NaN 380.977117  NaN NaN NaN 300.832025  ... NaN NaN NaN NaN NaN NaN NaN generated   80.145093   True
+200 FC1=CC=CC=C1/N=N/C2=CC=C(N)C=C2 NaN NaN NaN NaN 380.940378  NaN NaN NaN 277.881480  ... NaN NaN NaN NaN NaN NaN NaN generated   103.058898  True
+59  CC1=C(C(C)=NN1)/N=N/C2=CC(NC)=CC=C2 NaN NaN NaN NaN 380.463655  NaN NaN NaN 290.978399  ... NaN NaN NaN NaN NaN NaN NaN generated   89.485256   True
+268 CC1=C(C(C)=NN1)/N=N/C2=CC=C(N(C)C)N=NC=C2   NaN NaN 

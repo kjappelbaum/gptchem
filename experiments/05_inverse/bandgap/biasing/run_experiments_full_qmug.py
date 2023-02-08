@@ -111,25 +111,25 @@ def sample_across_temperatures(
                 logger.exception(e)
                 continue
             
-        df_for_eval = pd.DataFrame({"smiles": all_valid_smiles, "gap": all_desired_gaps})
-        df_for_eval.drop_duplicates(subset="smiles", inplace=True)
-        if len(df_for_eval) > num_points:
-            df_for_eval_subset = df_for_eval.sample(num_sample)
-        else:
-            df_for_eval_subset = df_for_eval
+    df_for_eval = pd.DataFrame({"smiles": all_valid_smiles, "gap": all_desired_gaps})
+    df_for_eval.drop_duplicates(subset="smiles", inplace=True)
+    if len(df_for_eval) > num_points:
+        df_for_eval_subset = df_for_eval.sample(num_sample)
+    else:
+        df_for_eval_subset = df_for_eval
 
-        logger.info(f"Evaluating generated {len(df_for_eval_subset)} SMILES...")
+    logger.info(f"Evaluating generated {len(df_for_eval_subset)} SMILES...")
 
-        evaluation_res = evaluate_homo_lumo_gap(
-                df_for_eval_subset['smiles'].tolist(),
-                df_for_eval_subset['gap'].tolist(),
-                get_homo_lumo_gaps_kwargs={
-                    "max_parallel": 40,
-                }
-            )
-        found_gaps = evaluation_res["computed_gaps"]
-        for smile, gap in zip(valid_smiles, found_gaps):
-            generated.append({"smiles": smile, "gap": gap})
+    evaluation_res = evaluate_homo_lumo_gap(
+            df_for_eval_subset['smiles'].tolist(),
+            df_for_eval_subset['gap'].tolist(),
+            get_homo_lumo_gaps_kwargs={
+                "max_parallel": 40,
+            }
+        )
+    found_gaps = evaluation_res["computed_gaps"]
+    for smile, gap in zip(valid_smiles, found_gaps):
+        generated.append({"smiles": smile, "gap": gap})
 
     generated_df = pd.DataFrame(generated)
     return generated_df, temp_res, df_for_eval
