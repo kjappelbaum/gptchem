@@ -16,9 +16,9 @@ from gptchem.tuner import Tuner
 num_trials = 10
 TRAIN_SIZE = 92
 TEMPERATURES = [0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0]
-NOISE_LEVEL = [1.0, 0.1, 0.15, 0.2, 0.5, 0.7,  1.0, 5.0, 10, 20, 50]
+NOISE_LEVEL = [0.5, 1.0, 0.1, 0.15, 0.2,  0.7,  1.0, 5.0, 10, 20, 50]
 NUM_SAMPLES = 300
-GROUPS = [ "I",  "Br",  "Cl", "F", "C#CC", "C#CBr", "C=O", "C#C"]
+GROUPS = [ "C#CC", "C#CBr", "C=O", "C#C", "I",  "Br",  "Cl", "F"][::-1]
 
 THRESHOLD = 350
 
@@ -92,7 +92,9 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, grou
                 expected.append(row["representation"][0])
  
             assert len(expected) == len(formatted_test)
-
+            fragment_count = sum([group in x for x in smiles_metrics["valid_smiles"] ])
+            logger.debug(f"Fragment count: {fragment_count}")
+            fragment_fraction = fragment_count / len(smiles_metrics["valid_smiles"])
         except Exception as e:
             logger.exception(f"Error evaluating SMILES: {e}")
             constrain_satisfaction = {}

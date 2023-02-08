@@ -178,7 +178,7 @@ def main(
                 "minimum_step": minimum_step_,
             }
         )
-
+        save_pickle(Path(tune_res["outdir"]) / f"results_{iter_counter}.pkl", results)
         iter_counter += 1
 
     save_pickle(Path(tune_res["outdir"]) / "results.pkl", results)
