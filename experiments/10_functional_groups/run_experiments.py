@@ -16,9 +16,9 @@ from gptchem.tuner import Tuner
 num_trials = 10
 TRAIN_SIZE = 92
 TEMPERATURES = [0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0]
-NOISE_LEVEL = [1.0, 0.1, 0.15, 0.2, 0.5, 0.7,  1.0, 5.0, 10, 20, 50]
+NOISE_LEVEL = [1.0, 0.5, 0.1, 0.15, 0.2, 0.5, 0.7,  1.0, 5.0, 10, 20, 50]
 NUM_SAMPLES = 300
-GROUPS = ["C=O", "C#C", "I",  "Br",  "Cl", "F", "C#CC", "C#CBr"]
+GROUPS = [  "C#CC", "C#CBr", "C=O", "C#C",  "I",  "Br",  "Cl", "F",]
 
 THRESHOLD = 350
 
