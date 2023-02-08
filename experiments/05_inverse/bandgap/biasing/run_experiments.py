@@ -118,6 +118,9 @@ def sample_across_temperatures(
         evaluation_res = evaluate_homo_lumo_gap(
                 df_for_eval_subset['smiles'].tolist(),
                 df_for_eval_subset['gap'].tolist(),
+                get_homo_lumo_gaps_kwargs={
+                    "max_parallel": 40,
+                }
             )
         found_gaps = evaluation_res["computed_gaps"]
         for smile, gap in zip(valid_smiles, found_gaps):
