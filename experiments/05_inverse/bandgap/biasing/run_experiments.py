@@ -113,7 +113,12 @@ def sample_across_temperatures(
             
         df_for_eval = pd.DataFrame({"smiles": all_valid_smiles, "gap": all_desired_gaps})
         df_for_eval.drop_duplicates(subset="smiles", inplace=True)
-        df_for_eval_subset = df_for_eval.sample(num_sample)
+        if len(df_for_eval) > num_points:
+            df_for_eval_subset = df_for_eval.sample(num_sample)
+        else:
+            df_for_eval_subset = df_for_eval
+
+        logger.info(f"Evaluating generated {len(df_for_eval_subset)} SMILES...")
 
         evaluation_res = evaluate_homo_lumo_gap(
                 df_for_eval_subset['smiles'].tolist(),
