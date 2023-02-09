@@ -905,3 +905,4 @@ gptchemcache/
 *.db-wal
 *.db-journal
 *.db3
+*.pkl

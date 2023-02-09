@@ -42,7 +42,7 @@ def train_test_evaluate(train_size, seed):
     data['target'] = data['phase_binary_encoded']
     data.dropna(inplace=True)
     data = data[['formula', 'target']]
-    train_data, test_data = train_test_split(data, test_size=train_size, random_state=seed, stratify=data['target'])
+    train_data, test_data = train_test_split(data,train_size=train_size, test_size=TEST_SIZE, random_state=seed, stratify=data['target'])
     cb = CrabNet(mat_prop="phase_binary_encoded", classification=True, learningcurve=False, losscurve=False, save=False)
     cb.classification = True
     cb.optimizer = None
