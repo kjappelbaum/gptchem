@@ -18,7 +18,7 @@ TRAIN_SIZE = 92
 TEMPERATURES = [0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0]
 NOISE_LEVEL = [0.1,  0.15, 0.5, 0.2,  0.7,  1.0, 5.0, 10, 20, 50]
 NUM_SAMPLES = 300
-GROUPS = [ "C=O", "C#C", "I",  "Br",  "Cl", "F", "C#CC", "C#CBr"]
+GROUPS = [ "I",  "Br",  "Cl", "F", "C#CC", "C#CBr","C=O", "C#C"]
 
 THRESHOLD = 350
 
@@ -59,7 +59,7 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, grou
         "prompt" in formatted_test.columns
     ), f"Missing prompt column. Columns: {formatted_test.columns}"
 
-    querier = Querier("ada:ft-personal-2023-02-05-21-51-00", max_tokens=600)
+    querier = Querier("ada:ft-lsmoepfl-2023-02-09-13-32-32", max_tokens=600)
     extractor = InverseExtractor()
 
     train_smiles = formatted_train["label"]
@@ -121,7 +121,7 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, grou
         "group": group
     }
 
-    save_pickle(Path("out") / Path("summary.pkl"), summary)
+    save_pickle(Path("out2") / Path("summary.pkl"), summary)
 
 
 if __name__ == "__main__":
