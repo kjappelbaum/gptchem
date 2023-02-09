@@ -147,14 +147,17 @@ def main(
 
     current_mean = np.median(gaps)
     logger.info(f"Current mean: {current_mean}")
-
+    generated_dfs = []
     while current_mean < target_mean and iter_counter < max_iter:
         minimum_step_ = minimum_step
         logger.info(f"Iteration {iter_counter}")
         formatted, tune_res = train(smiles, gaps)
         generated_df, temp_res, df_for_eval = sample_across_temperatures(tune_res, current_mean)
+        generated_dfs.append(generated_df)
+
+        # ToDo: also incorporate here some of the old ones
         relevant_smiles, relevant_gaps = select_relevant_smiles_and_gaps(
-            generated_df, current_mean, minimum_step
+            pd.concat(generated_dfs), current_mean, minimum_step
         )
         while len(relevant_smiles) == 0:
             minimum_step_ = minimum_step / 2

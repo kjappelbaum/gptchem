@@ -37,25 +37,19 @@ def train_test_evaluate(train_size, noise_level, num_samples, temperatures, grou
         representation_column="SMILES",
         property_columns=["GFN2_HOMO_LUMO_GAP_mean_ev"],
         property_names=["bandgap"],
-        num_digits=1,
+        num_digits=2,
     )
 
     formatter._suffix = f" and {group} as part of the molecule?"
 
-    train_data = data.sample(n=train_size, random_state=seed)
+    train_data = data
     prevalence = get_prevalence(train_data, group)
 
 
     formatted_train = formatter(train_data)
     assert f" and {group} as part of the molecule?" in formatted_train["prompt"].iloc[0]
 
-    data_test = train_data.copy()
-    data_test[
-        ["GFN2_HOMO_LUMO_GAP_mean_ev"]
-    ] = noise_original_data(
-        data_test[["GFN2_HOMO_LUMO_GAP_mean_ev"]],
-        noise_level=noise_level,
-    )
+    data_test = data
 
     test_size = min(num_samples, len(data_test))
     logger.info(f"Test size: {test_size}")
