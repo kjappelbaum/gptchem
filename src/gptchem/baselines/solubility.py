@@ -189,17 +189,17 @@ def train_test_solubility_regression_baseline(
 
     X_train = compute_fragprints(df_train["SMILES"].values)
     X_test = compute_fragprints(df_test["SMILES"].values)
-    xgbclassifier = XGBRegressionBaseline(seed=42, num_trials=num_trials)
-    xgbclassifier.tune(X_train, y_train)
-    xgbclassifier.fit(X_train, y_train)
-    predictions = xgbclassifier.predict(X_test)
+    # xgbclassifier = XGBRegressionBaseline(seed=42, num_trials=num_trials)
+    # xgbclassifier.tune(X_train, y_train)
+    # xgbclassifier.fit(X_train, y_train)
+    # predictions = xgbclassifier.predict(X_test)
 
     res = {
         "true": y_train,
         "weave": get_regression_metrics(y_test, baselines["weave"]),
         "graph_conv": get_regression_metrics(y_test, baselines["graph_conv"]),
         "gpr": get_regression_metrics(y_test, baselines["gpr"]),
-        "xgb": get_regression_metrics(y_test, predictions),
+      #  "xgb": get_regression_metrics(y_test, predictions),
         "esol": get_regression_metrics(y_test, baselines["esol"]),
     }
 

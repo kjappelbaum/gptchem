@@ -41,7 +41,7 @@ def make_input_frame(smiles, gaps):
 def train(smiles, gaps):
     input_df, formatted = make_input_frame(smiles, gaps)
 
-    tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
+    tuner = Tuner(n_epochs=4, learning_rate_multiplier=0.02, wandb_sync=False)
     tune_res = tuner(formatted)
     return formatted, tune_res
 
@@ -152,7 +152,7 @@ def main(
         minimum_step_ = minimum_step
         logger.info(f"Iteration {iter_counter}")
         formatted, tune_res = train(smiles, gaps)
-        generated_df, temp_res, df_for_eval = sample_across_temperatures(tune_res, current_mean)
+        generated_df, temp_res, df_for_eval = sample_across_temperatures(tune_res, current_mean, num_points=num_samples*20)
         generated_dfs.append(generated_df)
 
         # ToDo: also incorporate here some of the old ones

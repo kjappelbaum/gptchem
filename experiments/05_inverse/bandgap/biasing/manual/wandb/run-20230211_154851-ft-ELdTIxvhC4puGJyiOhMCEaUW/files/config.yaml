@@ -1,0 +1,82 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.13.7
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.9.15
+    start_time: 1676126931.119377
+    t:
+      1:
+      - 55
+      2:
+      - 55
+      3:
+      - 13
+      - 14
+      - 16
+      - 23
+      - 37
+      4: 3.9.15
+      5: 0.13.7
+      8:
+      - 4
+      - 5
+created_at:
+  desc: null
+  value: '2023-02-10T18:16:50'
+fine_tuned_model:
+  desc: null
+  value: ada:ft-lsmoepfl-2023-02-11-03-01-34
+hyperparams:
+  desc: null
+  value:
+    batch_size: 1
+    learning_rate_multiplier: 0.02
+    n_epochs: 8
+    prompt_loss_weight: 0.01
+id:
+  desc: null
+  value: ft-ELdTIxvhC4puGJyiOhMCEaUW
+model:
+  desc: null
+  value: ada
+object:
+  desc: null
+  value: fine-tune
+organization_id:
+  desc: null
+  value: org-TFRJXw3PPQocOWbu71eI2t9U
+result_files:
+  desc: null
+  value:
+    bytes: 39716
+    created_at: 1676084495
+    filename: compiled_results.csv
+    id: file-SrTyHBl8d0cw8PTfEq4XemC6
+    object: file
+    purpose: fine-tune-results
+    status: processed
+    status_details: null
+status:
+  desc: null
+  value: succeeded
+training_files:
+  desc: null
+  value:
+    bytes: 25828
+    created_at: 1676049410
+    filename: /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/10_functional_groups/out/20230210_181648/train.jsonl
+    id: file-DRlN8BlyTgNvgo7OtxDuugly
+    object: file
+    purpose: fine-tune
+    status: processed
+    status_details: null
+updated_at:
+  desc: null
+  value: 1676084495
+validation_files:
+  desc: null
+  value: []

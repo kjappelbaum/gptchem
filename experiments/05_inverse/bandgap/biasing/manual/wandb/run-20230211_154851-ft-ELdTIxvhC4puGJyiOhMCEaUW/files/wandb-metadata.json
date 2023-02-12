@@ -1,0 +1,38 @@
+{
+    "os": "macOS-13.1-arm64-arm-64bit",
+    "python": "3.9.15",
+    "heartbeatAt": "2023-02-11T14:48:51.757940",
+    "startedAt": "2023-02-11T14:48:51.112678",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "wandb",
+        "sync",
+        "-n",
+        "1"
+    ],
+    "state": "running",
+    "program": "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/bin/openai",
+    "git": {
+        "remote": "https://github.com/kjappelbaum/gptchem.git",
+        "commit": "8c46b7f742f8f768af7add9c9f5f21bf9a2108c3"
+    },
+    "email": "kevin.jablonka@epfl.ch",
+    "root": "/Users/kevinmaikjablonka/git/kjappelbaum/gptchem",
+    "host": "Kevins-MacBook-Pro.local",
+    "username": "kevinmaikjablonka",
+    "executable": "/Users/kevinmaikjablonka/miniconda3/envs/gptchem/bin/python",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "disk": {
+        "total": 926.3517189025879,
+        "used": 901.3323440551758
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 32.0
+    }
+}
