@@ -1,6 +1,13 @@
 Getting Started
 ==================
 
+For all examples, we assume that you have an openai API key that you exported as an environment variable:
+
+.. code-block:: bash
+
+    export OPENAI_API_KEY=sk-...    
+
+
 High-level wrapper 
 -----------------------
 

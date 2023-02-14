@@ -39,96 +39,186 @@ To run the baselines, the following additional dependencies are needed:
 - ``tabpfn``. Follow the installation instructions of the `tabpfn repository <https://github.com/automl/TabPFN>`_.
 - ``gpflow``. Follow the installation instructions of the `photoswitch dataset repository <https://github.com/Ryan-Rhys/The-Photoswitch-Dataset>`_
 
-2. Henry coefficients
------------------------
-
-To ensure we can compare with well-tuned baselines, we reuse the data reported by [MoosaviDiversity]_. We also use the model with the hyperparameters reported in this work as baselines.
-
-To run the baselines, the following additional dependencies are needed: 
- 
-- ``xgboost``
 
 3. Classification experiments
 -------------------------------
 
+Each folder will contain a Python script to run the experiments and a notebook to analyze the results.
+
 You will find subfolders for the following experiments: 
-
-Polymers 
-...............
-
-
-To run the baselines, the following additional dependencies are needed: 
- 
-- ``xgboost``
-- ``optuna`` 
-
-
-MOFs
-...........
-
-
 
 HOMO/LUMO gaps
 ..................
 
 See the folder `bandgap`
 
-Heat capacity 
-,,,,,,,,,,,,,,,,,
+To run the baselines, the following additional dependencies are needed:
 
-To run the baseline, follow the `instructed provided by Moosavi et al. <https://github.com/SeyedMohamadMoosavi/tools-cp-porousmat>`_.
+- ``molclr``. Follow the installation instructions of `our fork of the MolCLR repository <https://github.com/kjappelbaum/MolCLR>`_.
+- ``gpflow``. Follow the installation instructions of the `photoswitch dataset repository <https://github.com/Ryan-Rhys/The-Photoswitch-Dataset>`_
+- ``optuna``  Follow the installation instructions of the `optuna repository <https://github.com/optuna/optuna>`_.
+
+
+
+Heat capacity 
+...............
+
+See the folder `cv`
+
+To run the baseline, follow the `instructed provided by Moosavi et al. <https://github.com/SeyedMohamadMoosavi/tools-cp-porousmat>`_. For the composition-based baseline, you also need CrabNet. Follow the installation instructions on Sterling Baird's `fork of the CrabNet repository <https://github.com/sparks-baird/CrabNet>`_.
+
+
+High entropy alloy phase
+..............................
+
+See the folder `hea_phase`
+
+
+High entropy alloy single vs multiphase
+.........................................
+
+See the folder `hea_single_vs_multiphase`
+
+To run the baselines, the following additional dependencies are needed:
+
+- `automatminer` Follow the installation instructions of the `automatminer repository <https://github.com/hackingmaterials/automatminer>`_.
+- `CrabNet`  Follow the installation instructions on Sterling Baird's `fork of the CrabNet repository <https://github.com/sparks-baird/CrabNet>`_.
+
+
+Henry coefficients
+......................  
+
+See the folder `henry`. 
+
+To run the baselines, the following additional dependencies are needed:
+
+- ``optuna``  Follow the installation instructions of the `optuna repository <https://github.com/optuna/optuna>`_.
+
+
+
+Lipophilicity
+.................
+
+See the folder `lipophilicity`
+
+To run the baselines, the following additional dependencies are needed:
+
+- ``molclr``. Follow the installation instructions of `our fork of the MolCLR repository <https://github.com/kjappelbaum/MolCLR>`_.
+- ``gpflow``. Follow the installation instructions of the `photoswitch dataset repository <https://github.com/Ryan-Rhys/The-Photoswitch-Dataset>`_
+- ``optuna``  Follow the installation instructions of the `optuna repository <https://github.com/optuna/optuna>`_.
+
+
+Matbench
+...............
+
+See the folder `matbench`. In there, there is one folder per task. 
+
+- `automatminer` Follow the installation instructions of the `automatminer repository <https://github.com/hackingmaterials/automatminer>`_.
+- `MODNet` Follow the installation instructions of the `MODNet repository <https://github.com/ppdebreuck/modnet>`_.\
+
+
+
+
+OPV
+.......
+
+See the folder `opv`
+
+To run the baselines, the following additional dependencies are needed:
+
+- ``molclr``. Follow the installation instructions of `our fork of the MolCLR repository <https://github.com/kjappelbaum/MolCLR>`_.
+- ``gpflow``. Follow the installation instructions of the `photoswitch dataset repository <https://github.com/Ryan-Rhys/The-Photoswitch-Dataset>`_
+- ``optuna``  Follow the installation instructions of the `optuna repository <https://github.com/optuna/optuna>`_.
 
 
 Photoswitches
 ...............
 
-To run the baselines, the following additional dependencies are needed: 
+See the folder `photoswitch`
 
-- ``tabpfn``. Follow the installation instructions of the `tabpfn repository <https://github.com/automl/TabPFN>`_.
+To run the baselines, the following additional dependencies are needed:
+
 - ``molclr``. Follow the installation instructions of `our fork of the MolCLR repository <https://github.com/kjappelbaum/MolCLR>`_.
 - ``gpflow``. Follow the installation instructions of the `photoswitch dataset repository <https://github.com/Ryan-Rhys/The-Photoswitch-Dataset>`_
+- ``optuna``  Follow the installation instructions of the `optuna repository <https://github.com/optuna/optuna>`_.
 
-OPV
-.......
+
+
+Polymers 
+...............
 
 To run the baselines, the following additional dependencies are needed: 
 
-- ``tabpfn``. Follow the installation instructions of the `tabpfn repository <https://github.com/automl/TabPFN>`_.
-- ``xgboost``
-- ``gpflow``. Follow the installation instructions of the `photoswitch dataset repository <https://github.com/Ryan-Rhys/The-Photoswitch-Dataset>`_
-- ``optuna`` 
+- ``optuna``  Follow the installation instructions of the `optuna repository <https://github.com/optuna/optuna>`_.
 
-High entropy alloys
+
+C-N cross-coupling
 ......................
 
-- ``hea_phase``: Classification of high-entropy alloys (HEA) into "single phase" and "multi phase" based on the dataset reported by [Pei]_. They reported an accuracy of 97% based on 10-fold cross-validation with the 1252 datapoints. They didn't report learnding curves.
-- ``hea_single_vs_multiphase``: Classification of high-entropy alloys (HEA) in "fcc", "bcc", "hcp" and "multi phase" based on the dataset reported by [Pei]_. 
-
-
-Reactions
-............
+See the folder `rxn_doyle`.
 
 To run the baselines, the following additional dependencies are needed: 
 
 - ``gauche``. Follow the installation instructions of the `gauche repository <https://github.com/leojklarner/gauche/>`_.`
 
 
+C-C cross-coupling
+......................
+
+See the folder `rxn_suzuki`.
+
+To run the baselines, the following additional dependencies are needed: 
+
+- ``gauche``. Follow the installation instructions of the `gauche repository <https://github.com/leojklarner/gauche/>`_.`
+
+
+Solubility
+...............
+
+See the folder `solubility`
+
+To run the baselines, the following additional dependencies are needed:
+
+- ``gauche``. Follow the installation instructions of the `gauche repository <https://github.com/leojklarner/gauche/>`_.`
+- ``molclr``. Follow the installation instructions of `our fork of the MolCLR repository <https://github.com/kjappelbaum/MolCLR>`_.
+- ``gpflow``. Follow the installation instructions of the `photoswitch dataset repository <https://github.com/Ryan-Rhys/The-Photoswitch-Dataset>`_
+- ``optuna``  Follow the installation instructions of the `optuna repository <https://github.com/optuna/optuna>`_.
+- ``deepchem`` Follow the installation instructions of the `deepchem repository <https://deepchem.io/>`_.
+
 4. Regression experiments
 ----------------------------
 
+The regression experiments follow the same structure as the classification experiments.
 
 5. Inverse design 
 ---------------------
 
-For the evaluation of the inverse design on molecules, you need the following dependencies: 
+The evaluation of the HOMO-LUMO gap inverse design expects that the scripts are run on a server with `slurm` as job scheduler. 
 
-- ``guacamol``. Follow the installation instructions of the `guacamol repository <>`_
-- ``fcd``. Follow the installation instructions of the `fcd repository <>`_
+Some experiments hard-code pretrained models. You won't have access to those as they are limited to our organization. However, you can fine-tune a model yourself and then change the modelname.
 
+6. Prompt structure 
+----------------------
 
-High-entropy alloys 
-......................
+In this experiments, we attempted to add some examples (with dummy data) to the prompt with the hope that this would make the learning more efficient---because the model might "in-context-learn" the structure of the prompt.
+However, we found this to rather confuse the model.
 
-To compute the diversity metrics, the following additional dependencies are needed: 
+7. Few shot learning
+-------------------------
 
-- ``alloy2vec``. Follow the installation instructions of the `alloy2vec repository <https://github.com/peizong/alloy2vec>`_
+This contains our experiments for in-context learning. Note that this also calls the largest models and hence can be quite expensive to run.
+
+8. Permutation test
+-----------------------
+
+Our experiment on the photoswitch where we permute the labels to see if this is different to learning from chemically meaningful data.
+
+9. Invalid prompts
+----------------------
+
+In those experiments we used some pre-trained models. You won't have access to those as they are limited to our organization. However, you can fine-tune a model yourself and then change the modelname.
+
+10. Functional groups 
+---------------------------
+
+In those experiments we used some pre-trained models. You won't have access to those as they are limited to our organization. However, you can fine-tune a model yourself and then change the modelname.
