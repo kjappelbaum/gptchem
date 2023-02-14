@@ -1,4 +1,3 @@
-import math
 import os
 import pkgutil
 import re
@@ -430,10 +429,10 @@ def evaluate_generated_smiles(
 
 
 def get_regression_metrics(
-    y_true,  # actual values (ArrayLike)
-    y_pred,  # predicted values (ArrayLike)
+    y_true: np.typing.ArrayLike,
+    y_pred: np.typing.ArrayLike,
 ) -> dict:
-
+    """Compute regression metrics."""
     try:
         return {
             "r2": r2_score(y_true, y_pred),
@@ -486,7 +485,8 @@ def evaluate_photoswitch_smiles_pred(
     }
 
 
-def get_homo_lumo_gap(file):
+def get_homo_lumo_gap(file: Union[Path, str]):
+    """Parse HOMO-LUMO gap from xtb output file."""
     with open(file) as f:
         lines = f.readlines()
     for line in lines[::-1]:
@@ -899,6 +899,7 @@ def get_inverse_polymer_metrics(
     max_train: int = 500,
     bins: Optional[List[Tuple[float]]] = None,
 ) -> dict:
+    """Get the inverse design metrics for a set of generated polymers."""
     performances = []
 
     train_polymers = df_train["label"].tolist()

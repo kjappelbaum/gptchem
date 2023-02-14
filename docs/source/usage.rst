@@ -8,6 +8,34 @@ The easiest way to get started with ``gpthem`` is to use the :py:class:`gptchem.
 Those classes mimic the API of ``scikit-learn`` and can often be used drop-in replacements for ``scikit-learn`` models. However, in contrast to typical ``scikit-learn`` models, the ``X`` input is not an array of features, but a list of text representations of the samples.
 
 
+.. code-block:: python
+
+    from gptchem.gpt_classifier import GPTClassifier 
+    from gptchem.tuner import Tuner 
+
+    classifier = GPTClassifier(
+        property_name="transition wavelength", # this is the property name we will use in the prompt template
+        tuner=Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False),
+    )
+
+    classifier.fit(["CC", "CDDFSS"], [0, 1])
+    predictions = classifier.predict(['CCCC', 'CCCCCCCC'])
+
+or 
+
+.. code-block:: python
+
+    from gptchem.gpt_regressor import GPTRegressor 
+    from gptchem.tuner import Tuner 
+
+    regressor = GPTRegressor(
+        property_name="transition wavelength", # this is the property name we will use in the prompt template
+        tuner=Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False),
+    )
+
+    regressor.fit(["CC", "CDDFSS"], [0.1, 1.1])
+    predictions = regressor.predict(['CCCC', 'CCCCCCCC'])
+
 Fine-tuning
 --------------
 

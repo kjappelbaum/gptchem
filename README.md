@@ -1,8 +1,8 @@
-<!--
+
 <p align="center">
-  <img src="https://github.com/kjappelbaum/gptchem/raw/main/docs/source/logo.png" height="150">
+  <img src="https://github.com/kjappelbaum/gptchem/raw/main/docs/source/static/grid_0.png" height="150">
 </p>
--->
+
 
 <h1 align="center">
   gptchem
@@ -12,12 +12,12 @@
     <a href="https://github.com/kjappelbaum/gptchem/actions?query=workflow%3ATests">
         <img alt="Tests" src="https://github.com/kjappelbaum/gptchem/workflows/Tests/badge.svg" />
     </a>
-    <a href="https://pypi.org/project/gptchem">
+    <!-- <a href="https://pypi.org/project/gptchem">
         <img alt="PyPI" src="https://img.shields.io/pypi/v/gptchem" />
     </a>
     <a href="https://pypi.org/project/gptchem">
         <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/gptchem" />
-    </a>
+    </a> -->
     <a href="https://github.com/kjappelbaum/gptchem/blob/main/LICENSE">
         <img alt="PyPI - License" src="https://img.shields.io/pypi/l/gptchem" />
     </a>
@@ -38,24 +38,24 @@
     </a>
 </p>
 
-Use GPT-3 to solve chemistry problems
+Use GPT-3 to solve chemistry problems.
+Most of the repo is currently not intended for use as library but as documentation of our experiments. 
+We'll factor out the experiments (that come with tricky dependencies) into its own repository over time.
 
 ## 💪 Getting Started
 
-> TODO show in a very small amount of space the **MOST** useful thing your package can do.
-Make it as short as possible! You have an entire set of docs for later.
+```python 
+from gptchem.gpt_classifier import GPTClassifier 
+from gptchem.tuner import Tuner 
 
-### Command Line Interface
+classifier = GPTClassifier(
+    property_name="transition wavelength", # this is the property name we will use in the prompt template
+    tuner=Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False),
+)
 
-The gptchem command line tool is automatically installed. It can
-be used from the shell with the `--help` flag to show all subcommands:
-
-```shell
-$ gptchem --help
+classifier.fit(["CC", "CDDFSS"], [0, 1])
+predictions = classifier.predict(['CCCC', 'CCCCCCCC'])
 ```
-
-> TODO show the most useful thing the CLI does! The CLI will have documentation auto-generated
-by `sphinx`.
 
 ## 🚀 Installation
 
@@ -85,11 +85,11 @@ Contributions, whether filing an issue, making a pull request, or forking, are a
 
 The code in this package is licensed under the MIT License.
 
-<!--
+
 ### 📖 Citation
 
 Citation goes here!
--->
+
 
 <!--
 ### 🎁 Support

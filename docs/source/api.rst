@@ -1,6 +1,19 @@
 API Documentation
 ==================
 
+Classifier 
+-------------------
+
+.. automodule:: gptchem.gpt_classifier
+   :members:
+
+
+Regressor 
+-------------------
+
+.. automodule:: gptchem.gpt_regressor
+   :members:
+
 Formatter
 ---------
 

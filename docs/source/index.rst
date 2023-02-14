@@ -1,6 +1,9 @@
 gptchem |release| Documentation
 ===============================
 
+.. image:: static/grid_0.png
+   :alt: Stable diffusion's idea of GPT for chemistry
+
 Table of Contents
 -----------------
 .. toctree::

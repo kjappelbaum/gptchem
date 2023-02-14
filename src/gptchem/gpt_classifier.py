@@ -1,8 +1,6 @@
 from typing import Optional
 
-import numpy as np
 import pandas as pd
-from fastcore.foundation import L
 from numpy.typing import ArrayLike
 
 from gptchem.extractor import ClassificationExtractor
@@ -21,6 +19,19 @@ class GPTClassifier:
         querier_settings: Optional[dict] = None,
         extractor: ClassificationExtractor = ClassificationExtractor(),
     ):
+        """Initialize a GPTClassifier.
+
+        Args:
+            property_name (str): Name of the property to be predicted.
+               This will be part of the prompt.
+            tuner (Tuner): Tuner object to be used for fine tuning.
+               This specifies the model to be used and the fine-tuning settings.
+            querier_settings (Optional[dict], optional): Settings for the querier.
+                Defaults to None.
+            extractor (ClassificationExtractor, optional): Callable object that can extract
+                integers from the completions produced by the querier.
+                Defaults to ClassificationExtractor().
+        """
         self.property_name = property_name
         self.tuner = tuner
         self.querier_setting = (
@@ -42,14 +53,28 @@ class GPTClassifier:
             rows.append({"repr": X[i], "prop": y[i]})
         return pd.DataFrame(rows)
 
-    def fit(self, X: ArrayLike, y: ArrayLike):
+    def fit(self, X: ArrayLike, y: ArrayLike) -> None:
+        """Fine tune a GPT-3 model on a dataset.
+
+        Args:
+            X (ArrayLike): Input data (typically array of molecular representations)
+            y (ArrayLike): Target data (typically array of property values)
+        """
         df = self._prepare_df(X, y)
         formatted = self.formatter(df)
         tune_res = self.tuner(formatted)
         self.model_name = tune_res["model_name"]
         self.tune_res = tune_res
 
-    def predict(self, X: ArrayLike):
+    def predict(self, X: ArrayLike) -> ArrayLike:
+        """Predict property values for a set of molecular representations.
+
+        Args:
+            X (ArrayLike): Input data (typically array of molecular representations)
+
+        Returns:
+            ArrayLike: Predicted property values
+        """
         df = self._prepare_df(X, [0] * len(X))
         formatted = self.formatter(df)
         querier = Querier(self.model_name, **self.querier_setting)

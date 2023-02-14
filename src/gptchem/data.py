@@ -111,6 +111,8 @@ def get_qmug_data() -> pd.DataFrame:
 def get_qmug_small_data() -> pd.DataFrame:
     """Return the data and features used in [QMUG]_.
 
+    For the subset of short SMILES.
+
     We mean-aggregrated the numerical data per SMILES
     and additionally computed SELFIES and INChI.
     """
@@ -204,7 +206,7 @@ def get_suzuki_rxn_data() -> pd.DataFrame:
 
 
 def get_freesolv_data() -> pd.DataFrame:
-    """Return the FreeSolv data []"""
+    """Return the FreeSolv data [freesolv]_"""
     return (
         pystow.module("gptchem")
         .ensure_csv(
@@ -217,7 +219,7 @@ def get_freesolv_data() -> pd.DataFrame:
 
 
 def get_lipophilicity_data() -> pd.DataFrame:
-    """Return the Lipophilicity data []"""
+    """Return the Lipophilicity data parsed from ChEMBL [chembl]_"""
     return (
         pystow.module("gptchem")
         .ensure_csv(
@@ -242,19 +244,6 @@ def get_mof_solvent_data() -> pd.DataFrame:
     )
 
 
-def get_balasz_data():
-    """Return the MOF reaction data []"""
-    return (
-        pystow.module("gptchem")
-        .ensure_csv(
-            "mof_synth",
-            url="https://www.dropbox.com/s/rpoodh94kvkv4qv/BAN_solvents_20230126.csv?dl=1",
-            read_csv_kwargs=dict(sep=","),
-        )
-        .reset_index(drop=True)
-    )
-
-
 def get_matbench_glass():
     """Return the glass formation ability dataset from matbench"""
     return (
@@ -269,7 +258,7 @@ def get_matbench_glass():
 
 
 def get_matbench_is_metal():
-    """Return the is metal dataset from matbench"""
+    """Return the is metal dataset from matbench [matbench]_"""
     return (
         pystow.module("gptchem")
         .ensure_csv(
@@ -282,7 +271,7 @@ def get_matbench_is_metal():
 
 
 def get_matbench_expt_gap():
-    """Return the experimental band gap dataset from matbench"""
+    """Return the experimental band gap dataset from matbench [matbench]_"""
     return (
         pystow.module("gptchem")
         .ensure_csv(
@@ -295,7 +284,7 @@ def get_matbench_expt_gap():
 
 
 def get_matbench_steels():
-    """Return the steel yield strength dataset from matbench"""
+    """Return the steel yield strength dataset from matbench [matbench]_"""
     return (
         pystow.module("gptchem")
         .ensure_csv(
@@ -308,7 +297,7 @@ def get_matbench_steels():
 
 
 def get_water_stability():
-    """Return the water stability dataset used in []"""
+    """Return the water stability dataset used in [waterStability]_"""
     return (
         pystow.module("gptchem")
         .ensure_csv(
