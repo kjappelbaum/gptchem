@@ -55,20 +55,23 @@ class ClassificationExtractor(BaseExtractor):
 
 class FewShotClassificationExtractor(BaseExtractor):
     """Extract integers from completions of few-shot classification tasks."""
+
     _FIRST_NUMBER_REGEX = re.compile(r"(\d+)")
 
     def extract(self, data, **kwargs) -> int:
-        first_number =  self._FIRST_NUMBER_REGEX.findall(data)
+        first_number = self._FIRST_NUMBER_REGEX.findall(data)
         if first_number:
             return self.intify(first_number[0])
         return None
 
+
 class FewShotRegressionExtractor(BaseExtractor):
     """Extract floats from completions of few-shot regression tasks."""
+
     _FIRST_NUMBER_REGEX = re.compile(r"(\d+\.\d+)|(\d+)")
 
     def extract(self, data, **kwargs) -> int:
-        first_number =  self._FIRST_NUMBER_REGEX.findall(data)
+        first_number = self._FIRST_NUMBER_REGEX.findall(data)
         if first_number:
             return self.floatify(first_number[0][0] or first_number[0][1])
         return None

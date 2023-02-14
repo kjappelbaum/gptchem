@@ -1,8 +1,7 @@
 from pathlib import Path
 
-from loguru import logger
-
 from fastcore.xtras import save_pickle
+from loguru import logger
 from sklearn.model_selection import train_test_split
 
 from gptchem.baselines.photoswitch import train_test_photoswitch_classification_baseline
@@ -20,7 +19,8 @@ max_num_test_points = 100
 num_repeats = 10
 
 
-logger.enable('gptchem')
+logger.enable("gptchem")
+
 
 def train_test_model(num_classes, representation, num_train_points, seed):
     data = get_photoswitch_data()
@@ -33,7 +33,7 @@ def train_test_model(num_classes, representation, num_train_points, seed):
     )
 
     formatted = formatter(data)
-    logger.debug('Formatting done, training baselines')
+    logger.debug("Formatting done, training baselines")
     num_test_points = min((max_num_test_points, len(formatted) - num_train_points))
     xgboost_baseline = train_test_photoswitch_classification_baseline(
         data,
@@ -52,7 +52,7 @@ def train_test_model(num_classes, representation, num_train_points, seed):
         seed=seed,
     )
 
-    logger.debug('baselines done, gpt3')
+    logger.debug("baselines done, gpt3")
     train, test = train_test_split(
         formatted,
         train_size=num_train_points,
@@ -93,7 +93,7 @@ if __name__ == "__main__":
         for num_class in num_classes:
             for num_train_points in num_training_points:
                 for representation in representations:
-                    #try:
+                    # try:
                     train_test_model(num_class, representation, num_train_points, i + 3436545)
-                    #except Exception as e:
+                    # except Exception as e:
                     #    print(e)

@@ -14,6 +14,7 @@ from gptchem.formatter import RegressionFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 from gptchem.utils import make_outdir
+
 num_training_points = [10, 20, 50, 100, 200, 500][::-1]
 representations = ["SMILES", "SELFIES", "InChI"][::-1]
 num_repeats = 10
@@ -37,32 +38,34 @@ def train_test_model(representation, num_train_points, seed):
         test_data,
     )
 
-    #tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
+    # tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
 
-    #tune_res = tuner(train_formatted)
-    #querier = Querier(tune_res["model_name"])
-    #completions = querier(test_formatted)
-    #extractor = RegressionExtractor()
-    #extracted = extractor(completions)
+    # tune_res = tuner(train_formatted)
+    # querier = Querier(tune_res["model_name"])
+    # completions = querier(test_formatted)
+    # extractor = RegressionExtractor()
+    # extracted = extractor(completions)
 
-    #res = get_regression_metrics(test_formatted["label"].values, extracted)
+    # res = get_regression_metrics(test_formatted["label"].values, extracted)
 
     summary = {
         "representation": representation,
         "num_train_points": num_train_points,
-      #  **res,
+        #  **res,
         "baseline": gpr_baseline,
     }
     outdir = make_outdir("")
     save_pickle(Path(outdir) / "summary.pkl", summary)
 
-    print(
-        f"Ran train size {num_train_points} "
-    )
+    print(f"Ran train size {num_train_points} ")
 
 
 if __name__ == "__main__":
     for seed in range(num_repeats):
         for representation in representations:
             for num_train_points in num_training_points:
-                train_test_model(representation, num_train_points, seed + 4567)
+                try:
+                    train_test_model(representation, num_train_points, seed + 4567)
+                except Exception as e:
+                    print(e)
+                    continue

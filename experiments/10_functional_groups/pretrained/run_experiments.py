@@ -1,10 +1,11 @@
+import time
 from pathlib import Path
 
 import pandas as pd
 from fastcore.all import L
 from fastcore.xtras import save_pickle
 from loguru import logger
-import time
+
 from gptchem.data import get_qmug_data
 from gptchem.evaluator import evaluate_generated_smiles, evaluate_photoswitch_smiles_pred
 from gptchem.extractor import InverseExtractor

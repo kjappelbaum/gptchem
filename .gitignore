@@ -899,10 +899,14 @@ FodyWeavers.xsd
 # End of https://www.toptal.com/developers/gitignore/api/macos,linux,windows,python,jupyternotebooks,jetbrains,pycharm,vim,emacs,visualstudiocode,visualstudio
 
 scratch/
-gptchemcache/
+./**/gptchemcache/
 *.db
 *.db-shm
 *.db-wal
 *.db-journal
 *.db3
 *.pkl
+
+experiments/03_classification/mof_solvent/
+nohup*
+./**/wandb

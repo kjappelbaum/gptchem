@@ -1,0 +1,73 @@
+# '000000',
+axes.prop_cycle : cycler('color', ['0C5DA5', '00B945', 'FF9500', 'FF2C00', '845B97',  '474747', '9e9e9e', "9A607F"])
+
+#axes.prop_cycle : cycler('color', ["DB444B", "006BA2", "3EBCD2", "379A8B", "EBB434", "#B4BA39", "#9A607F", '#9e9e9e', "#D1B07C"])
+
+
+# Figure size
+figure.figsize : 3.3, 2.5  # max width is 3.5 for single column
+# Set x axis
+xtick.direction : in
+xtick.major.size : 3
+xtick.major.width : 0.5
+xtick.minor.size : 1.5
+xtick.minor.width : 0.5
+xtick.minor.visible : True
+xtick.top : False
+xtick.minor.top: False
+xtick.minor.bottom: False
+
+# Set y axis
+ytick.direction : in
+ytick.major.size : 3
+ytick.major.width : 0.5
+ytick.minor.size : 1.5
+ytick.minor.width : 0.5
+ytick.minor.visible : True
+ytick.minor.left: False
+ytick.right: False
+
+# Set line widths
+axes.linewidth : 0.5
+grid.linewidth : 0.5
+lines.linewidth : 1.
+lines.markersize: 3
+axes.xmargin: 0
+axes.ymargin: 0
+
+# Remove legend frame
+legend.frameon : False
+
+# Always save as 'tight'
+# savefig.bbox : tight
+# savefig.pad_inches : 0.01  # Use virtually all space when we specify figure dimensions
+
+# Font sizes
+axes.labelsize: 11
+xtick.labelsize: 10
+ytick.labelsize: 10
+legend.fontsize: 10
+font.size: 10
+
+# Font Family
+font.family: sans-serif
+font.sans-serif: IBM Plex Sans, Roboto, Helvetica
+mathtext.fontset : dejavusans
+
+# LaTeX packages
+text.latex.preamble : \usepackage{amsmath} \usepackage{amssymb} \usepackage{sfmath}
+
+# remove non-data ink
+axes.spines.top: False
+axes.spines.right: False
+axes.axisbelow: True
+
+# colors 
+
+text.color: 758D99
+axes.labelcolor: 758D99
+axes.edgecolor: 758D99
+xtick.color: 758D99
+ytick.color: 758D99
+figure.facecolor: white
+

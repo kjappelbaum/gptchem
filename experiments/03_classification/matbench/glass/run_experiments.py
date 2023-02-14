@@ -19,11 +19,11 @@ logger.enable("gptchem")
 
 def train_test(train_size, seed):
     data = get_matbench_glass()
-    data['gfa'] = data['gfa'].astype('int')
+    data["gfa"] = data["gfa"].astype("int")
     train, test = train_test_split(
         data, train_size=train_size, random_state=seed, stratify=data["gfa"]
     )
-    data = data[['composition', 'gfa']]
+    data = data[["composition", "gfa"]]
 
     try:
         pipe = MatPipe.from_preset("express")
@@ -32,7 +32,7 @@ def train_test(train_size, seed):
 
         predictions = pipe.predict(test)
 
-        baseline_metrics = evaluate_classification(test['gfa'].values, predictions['gfa predicted'])
+        baseline_metrics = evaluate_classification(test["gfa"].values, predictions["gfa predicted"])
 
     except Exception as e:
         print(e)
@@ -55,7 +55,7 @@ def train_test(train_size, seed):
 
     predictions = classifier.predict(test["composition"].values)
 
-    gpt_metrics = evaluate_classification(test['gfa'].values, predictions)
+    gpt_metrics = evaluate_classification(test["gfa"].values, predictions)
 
     res = {
         "baseline": baseline_metrics,
@@ -63,9 +63,7 @@ def train_test(train_size, seed):
         "train_size": train_size,
     }
 
-    logger.info(
-        "Train size: {train_size}, GPT accuracy: {gpt_metrics['accuracy']}"
-    )
+    logger.info("Train size: {train_size}, GPT accuracy: {gpt_metrics['accuracy']}")
 
     save_pickle(Path(classifier.tune_res["outdir"]) / "summary.pkl", res)
 
@@ -75,4 +73,4 @@ def train_test(train_size, seed):
 if __name__ == "__main__":
     for i in range(num_repeats):
         for train_size in num_train_points:
-            train_test(train_size, i+450)
+            train_test(train_size, i + 450)

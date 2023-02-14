@@ -36,7 +36,6 @@ def train_test(train_size, representation, num_class, seed=42):
         random_state=seed,
     )
 
-
     tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
     tune_res = tuner(train)
     querier = Querier.from_preset(tune_res["model_name"])
@@ -46,9 +45,7 @@ def train_test(train_size, representation, num_class, seed=42):
 
     gpt_metrics = evaluate_classification(test["label"], extracted)
 
-    print(
-        f"Ran train size {train_size} and got accuracy {gpt_metrics['accuracy']}"
-    )
+    print(f"Ran train size {train_size} and got accuracy {gpt_metrics['accuracy']}")
 
     summary = {
         "num_classes": num_class,

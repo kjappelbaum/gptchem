@@ -5,16 +5,19 @@ import re
 import subprocess
 import tempfile
 from collections import Counter, defaultdict
+from functools import lru_cache
 from pathlib import Path
-from typing import Any, Collection, Dict, List, Union
-import matplotlib.pyplot as plt
+from typing import Any, Collection, Dict, List, Optional, Tuple, Union
+
 import fcd
 import joblib
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import pubchempy as pcp
 import pycm
 import submitit
+from diskcache import Cache
 from fastcore.all import L
 from guacamol.utils.chemistry import (
     calculate_internal_pairwise_similarities,
@@ -23,29 +26,31 @@ from guacamol.utils.chemistry import (
     discrete_kldiv,
     is_valid,
 )
-from functools import lru_cache
 from guacamol.utils.data import get_random_subset
 from guacamol.utils.sampling_helpers import sample_unique_molecules, sample_valid_molecules
 from loguru import logger
 from numpy.typing import ArrayLike
 from rdkit import Chem, DataStructs
+from rdkit.Contrib.SA_Score.sascorer import calculateScore as calculate_sascore
 from scipy.optimize import curve_fit, fsolve
 from scipy.stats import entropy, gaussian_kde
 from sklearn.decomposition import PCA
-from sklearn.metrics import max_error, mean_absolute_error, mean_squared_error, r2_score, mean_absolute_percentage_error
+from sklearn.metrics import (
+    max_error,
+    mean_absolute_error,
+    mean_absolute_percentage_error,
+    mean_squared_error,
+    r2_score,
+)
 from strsimpy.levenshtein import Levenshtein
 from strsimpy.longest_common_subsequence import LongestCommonSubsequence
 from strsimpy.normalized_levenshtein import NormalizedLevenshtein
 from tqdm import tqdm
-from rdkit.Contrib.SA_Score.sascorer import calculateScore as calculate_sascore
-from typing import Optional, List, Tuple
+
 from gptchem.fingerprints.polymer import LinearPolymerSmilesFeaturizer, featurize_many_polymers
 from gptchem.models import get_e_pi_pistar_model_data, get_polymer_model, get_z_pi_pistar_model_data
 
 from .fingerprints.mol_fingerprints import compute_fragprints
-
-
-from diskcache import Cache
 
 CACHE_DIR = os.getenv("CACHEDIR", "gptchemcache")
 
@@ -436,8 +441,7 @@ def get_regression_metrics(
             "mean_absolute_error": mean_absolute_error(y_true, y_pred),
             "mean_squared_error": mean_squared_error(y_true, y_pred),
             "rmse": mean_squared_error(y_true, y_pred, squared=False),
-            "mean_absolute_percentage_error": mean_absolute_percentage_error(
-                y_true, y_pred)
+            "mean_absolute_percentage_error": mean_absolute_percentage_error(y_true, y_pred),
         }
     except Exception:
         return {

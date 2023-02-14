@@ -4,11 +4,12 @@
 # Repeat until the mean is greater than 5.5 eV
 from pathlib import Path
 
+import numpy as np
+import pandas as pd
 from fastcore.all import L
 from fastcore.xtras import save_pickle
 from loguru import logger
-import pandas as pd
-import numpy as np
+
 from gptchem.data import get_qmug_data
 from gptchem.evaluator import evaluate_homo_lumo_gap, is_valid
 from gptchem.extractor import InverseExtractor
@@ -20,6 +21,7 @@ TEMPERATURES = [0.0, 0.1, 0.2, 0.5, 0.75, 1.0, 1.25, 1.5]
 NUM_SAMPLES = [100, 50, 500]
 
 logger.enable("gptchem")
+
 
 def make_input_frame(smiles, gaps):
     input_data = []
@@ -106,11 +108,11 @@ def sample_across_temperatures(
                         "valid_desires": valid_desires,
                     }
                 )
-    
+
             except Exception as e:
                 logger.exception(e)
                 continue
-            
+
     df_for_eval = pd.DataFrame({"smiles": all_valid_smiles, "gap": all_desired_gaps})
     df_for_eval.drop_duplicates(subset="smiles", inplace=True)
     if len(df_for_eval) > num_points:
@@ -121,12 +123,12 @@ def sample_across_temperatures(
     logger.info(f"Evaluating generated {len(df_for_eval_subset)} SMILES...")
 
     evaluation_res = evaluate_homo_lumo_gap(
-            df_for_eval_subset['smiles'].tolist(),
-            df_for_eval_subset['gap'].tolist(),
-            get_homo_lumo_gaps_kwargs={
-                "max_parallel": 40,
-            }
-        )
+        df_for_eval_subset["smiles"].tolist(),
+        df_for_eval_subset["gap"].tolist(),
+        get_homo_lumo_gaps_kwargs={
+            "max_parallel": 40,
+        },
+    )
     found_gaps = evaluation_res["computed_gaps"]
     for smile, gap in zip(valid_smiles, found_gaps):
         generated.append({"smiles": smile, "gap": gap})
@@ -152,7 +154,9 @@ def main(
         minimum_step_ = minimum_step
         logger.info(f"Iteration {iter_counter}")
         formatted, tune_res = train(smiles, gaps)
-        generated_df, temp_res, df_for_eval = sample_across_temperatures(tune_res, current_mean, num_points=num_samples*20)
+        generated_df, temp_res, df_for_eval = sample_across_temperatures(
+            tune_res, current_mean, num_points=num_samples * 20
+        )
         generated_dfs.append(generated_df)
 
         # ToDo: also incorporate here some of the old ones

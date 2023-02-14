@@ -50,7 +50,7 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
     expected = []
     for i, row in formatted_test.iterrows():
         expected.append(row["representation"][0])
-    logger.debug(f'Expecting gaps such as {expected[:2]}')
+    logger.debug(f"Expecting gaps such as {expected[:2]}")
     res_at_temp = []
     for temp in temperatures:
         try:
@@ -63,7 +63,9 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
             smiles_metrics_all = evaluate_generated_smiles(generated_smiles, data["SMILES"])
 
             logger.debug(f"SMILES metrics (all): {smiles_metrics_all}")
-            assert len(smiles_metrics["valid_indices"]) <= len(generated_smiles), "Found more valid SMILES than generated"
+            assert len(smiles_metrics["valid_indices"]) <= len(
+                generated_smiles
+            ), "Found more valid SMILES than generated"
 
             logger.info(f"Evaluating constraint satisfaction...")
             try:
@@ -77,7 +79,7 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
                     )
                     logger.debug(f"Constrain satisfaction: {constrain_satisfaction_valid}")
 
-                    constrain_satisfaction_novel =  evaluate_homo_lumo_gap(
+                    constrain_satisfaction_novel = evaluate_homo_lumo_gap(
                         smiles_metrics["novel_smiles"],
                         expected_gaps=expected_e,
                     )
@@ -91,7 +93,6 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
                         expected_gaps=expected,
                     )
 
-
             except Exception as e:
                 logger.exception(f"{e}")
                 constrain_satisfaction_valid, constrain_satisfaction_novel = {}, {}
@@ -102,8 +103,8 @@ def train_test(num_train_points, temperatures, num_samples, noise_level, seed):
                 "train_smiles": formatted_train["label"],
                 **smiles_metrics,
                 "smiles_metrics_all": smiles_metrics_all,
-                'constrain_satisfaction': constrain_satisfaction_valid, 
-                "constrain_satisfaction_novel":constrain_satisfaction_novel , 
+                "constrain_satisfaction": constrain_satisfaction_valid,
+                "constrain_satisfaction_novel": constrain_satisfaction_novel,
                 "temperature": temp,
             }
             res_at_temp.append(res)
@@ -128,7 +129,7 @@ if __name__ == "__main__":
     for seed in range(num_samples):
         for noise_level in noise_levels:
             for num_train_point in num_train_points:
-                #try:
+                # try:
                 train_test(num_train_point, temperatures, num_samples, noise_level, seed)
-                #except Exception as e:
+                # except Exception as e:
                 #    logger.exception(f"{e}")

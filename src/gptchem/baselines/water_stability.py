@@ -1,6 +1,7 @@
-from gptchem.models.xgboost import XGBClassificationBaseline
-from gptchem.evaluator import evaluate_classification
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
+
+from gptchem.evaluator import evaluate_classification
+from gptchem.models.xgboost import XGBClassificationBaseline
 
 WATER_STABILITY_FEATURES = features = [
     "M_AtomicRadii",
@@ -98,13 +99,14 @@ WATER_STABILITY_FEATURES = features = [
     "L_nh2o",
 ]
 
-def train_test_waterstability_baseline(train, test, num_trials:int=100, seed: int=42):
-    
+
+def train_test_waterstability_baseline(train, test, num_trials: int = 100, seed: int = 42):
+
     X_train = train[features]
     X_test = test[features]
 
-    y_train = train['stability_int']
-    y_test = test['stability_int']
+    y_train = train["stability_int"]
+    y_test = test["stability_int"]
 
     baseline = XGBClassificationBaseline(num_trials=num_trials, seed=seed)
     baseline.tune(X_train, y_train)
@@ -112,12 +114,11 @@ def train_test_waterstability_baseline(train, test, num_trials:int=100, seed: in
 
     xgb_predictions = baseline.predict(X_test)
 
-
     classifier = TabPFNClassifier(device="cpu", N_ensemble_configurations=32)
     classifier.fit(X_train, y_train)
     predictions, _ = classifier.predict(X_test, return_winning_probability=True)
 
     return {
-        'xgboost': evaluate_classification(y_test, xgb_predictions),
-        'tabpfn': evaluate_classification(y_test, predictions)
+        "xgboost": evaluate_classification(y_test, xgb_predictions),
+        "tabpfn": evaluate_classification(y_test, predictions),
     }

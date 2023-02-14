@@ -199,7 +199,7 @@ def train_test_solubility_regression_baseline(
         "weave": get_regression_metrics(y_test, baselines["weave"]),
         "graph_conv": get_regression_metrics(y_test, baselines["graph_conv"]),
         "gpr": get_regression_metrics(y_test, baselines["gpr"]),
-      #  "xgb": get_regression_metrics(y_test, predictions),
+        #  "xgb": get_regression_metrics(y_test, predictions),
         "esol": get_regression_metrics(y_test, baselines["esol"]),
     }
 

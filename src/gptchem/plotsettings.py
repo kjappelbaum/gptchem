@@ -1,7 +1,9 @@
 import sys
-sys.path.append('/Users/kevinmaikjablonka/git/kjappelbaum/plotutils/')
-import matplotlib.pyplot as plt 
+
+import matplotlib.pyplot as plt
 import matplotx
-plt.style.use('/Users/kevinmaikjablonka/git/kjappelbaum/plotutils/kevin.mplstyle')
-from plotutils import range_frame, ylabel_top, add_identity
+
+plt.style.use("kevin.mplstyle")
 import numpy as np
+
+from .plotutils import add_identity, range_frame, ylabel_top

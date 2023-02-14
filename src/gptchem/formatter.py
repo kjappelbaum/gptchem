@@ -13,12 +13,13 @@
 import random
 from typing import Collection, List, Optional
 from urllib.parse import quote
-from loguru import logger
+
 import numpy as np
 import pandas as pd
 import selfies
 import yaml
 from fastcore.basics import basic_repr
+from loguru import logger
 from numpy.typing import ArrayLike
 from rdkit import Chem, RDLogger
 from rdkit.Chem import AllChem
@@ -985,6 +986,7 @@ class InverseDesignFormatter(BaseFormatter):
     _PROMPT_TEMPLATE = "{prefix}What is a molecule with {property}{suffix}{end_prompt}"
     _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
     _CHECK_NAN = True
+
     def __init__(
         self,
         representation_column: str,
@@ -1027,7 +1029,7 @@ class InverseDesignFormatter(BaseFormatter):
                     v = np.around(v, self.num_digits)
                     # convert to string with self.num_digits decimal places
                     v = f"{v:.{self.num_digits}f}"
-                
+
                 strings.append(f"{p} {v}")
 
         return " ,".join(strings)
@@ -1061,7 +1063,9 @@ class InverseDesignFormatter(BaseFormatter):
                 self.bins = bins
             else:
                 bins = self.bins
-            prop = pd.cut(prop.flatten(), bins=bins, labels=self.class_names, include_lowest=True).astype(int)
+            prop = pd.cut(
+                prop.flatten(), bins=bins, labels=self.class_names, include_lowest=True
+            ).astype(int)
             prop = [[p] for p in prop]
         return pd.DataFrame([self._format(r, p) for r, p in zip(representation, prop)])
 
@@ -1069,10 +1073,13 @@ class InverseDesignFormatter(BaseFormatter):
 
     def __call__(self, df: pd.DataFrame) -> pd.DataFrame:
         return self.format_many(df)
- 
+
 
 class InverseDesignFormatterWithComposition(InverseDesignFormatter):
-    _PROMPT_TEMPLATE = "{prefix}What is a molecule with {property} and {composition}{suffix}{end_prompt}"  
+    _PROMPT_TEMPLATE = (
+        "{prefix}What is a molecule with {property} and {composition}{suffix}{end_prompt}"
+    )
+
     def __init__(
         self,
         representation_column: str,
@@ -1092,7 +1099,6 @@ class InverseDesignFormatterWithComposition(InverseDesignFormatter):
         self.composition_columns = composition_columns
         self.composition_names = composition_names
 
- 
     def _format(self, representation, prop) -> dict:
         return {
             "prompt": self._PROMPT_TEMPLATE.format(
@@ -1122,9 +1128,12 @@ class InverseDesignFormatterWithComposition(InverseDesignFormatter):
                 self.bins = bins
             else:
                 bins = self.bins
-            prop = pd.cut(prop.flatten(), bins=bins, labels=self.class_names, include_lowest=True).astype(int)
+            prop = pd.cut(
+                prop.flatten(), bins=bins, labels=self.class_names, include_lowest=True
+            ).astype(int)
             prop = [[p] for p in prop]
-        return pd.DataFrame([self._format(r, p) for r, p in zip(representation, prop)]) 
+        return pd.DataFrame([self._format(r, p) for r, p in zip(representation, prop)])
+
 
 class MOFSynthesisRecommenderFormatter(BaseFormatter):
     _PROMPT_TEMPLATE = "What is the success of a reaction of {ligand} with {salt} in {solvent} {modifier} at {temperature}C for {time}h{end_prompt}"
@@ -1273,7 +1282,9 @@ def create_example_string(
 
 
 class FewShotFormatter:
-    _PREFIX = "I am a highly intelligent question answering bot that answers questions about {property}."
+    _PREFIX = (
+        "I am a highly intelligent question answering bot that answers questions about {property}."
+    )
     _PROMPT_TEMPLATE = """{prefix}
 
 {examples}
@@ -1292,7 +1303,6 @@ Q: {representation}"""
         self.training_frame = training_frame
 
     __repr__ = basic_repr("representation_column,label_column,property_name,num_classes,qcut")
-
 
     def _format(self, row: pd.Series) -> dict:
         """Format a single row of a dataframe into a prompt and completion.

@@ -10,8 +10,6 @@ from .settings import BASE_OUTDIR
 __all__ = ["enable_logging", "make_outdir"]
 
 
-
-
 def make_outdir(run_name):
     """Make a directory if the current date and time in the format YYYYMMDD_HHMMSS.
 

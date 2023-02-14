@@ -1,16 +1,18 @@
-from gptchem.data import get_photoswitch_data
-from gptchem.querier import Querier
-from gptchem.extractor import FewShotClassificationExtractor
-from gptchem.formatter import FewShotFormatter
+import os
+import time
+from pathlib import Path
+
+import numpy as np
 import pandas as pd
 from fastcore.xtras import save_pickle
-import os
-from pathlib import Path
-from sklearn.model_selection import train_test_split
-import time
-import numpy as np
-from gptchem.evaluator import evaluate_classification
 from loguru import logger
+from sklearn.model_selection import train_test_split
+
+from gptchem.data import get_photoswitch_data
+from gptchem.evaluator import evaluate_classification
+from gptchem.extractor import FewShotClassificationExtractor
+from gptchem.formatter import FewShotFormatter
+from gptchem.querier import Querier
 
 models = [
     "text-davinci-003",
@@ -94,7 +96,7 @@ if __name__ == "__main__":
                 for model in models:
                     for representation in representations:
                         try:
-                            train_test(train_size, representation, model, num_class, seed+1345)
+                            train_test(train_size, representation, model, num_class, seed + 1345)
                         except Exception as e:
                             logger.exception(e)
                             pass

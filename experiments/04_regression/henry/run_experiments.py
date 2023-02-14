@@ -11,6 +11,7 @@ from gptchem.extractor import RegressionExtractor
 from gptchem.formatter import RegressionFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
+from gptchem.utils import make_outdir
 
 train_sizes = [10, 20, 50, 100, 200, 500, 1000][::-1]
 targets = [
@@ -48,24 +49,24 @@ def run_experiment(train_size, target, seed):
         num_trials=100,
     )
 
-    tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
-    tune_res = tuner(train_formatted)
-    querier = Querier(tune_res["model_name"])
-    completions = querier(test_formatted)
-    extractor = RegressionExtractor()
-    extracted = extractor(completions)
+    # tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
+    # tune_res = tuner(train_formatted)
+    # querier = Querier(tune_res["model_name"])
+    # completions = querier(test_formatted)
+    # extractor = RegressionExtractor()
+    # extracted = extractor(completions)
 
-    gpt_metrics = get_regression_metrics(test[target_col], extracted)
+    # gpt_metrics = get_regression_metrics(test[target_col], extracted)
 
     summary = {
         "train_size": train_size,
         "target": target,
         "baseline": baseline_res,
-        "completions": completions,
-        **gpt_metrics,
+        # "completions": completions,
+        # **gpt_metrics,
     }
 
-    save_pickle(Path(tune_res["outdir"]) / "summary.pkl", summary)
+    save_pickle(Path(make_outdir("")) / "summary.pkl", summary)
 
 
 if __name__ == "__main__":

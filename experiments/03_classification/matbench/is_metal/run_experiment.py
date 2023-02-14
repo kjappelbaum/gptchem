@@ -19,8 +19,8 @@ logger.enable("gptchem")
 
 def train_test(train_size, seed):
     data = get_matbench_is_metal()
-    data['is_metal'] = data['is_metal'].astype('int')
-    data = data[['composition', 'is_metal']]
+    data["is_metal"] = data["is_metal"].astype("int")
+    data = data[["composition", "is_metal"]]
     train, test = train_test_split(
         data, train_size=train_size, random_state=seed, stratify=data["is_metal"]
     )
@@ -32,9 +32,11 @@ def train_test(train_size, seed):
 
         predictions = pipe.predict(test)
 
-        baseline_metrics = evaluate_classification(test['is_metal'].values, predictions['is_metal predicted'])
+        baseline_metrics = evaluate_classification(
+            test["is_metal"].values, predictions["is_metal predicted"]
+        )
 
-    except Exception as e:  
+    except Exception as e:
         print(e)
         baseline_metrics = {
             "accuracy": None,
@@ -63,9 +65,7 @@ def train_test(train_size, seed):
         "train_size": train_size,
     }
 
-    logger.info(
-        "Train size: {train_size}, GPT accuracy: {gpt_metrics['accuracy']}"
-    )
+    logger.info("Train size: {train_size}, GPT accuracy: {gpt_metrics['accuracy']}")
 
     save_pickle(Path(classifier.tune_res["outdir"]) / "summary.pkl", res)
 
@@ -75,4 +75,4 @@ def train_test(train_size, seed):
 if __name__ == "__main__":
     for i in range(num_repeats):
         for train_size in num_train_points:
-            train_test(train_size, i+111)
+            train_test(train_size, i + 111)

@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from fastcore.xtras import save_pickle
+from loguru import logger
 from sklearn.model_selection import train_test_split
 
 from gptchem.data import get_photoswitch_data
@@ -9,7 +10,7 @@ from gptchem.extractor import ClassificationExtractor
 from gptchem.formatter import ClassificationFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
-from loguru import logger
+
 num_classes = [2, 5]
 num_training_points = [10, 20, 50, 100, 200]  # 1000
 representations = ["name", "SMILES", "inchi", "selfies"]
@@ -18,13 +19,16 @@ num_repeats = 10
 
 logger.enable("gptchem")
 
+
 def train_test_model(num_classes, representation, num_train_points, seed):
     data = get_photoswitch_data()
 
-    data['shuffled'] = data['E isomer pi-pi* wavelength in nm'].sample(frac=1, random_state=seed).values
+    data["shuffled"] = (
+        data["E isomer pi-pi* wavelength in nm"].sample(frac=1, random_state=seed).values
+    )
 
-    assert data['shuffled'].values is not data['E isomer pi-pi* wavelength in nm'].values
-    
+    assert data["shuffled"].values is not data["E isomer pi-pi* wavelength in nm"].values
+
     formatter = ClassificationFormatter(
         representation_column=representation,
         label_column="shuffled",
@@ -51,9 +55,7 @@ def train_test_model(num_classes, representation, num_train_points, seed):
 
     gpt_metrics = evaluate_classification(test["label"], extracted)
 
-    print(
-        f"Ran train size {num_train_points} and got accuracy {gpt_metrics['accuracy']}"
-    )
+    print(f"Ran train size {num_train_points} and got accuracy {gpt_metrics['accuracy']}")
 
     summary = {
         **gpt_metrics,
