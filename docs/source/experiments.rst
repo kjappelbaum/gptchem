@@ -1,7 +1,9 @@
 Experiments
 ===============
 
-For reproducing experiments from our paper, please have a look at the ``experiments`` folder. 
+For reproducing experiments from our paper, please have a look at the ``experiments`` folder.
+
+You can find prior experiments in `our old repository <https://github.com/kjappelbaum/gpt3forchem>`_.
 
 0. No fine-tuning
 -------------------
