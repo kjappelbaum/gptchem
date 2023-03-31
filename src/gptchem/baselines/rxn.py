@@ -18,7 +18,6 @@ models = [
 
 
 def train_test_rxn_classification_baseline(ds, train_data, test_data, formatter):
-
     res = {}
 
     for fp, kernel in models:
@@ -51,7 +50,6 @@ def train_test_rxn_classification_baseline(ds, train_data, test_data, formatter)
 
 
 def train_test_rxn_regressions_baseline(ds, train_data, test_data):
-
     res = {}
 
     for fp, kernel in models:

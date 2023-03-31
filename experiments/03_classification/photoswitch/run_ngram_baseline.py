@@ -1,26 +1,21 @@
-import pandas as pd
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import MultinomialNB
-
-num_train_points = [10, 20, 50, 100, 200, 500][::-1]
-num_classes = [5, 2]
-representations = ["SMILES", "SELFIES", "InChI"]
-
 import os
 import time
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 from fastcore.xtras import save_pickle
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
 
-from gptchem.data import get_esol_data, get_solubility_test_data
+from gptchem.data import get_photoswitch_data
 from gptchem.evaluator import evaluate_classification
 
-num_train_points = [10, 20, 50, 100, 200, 500][::-1]
-num_classes = [5, 2]
-representations = ["SMILES", "SELFIES", "InChI"]
-
+num_classes = [2, 5]
+num_training_points = [10, 20, 50, 100, 200]  # 1000
+representations = ["name", "SMILES", "inchi", "selfies"]
+max_num_test_points = 100
 num_repeats = 10
 outdir = "ngram_baseline"
 
@@ -29,25 +24,25 @@ if not os.path.exists(outdir):
 
 
 def train_test_model(num_classes, representation, num_train_points, seed):
-    data = get_esol_data()
-    data = data.dropna(subset=["measured log(solubility:mol/L)"])
-    train_subset = data.sample(n=num_train_points, random_state=seed)
-    train_subset = train_subset.reset_index(drop=True)
-    train_subset["binned"] = (
-        train_subset["measured log(solubility:mol/L)"]
-        > np.median(data["measured log(solubility:mol/L)"])
-    ).astype(int)
-    test = get_solubility_test_data()
-    test["binned"] = (
-        test["measured log(solubility:mol/L)"] > np.median(data["measured log(solubility:mol/L)"])
-    ).astype(int)
+    data = get_photoswitch_data()
+    data = data.dropna(subset=[representation, "E isomer pi-pi* wavelength in nm"])
+    data["binned"] = pd.qcut(
+        data["E isomer pi-pi* wavelength in nm"], num_classes, labels=np.arange(num_classes)
+    )
+    train, test = train_test_split(
+        data,
+        train_size=num_train_points,
+        random_state=seed,
+        stratify=data["binned"],
+        test_size=min(len(data) - num_train_points, max_num_test_points),
+    )
 
     vectorizer = CountVectorizer()
-    X_train = vectorizer.fit_transform(train_subset[representation])
+    X_train = vectorizer.fit_transform(train[representation])
     X_test = vectorizer.transform(test[representation])
 
     clf = MultinomialNB()
-    clf.fit(X_train, train_subset["binned"])
+    clf.fit(X_train, train["binned"])
 
     y_pred = clf.predict(X_test)
     y_true = test["binned"]
@@ -73,7 +68,7 @@ def train_test_model(num_classes, representation, num_train_points, seed):
 if __name__ == "__main__":
     for num_class in num_classes:
         for representation in representations:
-            for num_train_point in num_train_points:
+            for num_train_point in num_training_points:
                 for seed in range(num_repeats):
                     try:
                         train_test_model(num_class, representation, num_train_point, seed)
