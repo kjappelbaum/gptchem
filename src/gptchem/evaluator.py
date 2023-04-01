@@ -8,17 +8,12 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any, Collection, Dict, List, Optional, Tuple, Union
 
-
 import joblib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-
 import pycm
-
-
 from fastcore.all import L
-
 from loguru import logger
 from numpy.typing import ArrayLike
 from rdkit import Chem, DataStructs
@@ -34,13 +29,10 @@ from sklearn.metrics import (
     r2_score,
 )
 
-
-
-from gptchem.fingerprints.polymer import  featurize_many_polymers
+from gptchem.fingerprints.polymer import featurize_many_polymers
 from gptchem.models import get_e_pi_pistar_model_data, get_polymer_model, get_z_pi_pistar_model_data
 
 from .fingerprints.mol_fingerprints import compute_fragprints
-
 
 
 def continuous_kldiv(X_baseline: np.ndarray, X_sampled: np.ndarray, pca: bool = False) -> float:
@@ -157,6 +149,7 @@ class KLDivBenchmark:
         """
         from guacamol.utils.chemistry import canonicalize_list
         from guacamol.utils.data import get_random_subset
+
         self.sample_size = sample_size
         self.training_set_molecules = canonicalize_list(
             get_random_subset(training_set, self.sample_size, seed=42), include_stereocenters=False
@@ -177,7 +170,13 @@ class KLDivBenchmark:
         """
         Assess a distribution-matching generator model.
         """
-        from guacamol.utils.chemistry import calculate_internal_pairwise_similarities, calculate_pc_descriptors, canonicalize_list, discrete_kldiv
+        from guacamol.utils.chemistry import (
+            calculate_internal_pairwise_similarities,
+            calculate_pc_descriptors,
+            canonicalize_list,
+            discrete_kldiv,
+        )
+
         if len(molecules) != self.sample_size:
             logger.warning(
                 "The model could not generate enough unique molecules. The score will be penalized."
@@ -245,6 +244,7 @@ class FrechetBenchmark:
             sample_size: how many molecules to generate the distribution statistics from (both reference data and model)
         """
         from guacamol.utils.data import get_random_subset
+
         self.chemnet_model_filename = chemnet_model_filename
         self.sample_size = sample_size
 
@@ -260,6 +260,7 @@ class FrechetBenchmark:
         3. load the model from the temporary file
         """
         import fcd
+
         model_bytes = pkgutil.get_data("fcd", self.chemnet_model_filename)
         assert model_bytes is not None
 
@@ -275,6 +276,7 @@ class FrechetBenchmark:
 
     def score(self, generated_molecules: List[str]):
         import fcd
+
         chemnet = self._load_chemnet()
 
         mu_ref, cov_ref = self._calculate_distribution_statistics(chemnet, self.reference_molecules)
@@ -289,6 +291,7 @@ class FrechetBenchmark:
 
     def _calculate_distribution_statistics(self, model, molecules: List[str]):
         import fcd
+
         sample_std = fcd.canonical_smiles(molecules)
         gen_mol_act = fcd.get_predictions(model, sample_std)
 
@@ -334,6 +337,7 @@ def get_sa_scores(smiles):
 def is_valid_smiles(smiles: str) -> bool:
     """We say a SMILES is valid if RDKit can parse it."""
     from guacamol.utils.chemistry import is_valid
+
     return is_valid(smiles)
 
 
@@ -341,6 +345,7 @@ def is_valid_smiles(smiles: str) -> bool:
 def is_in_pubchem(smiles):
     """Check if a SMILES is in PubChem."""
     import pubchempy as pcp
+
     try:
         res = pcp.get_compounds(smiles, smiles=smiles, namespace="SMILES")
         return (len(res) > 0) & (res[0].cid is not None)
@@ -497,6 +502,7 @@ def get_xtb_homo_lumo_gap(smiles: str) -> float:
     xtb conformers.sdf --opt tight > xtb.out
     """
     from diskcache import Cache
+
     CACHE_DIR = os.getenv("CACHEDIR", "gptchemcache")
 
     # 2 ** 30 = 1 GB
@@ -546,6 +552,7 @@ def get_homo_lump_gaps(
         List of floats
     """
     import submitit
+
     if debug:
         executor = submitit.LocalExecutor(folder="submitit_jobs")
     else:
@@ -789,6 +796,7 @@ def string_distances(training_set: Collection[str], query_string: str) -> dict:
     from strsimpy.levenshtein import Levenshtein
     from strsimpy.longest_common_subsequence import LongestCommonSubsequence
     from strsimpy.normalized_levenshtein import NormalizedLevenshtein
+
     distances = defaultdict(list)
 
     metrics = [
