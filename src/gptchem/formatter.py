@@ -982,7 +982,6 @@ class MOFSolventRecommenderFormatter(BaseFormatter):
 
 
 class InverseDesignFormatter(BaseFormatter):
-
     _PROMPT_TEMPLATE = "{prefix}What is a molecule with {property}{suffix}{end_prompt}"
     _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
     _CHECK_NAN = True
@@ -1302,7 +1301,7 @@ Q: {representation}"""
         self.label_column = label_column
         self.training_frame = training_frame
 
-    __repr__ = basic_repr("representation_column,label_column,property_name,num_classes,qcut")
+    __repr__ = basic_repr("representation_column,label_column,property_name")
 
     def _format(self, row: pd.Series) -> dict:
         """Format a single row of a dataframe into a prompt and completion.

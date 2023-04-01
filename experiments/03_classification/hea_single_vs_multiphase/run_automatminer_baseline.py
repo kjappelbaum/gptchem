@@ -18,7 +18,6 @@ Path(OURDIR).mkdir(exist_ok=True)
 
 
 def train_test_evaluate(train_size, seed):
-
     data = get_hea_phase_data()
     data["composition"] = data["Alloy"]
     data = data[["composition", "phase_binary_encoded"]]

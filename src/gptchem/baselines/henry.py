@@ -363,7 +363,6 @@ FEATURES = (
 def train_test_henry_classification_baseline(
     train_set, test_set, formatter, target_col, num_trials, seed
 ):
-
     X_train, y_train = train_set[FEATURES], train_set[target_col]
     X_test, y_test = test_set[FEATURES], test_set[target_col]
 
@@ -394,7 +393,6 @@ def train_test_henry_classification_baseline(
 
 
 def train_test_henry_regression_baseline(train_set, test_set, formatter, num_trials, seed):
-
     X_train, y_train = train_set[FEATURES], train_set[formatter.label_column]
     X_test, y_test = test_set[FEATURES], test_set[formatter.label_column]
 

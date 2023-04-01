@@ -101,7 +101,6 @@ WATER_STABILITY_FEATURES = features = [
 
 
 def train_test_waterstability_baseline(train, test, num_trials: int = 100, seed: int = 42):
-
     X_train = train[features]
     X_test = test[features]
 
