@@ -1,5 +1,6 @@
-from typing import Optional
+from typing import List, Optional
 
+import numpy as np
 import pandas as pd
 from numpy.typing import ArrayLike
 from sklearn.base import BaseEstimator
@@ -280,3 +281,67 @@ class DifficultNGramClassifier:
         completions = querier(formatted)
         extracted = self.extractor(completions)
         return extracted
+
+
+class MultiRepGPTClassifier(GPTClassifier):
+    """GPT Classifier trained on muliple representations."""
+
+    def __init__(
+        self,
+        property_name: str,
+        tuner: Tuner,
+        querier_settings: Optional[dict] = None,
+        extractor: ClassificationExtractor = ClassificationExtractor(),
+        rep_names: Optional[List[str]] = None,
+    ) -> None:
+        self.property_name = property_name
+        self.tuner = tuner
+        self.querier_setting = (
+            querier_settings if querier_settings is not None else {"max_tokens": 3}
+        )
+        self.extractor = extractor
+        self.formatter = ClassificationFormatter(
+            representation_column="repr",
+            label_column="prop",
+            property_name=property_name,
+            num_classes=None,
+        )
+        self.model_name = None
+        self.tune_res = None
+        self.rep_names = rep_names
+
+    def _prepare_df(self, X: ArrayLike, y: ArrayLike, shuffle: bool = True):
+        # assumes that columns in X are the different representations
+        rows = []
+        for i in range(len(X)):
+            for j in range(len(X[i])):
+                repr_name = self.rep_names[j] + " " if self.rep_names is not None else ""
+                rows.append({"repr": repr_name + X[i][j], "prop": y[i], "mol": i, "rep": j})
+
+        if shuffle:
+            return pd.DataFrame(rows).sample(frac=1)
+        return pd.DataFrame(rows)
+
+    def _predict(self, X: ArrayLike) -> ArrayLike:
+        df = self._prepare_df(X, [0] * len(X), shuffle=False)
+        formatted = self.formatter(df)
+        querier = Querier(self.model_name, **self.querier_setting)
+        completions = querier(formatted)
+        extracted = self.extractor(completions)
+        # reshape such that predictions also have multiple columns
+        # one per representation and one row per molecule
+        # we can get the molecule and the representation from the df
+        predictions = np.zeros((len(X), len(X[0])))
+
+        for i in range(len(X)):
+            for rep in range(len(X[0])):
+                subset = df[(df["mol"] == i) & (df["rep"] == rep)]
+                predictions[i, rep] = extracted[subset.index[0]]
+
+        return predictions
+
+    def predict(self, X: ArrayLike, return_std: bool = False):
+        predictions = self._predict(X)
+        if return_std:
+            return np.mean(predictions, axis=1), np.std(predictions, axis=1)
+        return np.mean(predictions, axis=1)
