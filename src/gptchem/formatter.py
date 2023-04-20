@@ -17,16 +17,12 @@ from urllib.parse import quote
 import numpy as np
 import pandas as pd
 import selfies
-import yaml
 from fastcore.basics import basic_repr
-from loguru import logger
 from numpy.typing import ArrayLike
-from rdkit import Chem, RDLogger
-from rdkit.Chem import AllChem
+from rdkit import RDLogger
 from rdkit.Chem import MolFromSmiles as smi2mol
 from rdkit.Chem import MolToSmiles as mol2smi
-from rdkit.DataStructs.cDataStructs import TanimotoSimilarity
-from selfies import decoder, encoder
+from selfies import decoder
 from sklearn.preprocessing import LabelEncoder
 
 from .types import StringOrNumber
@@ -324,11 +320,13 @@ class ClassificationFormatter(ForwardFormatter):
             else:
                 if self.bins is None:
                     _, bins = pd.cut(
-                        list(label.values) + [np.inf, -np.inf],
+                        list(label.values),
                         self.num_classes,
                         retbins=True,
                         include_lowest=True,
                     )
+                    # change left and right edges to -inf and inf
+                    bins = [-np.inf, *bins[1:-1], np.inf]
                     self.bins = bins
                 else:
                     bins = self.bins
