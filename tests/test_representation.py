@@ -7,7 +7,9 @@ from gptchem.representation import (
     smiles_to_tucan,
     smiles_to_iupac_name,
     smiles_to_max_random,
+    smiles_augment_df,
 )
+from gptchem.data import get_photoswitch_data
 
 
 def test_smiles_to_inchi():
@@ -31,3 +33,10 @@ def test_line_reps_from_smiles():
     assert res["smiles"] == "CCO"
     assert res["deepsmiles"] == "CCO"
     assert len(res["max_random"]) == 4
+
+
+def test_smiles_augment_df():
+    data = get_photoswitch_data()
+    augmented = smiles_augment_df(data, "SMILES", int_aug=10, deduplicate=True)
+
+    assert len(augmented) > len(data)

@@ -9,6 +9,7 @@ from io import StringIO
 import requests
 import pubchempy as pcp
 import time
+import pandas as pd
 
 
 def augment_smiles(smiles, int_aug=50, deduplicate=True):
@@ -144,3 +145,25 @@ def line_reps_from_smiles(smiles: str):
         "max_random": _try_except_none(smiles_to_max_random, smiles),
     }
     return representations
+
+
+def smiles_augment_df(df, smiles_col, int_aug=50, deduplicate=True, include_canonical=True):
+    """
+    Takes a dataframe with a column of SMILES and returns a dataframe with the augmented SMILES.
+    """
+    new_rows = []
+    for _, row in df.iterrows():
+        smiles = []
+        if include_canonical:
+            smiles.append(smiles_to_canoncial(row[smiles_col]))
+
+        smiles.extend(augment_smiles(row[smiles_col], int_aug=int_aug, deduplicate=False))
+        if deduplicate:
+            smiles = list(set(smiles))
+
+        for entry in smiles:
+            new_row = row.copy()
+            new_row[smiles_col] = entry
+            new_rows.append(new_row)
+
+    return pd.DataFrame(new_rows)
