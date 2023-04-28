@@ -1,7 +1,7 @@
 from rdkit import Chem
 import selfies
 import deepsmiles
-from tucan.io.molfile_reader import graph_from_molfile_text
+from tucan.io import graph_from_molfile_text
 from tucan.canonicalization import canonicalize_molecule
 from tucan.serialization import serialize_molecule
 
@@ -107,7 +107,7 @@ def smiles_to_iupac_name(smiles: str):
         time.sleep(0.001)
         rep = "iupac_name"
         url = CACTUS.format(smiles, rep)
-        response = requests.get(url)
+        response = requests.get(url, allow_redirects=True, timeout=10)
         response.raise_for_status()
         name = response.text
         if "html" in name:
