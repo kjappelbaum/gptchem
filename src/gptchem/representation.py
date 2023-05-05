@@ -91,7 +91,7 @@ def smiles_to_tucan(smiles: str):
     For this, create a molfile as StringIO, read it with graph_from_file,
     canonicalize it and serialize it.
     """
-    molfile = Chem.MolToMolBlock(Chem.MolFromSmiles(smiles))
+    molfile = Chem.MolToMolBlock(Chem.MolFromSmiles(smiles), forceV3000=True)
     mol = graph_from_molfile_text(molfile)
     mol = canonicalize_molecule(mol)
     return serialize_molecule(mol)
