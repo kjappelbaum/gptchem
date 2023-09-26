@@ -27,6 +27,7 @@ from sklearn.metrics import (
     mean_absolute_percentage_error,
     mean_squared_error,
     r2_score,
+    roc_auc_score,
 )
 
 from gptchem.fingerprints.polymer import featurize_many_polymers
@@ -118,6 +119,7 @@ def evaluate_classification(
         "racc": cm.Overall_RACC,
         "kappa": cm.Kappa,
         "confusion_matrix": cm,
+        "roc_auc": roc_auc_score(y_true_valid, y_pred_valid),
         "f1_macro": cm.F1_Macro,
         "f1_micro": cm.F1_Micro,
         "frac_valid": frac_valid,
@@ -130,7 +132,7 @@ def evaluate_classification(
 
 class KLDivBenchmark:
     """
-    Computes the KL divergence between a number of samples and the training set for physchem descriptors.
+    Computes the KL divergence between a number of samples and the training set for physchem descriptors. # noqa: E501
     Based on the Gucamol implementation
     https://github.com/BenevolentAI/guacamol/blob/8247bbd5e927fbc3d328865d12cf83cb7019e2d6/guacamol/distribution_learning_benchmark.py
 

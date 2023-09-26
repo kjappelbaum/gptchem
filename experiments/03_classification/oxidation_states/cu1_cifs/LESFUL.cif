@@ -1,0 +1,52 @@
+data_image0
+_cell_length_a       3.6613
+_cell_length_b       6.7774
+_cell_length_c       11.7934
+_cell_angle_alpha    90
+_cell_angle_beta     90
+_cell_angle_gamma    90
+
+_symmetry_space_group_name_H-M    "P 1"
+_symmetry_int_tables_number       1
+
+loop_
+  _symmetry_equiv_pos_as_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_label
+  _atom_site_occupancy
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_thermal_displace_type
+  _atom_site_B_iso_or_equiv
+  _atom_site_type_symbol
+  Cu1      1.0000 0.50000  0.80316  0.50000  Biso   1.000  Cu
+  Cu2      1.0000 0.50000  0.80316  0.00000  Biso   1.000  Cu
+  Cl1      1.0000 0.00000  0.03886  0.50000  Biso   1.000  Cl
+  Cl2      1.0000 0.00000  0.03886  0.00000  Biso   1.000  Cl
+  N1       1.0000 0.67850  0.91620  0.25000  Biso   1.000  N
+  N2       1.0000 0.32150  0.91620  0.75000  Biso   1.000  N
+  N3       1.0000 0.45750  0.65260  0.35180  Biso   1.000  N
+  N4       1.0000 0.54250  0.65260  0.64820  Biso   1.000  N
+  N5       1.0000 0.54250  0.65260  0.85180  Biso   1.000  N
+  N6       1.0000 0.45750  0.65260  0.14820  Biso   1.000  N
+  C1       1.0000 0.53180  0.73660  0.25000  Biso   1.000  C
+  C2       1.0000 0.46820  0.73660  0.75000  Biso   1.000  C
+  C3       1.0000 0.32240  0.46880  0.34930  Biso   1.000  C
+  C4       1.0000 0.67760  0.46880  0.65070  Biso   1.000  C
+  C5       1.0000 0.67760  0.46880  0.84930  Biso   1.000  C
+  C6       1.0000 0.32240  0.46880  0.15070  Biso   1.000  C
+  C7       1.0000 0.25430  0.37010  0.25000  Biso   1.000  C
+  C8       1.0000 0.74570  0.37010  0.75000  Biso   1.000  C
+  H1       1.0000 0.28200  0.41700  0.41400  Biso   1.000  H
+  H2       1.0000 0.71800  0.41700  0.58600  Biso   1.000  H
+  H3       1.0000 0.71800  0.41700  0.91400  Biso   1.000  H
+  H4       1.0000 0.28200  0.41700  0.08600  Biso   1.000  H
+  H5       1.0000 0.72900  0.95400  0.30600  Biso   1.000  H
+  H6       1.0000 0.27100  0.95400  0.69400  Biso   1.000  H
+  H7       1.0000 0.27100  0.95400  0.80600  Biso   1.000  H
+  H8       1.0000 0.72900  0.95400  0.19400  Biso   1.000  H
+  H9       1.0000 0.19200  0.23700  0.25000  Biso   1.000  H
+  H10      1.0000 0.80800  0.23700  0.75000  Biso   1.000  H

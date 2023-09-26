@@ -1,0 +1,1253 @@
+,query,state
+0,"""Ag0.05Zr0.95""",Empty showing fixed spelling results
+1,"""Al0.15Cr0.85""",Fully empty
+2,"""Al0.1Fe0.9""",Results for exact spelling
+3,"""Al0.1Hf0.9""",Empty showing fixed spelling results
+4,"""Al0.1Ti0.9""",Results for exact spelling
+5,"""Al0.1W0.9""",Results for exact spelling
+6,"""Al0.2Fe0.8""",Results for exact spelling
+7,"""Al0.2Ti0.8""",Results for exact spelling
+8,"""Al0.2V0.8""",Empty showing fixed spelling results
+9,"""Al0.3Cr0.7""",Results for exact spelling
+10,"""Al0.3Nb1Ta0.8Ti1.4V0.2Zr1.3""",Results for exact spelling
+11,"""Al0.4Hf0.6Nb1Ta1Ti1Zr1""",Results for exact spelling
+12,"""Al0.4V0.6""",Results for exact spelling
+13,"""Al0.75Hf1Nb1Ta1Ti1Zr1""",Results for exact spelling
+14,"""Al1Cr0.5Nb1Ti1V1""",Results for exact spelling
+15,"""Al1Cr1Mo1Ti1W1""",Results for exact spelling
+16,"""Al1Nb1.5Ta0.5Ti1.5Zr0.5""",Results for exact spelling
+17,"""Al1Nb1Ta1Ti1V1""",Results for exact spelling
+18,"""Al1Nb1Ti1V1""",Results for exact spelling
+19,"""Au0.05Ta0.95""",Empty showing fixed spelling results
+20,"""Au0.05Ti0.95""",Empty showing fixed spelling results
+21,"""Au0.08V0.92""",Empty showing fixed spelling results
+22,"""Au0.1Nb0.9""",Empty showing fixed spelling results
+23,"""Au0.1Zr0.9""",Fully empty
+24,"""Ba0.25Ca0.75""",Results for exact spelling
+25,"""Ba0.25Eu0.75""",Empty showing fixed spelling results
+26,"""Ba0.25Eu0.75""",Empty showing fixed spelling results
+27,"""Ba0.25Sr0.75""",Results for exact spelling
+28,"""Ba0.25Yb0.75""",Empty showing fixed spelling results
+29,"""Ba0.5Ca0.5""",Results for exact spelling
+30,"""Ba0.5Eu0.5""",Results for exact spelling
+31,"""Ba0.5Eu0.5""",Results for exact spelling
+32,"""Ba0.5Sr0.5""",Results for exact spelling
+33,"""Ba0.5Yb0.5""",Results for exact spelling
+34,"""Ba0.75Ca0.25""",Results for exact spelling
+35,"""Ba0.75Eu0.25""",Results for exact spelling
+36,"""Ba0.75Eu0.25""",Results for exact spelling
+37,"""Ba0.75Sr0.25""",Results for exact spelling
+38,"""Ba0.75Yb0.25""",Empty showing fixed spelling results
+39,"""Be0.02W0.98""",Empty showing fixed spelling results
+40,"""Ca0.25Sr0.75""",Results for exact spelling
+41,"""Ca0.5Sr0.5""",Results for exact spelling
+42,"""Ca0.75Sr0.25""",Results for exact spelling
+43,"""Ca0.7Yb0.3""",Empty showing fixed spelling results
+44,"""Ca0.85Yb0.15""",Empty showing fixed spelling results
+45,"""Co0.1Cr0.9""",Empty showing fixed spelling results
+46,"""Cr0.05Ta0.95""",Empty showing fixed spelling results
+47,"""Cr0.1Nb0.9""",Results for exact spelling
+48,"""Cr0.25Fe0.75""",Results for exact spelling
+49,"""Cr0.25Mo0.75""",Results for exact spelling
+50,"""Cr0.25V0.75""",Results for exact spelling
+51,"""Cr0.2W0.8""",Results for exact spelling
+52,"""Cr0.5Fe0.5""",Results for exact spelling
+53,"""Cr0.5Mn0.5""",Results for exact spelling
+54,"""Cr0.5Mo0.5""",Results for exact spelling
+55,"""Cr0.5V0.5""",Results for exact spelling
+56,"""Cr0.75Fe0.25""",Results for exact spelling
+57,"""Cr0.75Mn0.25""",Results for exact spelling
+58,"""Cr0.75Mo0.25""",Results for exact spelling
+59,"""Cr0.75V0.25""",Results for exact spelling
+60,"""Cr0.85Ru0.15""",Empty showing fixed spelling results
+61,"""Cr0.8Re0.2""",Results for exact spelling
+62,"""Cr0.95Ir0.05""",Empty showing fixed spelling results
+63,"""Cr0.9Os0.1""",Empty showing fixed spelling results
+64,"""Cr0.9W0.1""",Results for exact spelling
+65,"""Cr1Mo1Nb1Re1Ta1V1W1""",Results for exact spelling
+66,"""Cr1Mo1Nb1Ta1V1W1""",Results for exact spelling
+67,"""Cs0.25Rb0.75""",Results for exact spelling
+68,"""Cs0.5Rb0.5""",Results for exact spelling
+69,"""Cs0.75Rb0.25""",Results for exact spelling
+70,"""Fe0.1V0.9""",Results for exact spelling
+71,"""Fe0.85Zn0.15""",Results for exact spelling
+72,"""Fe0.8V0.2""",Results for exact spelling
+73,"""Fe0.93Si0.07""",Results for exact spelling
+74,"""Fe0.9Ga0.1""",Results for exact spelling
+75,"""Fe0.9Rh0.1""",Results for exact spelling
+76,"""Ga0.15Ti0.85""",Empty showing fixed spelling results
+77,"""Hf0.25Nb0.75""",Empty showing fixed spelling results
+78,"""Hf0.25Ta0.75""",Results for exact spelling
+79,"""Hf0.25Ti0.75""",Results for exact spelling
+80,"""Hf0.25Zr0.75""",Results for exact spelling
+81,"""Hf0.5Nb0.5""",Results for exact spelling
+82,"""Hf0.5Ta0.5""",Results for exact spelling
+83,"""Hf0.5Ti0.5""",Results for exact spelling
+84,"""Hf0.5Zr0.5""",Results for exact spelling
+85,"""Hf0.75Nb0.25""",Results for exact spelling
+86,"""Hf0.75Ta0.25""",Empty showing fixed spelling results
+87,"""Hf0.75Ti0.25""",Results for exact spelling
+88,"""Hf0.75Zr0.25""",Results for exact spelling
+89,"""Hf1Mo1Nb1Ti1Zr1""",Results for exact spelling
+90,"""Hf1Nb1Ta1Ti1V1Zr1""",Results for exact spelling
+91,"""Hf1Nb1Ta1Ti1Zr1""",Results for exact spelling
+92,"""Hf1Nb1Ta1Zr1""",Results for exact spelling
+93,"""Hf1Nb1Ti1V1Zr1""",Results for exact spelling
+94,"""Hf1Nb1Ti1Zr1""",Results for exact spelling
+95,"""Ir0.02W0.98""",Empty showing fixed spelling results
+96,"""Ir0.05Mo0.95""",Empty showing fixed spelling results
+97,"""Ir0.05Nb0.95""",Empty showing fixed spelling results
+98,"""Ir0.05Ta0.95""",Empty showing fixed spelling results
+99,"""Ir0.05Ti0.95""",Empty showing fixed spelling results
+100,"""Ir0.1V0.9""",Empty showing fixed spelling results
+101,"""Li0.35Mg0.65""",Results for exact spelling
+102,"""Li0.5Mg0.5""",Results for exact spelling
+103,"""Li0.85Mg0.15""",Results for exact spelling
+104,"""Mn0.25V0.75""",Results for exact spelling
+105,"""Mn0.5V0.5""",Results for exact spelling
+106,"""Mn0.6V0.4""",Empty showing fixed spelling results
+107,"""Mn0.7V0.3""",Results for exact spelling
+108,"""Mo0.25Nb0.75""",Fully empty
+109,"""Mo0.25Ta0.75""",Empty showing fixed spelling results
+110,"""Mo0.25Ti0.75""",Results for exact spelling
+111,"""Mo0.25V0.75""",Results for exact spelling
+112,"""Mo0.25W0.75""",Results for exact spelling
+113,"""Mo0.5Nb0.5""",Results for exact spelling
+114,"""Mo0.5Ta0.5""",Results for exact spelling
+115,"""Mo0.5Ti0.5""",Results for exact spelling
+116,"""Mo0.5V0.5""",Results for exact spelling
+117,"""Mo0.5W0.5""",Results for exact spelling
+118,"""Mo0.75Nb0.25""",Results for exact spelling
+119,"""Mo0.75Re0.25""",Results for exact spelling
+120,"""Mo0.75Ta0.25""",Results for exact spelling
+121,"""Mo0.75Ti0.25""",Results for exact spelling
+122,"""Mo0.75V0.25""",Results for exact spelling
+123,"""Mo0.75W0.25""",Results for exact spelling
+124,"""Mo0.7Tc0.3""",Empty showing fixed spelling results
+125,"""Mo0.8Tc0.2""",Empty showing fixed spelling results
+126,"""Mo0.95Os0.05""",Empty showing fixed spelling results
+127,"""Mo0.95Rh0.05""",Empty showing fixed spelling results
+128,"""Mo0.98Pd0.02""",Empty showing fixed spelling results
+129,"""Mo0.9Re0.1""",Results for exact spelling
+130,"""Mo0.9Ru0.1""",Fully empty
+131,"""Mo0.9Tc0.1""",Results for exact spelling
+132,"""Mo1Nb1Re1Ta1Ti1V1W1""",Results for exact spelling
+133,"""Mo1Nb1Re1Ta1V1W1""",Results for exact spelling
+134,"""Mo1Nb1Re1Ta1W1""",Results for exact spelling
+135,"""Mo1Nb1Ta1Ti1V1""",Results for exact spelling
+136,"""Mo1Nb1Ta1Ti1V1W1""",Results for exact spelling
+137,"""Mo1Nb1Ta1V1""",Results for exact spelling
+138,"""Mo1Nb1Ta1V1W1""",Results for exact spelling
+139,"""Mo1Nb1Ta1W1""",Results for exact spelling
+140,"""Mo1Nb1Ti1V1Zr1""",Results for exact spelling
+141,"""Mo21.7Nb20.6Ta15.6V21W21.1""",Results for exact spelling
+142,"""Mo25.6Nb22.7Ta24.4W27.3""",Results for exact spelling
+143,"""Nb0.25Ta0.75""",Results for exact spelling
+144,"""Nb0.25Ti0.75""",Results for exact spelling
+145,"""Nb0.25W0.75""",Empty showing fixed spelling results
+146,"""Nb0.25Zr0.75""",Results for exact spelling
+147,"""Nb0.5Ta0.5""",Results for exact spelling
+148,"""Nb0.5Ti0.5""",Results for exact spelling
+149,"""Nb0.5W0.5""",Results for exact spelling
+150,"""Nb0.5Zr0.5""",Results for exact spelling
+151,"""Nb0.65Ru0.35""",Results for exact spelling
+152,"""Nb0.6Re0.4""",Empty showing fixed spelling results
+153,"""Nb0.75Re0.25""",Empty showing fixed spelling results
+154,"""Nb0.75Ta0.25""",Results for exact spelling
+155,"""Nb0.75Ti0.25""",Results for exact spelling
+156,"""Nb0.75W0.25""",Results for exact spelling
+157,"""Nb0.75Zr0.25""",Results for exact spelling
+158,"""Nb0.8Pd0.2""",Results for exact spelling
+159,"""Nb0.9Os0.1""",Empty showing fixed spelling results
+160,"""Nb0.9Pd0.1""",Fully empty
+161,"""Nb0.9Re0.1""",Results for exact spelling
+162,"""Nb0.9Rh0.1""",Results for exact spelling
+163,"""Nb0.9Ru0.1""",Results for exact spelling
+164,"""Nb1Re1Ta1Ti1V1""",Results for exact spelling
+165,"""Nb1Ta1Ti1V1""",Results for exact spelling
+166,"""Nb1Ta1Ti1V1W1""",Results for exact spelling
+167,"""Nb1Ta1V1W1""",Results for exact spelling
+168,"""Nb1Ti1V1Zr1""",Results for exact spelling
+169,"""Nd0.25Th0.75""",Empty showing fixed spelling results
+170,"""Nd0.5Th0.5""",Results for exact spelling
+171,"""Nd0.75Th0.25""",Empty showing fixed spelling results
+172,"""Os0.05W0.95""",Empty showing fixed spelling results
+173,"""Os0.15Ta0.85""",Empty showing fixed spelling results
+174,"""Os0.15Ti0.85""",Empty showing fixed spelling results
+175,"""Pd0.1V0.9""",Empty showing fixed spelling results
+176,"""Pd0.2V0.8""",Empty showing fixed spelling results
+177,"""Pr0.25Th0.75""",Empty showing fixed spelling results
+178,"""Pr0.5Th0.5""",Empty showing fixed spelling results
+179,"""Pr0.75Th0.25""",Empty showing fixed spelling results
+180,"""Pt0.05V0.95""",Empty showing fixed spelling results
+181,"""Pu0.25Sc0.75""",Empty showing fixed spelling results
+182,"""Pu0.25Zr0.75""",Results for exact spelling
+183,"""Pu0.5Sc0.5""",Empty showing fixed spelling results
+184,"""Pu0.5Zr0.5""",Results for exact spelling
+185,"""Pu0.75Sc0.25""",Empty showing fixed spelling results
+186,"""Pu0.75Zr0.25""",Results for exact spelling
+187,"""Re0.1Ta0.9""",Fully empty
+188,"""Re0.1Ti0.9""",Results for exact spelling
+189,"""Re0.1V0.9""",Empty showing fixed spelling results
+190,"""Re0.1W0.9""",Results for exact spelling
+191,"""Re0.25Ti0.75""",Empty showing fixed spelling results
+192,"""Re0.25V0.75""",Empty showing fixed spelling results
+193,"""Re0.25W0.75""",Results for exact spelling
+194,"""Re0.2Ta0.8""",Results for exact spelling
+195,"""Re0.4Ta0.6""",Results for exact spelling
+196,"""Re0.4Ti0.6""",Empty showing fixed spelling results
+197,"""Re0.5V0.5""",Empty showing fixed spelling results
+198,"""Rh0.15Ti0.85""",Empty showing fixed spelling results
+199,"""Rh0.1Ta0.9""",Empty showing fixed spelling results
+200,"""Rh0.1V0.9""",Empty showing fixed spelling results
+201,"""Ru0.1Ta0.9""",Fully empty
+202,"""Ru0.1Ti0.9""",Results for exact spelling
+203,"""Ru0.1W0.9""",Empty showing fixed spelling results
+204,"""Ru0.2Ta0.8""",Empty showing fixed spelling results
+205,"""Ru0.2Ti0.8""",Results for exact spelling
+206,"""Ru0.2W0.8""",Results for exact spelling
+207,"""Sc0.25Th0.75""",Empty showing fixed spelling results
+208,"""Sc0.25Ti0.75""",Results for exact spelling
+209,"""Sc0.25Y0.75""",Results for exact spelling
+210,"""Sc0.2Zr0.8""",Results for exact spelling
+211,"""Sc0.4Zr0.6""",Results for exact spelling
+212,"""Sc0.5Th0.5""",Empty showing fixed spelling results
+213,"""Sc0.5Ti0.5""",Results for exact spelling
+214,"""Sc0.5Y0.5""",Results for exact spelling
+215,"""Sc0.75Th0.25""",Empty showing fixed spelling results
+216,"""Sc0.75Ti0.25""",Results for exact spelling
+217,"""Sc0.75Y0.25""",Results for exact spelling
+218,"""Sm0.25Y0.75""",Empty showing fixed spelling results
+219,"""Sm0.5Y0.5""",Results for exact spelling
+220,"""Sm0.75Y0.25""",Results for exact spelling
+221,"""Ta0.25Ti0.75""",Results for exact spelling
+222,"""Ta0.25V0.75""",Fully empty
+223,"""Ta0.25W0.75""",Results for exact spelling
+224,"""Ta0.25Zr0.75""",Results for exact spelling
+225,"""Ta0.5Ti0.5""",Results for exact spelling
+226,"""Ta0.5V0.5""",Results for exact spelling
+227,"""Ta0.5W0.5""",Results for exact spelling
+228,"""Ta0.5Zr0.5""",Results for exact spelling
+229,"""Ta0.75Ti0.25""",Results for exact spelling
+230,"""Ta0.75V0.25""",Fully empty
+231,"""Ta0.75W0.25""",Results for exact spelling
+232,"""Ta0.75Zr0.25""",Results for exact spelling
+233,"""Tb0.25Th0.75""",Empty showing fixed spelling results
+234,"""Tb0.25Y0.75""",Empty showing fixed spelling results
+235,"""Tb0.5Th0.5""",Empty showing fixed spelling results
+236,"""Tb0.5Y0.5""",Results for exact spelling
+237,"""Tb0.75Th0.25""",Empty showing fixed spelling results
+238,"""Tb0.75Y0.25""",Results for exact spelling
+239,"""Th0.25Zr0.75""",Results for exact spelling
+240,"""Th0.5Zr0.5""",Fully empty
+241,"""Th0.75Zr0.25""",Empty showing fixed spelling results
+242,"""Ti0.25U0.75""",Empty showing fixed spelling results
+243,"""Ti0.25V0.75""",Results for exact spelling
+244,"""Ti0.25W0.75""",Results for exact spelling
+245,"""Ti0.25Zr0.75""",Results for exact spelling
+246,"""Ti0.5U0.5""",Empty showing fixed spelling results
+247,"""Ti0.5V0.5""",Results for exact spelling
+248,"""Ti0.5W0.5""",Results for exact spelling
+249,"""Ti0.5Zr0.5""",Results for exact spelling
+250,"""Ti0.75U0.25""",Empty showing fixed spelling results
+251,"""Ti0.75V0.25""",Results for exact spelling
+252,"""Ti0.75W0.25""",Results for exact spelling
+253,"""Ti0.75Zr0.25""",Results for exact spelling
+254,"""U0.25Zr0.75""",Results for exact spelling
+255,"""U0.5Zr0.5""",Results for exact spelling
+256,"""U0.75Zr0.25""",Results for exact spelling
+257,"""V0.1Zr0.9""",Empty showing fixed spelling results
+258,"""V0.25W0.75""",Results for exact spelling
+259,"""V0.5W0.5""",Results for exact spelling
+260,"""V0.75W0.25""",Results for exact spelling
+261,"""Ag0.05Rh0.95""",Empty showing fixed spelling results
+262,"""Ag0.25Au0.75""",Results for exact spelling
+263,"""Ag0.25Pd0.75""",Results for exact spelling
+264,"""Ag0.5Au0.5""",Results for exact spelling
+265,"""Ag0.5Pd0.5""",Results for exact spelling
+266,"""Ag0.65Cd0.35""",Empty showing fixed spelling results
+267,"""Ag0.6Li0.4""",Empty showing fixed spelling results
+268,"""Ag0.75Au0.25""",Results for exact spelling
+269,"""Ag0.75Pd0.25""",Results for exact spelling
+270,"""Ag0.7Zn0.3""",Results for exact spelling
+271,"""Ag0.85In0.15""",Results for exact spelling
+272,"""Ag0.85Zn0.15""",Empty showing fixed spelling results
+273,"""Ag0.8Cd0.2""",Results for exact spelling
+274,"""Ag0.8Li0.2""",Empty showing fixed spelling results
+275,"""Ag0.8Mg0.2""",Empty showing fixed spelling results
+276,"""Ag0.8Mn0.2""",Empty showing fixed spelling results
+277,"""Ag0.8Pt0.2""",Empty showing fixed spelling results
+278,"""Ag0.90Al0.10""",Results for exact spelling
+279,"""Ag0.9Mg0.1""",Empty showing fixed spelling results
+280,"""Ag0.9Mn0.1""",Results for exact spelling
+281,"""Ag0.9Pt0.1""",Results for exact spelling
+282,"""Al0.05Co0.95""",Empty showing fixed spelling results
+283,"""Al0.08Pt0.92""",Empty showing fixed spelling results
+284,"""Al0.15Cu0.85""",Fully empty
+285,"""Al0.1Ni0.9""",Results for exact spelling
+286,"""Al0.1Pd0.9""",Empty showing fixed spelling results
+287,"""Al0.25Co1Cr1Fe1Ni1""",Results for exact spelling
+288,"""Al0.375Co1Cr1Fe1Ni1""",Results for exact spelling
+289,"""Al0.3Co1Cr1Fe1Ni1""",Results for exact spelling
+290,"""Al0.8Zn0.2""",Results for exact spelling
+291,"""Al0.95Li0.05""",Results for exact spelling
+292,"""Al0.95Mg0.05""",Results for exact spelling
+293,"""Al0.9Zn0.1""",Results for exact spelling
+294,"""Au0.25Cu0.75""",Results for exact spelling
+295,"""Au0.25Pd0.75""",Results for exact spelling
+296,"""Au0.53V0.47""",Empty showing fixed spelling results
+297,"""Au0.5Cu0.5""",Results for exact spelling
+298,"""Au0.5Pd0.5""",Results for exact spelling
+299,"""Au0.71V0.29""",Empty showing fixed spelling results
+300,"""Au0.75Cu0.25""",Results for exact spelling
+301,"""Au0.7Fe0.3""",Results for exact spelling
+302,"""Au0.85Fe0.15""",Results for exact spelling
+303,"""Au0.85Li0.15""",Empty showing fixed spelling results
+304,"""Au0.85Pt0.15""",Results for exact spelling
+305,"""Au0.8Cr0.2""",Results for exact spelling
+306,"""Au0.8Ni0.2""",Results for exact spelling
+307,"""Au0.95Ta0.05""",Empty showing fixed spelling results
+308,"""Au0.9Cr0.1""",Empty showing fixed spelling results
+309,"""Au0.9Mn0.1""",Empty showing fixed spelling results
+310,"""Au0.9Nb0.1""",Empty showing fixed spelling results
+311,"""Au0.9Ni0.1""",Results for exact spelling
+312,"""Au0.9V0.1""",Fully empty
+313,"""Au0.9Zn0.1""",Results for exact spelling
+314,"""Ca0.25Sr0.75""",Results for exact spelling
+315,"""Ca0.25Yb0.75""",Empty showing fixed spelling results
+316,"""Ca0.5Sr0.5""",Results for exact spelling
+317,"""Ca0.5Yb0.5""",Results for exact spelling
+318,"""Ca0.75Sr0.25""",Results for exact spelling
+319,"""Co0.25Fe0.75""",Results for exact spelling
+320,"""Co0.25Ni0.75""",Results for exact spelling
+321,"""Co0.25Pd0.75""",Results for exact spelling
+322,"""Co0.25Pt0.75""",Results for exact spelling
+323,"""Co0.25Rh0.75""",Results for exact spelling
+324,"""Co0.2Ir0.8""",Empty showing fixed spelling results
+325,"""Co0.5Fe0.5""",Results for exact spelling
+326,"""Co0.5Ni0.5""",Results for exact spelling
+327,"""Co0.5Pd0.5""",Results for exact spelling
+328,"""Co0.5Pt0.5""",Results for exact spelling
+329,"""Co0.5Rh0.5""",Results for exact spelling
+330,"""Co0.75Fe0.25""",Results for exact spelling
+331,"""Co0.75Ni0.25""",Results for exact spelling
+332,"""Co0.75Pd0.25""",Results for exact spelling
+333,"""Co0.75Pt0.25""",Results for exact spelling
+334,"""Co0.75Rh0.25""",Results for exact spelling
+335,"""Co0.7Cr0.3""",Results for exact spelling
+336,"""Co0.85Cr0.15""",Results for exact spelling
+337,"""Co0.9Ga0.1""",Results for exact spelling
+338,"""Co0.9Ge0.1""",Results for exact spelling
+339,"""Co1.5Cr0.5Fe1Mn0.5Ni1""",Results for exact spelling
+340,"""Co1Cr0.75Fe1Mn0.75Ni1""",Results for exact spelling
+341,"""Co1Cr1.25Fe1Mn0.25Ni1""",Results for exact spelling
+342,"""Co1Cr1Fe0.5Mn0.5Ni1.5""",Results for exact spelling
+343,"""Co1Cr1Fe1Mn1Ni1""",Results for exact spelling
+344,"""Co1Cr1Fe1Mo0.1Ni1""",Results for exact spelling
+345,"""Co1Cr1Fe1Mo0.2Ni1""",Results for exact spelling
+346,"""Co1Cr1Fe1Ni1""",Results for exact spelling
+347,"""Co1Cr1Fe1Ni1Pd1""",Results for exact spelling
+348,"""Co1Cr1Fe1Ni1Pd2""",Results for exact spelling
+349,"""Co1Cr1Mn1Ni1""",Results for exact spelling
+350,"""Co1Cr1Ni1""",Results for exact spelling
+351,"""Co1Fe1Mn1Ni1""",Results for exact spelling
+352,"""Co1Fe1Ni1""",Results for exact spelling
+353,"""Co1Fe1Ni1Pd1""",Results for exact spelling
+354,"""Cr0.1Rh0.9""",Empty showing fixed spelling results
+355,"""Cr0.25Pt0.75""",Results for exact spelling
+356,"""Cr0.2Rh0.8""",Empty showing fixed spelling results
+357,"""Cr0.3Pd0.7""",Empty showing fixed spelling results
+358,"""Cr0.5Pt0.5""",Results for exact spelling
+359,"""Cr1Fe1Ni1""",Results for exact spelling
+360,"""Cu0.1Rh0.9""",Results for exact spelling
+361,"""Cu0.25Ni0.75""",Results for exact spelling
+362,"""Cu0.25Pd0.75""",Results for exact spelling
+363,"""Cu0.25Pt0.75""",Results for exact spelling
+364,"""Cu0.5Mn0.5""",Results for exact spelling
+365,"""Cu0.5Ni0.5""",Results for exact spelling
+366,"""Cu0.5Pd0.5""",Results for exact spelling
+367,"""Cu0.5Pt0.5""",Results for exact spelling
+368,"""Cu0.75Mn0.25""",Results for exact spelling
+369,"""Cu0.75Ni0.25""",Results for exact spelling
+370,"""Cu0.75Pd0.25""",Results for exact spelling
+371,"""Cu0.75Pt0.25""",Results for exact spelling
+372,"""Cu0.85Li0.15""",Results for exact spelling
+373,"""Cu0.8Rh0.2""",Results for exact spelling
+374,"""Fe0.15Pt0.85""",Results for exact spelling
+375,"""Fe0.25Ir0.75""",Empty showing fixed spelling results
+376,"""Fe0.25Ni0.75""",Results for exact spelling
+377,"""Fe0.25Pd0.75""",Results for exact spelling
+378,"""Fe0.25Rh0.75""",Empty showing fixed spelling results
+379,"""Fe0.5Ir0.5""",Results for exact spelling
+380,"""Fe0.5Mn0.5""",Results for exact spelling
+381,"""Fe0.5Ni0.5""",Results for exact spelling
+382,"""Fe0.5Pd0.5""",Results for exact spelling
+383,"""Fe0.75Ir0.25""",Empty showing fixed spelling results
+384,"""Fe0.75Mn0.25""",Results for exact spelling
+385,"""Fe0.75Ni0.25""",Results for exact spelling
+386,"""Fe0.75Pd0.25""",Results for exact spelling
+387,"""Fe0.75Rh0.25""",Results for exact spelling
+388,"""Fe0.7Pt0.3""",Results for exact spelling
+389,"""Fe0.85Pt0.15""",Results for exact spelling
+390,"""Fe0.9Os0.1""",Empty showing fixed spelling results
+391,"""Fe0.9Ru0.1""",Results for exact spelling
+392,"""Ir0.25Ni0.75""",Empty showing fixed spelling results
+393,"""Ir0.25Pt0.75""",Results for exact spelling
+394,"""Ir0.25Rh0.75""",Results for exact spelling
+395,"""Ir0.5Ni0.5""",Results for exact spelling
+396,"""Ir0.5Pt0.5""",Results for exact spelling
+397,"""Ir0.5Rh0.5""",Results for exact spelling
+398,"""Ir0.75Ni0.25""",Empty showing fixed spelling results
+399,"""Ir0.75Pt0.25""",Results for exact spelling
+400,"""Ir0.75Rh0.25""",Results for exact spelling
+401,"""Ir0.7Ru0.30""",Empty showing fixed spelling results
+402,"""Ir0.85Ru0.15""",Results for exact spelling
+403,"""Ir0.85W0.15""",Results for exact spelling
+404,"""Ir0.8Mo0.2""",Empty showing fixed spelling results
+405,"""Ir0.8Pd0.2""",Empty showing fixed spelling results
+406,"""Ir0.95Ti0.05""",Empty showing fixed spelling results
+407,"""Ir0.9Mo0.1""",Results for exact spelling
+408,"""Ir0.9Nb0.1""",Results for exact spelling
+409,"""Ir0.9Pd0.1""",Results for exact spelling
+410,"""Ir0.9Ta0.1""",Fully empty
+411,"""Ir0.9V0.1""",Empty showing fixed spelling results
+412,"""Mo0.15Pd0.85""",Empty showing fixed spelling results
+413,"""Mo0.1Rh0.9""",Results for exact spelling
+414,"""Mo0.3Pd0.7""",Empty showing fixed spelling results
+415,"""Nb0.05Ni0.95""",Empty showing fixed spelling results
+416,"""Nb0.1Rh0.9""",Results for exact spelling
+417,"""Nd0.25Th0.75""",Empty showing fixed spelling results
+418,"""Nd0.5Th0.5""",Results for exact spelling
+419,"""Nd0.75Th0.25""",Empty showing fixed spelling results
+420,"""Ni0.25Pd0.75""",Results for exact spelling
+421,"""Ni0.25Pt0.75""",Results for exact spelling
+422,"""Ni0.25Rh0.75""",Empty showing fixed spelling results
+423,"""Ni0.5Pd0.5""",Results for exact spelling
+424,"""Ni0.5Pt0.5""",Results for exact spelling
+425,"""Ni0.5Rh0.5""",Fully empty
+426,"""Ni0.75Pd0.25""",Results for exact spelling
+427,"""Ni0.75Pt0.25""",Results for exact spelling
+428,"""Ni0.75Rh0.25""",Empty showing fixed spelling results
+429,"""Ni0.75Zn0.25""",Results for exact spelling
+430,"""Ni0.85Tc0.15""",Empty showing fixed spelling results
+431,"""Ni0.85V0.15""",Results for exact spelling
+432,"""Ni0.9Mo0.1""",Results for exact spelling
+433,"""Ni0.9V0.1""",Results for exact spelling
+434,"""Ni0.9W0.1""",Results for exact spelling
+435,"""Ni0.9Zn0.1""",Results for exact spelling
+436,"""Os0.1Pt0.9""",Empty showing fixed spelling results
+437,"""Os0.1Rh0.9""",Empty showing fixed spelling results
+438,"""Os0.25Rh0.75""",Empty showing fixed spelling results
+439,"""Os0.2Pt0.8""",Empty showing fixed spelling results
+440,"""Os0.2Rh0.8""",Results for exact spelling
+441,"""Os0.45Rh0.55""",Empty showing fixed spelling results
+442,"""Os0.4Rh0.6""",Empty showing fixed spelling results
+443,"""Pb0.25Tl0.75""",Empty showing fixed spelling results
+444,"""Pb0.5Tl0.5""",Results for exact spelling
+445,"""Pb0.75Tl0.25""",Results for exact spelling
+446,"""Pd0.25Pt0.75""",Results for exact spelling
+447,"""Pd0.25Rh0.75""",Results for exact spelling
+448,"""Pd0.5Pt0.5""",Results for exact spelling
+449,"""Pd0.5Rh0.5""",Results for exact spelling
+450,"""Pd0.6V0.4""",Results for exact spelling
+451,"""Pd0.75Pt0.25""",Results for exact spelling
+452,"""Pd0.75Rh0.25""",Results for exact spelling
+453,"""Pd0.8V0.2""",Results for exact spelling
+454,"""Pr0.25Th0.75""",Empty showing fixed spelling results
+455,"""Pr0.5Th0.5""",Empty showing fixed spelling results
+456,"""Pr0.75Th0.25""",Empty showing fixed spelling results
+457,"""Pt0.25Rh0.75""",Results for exact spelling
+458,"""Pt0.5Rh0.5""",Results for exact spelling
+459,"""Pt0.5Ru0.5""",Results for exact spelling
+460,"""Pt0.6V0.4""",Fully empty
+461,"""Pt0.75Rh0.25""",Results for exact spelling
+462,"""Pt0.75Ru0.25""",Results for exact spelling
+463,"""Pt0.7Re0.3""",Results for exact spelling
+464,"""Pt0.85Zn0.15""",Empty showing fixed spelling results
+465,"""Pt0.85Zr0.15""",Empty showing fixed spelling results
+466,"""Pt0.8Re0.2""",Results for exact spelling
+467,"""Pt0.8V0.2""",Results for exact spelling
+468,"""Pt0.9Re0.1""",Empty showing fixed spelling results
+469,"""Rh0.7Ru0.3""",Results for exact spelling
+470,"""Rh0.85Ru0.15""",Results for exact spelling
+471,"""Rh0.9Ta0.1""",Empty showing fixed spelling results
+472,"""Rh0.9V0.1""",Empty showing fixed spelling results
+473,"""Rh0.9W0.1""",Fully empty
+474,"""Sc0.1Th0.9""",Fully empty
+475,"""Sc0.3Th0.7""",Empty showing fixed spelling results
+476,"""Sc0.5Th0.5""",Empty showing fixed spelling results
+477,"""Tb0.25Th0.75""",Empty showing fixed spelling results
+478,"""Tb0.5Th0.5""",Empty showing fixed spelling results
+479,"""Al0.03Mg0.97""",Empty showing fixed spelling results
+480,"""Al0.03Sc0.97""",Empty showing fixed spelling results
+481,"""Al0.1Hf0.9""",Empty showing fixed spelling results
+482,"""Al0.1Ti0.9""",Results for exact spelling
+483,"""Cd0.25Mg0.75""",Results for exact spelling
+484,"""Cd0.5Mg0.5""",Results for exact spelling
+485,"""Cd0.75Mg0.25""",Results for exact spelling
+486,"""Co0.25Os0.75""",Empty showing fixed spelling results
+487,"""Co0.25Re0.75""",Empty showing fixed spelling results
+488,"""Co0.25Ru0.75""",Results for exact spelling
+489,"""Co0.5Os0.5""",Empty showing fixed spelling results
+490,"""Co0.5Re0.5""",Results for exact spelling
+491,"""Co0.5Ru0.5""",Results for exact spelling
+492,"""Co0.75Os0.25""",Empty showing fixed spelling results
+493,"""Co0.75Re0.25""",Empty showing fixed spelling results
+494,"""Co0.75Ru0.25""",Results for exact spelling
+495,"""Co0.7Ir0.3""",Results for exact spelling
+496,"""Co0.8Rh0.2""",Results for exact spelling
+497,"""Co1Fe1Re1Ru1""",Results for exact spelling
+498,"""Cr0.05Re0.95""",Empty showing fixed spelling results
+499,"""Cr0.1Ir0.9""",Empty showing fixed spelling results
+500,"""Cr0.25Ir0.75""",Empty showing fixed spelling results
+501,"""Cr0.25Os0.75""",Empty showing fixed spelling results
+502,"""Cr0.2Ru0.8""",Empty showing fixed spelling results
+503,"""Cr0.3Rh0.7""",Empty showing fixed spelling results
+504,"""Cr0.45Os0.55""",Empty showing fixed spelling results
+505,"""Cr0.4Ir0.6""",Empty showing fixed spelling results
+506,"""Cr0.4Rh0.6""",Empty showing fixed spelling results
+507,"""Cr0.4Ru0.6""",Results for exact spelling
+508,"""Cr0.5Ir0.5""",Results for exact spelling
+509,"""Cr0.5Rh0.5""",Results for exact spelling
+510,"""Dy1Gd1Ho1Tb1Y1""",Results for exact spelling
+511,"""Dy1Gd1Lu1Tb1Tm1""",Results for exact spelling
+512,"""Dy1Gd1Lu1Tb1Y1""",Results for exact spelling
+513,"""Fe0.2Os0.8""",Empty showing fixed spelling results
+514,"""Fe0.2Ru0.8""",Results for exact spelling
+515,"""Fe0.5Os0.5""",Results for exact spelling
+516,"""Fe0.5Ru0.5""",Results for exact spelling
+517,"""Fe0.6Os0.4""",Fully empty
+518,"""Fe0.6Ru0.4""",Results for exact spelling
+519,"""Gd1Ho1La1Tb1Y1""",Results for exact spelling
+520,"""Hf0.25Sc0.75""",Empty showing fixed spelling results
+521,"""Hf0.25Ti0.75""",Results for exact spelling
+522,"""Hf0.25Zr0.75""",Results for exact spelling
+523,"""Hf0.5Sc0.5""",Results for exact spelling
+524,"""Hf0.5Ti0.5""",Results for exact spelling
+525,"""Hf0.5Zr0.5""",Results for exact spelling
+526,"""Hf0.75Sc0.25""",Empty showing fixed spelling results
+527,"""Hf0.75Ti0.25""",Results for exact spelling
+528,"""Hf0.75Zr0.25""",Results for exact spelling
+529,"""Ir0.25Tc0.75""",Empty showing fixed spelling results
+530,"""Ir0.2Ru0.8""",Results for exact spelling
+531,"""Ir0.4Ru0.6""",Results for exact spelling
+532,"""Ir0.5Mo0.5""",Results for exact spelling
+533,"""Ir0.5Tc0.5""",Empty showing fixed spelling results
+534,"""Ir0.5W0.5""",Results for exact spelling
+535,"""Ir0.6W0.4""",Empty showing fixed spelling results
+536,"""Ir0.7W0.3""",Empty showing fixed spelling results
+537,"""Li0.1Mg0.9""",Results for exact spelling
+538,"""Mo0.07Re0.93""",Empty showing fixed spelling results
+539,"""Mo0.1Rh0.9""",Results for exact spelling
+540,"""Mo0.1Ru0.9""",Empty showing fixed spelling results
+541,"""Mo0.1Ru0.9""",Empty showing fixed spelling results
+542,"""Mo0.25Rh0.75""",Empty showing fixed spelling results
+543,"""Mo0.25Ru0.75""",Results for exact spelling
+544,"""Mo0.2Os0.8""",Empty showing fixed spelling results
+545,"""Mo0.2Os0.8""",Empty showing fixed spelling results
+546,"""Mo0.2Rh0.8""",Empty showing fixed spelling results
+547,"""Mo0.2Ru0.8""",Results for exact spelling
+548,"""Mo0.35Os0.65""",Empty showing fixed spelling results
+549,"""Mo0.35Ru0.65""",Empty showing fixed spelling results
+550,"""Mo0.3Os0.7""",Empty showing fixed spelling results
+551,"""Mo0.3Rh0.7""",Empty showing fixed spelling results
+552,"""Mo0.3Ru0.7""",Results for exact spelling
+553,"""Mo0.4Rh0.6""",Results for exact spelling
+554,"""Mo0.5Pd0.5""",Results for exact spelling
+555,"""Mo0.5Rh0.5""",Results for exact spelling
+556,"""Mo0.5Rh0.5""",Results for exact spelling
+557,"""Mo1Pd1Rh1Ru1""",Results for exact spelling
+558,"""Nb0.1Os0.9""",Empty showing fixed spelling results
+559,"""Nb0.2Os0.8""",Results for exact spelling
+560,"""Ni0.1Os0.9""",Empty showing fixed spelling results
+561,"""Ni0.1Ru0.9""",Empty showing fixed spelling results
+562,"""Ni0.1Tc0.9""",Empty showing fixed spelling results
+563,"""Ni0.25Os0.75""",Empty showing fixed spelling results
+564,"""Ni0.25Tc0.75""",Empty showing fixed spelling results
+565,"""Ni0.2Ru0.8""",Fully empty
+566,"""Ni0.3Ru0.7""",Empty showing fixed spelling results
+567,"""Ni0.4Tc0.6""",Empty showing fixed spelling results
+568,"""Os0.25Re0.75""",Empty showing fixed spelling results
+569,"""Os0.25Ru0.75""",Empty showing fixed spelling results
+570,"""Os0.5Re0.5""",Results for exact spelling
+571,"""Os0.5Ru0.5""",Results for exact spelling
+572,"""Os0.75Re0.25""",Empty showing fixed spelling results
+573,"""Os0.75Ru0.25""",Empty showing fixed spelling results
+574,"""Os0.7V0.3""",Empty showing fixed spelling results
+575,"""Os0.7W0.3""",Empty showing fixed spelling results
+576,"""Os0.85Rh0.15""",Empty showing fixed spelling results
+577,"""Os0.8Ta0.2""",Empty showing fixed spelling results
+578,"""Os0.8V0.2""",Empty showing fixed spelling results
+579,"""Os0.8W0.2""",Results for exact spelling
+580,"""Os0.9Ti0.1""",Empty showing fixed spelling results
+581,"""Os0.9V0.1""",Empty showing fixed spelling results
+582,"""Os0.9W0.1""",Results for exact spelling
+583,"""Pt0.15Ru0.85""",Empty showing fixed spelling results
+584,"""Pt0.1Re0.9""",Empty showing fixed spelling results
+585,"""Pt0.25Re0.75""",Results for exact spelling
+586,"""Pt0.35Re0.65""",Results for exact spelling
+587,"""Pu0.1Sc0.9""",Empty showing fixed spelling results
+588,"""Pu0.25Sc0.75""",Empty showing fixed spelling results
+589,"""Re0.25Ru0.75""",Empty showing fixed spelling results
+590,"""Re0.25Tc0.75""",Empty showing fixed spelling results
+591,"""Re0.5Ru0.5""",Results for exact spelling
+592,"""Re0.5Tc0.5""",Results for exact spelling
+593,"""Re0.75Ru0.25""",Results for exact spelling
+594,"""Re0.75Tc0.25""",Empty showing fixed spelling results
+595,"""Re0.9W0.1""",Results for exact spelling
+596,"""Rh0.25Ru0.75""",Results for exact spelling
+597,"""Rh0.25Tc0.75""",Results for exact spelling
+598,"""Rh0.5Ru0.5""",Results for exact spelling
+599,"""Rh0.5Tc0.5""",Empty showing fixed spelling results
+600,"""Rh0.6W0.4""",Empty showing fixed spelling results
+601,"""Ru0.7W0.3""",Empty showing fixed spelling results
+602,"""Ru0.85Ta0.15""",Empty showing fixed spelling results
+603,"""Ru0.8V0.2""",Empty showing fixed spelling results
+604,"""Ru0.8W0.2""",Empty showing fixed spelling results
+605,"""Ru0.9V0.1""",Empty showing fixed spelling results
+606,"""Ru0.9W0.1""",Empty showing fixed spelling results
+607,"""Sc0.25Y0.75""",Results for exact spelling
+608,"""Sc0.25Zr0.75""",Results for exact spelling
+609,"""Sc0.5Y0.5""",Results for exact spelling
+610,"""Sc0.5Zr0.5""",Results for exact spelling
+611,"""Sc0.75Y0.25""",Results for exact spelling
+612,"""Sc0.75Zr0.25""",Results for exact spelling
+613,"""Sm0.25Y0.75""",Empty showing fixed spelling results
+614,"""Sm0.5Y0.5""",Results for exact spelling
+615,"""Sm0.75Y0.25""",Results for exact spelling
+616,"""Tb0.25Tm0.75""",Empty showing fixed spelling results
+617,"""Tb0.25Y0.75""",Empty showing fixed spelling results
+618,"""Tb0.5Tm0.5""",Results for exact spelling
+619,"""Tb0.5Y0.5""",Results for exact spelling
+620,"""Tb0.75Tm0.25""",Results for exact spelling
+621,"""Tb0.75Y0.25""",Results for exact spelling
+622,"""Ti0.25Zr0.75""",Results for exact spelling
+623,"""Ti0.5Zr0.5""",Results for exact spelling
+624,"""Ti0.75Zr0.25""",Results for exact spelling
+625,"""AgAs""",Results for exact spelling
+626,"""AgBe""",Results for exact spelling
+627,"""AgCo""",Results for exact spelling
+628,"""AgCr""",Results for exact spelling
+629,"""AgCu""",Results for exact spelling
+630,"""AgFe""",Results for exact spelling
+631,"""AgGe""",Results for exact spelling
+632,"""AgMn""",Results for exact spelling
+633,"""AgMo""",Results for exact spelling
+634,"""AgNi""",Results for exact spelling
+635,"""AgOs""",Showing results for exact spelling despite spelling suggestion
+636,"""AgPb""",Results for exact spelling
+637,"""AgPt""",Results for exact spelling
+638,"""AgRe""",Results for exact spelling
+639,"""AgRh""",Results for exact spelling
+640,"""AgSb""",Results for exact spelling
+641,"""AgSi""",Results for exact spelling
+642,"""AgSn""",Results for exact spelling
+643,"""AgW""",Results for exact spelling
+644,"""Al0.25Co1Cr1Cu0.75Fe1Ni1""",Results for exact spelling
+645,"""Al0.25Co1Cr1Cu0.75Fe1Ni1Ti0.5""",Results for exact spelling
+646,"""Al0.25Cr1Cu1Fe1Ni2""",Results for exact spelling
+647,"""Al0.2Co1.5Cr1Fe1Ni1.5Ti0.5""",Results for exact spelling
+648,"""Al0.2Co1.5Cr1Fe1Ni1.5Ti1""",Results for exact spelling
+649,"""Al0.3Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+650,"""Al0.3Co1Cr1Fe1Mo0.1Ni1""",Results for exact spelling
+651,"""Al0.3Co1Cr1Fe1Ni1Ti0.1""",Results for exact spelling
+652,"""Al0.3Co1Cr2Fe1Ni1""",Results for exact spelling
+653,"""Al0.3Cr1Fe1.5Mn1Ni0.5""",Results for exact spelling
+654,"""Al0.3Cr1Fe1Ni1V1""",Results for exact spelling
+655,"""Al0.4Co1Cr1Fe1Mn1Ni1V1""",Results for exact spelling
+656,"""Al0.55V0.45""",Empty showing fixed spelling results
+657,"""Al0.5B0.2Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+658,"""Al0.5B0.6Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+659,"""Al0.5B1Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+660,"""Al0.5Ce1Co1Cu0.5Fe1Ni1Ti0.5""",Results for exact spelling
+661,"""Al0.5Co1Cr1Cu0.5Fe1Ni1""",Results for exact spelling
+662,"""Al0.5Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+663,"""Al0.5Co1Cr1Cu1Fe1Ni1Ti0.8""",Results for exact spelling
+664,"""Al0.5Co1Cr1Cu1Fe1Ni1V0.2""",Results for exact spelling
+665,"""Al0.5Co1Cr1Cu1Fe1Ni1V0.4""",Results for exact spelling
+666,"""Al0.5Co1Cr1Cu1Fe1Ni1V0.6""",Results for exact spelling
+667,"""Al0.5Co1Cr1Cu1Fe1Ni1V0.8""",Results for exact spelling
+668,"""Al0.5Co1Cr1Cu1Fe1Ni1V1""",Results for exact spelling
+669,"""Al0.5Co1Cr1Cu1Fe1Ni1V1.2""",Results for exact spelling
+670,"""Al0.5Co1Cr1Cu1Fe1Ni1V1.4""",Results for exact spelling
+671,"""Al0.5Co1Cr1Cu1Fe1Ni1V1.6""",Results for exact spelling
+672,"""Al0.5Co1Cr1Cu1Fe1Ni1V1.8""",Results for exact spelling
+673,"""Al0.5Co1Cr1Cu1Fe1Ni1V2""",Results for exact spelling
+674,"""Al0.5Co1Cr1Fe1Ni1""",Results for exact spelling
+675,"""Al0.5Co1Cr1Fe1Ni1Ti1""",Results for exact spelling
+676,"""Al0.5Cr1Cu1Fe1Ni2""",Results for exact spelling
+677,"""Al0.5Cr1Fe1.5Mn1Ni0.5""",Results for exact spelling
+678,"""Al0.5Cr1Fe1Ni1Ti1V1""",Results for exact spelling
+679,"""Al0.5Cr1Fe1Ni1V1""",Results for exact spelling
+680,"""Al0.5Nb1Ta0.8Ti1.5V0.2Zr1""",Results for exact spelling
+681,"""Al0.5Nb1Ti1V1Zr1""",Results for exact spelling
+682,"""Al0.75Co1Cr1Cu0.25Fe1Ni1""",Results for exact spelling
+683,"""Al0.75Co1Cr1Cu0.25Fe1Ni1Ti0.5""",Results for exact spelling
+684,"""Al0.75Co1Cr1Fe1Ni1""",Results for exact spelling
+685,"""Al0.875Co1Cr1Fe1Ni1""",Results for exact spelling
+686,"""Al0.8Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+687,"""Al0.8Cr1Cu1Fe1Ni2""",Results for exact spelling
+688,"""Al0.8Cr1Fe1.5Mn1Ni0.5""",Results for exact spelling
+689,"""Al1.17Co1Cr1Fe1Ni1""",Results for exact spelling
+690,"""Al1.25Co1Cr1Fe1Ni1""",Results for exact spelling
+691,"""Al1.3Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+692,"""Al1.3Cr1Cu1Fe1Ni2""",Results for exact spelling
+693,"""Al1.5Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+694,"""Al1.5Co1Cr1Fe1Ni1""",Results for exact spelling
+695,"""Al1.5Co1Cr1Fe1Ni1Ti1""",Results for exact spelling
+696,"""Al1.5Cr1Cu1Fe1Ni2""",Results for exact spelling
+697,"""Al1.5Cr1Fe1.5Mn1Ni0.5""",Results for exact spelling
+698,"""Al1.5Cr1Fe1Mn1Ti1""",Results for exact spelling
+699,"""Al1.5Nb1Ti1V1Zr1""",Results for exact spelling
+700,"""Al1.8Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+701,"""Al1Au1Co1Cr1Cu1Ni1""",Results for exact spelling
+702,"""Al1Co0.5Cr0.5Fe0.5Mn1Ni1V0.5""",Results for exact spelling
+703,"""Al1Co0.5Cr0.5Fe0.5Mn1Ni1V1""",Results for exact spelling
+704,"""Al1Co0.5Cr1Cu1Fe1Ni1""",Results for exact spelling
+705,"""Al1Co0.5Cr1Fe1Mo0.5Ni1""",Results for exact spelling
+706,"""Al1Co1.5Cr1Fe1Mo0.5Ni1""",Results for exact spelling
+707,"""Al1Co1.5Cr1Fe1Ni1Ti0.5""",Results for exact spelling
+708,"""Al1Co1.5Cr2Fe1.5Mn2Ni1V1""",Results for exact spelling
+709,"""Al1Co1Cr0.5Cu1Fe1Ni1""",Results for exact spelling
+710,"""Al1Co1Cr0.5Fe1Mo0.5Ni1""",Results for exact spelling
+711,"""Al1Co1Cr1.5Fe1Mo0.5Ni1""",Results for exact spelling
+712,"""Al1Co1Cr1Cu0.25Fe1Ni1""",Results for exact spelling
+713,"""Al1Co1Cr1Cu0.25Fe1Ni1Ti0.5""",Results for exact spelling
+714,"""Al1Co1Cr1Cu0.5Fe1Ni1""",Results for exact spelling
+715,"""Al1Co1Cr1Cu0.5Fe1Ni1Ti0.5""",Results for exact spelling
+716,"""Al1Co1Cr1Cu0.5Ni1""",Results for exact spelling
+717,"""Al1Co1Cr1Cu1Fe0.5Ni1""",Results for exact spelling
+718,"""Al1Co1Cr1Cu1Fe1Mn1Ni1""",Results for exact spelling
+719,"""Al1Co1Cr1Cu1Fe1Mn1Ni1Ti1V1""",Results for exact spelling
+720,"""Al1Co1Cr1Cu1Fe1Mo0.2Ni1""",Results for exact spelling
+721,"""Al1Co1Cr1Cu1Fe1Mo0.4Ni1""",Results for exact spelling
+722,"""Al1Co1Cr1Cu1Fe1Mo0.6Ni1""",Results for exact spelling
+723,"""Al1Co1Cr1Cu1Fe1Mo0.8Ni1""",Results for exact spelling
+724,"""Al1Co1Cr1Cu1Fe1Mo1Ni1""",Results for exact spelling
+725,"""Al1Co1Cr1Cu1Fe1Ni0.5""",Results for exact spelling
+726,"""Al1Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+727,"""Al1Co1Cr1Cu1Fe1Ni1Si1""",Results for exact spelling
+728,"""Al1Co1Cr1Cu1Fe1Ni1Ti1""",Results for exact spelling
+729,"""Al1Co1Cr1Cu1Fe1Ni1Ti1V1""",Results for exact spelling
+730,"""Al1Co1Cr1Cu1Fe1Ni1V1""",Results for exact spelling
+731,"""Al1Co1Cr1Cu1Ni1""",Results for exact spelling
+732,"""Al1Co1Cr1Cu1Ni1Ti1Y0.5""",Results for exact spelling
+733,"""Al1Co1Cr1Cu1Ni1Ti1Y0.8""",Results for exact spelling
+734,"""Al1Co1Cr1Cu1Ni1Ti1Y1""",Results for exact spelling
+735,"""Al1Co1Cr1Fe0.6Mo0.5Ni1""",Results for exact spelling
+736,"""Al1Co1Cr1Fe1.5Mo0.5Ni1""",Results for exact spelling
+737,"""Al1Co1Cr1Fe1Mo0.1Ni1""",Results for exact spelling
+738,"""Al1Co1Cr1Fe1Mo0.2Ni1""",Results for exact spelling
+739,"""Al1Co1Cr1Fe1Mo0.3Ni1""",Results for exact spelling
+740,"""Al1Co1Cr1Fe1Mo0.4Ni1""",Results for exact spelling
+741,"""Al1Co1Cr1Fe1Mo0.5Ni1""",Results for exact spelling
+742,"""Al1Co1Cr1Fe1Nb0.1Ni1""",Results for exact spelling
+743,"""Al1Co1Cr1Fe1Nb0.25Ni1""",Results for exact spelling
+744,"""Al1Co1Cr1Fe1Nb0.5Ni1""",Results for exact spelling
+745,"""Al1Co1Cr1Fe1Nb0.75Ni1""",Results for exact spelling
+746,"""Al1Co1Cr1Fe1Ni1""",Results for exact spelling
+747,"""Al1Co1Cr1Fe1Ni1Si0.2""",Results for exact spelling
+748,"""Al1Co1Cr1Fe1Ni1Si0.4""",Results for exact spelling
+749,"""Al1Co1Cr1Fe1Ni1Si0.6""",Results for exact spelling
+750,"""Al1Co1Cr1Fe1Ni1Si0.8""",Results for exact spelling
+751,"""Al1Co1Cr1Fe1Ni1Si1""",Results for exact spelling
+752,"""Al1Co1Cr1Fe1Ni1Ti0.5""",Results for exact spelling
+753,"""Al1Co1Cr1Fe1Ni1Ti1""",Results for exact spelling
+754,"""Al1Co1Cr1Fe1Ni1Ti1.5""",Results for exact spelling
+755,"""Al1Co1Cr1Fe2Mo0.5Ni1""",Results for exact spelling
+756,"""Al1Co1Cr2Fe1Mo0.5Ni1""",Results for exact spelling
+757,"""Al1Co1Cu1Fe1Ni1""",Results for exact spelling
+758,"""Al1Co1Cu1Fe1Ni1Ti1""",Results for exact spelling
+759,"""Al1Co1Cu1Ni1""",Results for exact spelling
+760,"""Al1Co1Cu1Ni1Ti1Zn1""",Results for exact spelling
+761,"""Al1Co1Fe1Mn1Ni1""",Results for exact spelling
+762,"""Al1Co1Fe1Mo0.5Ni1""",Results for exact spelling
+763,"""Al1Co2Cr1Fe1Mo0.5Ni1""",Results for exact spelling
+764,"""Al1Co2Cr1Fe1Ni1Ti0.5""",Results for exact spelling
+765,"""Al1Co3Cr1Fe1Ni1Ti0.5""",Results for exact spelling
+766,"""Al1Cr0.5Cu1Fe1Ni1Ti1""",Results for exact spelling
+767,"""Al1Cr1.5Cu1Fe1Ni1Ti1""",Results for exact spelling
+768,"""Al1Cr1.5Nb1Ti1V1""",Results for exact spelling
+769,"""Al1Cr1Cu1Fe1Mn1Ni1""",Results for exact spelling
+770,"""Al1Cr1Cu1Fe1Ni1Ti1""",Results for exact spelling
+771,"""Al1Cr1Cu1Fe1Ni2""",Results for exact spelling
+772,"""Al1Cr1Fe1Mn1Ti0.25""",Results for exact spelling
+773,"""Al1Cr1Mo1Nb1Ti1""",Results for exact spelling
+774,"""Al1Cr1Mo1Si1Ti1""",Results for exact spelling
+775,"""Al1Cr1Nb1Ti1V1""",Results for exact spelling
+776,"""Al1Cr2Cu1Fe1Ni1Ti1""",Results for exact spelling
+777,"""Al1Cr3Cu1Fe1Ni1Ti1""",Results for exact spelling
+778,"""Al1Cu0.2Li0.5Mg1Zn0.5""",Results for exact spelling
+779,"""Al1Cu0.5Li0.5Mg1Sn0.2""",Results for exact spelling
+780,"""Al1Cu1Ni1""",Results for exact spelling
+781,"""Al1Fe1Mg1Ti1Zn1""",Results for exact spelling
+782,"""Al1Li0.5Mg1Sn0.2Zn0.5""",Results for exact spelling
+783,"""Al1Li1Mg1Sn1Zn1""",Results for exact spelling
+784,"""Al1Mo0.5Nb1Ta0.5Ti1Zr1""",Results for exact spelling
+785,"""Al1Nb1Ti1V1Zr1""",Results for exact spelling
+786,"""Al1Ti1V1Y1Zr1""",Results for exact spelling
+787,"""Al2.3Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+788,"""Al2.5Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+789,"""Al2.5Co1Cr1Fe1Ni1""",Results for exact spelling
+790,"""Al2.8Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+791,"""Al20Co10Cr10Cu10Fe10Mn10Ni10Ti10V10""",Results for exact spelling
+792,"""Al20Li20Mg10Sc20Ti30""",Results for exact spelling
+793,"""Al2Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+794,"""Al2Co1Cr1Fe1Ni1""",Results for exact spelling
+795,"""Al2Co1Cr1Fe1Ni1Ti1""",Results for exact spelling
+796,"""Al2Cr1Cu1Fe1Ni2""",Results for exact spelling
+797,"""Al2Cr1Fe1Mn1Ti0.25""",Results for exact spelling
+798,"""Al2Cr1Fe1Mn1Ti1""",Results for exact spelling
+799,"""Al3Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+800,"""Al3Co1Cr1Fe1Ni1""",Results for exact spelling
+801,"""Al3Cr1Cu1Fe1Ni2""",Results for exact spelling
+802,"""Al3Cr1Fe1Mn1Ti025""",Results for exact spelling
+803,"""Al40Co7.5Cr7.5Cu7.5Fe7.5Mn7.5Ni7.5Ti7.5V7.5""",Empty showing fixed spelling results
+804,"""Al4Cr1Fe1Mn1Ti0.25""",Results for exact spelling
+805,"""Al80Cu5Li5Mg5Zn5""",Results for exact spelling
+806,"""Al80Li5Mg5Sn5Zn5""",Results for exact spelling
+807,"""AlBa""",Results for exact spelling
+808,"""AlBe""",Results for exact spelling
+809,"""AlBi""",Results for exact spelling
+810,"""AlCa""",Results for exact spelling
+811,"""AlCd""",Results for exact spelling
+812,"""AlCr""",Results for exact spelling
+813,"""AlGa""",Results for exact spelling
+814,"""AlGe""",Showing results for exact spelling despite spelling suggestion
+815,"""AlIn""",Results for exact spelling
+816,"""AlNb""",Results for exact spelling
+817,"""AlPb""",Results for exact spelling
+818,"""AlSe""",Results for exact spelling
+819,"""AlSi""",Showing results for exact spelling despite spelling suggestion
+820,"""AlSn""",Showing results for exact spelling despite spelling suggestion
+821,"""AlSr""",Showing results for exact spelling despite spelling suggestion
+822,"""AlW""",Results for exact spelling
+823,"""AlYb""",Showing results for exact spelling despite spelling suggestion
+824,"""AsCd""",Results for exact spelling
+825,"""AsCu""",Results for exact spelling
+826,"""AsMo""",Results for exact spelling
+827,"""AsPb""",Results for exact spelling
+828,"""AsPd""",Results for exact spelling
+829,"""AsTe""",Results for exact spelling
+830,"""AsTh""",Results for exact spelling
+831,"""AsZn""",Results for exact spelling
+832,"""AuBi""",Results for exact spelling
+833,"""AuCo""",Results for exact spelling
+834,"""AuCr""",Results for exact spelling
+835,"""AuMo""",Showing results for exact spelling despite spelling suggestion
+836,"""AuPb""",Results for exact spelling
+837,"""AuSb""",Showing results for exact spelling despite spelling suggestion
+838,"""AuSi""",Showing results for exact spelling despite spelling suggestion
+839,"""AuTa""",Results for exact spelling
+840,"""AuTe""",Results for exact spelling
+841,"""AuW""",Results for exact spelling
+842,"""BaFe""",Results for exact spelling
+843,"""BaMg""",Results for exact spelling
+844,"""BaMo""",Results for exact spelling
+845,"""BaSc""",Results for exact spelling
+846,"""BaSn""",Results for exact spelling
+847,"""BaTi""",Results for exact spelling
+848,"""BaV""",Results for exact spelling
+849,"""BaY""",Showing results for exact spelling despite spelling suggestion
+850,"""Be0.48Cu0.52""",Empty showing fixed spelling results
+851,"""Be0.4Co0.6""",Empty showing fixed spelling results
+852,"""Be1Cu1Ni1Ti1V1Zr1""",Results for exact spelling
+853,"""BeBi""",Results for exact spelling
+854,"""BeCr""",Results for exact spelling
+855,"""BeFe""",Results for exact spelling
+856,"""BeGa""",Results for exact spelling
+857,"""BeGe""",Results for exact spelling
+858,"""BeHf""",Results for exact spelling
+859,"""BeIn""",Results for exact spelling
+860,"""BeLi""",Results for exact spelling
+861,"""BeMg""",Showing results for exact spelling despite spelling suggestion
+862,"""BeMo""",Results for exact spelling
+863,"""BeNb""",Results for exact spelling
+864,"""BeRu""",Results for exact spelling
+865,"""BeSi""",Results for exact spelling
+866,"""BeSr""",Showing results for exact spelling despite spelling suggestion
+867,"""BeTa""",Results for exact spelling
+868,"""BeTh""",Results for exact spelling
+869,"""BeTh""",Results for exact spelling
+870,"""CaLa""",Results for exact spelling
+871,"""CaLi""",Results for exact spelling
+872,"""CaLu""",Results for exact spelling
+873,"""CaMg""",Results for exact spelling
+874,"""CaMo""",Results for exact spelling
+875,"""CaNa""",Showing results for exact spelling despite spelling suggestion
+876,"""CaNd""",Results for exact spelling
+877,"""CaNi""",Results for exact spelling
+878,"""CaPt""",Results for exact spelling
+879,"""CaSb""",Results for exact spelling
+880,"""CaSc""",Results for exact spelling
+881,"""CaTi""",Results for exact spelling
+882,"""CaTm""",Results for exact spelling
+883,"""CaV""",Results for exact spelling
+884,"""CaY""",Results for exact spelling
+885,"""CdEu""",Results for exact spelling
+886,"""CdFe""",Results for exact spelling
+887,"""CdGa""",Results for exact spelling
+888,"""CdIn""",Results for exact spelling
+889,"""CdMo""",Results for exact spelling
+890,"""CdNa""",Results for exact spelling
+891,"""CdPb""",Showing results for exact spelling despite spelling suggestion
+892,"""CdRb""",Results for exact spelling
+893,"""CdSn""",Results for exact spelling
+894,"""CdTl""",Results for exact spelling
+895,"""CdV""",Results for exact spelling
+896,"""CdZn""",Results for exact spelling
+897,"""CeCo""",Results for exact spelling
+898,"""CeCr""",Results for exact spelling
+899,"""CeFe""",Showing results for exact spelling despite spelling suggestion
+900,"""CeHf""",Showing results for exact spelling despite spelling suggestion
+901,"""CeIn""",Showing results for exact spelling despite spelling suggestion
+902,"""CeIr""",Results for exact spelling
+903,"""CeLi""",Results for exact spelling
+904,"""CeMn""",Results for exact spelling
+905,"""CeMo""",Results for exact spelling
+906,"""CePu""",Results for exact spelling
+907,"""CeTa""",Results for exact spelling
+908,"""CeTi""",Results for exact spelling
+909,"""CeU""",Results for exact spelling
+910,"""CeV""",Results for exact spelling
+911,"""CeW""",Results for exact spelling
+912,"""Co0.56Cr0.44""",Results for exact spelling
+913,"""Co0.5Cr1Fe1Mn1.5Ni1""",Results for exact spelling
+914,"""Co1.5Cr1Fe1Mo0.1Ni1.5Ti0.5""",Results for exact spelling
+915,"""Co1.5Cr1Fe1Mo0.5Ni1.5Ti0.5""",Results for exact spelling
+916,"""Co1.5Cr1Fe1Mo0.8Ni1.5Ti0.5""",Results for exact spelling
+917,"""Co1.5Cr1Fe1Ni1.5Ti0.5""",Results for exact spelling
+918,"""Co1.5Cr1Fe1Ni1.5Ti1""",Results for exact spelling
+919,"""Co1Cr1Cu0.5Fe1Ni1""",Results for exact spelling
+920,"""Co1Cr1Cu1Fe1Mn1""",Results for exact spelling
+921,"""Co1Cr1Cu1Fe1Mn1Ni1""",Results for exact spelling
+922,"""Co1Cr1Cu1Fe1Mn1Ni1Ti1V1""",Results for exact spelling
+923,"""Co1Cr1Cu1Fe1Ni1""",Results for exact spelling
+924,"""Co1Cr1Cu1Fe1Ni1Ti0.5""",Results for exact spelling
+925,"""Co1Cr1Cu1Fe1Ni1Ti0.8""",Results for exact spelling
+926,"""Co1Cr1Cu1Fe1Ni1Ti1""",Results for exact spelling
+927,"""Co1Cr1Cu1Fe1Ni1Ti2""",Results for exact spelling
+928,"""Co1Cr1Fe1Ge1Mn1Ni1""",Results for exact spelling
+929,"""Co1Cr1Fe1Hf1Ni1""",Results for exact spelling
+930,"""Co1Cr1Fe1Mo0.3Ni1""",Results for exact spelling
+931,"""Co1Cr1Fe1Mo1Ni1""",Results for exact spelling
+932,"""Co1Cr1Fe1Nb1Ni1""",Results for exact spelling
+933,"""Co1Cr1Fe1Ni1Ta1""",Results for exact spelling
+934,"""Co1Cr1Fe1Ni1Ti0.3""",Results for exact spelling
+935,"""Co1Cr1Fe1Ni1Ti0.5""",Results for exact spelling
+936,"""Co1Cr1Fe1Ni1Ti1""",Results for exact spelling
+937,"""Co1Cr1Fe1Ni1V1""",Results for exact spelling
+938,"""Co1Cr1Fe1Ni1W1""",Results for exact spelling
+939,"""Co1Cr1Fe1Ni1Y1""",Results for exact spelling
+940,"""Co1Cr1Fe1Ni1Zr1""",Results for exact spelling
+941,"""Co1Cr1Mn1Ni1V1""",Results for exact spelling
+942,"""Co1Cr2Fe1Ni1""",Results for exact spelling
+943,"""Co1Cu1Fe1Ni1V1""",Results for exact spelling
+944,"""Co1Cu1Hf1Ti1Zr1""",Results for exact spelling
+945,"""Co1Fe1Ga1Mn1Ni1""",Results for exact spelling
+946,"""Co1Fe1Mn1Mo1Ni1""",Results for exact spelling
+947,"""Co1Fe1Mn1Ni1Sn1""",Results for exact spelling
+948,"""Co1Fe1Mn1Ni1V1""",Results for exact spelling
+949,"""CoDy""",Results for exact spelling
+950,"""CoEr""",Results for exact spelling
+951,"""CoGd""",Showing results for exact spelling despite spelling suggestion
+952,"""CoIn""",Results for exact spelling
+953,"""CoLa""",Results for exact spelling
+954,"""CoLu""",Results for exact spelling
+955,"""CoNd""",Results for exact spelling
+956,"""CoPr""",Results for exact spelling
+957,"""CoSc""",Results for exact spelling
+958,"""CoSm""",Results for exact spelling
+959,"""CoTa""",Results for exact spelling
+960,"""CoTe""",Results for exact spelling
+961,"""CoW""",Results for exact spelling
+962,"""CoYb""",Results for exact spelling
+963,"""Cr0.56Ni0.44""",Results for exact spelling
+964,"""Cr1Cu1Fe1Mn1Ni1""",Results for exact spelling
+965,"""Cr1Cu1Fe1Mn2Ni2""",Results for exact spelling
+966,"""Cr1Cu1Fe1Mo1Ni1""",Results for exact spelling
+967,"""Cr1Cu1Fe1Ni1Zr1""",Results for exact spelling
+968,"""Cr1Cu1Fe1Ni2""",Results for exact spelling
+969,"""Cr1Cu2Fe2Mn1Ni2""",Results for exact spelling
+970,"""Cr1Cu2Fe2Mn2Ni1""",Results for exact spelling
+971,"""Cr1Fe1.5Mn1Ni0.5""",Results for exact spelling
+972,"""Cr1Fe1Mn1Ni1Ti1""",Results for exact spelling
+973,"""Cr1Mo0.5Nb1Ta0.5Ti1Zr1""",Results for exact spelling
+974,"""Cr1Nb1Ti1V1Zr1""",Results for exact spelling
+975,"""Cr1Nb1Ti1Zr1""",Results for exact spelling
+976,"""Cr2Cu1Fe2Mn1Ni1""",Results for exact spelling
+977,"""Cr2Cu1Fe2Mn2Ni2""",Results for exact spelling
+978,"""Cr2Cu2Fe1Mn2Ni2""",Results for exact spelling
+979,"""Cr2Cu2Fe2Mn1Ni2""",Results for exact spelling
+980,"""CrCu""",Results for exact spelling
+981,"""CrHf""",Results for exact spelling
+982,"""CrMg""",Results for exact spelling
+983,"""CrNb""",Results for exact spelling
+984,"""CrSe""",Results for exact spelling
+985,"""CrTa""",Results for exact spelling
+986,"""CrTe""",Showing results for exact spelling despite spelling suggestion
+987,"""CrY""",Results for exact spelling
+988,"""CrZr""",Results for exact spelling
+989,"""CsGa""",Results for exact spelling
+990,"""CsHf""",Results for exact spelling
+991,"""CsIn""",Showing results for exact spelling despite spelling suggestion
+992,"""CsLi""",Results for exact spelling
+993,"""CsMg""",Results for exact spelling
+994,"""CsMo""",Showing results for exact spelling despite spelling suggestion
+995,"""CsNa""",Results for exact spelling
+996,"""CsNb""",Results for exact spelling
+997,"""CsTa""",Results for exact spelling
+998,"""CsTe""",Results for exact spelling
+999,"""CsTl""",Results for exact spelling
+1000,"""CsV""",Results for exact spelling
+1001,"""Cu1Fe1Hf1Ti1Zr1""",Results for exact spelling
+1002,"""CuFe""",Results for exact spelling
+1003,"""CuGa""",Results for exact spelling
+1004,"""CuGe""",Showing results for exact spelling despite spelling suggestion
+1005,"""DyTa""",Results for exact spelling
+1006,"""DyV""",Showing results for exact spelling despite spelling suggestion
+1007,"""DyW""",Results for exact spelling
+1008,"""DyZr""",Results for exact spelling
+1009,"""ErFe""",Results for exact spelling
+1010,"""ErHf""",Results for exact spelling
+1011,"""ErMn""",Results for exact spelling
+1012,"""ErRe""",Results for exact spelling
+1013,"""ErRu""",Results for exact spelling
+1014,"""ErSn""",Showing results for exact spelling despite spelling suggestion
+1015,"""ErTa""",Results for exact spelling
+1016,"""ErTi""",Results for exact spelling
+1017,"""ErV""",Results for exact spelling
+1018,"""ErW""",Results for exact spelling
+1019,"""ErZr""",Showing results for exact spelling despite spelling suggestion
+1020,"""EuFe""",Showing results for exact spelling despite spelling suggestion
+1021,"""EuLa""",Results for exact spelling
+1022,"""EuMo""",Results for exact spelling
+1023,"""EuRh""",Showing results for exact spelling despite spelling suggestion
+1024,"""EuTa""",Results for exact spelling
+1025,"""EuV""",Results for exact spelling
+1026,"""EuW""",Results for exact spelling
+1027,"""Fe0.4Mo0.6""",Results for exact spelling
+1028,"""Fe0.6Se0.4""",Empty showing fixed spelling results
+1029,"""FeGa""",Results for exact spelling
+1030,"""FeGd""",Results for exact spelling
+1031,"""FeHf""",Results for exact spelling
+1032,"""FeHo""",Results for exact spelling
+1033,"""FeIn""",Results for exact spelling
+1034,"""FeLa""",Results for exact spelling
+1035,"""FeLi""",Results for exact spelling
+1036,"""FeLu""",Results for exact spelling
+1037,"""FeMg""",Showing results for exact spelling despite spelling suggestion
+1038,"""FeNa""",Results for exact spelling
+1039,"""FeNb""",Showing results for exact spelling despite spelling suggestion
+1040,"""FePr""",Results for exact spelling
+1041,"""FePu""",Results for exact spelling
+1042,"""FeSb""",Results for exact spelling
+1043,"""FeSc""",Results for exact spelling
+1044,"""FeSm""",Results for exact spelling
+1045,"""FeTa""",Results for exact spelling
+1046,"""FeTb""",Showing results for exact spelling despite spelling suggestion
+1047,"""FeTh""",Results for exact spelling
+1048,"""FeTm""",Showing results for exact spelling despite spelling suggestion
+1049,"""FeU""",Results for exact spelling
+1050,"""FeY""",Results for exact spelling
+1051,"""FeYb""",Results for exact spelling
+1052,"""FeZn""",Results for exact spelling
+1053,"""GaGe""",Results for exact spelling
+1054,"""GaIn""",Results for exact spelling
+1055,"""GaNa""",Results for exact spelling
+1056,"""GaNb""",Results for exact spelling
+1057,"""GaPb""",Results for exact spelling
+1058,"""GaRb""",Results for exact spelling
+1059,"""GaSn""",Results for exact spelling
+1060,"""GaSr""",Showing results for exact spelling despite spelling suggestion
+1061,"""GaTl""",Showing results for exact spelling despite spelling suggestion
+1062,"""GaZn""",Results for exact spelling
+1063,"""GdIn""",Results for exact spelling
+1064,"""GdMn""",Results for exact spelling
+1065,"""GdPb""",Showing results for exact spelling despite spelling suggestion
+1066,"""GdRe""",Results for exact spelling
+1067,"""GdRu""",Results for exact spelling
+1068,"""GdSn""",Results for exact spelling
+1069,"""GdTi""",Results for exact spelling
+1070,"""GdV""",Results for exact spelling
+1071,"""GdW""",Results for exact spelling
+1072,"""GdYb""",Results for exact spelling
+1073,"""GdZr""",Results for exact spelling
+1074,"""GeIn""",Results for exact spelling
+1075,"""GeLu""",Results for exact spelling
+1076,"""GeMn""",Results for exact spelling
+1077,"""GeMo""",Results for exact spelling
+1078,"""GeNb""",Results for exact spelling
+1079,"""GePb""",Results for exact spelling
+1080,"""GePb""",Results for exact spelling
+1081,"""GeRe""",Results for exact spelling
+1082,"""GeSb""",Results for exact spelling
+1083,"""GeTi""",Results for exact spelling
+1084,"""GeTl""",Results for exact spelling
+1085,"""GeYb""",Results for exact spelling
+1086,"""GeZn""",Showing results for exact spelling despite spelling suggestion
+1087,"""HfLi""",Results for exact spelling
+1088,"""HfMn""",Results for exact spelling
+1089,"""HfMo""",Results for exact spelling
+1090,"""HfPu""",Results for exact spelling
+1091,"""HfRb""",Results for exact spelling
+1092,"""HfTh""",Results for exact spelling
+1093,"""HfV""",Results for exact spelling
+1094,"""HfY""",Results for exact spelling
+1095,"""HoMn""",Results for exact spelling
+1096,"""HoMo""",Results for exact spelling
+1097,"""HoSn""",Results for exact spelling
+1098,"""InMn""",Showing results for exact spelling despite spelling suggestion
+1099,"""InNb""",Results for exact spelling
+1100,"""InRb""",Results for exact spelling
+1101,"""InSi""",Results for exact spelling
+1102,"""InSn""",Results for exact spelling
+1103,"""InTa""",Showing results for exact spelling despite spelling suggestion
+1104,"""InV""",Results for exact spelling
+1105,"""InZn""",Showing results for exact spelling despite spelling suggestion
+1106,"""IrNb""",Results for exact spelling
+1107,"""IrPr""",Results for exact spelling
+1108,"""IrRu""",Results for exact spelling
+1109,"""IrTa""",Results for exact spelling
+1110,"""KLi""",Results for exact spelling
+1111,"""KMg""",Results for exact spelling
+1112,"""KMo""",Results for exact spelling
+1113,"""KNa""",Results for exact spelling
+1114,"""KNb""",Showing results for exact spelling despite spelling suggestion
+1115,"""KTa""",Results for exact spelling
+1116,"""KTi""",Results for exact spelling
+1117,"""KV""",Results for exact spelling
+1118,"""KZn""",Results for exact spelling
+1119,"""KZr""",Results for exact spelling
+1120,"""LaLi""",Results for exact spelling
+1121,"""LaMn""",Showing results for exact spelling despite spelling suggestion
+1122,"""LaMo""",Showing results for exact spelling despite spelling suggestion
+1123,"""LaNb""",Showing results for exact spelling despite spelling suggestion
+1124,"""LaTa""",Results for exact spelling
+1125,"""LaTi""",Results for exact spelling
+1126,"""LaV""",Results for exact spelling
+1127,"""LaW""",Results for exact spelling
+1128,"""LiMn""",Results for exact spelling
+1129,"""LiMo""",Results for exact spelling
+1130,"""LiNa""",Results for exact spelling
+1131,"""LiNi""",Results for exact spelling
+1132,"""LiPr""",Results for exact spelling
+1133,"""LiPu""",Results for exact spelling
+1134,"""LiRb""",Results for exact spelling
+1135,"""LiSb""",Results for exact spelling
+1136,"""LiSe""",Results for exact spelling
+1137,"""LiSi""",Results for exact spelling
+1138,"""LiTa""",Results for exact spelling
+1139,"""LiTe""",Results for exact spelling
+1140,"""LiTi""",Results for exact spelling
+1141,"""LiZr""",Showing results for exact spelling despite spelling suggestion
+1142,"""LuPb""",Showing results for exact spelling despite spelling suggestion
+1143,"""LuV""",Results for exact spelling
+1144,"""LuW""",Results for exact spelling
+1145,"""LuYb""",Showing results for exact spelling despite spelling suggestion
+1146,"""MgNa""",Showing results for exact spelling despite spelling suggestion
+1147,"""MgNb""",Results for exact spelling
+1148,"""MgNi""",Results for exact spelling
+1149,"""MgPb""",Results for exact spelling
+1150,"""MgRb""",Results for exact spelling
+1151,"""MgSb""",Results for exact spelling
+1152,"""MgSn""",Results for exact spelling
+1153,"""MgSr""",Results for exact spelling
+1154,"""MgTh""",Results for exact spelling
+1155,"""MgV""",Results for exact spelling
+1156,"""MgYb""",Results for exact spelling
+1157,"""MgZn""",Results for exact spelling
+1158,"""MnMo""",Results for exact spelling
+1159,"""MnNd""",Results for exact spelling
+1160,"""MnPr""",Showing results for exact spelling despite spelling suggestion
+1161,"""MnPu""",Results for exact spelling
+1162,"""MnSm""",Results for exact spelling
+1163,"""MnSr""",Results for exact spelling
+1164,"""MnTb""",Results for exact spelling
+1165,"""MnY""",Showing results for exact spelling despite spelling suggestion
+1166,"""MoNd""",Results for exact spelling
+1167,"""MoPa""",Results for exact spelling
+1168,"""MoPb""",Showing results for exact spelling despite spelling suggestion
+1169,"""Nb1Ti1V2Zr1""",Results for exact spelling
+1170,"""OsPd""",Results for exact spelling
+1171,"""OsPt""",Results for exact spelling
+1172,"""OsPu""",Results for exact spelling
+1173,"""OsTh""",Showing results for exact spelling despite spelling suggestion
+1174,"""OsU""",Results for exact spelling
+1175,"""OsY""",Results for exact spelling
+1176,"""OsYb""",Results for exact spelling
+1177,"""PbPr""",Results for exact spelling
+1178,"""PbPu""",Results for exact spelling
+1179,"""PbSb""",Results for exact spelling
+1180,"""PbSc""",Results for exact spelling
+1181,"""PbSi""",Results for exact spelling
+1182,"""PbSm""",Results for exact spelling
+1183,"""PbSn""",Results for exact spelling
+1184,"""PbTh""",Results for exact spelling
+1185,"""PbZn""",Results for exact spelling
+1186,"""Pd0.4Si0.6""",Fully empty
+1187,"""Pd0.4U0.6""",Empty showing fixed spelling results
+1188,"""Pd0.6Pu0.4""",Empty showing fixed spelling results
+1189,"""PdRu""",Results for exact spelling
+1190,"""PdW""",Results for exact spelling
+1191,"""PmRh""",Results for exact spelling
+1192,"""PmRu""",Results for exact spelling
+1193,"""PmV""",Results for exact spelling
+1194,"""PrPu""",Results for exact spelling
+1195,"""PrTa""",Results for exact spelling
+1196,"""PrTi""",Results for exact spelling
+1197,"""PrU""",Results for exact spelling
+1198,"""PrV""",Results for exact spelling
+1199,"""PrW""",Results for exact spelling
+1200,"""PtRe""",Results for exact spelling
+1201,"""PtSr""",Results for exact spelling
+1202,"""PtZn""",Showing results for exact spelling despite spelling suggestion
+1203,"""PuSm""",Results for exact spelling
+1204,"""PuTa""",Results for exact spelling
+1205,"""PuTi""",Results for exact spelling
+1206,"""PuV""",Results for exact spelling
+1207,"""RbTa""",Showing results for exact spelling despite spelling suggestion
+1208,"""RbTi""",Results for exact spelling
+1209,"""RbTl""",Results for exact spelling
+1210,"""RbV""",Results for exact spelling
+1211,"""RbZn""",Showing results for exact spelling despite spelling suggestion
+1212,"""Re0.6Ti0.4""",Empty showing fixed spelling results
+1213,"""ReSb""",Results for exact spelling
+1214,"""ReSc""",Results for exact spelling
+1215,"""ReTb""",Results for exact spelling
+1216,"""ReTh""",Results for exact spelling
+1217,"""ReU""",Results for exact spelling
+1218,"""ReY""",Results for exact spelling
+1219,"""ReZr""",Showing results for exact spelling despite spelling suggestion
+1220,"""Rh0.45Ta0.55""",Empty showing fixed spelling results
+1221,"""RhU""",Results for exact spelling
+1222,"""RuSn""",Showing results for exact spelling despite spelling suggestion
+1223,"""RuW""",Results for exact spelling
+1224,"""SbSe""",Showing results for exact spelling despite spelling suggestion
+1225,"""SbSi""",Results for exact spelling
+1226,"""SbZr""",Showing results for exact spelling despite spelling suggestion
+1227,"""ScSr""",Showing results for exact spelling despite spelling suggestion
+1228,"""ScU""",Results for exact spelling
+1229,"""ScV""",Results for exact spelling
+1230,"""ScW""",Results for exact spelling
+1231,"""ScW""",Results for exact spelling
+1232,"""SiSn""",Showing results for exact spelling despite spelling suggestion
+1233,"""SiTa""",Results for exact spelling
+1234,"""SiTe""",Results for exact spelling
+1235,"""SiTl""",Results for exact spelling
+1236,"""SiV""",Results for exact spelling
+1237,"""SiW""",Results for exact spelling
+1238,"""SiZn""",Showing results for exact spelling despite spelling suggestion
+1239,"""SmSn""",Showing results for exact spelling despite spelling suggestion
+1240,"""SmU""",Results for exact spelling
+1241,"""SnTi""",Showing results for exact spelling despite spelling suggestion
+1242,"""SnV""",Results for exact spelling
+1243,"""SnY""",Results for exact spelling
+1244,"""SnZn""",Results for exact spelling
+1245,"""SrTi""",Results for exact spelling
+1246,"""SrV""",Results for exact spelling
+1247,"""SrY""",Results for exact spelling
+1248,"""TaTb""",Results for exact spelling
+1249,"""TaTl""",Results for exact spelling
+1250,"""TaTm""",Results for exact spelling
+1251,"""Ta_Th""",Showing results for exact spelling despite spelling suggestion

@@ -1,0 +1,107 @@
+diff --git a/experiments/03_classification/matbench/glass/gptchemcache/cache.db-shm b/experiments/03_classification/matbench/glass/gptchemcache/cache.db-shm
+index fe9ac284..2161f2d0 100644
+Binary files a/experiments/03_classification/matbench/glass/gptchemcache/cache.db-shm and b/experiments/03_classification/matbench/glass/gptchemcache/cache.db-shm differ
+diff --git a/experiments/05_inverse/bandgap/biasing/manual/bias_generation.ipynb b/experiments/05_inverse/bandgap/biasing/manual/bias_generation.ipynb
+index 12b6812a..ef40aed1 100644
+--- a/experiments/05_inverse/bandgap/biasing/manual/bias_generation.ipynb
++++ b/experiments/05_inverse/bandgap/biasing/manual/bias_generation.ipynb
+@@ -3405,7 +3405,7 @@
+    "name": "python",
+    "nbconvert_exporter": "python",
+    "pygments_lexer": "ipython3",
+-   "version": "3.9.15"
++   "version": "3.9.16"
+   },
+   "orig_nbformat": 4,
+   "vscode": {
+diff --git a/experiments/05_inverse/photoswitch/extrapolation/gptchemcache/cache.db-shm b/experiments/05_inverse/photoswitch/extrapolation/gptchemcache/cache.db-shm
+index 255589a2..49b5e675 100644
+Binary files a/experiments/05_inverse/photoswitch/extrapolation/gptchemcache/cache.db-shm and b/experiments/05_inverse/photoswitch/extrapolation/gptchemcache/cache.db-shm differ
+diff --git a/experiments/05_inverse/photoswitch/random/gptchemcache/cache.db-shm b/experiments/05_inverse/photoswitch/random/gptchemcache/cache.db-shm
+index a3d97ca0..e4e1d2b7 100644
+Binary files a/experiments/05_inverse/photoswitch/random/gptchemcache/cache.db-shm and b/experiments/05_inverse/photoswitch/random/gptchemcache/cache.db-shm differ
+diff --git a/experiments/05_inverse/polymers/gptchemcache/cache.db-shm b/experiments/05_inverse/polymers/gptchemcache/cache.db-shm
+index fe9ac284..b26c1381 100644
+Binary files a/experiments/05_inverse/polymers/gptchemcache/cache.db-shm and b/experiments/05_inverse/polymers/gptchemcache/cache.db-shm differ
+diff --git a/setup.cfg b/setup.cfg
+index a7ed5854..4ea03dd7 100644
+--- a/setup.cfg
++++ b/setup.cfg
+@@ -54,11 +54,11 @@ install_requires =
+     fastcore
+     typing_extensions
+     scikit-learn
+-    pyrate_limiter
+     pystow
+     pandas
+     selfies
+     rdkit
++    tenacity
+ 
+ 
+ # Random options
+diff --git a/src/gptchem/querier.py b/src/gptchem/querier.py
+index e4a917a7..8e1c914f 100644
+--- a/src/gptchem/querier.py
++++ b/src/gptchem/querier.py
+@@ -1,11 +1,21 @@
+-import os
+ import time
+-from typing import List, Optional
++from typing import Optional
+ 
+ import openai
+ import pandas as pd
+ from fastcore.basics import basic_repr, chunked
+-from pyrate_limiter import Duration, Limiter, RequestRate
++
++from tenacity import (
++    retry,
++    stop_after_attempt,
++    wait_random_exponential,
++)  # for exponential backoff
++
++
++@retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
++def completion_with_backoff(**kwargs):
++    return openai.Completion.create(**kwargs)
++
+ 
+ _PRESETS = {
+     "classification": {
+@@ -19,8 +29,6 @@ _PRESETS = {
+     },
+ }
+ 
+-limiter = Limiter(RequestRate(23, Duration.MINUTE))
+-
+ 
+ class Querier:
+     """Wrapper around the OpenAI API for querying a model for completions.
+@@ -94,16 +102,16 @@ class Querier:
+         for chunk in chunked(df["prompt"], self._parallel_max):
+             while True:
+                 try:
+-                    with limiter.ratelimit("codex", delay=True):
+-                        completions_ = openai.Completion.create(
+-                            model=self.modelname,
+-                            prompt=chunk,
+-                            temperature=temperature,
+-                            max_tokens=self.max_tokens,
+-                            stop=self._stop,
+-                            **settings,
+-                        )
+-                        completions.append(completions_)
++                    completions_ = completion_with_backoff(
++                        model=self.modelname,
++                        prompt=chunk,
++                        temperature=temperature,
++                        max_tokens=self.max_tokens,
++                        stop=self._stop,
++                        **settings,
++                    )
++
++                    completions.append(completions_)
+                     break
+                 except openai.error.RateLimitError:
+                     time.sleep(self._sleep)

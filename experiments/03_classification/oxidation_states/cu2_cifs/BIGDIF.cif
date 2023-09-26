@@ -1,0 +1,49 @@
+data_image0
+_cell_length_a       4.09
+_cell_length_b       6.037
+_cell_length_c       9.822
+_cell_angle_alpha    93.567
+_cell_angle_beta     99.188
+_cell_angle_gamma    100.163
+
+_symmetry_space_group_name_H-M    "P 1"
+_symmetry_int_tables_number       1
+
+loop_
+  _symmetry_equiv_pos_as_xyz
+  'x, y, z'
+
+loop_
+  _atom_site_label
+  _atom_site_occupancy
+  _atom_site_fract_x
+  _atom_site_fract_y
+  _atom_site_fract_z
+  _atom_site_thermal_displace_type
+  _atom_site_B_iso_or_equiv
+  _atom_site_type_symbol
+  Cu1      1.0000 0.50000  0.50000  0.00000  Biso   1.000  Cu
+  O1       1.0000 0.73500  0.60290  0.18943  Biso   1.000  O
+  O2       1.0000 0.26500  0.39710  0.81057  Biso   1.000  O
+  O3       1.0000 0.48630  0.89590  0.14901  Biso   1.000  O
+  O4       1.0000 0.51370  0.10410  0.85099  Biso   1.000  O
+  N1       1.0000 0.16750  0.28900  0.08050  Biso   1.000  N
+  N2       1.0000 0.83250  0.71100  0.91950  Biso   1.000  N
+  H1       1.0000 0.27300  0.17900  0.11100  Biso   1.000  H
+  H2       1.0000 0.72700  0.82100  0.88900  Biso   1.000  H
+  H3       1.0000 0.00900  0.23000  0.02800  Biso   1.000  H
+  H4       1.0000 0.99100  0.77000  0.97200  Biso   1.000  H
+  H5       1.0000 0.10000  0.35900  0.13300  Biso   1.000  H
+  H6       1.0000 0.90000  0.64100  0.86700  Biso   1.000  H
+  C1       1.0000 0.67550  0.79790  0.22540  Biso   1.000  C
+  C2       1.0000 0.32450  0.20210  0.77460  Biso   1.000  C
+  C3       1.0000 0.84620  0.90420  0.36670  Biso   1.000  C
+  C4       1.0000 0.15380  0.09580  0.63330  Biso   1.000  C
+  C5       1.0000 0.04150  0.78650  0.45510  Biso   1.000  C
+  C6       1.0000 0.95850  0.21350  0.54490  Biso   1.000  C
+  H7       1.0000 0.07080  0.64180  0.42450  Biso   1.000  H
+  H8       1.0000 0.92920  0.35820  0.57550  Biso   1.000  H
+  C7       1.0000 0.80790  0.11980  0.41300  Biso   1.000  C
+  C8       1.0000 0.19210  0.88020  0.58700  Biso   1.000  C
+  H9       1.0000 0.67920  0.20160  0.35420  Biso   1.000  H
+  H10      1.0000 0.32080  0.79840  0.64580  Biso   1.000  H
