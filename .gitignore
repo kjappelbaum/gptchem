@@ -912,3 +912,6 @@ nohup*
 ./**/wandb
 
 *.log2
+*.cif
+**/*qmug_data.csv
+**/*results.json
