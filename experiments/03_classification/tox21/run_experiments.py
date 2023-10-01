@@ -67,8 +67,8 @@ def run_experiment(target, num_train_points, random_undersample, num_test_points
 
     X_test = X_test[test_ids]
     y_test = y_test[test_ids]
-
-    tuner = Tuner(n_epochs=8, learning_rate_multiplier=0.02, wandb_sync=False)
+    n_epochs = 16
+    tuner = Tuner(n_epochs=n_epochs, learning_rate_multiplier=0.02, wandb_sync=False)
     classifier = GPTClassifier(name_mapping[target], tuner=tuner)
 
     classifier.fit(X_train, y_train)
@@ -85,13 +85,15 @@ def run_experiment(target, num_train_points, random_undersample, num_test_points
         "seed": seed,
         "y_pred": y_pred,
         "y_test": y_test,
+        "n_epochs": n_epochs,
         **results,
     }
 
     timestr = get_timestr()
 
     save_pickle(
-        f"reports/{timestr}-{target}-{num_train_points}-{random_undersample}-{seed}.pkl", report
+        f"reports/{timestr}-{target}-{num_train_points}-{random_undersample}-{seed}-{n_epochs}.pkl",
+        report,
     )
 
 
@@ -104,12 +106,13 @@ def get_grid(random_undersample):
 
 if __name__ == "__main__":
     for seed in range(3):
-        seed = seed + 345
-        for random_undersample in [True, False]:
-            for target in name_mapping.keys():
+        seed = seed + 6578
+        for random_undersample in [True, False][::-1]:
+            for target in list(name_mapping.keys())[::-1]:
                 for num_train_points in get_grid(random_undersample)[::-1]:
                     try:
                         run_experiment(target, num_train_points, random_undersample, 500, seed)
                         time.sleep(60)
                     except Exception as e:
-                        pass
+                        print(e)
+                        time.sleep(60)

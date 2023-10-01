@@ -134,6 +134,7 @@ class Tuner:
                 raise ValueError(f"Invalid type: {data_type}. Valid types are: ['train', 'valid']")
 
             filename = os.path.abspath(os.path.join(self.outdir, f"{data_type}.jsonl"))
+            df = df[["prompt", "completion"]]
             df.to_json(filename, orient="records", lines=True, force_ascii=False)
             if data_type == "train":
                 self._train_filename = filename
