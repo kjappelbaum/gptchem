@@ -1,4 +1,3 @@
-import time
 from typing import Optional
 
 import openai
@@ -100,22 +99,16 @@ class Querier:
             settings["logprobs"] = logprobs
 
         for chunk in chunked(df["prompt"], self._parallel_max):
-            while True:
-                try:
-                    completions_ = completion_with_backoff(
-                        model=self.modelname,
-                        prompt=chunk,
-                        temperature=temperature,
-                        max_tokens=self.max_tokens,
-                        stop=self._stop,
-                        **settings,
-                    )
+            completions_ = completion_with_backoff(
+                model=self.modelname,
+                prompt=chunk,
+                temperature=temperature,
+                max_tokens=self.max_tokens,
+                stop=self._stop,
+                **settings,
+            )
 
-                    completions.append(completions_)
-                    break
-                except openai.error.RateLimitError:
-                    time.sleep(self._sleep)
-                    continue
+            completions.append(completions_)
 
         completions = {
             "choices": [choice["text"] for c in completions for choice in c["choices"]],
