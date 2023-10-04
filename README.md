@@ -57,6 +57,8 @@ classifier.fit(["CC", "CDDFSS"], [0, 1])
 predictions = classifier.predict(['CCCC', 'CCCCCCCC'])
 ```
 
+The time these call take can vary as the methods call the OpenAI API under the hood. Therefore, in situation of high load, we also experienced hours of waiting time in the queue. 
+
 ## 🚀 Installation
 
 <!-- Uncomment this section after your first ``tox -e finish``
@@ -74,6 +76,8 @@ The most recent code and data can be installed directly from GitHub with:
 $ pip install git+https://github.com/kjappelbaum/gptchem.git
 ```
 
+The installation should only take a few seconds to minutes. You can install additional depenencies using the extras `experiments` and `eval`.
+
 ## 👐 Contributing
 
 Contributions, whether filing an issue, making a pull request, or forking, are appreciated. See
@@ -88,7 +92,19 @@ The code in this package is licensed under the MIT License.
 
 ### 📖 Citation
 
-Citation goes here!
+If you found this package useful, please cite our preprint 
+
+```
+@inproceedings{Jablonka_2023,
+	doi = {10.26434/chemrxiv-2023-fw8n4},
+	url = {https://doi.org/10.26434%2Fchemrxiv-2023-fw8n4},
+	year = 2023,
+	month = {feb},
+	booktitle = {ChemRxiv},
+	author = {Kevin Maik Jablonka and Philippe Schwaller and Andres Ortega-Guerrero and Berend Smit},
+	title = {Is {GPT} all you need for low-data discovery in chemistry?}
+}
+```
 
 
 <!--

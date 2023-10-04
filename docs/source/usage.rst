@@ -74,7 +74,7 @@ validation strategies. In any case, make sure to set up some validation procedur
         num_classes=2,
         qcut=True)
 
-    formatted_data = formatter.format_data(data)
+    formatted_data = formatter.format_many(data)
     
     # split the data into training and test set
     train, test = train_test_split(formatted_data, test_size=0.2, random_state=42, stratify=formatted_data['label'])
