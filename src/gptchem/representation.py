@@ -1,9 +1,6 @@
 from rdkit import Chem
 import selfies
-import deepsmiles
-from tucan.io import graph_from_molfile_text
-from tucan.canonicalization import canonicalize_molecule
-from tucan.serialization import serialize_molecule
+
 
 import requests
 import pubchempy as pcp
@@ -64,6 +61,8 @@ def smiles_to_deepsmiles(smiles):
     """
     Takes a SMILES and return the DeepSMILES encoding.
     """
+    import deepsmiles
+
     converter = deepsmiles.Converter(rings=True, branches=True)
     return converter.encode(smiles)
 
@@ -90,6 +89,10 @@ def smiles_to_tucan(smiles: str):
     For this, create a molfile as StringIO, read it with graph_from_file,
     canonicalize it and serialize it.
     """
+    from tucan.io import graph_from_molfile_text
+    from tucan.canonicalization import canonicalize_molecule
+    from tucan.serialization import serialize_molecule
+
     molfile = Chem.MolToMolBlock(Chem.MolFromSmiles(smiles), forceV3000=True)
     mol = graph_from_molfile_text(molfile)
     mol = canonicalize_molecule(mol)

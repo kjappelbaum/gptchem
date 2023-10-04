@@ -3,9 +3,6 @@ from gptchem.representation import (
     smiles_to_tucan,
     smiles_to_iupac_name,
     line_reps_from_smiles,
-    smiles_to_inchi,
-    smiles_to_tucan,
-    smiles_to_iupac_name,
     smiles_to_max_random,
     smiles_augment_df,
 )

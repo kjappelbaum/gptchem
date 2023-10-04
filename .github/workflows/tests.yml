@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install pytest pytest-cov
-          pip install ".[experiments,eval]"
+          pip install ".[experiments,eval,reprs]"
       - name: Run tests
         run: pytest --cov=src --cov-report=xml
       - name: Upload coverage report to codecov
