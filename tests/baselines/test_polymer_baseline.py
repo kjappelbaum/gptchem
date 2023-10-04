@@ -9,6 +9,7 @@ from gptchem.formatter import ClassificationFormatter, RegressionFormatter
 
 
 @pytest.mark.slow
+@pytest.mark.baselines
 @pytest.mark.parametrize("tabpfn", (True, False))
 def test_train_test_polymer_classification_baseline(tabpfn):
     data = get_polymer_data()
@@ -25,6 +26,7 @@ def test_train_test_polymer_classification_baseline(tabpfn):
 
 
 @pytest.mark.slow
+@pytest.mark.baselines
 def test_train_test_polymer_regression_baseline():
     data = get_polymer_data()
     formatter = RegressionFormatter(

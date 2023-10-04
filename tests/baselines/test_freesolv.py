@@ -5,6 +5,7 @@ from gptchem.data import get_freesolv_data
 from gptchem.formatter import RegressionFormatter
 
 
+@pytest.mark.baselines
 def test_train_test_freesolv_regression_baseline():
     data = get_freesolv_data()
     formatter = RegressionFormatter(

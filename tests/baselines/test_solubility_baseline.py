@@ -5,6 +5,7 @@ from gptchem.data import get_esol_data, get_solubility_test_data
 from gptchem.formatter import ClassificationFormatter
 
 
+@pytest.mark.baselines
 def test_train_test_solubility_classification_baseline():
     train_data = get_esol_data()
     test_data = get_solubility_test_data().sample(10)

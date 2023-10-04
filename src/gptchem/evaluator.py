@@ -120,7 +120,7 @@ def evaluate_classification(
         "racc": cm.Overall_RACC,
         "kappa": cm.Kappa,
         "confusion_matrix": cm,
-        "roc_auc": roc_auc_score(y_true_valid, y_pred_valid),
+        "roc_auc": roc_auc_score(y_true_valid, y_pred_valid, multi_class="ovo"),
         "f1_macro": cm.F1_Macro,
         "f1_micro": cm.F1_Micro,
         "frac_valid": frac_valid,

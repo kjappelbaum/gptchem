@@ -37,7 +37,7 @@ class BaseExtractor:
         return L([self.extract(entry, **kwargs) for entry in data])
 
     def extract_many_from_dict(self, data, key="choices", **kwargs) -> L:
-        return L([self.extract(entry, **kwargs) for entry in data[key]])
+        return L([self.extract_many(entry[key], **kwargs) for entry in data])
 
     def __call__(self, data, key="choices", **kwargs):
         return self.extract_many_from_dict(data, key=key, **kwargs)
