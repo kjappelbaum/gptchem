@@ -114,13 +114,18 @@ def evaluate_classification(
         y_pred_valid = y_pred_new[int_indices]
 
     cm = pycm.ConfusionMatrix(list(y_true_valid), list(y_pred_valid))
+
+    try:
+        auc = roc_auc_score(y_true_valid, y_pred_valid)
+    except Exception:
+        logger.warning("Could not compute ROC AUC. Multiclass is not supported.")
+        auc = np.nan
     return {
         "accuracy": cm.Overall_ACC,
         "acc_macro": cm.ACC_Macro,
         "racc": cm.Overall_RACC,
         "kappa": cm.Kappa,
         "confusion_matrix": cm,
-        "roc_auc": roc_auc_score(y_true_valid, y_pred_valid, multi_class="ovo"),
         "f1_macro": cm.F1_Macro,
         "f1_micro": cm.F1_Micro,
         "frac_valid": frac_valid,
@@ -128,6 +133,7 @@ def evaluate_classification(
         "all_y_pred": y_pred,
         "valid_indices": int_indices,
         "might_have_rounded_floats": might_have_rounded_floats,
+        "roc_auc": auc,
     }
 
 

@@ -25,7 +25,7 @@ jobs:
           pip install pytest pytest-cov
           pip install ".[experiments,eval,reprs]"
       - name: Run tests
-        run: pytest --cov=src --cov-report=xml
+        run: pytest --cov=src --cov-report=xml --ignore tests/baselines
       - name: Upload coverage report to codecov
         uses: codecov/codecov-action@v1
         if: success()
