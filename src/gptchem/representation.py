@@ -5,7 +5,6 @@ from tucan.io import graph_from_molfile_text
 from tucan.canonicalization import canonicalize_molecule
 from tucan.serialization import serialize_molecule
 
-from io import StringIO
 import requests
 import pubchempy as pcp
 import time

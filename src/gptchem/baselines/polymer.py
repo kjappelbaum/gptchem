@@ -34,7 +34,6 @@ def train_test_polymer_classification_baseline(
     seed: int = 42,
     num_trials: int = 100,
 ):
-    label_column = formatter.label_column
     df = df.dropna(subset=[formatter.label_column, formatter.representation_column])
     formatted = formatter(df)
     df["label"] = formatted["label"]
@@ -76,7 +75,7 @@ def train_test_polymer_regression_baseline(
     label_column = formatter.label_column
     repr_column = formatter.representation_column
     df = df.dropna(subset=[formatter.label_column, formatter.representation_column])
-    formatted = formatter(df)
+    formatter(df)
 
     train = df[df[repr_column].isin(train_smiles)]
     test = df[df[repr_column].isin(test_smiles)]

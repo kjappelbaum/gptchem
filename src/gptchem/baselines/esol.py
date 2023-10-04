@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 
-import sys
 from collections import namedtuple
 
-import pandas as pd
 from rdkit import Chem
-from rdkit.Chem import Crippen, Descriptors, Lipinski, PandasTools
-from sklearn.linear_model import LinearRegression
+from rdkit.Chem import Crippen, Descriptors, Lipinski
 
 
 class ESOLCalculator:

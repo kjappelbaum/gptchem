@@ -1,17 +1,13 @@
 import numpy as np
 import pandas as pd
 from optuna import create_study
-from optuna.integration import XGBoostPruningCallback
 from optuna.samplers import TPESampler
 from sklearn.metrics import (
-    accuracy_score,
     f1_score,
-    mean_absolute_error,
     mean_squared_error,
-    r2_score,
 )
-from sklearn.model_selection import KFold, train_test_split
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.model_selection import KFold
+from sklearn.preprocessing import LabelEncoder
 from xgboost import XGBClassifier, XGBRegressor
 
 from .base import BaseLineModel

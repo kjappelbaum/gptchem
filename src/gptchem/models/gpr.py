@@ -4,8 +4,6 @@ import tensorflow as tf
 from gpflow.mean_functions import Constant
 from gpflow.utilities import positive, print_summary
 from gpflow.utilities.ops import broadcasting_elementwise
-from pycm import ConfusionMatrix
-from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 from .base import BaseLineModel

@@ -46,7 +46,7 @@ target_number_mapping = {
 
 
 def run_experiment(target, num_train_points, random_undersample, num_test_points, seed):
-    tox21_tasks, tox21_datasets, transformers = load_tox21(seed=seed)
+    tox21_tasks, tox21_datasets, transformers = load_tox21(seed=seed, reload=False)
     train_dataset, valid_dataset, test_dataset = tox21_datasets
 
     X_train, y_train = train_dataset.ids, train_dataset.y[:, target_number_mapping[target]]
@@ -67,9 +67,15 @@ def run_experiment(target, num_train_points, random_undersample, num_test_points
 
     X_test = X_test[test_ids]
     y_test = y_test[test_ids]
-    n_epochs = 16
+    n_epochs = 8
+
     tuner = Tuner(n_epochs=n_epochs, learning_rate_multiplier=0.02, wandb_sync=False)
-    classifier = GPTClassifier(name_mapping[target], tuner=tuner)
+    classifier = GPTClassifier(
+        target,
+        tuner=tuner,
+        save_valid_file=True,
+        querier_settings={"max_tokens": 10},
+    )
 
     classifier.fit(X_train, y_train)
 
@@ -86,6 +92,7 @@ def run_experiment(target, num_train_points, random_undersample, num_test_points
         "y_pred": y_pred,
         "y_test": y_test,
         "n_epochs": n_epochs,
+        "short_name": True,
         **results,
     }
 
@@ -106,7 +113,7 @@ def get_grid(random_undersample):
 
 if __name__ == "__main__":
     for seed in range(3):
-        seed = seed + 6578
+        seed = seed + 54535
         for random_undersample in [True, False][::-1]:
             for target in list(name_mapping.keys())[::-1]:
                 for num_train_points in get_grid(random_undersample)[::-1]:

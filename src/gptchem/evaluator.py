@@ -98,7 +98,7 @@ def evaluate_classification(
                 logger.warning("y_pred contains rounded floats.")
             y_pred_new.append(x_int)
             int_indices.append(i)
-        except Exception as e:
+        except Exception:
             y_pred_new.append(None)
     y_pred_new = L(y_pred_new)
 

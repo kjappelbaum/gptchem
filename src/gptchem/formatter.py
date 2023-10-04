@@ -127,7 +127,7 @@ def mutate_selfie(selfie, max_molecules_len, write_fail_cases=False):
                 valid = False
         except:
             valid = False
-            if fail_counter > 1 and write_fail_cases == True:
+            if fail_counter > 1 and write_fail_cases is True:
                 f = open("selfie_failure_cases.txt", "a+")
                 f.write(
                     "Tried to mutate SELFIE: "
@@ -1232,7 +1232,6 @@ class MOFSynthesisRecommenderFormatter(BaseFormatter):
             pd.DataFrame: A dataframe with a prompt column and a completion column.
         """
         # drop entries that have "unknown" in one of the fields
-        filtered_rows = []
         df.dropna(subset=[self.ligand_column] + [self.inorganic_salt_column], inplace=True)
 
         linker = df[self.ligand_column].values

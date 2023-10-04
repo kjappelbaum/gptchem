@@ -1,5 +1,4 @@
 import os
-import re
 import subprocess
 import time
 from pathlib import Path
@@ -29,6 +28,8 @@ def get_ft_model_name(ft_id, sleep=60):
         logger.debug(f"Fine tuning status: {status}")
         if status == "succeeded":
             return ft.get("fine_tuned_model")
+        elif status == "pending":
+            time.sleep(sleep)
         elif status == "failed":
             raise RuntimeError(f"Fine tuning failed: {ft}")
         time.sleep(sleep)
