@@ -12,7 +12,7 @@ import joblib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import pycm
+
 from fastcore.all import L
 from loguru import logger
 from numpy.typing import ArrayLike
@@ -84,6 +84,8 @@ def evaluate_classification(
     Returns:
         Dict[str, Any]: A dictionary of metrics.
     """
+    import pycm
+
     might_have_rounded_floats = False
     assert len(y_true) == len(y_pred), "y_true and y_pred must be the same length."
     y_true = L([int(x) for x in y_true])
