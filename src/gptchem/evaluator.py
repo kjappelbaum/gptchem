@@ -12,7 +12,6 @@ import joblib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import pycm
 from fastcore.all import L
 from loguru import logger
 from numpy.typing import ArrayLike
@@ -27,6 +26,7 @@ from sklearn.metrics import (
     mean_absolute_percentage_error,
     mean_squared_error,
     r2_score,
+    roc_auc_score,
 )
 
 from gptchem.fingerprints.polymer import featurize_many_polymers
@@ -83,6 +83,8 @@ def evaluate_classification(
     Returns:
         Dict[str, Any]: A dictionary of metrics.
     """
+    import pycm
+
     might_have_rounded_floats = False
     assert len(y_true) == len(y_pred), "y_true and y_pred must be the same length."
     y_true = L([int(x) for x in y_true])
@@ -97,7 +99,7 @@ def evaluate_classification(
                 logger.warning("y_pred contains rounded floats.")
             y_pred_new.append(x_int)
             int_indices.append(i)
-        except Exception as e:
+        except Exception:
             y_pred_new.append(None)
     y_pred_new = L(y_pred_new)
 
@@ -112,6 +114,12 @@ def evaluate_classification(
         y_pred_valid = y_pred_new[int_indices]
 
     cm = pycm.ConfusionMatrix(list(y_true_valid), list(y_pred_valid))
+
+    try:
+        auc = roc_auc_score(y_true_valid, y_pred_valid)
+    except Exception:
+        logger.warning("Could not compute ROC AUC. Multiclass is not supported.")
+        auc = np.nan
     return {
         "accuracy": cm.Overall_ACC,
         "acc_macro": cm.ACC_Macro,
@@ -125,12 +133,13 @@ def evaluate_classification(
         "all_y_pred": y_pred,
         "valid_indices": int_indices,
         "might_have_rounded_floats": might_have_rounded_floats,
+        "roc_auc": auc,
     }
 
 
 class KLDivBenchmark:
     """
-    Computes the KL divergence between a number of samples and the training set for physchem descriptors.
+    Computes the KL divergence between a number of samples and the training set for physchem descriptors. # noqa: E501
     Based on the Gucamol implementation
     https://github.com/BenevolentAI/guacamol/blob/8247bbd5e927fbc3d328865d12cf83cb7019e2d6/guacamol/distribution_learning_benchmark.py
 

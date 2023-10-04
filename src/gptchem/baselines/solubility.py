@@ -13,7 +13,7 @@ from gptchem.evaluator import evaluate_classification, get_regression_metrics
 from .esol import ESOLCalculator
 from ..fingerprints.mol_fingerprints import compute_fragprints, compute_morgan_fingerprints
 from ..models.gpr import GPRBaseline
-from ..models.xgboost import XGBClassificationBaseline, XGBRegressionBaseline
+from ..models.xgboost import XGBClassificationBaseline
 
 
 def featurize_data(tasks, featurizer, normalize, df, smiles_col="SMILES"):
@@ -109,7 +109,7 @@ def solubility_baseline(
     X_train = compute_fragprints(df_train["SMILES"].values)
     X_test = compute_fragprints(df_test["SMILES"].values)
     y_train = df_train[task_name].values
-    y_test = df_test[task_name].values
+    df_test[task_name].values
 
     esol = calc_esol(df_test)
 
@@ -184,11 +184,11 @@ def train_test_solubility_regression_baseline(
 
     y_train = df_train[task_name]
     y_test = df_test[task_name]
-    X_train = compute_morgan_fingerprints(df_train["SMILES"].values, n_bits=100)
-    X_test = compute_morgan_fingerprints(df_test["SMILES"].values, n_bits=100)
+    compute_morgan_fingerprints(df_train["SMILES"].values, n_bits=100)
+    compute_morgan_fingerprints(df_test["SMILES"].values, n_bits=100)
 
-    X_train = compute_fragprints(df_train["SMILES"].values)
-    X_test = compute_fragprints(df_test["SMILES"].values)
+    compute_fragprints(df_train["SMILES"].values)
+    compute_fragprints(df_test["SMILES"].values)
     # xgbclassifier = XGBRegressionBaseline(seed=42, num_trials=num_trials)
     # xgbclassifier.tune(X_train, y_train)
     # xgbclassifier.fit(X_train, y_train)

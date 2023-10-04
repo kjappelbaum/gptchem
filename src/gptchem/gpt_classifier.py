@@ -22,6 +22,7 @@ class GPTClassifier:
         tuner: Tuner,
         querier_settings: Optional[dict] = None,
         extractor: ClassificationExtractor = ClassificationExtractor(),
+        save_valid_file: bool = False,
     ):
         """Initialize a GPTClassifier.
 
@@ -35,6 +36,8 @@ class GPTClassifier:
             extractor (ClassificationExtractor, optional): Callable object that can extract
                 integers from the completions produced by the querier.
                 Defaults to ClassificationExtractor().
+            save_valid_file (bool, optional): Whether to save the validation file.
+                Defaults to False.
         """
         self.property_name = property_name
         self.tuner = tuner
@@ -50,6 +53,7 @@ class GPTClassifier:
         )
         self.model_name = None
         self.tune_res = None
+        self.save_valid_file = save_valid_file
 
     def _prepare_df(self, X: ArrayLike, y: ArrayLike):
         rows = []
@@ -81,6 +85,9 @@ class GPTClassifier:
         """
         df = self._prepare_df(X, [0] * len(X))
         formatted = self.formatter(df)
+        if self.save_valid_file:
+            self.tuner._write_file(formatted, "valid")
+
         querier = Querier(self.model_name, **self.querier_setting)
         completions = querier(formatted)
         extracted = self.extractor(completions)

@@ -9,6 +9,7 @@ from gptchem.formatter import ClassificationFormatter, RegressionFormatter
 
 
 @pytest.mark.slow
+@pytest.mark.baselines
 @pytest.mark.parametrize("tabpfn", (True, False))
 def test_train_test_bandgap_classification_baseline(tabpfn):
     data = get_qmug_data()

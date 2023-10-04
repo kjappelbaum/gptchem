@@ -6,6 +6,7 @@ from gptchem.formatter import ClassificationFormatter
 
 
 @pytest.mark.slow
+@pytest.mark.baselines
 def test_train_test_opv_classification_baseline():
     data = get_opv_data()
     formatter = ClassificationFormatter(

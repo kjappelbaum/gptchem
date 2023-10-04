@@ -1,11 +1,20 @@
-import os
-import time
-from typing import List, Optional
+from typing import Optional
 
 import openai
 import pandas as pd
 from fastcore.basics import basic_repr, chunked
-from pyrate_limiter import Duration, Limiter, RequestRate
+
+from tenacity import (
+    retry,
+    stop_after_attempt,
+    wait_random_exponential,
+)  # for exponential backoff
+
+
+@retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
+def completion_with_backoff(**kwargs):
+    return openai.Completion.create(**kwargs)
+
 
 _PRESETS = {
     "classification": {
@@ -18,8 +27,6 @@ _PRESETS = {
         "max_tokens": 5,
     },
 }
-
-limiter = Limiter(RequestRate(23, Duration.MINUTE))
 
 
 class Querier:
@@ -92,22 +99,16 @@ class Querier:
             settings["logprobs"] = logprobs
 
         for chunk in chunked(df["prompt"], self._parallel_max):
-            while True:
-                try:
-                    with limiter.ratelimit("codex", delay=True):
-                        completions_ = openai.Completion.create(
-                            model=self.modelname,
-                            prompt=chunk,
-                            temperature=temperature,
-                            max_tokens=self.max_tokens,
-                            stop=self._stop,
-                            **settings,
-                        )
-                        completions.append(completions_)
-                    break
-                except openai.error.RateLimitError:
-                    time.sleep(self._sleep)
-                    continue
+            completions_ = completion_with_backoff(
+                model=self.modelname,
+                prompt=chunk,
+                temperature=temperature,
+                max_tokens=self.max_tokens,
+                stop=self._stop,
+                **settings,
+            )
+
+            completions.append(completions_)
 
         completions = {
             "choices": [choice["text"] for c in completions for choice in c["choices"]],

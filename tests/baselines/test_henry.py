@@ -1,4 +1,5 @@
 import pytest
+
 from sklearn.model_selection import train_test_split
 
 from gptchem.baselines.henry import (
@@ -10,6 +11,7 @@ from gptchem.formatter import ClassificationFormatter, RegressionFormatter
 
 
 @pytest.mark.slow
+@pytest.mark.baselines
 def test_train_test_henry_classification_baseline():
     data = get_moosavi_mof_data()
     formatter = ClassificationFormatter(
@@ -35,6 +37,7 @@ def test_train_test_henry_classification_baseline():
 
 
 @pytest.mark.slow
+@pytest.mark.baselines
 def test_train_test_henry_regression_baseline():
     data = get_moosavi_mof_data()
     formatter = RegressionFormatter(

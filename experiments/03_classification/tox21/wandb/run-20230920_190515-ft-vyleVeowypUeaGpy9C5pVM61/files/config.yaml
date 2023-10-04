@@ -1,0 +1,81 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.13.7
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.9.16
+    start_time: 1695229515.718237
+    t:
+      1:
+      - 55
+      2:
+      - 55
+      3:
+      - 13
+      - 14
+      - 16
+      - 23
+      4: 3.9.16
+      5: 0.13.7
+      8:
+      - 4
+      - 5
+created_at:
+  desc: null
+  value: '2023-09-20T18:22:56'
+fine_tuned_model:
+  desc: null
+  value: ada:ft-lamalab-2023-09-20-17-04-41
+hyperparams:
+  desc: null
+  value:
+    batch_size: 8
+    learning_rate_multiplier: 0.1
+    n_epochs: 8
+    prompt_loss_weight: 0.01
+id:
+  desc: null
+  value: ft-vyleVeowypUeaGpy9C5pVM61
+model:
+  desc: null
+  value: ada
+object:
+  desc: null
+  value: fine-tune
+organization_id:
+  desc: null
+  value: org-e5cJM1C35LX1dZ9ml6LUfovG
+result_files:
+  desc: null
+  value:
+    bytes: 290393
+    created_at: 1695229482
+    filename: compiled_results.csv
+    id: file-ZL9DUWkQVjnIHSf1mZjwk8fb
+    object: file
+    purpose: fine-tune-results
+    status: processed
+    status_details: null
+status:
+  desc: null
+  value: succeeded
+training_files:
+  desc: null
+  value:
+    bytes: 1222826
+    created_at: 1695226976
+    filename: /Users/kevinmaikjablonka/git/kjappelbaum/gptchem/experiments/03_classification/tox21/out/20230920_182249/train.jsonl
+    id: file-aMFot2ksDO5VW05Fe82uEL8z
+    object: file
+    purpose: fine-tune
+    status: processed
+    status_details: null
+updated_at:
+  desc: null
+  value: 1695229483
+validation_files:
+  desc: null
+  value: []

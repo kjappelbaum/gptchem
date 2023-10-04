@@ -3,14 +3,10 @@ from optuna import create_study
 from optuna.samplers import TPESampler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import (
-    accuracy_score,
     f1_score,
-    mean_absolute_error,
-    mean_squared_error,
-    r2_score,
 )
-from sklearn.model_selection import KFold, train_test_split
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.model_selection import KFold
+from sklearn.preprocessing import LabelEncoder
 
 from ..models.base import BaseLineModel
 

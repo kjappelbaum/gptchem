@@ -1,8 +1,5 @@
-from sklearn.decomposition import PCA
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_selection import SelectFromModel
-from sklearn.linear_model import LogisticRegression
-from sklearn.pipeline import Pipeline
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
 
 from gptchem.evaluator import evaluate_classification, get_regression_metrics

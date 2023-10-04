@@ -1,4 +1,5 @@
 import pytest
+
 from sklearn.model_selection import train_test_split
 
 from gptchem.baselines.water_stability import train_test_waterstability_baseline
@@ -6,6 +7,7 @@ from gptchem.data import get_water_stability
 
 
 @pytest.mark.slow
+@pytest.mark.baselines
 def test_train_test_waterstability_baseline():
     data = get_water_stability()
 

@@ -6,6 +6,7 @@ from gptchem.formatter import ClassificationFormatter
 
 
 @pytest.mark.slow
+@pytest.mark.baselines
 @pytest.mark.parametrize("representation", ["mofid", "grouped_mof"])
 def test_train_test_cv_classification_baseline(representation):
     data = get_moosavi_cv_data()

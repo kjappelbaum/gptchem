@@ -47,6 +47,7 @@ def test_evaluate_classification(container):
 
 
 @pytest.mark.parametrize("input_output", [("C[N]1C=CC(=N1)N=NC2=CC=CC=C2", 310.0, 290.0)])
+@pytest.importorskip("gpflow")
 def test_predict_photoswitch(input_output):
     inp, e, z = input_output
     result = predict_photoswitch(inp)
@@ -77,6 +78,7 @@ def test_evaluate_generated_smiles():
     assert np.isnan(res["kld"])
 
 
+@pytest.importorskip("gpflow")
 def test_evaluate_photoswitch_smiles_pred():
     res = evaluate_photoswitch_smiles_pred(
         ["C[N]1C=CC(=N1)N=NC2=CC=CC=C2", "C[N]1C=CCCCC(=N1)N=NC2=CC=CC=C2"], [310, 290], [290, 310]

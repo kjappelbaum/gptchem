@@ -127,7 +127,7 @@ def mutate_selfie(selfie, max_molecules_len, write_fail_cases=False):
                 valid = False
         except:
             valid = False
-            if fail_counter > 1 and write_fail_cases == True:
+            if fail_counter > 1 and write_fail_cases is True:
                 f = open("selfie_failure_cases.txt", "a+")
                 f.write(
                     "Tried to mutate SELFIE: "
@@ -196,8 +196,9 @@ class ForwardFormatter(BaseFormatter):
         - stop_sequence -> "@@@"
     """
 
-    _PROMPT_TEMPLATE = "{prefix}What is the {propertyname} of {representation}{suffix}{end_prompt}"
+    _PROMPT_TEMPLATE = "{prefix}What is the {propertyname} of {representation_name}{representation}{suffix}{end_prompt}"
     _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
+    representation_name = ''
 
     def format(self) -> dict:
         raise NotImplementedError
@@ -208,6 +209,7 @@ class ForwardFormatter(BaseFormatter):
                 prefix=self._prefix,
                 propertyname=self.property_name,
                 representation=representation,
+                representation_name=self.representation_name,
                 suffix=self._suffix,
                 end_prompt=self._end_prompt,
             ),
@@ -251,7 +253,7 @@ class ClassificationFormatter(ForwardFormatter):
         since you only need the first token for classification."
     """
 
-    _PROMPT_TEMPLATE = "{prefix}What is the {propertyname} of {representation}{suffix}{end_prompt}"
+    _PROMPT_TEMPLATE = "{prefix}What is the {propertyname} of {representation_name}{representation}{suffix}{end_prompt}"
     _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
 
     def __init__(
@@ -261,6 +263,7 @@ class ClassificationFormatter(ForwardFormatter):
         property_name: str,
         num_classes: Optional[int] = None,
         qcut: bool = True,
+        representation_name: str = ""
     ) -> None:
         """Initialize a ClassificationFormatter.
 
@@ -270,6 +273,7 @@ class ClassificationFormatter(ForwardFormatter):
                 property_name (str): The name of the property.
                 num_classes (int, optional): The number of classes.
                 qcut (bool): Whether to use qcut to split the label into classes. Otherwise, cut is used.
+                representation_name (str) name of the representation (e.g. "SMILES"). Defaults to "".
         """
         self.representation_column = representation_column
         self.label_column = label_column
@@ -277,8 +281,9 @@ class ClassificationFormatter(ForwardFormatter):
         self.property_name = property_name
         self.qcut = qcut
         self.bins = None
+        self.representation_name = representation_name
 
-    __repr__ = basic_repr("representation_column,label_column,property_name,num_classes,qcut")
+    __repr__ = basic_repr("representation_column,label_column,property_name,num_classes,qcut,representation_name")
 
     @property
     def class_names(self) -> List[int]:
@@ -1227,7 +1232,6 @@ class MOFSynthesisRecommenderFormatter(BaseFormatter):
             pd.DataFrame: A dataframe with a prompt column and a completion column.
         """
         # drop entries that have "unknown" in one of the fields
-        filtered_rows = []
         df.dropna(subset=[self.ligand_column] + [self.inorganic_salt_column], inplace=True)
 
         linker = df[self.ligand_column].values

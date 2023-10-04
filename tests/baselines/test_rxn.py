@@ -1,4 +1,5 @@
 import pytest
+
 from sklearn.model_selection import train_test_split
 
 from gptchem.baselines.rxn import (
@@ -10,6 +11,7 @@ from gptchem.formatter import ReactionClassificationFormatter
 
 
 @pytest.mark.slow
+@pytest.mark.baselines
 def test_train_test_rxn_classification_baseline():
     data = get_doyle_rxn_data()
 
@@ -23,6 +25,7 @@ def test_train_test_rxn_classification_baseline():
 
 
 @pytest.mark.slow
+@pytest.mark.baselines
 def test_rain_test_rxn_regressions_baseline():
     data = get_doyle_rxn_data()
 

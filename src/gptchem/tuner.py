@@ -1,5 +1,4 @@
 import os
-import re
 import subprocess
 import time
 from pathlib import Path
@@ -29,6 +28,8 @@ def get_ft_model_name(ft_id, sleep=60):
         logger.debug(f"Fine tuning status: {status}")
         if status == "succeeded":
             return ft.get("fine_tuned_model")
+        elif status == "pending":
+            time.sleep(sleep)
         elif status == "failed":
             raise RuntimeError(f"Fine tuning failed: {ft}")
         time.sleep(sleep)
@@ -60,6 +61,7 @@ class Tuner:
         outdir: Optional[PathType] = None,
         run_name: str = None,
         wandb_sync: bool = True,
+        write_summary: bool = True,
     ) -> None:
         """Initialize a Tuner.
 
@@ -77,6 +79,8 @@ class Tuner:
                 If not specified, a directory will be created in `BASE_OUTDIR`
             run_name: The name of the run. This is used to create the output directory.
             wandb_sync: Whether to sync the results to Weights & Biases.
+            write_summary: Whether to write a summary of the fine tuning run to a file.
+                Defaults to True.
         """
         self.base_model = base_model
         self.batch_size = batch_size
@@ -94,6 +98,7 @@ class Tuner:
         self._train_file_id = None
         self._valid_file_id = None
         self._res = None
+        self._write_summary = write_summary
 
     @classmethod
     def from_preset(cls, preset: str = "ada-classification"):
@@ -134,6 +139,7 @@ class Tuner:
                 raise ValueError(f"Invalid type: {data_type}. Valid types are: ['train', 'valid']")
 
             filename = os.path.abspath(os.path.join(self.outdir, f"{data_type}.jsonl"))
+            df = df[["prompt", "completion"]]
             df.to_json(filename, orient="records", lines=True, force_ascii=False)
             if data_type == "train":
                 self._train_filename = filename
@@ -201,8 +207,9 @@ class Tuner:
         self._modelname = modelname
         self._ft_id = ft_id
 
-        with open(os.path.join(self.outdir, "summary.json"), "w") as f:
-            f.write(dumps(self.summary))
+        if self._write_summary:
+            with open(os.path.join(self.outdir, "summary.json"), "w") as f:
+                f.write(dumps(self.summary))
 
         logger.debug(f"Fine tuning completed. {self.summary}")
         return self.summary

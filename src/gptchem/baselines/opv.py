@@ -103,7 +103,7 @@ def train_test_opv_regression_baseline(
 ):
     label_column = formatter.label_column
     data = data.dropna(subset=[formatter.label_column, formatter.representation_column])
-    formatted = formatter(data)
+    formatter(data)
 
     train = data[data["SMILES"].isin(train_smiles)]
     test = data[data["SMILES"].isin(test_smiles)]

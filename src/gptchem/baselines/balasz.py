@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.dummy import DummyClassifier
-from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+from sklearn.preprocessing import LabelEncoder
 from tabpfn.scripts.transformer_prediction_interface import TabPFNClassifier
 
 from gptchem.evaluator import evaluate_classification
