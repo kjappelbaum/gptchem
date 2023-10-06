@@ -11,6 +11,10 @@ from gptchem.extractor import ClassificationExtractor
 from gptchem.formatter import ClassificationFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
+import tiktoken
+
+
+GENERALLY_ALLOWED_COMPLETION_TOKENS = ["###"]
 
 
 class GPTClassifier:
@@ -23,6 +27,7 @@ class GPTClassifier:
         querier_settings: Optional[dict] = None,
         extractor: ClassificationExtractor = ClassificationExtractor(),
         save_valid_file: bool = False,
+        bias_token: bool = True,
     ):
         """Initialize a GPTClassifier.
 
@@ -38,6 +43,8 @@ class GPTClassifier:
                 Defaults to ClassificationExtractor().
             save_valid_file (bool, optional): Whether to save the validation file.
                 Defaults to False.
+            bias_tokens (bool, optional): Whether to add bias to tokens
+                to ensure that only the relevant tokens are generated.
         """
         self.property_name = property_name
         self.tuner = tuner
@@ -54,6 +61,21 @@ class GPTClassifier:
         self.model_name = None
         self.tune_res = None
         self.save_valid_file = save_valid_file
+        self.bias_token = bias_token
+
+    def _get_bias_dict(self):
+        bias_dict = {}
+        if self.bias_token:
+            encoding = tiktoken.encoding_for_model(self.tuner.base_model)
+            for char in self.formatter.allowed_characters:
+                bias_dict[encoding.encode(char)[0]] = 100
+        return bias_dict
+
+    @classmethod
+    def from_finetune_id(cls, finetune_id: str, **kwargs):
+        cls = cls(**kwargs)
+        cls.model_name = finetune_id
+        return cls
 
     def _prepare_df(self, X: ArrayLike, y: ArrayLike):
         rows = []
@@ -88,7 +110,7 @@ class GPTClassifier:
         if self.save_valid_file:
             self.tuner._write_file(formatted, "valid")
 
-        querier = Querier(self.model_name, **self.querier_setting)
+        querier = Querier(self.model_name, **self.querier_setting, logit_bias=self._get_bias_dict())
         completions = querier(formatted)
         extracted = self.extractor(completions)
         return extracted

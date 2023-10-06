@@ -49,9 +49,10 @@ class Querier:
     _sleep = 5
     _stop = "@@@"
 
-    def __init__(self, modelname, max_tokens: int = 10):
+    def __init__(self, modelname, max_tokens: int = 10, logit_bias: Optional[dict] = None):
         self.modelname = modelname
         self.max_tokens = max_tokens
+        self.logit_bias = logit_bias or {}
 
     @classmethod
     def from_preset(cls, modelname: str, preset: str = "classification"):
@@ -105,6 +106,7 @@ class Querier:
                 temperature=temperature,
                 max_tokens=self.max_tokens,
                 stop=self._stop,
+                logit_bias=self.logit_bias,
                 **settings,
             )
 
