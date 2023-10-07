@@ -24,7 +24,7 @@ from rdkit.Chem import MolFromSmiles as smi2mol
 from rdkit.Chem import MolToSmiles as mol2smi
 from selfies import decoder
 from sklearn.preprocessing import LabelEncoder
-
+from tiktoken import Encoding
 from .types import StringOrNumber
 
 RDLogger.DisableLog("rdApp.*")
@@ -375,7 +375,7 @@ class ClassificationFormatter(ForwardFormatter):
         return pd.DataFrame([self._format(r, l) for r, l in zip(representation, label)])
 
 
-class MultiClassClassificationFormatter(ClassificationFormatter):
+class MultiOutputClassificationFormatter(ClassificationFormatter):
     def __init__(
         self,
         representation_column: str,
@@ -1116,6 +1116,7 @@ class InverseDesignFormatter(BaseFormatter):
         property_names: List[str],
         num_classes: int = None,
         num_digits: int = 1,
+        encoding: Optional[Encoding] = None,
     ):
         self.representation_column = representation_column
         self.property_columns = property_columns
@@ -1123,6 +1124,7 @@ class InverseDesignFormatter(BaseFormatter):
         self.num_classes = num_classes
         self.num_digits = num_digits
         self.bins = None
+        self.encoding = encoding
 
     @property
     def class_names(self) -> List[int]:
@@ -1176,6 +1178,10 @@ class InverseDesignFormatter(BaseFormatter):
     def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
         df = df.dropna(subset=self.property_columns)
         representation = df[self.representation_column].values
+        if self.encoding:
+            encoded = self.encoding.batch_encode(representation)
+            decoded = self.encoding.batch_decode(encoded)
+            self._allowed_tokens = list(set(decoded))
         prop = df[self.property_columns].values
 
         if self.num_classes is not None:

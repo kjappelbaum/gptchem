@@ -68,7 +68,8 @@ class GPTClassifier:
         if self.bias_token:
             encoding = tiktoken.encoding_for_model(self.tuner.base_model)
             for char in self.formatter.allowed_characters:
-                bias_dict[encoding.encode(char)[0]] = 100
+                for token in encoding.encode(char):
+                    bias_dict[token] = 100
         return bias_dict
 
     @classmethod

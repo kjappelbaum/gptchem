@@ -52,8 +52,8 @@ class ClassificationExtractor(BaseExtractor):
         return self.intify(self.split(data).strip())
 
 
-class MultiClassificationExtractor(BaseExtractor):
-    """Extract integers from completions of multi-class classification tasks."""
+class MultiOutputExtractor(BaseExtractor):
+    """Extract integers from completions of multi-output classification tasks."""
 
     def extract(self, data, **kwargs) -> int:
         no_stop = data.replace(self._stop_sequence, "").replace("@", "")
