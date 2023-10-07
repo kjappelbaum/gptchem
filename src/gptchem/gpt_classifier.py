@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, Union
 
 import numpy as np
 import pandas as pd
@@ -7,8 +7,8 @@ from sklearn.base import BaseEstimator
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
-from gptchem.extractor import ClassificationExtractor
-from gptchem.formatter import ClassificationFormatter
+from gptchem.extractor import ClassificationExtractor, MultiOutputExtractor
+from gptchem.formatter import ClassificationFormatter, MultiOutputClassificationFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
 import tiktoken
@@ -22,41 +22,58 @@ class GPTClassifier:
 
     def __init__(
         self,
-        property_name: str,
-        tuner: Tuner,
+        property_name: Union[str, List[str]],
+        tuner: Optional[Tuner] = None,
         querier_settings: Optional[dict] = None,
-        extractor: ClassificationExtractor = ClassificationExtractor(),
+        extractor: Optional[ClassificationExtractor] = None,
         save_valid_file: bool = False,
         bias_token: bool = True,
     ):
         """Initialize a GPTClassifier.
 
         Args:
-            property_name (str): Name of the property to be predicted.
+            property_name (Union[str, List[str]]): Name of the property to be predicted.
                This will be part of the prompt.
+               A list of strings can be provided to predict multiple properties
+               (requires a `MultiOutputClassificationFormatter` and `MultiOutputExtractor`).
             tuner (Tuner): Tuner object to be used for fine tuning.
                This specifies the model to be used and the fine-tuning settings.
+               Defaults to None. If None, a default tuner will be used.
+               This default Tuner will use the `ada` model.
             querier_settings (Optional[dict], optional): Settings for the querier.
                 Defaults to None.
             extractor (ClassificationExtractor, optional): Callable object that can extract
                 integers from the completions produced by the querier.
-                Defaults to ClassificationExtractor().
+                Defaults to None. If None, a default extractor will be used.
             save_valid_file (bool, optional): Whether to save the validation file.
                 Defaults to False.
             bias_tokens (bool, optional): Whether to add bias to tokens
                 to ensure that only the relevant tokens are generated.
         """
         self.property_name = property_name
-        self.tuner = tuner
+        self.tuner = tuner if tuner is not None else Tuner()
         self.querier_setting = (
             querier_settings if querier_settings is not None else {"max_tokens": 3}
         )
-        self.extractor = extractor
-        self.formatter = ClassificationFormatter(
-            representation_column="repr",
-            label_column="prop",
-            property_name=property_name,
-            num_classes=None,
+        if extractor is None:
+            if isinstance(property_name, str):
+                extractor = ClassificationExtractor()
+            else:
+                extractor = MultiOutputExtractor()
+        self.formatter = (
+            ClassificationFormatter(
+                representation_column="repr",
+                label_column="prop",
+                property_name=property_name,
+                num_classes=None,
+            )
+            if isinstance(property_name, str)
+            else MultiOutputClassificationFormatter(
+                representation_column="repr",
+                label_columns=property_name,
+                property_names=property_name,
+                num_classes=None,
+            )
         )
         self.model_name = None
         self.tune_res = None
@@ -80,8 +97,17 @@ class GPTClassifier:
 
     def _prepare_df(self, X: ArrayLike, y: ArrayLike):
         rows = []
-        for i in range(len(X)):
-            rows.append({"repr": X[i], "prop": y[i]})
+        # if y is one column  we add one column "prop"
+        # else we add one column per property
+        if y.ndim == 1:
+            for i in range(len(X)):
+                rows.append({"repr": X[i], "prop": y[i]})
+        else:
+            for i in range(len(X)):
+                row = {"repr": X[i]}
+                y_dict = dict(zip(self.property_name, y[i]))
+                row.update(y_dict)
+                rows.append(row)
         return pd.DataFrame(rows)
 
     def fit(self, X: ArrayLike, y: ArrayLike) -> None:

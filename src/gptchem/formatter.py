@@ -1125,6 +1125,7 @@ class InverseDesignFormatter(BaseFormatter):
         self.num_digits = num_digits
         self.bins = None
         self.encoding = encoding
+        self._label_set = None
 
     @property
     def class_names(self) -> List[int]:
@@ -1181,7 +1182,7 @@ class InverseDesignFormatter(BaseFormatter):
         if self.encoding:
             encoded = self.encoding.batch_encode(representation)
             decoded = self.encoding.batch_decode(encoded)
-            self._allowed_tokens = list(set(decoded))
+            self._label_set = list(set(decoded))
         prop = df[self.property_columns].values
 
         if self.num_classes is not None:
