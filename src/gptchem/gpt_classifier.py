@@ -28,6 +28,7 @@ class GPTClassifier:
         extractor: Optional[ClassificationExtractor] = None,
         save_valid_file: bool = False,
         bias_token: bool = True,
+        class_weights: Optional[dict] = None,
     ):
         """Initialize a GPTClassifier.
 
@@ -49,6 +50,10 @@ class GPTClassifier:
                 Defaults to False.
             bias_tokens (bool, optional): Whether to add bias to tokens
                 to ensure that only the relevant tokens are generated.
+                Defaults to True.
+            class_weights (Optional[dict], optional): Class weights to be used for inference.
+                Defaults to None. If None, classes will be weighted equally.
+                Ensure that the weights add up to 1.
         """
         self.property_name = property_name
         self.tuner = tuner if tuner is not None else Tuner()
@@ -82,14 +87,25 @@ class GPTClassifier:
         self.save_valid_file = save_valid_file
         self.bias_token = bias_token
         self._input_shape = None
+        self._class_weights = class_weights
 
     def _get_bias_dict(self):
         bias_dict = {}
+        bias = 100
+        encoding = tiktoken.encoding_for_model(self.tuner.base_model)
+        if self._class_weights is not None:
+            default_weight = 1 / len(self._class_weights)
+        else:
+            default_weight = 1
         if self.bias_token:
-            encoding = tiktoken.encoding_for_model(self.tuner.base_model)
             for char in self.formatter.allowed_characters:
                 for token in encoding.encode(char):
-                    bias_dict[token] = 100
+                    bias_dict[token] = 100 * default_weight
+
+        if self._class_weights is not None:
+            for class_, weight in self._class_weights.items():
+                encoded = encoding.encode(str(class_))
+                bias_dict[encoded[0]] = bias * weight
         return bias_dict
 
     @classmethod
@@ -147,7 +163,6 @@ class GPTClassifier:
 
         querier = Querier(self.model_name, **self.querier_setting, logit_bias=self._get_bias_dict())
         completions = querier(formatted)
-        print(completions)
         extracted = self.extractor(completions)
         return extracted
 
