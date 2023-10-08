@@ -398,6 +398,7 @@ class MultiOutputClassificationFormatter(ClassificationFormatter):
         self.bins = [None] * len(label_columns)
         self.representation_name = representation_name
         self._extra_characters = set([",", " "])
+        self._label_set = set()
 
     def get_class_names(self, output):
         return np.arange(self.num_classes[output])
@@ -435,8 +436,11 @@ class MultiOutputClassificationFormatter(ClassificationFormatter):
                         bins = self.bins
 
                     label = pd.cut(label, bins=bins, labels=self.class_names, include_lowest=True)
+                    self._label_set.update(label.unique().tolist())
+            else:
+                label = label.astype(str)
+                self._label_set.update(label.unique().tolist())
             formatted_labels.append(label.values)
-
         formatted_labels = np.stack(formatted_labels, axis=1)
         formatted_labels = pd.DataFrame(formatted_labels, columns=self.property_names)
 
