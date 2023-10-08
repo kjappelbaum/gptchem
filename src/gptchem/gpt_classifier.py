@@ -60,6 +60,8 @@ class GPTClassifier:
                 extractor = ClassificationExtractor()
             else:
                 extractor = MultiOutputExtractor()
+
+        self.extractor = extractor
         self.formatter = (
             ClassificationFormatter(
                 representation_column="repr",
@@ -79,6 +81,7 @@ class GPTClassifier:
         self.tune_res = None
         self.save_valid_file = save_valid_file
         self.bias_token = bias_token
+        self._input_shape = None
 
     def _get_bias_dict(self):
         bias_dict = {}
@@ -122,6 +125,7 @@ class GPTClassifier:
         tune_res = self.tuner(formatted)
         self.model_name = tune_res["model_name"]
         self.tune_res = tune_res
+        self._input_shape = np.shape(y)
 
     def predict(self, X: ArrayLike) -> ArrayLike:
         """Predict property values for a set of molecular representations.
@@ -132,13 +136,18 @@ class GPTClassifier:
         Returns:
             ArrayLike: Predicted property values
         """
-        df = self._prepare_df(X, [0] * len(X))
+        if len(self._input_shape) == 1:
+            y = np.zeros(len(X))
+        else:
+            y = np.zeros((len(X), self._input_shape[1]))
+        df = self._prepare_df(X, y)
         formatted = self.formatter(df)
         if self.save_valid_file:
             self.tuner._write_file(formatted, "valid")
 
         querier = Querier(self.model_name, **self.querier_setting, logit_bias=self._get_bias_dict())
         completions = querier(formatted)
+        print(completions)
         extracted = self.extractor(completions)
         return extracted
 

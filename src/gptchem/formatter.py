@@ -298,6 +298,7 @@ class ClassificationFormatter(ForwardFormatter):
         self.bins = None
         self.representation_name = representation_name
         self._label_set = set()
+        self._extra_characters = set()
 
     __repr__ = basic_repr(
         "representation_column,label_column,property_name,num_classes,qcut,representation_name"
@@ -318,6 +319,10 @@ class ClassificationFormatter(ForwardFormatter):
             pass
         try:
             allowed_characters.update(list(self._label_set))
+        except Exception:
+            pass
+        try:
+            allowed_characters.update(list(self._extra_characters))
         except Exception:
             pass
         return list(allowed_characters)
@@ -392,6 +397,7 @@ class MultiOutputClassificationFormatter(ClassificationFormatter):
         self.qcut = qcut
         self.bins = [None] * len(label_columns)
         self.representation_name = representation_name
+        self._extra_characters = set([",", " "])
 
     def get_class_names(self, output):
         return np.arange(self.num_classes[output])
