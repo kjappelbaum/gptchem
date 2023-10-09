@@ -57,12 +57,12 @@ def generate_scaffolds(smiles_list, log_every_n=1000):
     return scaffold_sets
 
 
-def scaffold_split(dataset, valid_size, test_size, seed=None, log_every_n=1000):
+def scaffold_split(smiles, valid_size, test_size, seed=None, log_every_n=1000):
     train_size = 1.0 - valid_size - test_size
-    scaffold_sets = generate_scaffolds(dataset)
+    scaffold_sets = generate_scaffolds(smiles)
 
-    train_cutoff = train_size * len(dataset)
-    valid_cutoff = (train_size + valid_size) * len(dataset)
+    train_cutoff = train_size * len(smiles)
+    valid_cutoff = (train_size + valid_size) * len(smiles)
     train_inds: List[int] = []
     valid_inds: List[int] = []
     test_inds: List[int] = []

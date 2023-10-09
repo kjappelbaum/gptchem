@@ -45,7 +45,7 @@ target_number_mapping = {
 }
 
 
-def run_experiment(target, num_train_points, random_undersample, num_test_points, seed):
+def run_experiment(target, num_train_points, random_undersample, num_test_points, seed, n_epochs=4):
     tox21_tasks, tox21_datasets, transformers = load_tox21(seed=seed, reload=False)
     train_dataset, valid_dataset, test_dataset = tox21_datasets
 
@@ -63,18 +63,18 @@ def run_experiment(target, num_train_points, random_undersample, num_test_points
     test_ids = np.random.choice(np.arange(len(X_test)), num_test_points, replace=False)
 
     X_train = X_train[train_ids]
-    y_train = y_train[train_ids]
+    y_train = y_train[train_ids].astype(int)
 
     X_test = X_test[test_ids]
-    y_test = y_test[test_ids]
-    n_epochs = 8
-
+    y_test = y_test[test_ids].astype(int)
+    class_weights = {0: 0.497, 1: 1 - 0.497}
     tuner = Tuner(n_epochs=n_epochs, learning_rate_multiplier=0.02, wandb_sync=False)
     classifier = GPTClassifier(
         target,
         tuner=tuner,
         save_valid_file=True,
         querier_settings={"max_tokens": 10},
+        class_weights=class_weights,
     )
 
     classifier.fit(X_train, y_train)
@@ -94,6 +94,7 @@ def run_experiment(target, num_train_points, random_undersample, num_test_points
         "n_epochs": n_epochs,
         "short_name": True,
         **results,
+        "class_weights": class_weights,
     }
 
     timestr = get_timestr()
@@ -113,10 +114,10 @@ def get_grid(random_undersample):
 
 if __name__ == "__main__":
     for seed in range(3):
-        seed = seed + 54535
+        seed = seed + 46756
         for random_undersample in [True, False][::-1]:
             for target in list(name_mapping.keys())[::-1]:
-                for num_train_points in get_grid(random_undersample)[::-1]:
+                for num_train_points in get_grid(random_undersample):
                     try:
                         run_experiment(target, num_train_points, random_undersample, 500, seed)
                         time.sleep(60)
