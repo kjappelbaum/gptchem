@@ -244,11 +244,12 @@ class NGramGPTClassifier:
         self.model_name = tune_res["model_name"]
         self.tune_res = tune_res
 
-    def predict(self, X: ArrayLike) -> ArrayLike:
+    def predict(self, X: ArrayLike, temperature: float = 0) -> ArrayLike:
         """Predict property values for a set of molecular representations.
 
         Args:
             X (ArrayLike): Input data (typically array of molecular representations)
+            temperature (float): Temperature of the softmax. Defaults to 0.
 
         Returns:
             ArrayLike: Predicted property values
@@ -262,7 +263,7 @@ class NGramGPTClassifier:
         )
         formatted = self.formatter(df)
         querier = Querier(self.model_name, **self.querier_setting)
-        completions = querier(formatted)
+        completions = querier(formatted, temperature=temperature)
         extracted = self.extractor(completions)
         return extracted
 
