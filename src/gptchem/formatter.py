@@ -24,10 +24,20 @@ from rdkit.Chem import MolFromSmiles as smi2mol
 from rdkit.Chem import MolToSmiles as mol2smi
 from selfies import decoder
 from sklearn.preprocessing import LabelEncoder
-
+from tiktoken import Encoding
 from .types import StringOrNumber
 
 RDLogger.DisableLog("rdApp.*")
+
+
+def join_list_of_strings(ls):
+    """Join with comma and 'and'"""
+    if len(ls) == 1:
+        return ls[0]
+    elif len(ls) == 2:
+        return " and ".join(ls)
+    else:
+        return ", ".join(ls[:-1]) + ", and " + ls[-1]
 
 
 def sanitize_smiles(smi):
@@ -178,6 +188,11 @@ class BaseFormatter:
 
     __repr__ = basic_repr()
 
+    @property
+    def allowed_characters(self):
+        """The allowed characters for the representation."""
+        raise NotImplementedError
+
 
 class ForwardFormatter(BaseFormatter):
     """Convert a dataframe to a dataframe of prompts and completions for classification or regression.
@@ -198,7 +213,7 @@ class ForwardFormatter(BaseFormatter):
 
     _PROMPT_TEMPLATE = "{prefix}What is the {propertyname} of {representation_name}{representation}{suffix}{end_prompt}"
     _COMPLETION_TEMPLATE = "{start_completion}{label}{stop_sequence}"
-    representation_name = ''
+    representation_name = ""
 
     def format(self) -> dict:
         raise NotImplementedError
@@ -263,7 +278,7 @@ class ClassificationFormatter(ForwardFormatter):
         property_name: str,
         num_classes: Optional[int] = None,
         qcut: bool = True,
-        representation_name: str = ""
+        representation_name: str = "",
     ) -> None:
         """Initialize a ClassificationFormatter.
 
@@ -282,13 +297,35 @@ class ClassificationFormatter(ForwardFormatter):
         self.qcut = qcut
         self.bins = None
         self.representation_name = representation_name
+        self._label_set = set()
+        self._extra_characters = set()
 
-    __repr__ = basic_repr("representation_column,label_column,property_name,num_classes,qcut,representation_name")
+    __repr__ = basic_repr(
+        "representation_column,label_column,property_name,num_classes,qcut,representation_name"
+    )
 
     @property
     def class_names(self) -> List[int]:
         """Names of the classes."""
         return list(range(self.num_classes))
+
+    @property
+    def allowed_characters(self):
+        """The allowed characters for the representation."""
+        allowed_characters = set([self._stop_sequence, " "])
+        try:
+            allowed_characters.update(list(self.class_names))
+        except Exception:
+            pass
+        try:
+            allowed_characters.update(list(self._label_set))
+        except Exception:
+            pass
+        try:
+            allowed_characters.update(list(self._extra_characters))
+        except Exception:
+            pass
+        return list(allowed_characters)
 
     def bin(self, y: ArrayLike):
         """Bin the inputs based on the bins used for the dataset."""
@@ -311,7 +348,6 @@ class ClassificationFormatter(ForwardFormatter):
         df = df.dropna(subset=[self.representation_column, self.label_column])
         representation = df[self.representation_column]
         label = df[self.label_column]
-
         if self.num_classes is not None:
             if self.qcut:
                 if self.bins is None:
@@ -337,8 +373,102 @@ class ClassificationFormatter(ForwardFormatter):
                     bins = self.bins
 
                 label = pd.cut(label, bins=bins, labels=self.class_names, include_lowest=True)
-
+                self._label_set.update(label.unique().tolist())
+        else:
+            label = label.astype(str)
+            self._label_set.update(label.unique().tolist())
         return pd.DataFrame([self._format(r, l) for r, l in zip(representation, label)])
+
+
+class MultiOutputClassificationFormatter(ClassificationFormatter):
+    def __init__(
+        self,
+        representation_column: str,
+        label_columns: List[str],
+        property_names: List[str],
+        num_classes: Optional[List[int]] = None,
+        qcut: bool = True,
+        representation_name: str = "",
+    ) -> None:
+        self.representation_column = representation_column
+        self.label_columns = label_columns
+        self.num_classes = num_classes
+        self.property_names = property_names
+        self.qcut = qcut
+        self.bins = [None] * len(label_columns)
+        self.representation_name = representation_name
+        self._extra_characters = set([",", " "])
+        self._label_set = set()
+
+    def get_class_names(self, output):
+        return np.arange(self.num_classes[output])
+
+    def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
+        df = df.dropna(subset=[self.representation_column] + self.label_columns)
+        representation = df[self.representation_column]
+        formatted_labels = []
+        for i, target in enumerate(self.label_columns):
+            label = df[target]
+            if self.num_classes is not None:
+                if self.qcut:
+                    if self.bins is None:
+                        _, bins = pd.qcut(list(label.values), self.num_classes, retbins=True)
+                        bins = [-np.inf, *bins[1:-1], np.inf]
+                        self.bins[i] = bins
+                    else:
+                        bins = self.bins
+                    label = pd.cut(
+                        label, bins=bins, labels=self.get_class_names(i), include_lowest=True
+                    )
+
+                else:
+                    if self.bins[i] is None:
+                        _, bins = pd.cut(
+                            list(label.values),
+                            self.num_classes,
+                            retbins=True,
+                            include_lowest=True,
+                        )
+                        # change left and right edges to -inf and inf
+                        bins = [-np.inf, *bins[1:-1], np.inf]
+                        self.bins = bins
+                    else:
+                        bins = self.bins
+
+                    label = pd.cut(label, bins=bins, labels=self.class_names, include_lowest=True)
+                    self._label_set.update(label.unique().tolist())
+            else:
+                label = label.astype(str)
+                self._label_set.update(label.unique().tolist())
+            formatted_labels.append(label.values)
+        formatted_labels = np.stack(formatted_labels, axis=1)
+        formatted_labels = pd.DataFrame(formatted_labels, columns=self.property_names)
+
+        return pd.DataFrame(
+            [
+                self._format(r, l)
+                for r, l in zip(representation, formatted_labels[self.property_names].values)
+            ]
+        )
+
+    def _format(self, representation: StringOrNumber, label: StringOrNumber) -> dict:
+        return {
+            "prompt": self._PROMPT_TEMPLATE.format(
+                prefix=self._prefix,
+                propertyname=join_list_of_strings(self.property_names),
+                representation=representation,
+                representation_name=self.representation_name,
+                suffix=self._suffix,
+                end_prompt=self._end_prompt,
+            ),
+            "completion": self._COMPLETION_TEMPLATE.format(
+                start_completion=self._start_completion,
+                label=", ".join([str(s) for s in label]),
+                stop_sequence=self._stop_sequence,
+            ),
+            "label": label,
+            "representation": representation,
+        }
 
 
 class ClassifictionFormatterWithExamples(ClassificationFormatter):
@@ -996,6 +1126,7 @@ class InverseDesignFormatter(BaseFormatter):
         property_names: List[str],
         num_classes: int = None,
         num_digits: int = 1,
+        encoding: Optional[Encoding] = None,
     ):
         self.representation_column = representation_column
         self.property_columns = property_columns
@@ -1003,6 +1134,8 @@ class InverseDesignFormatter(BaseFormatter):
         self.num_classes = num_classes
         self.num_digits = num_digits
         self.bins = None
+        self.encoding = encoding
+        self._label_set = None
 
     @property
     def class_names(self) -> List[int]:
@@ -1056,6 +1189,10 @@ class InverseDesignFormatter(BaseFormatter):
     def format_many(self, df: pd.DataFrame) -> pd.DataFrame:
         df = df.dropna(subset=self.property_columns)
         representation = df[self.representation_column].values
+        if self.encoding:
+            encoded = self.encoding.batch_encode(representation)
+            decoded = self.encoding.batch_decode(encoded)
+            self._label_set = list(set(decoded))
         prop = df[self.property_columns].values
 
         if self.num_classes is not None:

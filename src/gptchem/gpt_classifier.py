@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, Union
 
 import numpy as np
 import pandas as pd
@@ -7,10 +7,14 @@ from sklearn.base import BaseEstimator
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
-from gptchem.extractor import ClassificationExtractor
-from gptchem.formatter import ClassificationFormatter
+from gptchem.extractor import ClassificationExtractor, MultiOutputExtractor
+from gptchem.formatter import ClassificationFormatter, MultiOutputClassificationFormatter
 from gptchem.querier import Querier
 from gptchem.tuner import Tuner
+import tiktoken
+
+
+GENERALLY_ALLOWED_COMPLETION_TOKENS = ["###"]
 
 
 class GPTClassifier:
@@ -18,47 +22,111 @@ class GPTClassifier:
 
     def __init__(
         self,
-        property_name: str,
-        tuner: Tuner,
+        property_name: Union[str, List[str]],
+        tuner: Optional[Tuner] = None,
         querier_settings: Optional[dict] = None,
-        extractor: ClassificationExtractor = ClassificationExtractor(),
+        extractor: Optional[ClassificationExtractor] = None,
         save_valid_file: bool = False,
+        bias_token: bool = True,
+        class_weights: Optional[dict] = None,
     ):
         """Initialize a GPTClassifier.
 
         Args:
-            property_name (str): Name of the property to be predicted.
+            property_name (Union[str, List[str]]): Name of the property to be predicted.
                This will be part of the prompt.
+               A list of strings can be provided to predict multiple properties
+               (requires a `MultiOutputClassificationFormatter` and `MultiOutputExtractor`).
             tuner (Tuner): Tuner object to be used for fine tuning.
                This specifies the model to be used and the fine-tuning settings.
+               Defaults to None. If None, a default tuner will be used.
+               This default Tuner will use the `ada` model.
             querier_settings (Optional[dict], optional): Settings for the querier.
                 Defaults to None.
             extractor (ClassificationExtractor, optional): Callable object that can extract
                 integers from the completions produced by the querier.
-                Defaults to ClassificationExtractor().
+                Defaults to None. If None, a default extractor will be used.
             save_valid_file (bool, optional): Whether to save the validation file.
                 Defaults to False.
+            bias_tokens (bool, optional): Whether to add bias to tokens
+                to ensure that only the relevant tokens are generated.
+                Defaults to True.
+            class_weights (Optional[dict], optional): Class weights to be used for inference.
+                Defaults to None. If None, classes will be weighted equally.
+                Ensure that the weights add up to 1.
         """
         self.property_name = property_name
-        self.tuner = tuner
+        self.tuner = tuner if tuner is not None else Tuner()
         self.querier_setting = (
             querier_settings if querier_settings is not None else {"max_tokens": 3}
         )
+        if extractor is None:
+            if isinstance(property_name, str):
+                extractor = ClassificationExtractor()
+            else:
+                extractor = MultiOutputExtractor()
+
         self.extractor = extractor
-        self.formatter = ClassificationFormatter(
-            representation_column="repr",
-            label_column="prop",
-            property_name=property_name,
-            num_classes=None,
+        self.formatter = (
+            ClassificationFormatter(
+                representation_column="repr",
+                label_column="prop",
+                property_name=property_name,
+                num_classes=None,
+            )
+            if isinstance(property_name, str)
+            else MultiOutputClassificationFormatter(
+                representation_column="repr",
+                label_columns=property_name,
+                property_names=property_name,
+                num_classes=None,
+            )
         )
         self.model_name = None
         self.tune_res = None
         self.save_valid_file = save_valid_file
+        self.bias_token = bias_token
+        self._input_shape = None
+        self._class_weights = class_weights
+
+    def _get_bias_dict(self):
+        bias_dict = {}
+        bias = 100
+        encoding = tiktoken.encoding_for_model(self.tuner.base_model)
+        if self._class_weights is not None:
+            default_weight = 1 / len(self._class_weights)
+        else:
+            default_weight = 1
+        if self.bias_token:
+            for char in self.formatter.allowed_characters:
+                for token in encoding.encode(char):
+                    bias_dict[token] = 100 * default_weight
+
+        if self._class_weights is not None:
+            for class_, weight in self._class_weights.items():
+                encoded = encoding.encode(str(class_))
+                bias_dict[encoded[0]] = bias * weight
+        return bias_dict
+
+    @classmethod
+    def from_finetune_id(cls, finetune_id: str, **kwargs):
+        cls = cls(**kwargs)
+        cls.model_name = finetune_id
+        return cls
 
     def _prepare_df(self, X: ArrayLike, y: ArrayLike):
         rows = []
-        for i in range(len(X)):
-            rows.append({"repr": X[i], "prop": y[i]})
+        # if y is one column  we add one column "prop"
+        # else we add one column per property
+        if y.ndim == 1:
+            for i in range(len(X)):
+                rows.append({"repr": X[i], "prop": y[i]})
+        else:
+            for i in range(len(X)):
+                row = {"repr": X[i]}
+                y_dict = dict(zip(self.property_name, y[i]))
+                row.update(y_dict)
+                rows.append(row)
         return pd.DataFrame(rows)
 
     def fit(self, X: ArrayLike, y: ArrayLike) -> None:
@@ -73,6 +141,7 @@ class GPTClassifier:
         tune_res = self.tuner(formatted)
         self.model_name = tune_res["model_name"]
         self.tune_res = tune_res
+        self._input_shape = np.shape(y)
 
     def predict(self, X: ArrayLike) -> ArrayLike:
         """Predict property values for a set of molecular representations.
@@ -83,12 +152,16 @@ class GPTClassifier:
         Returns:
             ArrayLike: Predicted property values
         """
-        df = self._prepare_df(X, [0] * len(X))
+        if len(self._input_shape) == 1:
+            y = np.zeros(len(X))
+        else:
+            y = np.zeros((len(X), self._input_shape[1]))
+        df = self._prepare_df(X, y)
         formatted = self.formatter(df)
         if self.save_valid_file:
             self.tuner._write_file(formatted, "valid")
 
-        querier = Querier(self.model_name, **self.querier_setting)
+        querier = Querier(self.model_name, **self.querier_setting, logit_bias=self._get_bias_dict())
         completions = querier(formatted)
         extracted = self.extractor(completions)
         return extracted
@@ -171,11 +244,12 @@ class NGramGPTClassifier:
         self.model_name = tune_res["model_name"]
         self.tune_res = tune_res
 
-    def predict(self, X: ArrayLike) -> ArrayLike:
+    def predict(self, X: ArrayLike, temperature: float = 0) -> ArrayLike:
         """Predict property values for a set of molecular representations.
 
         Args:
             X (ArrayLike): Input data (typically array of molecular representations)
+            temperature (float): Temperature of the softmax. Defaults to 0.
 
         Returns:
             ArrayLike: Predicted property values
@@ -189,7 +263,7 @@ class NGramGPTClassifier:
         )
         formatted = self.formatter(df)
         querier = Querier(self.model_name, **self.querier_setting)
-        completions = querier(formatted)
+        completions = querier(formatted, temperature=temperature)
         extracted = self.extractor(completions)
         return extracted
 

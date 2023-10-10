@@ -37,7 +37,7 @@ class BaseExtractor:
         return L([self.extract(entry, **kwargs) for entry in data])
 
     def extract_many_from_dict(self, data, key="choices", **kwargs) -> L:
-        return L(sum([self.extract_many(entry[key], **kwargs) for entry in data], []))
+        return L([self.extract(entry, **kwargs) for entry in data[key]])
 
     def __call__(self, data, key="choices", **kwargs):
         return self.extract_many_from_dict(data, key=key, **kwargs)
@@ -50,6 +50,15 @@ class ClassificationExtractor(BaseExtractor):
 
     def extract(self, data, **kwargs) -> int:
         return self.intify(self.split(data).strip())
+
+
+class MultiOutputExtractor(BaseExtractor):
+    """Extract integers from completions of multi-output classification tasks."""
+
+    def extract(self, data, **kwargs) -> int:
+        no_stop = data.replace(self._stop_sequence, "").replace("@", "")
+        parts = no_stop.split(",")
+        return [self.intify(part.strip()) for part in parts]
 
 
 class FewShotClassificationExtractor(BaseExtractor):

@@ -9,21 +9,21 @@ import pandas as pd
 from fastcore.basics import basic_repr
 from fastcore.xtras import dumps
 from loguru import logger
-from openai import FineTune
+from openai import FineTune, FineTuningJob
 from openai.cli import FineTune as FineTuneCli
 
 from .types import PathType
 from .utils import make_outdir
 
-
-def _check_ft_state(ft_id):
-    ft = FineTune.retrieve(id=ft_id)
-    return ft.get("status")
+LEGACY_MODELS = ["ada", "babbage", "curie", "davinci"]
 
 
-def get_ft_model_name(ft_id, sleep=60):
+def get_ft_model_name(ft_id, sleep=60, legacy=False):
     while True:
-        ft = FineTune.retrieve(id=ft_id)
+        if legacy:
+            ft = FineTune.retrieve(id=ft_id)
+        else:
+            ft = FineTuningJob.retrieve(id=ft_id)
         status = ft.get("status")
         logger.debug(f"Fine tuning status: {status}")
         if status == "succeeded":
@@ -177,25 +177,39 @@ class Tuner:
             )
             self._valid_file_id = file_args["validation_file"]
 
-        settings = {}
-        if self.batch_size is not None:
-            settings["batch_size"] = self.batch_size
-        if self.n_epochs is not None:
-            settings["n_epochs"] = self.n_epochs
-        if self.learning_rate_multiplier is not None:
-            settings["learning_rate_multiplier"] = self.learning_rate_multiplier
+        hyperparam = {}
 
-        result = openai.FineTune.create(
-            **file_args,
-            model=self.base_model,
-            **settings,
-        )
+        if self.batch_size is not None:
+            hyperparam["batch_size"] = self.batch_size
+        if self.n_epochs is not None:
+            hyperparam["n_epochs"] = self.n_epochs
+        if self.learning_rate_multiplier is not None:
+            hyperparam["learning_rate_multiplier"] = self.learning_rate_multiplier
+
+        settings = {
+            "hyperparameters": {"n_epochs": self.n_epochs},
+        }
+
+        if self.base_model in LEGACY_MODELS:
+            result = openai.FineTune.create(
+                **file_args,
+                model=self.base_model,
+                **settings,
+            )
+        else:
+            result = openai.FineTuningJob.create(
+                **file_args,
+                model=self.base_model,
+                **settings,
+            )
         self._res = result
         logger.debug(f"Requested fine tuning. {result}")
         modelname = None
         try:
             ft_id = result["id"]
-            modelname = get_ft_model_name(ft_id, self._sleep)
+            modelname = get_ft_model_name(
+                ft_id, self._sleep, legacy=self.base_model in LEGACY_MODELS
+            )
             # sync runs with wandb
             if self.wandb_sync:
                 subprocess.run("openai wandb sync -n 1", shell=True)
